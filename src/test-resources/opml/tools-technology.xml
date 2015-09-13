@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tools </title>
+  </head>
+  <body>
+    <outline text="Tools &amp; technology" title="Tools &amp; technology">
+      <outline text="TorrentFreak" title="TorrentFreak" type="rss" xmlUrl="http://feeds.feedburner.com/Torrentfreak" htmlUrl="http://torrentfreak.com/"/>
+      <outline text="Droid Life" title="Droid Life" type="rss" xmlUrl="http://feeds.feedburner.com/DroidLife" htmlUrl="http://www.droid-life.com/"/>
+      <outline text="Lifehacker" title="Lifehacker" type="rss" xmlUrl="http://feeds.gawker.com/lifehacker/full" htmlUrl="http://lifehacker.com/"/>
+      <outline text="movies torrents RSS feed - KickassTorrents" title="movies torrents RSS feed - KickassTorrents" type="rss" xmlUrl="http://kickass.to/movies/?rss=1" htmlUrl="http://kickass.so/"/>
+      <outline text="MakeUseOf" title="MakeUseOf" type="rss" xmlUrl="http://feeds.feedburner.com/Makeuseof" htmlUrl="http://www.makeuseof.com/"/>
+      <outline text="BBC News - Home" title="BBC News - Home" type="rss" xmlUrl="http://feeds.bbci.co.uk/news/rss.xml" htmlUrl="http://www.bbc.co.uk/news/#sa-ns_mchannel=rss&amp;ns_source=PublicRSS20-sa"/>
+      <outline text="Consumerist" title="Consumerist" type="rss" xmlUrl="http://consumerist.com/feed/" htmlUrl="http://consumerist.com/"/>
+    </outline>
+  </body>
+</opml>

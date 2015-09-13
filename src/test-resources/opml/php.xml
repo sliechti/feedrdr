@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>PHP Development created by Daniel Wittberger in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="PHP Development" title="PHP Development">
+      <outline text="KILLERPHP.COM" title="KILLERPHP.COM" type="rss" xmlUrl="http://www.killerphp.com/articles/feed/" htmlUrl="http://www.killerphp.com/articles"/>
+      <outline text="blog.phpdev" title="blog.phpdev" type="rss" xmlUrl="http://blog.phpdeveloper.org/?feed=rss2" htmlUrl="http://blog.phpdeveloper.org/"/>
+      <outline text="php[architect] - Magazine, Training, Books, Conferences" title="php[architect] - Magazine, Training, Books, Conferences" type="rss" xmlUrl="http://feeds.feedburner.com/phpa" htmlUrl="http://www.phparch.com/"/>
+      <outline text="CodeDevelopr" title="CodeDevelopr" type="rss" xmlUrl="http://feeds.feedburner.com/Codedevelopr" htmlUrl="http://www.codedevelopr.com/"/>
+      <outline text="Liip Blog" title="Liip Blog" type="rss" xmlUrl="http://feeds.liip.ch/liip_blog" htmlUrl="http://blog.liip.ch/"/>
+      <outline text="PHP Community Magazine" title="PHP Community Magazine" type="rss" xmlUrl="http://feeds.feedburner.com/PHPCommunityMagazine" htmlUrl="http://community.phpmagazine.net/"/>
+      <outline text="PHP Magazin | PHP, JavaScript, Open Web Technologies" title="PHP Magazin | PHP, JavaScript, Open Web Technologies" type="rss" xmlUrl="http://phpmagazin.de/all-rss.xml" htmlUrl="http://phpmagazin.de/"/>
+      <outline text="PHP Weekly Archive Feed" title="PHP Weekly Archive Feed" type="rss" xmlUrl="http://us4.campaign-archive2.com/feed?u=135396dd31790e834e8629b45&amp;id=af4af98573" htmlUrl="http://us4.campaign-archive.com/feed?u=135396dd31790e834e8629b45&amp;id=af4af98573"/>
+      <outline text="PHP Zone - Community for PHP users and developers" title="PHP Zone - Community for PHP users and developers" type="rss" xmlUrl="http://feeds.dzone.com/zones/php" htmlUrl="http://php.dzone.com/"/>
+      <outline text="PHP: Hypertext Preprocessor" title="PHP: Hypertext Preprocessor" type="rss" xmlUrl="http://php.net/news.rss" htmlUrl="http://php.net/"/>
+      <outline text="PHP: The latest news in the PHP world" title="PHP: The latest news in the PHP world" type="rss" xmlUrl="http://www.reddit.com/r/PHP/.rss" htmlUrl="http://www.reddit.com/r/PHP/"/>
+      <outline text="PHPDeveloper.org" title="PHPDeveloper.org" type="rss" xmlUrl="http://phpdeveloper.org/feed" htmlUrl="http://www.phpdeveloper.org/"/>
+      <outline text="Paulund" title="Paulund" type="rss" xmlUrl="http://feeds2.feedburner.com/Paulundcouk" htmlUrl="http://www.paulund.co.uk/"/>
+      <outline text="CodeForest" title="CodeForest" type="rss" xmlUrl="http://feedpress.me/codeforest" htmlUrl="http://www.codeforest.net/"/>
+      <outline text="code-diesel" title="code-diesel" type="rss" xmlUrl="http://www.codediesel.com/feed/" htmlUrl="http://www.codediesel.com/"/>
+      <outline text="CatsWhoCode.com" title="CatsWhoCode.com" type="rss" xmlUrl="http://feeds2.feedburner.com/Catswhocode" htmlUrl="http://www.catswhocode.com/blog"/>
+      <outline text="Symfony Blog" title="Symfony Blog" type="rss" xmlUrl="http://feeds.feedburner.com/symfony/blog" htmlUrl="http://symfony.com/blog/"/>
+      <outline text="Systems Architect" title="Systems Architect" type="rss" xmlUrl="http://systemsarchitect.net/feed/" htmlUrl="http://systemsarchitect.net/"/>
+      <outline text="SitePoint » PHP" title="SitePoint » PHP" type="rss" xmlUrl="http://www.sitepoint.com/php/feed/" htmlUrl="http://www.sitepoint.com/"/>
+      <outline text="phpied.com" title="phpied.com" type="rss" xmlUrl="http://www.phpied.com/feed/" htmlUrl="http://www.phpied.com/"/>
+      <outline text="Planet PHP" title="Planet PHP" type="rss" xmlUrl="http://www.planet-php.org/rss/" htmlUrl="http://planet-php.net/"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+<channel>
+<title>Computing in Science and Engineering</title>
+<link>http://www.computer.org/cise</link>
+<description>Physics, medicine, astronomy -- these and other hard sciences share a common need for efficient algorithms, system software, and computer architecture to address large computational problems. And yet, useful advances in computational techniques that could benefit many researchers are rarely shared. To meet that need, Computing in Science &amp; Engineering presents scientific and computational contributions in a clear and accessible format.	</description>
+	<language>en-us</language>
+	<pubDate>Sat, 27 Apr 2013 10:00:05 GMT</pubDate>
+	<image>
+		<url>http://csdl.computer.org/common/images/logos/cise.gif</url>
+		<title>IEEE Computer Society</title>
+		<description>List of recently published journal articles</description>
+		<link>http://www.computer.org/cise</link>
+	</image>
+  <item>
+     <title>PrePrint: Evaluation of a special class of two-body integrals through extension of the integral routine in Maple</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.40</link>
+     <description>In this article, we investigate an integral result presented by Herrick and Stillinger in 1975 [Phys. Rev. A 11, 42 (1975)] numerically and analytically. Based on their result we implement a custom integration routine. We demonstrate that custom made integration routines can be several times faster than the native routines. This may be beneficial in cases where many integrals need to be carried out. We compared the results of custom integration routine against those of the native integration routine. For cases, where the native routine could not perform the integration, we compared the custom integration routine against a Monte Carlo estimate. In all cases, we found excellent agreement. As an application of the implemented integration routine, we compute the $N$-body matrix elements of a Hamiltonian with two-body potentials.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.40</guid>
+  </item>
+  <item>
+     <title>PrePrint: SciDB: A New DBMS for Science and Other Applications with Complex Analytics</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.19</link>
+     <description>This paper presents a description of SciDB, as it exists in late 2012. Previous papers [1, 2] have presented many of the design decisions. Hence, we focus here on what we have learned since the previous SciDB papers, &amp;amp;#x201C;sweet spot&amp;amp;#x201D; application areas, performance comparisons against other possible solutions, and other plausible approaches to managing data with a workload consisting of a mix of data management and complex analytics. Also included is a brief history of the project.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.19</guid>
+  </item>
+  <item>
+     <title>PrePrint: Cloud-Based Software Platform For Big Data Analytics In Smart Grids</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.39</link>
+     <description>There is a global effort to incorporate sensors, actuators and data networks into power grids. This Smart Grid offers deep monitoring and controls, but needs advanced analytics for efficient and reliable operational decisions. This article focuses on a scalable software platform for the Smart Grid Cyber-Physical System using Cloud technologies. Dynamic Demand Response (D2R) is a challenge application that we target on the USC campus microgrid to perform intelligent demand-side management and relieve peak load. Our platform offers an adaptive information integration pipeline to ingest dynamic data; a secure repository for researchers to share knowledge; scalable machine-learning models trained over massive datasets for agile demand forecasting; and a portal to visualize consumption patterns. Our design incorporates hybrid Clouds, including IaaS, PaaS, public and private, which suit the unique component needs for on-demand provisioning, massive scaling, and manageability, and helps us expand from the microgrid to the Los Angeles power grid.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.39</guid>
+  </item>
+  <item>
+     <title>PrePrint: Data Near Here: Bringing Relevant Data Closer to Scientists</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.38</link>
+     <description>Large scientific repositories run the risk of losing value as their holdings expand, if it means increased effort for a scientist to locate particular datasets of interest. We discuss the challenges that scientists face in locating relevant data, and present our work in applying Information Retrieval techniques to dataset search, as embodied in the Data Near Here application.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.38</guid>
+  </item>
+  <item>
+     <title>PrePrint: 20-Bit RISC and DSP System Design in an FPGA</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.20</link>
+     <description>These days most microprocessor and microcontroller designs are based on RISC core and many operation such as Discrete Cosine transform (DCT) , Inverse DCT, Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT) are performed by DSP system. This paper represent the design of a Reduced Instruction Set Computer (RISC) and Digital Signal Processor (DSP) system described using VHDL and implement in a Field Programmable Logic Array (FPGA). This RISC is a 20 bit processor.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.20</guid>
+  </item>
+  <item>
+     <title>PrePrint: Numerical Simulation of Thermomechanical Processes Coupled With Microstructure Evolution</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.18</link>
+     <description>The Finite Element method is an already consolidated tool used in the metal forming field in industrial scale. However, further progress is needed regarding the microstructure optimization of components produced by metal forming processes such as hot forging or rolling. This paper aims to present mathematical models to predict microstructure evolution during hot working, showing an application of mathematical models coupled to a thermomechanical processes simulation software.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2013.18</guid>
+  </item>
+  <item>
+     <title>PrePrint: A Maple Program to Derive New Equations of State for Hard-Sphere Fluids</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.129</link>
+     <description>The hard-sphere fluid is a very commonly used mechanical or thermodynamic model in physics, chemistry and chemical engineering, with its equation of state being its most important thermodynamic property. In this work, we present the implementation of the computer program Maple for developing an algorithm for the derivation of different analytical expressions for both hard-sphere and hard-disk equations of state, i.e., compressibility factors as functions of the density or the packing fraction. The asymptotic expansion method is used, which permits a great number of different expressions to be generated from knowledge of the values of a given number of virial coefficients. Finally, the procedure of selection of the most appropriate expression is explained and examples are given.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.129</guid>
+  </item>
+  <item>
+     <title>PrePrint: Eden: Simplified Management of Atypical HPC Jobs</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.92</link>
+     <description>As multi-processor and multi-core technology becomes prevalent shared memory architectures with 1024 or more processing cores are becoming available for general purpose applications. As an early operator of such a system, the Remote Data Analysis and Visualization (RDAV) center at the University of Tennessee observed a host of user applications needing to scale up their computation by running many concurrent instances of generic codes. This is not a typical way of using HPC systems and naive solutions supporting such needs would cause significant issues that hamper scalability and stability of the system. We at the RDAV center developed a software package called Eden to manage large numbers of concurrent serial jobs with high throughput for any such application. In this article, we describe the motivation and technical nature of Eden and report representative actual use cases that we have collected during the past two years.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.92</guid>
+  </item>
+  <item>
+     <title>PrePrint: Discrete Hodge Theory on Graphs: a Tutorial</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.91</link>
+     <description>Hodge theory provides a unifying view of the various line, surface, and volume integrals that appear in physics and engineering applications. Hodge theory on graphs develops discrete versions of the differential forms found in the continuous theory and enables a graph decomposition into gradient, solenoidal, and harmonic components. Interpreted via similarity to gradient, curl, and Laplacian operators on vector fields, these components are useful in solving certain ranking and approximations problems that arise naturally in a graph context. This tutorial develops the rudiments of discrete Hodge theory and provides several example applications.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.91</guid>
+  </item>
+  <item>
+     <title>PrePrint: Scalability Improvement of the NASA Multiscale Modeling Framework &amp;#xD; for Tropical Cyclone Climate Study</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.90</link>
+     <description>In this study, we discuss recent scalability improvement to the Multiscale Modeling Framework (MMF) that makes it feasible to perform long-term Tropical cyclone (TC) simulations. The MMF consists of the finite-volume General Circulation model (fvGCM), supplemented by a copy of the Goddard Cumulus Ensemble model (GCE) at each of the fvGCM grid points, giving 13,104 copies of GCEs. The original fvGCM implementation has a 1D data decomposition. The revised MMF implementation retains the 1D decomposition for most of the code, but uses a 2D decomposition for the massive copies of GCEs which uses a second level of parallelism to execute it. Intelligent process mapping allows differing numbers of processes to be assigned to each domain for load balancing. The revised parallel implementation shows very promising scalability, obtaining a nearly 80-fold speedup by increasing the number of cores from 30 to 3,335. Future work will be discussed in the concluding remarks.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.90</guid>
+  </item>
+  <item>
+     <title>PrePrint: Parallel Simulation of Threat Management for Urban Water Distribution Systems with MapReduce in Clouds</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.89</link>
+     <description>The Contaminant Source Characterization (CSC) problem in a Water Distributed System (WDS) exhibits a compute-intensive challenge that requires highly reliable and high performance computing resources in order to achieve near real-time processing. Traditional solution to the CSC problem with MPI via Grid/cluster computing cannot fulfill CSC&amp;amp;#x2019;s QoS requirements, such as, reliability, scalability and flexibility. To address the aforementioned research issues, we have developed a parallel solution to the CSC problem using MapReduce in Clouds, which mainly includes 1) parallelization of the process of evaluating individuals in the Genetic Algorithm for CSC with MapReduce, and 2) developing an advanced cyberinfrastructure in an academic Cloud computing test bed (the FutureGrid test bed). We have carried out performance evaluation and discussion on our solution. Test results and performance evaluation show that parallel GA with MapReduce in a dynamic cyberinfrastructure can deliver a high performance, fault tolerance and flexible solution for the CSC problem.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.89</guid>
+  </item>
+  <item>
+     <title>PrePrint: FPGA-Based Virtual Screening Acceleration of Rigid-Molecule Docking</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.88</link>
+     <description>Virtual screening is a key process when developing a new drug in order to identify the most suitable molecule combinations. One of the most used direct computational method is molecule docking, based on analyzing the molecule structures in order to establish the affinity between them. This requires computing large databases in order to identify possible affinities between molecules, which allow reducing the initial database to an affordable size. In this paper, the special purpose FPGA-based JANUS supercomputer is used in order to accelerate the virtual screening process. The implemented docking algorithm is explained and the digital architecture is detailed. This design takes advantage of the paralleling possibilities of the computing problem, which perfectly fits the FPGA architecture.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.88</guid>
+  </item>
+  <item>
+     <title>PrePrint: Space Weather Prediction and Exascale Computing</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.86</link>
+     <description>The vast interplanetary space between the Sun and the Earth is a complex coupled system, where important processes develop, from their solar origin, traveling in the solar system, and reaching the Earth and other planets. The study of these important processes affecting people and technology in space and on the ground is called space weather. In this paper, we focus here on the steps necessary for achieving a true physics-based capability to predict the potential arrival and consequences of the major space weather storms. Simulating such a system is a grand challenge, requiring computing resources at the limit of what is possible today, not only with current technology, but also with the foreseeable future generations of so called ExaScale super computers.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.86</guid>
+  </item>
+  <item>
+     <title>PrePrint: An SPMD-like algorithm for parallelization of molecular dynamics using OpenMP</title>
+     <link>http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.66</link>
+     <description>The efficiency and scalability of early efforts to parallelize molecular dynamics calculations on shared memory systems using OpenMP have been limited by attempts to avoid data race. More recent efforts produced better performance but involved significant revisions of the serial code. A new algorithm addressing the aforementioned limitations is described in this paper. The algorithm, which closely resembles the widely-used SPMD (Single Program Multiple Data) parallelization of molecular dynamics calculations for distributed memory systems. It utilizes spatial decomposition, where atoms are distributed to separate physical regions (subdomains), a thread handles calculations for each subdomain, and redundant calculations are performed only for atoms near the subdomain boundaries. The algorithm was tested on a multi-core server by simulating a physical nucleation problem. Results indicate that it has the same or better scalability than MPI implementation of LAMMPS for simulating a large system (&amp;#x003E;106 atoms) with 8 or more cores.</description>
+     <guid isPermaLink="true">http://doi.ieeecomputersociety.org/10.1109/MCSE.2012.66</guid>
+  </item>
+  <item>
+     <title>Computing in Science and Engineering - </title>
+     <link>http://www.computer.org/portal/site/cise/</link>
+     <description>Computing in Science and Engineering</description>
+     <guid isPermaLink="true">http://www.computer.org/portal/site/cise/</guid>
+  </item>
+   </channel>
+</rss>

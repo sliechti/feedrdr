@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photoblogs created by Pablo Limorte in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Photoblogs" title="Photoblogs">
+      <outline text="burn magazine" title="burn magazine" type="rss" xmlUrl="http://www.burnmagazine.org/feed/" htmlUrl="http://www.burnmagazine.org/"/>
+      <outline text="The Fox Is Black" title="The Fox Is Black" type="rss" xmlUrl="http://thefoxisblack.com/feed/" htmlUrl="http://www.thefoxisblack.com/"/>
+      <outline text="Dark Daze" title="Dark Daze" type="rss" xmlUrl="http://darkdaze.tumblr.com/rss" htmlUrl="http://darkdaze.tumblr.com/"/>
+      <outline text="but does it float" title="but does it float" type="rss" xmlUrl="http://feeds2.feedburner.com/ButDoesItFloat?format=xml" htmlUrl="http://butdoesitfloat.com/"/>
+      <outline text="sonia szóstak" title="sonia szóstak" type="rss" xmlUrl="http://soniaszostak.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://soniaszostak.blogspot.com/"/>
+      <outline text="Freunde von Freunden" title="Freunde von Freunden" type="rss" xmlUrl="http://www.freundevonfreunden.com/feed/" htmlUrl="http://www.freundevonfreunden.com/"/>
+      <outline text="- Your Style Is Your Story" title="- Your Style Is Your Story" type="rss" xmlUrl="http://stylelikeu.com/feed/" htmlUrl="http://stylelikeu.com/"/>
+      <outline text="30y3 - Spanish Photography Now » Languages » Español" title="30y3 - Spanish Photography Now » Languages » Español" type="rss" xmlUrl="http://www.30y3.com/feed/" htmlUrl="http://www.30y3.com/"/>
+      <outline text="L' oeil ailleurs" title="L' oeil ailleurs" type="rss" xmlUrl="http://l-oeil-ailleurs.tumblr.com/rss" htmlUrl="http://l-oeil-ailleurs.tumblr.com/"/>
+    </outline>
+  </body>
+</opml>

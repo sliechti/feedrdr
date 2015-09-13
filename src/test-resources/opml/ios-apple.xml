@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>iOS/Apple News created by Daniel Wittberger in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="iOS/Apple News" title="iOS/Apple News">
+      <outline text="MarCoach" title="MarCoach" type="rss" xmlUrl="http://www.marcoach.nl/feed/" htmlUrl="http://www.marcoach.nl/"/>
+      <outline text="Flo's Weblog | Apple News and more..." title="Flo's Weblog | Apple News and more..." type="rss" xmlUrl="http://www.schimanke.com/index.php?/feeds/index.rss" htmlUrl="http://www.schimanke.com/"/>
+      <outline text="Hack Mac" title="Hack Mac" type="rss" xmlUrl="http://www.hackmac.org/feed/" htmlUrl="http://www.hackmac.org/"/>
+      <outline text="9to5Mac" title="9to5Mac" type="rss" xmlUrl="http://feeds.feedburner.com/9To5Mac-MacAllDay" htmlUrl="http://9to5mac.com/"/>
+      <outline text="Apfelpage" title="Apfelpage" type="rss" xmlUrl="http://feeds.feedburner.com/apfelpage" htmlUrl="http://www.apfelpage.de/"/>
+      <outline text="Apple - Support - Most Recent" title="Apple - Support - Most Recent" type="rss" xmlUrl="http://rss.support.apple.com/" htmlUrl="http://www.apple.com/support/"/>
+      <outline text="TidBITS: Apple News for the Rest of Us" title="TidBITS: Apple News for the Rest of Us" type="rss" xmlUrl="http://tidbits.com/feeds/tidbits_blurb.rss" htmlUrl="http://tidbits.com/"/>
+      <outline text="iphone-ticker.de" title="iphone-ticker.de" type="rss" xmlUrl="http://rss.feedsportal.com/c/32832/f/527546/index.rss" htmlUrl="http://www.iphone-ticker.de/"/>
+      <outline text="TechCrunch" title="TechCrunch" type="rss" xmlUrl="http://feeds.feedburner.com/TechCrunch/" htmlUrl="http://techcrunch.com/"/>
+      <outline text="Apple Inc. Press Releases" title="Apple Inc. Press Releases" type="rss" xmlUrl="http://www.apple.com/pr/feeds/pr.rss" htmlUrl="http://www.apple.com/pr/"/>
+      <outline text="AppleInsider - Frontpage News" title="AppleInsider - Frontpage News" type="rss" xmlUrl="http://appleinsider.com.feedsportal.com/c/33975/f/616168/index.rss" htmlUrl="http://appleinsider.com/"/>
+      <outline text="Cult of Mac" title="Cult of Mac" type="rss" xmlUrl="http://cultofmac.com.feedsportal.com/c/33797/f/606249/index.rss" htmlUrl="http://www.cultofmac.com/"/>
+      <outline text="MacStories" title="MacStories" type="rss" xmlUrl="http://www.macstories.net/feed/" htmlUrl="http://www.macstories.net/"/>
+      <outline text="News | MacTechNews.de" title="News | MacTechNews.de" type="rss" xmlUrl="http://rss.feedsportal.com/c/32215/f/424463/index.rss" htmlUrl="http://www.mactechnews.de/"/>
+      <outline text="iDownloadBlog.com iDownloadBlog.com" title="iDownloadBlog.com iDownloadBlog.com" type="rss" xmlUrl="http://www.idownloadblog.com/feed/atom/" htmlUrl="http://www.idownloadblog.com/"/>
+      <outline text="Ars Technica » Infinite Loop" title="Ars Technica » Infinite Loop" type="rss" xmlUrl="http://feeds.arstechnica.com/arstechnica/apple/" htmlUrl="http://arstechnica.com/"/>
+      <outline text="iPhoneBlog.de" title="iPhoneBlog.de" type="rss" xmlUrl="http://www.iphoneblog.de/feed/" htmlUrl="http://www.iphoneblog.de/"/>
+      <outline text="m-magazin.net: Apple-News rund um iPhone, iPad, Mac, Apps, OS X, iOS und mehr" title="m-magazin.net: Apple-News rund um iPhone, iPad, Mac, Apps, OS X, iOS und mehr" type="rss" xmlUrl="http://feeds.feedburner.com/m-magazin" htmlUrl="http://www.m-magazin.net/"/>
+      <outline text="Mac.AppStorm" title="Mac.AppStorm" type="rss" xmlUrl="http://feeds.feedburner.com/MacAppStorm" htmlUrl="http://mac.appstorm.net/"/>
+      <outline text="The Macalope" title="The Macalope" type="rss" xmlUrl="http://www.macalope.com/feed/" htmlUrl="http://www.macalope.com/"/>
+      <outline text="MacRumors: Mac News and Rumors - Front Page" title="MacRumors: Mac News and Rumors - Front Page" type="rss" xmlUrl="http://feeds.macrumors.com/MacRumors-Front" htmlUrl="http://www.macrumors.com/"/>
+      <outline text="Macworld" title="Macworld" type="rss" xmlUrl="http://www.macworld.com/index.rss" htmlUrl="http://www.macworld.com/"/>
+      <outline text="Mac|Life - All Articles" title="Mac|Life - All Articles" type="rss" xmlUrl="http://www.maclife.com/articles/all/feed" htmlUrl="http://www.maclife.com/articles/all/feed"/>
+      <outline text="Minimal Mac" title="Minimal Mac" type="rss" xmlUrl="http://minimalmac.com/rss" htmlUrl="http://minimalmac.com/"/>
+      <outline text="mobiFlip.de" title="mobiFlip.de" type="rss" xmlUrl="http://feeds.feedburner.com/mobiflip" htmlUrl="http://www.mobiflip.de/"/>
+      <outline text="News from Flying Meat" title="News from Flying Meat" type="rss" xmlUrl="http://flyingmeat.com/blog/rss.xml" htmlUrl="http://flyingmeat.com/blog/"/>
+      <outline text="The Loop" title="The Loop" type="rss" xmlUrl="http://www.loopinsight.com/feed/" htmlUrl="http://www.loopinsight.com/"/>
+      <outline text="Gigaom Search » Vertical » Apple" title="Gigaom Search » Vertical » Apple" type="rss" xmlUrl="http://feeds.feedburner.com/theappleblog" htmlUrl="http://search.gigaom.com/"/>
+      <outline text="TUAW: Apple news, reviews and how-tos since 2004 RSS Feed" title="TUAW: Apple news, reviews and how-tos since 2004 RSS Feed" type="rss" xmlUrl="http://www.tuaw.com/rss.xml" htmlUrl="http://www.tuaw.com/"/>
+      <outline text="Macdrifter" title="Macdrifter" type="rss" xmlUrl="http://www.macdrifter.com/feeds/all.atom.xml" htmlUrl="http://www.macdrifter.com/"/>
+      <outline text="Macnotes.de" title="Macnotes.de" type="rss" xmlUrl="http://feeds.feedburner.com/macnotes/" htmlUrl="http://www.macnotes.de/"/>
+      <outline text="OS X Daily" title="OS X Daily" type="rss" xmlUrl="http://feeds.feedburner.com/osxdaily" htmlUrl="http://osxdaily.com/"/>
+      <outline text="iDeviceDailys" title="iDeviceDailys" type="rss" xmlUrl="http://idevicedailys.com/feed/" htmlUrl="http://idevicedailys.com/"/>
+      <outline text="Daring Fireball" title="Daring Fireball" type="rss" xmlUrl="http://daringfireball.net/feeds/main" htmlUrl="http://daringfireball.net/"/>
+    </outline>
+  </body>
+</opml>

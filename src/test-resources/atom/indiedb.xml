@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+	<atom:link href="http://www.indiedb.com/news/feed" rel="self" type="application/rss+xml" />
+	 
+	<link>http://www.indiedb.com/news</link>
+	<title>News RSS feed - Indie DB</title>
+	<description>Subscribe to the Indie DB  news feed, and get the latest updates as they are posted.</description>
+	<language>en-us</language>
+	<pubDate>Fri, 12 Dec 2014 00:39:57 +0000</pubDate>
+	<copyright>Copyright 2014, DBolical Pty Ltd</copyright>
+	<category>Articles</category>
+	<ttl>180</ttl>
+	<image>
+		<title>News RSS feed - Indie DB</title>
+		<url>http://static.indiedb.com/cutoff/images/logos/rss.png</url>
+		<link>http://www.indiedb.com/news</link>
+		<width>120</width>
+		<height>90</height>
+	</image>
+	 
+	<item>
+		<title>Paradox 0.2.4 Released</title>
+		<link>http://www.indiedb.com/news/paradox-024-released</link>
+		<pubDate>Thu, 11 Dec 2014 17:18:26 +0000</pubDate>
+		<guid isPermaLink="false">articles174246</guid>
+		<description>The new version of Paradox contains a new GUI system, new textures, and features including the ability to walk on walls.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174246/thumb_620x2000/newCover.1.PNG" alt="Paradox 0.2.4 Released" /><br />The new version of Paradox contains a new GUI system, new textures, and features including the ability to walk on walls.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174246/thumb_620x2000/newCover.1.PNG" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174246/newCover.1.PNG" type="image/png" medium="image">
+			<media:title type="plain">Paradox 0.2.4 Released</media:title>
+			<media:description type="plain">The new version of Paradox contains a new GUI system, new textures, and features including the ability to walk on walls.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174246/thumb_620x2000/newCover.1.PNG" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Stardust Galaxy Warriors now on Steam Greenlight!</title>
+		<link>http://www.indiedb.com/news/stardust-galaxy-warriors-now-on-steam-greenlight</link>
+		<pubDate>Thu, 11 Dec 2014 16:15:33 +0000</pubDate>
+		<guid isPermaLink="false">articles174241</guid>
+		<description>We are finally on Steam Greenlight &#45; Check out our new gameplay trailer!</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174241/thumb_620x2000/greenlightgif.gif" alt="Stardust Galaxy Warriors now on Steam Greenlight!" /><br />We are finally on Steam Greenlight &#45; Check out our new gameplay trailer!]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174241/thumb_620x2000/greenlightgif.gif" length="0" type="image/gif" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174241/greenlightgif.gif" type="image/gif" medium="image">
+			<media:title type="plain">Stardust Galaxy Warriors now on Steam Greenlight!</media:title>
+			<media:description type="plain">We are finally on Steam Greenlight &#45; Check out our new gameplay trailer!</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174241/thumb_620x2000/greenlightgif.gif" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Submerge Flora Concepts</title>
+		<link>http://www.indiedb.com/news/submerge-flora-concepts</link>
+		<pubDate>Thu, 11 Dec 2014 15:18:07 +0000</pubDate>
+		<guid isPermaLink="false">articles174237</guid>
+		<description>Some early stages of the beautiful underwater flora that our concept artist has drafted.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174237/thumb_620x2000/submerge_logo_large.png" alt="Submerge Flora Concepts" /><br />Some early stages of the beautiful underwater flora that our concept artist has drafted.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174237/thumb_620x2000/submerge_logo_large.png" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174237/submerge_logo_large.png" type="image/png" medium="image">
+			<media:title type="plain">Submerge Flora Concepts</media:title>
+			<media:description type="plain">Some early stages of the beautiful underwater flora that our concept artist has drafted.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174237/thumb_620x2000/submerge_logo_large.png" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Neptune, Have Mercy. Teaser Trailer</title>
+		<link>http://www.indiedb.com/news/neptune-have-mercy-teaser-trailer</link>
+		<pubDate>Thu, 11 Dec 2014 15:15:50 +0000</pubDate>
+		<guid isPermaLink="false">articles174186</guid>
+		<description>A new Teaser Trailer for &quot;Neptune, Have Mercy.&quot;, A sci&#45;fi submarine roguelike.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174186/thumb_620x2000/nhm_youtube.png" alt="Neptune, Have Mercy. Teaser Trailer" /><br />A new Teaser Trailer for &quot;Neptune, Have Mercy.&quot;, A sci&#45;fi submarine roguelike.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174186/thumb_620x2000/nhm_youtube.png" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174186/nhm_youtube.png" type="image/png" medium="image">
+			<media:title type="plain">Neptune, Have Mercy. Teaser Trailer</media:title>
+			<media:description type="plain">A new Teaser Trailer for &quot;Neptune, Have Mercy.&quot;, A sci&#45;fi submarine roguelike.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174186/thumb_620x2000/nhm_youtube.png" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Keeping your house in order.</title>
+		<link>http://www.indiedb.com/news/keeping-your-house-in-order</link>
+		<pubDate>Thu, 11 Dec 2014 15:05:40 +0000</pubDate>
+		<guid isPermaLink="false">articles174234</guid>
+		<description>In a previous blog post I mentioned that we spent a few weeks of reasonably intense prototyping to try to help us get a handle on what we want Friendship Club to be. Up until that point the game design was still a little under debate and we were unsure where to put the design emphasis. It was largely a question of how much from the basic game experience did we want to deviate and how did we want to present those options. </description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174234/thumb_620x2000/postits.jpg" alt="Keeping your house in order." /><br />In a previous blog post I mentioned that we spent a few weeks of reasonably intense prototyping to try to help us get a handle on what we want Friendship Club to be. Up until that point the game design was still a little under debate and we were unsure where to put the design emphasis. It was largely a question of how much from the basic game experience did we want to deviate and how did we want to present those options. ]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174234/thumb_620x2000/postits.jpg" length="0" type="image/jpeg" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174234/postits.jpg" type="image/jpeg" medium="image">
+			<media:title type="plain">Keeping your house in order.</media:title>
+			<media:description type="plain">In a previous blog post I mentioned that we spent a few weeks of reasonably intense prototyping to try to help us get a handle on what we want Friendship Club to be. Up until that point the game design was still a little under debate and we were unsure where to put the design emphasis. It was largely a question of how much from the basic game experience did we want to deviate and how did we want to present those options. </media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174234/thumb_620x2000/postits.jpg" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Historical Armor &amp; Interview with the team</title>
+		<link>http://www.indiedb.com/news/historical-armor-interview-with-the-team</link>
+		<pubDate>Thu, 11 Dec 2014 14:05:10 +0000</pubDate>
+		<guid isPermaLink="false">articles174232</guid>
+		<description>Hello everyone, today we have a new video regarding historical accuracy for our armors. We also have an interview with the team made by MiddleEasy.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174232/thumb_620x2000/maxresdefault.jpg" alt="Historical Armor &amp; Interview with the team" /><br />Hello everyone, today we have a new video regarding historical accuracy for our armors. We also have an interview with the team made by MiddleEasy.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174232/thumb_620x2000/maxresdefault.jpg" length="0" type="image/jpeg" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174232/maxresdefault.jpg" type="image/jpeg" medium="image">
+			<media:title type="plain">Historical Armor &amp; Interview with the team</media:title>
+			<media:description type="plain">Hello everyone, today we have a new video regarding historical accuracy for our armors. We also have an interview with the team made by MiddleEasy.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174232/thumb_620x2000/maxresdefault.jpg" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Progress</title>
+		<link>http://www.indiedb.com/news/progress203</link>
+		<pubDate>Thu, 11 Dec 2014 11:49:27 +0000</pubDate>
+		<guid isPermaLink="false">articles174225</guid>
+		<description>Introducing a revamped forest and new snow and hell worlds!</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/175/174225/thumb_620x2000/yeee.png" alt="Progress" /><br />Introducing a revamped forest and new snow and hell worlds!]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/175/174225/thumb_620x2000/yeee.png" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/175/174225/yeee.png" type="image/png" medium="image">
+			<media:title type="plain">Progress</media:title>
+			<media:description type="plain">Introducing a revamped forest and new snow and hell worlds!</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/175/174225/thumb_620x2000/yeee.png" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Top 100 Indies of 2014 are here!</title>
+		<link>http://www.indiedb.com/news/indie-of-the-year-2014-top-100</link>
+		<pubDate>Thu, 11 Dec 2014 11:31:44 +0000</pubDate>
+		<guid isPermaLink="false">articles172473</guid>
+		<description>Your votes have been tallied, ladies and gentlemen here is your Top 100 Indie Games of 2014.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/173/172473/thumb_620x2000/IOTY.png" alt="Top 100 Indies of 2014 are here!" /><br />Your votes have been tallied, ladies and gentlemen here is your Top 100 Indie Games of 2014.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/173/172473/thumb_620x2000/IOTY.png" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/173/172473/IOTY.png" type="image/png" medium="image">
+			<media:title type="plain">Top 100 Indies of 2014 are here!</media:title>
+			<media:description type="plain">Your votes have been tallied, ladies and gentlemen here is your Top 100 Indie Games of 2014.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/173/172473/thumb_620x2000/IOTY.png" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Top 50 Apps of 2014 are here!</title>
+		<link>http://www.indiedb.com/news/app-of-the-year-2014-top-50</link>
+		<pubDate>Thu, 11 Dec 2014 11:16:27 +0000</pubDate>
+		<guid isPermaLink="false">articles172475</guid>
+		<description>Your votes have been tallied, ladies and gentlemen here is your Top 50 Mobile Games of 2014.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/173/172475/thumb_620x2000/SOTY-Logo.png" alt="Top 50 Apps of 2014 are here!" /><br />Your votes have been tallied, ladies and gentlemen here is your Top 50 Mobile Games of 2014.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/173/172475/thumb_620x2000/SOTY-Logo.png" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/173/172475/SOTY-Logo.png" type="image/png" medium="image">
+			<media:title type="plain">Top 50 Apps of 2014 are here!</media:title>
+			<media:description type="plain">Your votes have been tallied, ladies and gentlemen here is your Top 50 Mobile Games of 2014.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/173/172475/thumb_620x2000/SOTY-Logo.png" />
+		</media:content>
+			</item>
+	 
+	<item>
+		<title>Top 100 Mods of 2014 are here!</title>
+		<link>http://www.indiedb.com/news/mod-of-the-year-2014-top-100</link>
+		<pubDate>Thu, 11 Dec 2014 11:01:19 +0000</pubDate>
+		<guid isPermaLink="false">articles172470</guid>
+		<description>Your votes have been tallied, ladies and gentlemen here is your Top 100 mods of 2014.</description>
+				<description><![CDATA[<img src="http://media.indiedb.com/cache/images/articles/1/173/172470/thumb_620x2000/MOTY-Logo.1.png" alt="Top 100 Mods of 2014 are here!" /><br />Your votes have been tallied, ladies and gentlemen here is your Top 100 mods of 2014.]]></description>
+		<enclosure url="http://media.indiedb.com/cache/images/articles/1/173/172470/thumb_620x2000/MOTY-Logo.1.png" length="0" type="image/png" />
+		<media:content url="http://media.indiedb.com/images/articles/1/173/172470/MOTY-Logo.1.png" type="image/png" medium="image">
+			<media:title type="plain">Top 100 Mods of 2014 are here!</media:title>
+			<media:description type="plain">Your votes have been tallied, ladies and gentlemen here is your Top 100 mods of 2014.</media:description>
+			<media:thumbnail url="http://media.indiedb.com/cache/images/articles/1/173/172470/thumb_620x2000/MOTY-Logo.1.png" />
+		</media:content>
+			</item>
+	 
+</channel>
+</rss>

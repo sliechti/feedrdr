@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Marketing Blogs created by Vassilena Valchanova in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Marketing Blogs" title="Marketing Blogs">
+      <outline text="MarketingProfs: Marketing Opinions" title="MarketingProfs: Marketing Opinions" type="rss" xmlUrl="http://www.mpdailyfix.com/index.xml" htmlUrl="http://www.marketingprofs.com/"/>
+      <outline text="HubSpot Marketing Blog" title="HubSpot Marketing Blog" type="rss" xmlUrl="http://blog.hubspot.com/CMS/UI/Modules/BizBlogger/rss.aspx?tabid=6307&amp;moduleid=8441&amp;maxcount=25" htmlUrl="http://blog.hubspot.com/marketing"/>
+      <outline text="PR-Squared - Social Media Marketing and Public Relations" title="PR-Squared - Social Media Marketing and Public Relations" type="rss" xmlUrl="http://feeds.feedburner.com/prsquared/" htmlUrl="http://www.pr-squared.com/"/>
+      <outline text="David Meerman Scott - Web Ink Now" title="David Meerman Scott - Web Ink Now" type="rss" xmlUrl="http://feeds.feedburner.com/webinknow/EzoX" htmlUrl="http://www.webinknow.com/"/>
+      <outline text="Spin Sucks" title="Spin Sucks" type="rss" xmlUrl="http://spinsucks.com/feed" htmlUrl="http://spinsucks.com/"/>
+      <outline text="Logic+Emotion" title="Logic+Emotion" type="rss" xmlUrl="http://feeds.feedburner.com/Logicemotion" htmlUrl="http://darmano.typepad.com/logic_emotion/"/>
+      <outline text="socialmouths" title="socialmouths" type="rss" xmlUrl="http://socialmouths.com/blog/feed/" htmlUrl="http://socialmouths.com/blog"/>
+      <outline text="Social Media Examiner" title="Social Media Examiner" type="rss" xmlUrl="http://www.socialmediaexaminer.com/feed/" htmlUrl="http://www.socialmediaexaminer.com/"/>
+      <outline text="Jon Loomer Digital" title="Jon Loomer Digital" type="rss" xmlUrl="http://www.jonloomer.com/feed/" htmlUrl="http://www.jonloomer.com/"/>
+      <outline text="The KISSmetrics Marketing Blog" title="The KISSmetrics Marketing Blog" type="rss" xmlUrl="http://feeds.feedburner.com/KISSmetrics" htmlUrl="https://blog.kissmetrics.com/"/>
+      <outline text="RazorSocial" title="RazorSocial" type="rss" xmlUrl="http://www.razorsocial.com/feed/" htmlUrl="http://www.razorsocial.com/"/>
+      <outline text="Dan Zarrella" title="Dan Zarrella" type="rss" xmlUrl="http://feeds2.feedburner.com/DanZarrella" htmlUrl="http://danzarrella.com/"/>
+      <outline text="MariSmith.com" title="MariSmith.com" type="rss" xmlUrl="http://www.marismith.com/feed/" htmlUrl="http://www.marismith.com/"/>
+    </outline>
+  </body>
+</opml>

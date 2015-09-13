@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Google created by Yordan Yordanov in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Google" title="Google">
+      <outline text="Google Webmaster Central Blog" title="Google Webmaster Central Blog" type="rss" xmlUrl="http://googlewebmastercentral.blogspot.com/atom.xml" htmlUrl="http://googlewebmastercentral.blogspot.com/"/>
+      <outline text="The Official Google Blog" title="The Official Google Blog" type="rss" xmlUrl="http://feeds.feedburner.com/blogspot/MKuf" htmlUrl="http://googleblog.blogspot.com/"/>
+      <outline text="Official Google for Work Blog" title="Official Google for Work Blog" type="rss" xmlUrl="http://feeds.feedburner.com/OfficialGoogleEnterpriseBlog" htmlUrl="http://googleforwork.blogspot.com/"/>
+      <outline text="Google Developers Blog" title="Google Developers Blog" type="rss" xmlUrl="http://feeds.feedburner.com/blogspot/Dcni" htmlUrl="http://googledevelopers.blogspot.com/"/>
+      <outline text="Google Earth Blog" title="Google Earth Blog" type="rss" xmlUrl="http://feeds.feedburner.com/GoogleEarthBlog" htmlUrl="http://www.gearthblog.com/"/>
+      <outline text="Google Chrome Releases" title="Google Chrome Releases" type="rss" xmlUrl="http://feeds.feedburner.com/GoogleChromeReleases" htmlUrl="http://googlechromereleases.blogspot.com/"/>
+      <outline text="Google Chrome Blog" title="Google Chrome Blog" type="rss" xmlUrl="http://feeds.feedburner.com/blogspot/Egta" htmlUrl="http://chrome.blogspot.com/"/>
+      <outline text="Google Geo Developers Blog" title="Google Geo Developers Blog" type="rss" xmlUrl="http://feeds.feedburner.com/GoogleGeoDevelopersBlog" htmlUrl="http://googlegeodevelopers.blogspot.com/"/>
+      <outline text="Google Open Source Blog" title="Google Open Source Blog" type="rss" xmlUrl="http://feeds.feedburner.com/GoogleOpenSourceBlog" htmlUrl="http://google-opensource.blogspot.com/"/>
+      <outline text="Google LatLong" title="Google LatLong" type="rss" xmlUrl="http://google-latlong.blogspot.com/feeds/posts/default" htmlUrl="http://google-latlong.blogspot.com/"/>
+      <outline text="Google Europe Blog" title="Google Europe Blog" type="rss" xmlUrl="http://googlepolicyeurope.blogspot.com/feeds/posts/default" htmlUrl="http://googlepolicyeurope.blogspot.com/"/>
+    </outline>
+  </body>
+</opml>

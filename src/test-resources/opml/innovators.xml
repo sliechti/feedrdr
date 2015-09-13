@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Innovators created by Ned Hamson in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Innovators" title="Innovators">
+      <outline text="Afghan Women's Writing Project" title="Afghan Women's Writing Project" type="rss" xmlUrl="http://feeds.feedburner.com/awwp-blog" htmlUrl="http://awwproject.org/"/>
+      <outline text="Ami James" title="Ami James" type="rss" xmlUrl="http://feeds.feedburner.com/AmiJames" htmlUrl="http://www.ami-james.com/"/>
+      <outline text="BAGnewsNotes" title="BAGnewsNotes" type="rss" xmlUrl="http://feeds2.feedburner.com/BagNewsNotes" htmlUrl="http://www.bagnewsnotes.com/"/>
+      <outline text="Green Prophet" title="Green Prophet" type="rss" xmlUrl="http://www.greenprophet.com/feed/" htmlUrl="http://www.greenprophet.com/"/>
+      <outline text="Humans of Amsterdam" title="Humans of Amsterdam" type="rss" xmlUrl="http://www.humansofamsterdam.nl/rss" htmlUrl="http://www.humansofamsterdam.nl/"/>
+      <outline text="Humans of New York" title="Humans of New York" type="rss" xmlUrl="http://www.humansofnewyork.com/rss" htmlUrl="http://www.humansofnewyork.com/"/>
+      <outline text="Hummus For Thought" title="Hummus For Thought" type="rss" xmlUrl="http://hummusforthought.com/feed/" htmlUrl="http://hummusforthought.com/"/>
+      <outline text="Palestine Rose" title="Palestine Rose" type="rss" xmlUrl="http://palestinerose.wordpress.com/feed/" htmlUrl="http://palestinerose.wordpress.com/"/>
+      <outline text="Uploads from Gloria Zelaya" title="Uploads from Gloria Zelaya" type="rss" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=52277770@N00&amp;lang=en-us&amp;format=rss_200" htmlUrl="http://www.flickr.com/photos/gloriazelaya/"/>
+      <outline text="Uploads from 白黒" title="Uploads from 白黒" type="rss" xmlUrl="http://www.flickr.com/services/feeds/photos_public.gne?id=77494015@N07&amp;lang=en-us&amp;format=rss_200" htmlUrl="http://www.flickr.com/photos/gennarodangelo/"/>
+      <outline text="~✿~" title="~✿~" type="rss" xmlUrl="http://musgosa.tumblr.com/rss" htmlUrl="http://musgosa.tumblr.com/"/>
+      <outline text="Uploads from Jens Rost" title="Uploads from Jens Rost" type="rss" xmlUrl="http://api.flickr.com/services/feeds/photos_public.gne?id=56380734@N05&amp;lang=en-us&amp;format=atom" htmlUrl="http://www.flickr.com/photos/56380734@N05/"/>
+      <outline text="Tam Nguyen - New York Photographer" title="Tam Nguyen - New York Photographer" type="rss" xmlUrl="http://tambnguyen.com/feed/" htmlUrl="http://tambnguyen.com/"/>
+      <outline text="The Fox Is Black" title="The Fox Is Black" type="rss" xmlUrl="http://www.thefoxisblack.com/feed/" htmlUrl="http://www.thefoxisblack.com/"/>
+      <outline text="I Leaf Art" title="I Leaf Art" type="rss" xmlUrl="http://ileafart.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://ileafart.blogspot.com/"/>
+      <outline text="Latina Lista: News from the Latino perspective" title="Latina Lista: News from the Latino perspective" type="rss" xmlUrl="http://feeds.feedburner.com/latinalista1" htmlUrl="http://latinalista.com/"/>
+      <outline text="Maya in the Moment" title="Maya in the Moment" type="rss" xmlUrl="http://mayamurillo.blogspot.com/feeds/posts/default" htmlUrl="http://mayamurillo.blogspot.com/"/>
+      <outline text="Mi sitio - Blog" title="Mi sitio - Blog" type="rss" xmlUrl="http://tourmalinne.weebly.com/1/feed" htmlUrl="http://tourmalinne.weebly.com/blog"/>
+      <outline text="A Separate State of Mind | A Lebanese Blog" title="A Separate State of Mind | A Lebanese Blog" type="rss" xmlUrl="http://stateofmind13.com/feed/" htmlUrl="http://stateofmind13.com/"/>
+      <outline text="One Costume A Day" title="One Costume A Day" type="rss" xmlUrl="http://onecostumeaday.tumblr.com/rss" htmlUrl="http://onecostumeaday.tumblr.com/"/>
+    </outline>
+  </body>
+</opml>

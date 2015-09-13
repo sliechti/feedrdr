@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>U/X created by guce in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="U/X" title="U/X">
+      <outline text="MeasuringU: Usability, Customer Experience &amp; Statistics" title="MeasuringU: Usability, Customer Experience &amp; Statistics" type="rss" xmlUrl="http://feeds.feedburner.com/MeasuringUsability" htmlUrl="http://www.measuringu.com/"/>
+      <outline text="The UX Booth" title="The UX Booth" type="rss" xmlUrl="http://feeds.feedburner.com/uxbooth" htmlUrl="http://www.uxbooth.com/"/>
+      <outline text="Recent Questions - User Experience Stack Exchange" title="Recent Questions - User Experience Stack Exchange" type="rss" xmlUrl="http://ux.stackexchange.com/feeds" htmlUrl="http://ux.stackexchange.com/questions"/>
+      <outline text="Usabilityblog.de" title="Usabilityblog.de" type="rss" xmlUrl="http://feeds.feedburner.com/usabilityblog/rssfeed" htmlUrl="http://www.usabilityblog.de/"/>
+      <outline text="A List Apart: The Full Feed" title="A List Apart: The Full Feed" type="rss" xmlUrl="http://www.alistapart.com/rss.xml" htmlUrl="http://alistapart.com/"/>
+      <outline text="UIE Brain Sparks" title="UIE Brain Sparks" type="rss" xmlUrl="http://www.uie.com/brainsparks/feed/" htmlUrl="http://www.uie.com/brainsparks"/>
+      <outline text="UX Mastery" title="UX Mastery" type="rss" xmlUrl="http://feeds.feedburner.com/uxmastery" htmlUrl="http://uxmastery.com/"/>
+      <outline text="UXmatters" title="UXmatters" type="rss" xmlUrl="http://www.uxmatters.com/index.xml" htmlUrl="http://www.uxmatters.com/"/>
+      <outline text="swissmiss" title="swissmiss" type="rss" xmlUrl="http://feeds2.feedburner.com/Swissmiss" htmlUrl="http://www.swiss-miss.com/"/>
+      <outline text="UX Movement" title="UX Movement" type="rss" xmlUrl="http://feeds.feedburner.com/uxmovement" htmlUrl="http://uxmovement.com/"/>
+      <outline text="Smashing Magazine" title="Smashing Magazine" type="rss" xmlUrl="http://rss1.smashingmagazine.com/feed/?f=uxdesign-std" htmlUrl="http://www.smashingmagazine.com/"/>
+      <outline text="UX Magazine" title="UX Magazine" type="rss" xmlUrl="http://feeds.feedburner.com/UXM" htmlUrl="http://uxmag.com/uxm.xml"/>
+      <outline text="UsabilityGeek - Usability &amp; User Experience Blog" title="UsabilityGeek - Usability &amp; User Experience Blog" type="rss" xmlUrl="http://feeds.feedburner.com/usabilitygeek" htmlUrl="http://usabilitygeek.com/"/>
+      <outline text="Putting people firstPutting people first" title="Putting people firstPutting people first" type="rss" xmlUrl="http://feeds.feedburner.com/PuttingPeopleFirst" htmlUrl="http://www.experientia.com/blog"/>
+      <outline text="Wireframes Magazine" title="Wireframes Magazine" type="rss" xmlUrl="http://feeds2.feedburner.com/wireframesmag" htmlUrl="http://wireframes.linowski.ca/"/>
+      <outline text="Advances in Human-Computer Interaction" title="Advances in Human-Computer Interaction" type="rss" xmlUrl="http://www.hindawi.com/journals/ahci/rss.xml" htmlUrl="http://www.hindawi.com/"/>
+    </outline>
+  </body>
+</opml>

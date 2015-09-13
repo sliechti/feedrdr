@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Cyber Security Intelligence  created by Adam Kniffen in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Cyber Security Intelligence " title="Cyber Security Intelligence ">
+      <outline text="Speaking of Security - The RSA Blog and Podcast » RSA Research" title="Speaking of Security - The RSA Blog and Podcast » RSA Research" type="rss" xmlUrl="https://blogs.rsa.com/category/rsa-research/feed/" htmlUrl="https://blogs.rsa.com/"/>
+      <outline text="cureblog | IT Security Blog" title="cureblog | IT Security Blog" type="rss" xmlUrl="http://cureblog.de/feed/" htmlUrl="https://cureblog.de/"/>
+      <outline text="Home" title="Home" type="rss" xmlUrl="http://www.grouph3canada.com/EasyBlog/Categories/uncategorized.html?format=feed&amp;type=rss" htmlUrl="http://www.grouph3canada.com/"/>
+      <outline text="F-Secure Antivirus Research Weblog" title="F-Secure Antivirus Research Weblog" type="rss" xmlUrl="http://www.f-secure.com/weblog/weblog.rss" htmlUrl="https://www.f-secure.com/weblog"/>
+      <outline text="Cyber Trust Blog » Cybersecurity" title="Cyber Trust Blog » Cybersecurity" type="rss" xmlUrl="http://blogs.technet.com/b/security/rss.aspx" htmlUrl="http://blogs.microsoft.com/cybertrust"/>
+      <outline text="Microsoft Malware Protection Center" title="Microsoft Malware Protection Center" type="rss" xmlUrl="http://blogs.technet.com/b/mmpc/rss.aspx" htmlUrl="http://blogs.technet.com/b/mmpc/default.aspx"/>
+      <outline text="MSRC" title="MSRC" type="rss" xmlUrl="http://blogs.technet.com/b/msrc/rss.aspx" htmlUrl="http://blogs.technet.com/b/msrc/default.aspx"/>
+      <outline text="Security Research &amp; Defense" title="Security Research &amp; Defense" type="rss" xmlUrl="http://blogs.technet.com/b/srd/rss.aspx" htmlUrl="http://blogs.technet.com/b/srd/default.aspx"/>
+      <outline text="Dark Reading:" title="Dark Reading:" type="rss" xmlUrl="http://www.darkreading.com/rss/all.xml" htmlUrl="http://www.darkreading.com/"/>
+      <outline text="Fortinet Blog" title="Fortinet Blog" type="rss" xmlUrl="http://blog.fortinet.com/feed/index.xml" htmlUrl="http://blog.fortinet.com/feed"/>
+      <outline text="Threatpost | The first stop for security news" title="Threatpost | The first stop for security news" type="rss" xmlUrl="http://threatpost.com/feed/" htmlUrl="http://threatpost.com/"/>
+      <outline text="Detection | Prevention | Intelligence" title="Detection | Prevention | Intelligence" type="rss" xmlUrl="http://www.invincea.com/feed/" htmlUrl="http://www.invincea.com/"/>
+      <outline text="M-unition" title="M-unition" type="rss" xmlUrl="https://www.mandiant.com/blog/feed/" htmlUrl="https://www.mandiant.com/blog"/>
+      <outline text="Cisco Blog » Security" title="Cisco Blog » Security" type="rss" xmlUrl="http://feeds.feedburner.com/CiscoBlogSecurity" htmlUrl="http://blogs.cisco.com/"/>
+      <outline text="CERT Recently Published Vulnerability Notes" title="CERT Recently Published Vulnerability Notes" type="rss" xmlUrl="http://www.kb.cert.org/vulfeed" htmlUrl="http://www.kb.cert.org/vuls/"/>
+      <outline text="MalwareSigs" title="MalwareSigs" type="rss" xmlUrl="http://www.malwaresigs.com/feed/" htmlUrl="http://www.malwaresigs.com/"/>
+      <outline text="Malware Must Die!" title="Malware Must Die!" type="rss" xmlUrl="http://malwaremustdie.blogspot.com/feeds/posts/default" htmlUrl="http://blog.malwaremustdie.org/"/>
+      <outline text="Tracking Cybercrime" title="Tracking Cybercrime" type="rss" xmlUrl="http://cyb3rsleuth.blogspot.com/feeds/posts/default" htmlUrl="http://cyb3rsleuth.blogspot.com/"/>
+      <outline text="Stop Malvertising RSS Feed" title="Stop Malvertising RSS Feed" type="rss" xmlUrl="http://stopmalvertising.com/index.php?option=com_ninjarsssyndicator&amp;feed_id=1&amp;format=raw" htmlUrl="http://stopmalvertising.com/"/>
+      <outline text="XyliBox" title="XyliBox" type="rss" xmlUrl="http://www.xylibox.com/feeds/posts/default" htmlUrl="http://www.xylibox.com/"/>
+      <outline text="Malware don't need Coffee" title="Malware don't need Coffee" type="rss" xmlUrl="http://malware.dontneedcoffee.com/feeds/posts/default" htmlUrl="http://malware.dontneedcoffee.com/"/>
+      <outline text="Kahu Security" title="Kahu Security" type="rss" xmlUrl="http://www.kahusecurity.com/feed/" htmlUrl="http://www.kahusecurity.com/"/>
+    </outline>
+  </body>
+</opml>

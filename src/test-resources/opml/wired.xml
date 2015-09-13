@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>WIRED created by charlie melin in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="WIRED" title="WIRED">
+      <outline text="WIRED" title="WIRED" type="rss" xmlUrl="http://feeds.wired.com/wired/index" htmlUrl="http://www.wired.com/"/>
+      <outline text="WIRED » Reviews" title="WIRED » Reviews" type="rss" xmlUrl="http://feeds.wired.com/WiredReviews" htmlUrl="http://www.wired.com/"/>
+      <outline text="WIRED » Gadget Lab" title="WIRED » Gadget Lab" type="rss" xmlUrl="http://feeds.wired.com/GearFactor" htmlUrl="http://www.wired.com/"/>
+      <outline text="WIRED » Threat Level" title="WIRED » Threat Level" type="rss" xmlUrl="http://fulltextrssfeed.com/feeds.wired.com/wired27b" htmlUrl="http://www.wired.com/"/>
+      <outline text="Webmonkey" title="Webmonkey" type="rss" xmlUrl="http://www.webmonkey.com/feed/" htmlUrl="http://www.webmonkey.com/"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,4 @@
+
+Map DBFields to something else (smaller) for JSON.
+
+Make API backend standalone virt.x + JAX-RS. Separable into modules (Micro services)

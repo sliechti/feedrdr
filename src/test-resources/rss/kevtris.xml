@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>kevtris.org</title>
+	<atom:link href="http://blog.kevtris.org/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>http://blog.kevtris.org</link>
+	<description>Dorking Around With Electronics</description>
+	<lastBuildDate>Sat, 27 Apr 2013 19:16:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.5.1</generator>
+		<item>
+		<title>Perfboard Videobrain Fail</title>
+		<link>http://blog.kevtris.org/?p=125</link>
+		<comments>http://blog.kevtris.org/?p=125#comments</comments>
+		<pubDate>Sat, 27 Apr 2013 19:16:48 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=125</guid>
+		<description><![CDATA[I need something to poke on my logic analyzer of doom, so I thought I&#8217;d make up a Videobrain.  For those that don&#8217;t know, this is an ill-fated home computer that was released in 1978, and by 1979 it was already being sold at liquidation prices.   There&#8217;s a bit more information about it at the [...]]]></description>
+				<content:encoded><![CDATA[<p>I need something to poke on my logic analyzer of doom, so I thought I&#8217;d make up a Videobrain.  For those that don&#8217;t know, this is an ill-fated home computer that was released in 1978, and by 1979 it was already being sold at liquidation prices.   There&#8217;s a bit more information about it at the wikipedia article:</p>
+<p>http://en.wikipedia.org/wiki/VideoBrain_Family_Computer</p>
+<p>Basically it is a computer that uses a Fairchild F8 CPU and two custom ASICs along with a mess of TTL chips.  There&#8217;s a diminutive 36 key keyboard which apparently is tough to touch type on, a weird &#8220;top loading&#8221; style cartridge slot, and no less than 4 joystick ports.  Each joystick unfortunately is analog, with pots on the X and Y direction and a single fire button.  That&#8217;s the overview.  Awhile back I ran across 10 sets of the ASICs so I decided to make a perfboard version of the &#8216;brain because buying one is pretty much out of the question.  When they show up on ebay, which is rare, they fetch prices in the several hundred dollar range.  I figured with a bit of time I could build my own for much less.  So far, I think I have spent about $25-30 on the project.</p>
+<p>After buying a few things on ebay (perf board and pin headers mainly), and collecting chips (I actually had almost all of the chips, I only had to buy the 2101 SRAMs and the 3850 CPU and 3853 SRAM interface chips), I put it all together.  Total assembly time was 4 days.  I followed the schematic directly and simply reproduced it on the perf board.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain1.jpg"><img class="size-medium wp-image-119 aligncenter" alt="perfbrain1" src="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain1-300x143.jpg" width="300" height="143" /></a></p>
+<p style="text-align: left;">The first order of business was to make the &#8220;keyboard&#8221;.  I had a whole bunch of these little rubber dome push buttons which were perfect for the job.  I laid them out approximately like they are on the real unit.  The white connector at the top plugs into another similar board with most of the logic on it.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain2.jpg"><img class="alignnone size-medium wp-image-120" alt="perfbrain2" src="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain2-300x149.jpg" width="300" height="149" /></a></p>
+<p style="text-align: left;">After that, I added the 3850 CPU, the 74LS05&#8242;s for the joystick reading and the keyboard matrix wiring.  I added a 4050 buffer for the keyboard since the buttons have a fairly high resistance- around 500-1000 ohms when pressed.  The buffer then drives the port on the 3850.  The pin header lets me poke the various joystick inputs and the DB-9 connector.  The empty space in the lower left corner is for eventual DIN-5 and the DB-9 connectors if I feel like adding them.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain3.jpg"><img class="alignnone size-medium wp-image-121" alt="perfbrain3" src="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain3-300x228.jpg" width="300" height="228" /></a></p>
+<p style="text-align: left;">At this point, the 3853 SRAM interface and one of the EPROMs is on, and I finished wiring everything.  The 555 timer in the upper left corner reads the joysticks and the 74LS74 for audio is present too.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain5.jpg"><img class="alignnone size-medium wp-image-123" alt="perfbrain5" src="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain5-300x154.jpg" width="300" height="154" /></a></p>
+<p style="text-align: left;">Unfortunately, I thought I took more pics of the progress of the top board but apparently not.  In any event here is the top board done,which contains the two ASICs (UV201, UV202) and all the miscellaneous TTL stuff and the 8 SRAM chips.  Two of the sockets are individual pins, which are seen below each ASIC.  These hold one of the EPROMs and a larger 27C010 EPROM which can store all the games at once for testing.  These helped with wiring because I can simply run wires between the pins to save space.  The three 6 pin black connectors and that conspicuous empty space are for a plug-in video board.  The empty space will be for the chips that control the 27C010 to make it into a menued multicart if I get that far.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain4.jpg"><img class="alignnone size-medium wp-image-122" alt="perfbrain4" src="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain4-300x158.jpg" width="300" height="158" /></a></p>
+<p style="text-align: left;">The video board is plugged in now and installed.  It&#8217;s mainly all those resistors and two transistors that convert the digital outputs of the ASICs into the component video that the modulator chip likes.  The 2 caps and TO220 above that is a switching 5V regulator.  I feed 12V into the board which supplies 12V to the 4 40 pinners and the buck regulator drops it down to 5V for everything else.  At this point, I break out the multimeter and verify every connection on the two boards- every pin of every chip is verified to make sure it is going to the correct place.  This takes about 2 hours and I did find a few wiring flubs.  These were fixed, and I reverified connections.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain6.jpg"><img class="alignnone size-medium wp-image-124" alt="perfbrain6" src="http://blog.kevtris.org/wp-content/uploads/2013/04/perfbrain6-300x252.jpg" width="300" height="252" /></a></p>
+<p style="text-align: left;">And here&#8217;s everything all plugged together.  At this point I powered it up, and started probing chips with my calibrated finger to make sure nothing was getting too hot.  After that passed, I broke out the oscilloscope and started poking the oscillators.  The 14.3181MHz crystal pins were dead on the UV202.  I tried a few things, including a resistor across the pins but it just wouldn&#8217;t wiggle.  I could see inverter action on the pins though, so I knew there was indeed an inverter in there.  I tried another UV202 and now the crystal wiggles.   At this point I get kind of a sinking feeling, thinking that these ASICs might ALL be bad, and were pulls from a repair depot or similar.  I sure hope not.</p>
+<p style="text-align: left;">At this point, I poke the 4MHz crystal to see if it&#8217;s working, and it is indeed oscillating.  The clock line to the CPU is dead, however.  I press the reset button, and the clock bursts into life for a few milliseconds then dies again.  Repeated pressings of reset result in a similar thing happening.  At this point I am not quite sure what is going on, and some more prodding and poking later I check out the 4MHz crystal oscillator again.  Well, turns out it isn&#8217;t exactly 4MHz.  It&#8217;s more like 2.6MHz !!  Turns out the 4001 I chose to replace their 74C02 isn&#8217;t up to the task at 5V.  I drop in a 74HC02 and swap pins 1/3 and 11/13 since two of the four gates are &#8220;Backwards&#8221; from each other.  Now, I am getting a decent solid 4MHz on the crystal.  I check the CPU&#8217;s clock and it is indeed 2MHz, while it is running.</p>
+<p style="text-align: left;">But again, it only runs for a short time before dying.  I am pretty much out of ideas at this point and I need to really hook the logic analyzer up to do any more debugging, since this appears like it is going to be a difficult job.  I tried a few more of the UV201&#8242;s and 202&#8242;s and get the same result with each so it&#8217;s possible that chip that didn&#8217;t oscillate was a fluke, but I don&#8217;t know.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=125</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Setting up the Logic Analyzer</title>
+		<link>http://blog.kevtris.org/?p=110</link>
+		<comments>http://blog.kevtris.org/?p=110#comments</comments>
+		<pubDate>Wed, 17 Apr 2013 05:32:21 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=110</guid>
+		<description><![CDATA[Well, after putting the analyzer back together, I had to clone the HD before I used it (I didn&#8217;t want to disturb anything on the drive by even powering it up first).   You&#8217;d think this would be a simple project&#8230;. but oooh no. Let me recount the fail and eventual success. First things first, I [...]]]></description>
+				<content:encoded><![CDATA[<p>Well, after putting the analyzer back together, I had to clone the HD before I used it (I didn&#8217;t want to disturb anything on the drive by even powering it up first).   You&#8217;d think this would be a simple project&#8230;. but oooh no.</p>
+<p>Let me recount the fail and eventual success.</p>
+<p>First things first, I removed the drive from the analyzer almost as soon as I got it.  I put in a junk 4.3 gig SCSI drive of similar form factor so I could play around with the analyzer.  I plug a keyboard I had laying around in, and an IBM mouse I had.   I fire up the analyzer and it&#8217;s working fine.  When powered on the analyzer will show a black screen, then about 15 seconds later it changes the scan rate, then the numlock LED on the keyboard lights, another 5 seconds of black screen and the boot screen appears.</p>
+<p>It&#8217;s unhappy about the harddrive not being formatted how it would like it, but otherwise it&#8217;s fine.  I try to boot of the CDROM, which is done by typing BO &lt;some other stuff&gt; to BOot the machine.  Well, the B key on the keyboard doesn&#8217;t work!  I tried to enter it using the alt-numpad trick.. nope this isn&#8217;t a PC so that doesn&#8217;t work.  I take the keyboard apart, and trace the membrane.  Turns out there&#8217;s some microcracks in about 5 or 6 traces on the membrane&#8230; it&#8217;s unfixable so I extract the little tiny PCB and cable for use later and chuck the balance.</p>
+<p>Because my keyboard is dead and I don&#8217;t have another, I decide that it&#8217;s time to go into work to pick up another from our computer &#8220;boneyard&#8221;.  One Dell PS2 keyboard later, I&#8217;m back to try my luck again.  Plug it into the analyzer&#8230; fire it up&#8230; and nothing!!  Screen stays black, LED on keyboard never lights.  The keyboard works, I was using it earlier on another machine.</p>
+<p>After trying to boot it several more times, I am wondering if I somehow broke it or if somehow it&#8217;s not happy with the keyboard.  So I grab the pcb and wire from the dead one and plug it in and turn it back on.  This time the analyzer boots just fine and turns the numlock LED on, so I plug the Dell keyboard back in and turn it on.  Nothing.  Sooo, it doesn&#8217;t like the keyboard.  Great.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_drive_cloning.jpg"><img class="size-medium wp-image-115 aligncenter" alt="analyzer_drive_cloning" src="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_drive_cloning-300x247.jpg" width="301" height="247" /></a></p>
+<p style="text-align: left;">I figured at this point it&#8217;d be a good idea to clone that harddrive.  So I plug it all in, as seen in the picture above.  After burning an Ubuntu Rescue Remix CD, I pop it into the CDROM on the machine, start it up and it says &#8220;Booting from CD&#8230;&#8221;  then nothing.  The drive&#8217;s light illuminates, the motor starts, disc spins&#8230; then nothing.   5 more reboots confirm that it is not going to work.  My friend figures it could be the BIOS being so ancient is preventing the CD from booting, and I agreed.  No problem, we&#8217;ll just update its 1998 BIOS to a more modern one last modified in 2004.</p>
+<p style="text-align: left;">Get out the floppy disks, download the bios, pop the disk into the drive, click &#8220;my computer&#8221;&#8230; and hey, the A drive is missing!  Greeeat, this machine&#8217;s floppy is dead and the other machine with a floppy drive is currently dressed like a deer with its guts hanging out, and in no condition to boot into its usual OS.</p>
+<p style="text-align: left;">The solution is to email the bios file to work (After renaming the zip file, because Gmail does not allow exe&#8217;s even in ZIP files. grrrrr), then drive in and write it to two floppies.  I do not trust the data halflife of the 3.5 inch floppy disk.  Several times the disk fails to read properly and I&#8217;m stuck trying to copy data onto another to give it another try.  Fast forward to work- I got my floppy in the drive, hit a: in DOS and the drive makes very unhappy &#8220;I can&#8217;t even find the directory&#8221; sounds.  great.  &#8220;Abort, Retry, Fail?&#8221;  I pop in another floppy, and the same thing.  A third also results in the message and accompanying clunks and groans from the drive.  At this point I was wishing there was a &#8220;Pee in Drive Door&#8221; option to the fail prompt.</p>
+<p style="text-align: left;">This means yet another trip to the &#8220;boneyard&#8221; to harvest a hopefully working 3.5&#8243; drive to put into this machine.  A suitable donor was found, and it was grafted into place, and the machine rebooted.  THIS drive was liking my disks a bit better, and I managed to write the files I needed onto them.  I also changed out the Dell keyboard for a more ancient PS2 keyboard with the larger full size DIN and a converter to get it down to the smaller mini-DIN that computers use these days.  Great.</p>
+<p style="text-align: left;">Rushing back home, I try the keyboard on the analyzer&#8230; It works! great!  That&#8217;s one more problem out of my hair.  So, I plug the keyboard and its adapter into my test machine, plug the mouse&#8230; uh&#8230; PLUG THE MOUSE&#8230; DAMNIT!  nope.  I cannot plug the mouse in:  The adapter and the mouse&#8217;s overmolded ferrite bead is interfering and I cannot plug both in at the same time.   I briefly thought about hitting the ferrite with a hammer then cutting the overmolded plastic off to extract the shattered ceramic but decided against it.  Turns out I don&#8217;t need the mouse anyways.  Mice are for wusses.</p>
+<p style="text-align: left;">Going keyboard only, I pop in my floppy disk and boot into DOS and run the BIOS flashing program.  Amusingly, this goes without incident.  No problems.  I check the new BIOS to make sure the boot order is CD first, and it is.  Hitting reset, after putting my Rescue Remix in the drive, and waiting for the SCSI card&#8217;s gyrations, the drive spins up and I hear seeking! joy!  But it was not to be.</p>
+<p style="text-align: left;">&#8220;image checksum error, sorrx&#8230; &lt;symbol&gt;<br />
+boot fahled: press a key to retsy&#8230;&#8221;</p>
+<p style="text-align: left;">&#8220;fahled&#8221;?  &#8220;retsy&#8221;? &#8220;sorrx&#8221;?  What was this black magic appearing on my monitor?!  I am mad I didn&#8217;t take a picture of this, it would&#8217;ve been nicer.  But anyways, I reboot 3 more times and get some variation of the above.  On examination of the errors, they are all &#8220;off by one&#8221; errors- &#8220;sorry&#8221; vs. &#8220;sorrx&#8221; and so on- each wrong character has an issue with D0.  So, as can be seen in the above picture (waay up there), I have a second CDROM drive sitting on top of the machine.</p>
+<p style="text-align: left;">After replacing the drive, it boots! Rescue Remix is loading, which takes a long time.  It gets through to the end nearly and then croaks.  ClamAV (who ordered up virus scanning? I didn&#8217;t) is whining that there isn&#8217;t enough RAM to load itself.  Great.  I had 128 megs in there, which apparently wasn&#8217;t enough.  So I rummage around and find another 64 megs and pop it in and reboot.  It does the same thing.  greeeat.  After more rummaging, I cannot find anything else except a 256M stick that has my writing on it: &#8220;BAD&#8221; it says&#8230;  Well when I wrote that I was having other issues with the machine so maybe it wasn&#8217;t so bad after all?</p>
+<p style="text-align: left;">Plug the possibly bad RAM in, boot it up and run memtest86+.  After letting it gyrate and jitterbug on the RAM for 20-30 minutes, I deemed it good and rebooted into Rescue Remix.  So far so good- it is not whining about clamAV being out of memory any more.  A command line! Great!  After doing some Linuxy things to mount the dump drive the data&#8217;s going to, a quick run of ddrescue gets me copying my junky 4.3 gig test drive to the 20 gig IDE drive.</p>
+<p style="text-align: left;">Well, it&#8217;s copying but the drive definitely sounds very unhappy.   In fact, it sounds like a coffee grinder someone threw pebbles in!  Terrible grinding and buzzing noises.  They appear to be coming from the head actuator, though, and it seems to be reading.  After it was all said and done, there were 8 unreadable sectors.  I didn&#8217;t care though, this was the dry run and a test to see if everything would work.  Turns out it did.  The drive had hiphop MP3s on it, as I found out.  I dunno who put them on there or where they came from though, the drive was given to me ages ago.</p>
+<p style="text-align: left;">Elated that it finally is working, I power down and swap in the analyzer&#8217;s drive and fire back up.  After the 3-4 minute bootup, the prompt appears.  Unfortunately it is also locked up!  After 3 or 4 more cycles of this, I start mashing the keyboard as it&#8217;s getting ready to drop me to the command line and whatever I did worked (or the phase of the moon was just right)-  the command line is open for business.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_cloning.jpg"><img class="size-medium wp-image-111 aligncenter" alt="analyzer_cloning" src="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_cloning-300x232.jpg" width="300" height="232" /></a></p>
+<p>Woot! It&#8217;s copying!!! The copy goes absolutely uneventful, except for a minor flub at first that caused it to start copying the drive to a RAMdisk.  This got the full 20Mbyte/second until it filled up.  Whoops.  Copying to the proper destination was a bit slower, somewhere around 5Mbyte/second which is the maximum rate for that drive apparently (an old 20 gig IDE one).  The copy goes by and I take the drive out and put it back in the analyzer.  It only took me the better part of a day to do this.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_booting.jpg"><img class="size-medium wp-image-112 aligncenter" alt="analyzer_booting" src="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_booting-300x226.jpg" width="300" height="226" /></a></p>
+<p style="text-align: left;">YEAY! It&#8217;s booting! And it likes my ancient keyboard!  I had to blow away the root password and make another, and I poked around a little in the file system, then rebooted it and let it load and start up the main application.</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_booted.jpg"><img class="size-medium wp-image-113 aligncenter" alt="analyzer_booted" src="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_booted-300x227.jpg" width="300" height="227" /></a></p>
+<p style="text-align: center;">
+<p style="text-align: left;">Yeay, that works.  I have to log in as root at this point since I am unsure about how else to do it.  I think there&#8217;s a default user named &#8220;logic&#8221; but I haven&#8217;t read up about it.  At this point, the GUI starts and we&#8217;re poking around in it.  There&#8217;s just one problem.  The mouse is not working.  GRRRR.  Nope, it doesn&#8217;t like the damn mouse either!  After getting into a CLI window and poking around, I tried to start DOOM.  Yes, this logic analyzer ships with DOOM from the friggin&#8217; factory!!  I find it and try to launch it but it whines and won&#8217;t start.  At this point I shut it down and tried some other mice.  I had two more mice and it liked the second one (an old Microsoft ball mouse).</p>
+<p style="text-align: center;"><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_doom.jpg"><img class="size-medium wp-image-114 aligncenter" alt="analyzer_doom" src="http://blog.kevtris.org/wp-content/uploads/2013/04/analyzer_doom-300x230.jpg" width="300" height="230" /></a></p>
+<p style="text-align: left;">WOOT! SUCCESS!  It likes the mouse, and I start up DOOM and play a few levels!  Excelllent.  I wonder how many engineers were playing DOOM instead of debugging circuits?  The world may never know.  This sure beats the &#8220;Bugs&#8221; (a &#8220;Centipede&#8221; clone) easter egg game on my HP scope!  Oh yeah, I checked out the rest of the analyzer and everything seems to be in good shape, so I am ready to use it!</p>
+<p style="text-align: left;">More updates as I get to that point.</p>
+<p style="text-align: left;">
+<p style="text-align: center;">
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=110</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>I Got a Logic Analyzer, woot!</title>
+		<link>http://blog.kevtris.org/?p=81</link>
+		<comments>http://blog.kevtris.org/?p=81#comments</comments>
+		<pubDate>Sat, 13 Apr 2013 04:09:14 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=81</guid>
+		<description><![CDATA[Yep, after waiting awhile, I got an HP16700B logic analyzer. I decided I needed one to help me efficiently reverse engineer stuff. I can stuff a bunch of pins onto some chip leads on a PCB and then connect the probes and go to town. This particular unit I got has three acquisition cards in [...]]]></description>
+				<content:encoded><![CDATA[<p>Yep, after waiting awhile, I got an HP16700B logic analyzer. I decided I needed one to help me efficiently reverse engineer stuff. I can stuff a bunch of pins onto some chip leads on a PCB and then connect the probes and go to town. This particular unit I got has three acquisition cards in it. These babies have 2 sockets on each card which connects to a cable that ends with two cables for connection to the probe pods. Each pod has 17 inputs on it, so that means across the three cards I can monitor up to 204 signals at once! (3 cards * 2 plugs each * 2 cables per plug * 17 signals per cable). I seriously doubt I will ever need this much, but if I do I am set.</p>
+<p>This bad boy can record signals up to 667MHz and apparently do some very complicated state based capturing, though this is slower, around 150MHz or so. Since I am only going to be reverse engineering things like videogame systems with it, this should be more than plenty. After seeing what&#8217;s inside I feel kinda guilty too. This will be like swatting a fly with an ICBM.</p>
+<p>I have yet to turn it on or hook it up but I just HAD to open it up and poke around inside to see what makes it tick. As such, I took a bunch of pictures&#8230;. Sooo here it is!</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_open1.jpg"><img alt="hp16700_open1" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_open1-300x289.jpg" width="300" height="289" /></a></p>
+<p>Here&#8217;s the beast with the cover off.  I have already removed the harddrive at this point, a 9.1GB ultra 3 SCSI drive.  The date on the drive is July 2000.  I like the cable routing on here- everything is extremely well laid out and the cables are all nicely bent at 90 degree angles to take up the slack.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_open2.jpg"><img class="alignnone size-medium wp-image-107" alt="hp16700_open2" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_open2-300x251.jpg" width="300" height="251" /></a></p>
+<p>The riser boards have been removed, showing the CPU board and the interface board.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_cpu_top.jpg"><img class="alignnone size-medium wp-image-91" alt="hp16700_cpu_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_cpu_top-300x223.jpg" width="300" height="223" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_cpu_bot.jpg"><img class="alignnone size-medium wp-image-92" alt="hp16700_cpu_bot" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_cpu_bot-300x214.jpg" width="300" height="214" /></a></p>
+<p>The CPU board is pretty interesting.  That HP branded ASIC in the corner is actually a ceramic QFP.  You don&#8217;t see very many of those.  Also interesting to note is this DOES have GPIB; it&#8217;s on the header in the upper left corner, but it does not get connected.  The GPIB chips can be seen on the bottom (right top corner on the bottom).  There&#8217;s a piece of black tape on the PCB where the square cutout is for the ethernet jack (to the right of the GPIB connector).  I couldn&#8217;t quite figure this out at first- the magnetics are present for this phantom ethernet port as is the PHY and stuff.  I&#8217;m guessing on-board ethernet is 10 base-t.  Mine has a riser with 10/100 base-t on it, so I guess they didn&#8217;t want the metal part of the jack on the riser to touch it and short it out.  The small heatsunk chip is the video controller, and there&#8217;s 2 QFP RAMs under it on the bottom side for it.  The backup battery is kinda lame, it&#8217;s a BR2325 which is a crappy size and worse capacity than the more common CR2032.  I am going to just stuff a CR2032 in there since it has more ma/h too!  240mah  for the CR2032 vs. 165mah for the br2325.</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_options_bot.jpg"><img class="alignnone size-medium wp-image-84" alt="hp16700_options_bot" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_options_bot-300x183.jpg" width="300" height="183" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_options_top.jpg"><img class="alignnone size-medium wp-image-83" alt="hp16700_options_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_options_top-300x176.jpg" width="300" height="176" /></a></p>
+<p>These are the three option boards.  There&#8217;s an ethernet board, extra RAM (they call this &#8220;option 003&#8243; which is the top left board, and then the smaller board is either cache RAM or more video memory.  I am not sure which.  These just simply plug in the top and use some plastic pegs along with the connectors for support.</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_scsi_top.jpg"><img class="alignnone size-medium wp-image-85" alt="hp16700_scsi_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_scsi_top-300x192.jpg" width="300" height="192" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_scsi_bot.jpg"><img class="alignnone size-medium wp-image-86" alt="hp16700_scsi_bot" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_scsi_bot-300x193.jpg" width="300" height="193" /></a></p>
+<p>This is the SCSI controller.  It&#8217;s a pretty impressive board, with two Xilinx FPGAs and an Altera one.  I wonder if the FPGAs fight, being from different makers and all?  There&#8217;s a ceramic PLCC on here which is pretty rare, too (a non-windowed one that is) and a PCI chip.   There&#8217;s two threaded standoffs mounted on the interface board and this board plugs in and screws down.  When I got it, the standoff was the wrong size and it had been cranked down, which bent the corner of the board about 2-3mm.  I hope this didn&#8217;t break anything.  It appears to have been done at the factory though, so I assume it&#8217;s fine.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_interface_bot.jpg"><img class="alignnone size-medium wp-image-87" alt="hp16700_interface_bot" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_interface_bot-300x149.jpg" width="300" height="149" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_interface_top.jpg"><img class="alignnone size-medium wp-image-88" alt="hp16700_interface_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_interface_top-300x159.jpg" width="300" height="159" /></a></p>
+<p>This is the interface board.  It connects the card board to the CPU board and various other things.  There&#8217;s another FPGA on here and some random TI chips and various buffer chips, too.  There&#8217;s also a round blue piezo feeper.  The bottom of the board had some flux or something on it which looked kinda nasty, on that silver pad area, so I cleaned it off with some alcohol.  It appears to have been flux from where those two through hole diodes were soldered on.</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_chassis_bottom.jpg"><img class="alignnone size-medium wp-image-82" alt="hp16700_chassis_bottom" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_chassis_bottom-300x269.jpg" width="300" height="269" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_bottom_top.jpg"><img class="alignnone size-medium wp-image-89" alt="hp16700_bottom_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_bottom_top-300x130.jpg" width="300" height="130" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_bottom_bot.jpg"><img class="alignnone size-medium wp-image-90" alt="hp16700_bottom_bot" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_bottom_bot-300x137.jpg" width="300" height="137" /></a></p>
+<p>Here&#8217;s the bottom.  There&#8217;s two .025&#8243; pitch ribbon cables connecting it to the interface board.  I really liked the copper thieving on this board.  This is the little rectangles on the board.  These are used to equalize copper usage so that when the board is made it is less likely to warp or delaminate during soldering, because the copper area vs. etched areas are equalized.   The other interesting thing is there are spark gaps built onto the board, too!  These are probably hard to see in the picture, but are on the connector connections on the bottom.  very small traces next to each other with the mask pulled back.</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_slot_top.jpg"><img class="alignnone size-medium wp-image-94" alt="hp16700_slot_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_slot_top-300x233.jpg" width="300" height="233" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_slot_bot.jpg"><img class="alignnone size-medium wp-image-93" alt="hp16700_slot_bot" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_slot_bot-300x233.jpg" width="300" height="233" /></a></p>
+<p>Here&#8217;s the slot board.  Not much going on here, though those three huge diodes are kinda neat.  I dunno why they have these here, they are reverse biased in normal operation, guess they wanted to check possible negative excursions on power.   The copper thieving is again evident on here.  The pattern isn&#8217;t very regular either.   The three large white minifit jr. plugs connect to the power supply.</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_acq_top.jpg"><img class="alignnone size-medium wp-image-101" alt="hp16700_acq_top" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_acq_top-300x168.jpg" width="300" height="168" /></a></p>
+<p>HP16715A Acquisition card.  This is the beast that does the digital damage.  The specs are:</p>
+<p>167MHz state667MHz timing</p>
+<p>2Msample/channel depth</p>
+<p>68 channels,  or 34 channels with 4M/channel depth.</p>
+<p>Up to 5 of these cards can be cascaded for 340 channels!!!  Oh, and if that is not enough, you can get an HP16701 expansion chassis, for a total of 780 channels.  Sheesh.  I wonder what you&#8217;d need that many for.   To be fair though, you can get other types of cards to plug into this beast-  2 channel oscilloscope, function/waveform generator and I&#8217;m sure others.  There&#8217;s also some much faster cards which most likely use ECL devices.</p>
+<p>Looking at the board, it&#8217;s got a metric assload of SOIC RAM chips on here&#8230; 34 to be exact.  There&#8217;s two HP ASICs with heatsinks, an Actel FPGA and four HP level comparator chips on the inputs to detect logic levels.  The little QFP near the bottom middle is an octal voltage DAC, doubtlessly being used to set the threshold voltage.  I looked it up and that&#8217;s a $50 part.  (sorry, can&#8217;t remember the part number.  It&#8217;s made by Analog Devices.  I would check but I slid the cards back in already).</p>
+<p>Two of the cards were ganged when I got it.  This is how that works:</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_acq_connect.jpg"><img class="alignnone size-medium wp-image-102" alt="hp16700_acq_connect" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_acq_connect-282x300.jpg" width="282" height="300" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_connector.jpg"><img class="alignnone size-medium wp-image-103" alt="hp16700_connector" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_connector-300x224.jpg" width="300" height="224" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_acq_connected.jpg"><img class="alignnone size-medium wp-image-104" alt="hp16700_acq_connected" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_acq_connected-300x107.jpg" width="300" height="107" /></a></p>
+<p>There&#8217;s two little flex cables that connect near the ASICs&#8230; there&#8217;s a connector on both the top and bottom, and 5 ribbon cable slots on each board.  What happens is you can connect up to 5 boards daisy chain fashion using the flex cables, then run the ribbon cables- 2 from the top 2 boards, 2 from the bottom 2 boards and connect them to the middle board which is then the master.</p>
+<p>It&#8217;s a right pain to insert two of these together into the analyzer, I&#8217;d like to see the contortions needed to do all five!  Those connectors are BGA also, so I wouldn&#8217;t want to break them.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_psmounted.jpg"><img class="alignnone size-medium wp-image-108" alt="hp16700_psmounted" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_psmounted-300x170.jpg" width="300" height="170" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_nameplate.jpg"><img class="alignnone size-medium wp-image-96" alt="hp16700_supply_nameplate" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_nameplate-292x300.jpg" width="292" height="300" /></a></p>
+<p>&nbsp;</p>
+<p>Last up is the power supply.  This supply is an absolute thing of beauty.  It&#8217;s also an insane power beast capable of up to 700W.  This is pretty surprising for something made in 2000.  I am guessing that most of this power is for the cards, however.  There&#8217;s no less than two 120mm fans blowing directly on the sides of the card cages, and a third 120mm fan to cool the rest of the guts (and two little fans on the supply).  The supply is also a modular one&#8230;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_open.jpg"><img class="alignnone size-medium wp-image-97" alt="hp16700_supply_open" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_open-300x300.jpg" width="300" height="300" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supplies_end.jpg"><img class="alignnone size-medium wp-image-99" alt="hp16700_supplies_end" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supplies_end-300x146.jpg" width="300" height="146" /></a></p>
+<p>Removing the top cover reveals that it&#8217;s what amounts to a voltage doubler/rectifier and what appears to be a power factor corrector.  Everything in this supply is absolutely top notch quality.  All Panasonic caps, FR4 PCB, excellent heatsinks and magnetics&#8230; the works!  I like the little connector PCB on the end.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_mainframe.jpg"><img class="alignnone size-medium wp-image-98" alt="hp16700_supply_mainframe" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_mainframe-300x238.jpg" width="300" height="238" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_units.jpg"><img class="alignnone size-medium wp-image-100" alt="hp16700_supply_units" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_supply_units-300x223.jpg" width="300" height="223" /></a></p>
+<p>The supplies simply drop onto the mainframe and screw down, connecting with .1&#8243; headers&#8230; which are carrying 360V.  The supplies are connected to give out 5.1V at 35A, -5.2V at 35A, 3.3V at 70A, -3.3V at 35A, 12V at 5A and -12V at 5A.  This is a lot of power.  I was kinda amused to see that they wired up some of those supplies &#8220;backwards&#8221; to get the negative voltages- I guess they are isolated output, so why not?  Each supply has a pot to tweak the voltage, and two of the 3.3V supplies are tied together with a short jumper, presumably because both of their outputs are connected together.  This should allow them to load share properly.  Each supply (except the 12/-12V one) has a separate 2 pin connector coming off of it for what I assume is a power good signal.  There&#8217;s a 4 pin rainbow ribbon that comes off the mainframe board which I believe controls soft power.  There&#8217;s no &#8220;hard&#8221; AC power switch on this, the little rocker on the front panel for power is low current.</p>
+<p>And finally, the back panel. Sorry quality isn&#8217;t the greatest but it&#8217;s all I got.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_back.jpg"><img class="alignnone size-medium wp-image-105" alt="hp16700_back" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_back-300x195.jpg" width="300" height="195" /></a> <a href="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_empty_chassis.jpg"><img alt="hp16700_empty_chassis" src="http://blog.kevtris.org/wp-content/uploads/2013/04/hp16700_empty_chassis-300x265.jpg" width="300" height="265" /></a></p>
+<p>In the next post, I will show off the cables and test pods and maybe some software things.  I need to hack it first before I can use it, because there&#8217;s a password on it.  This should be fairly easy to get rid of, however.  I am going to clone the drive before I start dorking with it, in case there&#8217;s anything useful or interesting on it.  I managed to get the install CD for it so I will most likely start with a clean install before I start using it.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=81</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>NANDputer lives!</title>
+		<link>http://blog.kevtris.org/?p=62</link>
+		<comments>http://blog.kevtris.org/?p=62#comments</comments>
+		<pubDate>Fri, 15 Mar 2013 04:38:26 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[Random]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=62</guid>
+		<description><![CDATA[Yep, it&#8217;s been a long time since I&#8217;ve posted anything on here, so I hope to remedy that by posting some updates of the various projects. First on the list is the NANDputer.   What is a NANDputer?  it&#8217;s a computer made out of nothing but NAND gates of course!  I dunno why, but I thought [...]]]></description>
+				<content:encoded><![CDATA[<p class="size-medium wp-image-63">Yep, it&#8217;s been a long time since I&#8217;ve posted anything on here, so I hope to remedy that by posting some updates of the various projects.</p>
+<p class="size-medium wp-image-63">First on the list is the NANDputer.   What is a NANDputer?  it&#8217;s a computer made out of nothing but NAND gates of course!  I dunno why, but I thought it&#8217;d be fun to make this.  I first had to work out how various parts of a CPU would be made out of NANDs, did a bunch of tests and went to town.</p>
+<p class="size-medium wp-image-63">The design took about 2 months to come up with and make.   At the bottom of the post is a few statistics on gate usage and count of each type (2 input, 3 input, 4 input, etc).  As I suspected, the quantity vs. gate input count follows a pretty steep curve, with most gates being 2 inputs, and the fewest being 13 input gates.</p>
+<p class="size-medium wp-image-63">Everything on the design is made out of NAND gates, even the 7 segment decoding.   The last PCB though has a few non-NAND gate chips like an NES PPU and a serial chip and stuff, but it&#8217;s just a peripheral board and is not part of the NANDputer proper.  (Eventually I want to make a NAND UART and replace that peripheral board).</p>
+<p class="size-medium wp-image-63">The basic architecture of the computer is actually fairly conventional.  There&#8217;s an accumulator, instruction skipping (like on PIC) for decision making, a full ALU (and, add, or, xor, subtract, add with carry, subtract with borrow, set all bits, clear all bits, shifting), 8 bit registers, separate RAM/ROM areas (harvard arch), and bit set/clearing.  There&#8217;s a 3 level stack, and even an interrupt!</p>
+<p class="size-medium wp-image-63">While the CPU architecture is fairly conventional, the way it is implemented isn&#8217;t.  I went with a bit-serial setup on here to save gates.  The ALU for example is only 1 bit, with a &#8220;latching&#8221; carry so operations are performed a bit at a time on the 8 bit registers/memory.  The program counter is also bit-serial, and on the first youtube video you can see the carry propagating during the incrementing of it.</p>
+<p class="size-medium wp-image-63">The downside of course is that this is much slower than a parallel architecture, but this way takes vastly fewer gates.  It takes 96 clock cycles to run a single instruction:  There&#8217;s 16 &#8220;T&#8221; states and 3 non-overlapping clocks generated using a 6 stage johnson counter with some NAND decoding.   (The flipflops that form the johnson counter are made from NANDs too).  Thus, it&#8217;s 16*9 or 96 cycles per instruction.  The clock runs at 10MHz, so this is a bit over 100KIPs (thousands of instructions per second).  This sounds really slow but it isn&#8217;t TOO slow.  It&#8217;s faster than a TMS1000, and it&#8217;s only 2-3x slower than a Commodore 64 which I estimate at 250-300kips when it runs at 1MHz (3 and 4 cycle instructions being some of the more common ones).</p>
+<p class="size-medium wp-image-63">I eventually want to load a text adventure game on it, then hook it up to the internet and let people telnet into it and play it!  So far, I have gotten a few test programs to run on it using my 8 word &#8220;bogorom&#8221;:</p>
+<div id="attachment_65" class="wp-caption alignnone" style="width: 269px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/bogorom_done.jpg"><img class="size-medium wp-image-65" alt="8 word test ROM" src="http://blog.kevtris.org/wp-content/uploads/2013/03/bogorom_done-259x300.jpg" width="259" height="300" /></a><p class="wp-caption-text">8 word test ROM</p></div>
+<p class="size-medium wp-image-63">This is made of 32 16 position rotary dip switches, which form 8 words of ROM (program ROM is 16 bits wide).  Each LED by that particular row lights up when it is being accessed.  This plugs into the ROM port.  It&#8217;s just 32 switches, 128 diodes, two 74HC245&#8242;s, a 74138, and a 74123 astable multivibrator chip to add wait states (this is mainly for testing- I want to use some more exotic ROM some time).</p>
+<p class="size-medium wp-image-63">Quick overview of the various PCBs:</p>
+<div id="attachment_66" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/timing-board-top.jpg"><img class="size-medium wp-image-66" alt="Timing board" src="http://blog.kevtris.org/wp-content/uploads/2013/03/timing-board-top-300x151.jpg" width="300" height="151" /></a><p class="wp-caption-text">Timing board</p></div>
+<div id="attachment_67" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/timing-board-bottom.jpg"><img class="size-medium wp-image-67" alt="Timing board" src="http://blog.kevtris.org/wp-content/uploads/2013/03/timing-board-bottom-300x152.jpg" width="300" height="152" /></a><p class="wp-caption-text">Timing board</p></div>
+<p>First stop is the timing board.  It generates the 16 T state phases and has the johnson counter to produce the three nonoverlapping clock phases, denoted phi0 through phi2.  To latch data into a register, one of these clock phases is NANDed with one of the T states.  The crystal oscillator is on the timing board along with the single stepping and animate oscillator.  Interestingly, the crystal I selected was a 3.6864MHz one, but the NAND oscillator is slllightly overdriving it and it&#8217;s actually running at 3x this!  About 11MHz as shown on the frequency counter.  I will eventually change it out to see how fast it&#8217;ll go.  To quote photonicinduction, I will &#8220;Crank &#8216;er up till she pops&#8221; and it quits functioning properly.  I might be able to get it up to 20MHz before the CPU malfunctions.</p>
+<div id="attachment_68" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/PCH-top.jpg"><img class="size-medium wp-image-68" alt="Program counter high" src="http://blog.kevtris.org/wp-content/uploads/2013/03/PCH-top-300x154.jpg" width="300" height="154" /></a><p class="wp-caption-text">Program counter high</p></div>
+<div id="attachment_69" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/PCL-top.jpg"><img class="size-medium wp-image-69" alt="Program counter low" src="http://blog.kevtris.org/wp-content/uploads/2013/03/PCL-top-300x147.jpg" width="300" height="147" /></a><p class="wp-caption-text">Program counter low</p></div>
+<p>Next up is the program counter.  Each board handles 8 bits of it.  There&#8217;s the basic program counter latches, the 1 bit half adder to increment it, and the 3 level stack.  The stack takes up most of the two boards.   There&#8217;s not much more to it.</p>
+<p>&nbsp;</p>
+<div id="attachment_70" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/ROM_and_misc_logic_board.jpg"><img class="size-medium wp-image-70" alt="ROM and misc. logic" src="http://blog.kevtris.org/wp-content/uploads/2013/03/ROM_and_misc_logic_board-300x160.jpg" width="300" height="160" /></a><p class="wp-caption-text">ROM and misc. logic</p></div>
+<p>This board contains the ROM, and a header for a cable (not on this picture).  The added header runs to the bogoROM board.  A bunch of the random logic is on here- interrupt handling and JSR instruction  (jump to subroutine, aka &#8220;call&#8221;) stuff.  The EPROM is a 64K*16 bit model.  The NANDputer supports 64K words of program ROM, in 16 4K banks.  The program counter only increments the lower 12 bits, while the upper 4 are latched.  This is mainly due to running out of T states to increment all the bits.  If I extended the T state count, I could&#8217;ve incremented all 16.</p>
+<div id="attachment_71" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/indexers_bad_hair_day.jpg"><img class="size-medium wp-image-71" alt="Indexer's bad hair day" src="http://blog.kevtris.org/wp-content/uploads/2013/03/indexers_bad_hair_day-300x208.jpg" width="300" height="208" /></a><p class="wp-caption-text">Indexer&#8217;s bad hair day</p></div>
+<div id="attachment_72" class="wp-caption alignnone" style="width: 310px"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/indexer_done.jpg"><img class="size-medium wp-image-72" alt="Indexer done" src="http://blog.kevtris.org/wp-content/uploads/2013/03/indexer_done-300x169.jpg" width="300" height="169" /></a><p class="wp-caption-text">Indexer done</p></div>
+<p>Next is the indexer.  Its job is to perform relative addressing, for reading or writing arrays in memory using the index register (X).  The first picture of it is complete, but the wires have not been &#8220;dressed&#8221; nicely to make it look nice and tidy.  It&#8217;s mainly some multiplexing and stuff.</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/RAM-board-top.jpg"><img class="alignnone size-medium wp-image-73" alt="RAM board top" src="http://blog.kevtris.org/wp-content/uploads/2013/03/RAM-board-top-300x165.jpg" width="300" height="165" /></a></p>
+<p>The RAM board is next, and gets most of its inputs from the indexer.  I have an 8K*8 bit SRAM on here.  The empty spot on the board is for a RAM header to use external RAM devices.  I hope to use core memory or a delay line memory for RAM, eventually.</p>
+<div>
+<dl id="attachment_75">
+<dt><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/ALU-wires-undressed.jpg"><img alt="ALU" src="http://blog.kevtris.org/wp-content/uploads/2013/03/ALU-wires-undressed-300x168.jpg" width="300" height="168" /></a></dt>
+<dd>ALU</dd>
+</dl>
+</div>
+<p>The ALU is after the RAM board.  Its job is fairly obvious.  It can add, subtract, rotate left, rotate right, increment, decrement, AND, OR, XOR, set all bits, clear all bits and set/clear individual bits.  I have not dressed the wires since I was still working on it.  I think I have it fully debugged.  This was the hardest part to debug and design due to the convoluted logic I employed.</p>
+<p>&nbsp;</p>
+<p><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/IO-Board-missing-audio-circuits.jpg"><img class="alignnone size-medium wp-image-74" alt="IO Board (missing audio circuits)" src="http://blog.kevtris.org/wp-content/uploads/2013/03/IO-Board-missing-audio-circuits-300x162.jpg" width="300" height="162" /></a></p>
+<p>The IO board isn&#8217;t very NAND-ey but this is peripherals.  I don&#8217;t think making an audio or video chip would be terribly easy to do out of NAND gates.  I will probably eventually replace this with a board with a NAND made UART, however.  On this board are two 82C55 triple 8 bit parallel ports, 82C51 UART, 82C54 triple timer, 29F002 2Mbit 8 bit flash ROM (for storing data), RP2C02 NES PPU with 32K of SRAM, SP0256-AL2 speech chip, SN76489 sound chip, and a YM2413 FM chip.  There&#8217;s also an AY-3-8912 sound chip, too.</p>
+<div>
+<dl id="attachment_64">
+<dt><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/fully-populated-backplane.jpg"><img alt="All Nandputer boards installed into the backplane" src="http://blog.kevtris.org/wp-content/uploads/2013/03/fully-populated-backplane-300x274.jpg" width="300" height="274" /></a></dt>
+<dd>All Nandputer boards installed into the backplane</dd>
+</dl>
+</div>
+<p>To hook it all together is a backplane.   The backplane ties all of them together, and the display board plugs into this, too.</p>
+<p class="size-medium wp-image-75"><a href="http://blog.kevtris.org/wp-content/uploads/2013/03/frontpanel_all_leds.jpg"><img alt="Front panel of the NANDputer with all the LEDs and controls " src="http://blog.kevtris.org/wp-content/uploads/2013/03/frontpanel_all_leds-300x200.jpg" width="300" height="200" /></a></p>
+<p class="size-medium wp-image-63">The display board plugs into the front of the backplane, and shows what&#8217;s going on.  The LED descriptions:</p>
+<p class="size-medium wp-image-63">Top row is the program counter address and the 16 bit instruction word at this address.</p>
+<p class="size-medium wp-image-63">The next three rows of LEDs (16 per row) are the 3 levels of the stack.  Under this is the halt LED (left) and the 16 T states</p>
+<p class="size-medium wp-image-63">Then next row is 13 LEDs.  the first 12 LEDs are the RAM address (12 bits) and an unused LED.</p>
+<p class="size-medium wp-image-63">The bottom row is the accumulator (left 8 bits) and status bits (carry, sign, zero, interrupt and an extra).</p>
+<p class="size-medium wp-image-63">Switches on the very bottom left to right are:  reset, instruction / T-state,  run/stop,  free-run/animate, and single step.  The pot adjusts the speed at which it animates (automatic single step).</p>
+<p class="size-medium wp-image-63">An early video of it running the program counter (note how the address &#8220;settles&#8221; down as the carry propagates up the bits making up the program counter.)</p>
+<p><iframe width="560" height="315" src="http://www.youtube.com/embed/buw1G5q4RDk?list=UUOkbec10-yP76r-NXibyMew" frameborder="0" allowfullscreen></iframe></p>
+<p class="size-medium wp-image-63">The other video is running a small 8 step program that causes the accumulator to shift a bit back and forth in &#8220;Knight Rider&#8221; fashion.   The BogoROM is used to store the program.</p>
+<p><iframe width="560" height="315" src="http://www.youtube.com/embed/zIOiiTpCiwM?list=UUOkbec10-yP76r-NXibyMew" frameborder="0" allowfullscreen></iframe><br />
+Here&#8217;s the down and dirty on the gate and chip counts:</p>
+<pre>Gate and Chip Counts
+--------------------
+
+Resource usage by chip type:
+
+gate:   00   10   20   30  133   03   total
+        -----------------------------------
+display 10    1   10    3    0    8   32
+timing  21   16    9    0    0    0   46
+PCL     39   18    0    0    2    0   59  
+PCH     39   16    4    0    0    0   59
+ROM     22    5    7    5    1    0   40
+indexer 43    4   10    3    0    0   60
+RAM     42    7    2    4    1    0   56
+-------------------------------------------
+total  216   67   42   15    4    8   352
+
+Resource usage by gate type:
+
+gate:   2-in  3-in  4-in  8-in 13-in  2-OC unusd total
+------------------------------------------------------
+display  40     3    20     3     0    32   -2     96
+timing   84    48    18     0     0     0    0    150
+PLC     156    54     0     0     2     0   -1    212
+PCH     156    48     8     0     0     0   -1    211
+ROM      88    15    14     5     1     0    0    123
+indexer 172    12    20     3     0     0    0    207
+RAM     168    21     4     4     1     0    0    198
+------------------------------------------------------
+total   864   201    84    15     4    32   -4   1196
+%     72.00 16.75  7.00  1.25  0.33  2.67 
+
+unused gates
+------------
+
+gate:   2-in  3-in  4-in  total
+-------------------------------
+display   1     0     1     2
+timing    0     0     0     0
+PCL       1     0     0     1
+PCH       0     1     0     1
+ROM       0     0     0     0
+indexer   0     0     0     0
+RAM       0     0     0     0
+-------------------------------
+total     2     1     1     4</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=62</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title></title>
+		<link>http://blog.kevtris.org/?p=60</link>
+		<comments>http://blog.kevtris.org/?p=60#comments</comments>
+		<pubDate>Thu, 17 Jun 2010 16:19:51 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[FPGA]]></category>
+		<category><![CDATA[SID]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=60</guid>
+		<description><![CDATA[Well, I have deemed the FPGA Synthesizer &#8220;done&#8221;, at least in its current revision. I have still not lit up the MIDI port, but I don&#8217;t think I want to write a bunch of MIDI code in 6502 asm, so for now I have put the project on ice. It has exceeded all my expectations [...]]]></description>
+				<content:encoded><![CDATA[<p>Well, I have deemed the FPGA Synthesizer &#8220;done&#8221;, at least in its current revision.  I have still not lit up the MIDI port, but I don&#8217;t think I want to write a bunch of MIDI code in 6502 asm, so for now I have put the project on ice.  It has exceeded all my expectations at this point.</p>
+<p>So far, it plays the following stuff (all in hardware):</p>
+<p>.NSF  (complete with support for NES, VRC6, VRC7, FME7, N106, MMC5, FDS expansion audio)<br />
+.SID (complete, with quad-SID support, filters, RSID, PSID, and Compute! Gazette MUS format)<br />
+.GBS (complete, with normal Gameboy and Gameboy Colour support)<br />
+.SAP (complete, with dual POKEYs)<br />
+.SGC (complete, with support for SN76489, Colecovision, SMS, Gamegear modes)</p>
+<p>It also plays a variety of FM music formats through a Verilog&#8217;d OPL3 (.CMF, .RAW, .IMF, .WLF, .D00)</p>
+<p>Internally the following sound chips are written in Verilog by me:</p>
+<p>6581/6582/8580 SID (quad, with full filters, full combined waveforms, proper ADSR w/ original bugs, 95% of a C64 to run RSID tunes, hardware filters)<br />
+RP2A03G NES (all expansion chips supported: VRC6, VRC7, FME7, N106, MMC5, FDS)<br />
+POKEY (As found on the Atari 8 bit line)<br />
+SN76489 (used for GG/SMS/Coleco)<br />
+AY-3-8910 (Written, but not used by a replayer yet)<br />
+OPL3 (FM support, can play OPL2 music also)</p>
+<p>There&#8217;s around 70 or 80 separate sound channels that eventually get mixed down inside to the final DAC outputs.  Most outputs have full user control of volume and channel selection, and if it gets filtered by the hardware filters or not.</p>
+<p>The packaging was finally finished, along with the capacitive touch panel for the user interface.  Battery charging and control are likewise finished, and I ended up implementing a first order derivative for the end of charge detection.  Voltage depression isn&#8217;t very detectable on NiMh cells, so I couldn&#8217;t use that easily.  The PIC&#8217;s ADC was too noisy to pick up the changes, so I went with delta temperature over delta time.  When temp rise hits 3 degrees/minute, the charging is terminated.  It works very well and doesn&#8217;t detect false ends of charge.  There&#8217;s also a maximum temperature cutoff and a maximum time cutoff in case of some other kind of failure.</p>
+<hr />
+<p><a href = "./blogfiles/synth_ui_board.JPG"><br />
+<img src="./blogfiles/tsynth_ui_board.JPG"><br />
+</a></p>
+<p>
+This is the UI PCB, it is a capacitive touch based affair.
+</p>
+<hr />
+<p><a href = "./blogfiles/synth_front.JPG"><br />
+<img src="./blogfiles/tsynth_front.JPG"><br />
+</a></p>
+<p>
+Front of the finished synthesizer.
+</p>
+<hr />
+<p><a href = "./blogfiles/synth_side.JPG"><br />
+<img src="./blogfiles/tsynth_side.JPG"><br />
+</a></p>
+<p>
+Side view.
+</p>
+<hr />
+<p><a href = "./blogfiles/synth_back.JPG"><br />
+<img src="./blogfiles/tsynth_back.JPG"><br />
+</a></p>
+<p>
+Back view, showing power button and charge LED.
+</p>
+<hr />
+<p><a href = "./blogfiles/synth_inside.JPG"><br />
+<img src="./blogfiles/tsynth_inside.JPG"><br />
+</a></p>
+<p>
+The guts.
+</p>
+<hr />
+<p>So that&#8217;s the finished result.  It didn&#8217;t come out too bad after all, but I did have to hack up the UI PCB some to make it work-  Specifically I had to mount it on the top of the box and run wires to a cut up PCB inside that has the touch chip on it.  The plastic was just way too thick on the enclosure for it to work through the plastic, unfortunately.  But, the end result is pretty nice and the capacitive touch stuff works extremely well, so in the end it all worked out.</p>
+<p>I will be working on a new synthesizer sometime in the future, which will be programmed in C, making development alot easier.  Midi&#8217;s being reserved for that time.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=60</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>FPGA Synthesizer Progress</title>
+		<link>http://blog.kevtris.org/?p=32</link>
+		<comments>http://blog.kevtris.org/?p=32#comments</comments>
+		<pubDate>Sun, 04 Oct 2009 16:47:47 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[FPGA]]></category>
+		<category><![CDATA[SID]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=32</guid>
+		<description><![CDATA[Well it&#8217;s been awhile.  I haven&#8217;t been lazy, far from it.  Been so busy I haven&#8217;t had much chance to update the blog!  I spent the last 2 months learning verilog, and then performing a 100% conversion of my project from schematic entry to 100% verilog!  I didn&#8217;t know anything about verilog until having a [...]]]></description>
+				<content:encoded><![CDATA[<p>Well it&#8217;s been awhile.  I haven&#8217;t been lazy, far from it.  Been so busy I haven&#8217;t had much chance to update the blog!  I spent the last 2 months learning verilog, and then performing a 100% conversion of my project from schematic entry to 100% verilog!  I didn&#8217;t know anything about verilog until having a little discussion with someone about it, and it seemed like a good time to learn it.   I already had a working project in schematic entry (around 150 schematics all linked together in this case) and figured it&#8217;d be a good learning experience to port it to verilog.</p>
+<p>Long story short, the conversion was a success, and I ended up fixing a few bugs and adding some features along the way.  I ended up 100% redoing my OPL3 core, and vastly simplified and improved it, reducing device resource usage immensely.    To date, I have full support for the following sound chips:  SID (quad),  POKEY (quad), OPL3 (full support),  NES audio, N106 (8 chan wavetable), VRC6 (3 channels), VRC7 (FM synth), MMC5 (two squares+digi), FME7 (3 squares), and FDS audio (1 chan wavetable).  The wishlist of additions is:   Atari 2600 with extended range, Gameboy sound, and coleco/SMS sound (SN76489).  These shouldn&#8217;t be too tough, but before I can implement those I need to emulate the target CPUs which are Z80 and GBCPU.</p>
+<p>This leads me to the current work:  I created a small RISC CPU for the FPGA which can emulate other 8 bit CPUs with cycle accuracy.  I figured that emulating the 8 bit CPUs would be by far more resource efficient on the FPGA, since to change the emulated CPU I only have to change the code in the block RAM.  Thus, 6502, Z80, GB CPU, etc. can be accomodated without sacrificing accuracy or speed, while only requiring one peice of hardware.  Ironically, the RISC CPU is smaller than the 6502 it will replace in FPGA resources.  The only minor downside is the 4K of blockRAM I used, but that&#8217;s a small price to pay ultimately for what it can do.</p>
+<p>The specs on the CPU are:  18 bit instruction word, single cycle instructions, 32 bytes of RAM,  single and dual byte address modes, and a few special instructions to make CPU emulation easier such as jump tables and bit setting and clearing.  I named it the &#8220;KevRISC&#8221;  CPU <img src='http://blog.kevtris.org/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=32</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Altoids Tin FM Radio</title>
+		<link>http://blog.kevtris.org/?p=27</link>
+		<comments>http://blog.kevtris.org/?p=27#comments</comments>
+		<pubDate>Fri, 20 Mar 2009 19:28:59 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[Random]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=27</guid>
+		<description><![CDATA[&#8230;and now for something completely different! I got interested in super-regenerative receivers a few weeks ago, investigating ways to do simple, cheap radio links. Turns out it&#8217;s REALLY easy to do a few hundred feet with only a few parts. The secret words are &#8220;Super Regenerative&#8221;. A single transistor acts as an oscillator and detector [...]]]></description>
+				<content:encoded><![CDATA[<p>&#8230;and now for something completely different!   I got interested in super-regenerative receivers a few weeks ago, investigating ways to do simple, cheap radio links.  Turns out it&#8217;s REALLY easy to do a few hundred feet with only a few parts.  The secret words are &#8220;Super Regenerative&#8221;.   A single transistor acts as an oscillator and detector and everything else, all in one shot.  It&#8217;s an incredibly clever circuit, but it&#8217;s also old-  older than even the super heterodyne.  I won&#8217;t go over how it works- I will leave that up to <a href = "http://en.wikipedia.org/wiki/Regenerative_circuit">Wikipedia.</a></p>
+<p>My design isn&#8217;t 100% original, I poked around on the net for superregen circuits and then cribbed some ideas and came up with this circuit.  It uses a second oscillator to quench the RF oscillator, which performs the detection of the signal.  I used a schmitt trigger for this, setting it up as a simple RC oscillator, then used the approximate sawtooth produced on the capacitor to push the RF oscillator in and out of oscillation.  This quench frequency is around 50-70KHz depending on the setting of the quench frequency.  (This is adjusted so that it doesn&#8217;t cause a beat note with the 19KHz stereo pilot)</p>
+<p>So, that&#8217;s what it is.  Everything ended up fitting very neatly into an altoids tin.  I soldered a piece of metal from the top of an RF shield to act as a battery holder.  There&#8217;s a few wire loops soldered to the sides to hold wires, and I used some molex connectors to make a neat &#8220;install&#8221;.  Unfortunately, the pictures aren&#8217;t very great.</p>
+<p>Oh yeah, almost forgot.  The coil is 4 turns on a 1/4&#8243; form of #22 or so wire, tapped at 1 turn.  Tap is near the ground end.  Other than that, building it shouldn&#8217;t be difficult.  If you cannot locate a suitable varactor diode, a variable capacitor will work&#8230; around 60pf max would be good.  It&#8217;s hard to see, but I built it on perfboard, with the solder pad side up.  The blank side of the perf is flat against the bottom of the tin for good shielding of the circuit.  I used some resistor ends to attach the PCB to the bottom of the tin by soldering it.  (Altoids tins are super nice to solder to, it takes the solder readily and easily due to the thinness of the metal).  I used a mix of SMD and through hole depending on what I had to jump.  The 74C14 is soldered in SIP fashion which ended up working very well.</p>
+<hr />
+<p><a href = "./blogfiles/superregen1.jpg"><br />
+<img src="./blogfiles/tsuperregen1.jpg"><br />
+</a></p>
+<p>
+View of the inside.
+</p>
+<hr />
+<p><a href = "./blogfiles/superregen2.jpg"><br />
+<img src="./blogfiles/tsuperregen2.jpg"><br />
+</a></p>
+<p>
+Another inside view.
+</p>
+<hr />
+<p><a href = "./blogfiles/superregen3.jpg"><br />
+<img src="./blogfiles/tsuperregen3.jpg"><br />
+</a></p>
+<p>
+Aaand the schematic.  I forgot to make the part designations a darker colour.  Sorry &#8217;bout that.  I will eventually get a better version.
+</p>
+<hr />
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=27</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>FPGA Synth Power Supply</title>
+		<link>http://blog.kevtris.org/?p=25</link>
+		<comments>http://blog.kevtris.org/?p=25#comments</comments>
+		<pubDate>Thu, 19 Mar 2009 02:14:18 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[FPGA]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=25</guid>
+		<description><![CDATA[Welll, I worked some more and got the power supply designed, built, and assembled. Everything seems to work on it so far. The 5V and 12V outputs, both 2.8V linear LDOs, 5-12V converter (for USB in) and the battery charger seems to charge. The PCB was designed to drop in on top of the first [...]]]></description>
+				<content:encoded><![CDATA[<p>Welll, I worked some more and got the power supply designed, built, and assembled.  Everything seems to work on it so far.  The 5V and 12V outputs, both 2.8V linear LDOs, 5-12V converter (for USB in) and the battery charger seems to charge.  The PCB was designed to drop in on top of the first PCB and it fits around the connectors and things perfectly.  There&#8217;s some openings to allow for placement of the JTAG connector and stuff.</p>
+<hr />
+<p><a href = "./blogfiles/fpga_synth_supply1.jpg"><br />
+<img src="./blogfiles/tfpga_synth_supply1.jpg"><br />
+</a></p>
+<p>
+The supply board&#8217;s all plugged in and ready to go.  It mates with a 10 pin power connector, a 2 pin signal connector and a 2 pin USB power connector. I will use standoffs and screws to join the boards eventually so they don&#8217;t come unplugged.
+</p>
+<hr />
+<p><a href = "./blogfiles/fpga_synth_supply2.jpg"><br />
+<img src="./blogfiles/tfpga_synth_supply2.jpg"><br />
+</a></p>
+<p>
+Top view semi closeup
+</p>
+<hr />
+<p><a href = "./blogfiles/fpga_synth_supply3.jpg"><br />
+<img src="./blogfiles/tfpga_synth_supply3.jpg"><br />
+</a></p>
+<p>
+Bottom view semi closeup.
+</p>
+<hr />
+<p>The supply on this synthesizer had to fairly complicated.  It had to perform the following functions:  run off of 4 recharagable AA cells, run off of a 9V DC line lump, and run off of USB power.   On top of that it has to charge the batteries from USB or the line lump.  This is a fairly difficult thing to achieve for several reasons.  The biggest problem is the output voltages (5V and 12V).  The input voltage to the 5 and 12V regulators could vary between 3V (discharged AA rechargables) all the way up to potentially a bit more than 12V.  So this means that the input voltage could dive UNDER the 5V output or over the 12V output&#8230; causing one supply to go out of regulation.</p>
+<p>The solution was twin SEPIC converters which can handle this condition with ease.  Running the two SEPIC converters are the two major inputs (USB power and line lump power &#8220;OR&#8217;d&#8221; together using diodes, and battery power).  Both of these major inputs pass through P-channel FETs which can turn one source on at a time while isolating the two sources completely.  This is done with two P channel FETs per input, wired back to back so the body diodes cannot both forward bias at the same time.   I used two dual FETs for this function.</p>
+<p>The battery charger simply connects between the power input (line lump / USB) and the battery input.  </p>
+<p>A PIC micro controls all functionality.  It runs on 2.8V so it is quite low power.  The PIC will run all the time, waiting for the user to press the power button if it&#8217;s totally &#8220;off&#8221;, and will control battery charging (it can control charging rate to accomodate various operational modes), control powering up of the unit, and it can take temperature of the batteries and internal environment to accomplish quick charging of the battery pack.</p>
+<p>I have a &#8220;one wire&#8221; type interface between the PIC and the FPGA for communications.  This will send USB operational modes up, and key presses and battery state, etc. down  to the FPGA.  There&#8217;s a second &#8220;one wire&#8221; interface between the power board and the to-be-designed capacitive touch panel board which will be the final piece of hardware for this unit.  </p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=25</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>First Light on the Big Board</title>
+		<link>http://blog.kevtris.org/?p=24</link>
+		<comments>http://blog.kevtris.org/?p=24#comments</comments>
+		<pubDate>Fri, 03 Oct 2008 07:51:05 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[FPGA]]></category>
+		<category><![CDATA[LEDs]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=24</guid>
+		<description><![CDATA[So I spent another week or so, and finally got all the power supplies mounted, power sequencer done, and everything connected up on the board so far. I made a power control/sequencer dealie so that I can turn the supplies on 2 at a time. This will prevent me popping the circuit breaker if I [...]]]></description>
+				<content:encoded><![CDATA[<p>So I spent another week or so, and finally got all the power supplies mounted, power sequencer done, and everything connected up on the board so far.   I made a power control/sequencer dealie so that I can turn the supplies on 2 at a time.  This will prevent me popping the circuit breaker if I tried to turn all 16 on at once.  The caps charging would suck a dip in the mains big enough to cause the lights to dim in the city I think.  Other than that the pics are fairly self explainatory I think.  Everything seems to be working and tomorrow I will mount the remaining 6 LED boards, and try it out on a full array.  Note that the bottom LED boards show the data flipped.  I thought I had set the bits in the controller but I guess I didn&#8217;t.  There&#8217;s bits on the display signal streams that let my mirror the displayed data along X and Y, but I obviously didn&#8217;t set them, so the lower half is upside down.  whoops.</p>
+<p>
+<p><center></p>
+<hr />
+<p><a href = "./blogfiles/led_plywood.jpg"><br />
+<img src="./blogfiles/tled_plywood.jpg"><br />
+</a></p>
+<p>
+Lots of holes have been drilled into the plywood &#8220;chassis&#8221;.  The 64 holes for the supplies aren&#8217;t on there yet though.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_supplies_back.jpg"><br />
+<img src="./blogfiles/tled_supplies_back.jpg"><br />
+</a></p>
+<p>
+All 16 supplies have been mounted to the board, woot.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_supplies_front.jpg"><br />
+<img src="./blogfiles/tled_supplies_front.jpg"><br />
+</a></p>
+<p>
+Aaaand, here&#8217;s where all the nice new connectors I added poke through the front.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_supplies_closeup.jpg"><br />
+<img src="./blogfiles/tled_supplies_closeup.jpg"><br />
+</a></p>
+<p>
+Closeup of the supply wiring connecting all the 120V stuff and what not.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_supplies_relays.jpg"><br />
+<img src="./blogfiles/tled_supplies_relays.jpg"><br />
+</a></p>
+<p>
+These 8 relays sequence on one at a time to turn the two supplies on each.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_lit1.jpg"><br />
+<img src="./blogfiles/tled_lit1.jpg"><br />
+</a></p>
+<p>
+First light with 4 boards!
+</p>
+<hr />
+<p><a href = "./blogfiles/led_lit2.jpg"><br />
+<img src="./blogfiles/tled_lit2.jpg"><br />
+</a></p>
+<p>
+Then some gameboy action
+</p>
+<hr />
+<p><a href = "./blogfiles/led_lit3.jpg"><br />
+<img src="./blogfiles/tled_lit3.jpg"><br />
+</a></p>
+<p>
+And now 6 boards.
+</p>
+<p></center></p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=24</wfw:commentRss>
+		<slash:comments>9</slash:comments>
+		</item>
+		<item>
+		<title>Display of Doom Comes Together!</title>
+		<link>http://blog.kevtris.org/?p=23</link>
+		<comments>http://blog.kevtris.org/?p=23#comments</comments>
+		<pubDate>Fri, 19 Sep 2008 02:12:38 +0000</pubDate>
+		<dc:creator>kevtris</dc:creator>
+				<category><![CDATA[FPGA]]></category>
+		<category><![CDATA[LEDs]]></category>
+
+		<guid isPermaLink="false">http://blog.kevtris.org/?p=23</guid>
+		<description><![CDATA[Well even though I haven&#8217;t posted in awhile, I have been busy! I designed, ordered, and received custom machined brass parts that solder to the LED boards so I can mount them. These brackets allow me to mount the display boards without having anything that passes through the board or anything like that- this is [...]]]></description>
+				<content:encoded><![CDATA[<p>Well even though I haven&#8217;t posted in awhile, I have been busy!  I designed, ordered, and received custom machined brass parts that solder to the LED boards so I can mount them.  These brackets allow me to mount the display boards without having anything that passes through the board or anything like that- this is important of course if you want a matrix that looks good.</p>
+<p>I spent about a week looking for brass U channel stock to make the brackets, but I came up empty.  The &#8220;legs&#8221; have to 1/16&#8243; thick and spaced 1/2&#8243; apart.  This seems to be unobtainum. While I found plenty of U channel, it had 1/8&#8243; thick legs, which wouldn&#8217;t work.  It *has* to be 1/16th of an inch or else they&#8217;d hit chips and routes and stuff which is definitely Bad(tm).<br />
+(click &#8216;em and watch most of the pics grow)</p>
+<p><center></p>
+<hr />
+<p><a href = "./blogfiles/led_brackets.jpg"><br />
+<img src="./blogfiles/tled_brackets.jpg"><br />
+</a></p>
+<p>
+Brackets as received, and how they will mount on the PCB.
+</p>
+<hr />
+<p><img src="./blogfiles/led_bracket_installed.jpg">
+</p>
+<p>
+I soldered one on the board and it fits perfect.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_brackets_mounted.jpg"><br />
+<img src="./blogfiles/tled_brackets_mounted.jpg"><br />
+</a></p>
+<p>
+Aaaand, all 5 installed.
+</p>
+<hr />
+</center></p>
+<p>After soldering 5 brackets to all 13 boards I have (12 good, 1 for parts and testing), it was time to mount them.  I went to Lowes and bought all the materials needed.  plexi, 1 by 6, and two kinds of plywood.  The board that everything mounts to is 1/2&#8243; thick plywood.  It&#8217;s 48*32 inches which is in the &#8220;friggin&#8217; huge&#8221; category!  The entire unit will be about 34*54 inches when done, and under 5 inches thick.  Inside will be 12 LED boards, 12 power supplies and the controller along with a blower I salvaged from a microwave oven.  I designed the unit so I could mount 16 boards, if 4 more ever show up (anyone got extras? please? <img src='http://blog.kevtris.org/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' />  but I will only stuff 12 for now.  I have one more board than this, but it&#8217;s missing alot of LEDs and has tons of problems.  I used it for fixing the other 12, and for testing stuff so I didn&#8217;t screw up the good boards.</p>
+<p>Anyways, enough of that.  here&#8217;s the pics that everyone wants to see I&#8217;m sure:</p>
+<p><p><center></p>
+<hr />
+<p><a href = "./blogfiles/led_8by1_matrix.jpg"><br />
+<img src="./blogfiles/tled_8by1_matrix.jpg"><br />
+</a></p>
+<p>
+What 192 LEDs wide looks like! (did this so I could get the holes all drilled right)
+</p>
+<hr />
+<p><a href = "./blogfiles/led_6by2a.jpg"><br />
+<img src="./blogfiles/tled_6by2a.jpg"><br />
+</a></p>
+<p>
+All holes for displays drilled, and this is the 6*2 array of boards that I will be using.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_6by2b.jpg"><br />
+<img src="./blogfiles/tled_6by2b.jpg"><br />
+</a></p>
+<p>
+Another view of it propped against a wall.
+</p>
+<hr />
+<p><a href = "./blogfiles/led_blower.jpg"><br />
+<img src="./blogfiles/tled_blower.jpg"><br />
+</a></p>
+<p>
+Finally, a pic of the blower I will be using to cool the works.
+</p>
+<hr />
+</center></p>
+<p>
+]]></content:encoded>
+			<wfw:commentRss>http://blog.kevtris.org/?feed=rss2&#038;p=23</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Automotive created by amdou in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Automotive" title="Automotive">
+      <outline text="AutoblogGreen" title="AutoblogGreen" type="rss" xmlUrl="http://www.autobloggreen.com/rss.xml" htmlUrl="http://green.autoblog.com/"/>
+      <outline text="The Truth About Cars" title="The Truth About Cars" type="rss" xmlUrl="http://www.thetruthaboutcars.com/?feed=rss2" htmlUrl="http://www.thetruthaboutcars.com/"/>
+      <outline text="AutoWeek - Latest Car News Feed" title="AutoWeek - Latest Car News Feed" type="rss" xmlUrl="http://www.autoweek.com/apps/pbcs.dll/section?category=rss01" htmlUrl="http://www.autoweek.com/"/>
+      <outline text="BMW BLOG" title="BMW BLOG" type="rss" xmlUrl="http://www.bmwblog.com/feed" htmlUrl="http://www.bmwblog.com/"/>
+      <outline text="Automotive News Breaking News Feed" title="Automotive News Breaking News Feed" type="rss" xmlUrl="http://www.autonews.com/apps/pbcs.dll/section?category=rss01&amp;mime=xml" htmlUrl="http://www.autonews.com/"/>
+      <outline text="Carscoops" title="Carscoops" type="rss" xmlUrl="http://carscoop.blogspot.com/feeds/posts/default" htmlUrl="http://www.carscoops.com/"/>
+      <outline text="The Car Connection" title="The Car Connection" type="rss" xmlUrl="http://www.thecarconnection.com/rss/index.asp" htmlUrl="http://www.thecarconnection.com/"/>
+      <outline text="Autoblog" title="Autoblog" type="rss" xmlUrl="http://www.autoblog.com/rss.xml" htmlUrl="http://www.autoblog.com/"/>
+      <outline text="Automotive Digest" title="Automotive Digest" type="rss" xmlUrl="http://www.automotivedigest.com/rss.asp" htmlUrl="http://automotivedigest.com/"/>
+      <outline text="HybridCars.com" title="HybridCars.com" type="rss" xmlUrl="http://www.hybridcars.com/feed.xml" htmlUrl="http://www.hybridcars.com/"/>
+      <outline text="AutoGuide.com News" title="AutoGuide.com News" type="rss" xmlUrl="http://www.autoguide.com/auto-news/feed/" htmlUrl="http://www.autoguide.com/"/>
+      <outline text="GM FastLane" title="GM FastLane" type="rss" xmlUrl="http://fastlane.gmblogs.com/atom.xml" htmlUrl="http://fastlane.gmblogs.com"/>
+      <outline text="Top Gear Car News" title="Top Gear Car News" type="rss" xmlUrl="http://www.topgear.com/latest.xml" htmlUrl="http://www.topgear.com/"/>
+      <outline text="Jalopnik" title="Jalopnik" type="rss" xmlUrl="http://www.jalopnik.com/index.xml" htmlUrl="http://jalopnik.com/"/>
+      <outline text="New and Used Car Reviews &amp; Auto-Industry News - LeftLaneNews" title="New and Used Car Reviews &amp; Auto-Industry News - LeftLaneNews" type="rss" xmlUrl="http://www.leftlanenews.com/wp-rss2.php" htmlUrl="http://www.leftlanenews.com/"/>
+      <outline text="All Motor Trend Stories RSS" title="All Motor Trend Stories RSS" type="rss" xmlUrl="http://www.motortrend.com/widgetrss/motortrend-stories.xml" htmlUrl="http://www.motortrend.com/"/>
+    </outline>
+  </body>
+</opml>

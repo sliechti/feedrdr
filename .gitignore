@@ -1,0 +1,11 @@
+.external*
+dist
+build
+.settings
+libraries
+*.vpp.*
+*.vpp~*
+src/test-resources/downloaded
+src/test-resources/xml
+/out/
+*.log

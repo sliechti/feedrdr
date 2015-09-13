@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="0.92">
+<channel>
+	<title>Big Mess o&#039; Wires</title>
+	<link>http://www.bigmessowires.com</link>
+	<description>A home-built CPU, and other messy electronics adventures</description>
+	<lastBuildDate>Tue, 08 Jan 2013 06:31:27 +0000</lastBuildDate>
+	<docs>http://backend.userland.com/rss092</docs>
+	<language>en</language>
+	<!-- generator="WordPress/3.1.3" -->
+
+	<item>
+		<title>400K Floppy Support</title>
+		<description><![CDATA[I&#8217;ve added 400K floppy support to Floppy Emu, so now you can boot up System 1.1. The fix took all of fives minutes, so why didn&#8217;t I do this ages ago? Grab the latest Floppy Emu file archive for the new software.]]></description>
+		<link>http://www.bigmessowires.com/2013/01/07/400k-floppy-support/</link>
+			</item>
+	<item>
+		<title>Raspberry Pi</title>
+		<description><![CDATA[A friend from work gifted me a Raspberry Pi Model B. I was generally familiar with the RPi, but hadn&#8217;t had a chance to look at it in detail before now. The specs are impressive: a 700MHz 32-bit ARM CPU, 256MB RAM, USB, audio, composite video, HDMI video, and SD card support. It&#8217;s also got [...]]]></description>
+		<link>http://www.bigmessowires.com/2013/01/04/raspberry-pi/</link>
+			</item>
+	<item>
+		<title>Floppy Emu Disk Menu</title>
+		<description><![CDATA[I finally got around to building a proper floppy disk image selection menu. Instead of loading a hard-coded rfloppy.dsk disk image file from the SD card, Floppy Emu now scans the SD card for all files with a .dsk extension, and displays a menu of available disk image files. The PREV/NEXT buttons navigate the menu, [...]]]></description>
+		<link>http://www.bigmessowires.com/2012/12/23/floppy-emu-disk-menu/</link>
+			</item>
+	<item>
+		<title>Build Your Own Floppy Emu</title>
+		<description><![CDATA[Over the past several months, many people have written to me about the Macintosh Floppy Emu, asking if they could buy one, or when the project would be finished. Since I haven&#8217;t made any progress on Floppy Emu in ages, I&#8217;m doing the next best thing and releasing the design files and build instructions to [...]]]></description>
+		<link>http://www.bigmessowires.com/2012/12/15/build-your-own-floppy-emu/</link>
+			</item>
+	<item>
+		<title>Plus Too Files</title>
+		<description><![CDATA[Since the Plus Too project hasn&#8217;t seen any progress in a year, I&#8217;m posting all the design files in the hopes that someone else may want to build on what I&#8217;ve done. If you missed the earlier discussions about it, Plus Too is a working replica of a Macintosh Plus, implemented in an FPGA. Download [...]]]></description>
+		<link>http://www.bigmessowires.com/2012/12/15/plus-too-files/</link>
+			</item>
+	<item>
+		<title>Tranz 330 Files</title>
+		<description><![CDATA[I&#8217;ve posted an archive containing the original Tranz 330 program file dump, my commented disassembly of the original program, and two versions of the Mozart demo in source and binary form. If you can get your hands on a Tranz 330 from a surplus electronics supplier, this should give you an afternoon&#8217;s entertainment! You can [...]]]></description>
+		<link>http://www.bigmessowires.com/2012/12/15/tranz-330-files/</link>
+			</item>
+</channel>
+</rss>

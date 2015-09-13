@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml>
+  <head>
+    <title>demo subscriptions in CommaFeed</title>
+  </head>
+  <body>
+    <outline text="Global Finance" title="Global Finance">
+      <outline text="CNN.com - Top Stories" type="rss" title="CNN.com - Top Stories" xmlUrl="http://rss.cnn.com/rss/edition.rss" htmlUrl="http://edition.cnn.com/index.html?eref=edition" />
+    </outline>
+    <outline text="Dance" title="Dance" />
+    <outline text="+parfums&amp;_sop=2&amp;_osacat=26396&amp;_from=R40&amp;_trksid=p2045573.m570.l1313.TR2.TRC1.A0.H0.Xbyredo&amp;_nkw=byredo&amp;_sacat=26396&amp;_rss=1" title="+parfums&amp;_sop=2&amp;_osacat=26396&amp;_from=R40&amp;_trksid=p2045573.m570.l1313.TR2.TRC1.A0.H0.Xbyredo&amp;_nkw=byredo&amp;_sacat=26396&amp;_rss=1" />
+    <outline text="Cmp1" title="Cmp1">
+      <outline text="Cmp2" title="Cmp2" />
+    </outline>
+    <outline text="economist" title="economist">
+      <outline text="jj" title="jj" />
+    </outline>
+    <outline text="test" title="test" />
+    <outline text="http://www.emaratalyoum.com/public-life-1.533089?ot=ot.AjaxPageLayout" title="http://www.emaratalyoum.com/public-life-1.533089?ot=ot.AjaxPageLayout" />
+    <outline text="http://www.emaratalyoum.com/public-life-1.533089?ot=ot.AjaxPageLayout" title="http://www.emaratalyoum.com/public-life-1.533089?ot=ot.AjaxPageLayout" />
+    <outline text="aazz" title="aazz">
+      <outline text="Ubuntu Portal" type="rss" title="Ubuntu Portal" xmlUrl="http://feeds.feedburner.com/ubuntuportal" htmlUrl="http://ubuntuportal.com" />
+    </outline>
+    <outline text="https://www.fanfiction.net/atom/l/?&amp;cid1=224&amp;r=10&amp;lan=1&amp;s=1" title="https://www.fanfiction.net/atom/l/?&amp;cid1=224&amp;r=10&amp;lan=1&amp;s=1" />
+    <outline text="Andreas" title="Andreas">
+      <outline text="蔓草札记" type="rss" title="蔓草札记" xmlUrl="http://feed.xuhehuan.com/" htmlUrl="http://xuhehuan.com" />
+    </outline>
+    <outline text="IT" title="IT">
+      <outline text="Garten Eden (de)" type="rss" title="Garten Eden (de)" xmlUrl="https://eduard-dopler.de/atom_de.xml" htmlUrl="https://eduard-dopler.de/" />
+      <outline text="Garten Eden (en)" type="rss" title="Garten Eden (en)" xmlUrl="https://eduard-dopler.de/atom_en.xml" htmlUrl="https://eduard-dopler.de/" />
+    </outline>
+    <outline text="a" title="a" />
+    <outline text="blogs" title="blogs" />
+    <outline text="New tag" title="New tag" />
+    <outline text="motorcycles" title="motorcycles" />
+    <outline text="slm" title="slm" />
+    <outline text="Ukraina" title="Ukraina" />
+    <outline text="sfsafdfdsffd" title="sfsafdfdsffd" />
+    <outline text="ticino" title="ticino" />
+    <outline text="Test" title="Test" />
+    <outline text="Giveaway" type="rss" title="Giveaway" xmlUrl="http://feeds.feedburner.com/GiveawayOfTheDayInFrench" htmlUrl="http://fr.giveawayoftheday.com" />
+    <outline text="/dev/ttyS0 " type="rss" title="/dev/ttyS0 " xmlUrl="http://www.devttys0.com/feed/" htmlUrl="http://www.devttys0.com" />
+    <outline text="Shell is Only the Beginning" type="rss" title="Shell is Only the Beginning" xmlUrl="http://www.darkoperator.com/blog?format=rss" htmlUrl="http://www.darkoperator.com/" />
+    <outline text="contagio" type="rss" title="contagio" xmlUrl="http://contagiodump.blogspot.com/feeds/posts/default" htmlUrl="http://contagiodump.blogspot.com/" />
+    <outline text="Didier Stevens" type="rss" title="Didier Stevens" xmlUrl="http://blog.didierstevens.com/feed/" htmlUrl="http://blog.didierstevens.com" />
+    <outline text="Errata Security" type="rss" title="Errata Security" xmlUrl="http://blog.erratasec.com/feeds/posts/default" htmlUrl="http://blog.erratasec.com/" />
+    <outline text="The Invisible Things Lab's blog" type="rss" title="The Invisible Things Lab's blog" xmlUrl="http://theinvisiblethings.blogspot.com/feeds/posts/default" htmlUrl="http://theinvisiblethings.blogspot.com/" />
+    <outline text="j00ru//vx tech blog" type="rss" title="j00ru//vx tech blog" xmlUrl="http://j00ru.vexillium.org/?feed=rss2" htmlUrl="http://j00ru.vexillium.org" />
+    <outline text="Krebs on Security" type="rss" title="Krebs on Security" xmlUrl="http://krebsonsecurity.com/feed/atom/" htmlUrl="http://krebsonsecurity.com" />
+    <outline text="Liquidmatrix Security Digest" type="rss" title="Liquidmatrix Security Digest" xmlUrl="http://feeds.feedburner.com/Liquidmatrix" htmlUrl="http://www.liquidmatrix.org/blog" />
+    <outline text="TaoSecurity" type="rss" title="TaoSecurity" xmlUrl="http://taosecurity.blogspot.com/feeds/posts/default" htmlUrl="http://taosecurity.blogspot.com/" />
+    <outline text="Full Disclosure" type="rss" title="Full Disclosure" xmlUrl="http://seclists.org/rss/fulldisclosure.rss" htmlUrl="http://seclists.org/#fulldisclosure" />
+    <outline text="Kali Linux" type="rss" title="Kali Linux" xmlUrl="http://www.kali.org/feed/" htmlUrl="https://www.kali.org" />
+    <outline text="The Hacker News" type="rss" title="The Hacker News" xmlUrl="http://feeds.feedburner.com/TheHackersNews" htmlUrl="http://thehackernews.com/" />
+    <outline text="Infobyte Security Research Labs" type="rss" title="Infobyte Security Research Labs" xmlUrl="http://blog.infobytesec.com/feeds/posts/default" htmlUrl="http://blog.infobytesec.com/" />
+    <outline text="BigHacks" type="rss" title="BigHacks" xmlUrl="http://bighacks.net/feed/" htmlUrl="http://bighacks.net" />
+    <outline text="overview for chancemaster" type="rss" title="overview for chancemaster" xmlUrl="http://www.reddit.com/user/chancemaster/.rss" htmlUrl="http://www.reddit.com/" />
+    <outline text="What If?" type="rss" title="What If?" xmlUrl="http://what-if.xkcd.com/feed.atom" />
+    <outline text="PANIC attacks" type="rss" title="PANIC attacks" xmlUrl="http://feeds.feedburner.com/CaligoPress/panic" htmlUrl="http://www.caligopress.com/search/label/panic" />
+    <outline text="Phoronix" type="rss" title="Phoronix" xmlUrl="http://www.phoronix.com/rss.php" htmlUrl="http://www.phoronix.com/" />
+    <outline text="UniversUX" type="rss" title="UniversUX" xmlUrl="http://universux.com/feed/" htmlUrl="http://universux.com" />
+    <outline text="Lifehacker" type="rss" title="Lifehacker" xmlUrl="http://feeds.gawker.com/lifehacker/full" htmlUrl="http://lifehacker.com" />
+    <outline text="TinyApps.Org" type="rss" title="TinyApps.Org" xmlUrl="http://tinyapps.org/blog/index.rss20" htmlUrl="http://tinyapps.org/blog/" />
+    <outline text="Alban LORENZINI Coaching " type="rss" title="Alban LORENZINI Coaching " xmlUrl="http://cyclesetforme.blogspot.com/feeds/posts/default?alt=rss" htmlUrl="http://cyclesetforme.blogspot.com/" />
+    <outline text="The Oatmeal - Comics, Quizzes, &amp; Stories" type="rss" title="The Oatmeal - Comics, Quizzes, &amp; Stories" xmlUrl="http://feeds.feedburner.com/oatmealfeed" htmlUrl="http://theoatmeal.com/" />
+    <outline text="Newegg.com" type="rss" title="Newegg.com" xmlUrl="http://www.newegg.com/Product/RSS.aspx?Submit=RSSDailyDeals" htmlUrl="http://www.newegg.com/Product/ProductList.aspx?Submit=DailyDeals&amp;nm_mc=OTC-RSS&amp;cm_sp=OTC-RSS" />
+    <outline text="Cult of Mac" type="rss" title="Cult of Mac" xmlUrl="http://www.cultofmac.com/feed/" htmlUrl="http://www.cultofmac.com" />
+    <outline text="imgur" type="rss" title="imgur" xmlUrl="http://feeds.feedburner.com/ImgurGallery?format=xml" />
+    <outline text="Verbania Notizie" type="rss" title="Verbania Notizie" xmlUrl="http://www.verbanianotizie.it/feed.php" htmlUrl="http://www.verbanianotizie.it" />
+    <outline text="Self-Hosted Tiny Tiny RSS alternatives - AlternativeTo.net" type="rss" title="Self-Hosted Tiny Tiny RSS alternatives - AlternativeTo.net" xmlUrl="http://alternativeto.net/software/tiny-tiny-rss/feed/?platform=self-hosted" htmlUrl="http://alternativeto.net/software/tiny-tiny-rss/" />
+    <outline text="Zurako" type="rss" title="Zurako" xmlUrl="http://zurako.wordpress.com/feed/" htmlUrl="https://zurako.wordpress.com" />
+    <outline text="Asenshi Subs" type="rss" title="Asenshi Subs" xmlUrl="http://asenshi.net/feed/" htmlUrl="http://asenshi.moe" />
+    <outline text="Latest in Anime News by Crunchyroll!" type="rss" title="Latest in Anime News by Crunchyroll!" xmlUrl="http://feeds.feedburner.com/crunchyroll/animenews" htmlUrl="http://www.crunchyroll.com/news" />
+    <outline text="Jan Leyk's Facebook Wall" type="rss" title="Jan Leyk's Facebook Wall" xmlUrl="https://www.facebook.com/feeds/page.php?id=315161171841477&amp;format=rss20" htmlUrl="https://www.facebook.com/" />
+    <outline text="Uploads by JuliensBlogBattle" type="rss" title="Uploads by JuliensBlogBattle" xmlUrl="http://gdata.youtube.com/feeds/base/users/JuliensBlogBattle/uploads?alt=rss&amp;v=2&amp;orderby=published&amp;client=ytapi-youtube-profile" htmlUrl="http://www.youtube.com/channel/UCM8Eb--xiPqS8tR3z5FeXEw/videos" />
+    <outline text="FFFansubs" type="rss" title="FFFansubs" xmlUrl="http://fffansubs.org/?feed=rss2" htmlUrl="http://fffansubs.org" />
+    <outline text="AllAfrica News: Nigeria" type="rss" title="AllAfrica News: Nigeria" xmlUrl="http://allafrica.com/tools/headlines/rdf/nigeria/headlines.rdf" htmlUrl="http://allafrica.com/nigeria/" />
+    <outline text="newest" type="rss" title="newest" xmlUrl="http://www.reddit.com/r/shortscarystories/new/.rss" htmlUrl="http://www.reddit.com/r/shortscarystories/" />
+    <outline text="Deutsch - warum nicht? Serie 1 | Deutsch lernen | Deutsche Welle" type="rss" title="Deutsch - warum nicht? Serie 1 | Deutsch lernen | Deutsche Welle" xmlUrl="http://rss.dw.de/xml/DKpodcast_dwn1_de" htmlUrl="http://www.dw.de/german/?maca=de-DKpodcast_dwn1_de-2284-xml-mrss" />
+    <outline text="200porcento" type="rss" title="200porcento" xmlUrl="http://blog200porcento.com/data/rss" htmlUrl="http://blog200porcento.com/" />
+    <outline text="chomsky.info : Articles" type="rss" title="chomsky.info : Articles" xmlUrl="http://createfeed.fivefilters.org/extract.php?url=chomsky.info%2Farticles.htm&amp;in_id_or_class=&amp;url_contains=articles%2F" htmlUrl="http://chomsky.info/articles.htm" />
+    <outline text="Falha Crítica" type="rss" title="Falha Crítica" xmlUrl="http://blog-falhacritica.rhcloud.com/feed/" htmlUrl="http://blog-falhacritica.rhcloud.com" />
+    <outline text="Devpolicy Blog from the Development Policy Centre" type="rss" title="Devpolicy Blog from the Development Policy Centre" xmlUrl="http://devpolicy.org/feed/" htmlUrl="http://devpolicy.org" />
+    <outline text="programming" type="rss" title="programming" xmlUrl="http://www.reddit.com/r/programming/.rss" htmlUrl="http://www.reddit.com/r/programming/" />
+    <outline text="Zero Hedge" type="rss" title="Zero Hedge" xmlUrl="http://feeds.feedburner.com/zerohedge/feed" htmlUrl="http://www.zerohedge.com/fullrss2.xml/news/italy-expected-cut-growth-forecasts-further" />
+    <outline text="I.I.S. &quot;Europa - Virginia Woolf&quot; » I.I.S. &quot;Europa – Virginia Woolf&quot;" type="rss" title="I.I.S. &quot;Europa - Virginia Woolf&quot; » I.I.S. &quot;Europa – Virginia Woolf&quot;" xmlUrl="http://www.iis.roma.it/feed/" htmlUrl="http://www.iis.roma.it" />
+    <outline text="Twitter feed for '#Alertabaires' query" type="rss" title="Twitter feed for '#Alertabaires' query" xmlUrl="http://www.queryfeed.net/twitter?q=%23Alertabaires" htmlUrl="http://www.queryfeed.net" />
+    <outline text="Twitter feed for '#Alertabaires=' query" type="rss" title="Twitter feed for '#Alertabaires=' query" xmlUrl="http://www.queryfeed.net/twitter?q=%23Alertabaires=" htmlUrl="http://www.queryfeed.net" />
+    <outline text="The Verge -  All Posts" type="rss" title="The Verge -  All Posts" xmlUrl="http://www.theverge.com/rss/index.xml" htmlUrl="http://www.theverge.com/" />
+    <outline text="SWR2 Aula" type="rss" title="SWR2 Aula" xmlUrl="http://www1.swr.de/podcast/xml/swr2/aula.xml" htmlUrl="http://www.swr.de/swr2/programm/sendungen/wissen/aula/-/id=1718548/1pll841/index.html" />
+    <outline text="The Inquisitr News" type="rss" title="The Inquisitr News" xmlUrl="http://feeds.inquisitr.com/google/yDYq" htmlUrl="http://www.inquisitr.com" />
+    <outline text="Caschys Blog" type="rss" title="Caschys Blog" xmlUrl="http://feeds.feedburner.com/stadt-bremerhaven/dqXM" htmlUrl="http://stadt-bremerhaven.de" />
+    <outline text="POLITICO - TOP Stories" type="rss" title="POLITICO - TOP Stories" xmlUrl="http://www.politico.com/rss/politicopicks.xml" htmlUrl="http://www.politico.com" />
+    <outline text="AllAfrica News: Latest" type="rss" title="AllAfrica News: Latest" xmlUrl="http://allafrica.com/tools/headlines/rdf/latest/headlines.rdf" htmlUrl="http://allafrica.com/latest/" />
+    <outline text="BLDGBLOG" type="rss" title="BLDGBLOG" xmlUrl="http://bldgblog.blogspot.com/feeds/posts/default" htmlUrl="http://bldgblog.blogspot.com/" />
+    <outline text="Latest Deals" type="rss" title="Latest Deals" xmlUrl="http://www.latest.zaligo.com/feeds/posts/default" htmlUrl="http://www.latest.zaligo.com/" />
+    <outline text="Ch'know?" type="rss" title="Ch'know?" xmlUrl="http://aliciachenaux.blogspot.com/feeds/posts/default" htmlUrl="http://aliciachenaux.blogspot.com/" />
+    <outline text="Google Shopping" type="rss" title="Google Shopping" xmlUrl="http://gplusrss.com/rss/feed/4857de5bcae84fffe4c42cb1dbf5f733520172414fa6f" htmlUrl="https://plus.google.com/109427343143449846397" />
+    <outline text="PCMag.com Breaking News" type="rss" title="PCMag.com Breaking News" xmlUrl="http://feeds.feedburner.com/ziffdavis/pcmag/breakingnews" htmlUrl="http://www.pcmag.com/category2/0,1874,44,00.asp" />
+    <outline text="YNN.io" type="rss" title="YNN.io" xmlUrl="http://www.ynn.io/daily-hype.rss" htmlUrl="http://www.ynn.io/" />
+    <outline text="Danbooru" type="rss" title="Danbooru" xmlUrl="http://danbooru.donmai.us/posts.atom?tags=akashio_%28loli_ace%29+rating%3Asafe" htmlUrl="http://danbooru.donmai.us/posts?tags=akashio_(loli_ace) rating:safe" />
+    <outline text="Slashdot" type="rss" title="Slashdot" xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/" />
+    <outline text="HollyScoop" type="rss" title="HollyScoop" xmlUrl="http://cdn.vidible.tv/prod/mrss/53f538cae4b0bbef08f3bf8d/53ce9fe7e4b0909e6983bbe8/543ce780e4b0a1c0d4baa73c.xml" />
+    <outline text="Canon Consumer News" type="rss" title="Canon Consumer News" xmlUrl="http://www.canon.rs/About_Us/Press_Centre/Press_Releases/Consumer_news/rss.aspx" htmlUrl="www.canon-europe.com" />
+    <outline text="Canon Business Solutions News" type="rss" title="Canon Business Solutions News" xmlUrl="http://www.canon.rs/About_Us/Press_Centre/Press_Releases/Business_Solutions_News/rss.aspx" htmlUrl="www.canon-europe.com" />
+    <outline text="0_German IT Blog - Security, Linux, Censorship" type="rss" title="0_German IT Blog - Security, Linux, Censorship" xmlUrl="http://andre.hemk.es/feed/" htmlUrl="http://andre.hemk.es" />
+    <outline text="RSS feed for eprocurement.gov.gr tenders from 13/11/2014 to 15/11/2014 (sorted by budget)" type="rss" title="RSS feed for eprocurement.gov.gr tenders from 13/11/2014 to 15/11/2014 (sorted by budget)" xmlUrl="http://deixto.gr/eprocurement/tenders/tenders.rss" htmlUrl="http://www.eprocurement.gov.gr/" />
+    <outline text="Amazon Elastic Compute Cloud (Ireland) Service Status" type="rss" title="Amazon Elastic Compute Cloud (Ireland) Service Status" xmlUrl="http://status.aws.amazon.com/rss/ec2-eu-west-1.rss" htmlUrl="http://status.aws.amazon.com/" />
+    <outline text="Numerama" type="rss" title="Numerama" xmlUrl="http://www.numerama.com/rss/news.rss" htmlUrl="http://www.numerama.com/" />
+    <outline text="Atlas Informatique" type="rss" title="Atlas Informatique" xmlUrl="http://atlasinformatique.blogspot.com/feeds/posts/default" htmlUrl="http://atlasinformatique.blogspot.com/" />
+    <outline text="NewsIT" type="rss" title="NewsIT" xmlUrl="http://www.newsit.gr/rss/artrss.php" htmlUrl="http://www.newsit.gr/" />
+    <outline text="Ars Technica" type="rss" title="Ars Technica" xmlUrl="http://feeds.arstechnica.com/arstechnica/index/" htmlUrl="http://arstechnica.com" />
+    <outline text="DaedTech" type="rss" title="DaedTech" xmlUrl="http://feeds.feedblitz.com/daedtech/www" htmlUrl="http://www.daedtech.com" />
+    <outline text="Blog do iPhone" type="rss" title="Blog do iPhone" xmlUrl="http://feeds.feedburner.com/blogdoiphone/posts/" htmlUrl="http://blogdoiphone.com" />
+    <outline text="Flectere si nequeo superos Acheronta movebo" type="rss" title="Flectere si nequeo superos Acheronta movebo" xmlUrl="http://stultiferanavis-narragonia.blogspot.com/feeds/posts/default" htmlUrl="http://stultiferanavis-narragonia.blogspot.com/" />
+    <outline text="Framablog" type="rss" title="Framablog" xmlUrl="http://www.framablog.org/index.php/feed/atom" htmlUrl="http://www.framablog.org/index.php/" />
+    <outline text="Cugat.cat" type="rss" title="Cugat.cat" xmlUrl="http://www.cugat.cat/noticies/flipboard.xml" htmlUrl="http://www.cugat.cat/" />
+    <outline text="test" type="rss" title="test" xmlUrl="http://rishi.baldawa.com/feed.xml" htmlUrl="http://rishi.baldawa.com/" />
+    <outline text="Liveuamap.com" type="rss" title="Liveuamap.com" xmlUrl="http://liveuamap.com/rss" htmlUrl="http://liveuamap.com/" />
+    <outline text="Verschlossen ist Schön!" type="rss" title="Verschlossen ist Schön!" xmlUrl="http://meester1.wordpress.com/feed/" htmlUrl="https://meester1.wordpress.com" />
+    <outline text="Paladino do Cerrado" type="rss" title="Paladino do Cerrado" xmlUrl="http://paladinodocerrado.com/wp/feed/" htmlUrl="http://paladinodocerrado.com/wp" />
+  </body>
+</opml>

@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:admin="http://webns.net/mvcb/"
+>
+
+<channel rdf:about="http://arxiv.org/">
+<title>cs updates on arXiv.org</title>
+<link>http://arxiv.org/</link>
+<description rdf:parseType="Literal">Computer Science (cs) updates on the arXiv.org e-print archive</description>
+<dc:language>en-us</dc:language>
+<dc:date>2013-04-25T20:30:00-05:00</dc:date>
+<dc:publisher>www-admin@arxiv.org</dc:publisher>
+<dc:subject>Computer Science</dc:subject>
+<syn:updateBase>1901-01-01T00:00+00:00</syn:updateBase>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updatePeriod>daily</syn:updatePeriod>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6734" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6736" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6740" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6742" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6743" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6753" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6759" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6761" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6762" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6763" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6777" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6780" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6782" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6792" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6800" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6806" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6809" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6810" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6813" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6822" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6832" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6858" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6870" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6872" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6889" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6896" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6897" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6898" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6899" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6906" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6920" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6925" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6933" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6945" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6962" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6969" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6983" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6990" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6994" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6996" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1108.5985" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1110.0259" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1209.1003" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1210.6908" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1211.4473" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1212.6576" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1301.1609" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1301.2840" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1301.6798" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1302.2112" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1302.2551" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1303.0415" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1303.7286" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.5575" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6528" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6663" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6551" />
+  <rdf:li rdf:resource="http://arxiv.org/abs/1304.6601" />
+ </rdf:Seq>
+</items>
+<image rdf:resource="http://arxiv.org/icons/sfx.gif" />
+</channel>
+<image rdf:about="http://arxiv.org/icons/sfx.gif">
+<title>arXiv.org</title>
+<url>http://arxiv.org/icons/sfx.gif</url>
+<link>http://arxiv.org/</link>
+</image>
+<item rdf:about="http://arxiv.org/abs/1304.6734">
+<title>Separating regular languages by piecewise testable and unambiguous languages. (arXiv:1304.6734v1 [cs.FL])</title>
+<link>http://arxiv.org/abs/1304.6734</link>
+<description rdf:parseType="Literal">&lt;p&gt;Separation is a classical problem asking whether, given two sets belonging to
+some class, it is possible to separate them by a set from a smaller class. We
+discuss the separation problem for regular languages. We give a Ptime algorithm
+to check whether two given regular languages are separable by a piecewise
+testable language, that is, whether a $B{\Sigma}1(&amp;lt;)$ sentence can witness that
+the languages are disjoint. The proof refines an algebraic argument from
+Almeida and the third author. When separation is possible, we also express a
+separator by saturating one of the original languages by a suitable congruence.
+Following the same line, we show that one can as well decide whether two
+regular languages can be separated by an unambiguous language, albeit with a
+higher complexity.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Place_T/0/1/0/all/0/1&quot;&gt;Thomas Place&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Rooijen_L/0/1/0/all/0/1&quot;&gt;Lorijn van Rooijen&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Zeitoun_M/0/1/0/all/0/1&quot;&gt;Marc Zeitoun&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6736">
+<title>Networks in Cognitive Science. (arXiv:1304.6736v1 [physics.soc-ph])</title>
+<link>http://arxiv.org/abs/1304.6736</link>
+<description rdf:parseType="Literal">&lt;p&gt;Networks of interconnected nodes have long played a key role in cognitive
+science, from artificial neural networks to spreading activation models of
+semantic memory. Recently, however, a new Network Science has been developed,
+providing insights into the emergence of global, system-scale properties in
+contexts as diverse as the Internet, metabolic reactions or collaborations
+among scientists. Today, the inclusion of network theory into cognitive
+sciences, and the expansion of complex systems science, promises to
+significantly change the way in which the organization and dynamics of
+cognitive and behavioral processes are understood. In this paper, we review
+recent contributions of network theory at different levels and domains within
+the cognitive sciences.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Baronchelli_A/0/1/0/all/0/1&quot;&gt;Andrea Baronchelli&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Ferrer_i_Cancho_R/0/1/0/all/0/1&quot;&gt;Ramon Ferrer-i-Cancho&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Pastor_Satorras_R/0/1/0/all/0/1&quot;&gt;Romualdo Pastor-Satorras&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Chater_N/0/1/0/all/0/1&quot;&gt;Nick Chater&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Christiansen_M/0/1/0/all/0/1&quot;&gt;Morten H. Christiansen&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6740">
+<title>Algebraic Algorithms for b-Matching, Shortest Undirected Paths, and f-Factors. (arXiv:1304.6740v1 [cs.DS])</title>
+<link>http://arxiv.org/abs/1304.6740</link>
+<description rdf:parseType="Literal">&lt;p&gt;Let G=(V,E) be a graph with f:V\to Z_+ a function assigning degree bounds to
+vertices. We present the first efficient algebraic algorithm to find an
+f-factor. The time is \tilde{O}(f(V)^{\omega}). More generally for graphs with
+integral edge weights of maximum absolute value W we find a maximum weight
+f-factor in time \tilde{O}(Wf(V)^{\omega}). (The algorithms are randomized,
+correct with high probability and Las Vegas; the time bound is worst-case.) We
+also present three specializations of these algorithms: For maximum weight
+perfect f-matching the algorithm is considerably simpler (and almost identical
+to its special case of ordinary weighted matching). For the single-source
+shortest-path problem in undirected graphs with conservative edge weights, we
+present a generalization of the shortest-path tree, and we compute it in
+\tilde{O(Wn^{\omega}) time. For bipartite graphs, we improve the known
+complexity bounds for vertex capacitated max-flow and min-cost max-flow on a
+subclass of graphs.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Gabow_H/0/1/0/all/0/1&quot;&gt;Harold N. Gabow&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Sankowski_P/0/1/0/all/0/1&quot;&gt;Piotr Sankowski&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6742">
+<title>Interdisciplinary research and the production of local knowledge: evidence from a developing country. (arXiv:1304.6742v1 [physics.soc-ph])</title>
+<link>http://arxiv.org/abs/1304.6742</link>
+<description rdf:parseType="Literal">&lt;p&gt;This paper examines the role of interdisciplinary research for the
+development of knowledge pertaining to local issues. Using Colombian
+publications from 1991 until 2011 in the Web of Science, we investigate the
+relationship between the degree of interdisciplinarity and the local focus of
+the articles. We find that a higher degree of interdisciplinarity in a
+publication is associated with a greater emphasis on local issues. In
+particular, our results support the view that research that combines
+cognitively disparate disciplines, what we refer to as Distal
+Interdisciplinarity, is associated with more local relevance of research. In
+contrast we find that research that involves a clear disciplinary focus with
+some, but limited engagement with neighbouring disciplines, generates less
+local knowledge. We conclude by arguing that public research initiatives that
+aim to appropriate the socio-economic benefits from publicly funded research
+should not focus exclusively on research excellence, which tends to be treated
+in disciplinary terms and citation counts as reflected in national research
+assessment exercises. Implications for policy are offered with attention to
+policies for capturing the societal benefits of publicly funded research, and
+implicitly, research assessment exercises.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Chavarro_D/0/1/0/all/0/1&quot;&gt;Diego Chavarro&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Tang_P/0/1/0/all/0/1&quot;&gt;Puay Tang&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Rafols_I/0/1/0/all/0/1&quot;&gt;Ismael Rafols&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6743">
+<title>A Combinatorial Approach to Quantum Error Correcting Codes. (arXiv:1304.6743v1 [math.CO])</title>
+<link>http://arxiv.org/abs/1304.6743</link>
+<description rdf:parseType="Literal">&lt;p&gt;Motivated from the theory of quantum error correcting codes, we investigate a
+combinatorial problem that involves a symmetric $n$-vertices colourable graph
+and a group of operations (colouring rules) on the graph: find the minimum
+sequence of operations that maps between two given graph colourings. We provide
+an explicit algorithm for computing the solution of our problem, which in turn
+is directly related to computing the distance (performance) of an underlying
+quantum error correcting code. Computing the distance of a quantum code is a
+highly non-trivial problem and our method may be of use in the construction of
+better codes.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Luna_G/0/1/0/all/0/1&quot;&gt;German Luna&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Reid_S/0/1/0/all/0/1&quot;&gt;Samuel Reid&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Sanctis_B/0/1/0/all/0/1&quot;&gt;Bianca De Sanctis&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Gheorghiu_V/0/1/0/all/0/1&quot;&gt;Vlad Gheorghiu&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6753">
+<title>Clustering Consumption in Queues: A Scalable Model for Electric Vehicle Scheduling. (arXiv:1304.6753v1 [cs.SY])</title>
+<link>http://arxiv.org/abs/1304.6753</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper, we introduce a scalable model for the aggregate electricity
+demand of a fleet of electric vehicles, which can provide the right balance
+between model simplicity and accuracy. The model is based on classification of
+tasks with similar energy consumption characteristics into a finite number of
+clusters. The aggregator responsible for scheduling the charge of the vehicles
+has two goals: 1) to provide a hard QoS guarantee to the vehicles at the lowest
+possible cost; 2) to offer load or generation following services to the
+wholesale market. In order to achieve these goals, we combine the scalable
+demand model we propose with two scheduling mechanisms, a near-optimal and a
+heuristic technique. The performance of the two mechanisms is compared under a
+realistic setting in our numerical experiments.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Alizadeh_M/0/1/0/all/0/1&quot;&gt;Mahnoosh Alizadeh&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Kesidis_G/0/1/0/all/0/1&quot;&gt;George Kesidis&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Scaglione_A/0/1/0/all/0/1&quot;&gt;Anna Scaglione&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6759">
+<title>k-Modulus Method for Image Transformation. (arXiv:1304.6759v1 [cs.CV])</title>
+<link>http://arxiv.org/abs/1304.6759</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper, we propose a new algorithm to make a novel spatial image
+transformation. The proposed approach aims to reduce the bit depth used for
+image storage. The basic technique for the proposed transformation is based of
+the modulus operator. The goal is to transform the whole image into multiples
+of predefined integer. The division of the whole image by that integer will
+guarantee that the new image surely less in size from the original image. The
+k-Modulus Method could not be used as a stand alone transform for image
+compression because of its high compression ratio. It could be used as a scheme
+embedded in other image processing fields especially compression. According to
+its high PSNR value, it could be amalgamated with other methods to facilitate
+the redundancy criterion.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Jassim_F/0/1/0/all/0/1&quot;&gt;Firas A. Jassim&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6761">
+<title>Towards a Networks-of-Networks Framework for Cyber Security. (arXiv:1304.6761v1 [cs.CR])</title>
+<link>http://arxiv.org/abs/1304.6761</link>
+<description rdf:parseType="Literal">&lt;p&gt;Networks-of-networks (NoN) is a graph-theoretic model of interdependent
+networks that have distinct dynamics at each network (layer). By adding special
+edges to represent relationships between nodes in different layers, NoN
+provides a unified mechanism to study interdependent systems intertwined in a
+complex relationship. While NoN based models have been proposed for
+cyber-physical systems, in this position paper we build towards a three-layered
+NoN model for an enterprise cyber system. Each layer captures a different facet
+of a cyber system. We present in-depth discussion for four major graph-
+theoretic applications to demonstrate how the three-layered NoN model can be
+leveraged for continuous system monitoring and mission assurance.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Halappanavar_M/0/1/0/all/0/1&quot;&gt;Mahantesh Halappanavar&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Choudhury_S/0/1/0/all/0/1&quot;&gt;Sutanay Choudhury&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Hogan_E/0/1/0/all/0/1&quot;&gt;Emilie Hogan&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Hui_P/0/1/0/all/0/1&quot;&gt;Peter Hui&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Johnson_J/0/1/0/all/0/1&quot;&gt;John R. Johnson&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Ray_I/0/1/0/all/0/1&quot;&gt;Indrajit Ray&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Holder_L/0/1/0/all/0/1&quot;&gt;Lawrence Holder&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6762">
+<title>A semantic account of strong normalization in Linear Logic. (arXiv:1304.6762v1 [cs.LO])</title>
+<link>http://arxiv.org/abs/1304.6762</link>
+<description rdf:parseType="Literal">&lt;p&gt;We prove that given two cut free nets of linear logic, by means of their
+relational interpretations one can: 1) first determine whether or not the net
+obtained by cutting the two nets is strongly normalizable 2) then (in case it
+is strongly normalizable) compute the maximal length of the reduction sequences
+starting from that net.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Carvalho_D/0/1/0/all/0/1&quot;&gt;Daniel de Carvalho&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Falco_L/0/1/0/all/0/1&quot;&gt;Lorenzo Tortora de Falco&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6763">
+<title>Deep Scattering Spectrum. (arXiv:1304.6763v1 [cs.SD])</title>
+<link>http://arxiv.org/abs/1304.6763</link>
+<description rdf:parseType="Literal">&lt;p&gt;A scattering transform defines a locally translation invariant representation
+which is stable to time-warping deformations. It extends MFCC representations
+by computing modulation spectrum coefficients of multiple orders, through
+cascades of wavelet convolutions and modulus operators. Second-order scattering
+coefficients characterize transient phenomena such as attacks and amplitude
+modulation. A frequency transposition invariant representation is obtained by
+applying a scattering transform along log-frequency. State-the-of-art
+classification results are obtained for musical genre and phone classification
+on GTZAN and TIMIT databases, respectively.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+anden_J/0/1/0/all/0/1&quot;&gt;Joakim and&amp;#xe9;n&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Mallat_S/0/1/0/all/0/1&quot;&gt;St&amp;#xe9;phane Mallat&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6777">
+<title>A Bayesian Approach for Predicting the Popularity of Tweets. (arXiv:1304.6777v1 [cs.SI])</title>
+<link>http://arxiv.org/abs/1304.6777</link>
+<description rdf:parseType="Literal">&lt;p&gt;We predict the popularity of short messages called tweets created in the
+micro-blogging site known as Twitter. We measure the popularity of a tweet by
+the time-series path of its retweets, which is when people forward the tweet to
+others. We develop a probabilistic model for the evolution of the retweets
+using a Bayesian approach, and form predictions using only observations on the
+retweet times and the local network or &quot;graph&quot; structure of the retweeters. We
+obtain good step ahead forecasts and predictions of the final total number of
+retweets even when only a small fraction (i.e. less than one tenth) of the
+retweet paths are observed. This translates to good predictions within a few
+minutes of a tweet being posted and has potential implications for
+understanding the spread of broader ideas, memes, or trends in social networks
+and also revenue models for both individuals who &quot;sell tweets&quot; and for those
+looking to monetize their reach.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Zaman_T/0/1/0/all/0/1&quot;&gt;Tauhid Zaman&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Fox_E/0/1/0/all/0/1&quot;&gt;Emily B. Fox&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Bradlow_E/0/1/0/all/0/1&quot;&gt;Eric T. Bradlow&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6780">
+<title>Practices in source code sharing in astrophysics. (arXiv:1304.6780v1 [astro-ph.IM])</title>
+<link>http://arxiv.org/abs/1304.6780</link>
+<description rdf:parseType="Literal">&lt;p&gt;While software and algorithms have become increasingly important in
+astronomy, the majority of authors who publish computational astronomy research
+do not share the source code they develop, making it difficult to replicate and
+reuse the work. In this paper we discuss the importance of sharing scientific
+source code with the entire astrophysics community, and propose that journals
+require authors to make their code publicly available when a paper is
+published. That is, we suggest that a paper that involves a computer program
+not be accepted for publication unless the source code becomes publicly
+available. The adoption of such a policy by editors, editorial boards, and
+reviewers will improve the ability to replicate scientific results, and will
+also make the computational astronomy methods more available to other
+researchers who wish to apply them to their data.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Shamir_L/0/1/0/all/0/1&quot;&gt;Lior Shamir&lt;/a&gt; (1), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Wallin_J/0/1/0/all/0/1&quot;&gt;John F. Wallin&lt;/a&gt; (2), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Allen_A/0/1/0/all/0/1&quot;&gt;Alice Allen&lt;/a&gt; (3), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Berriman_B/0/1/0/all/0/1&quot;&gt;Bruce Berriman&lt;/a&gt; (4), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Teuben_P/0/1/0/all/0/1&quot;&gt;Peter Teuben&lt;/a&gt; (5), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Nemiroff_R/0/1/0/all/0/1&quot;&gt;Robert J. Nemiroff&lt;/a&gt; (6), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Mink_J/0/1/0/all/0/1&quot;&gt;Jessica Mink&lt;/a&gt; (7), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+Hanisch_R/0/1/0/all/0/1&quot;&gt;Robert J. Hanisch&lt;/a&gt; (8), &lt;a href=&quot;http://arxiv.org/find/astro-ph/1/au:+DuPrie_K/0/1/0/all/0/1&quot;&gt;Kimberly DuPrie&lt;/a&gt; (3) ((1) Lawrence Technological University, (2) Middle Tennessee State University, (3) Astrophysics Source Code Library, (4) Infrared Processing and Analysis Center, California Institute of Technology, (5) University of Maryland, (6) Michigan Technological University, (7) Harvard-Smithsonian Center for Astrophysics, (8) Space Telescope Science Institute)</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6782">
+<title>Minimal Residual Methods for Complex Symmetric, Skew Symmetric, and Skew Hermitian Systems. (arXiv:1304.6782v1 [cs.MS])</title>
+<link>http://arxiv.org/abs/1304.6782</link>
+<description rdf:parseType="Literal">&lt;p&gt;While there is no lack of efficient Krylov subspace solvers for Hermitian
+systems, there are few for complex symmetric, skew symmetric, or skew Hermitian
+systems, which are increasingly important in modern applications including
+quantum dynamics, electromagnetics, and power systems. For a large consistent
+complex symmetric system, one may apply a non-Hermitian Krylov subspace method
+disregarding the symmetry of $A$, or a Hermitian Krylov solver on the
+equivalent normal equation or an augmented system twice the original dimension.
+These have the disadvantages of increasing either memory, conditioning, or
+computational costs. An exception is a special version of QMR by Freund (1992),
+but that may be affected by non-benign breakdowns unless look-ahead is
+implemented; furthermore, it is designed for only consistent and nonsingular
+problems. For skew symmetric systems, Greif and Varah (2009) adapted CG for
+nonsingular skew symmetric linear systems that are necessarily and
+restrictively of even order.
+&lt;/p&gt;
+&lt;p&gt;We extend the symmetric and Hermitian algorithms MINRES and MINRES-QLP by
+Choi, Paige and Saunders (2011) to complex symmetric, skew symmetric, and skew
+Hermitian systems. In particular, MINRES-QLP uses a rank-revealing QLP
+decomposition of the tridiagonal matrix from a three-term recurrent
+complex-symmetric Lanczos process. Whether the systems are real or complex,
+singular or invertible, compatible or inconsistent, MINRES-QLP computes the
+unique minimum-length, i.e., pseudoinverse, solutions. It is a significant
+extension of MINRES by Paige and Saunders (1975) with enhanced stability and
+capability.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Sou-Cheng/0/1/0/all/0/1&quot;&gt;Sou-Cheng&lt;/a&gt; (Terrya) &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Choi/0/1/0/all/0/1&quot;&gt;Choi&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6792">
+<title>On the mixed $f$-divergence for multiple pairs of measures. (arXiv:1304.6792v1 [cs.IT])</title>
+<link>http://arxiv.org/abs/1304.6792</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper, the concept of the classical $f$-divergence (for a pair of
+measures) is extended to the mixed $f$-divergence (for multiple pairs of
+measures). The mixed $f$-divergence provides a way to measure the difference
+between multiple pairs of (probability) measures. Properties for the mixed
+$f$-divergence are established, such as permutation invariance and symmetry in
+distributions. An Alexandrov-Fenchel type inequality and an isoperimetric type
+inequality for the mixed $f$-divergence will be proved and applications in the
+theory of convex bodies are given.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Werner_E/0/1/0/all/0/1&quot;&gt;Elisabeth M. Werner&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Ye_D/0/1/0/all/0/1&quot;&gt;Deping Ye&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6800">
+<title>Approximation Hardness of Graphic TSP on Cubic Graphs. (arXiv:1304.6800v1 [cs.CC])</title>
+<link>http://arxiv.org/abs/1304.6800</link>
+<description rdf:parseType="Literal">&lt;p&gt;We prove explicit approximation hardness results for the Graphic TSP on cubic
+and subcubic graphs as well as the new inapproximability bounds for the
+corresponding instances of the (1,2)-TSP. The proof technique uses new modular
+constructions of simulating gadgets for the restricted cubic and subcubic
+instances. The modular constructions used in the paper could be also of
+independent interest.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Karpinski_M/0/1/0/all/0/1&quot;&gt;Marek Karpinski&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Schmied_R/0/1/0/all/0/1&quot;&gt;Richard Schmied&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6806">
+<title>Bertrand Networks. (arXiv:1304.6806v1 [cs.GT])</title>
+<link>http://arxiv.org/abs/1304.6806</link>
+<description rdf:parseType="Literal">&lt;p&gt;We study scenarios where multiple sellers of a homogeneous good compete on
+prices, where each seller can only sell to some subset of the buyers.
+Crucially, sellers cannot price-discriminate between buyers. We model the
+structure of the competition by a graph (or hyper-graph), with nodes
+representing the sellers and edges representing populations of buyers. We study
+equilibria in the game between the sellers, prove that they always exist, and
+present various structural, quantitative, and computational results about them.
+We also analyze the equilibria completely for a few cases. Many questions are
+left open.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Babaioff_M/0/1/0/all/0/1&quot;&gt;Moshe Babaioff&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lucier_B/0/1/0/all/0/1&quot;&gt;Brendan Lucier&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Nisan_N/0/1/0/all/0/1&quot;&gt;Noam Nisan&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6809">
+<title>A New Trusted and E-Commerce Architecture for Cloud Computing. (arXiv:1304.6809v1 [cs.DC])</title>
+<link>http://arxiv.org/abs/1304.6809</link>
+<description rdf:parseType="Literal">&lt;p&gt;Cloud computing platform gives people the opportunity for sharing resources,
+services and information among the people of the whole world. In private cloud
+system, information is shared among the persons who are in that cloud.
+Presently, different types of internet based systems are running in Cloud
+Computing environment. E-commerce is one of them. Present models are not
+secured enough for executing e-transactions easily, especially in cloud
+platform. Again, most of the time, clients fail to distinguish between the good
+online business companies and the bad one, which discourages clients and
+companies to migrate in cloud. In this paper, we have proposed a newer
+e-commerce architecture depends on encryption based secured and fuzzy logic
+based certain trust model which will be helpful to solve present e-commerce
+problems. We had discussed about the whole working procedure of the model in
+this paper. Finally, at the end of this paper, we have discussed some
+experimental results about our proposed model which will help to show the
+validity of our model.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Nafi_K/0/1/0/all/0/1&quot;&gt;Kawser Wazed Nafi&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Kar_T/0/1/0/all/0/1&quot;&gt;Tonny Shekha Kar&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Hossain_A/0/1/0/all/0/1&quot;&gt;Amjad Hossain&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Hashem_M/0/1/0/all/0/1&quot;&gt;M.M.A Hashem&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6810">
+<title>Inference and learning in probabilistic logic programs using weighted Boolean formulas. (arXiv:1304.6810v1 [cs.AI])</title>
+<link>http://arxiv.org/abs/1304.6810</link>
+<description rdf:parseType="Literal">&lt;p&gt;Probabilistic logic programs are logic programs in which some of the facts
+are annotated with probabilities. This paper investigates how classical
+inference and learning tasks known from the graphical model community can be
+tackled for probabilistic logic programs. Several such tasks such as computing
+the marginals given evidence and learning from (partial) interpretations have
+not really been addressed for probabilistic logic programs before.
+&lt;/p&gt;
+&lt;p&gt;The first contribution of this paper is a suite of efficient algorithms for
+various inference tasks. It is based on a conversion of the program and the
+queries and evidence to a weighted Boolean formula. This allows us to reduce
+the inference tasks to well-studied tasks such as weighted model counting,
+which can be solved using state-of-the-art methods known from the graphical
+model and knowledge compilation literature. The second contribution is an
+algorithm for parameter estimation in the learning from interpretations
+setting. The algorithm employs Expectation Maximization, and is built on top of
+the developed inference algorithms.
+&lt;/p&gt;
+&lt;p&gt;The proposed approach is experimentally evaluated. The results show that the
+inference algorithms improve upon the state-of-the-art in probabilistic logic
+programming and that it is indeed possible to learn the parameters of a
+probabilistic logic program from interpretations.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Fierens_D/0/1/0/all/0/1&quot;&gt;Daan Fierens&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Broeck_G/0/1/0/all/0/1&quot;&gt;Guy Van den Broeck&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Renkens_J/0/1/0/all/0/1&quot;&gt;Joris Renkens&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Shterionov_D/0/1/0/all/0/1&quot;&gt;Dimitar Shterionov&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Gutmann_B/0/1/0/all/0/1&quot;&gt;Bernd Gutmann&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Thon_I/0/1/0/all/0/1&quot;&gt;Ingo Thon&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Janssens_G/0/1/0/all/0/1&quot;&gt;Gerda Janssens&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Raedt_L/0/1/0/all/0/1&quot;&gt;Luc De Raedt&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6813">
+<title>The Compressed Annotation Matrix: an Efficient Data Structure for Computing Persistent Cohomology. (arXiv:1304.6813v1 [cs.CG])</title>
+<link>http://arxiv.org/abs/1304.6813</link>
+<description rdf:parseType="Literal">&lt;p&gt;The persistent homology with coefficients in a field F coincides with the
+same for cohomology because of duality. We propose an implementation of a
+recently introduced algorithm for persistent cohomology that attaches
+annotation vectors with the simplices. We separate the representation of the
+simplicial complex from the representation of the cohomology groups, and
+introduce a new data structure for maintaining the annotation matrix, which is
+more compact and reduces substancially the amount of matrix operations. In
+addition, we propose heuristics to simplify further the representation of the
+cohomology groups and improve both time and space complexities. The paper
+provides a theoretical analysis, as well as a detailed experimental study of
+our implementation and comparison with state-of-the-art software for persistent
+homology and cohomology.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Boissonnat_J/0/1/0/all/0/1&quot;&gt;Jean-Daniel Boissonnat&lt;/a&gt; (INRIA Sophia Antipolis), &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Dey_T/0/1/0/all/0/1&quot;&gt;Tamal K. Dey&lt;/a&gt; (CSE), &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Maria_C/0/1/0/all/0/1&quot;&gt;Cl&amp;#xe9;ment Maria&lt;/a&gt; (INRIA Sophia Antipolis)</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6822">
+<title>On Design of Opportunistic Spectrum Access in the Presence of Reactive Primary Users. (arXiv:1304.6822v1 [cs.IT])</title>
+<link>http://arxiv.org/abs/1304.6822</link>
+<description rdf:parseType="Literal">&lt;p&gt;Opportunistic spectrum access (OSA) is a key technique enabling the secondary
+users (SUs) in a cognitive radio (CR) network to transmit over the &quot;spectrum
+holes&quot; unoccupied by the primary users (PUs). In this paper, we focus on the
+OSA design in the presence of reactive PUs, where PU&apos;s access probability in a
+given channel is related to SU&apos;s past access decisions. We model the channel
+occupancy of the reactive PU as a 4-state discrete-time Markov chain. We
+formulate the optimal OSA design for SU throughput maximization as a
+constrained finite-horizon partially observable Markov decision process (POMDP)
+problem. We solve this problem by first considering the conventional short-term
+conditional collision probability (SCCP) constraint. We then adopt a long-term
+PU throughput (LPUT) constraint to effectively protect the reactive PU
+transmission. We derive the structure of the optimal OSA policy under the LPUT
+constraint and propose a suboptimal policy with lower complexity. Numerical
+results are provided to validate the proposed studies, which reveal some
+interesting new tradeoffs between SU throughput maximization and PU
+transmission protection in a practical interaction scenario.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Che_Y/0/1/0/all/0/1&quot;&gt;Yue Ling Che&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Zhang_R/0/1/0/all/0/1&quot;&gt;Rui Zhang&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Gong_Y/0/1/0/all/0/1&quot;&gt;Yi Gong&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6832">
+<title>Polynomial Time Algorithm for Min-Ranks of Graphs with Simple Tree Structures. (arXiv:1304.6832v1 [math.CO])</title>
+<link>http://arxiv.org/abs/1304.6832</link>
+<description rdf:parseType="Literal">&lt;p&gt;The min-rank of a graph was introduced by Haemers (1978) to bound the Shannon
+capacity of a graph. This parameter of a graph has recently gained much more
+attention from the research community after the work of Bar-Yossef et al.
+(2006). In their paper, it was shown that the min-rank of a graph G
+characterizes the optimal scalar linear solution of an instance of the Index
+Coding with Side Information (ICSI) problem described by the graph G. It was
+shown by Peeters (1996) that computing the min-rank of a general graph is an
+NP-hard problem. There are very few known families of graphs whose min-ranks
+can be found in polynomial time. In this work, we introduce a new family of
+graphs with e?fficiently computed min-ranks. Specifically, we establish a
+polynomial time dynamic programming algorithm to compute the min-ranks of
+graphs having simple tree structures. Intuitively, such graphs are obtained by
+gluing together, in a tree-like structure, any set of graphs for which the
+min-ranks can be determined in polynomial time. A polynomial time algorithm to
+recognize such graphs is also proposed.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Dau_S/0/1/0/all/0/1&quot;&gt;Son Hoang Dau&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Chee_Y/0/1/0/all/0/1&quot;&gt;Yeow Meng Chee&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6858">
+<title>Phase Transition and Strong Predictability. (arXiv:1304.6858v1 [cs.IT])</title>
+<link>http://arxiv.org/abs/1304.6858</link>
+<description rdf:parseType="Literal">&lt;p&gt;The statistical mechanical interpretation of algorithmic information theory
+(AIT, for short) was introduced and developed in our former work [K. Tadaki,
+Local Proceedings of CiE 2008, pp.425-434, 2008], where we introduced the
+notion of thermodynamic quantities into AIT. These quantities are real
+functions of temperature T&amp;gt;0. The values of all the thermodynamic quantities
+diverge when T exceeds 1. This phenomenon corresponds to phase transition in
+statistical mechanics. In this paper we introduce the notion of strong
+predictability for an infinite binary sequence and then apply it to the
+partition function Z(T), which is one of the thermodynamic quantities in AIT.
+We then reveal a new computational aspect of the phase transition in AIT by
+showing the critical difference of the behavior of Z(T) between T=1 and T&amp;lt;1 in
+terms of the strong predictability for the base-two expansion of Z(T).
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Tadaki_K/0/1/0/all/0/1&quot;&gt;Kohtaro Tadaki&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6870">
+<title>Maximum Matching and Linear Programming in Fixed-Point Logic with Counting. (arXiv:1304.6870v1 [cs.LO])</title>
+<link>http://arxiv.org/abs/1304.6870</link>
+<description rdf:parseType="Literal">&lt;p&gt;We establish the expressibility in fixed-point logic with counting (FPC) of a
+number of natural polynomial-time problems. In particular, we show that the
+size of a maximum matching in a graph is definable in FPC. This settles an open
+problem first posed by Blass, Gurevich and Shelah, who asked whether the
+existence of perfect matchings in general graphs could be determined in the
+more powerful formalism of choiceless polynomial time with counting. Our result
+is established by showing that the ellipsoid method for solving linear programs
+can be implemented in FPC. This allows us to prove that linear programs can be
+optimised in FPC if the corresponding separation oracle problem can be defined
+in FPC. On the way to defining a suitable separation oracle for the maximum
+matching problem, we provide FPC formulas defining maximum flows and canonical
+minimum cuts in capacitated graphs.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Anderson_M/0/1/0/all/0/1&quot;&gt;Matthew Anderson&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Dawar_A/0/1/0/all/0/1&quot;&gt;Anuj Dawar&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Holm_B/0/1/0/all/0/1&quot;&gt;Bjarki Holm&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6872">
+<title>Security Issues In Speech Watermarking for Information Transmission. (arXiv:1304.6872v1 [cs.MM])</title>
+<link>http://arxiv.org/abs/1304.6872</link>
+<description rdf:parseType="Literal">&lt;p&gt;The secure transmission of speech information is a significant issue faced by
+many security professionals and individuals. By applying voice-encryption
+technique any kind of encrypted sensitive speech data such as password can be
+transmitted. But this has the serious disadvantage that by means of
+cryptanalysis attack encrypted data can be compromised. Increasing the strength
+of encryption/decryption results in an associated increased in the cost.
+Additional techniques like stenography and digital watermarking can be used to
+conceal information in an undetectable way in audio data. However this
+watermarked audio data has to be send through unreliable media and an
+eavesdropper might get hold of secret message and can also determine the
+identity of a speaker who is sending the information since human voice contains
+information based on its characteristics such as frequency, pitch, and energy.
+This paper proposes Normalized Speech Watermarking technique. Speech signal is
+normalized to hide the identity of the speaker who is sending the information
+and then speech watermarking technique is applied on this normalized signal
+that contains the message (password) so that what information is transmitted
+should not be unauthorizedly revealed.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Patel_R/0/1/0/all/0/1&quot;&gt;Rupa Patel&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Shrawankar_U/0/1/0/all/0/1&quot;&gt;Urmila Shrawankar&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6889">
+<title>On Reduced Gr\&quot;obner Basis and Macaulay-Buchberger Basis Theorem over Noetherian Rings. (arXiv:1304.6889v1 [cs.SC])</title>
+<link>http://arxiv.org/abs/1304.6889</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper, we extend the characterization of $\mathbb{Z}[x]/\ &amp;lt; f \ &amp;gt;$,
+where $f \in \mathbb{Z}[x]$ to be a free $\mathbb{Z}$-module to multivariate
+polynomial rings over any commutative Noetherian ring, $A$. The
+characterization allows us to extend the Gr\&quot;obner basis method of computing a
+$\Bbbk$-vector space basis of residue class polynomial rings over a field
+$\Bbbk$ (Macaulay-Buchberger Basis Theorem) to rings, i.e.
+$A[x_1,\ldots,x_n]/\mathfrak{a}$, where $\mathfrak{a} \subseteq
+A[x_1,\ldots,x_n]$ is an ideal. We give some insights into the characterization
+for two special cases, when $A = \mathbb{Z}$ and $A =
+\Bbbk[\theta_1,\ldots,\theta_m]$. As an application of this characterization,
+we show that the concept of Border bases can be extended to rings when the
+corresponding residue class ring is a finitely generated, free $A$-module.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Francis_M/0/1/0/all/0/1&quot;&gt;Maria Francis&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Dukkipati_A/0/1/0/all/0/1&quot;&gt;Ambedkar Dukkipati&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6896">
+<title>Some new light subgraphs in the 1-planar graphs. (arXiv:1304.6896v1 [math.CO])</title>
+<link>http://arxiv.org/abs/1304.6896</link>
+<description rdf:parseType="Literal">&lt;p&gt;A graph is {\em 1-planar} if it can be drawn on the plane such that every
+edge cross at most one other edge. A connected graph $H$ is {\em strongly
+light} in a family of graphs $\mathfrak{G}$, if there exists a constant
+$\lambda$, such that every graph in $\mathfrak{G}$ contains a subgraph $K$
+isomorphic to $H$ with $\deg_{G}(v) \leq \lambda$ for all $v \in V(K)$. In this
+paper, we present some strongly light subgraphs in the family of 1-planar
+graphs with minimum degree 7.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Wang_T/0/1/0/all/0/1&quot;&gt;Tao Wang&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6897">
+<title>The Power and Limitations of Static Binary Search Trees with Lazy Finger. (arXiv:1304.6897v1 [cs.DS])</title>
+<link>http://arxiv.org/abs/1304.6897</link>
+<description rdf:parseType="Literal">&lt;p&gt;A static binary search tree where every search starts from where the previous
+one ends (lazy finger) is considered. Such a search method is more powerful
+than that of the classic optimal static trees, where every search starts from
+the root (root finger), and less powerful than when rotations are
+allowed---where finding the best rotation based tree is the topic of the
+dynamic optimality conjecture of Sleator and Tarjan. The runtime of the classic
+root-finger tree can be expressed in terms of the entropy of the distribution
+of the searches, but we show that this is not the case for the optimal lazy
+finger tree. A non-entropy based asymptotically-tight expression for the
+runtime of the optimal lazy finger trees is derived, and a dynamic
+programming-based method is presented to compute the optimal tree.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Bose_P/0/1/0/all/0/1&quot;&gt;Prosenjit Bose&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Douieb_K/0/1/0/all/0/1&quot;&gt;Karim Dou&amp;#xef;eb&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Iacono_J/0/1/0/all/0/1&quot;&gt;John Iacono&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Langerman_S/0/1/0/all/0/1&quot;&gt;Stefan Langerman&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6898">
+<title>Automated Synthesis of Controllers for Search and Rescue from Temporal Logic Specifications. (arXiv:1304.6898v1 [cs.SY])</title>
+<link>http://arxiv.org/abs/1304.6898</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this thesis, the synthesis of correct-by-construction controllers for
+robots assisting in Search and Rescue (SAR) is considered. In recent years, the
+development of robots assisting in disaster mitigation in urban environments
+has been actively encouraged, since robots can be deployed in dangerous and
+hazardous areas where human SAR operations would not be possible.
+&lt;/p&gt;
+&lt;p&gt;In order to meet the reliability requirements in SAR, the specifications of
+the robots are stated in Linear Temporal Logic and synthesized into finite
+state machines that can be executed as controllers. The resulting controllers
+are purely discrete and maintain an ongoing interaction with their environment
+by changing their internal state according to the inputs they receive from
+sensors or other robots.
+&lt;/p&gt;
+&lt;p&gt;Since SAR robots have to cooperate in order to complete the required tasks,
+the synthesis of controllers that together achieve a common goal is considered.
+This distributed synthesis problem is provably undecidable, hence it cannot be
+solved in full generality, but a set of design principles is introduced in
+order to develop specialized synthesizable specifications. In particular,
+communication and cooperation are resolved by introducing a verified
+standardized communication protocol and preempting negotiations between robots.
+&lt;/p&gt;
+&lt;p&gt;The robots move on a graph on which we consider the search for stationary and
+moving targets. Searching for moving targets is cast into a game of cops and
+robbers, and specifications implementing a winning strategy are developed so
+that the number of robots required is minimized.
+&lt;/p&gt;
+&lt;p&gt;The viability of the methods is demonstrated by synthesizing controllers for
+robots performing search and rescue for stationary targets and searching for
+moving targets. It is shown that the controllers are guaranteed to achieve the
+common goal of finding and rescuing the targets.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Wiltsche_C/0/1/0/all/0/1&quot;&gt;Clemens Wiltsche&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6899">
+<title>An implementation of the relational k-means algorithm. (arXiv:1304.6899v1 [cs.LG])</title>
+<link>http://arxiv.org/abs/1304.6899</link>
+<description rdf:parseType="Literal">&lt;p&gt;A C# implementation of a generalized k-means variant called relational
+k-means is described here. Relational k-means is a generalization of the
+well-known k-means clustering method which works for non-Euclidean scenarios as
+well. The input is an arbitrary distance matrix, as opposed to the traditional
+k-means method, where the clustered objects need to be identified with vectors.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Szalkai_B/0/1/0/all/0/1&quot;&gt;Bal&amp;#xe1;zs Szalkai&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6906">
+<title>Approximating Semi-Matchings in Streaming and in Two-Party Communication. (arXiv:1304.6906v1 [cs.DS])</title>
+<link>http://arxiv.org/abs/1304.6906</link>
+<description rdf:parseType="Literal">&lt;p&gt;We study the communication complexity and streaming complexity of
+approximating unweighted semi-matchings. A semi-matching in a bipartite graph G
+= (A, B, E), with n = |A|, is a subset of edges S that matches all A vertices
+to B vertices with the goal usually being to do this as fairly as possible.
+While the term &apos;semi-matching&apos; was coined in 2003 by Harvey et al. [WADS 2003],
+the problem had already previously been studied in the scheduling literature
+under different names.
+&lt;/p&gt;
+&lt;p&gt;We present a deterministic one-pass streaming algorithm that for any 0 &amp;lt;=
+\epsilon &amp;lt;= 1 uses space O(n^{1+\epsilon}) and computes an
+O(n^{(1-\epsilon)/2})-approximation to the semi-matching problem. Furthermore,
+with O(log n) passes it is possible to compute an O(log n)-approximation with
+space O(n).
+&lt;/p&gt;
+&lt;p&gt;In the one-way two-party communication setting, we show that for every
+\epsilon &amp;gt; 0, deterministic communication protocols for computing an
+O(n^{1/((1+\epsilon)c + 1)})-approximation require a message of size more than
+cn bits. We present two deterministic protocols communicating n and 2n edges
+that compute an O(sqrt(n)) and an O(n^{1/3})-approximation respectively.
+&lt;/p&gt;
+&lt;p&gt;Finally, we improve on results of Harvey et al. [Journal of Algorithms 2006]
+and prove new links between semi-matchings and matchings. While it was known
+that an optimal semi-matching contains a maximum matching, we show that there
+is a hierarchical decomposition of an optimal semi-matching into maximum
+matchings. A similar result holds for semi-matchings that do not admit
+length-two degree-minimizing paths.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Konrad_C/0/1/0/all/0/1&quot;&gt;Christian Konrad&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Rosen_A/0/1/0/all/0/1&quot;&gt;Adi Ros&amp;#xe9;n&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6920">
+<title>Contextual Query Using Bell Tests. (arXiv:1304.6920v1 [cs.IR])</title>
+<link>http://arxiv.org/abs/1304.6920</link>
+<description rdf:parseType="Literal">&lt;p&gt;Tests are essential in Information Retrieval and Data Mining in order to
+evaluate the effectiveness of a query. An automatic measure tool intended to
+exhibit the meaning of words in context has been developed and linked with
+Quantum Theory, particularly entanglement. &quot;Quantum like&quot; experiments were
+undertaken on semantic space based on the Hyperspace Analogue Language (HAL)
+method. A quantum HAL model was implemented using state vectors issued from the
+HAL matrix and query observables, testing a wide range of windows sizes. The
+Bell parameter S, associating measures on two words in a document, was derived
+showing peaks for specific window sizes. The peaks show maximum quantum
+violation of the Bell inequalities and are document dependent. This new
+correlation measure inspired by Quantum Theory could be promising for measuring
+query relevance.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Barros_J/0/1/0/all/0/1&quot;&gt;Joao Barros&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Toffano_Z/0/1/0/all/0/1&quot;&gt;Zeno Toffano&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Meguebli_Y/0/1/0/all/0/1&quot;&gt;Youssef Meguebli&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Doan_B/0/1/0/all/0/1&quot;&gt;Bich-Li&amp;#xea;n Doan&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6925">
+<title>Controlling the Depth, Size, and Number of Subtrees for Two-variable Logic on Trees. (arXiv:1304.6925v1 [cs.LO])</title>
+<link>http://arxiv.org/abs/1304.6925</link>
+<description rdf:parseType="Literal">&lt;p&gt;Verification of properties of first order logic with two variables FO2 has
+been investigated in a number of contexts. Over arbitrary structures it is
+known to be decidable with NEXPTIME complexity, with finitely satisfiable
+formulas having exponential-sized models. Over word structures, where FO2 is
+known to have the same expressiveness as unary temporal logic, the same
+properties hold. Over finite labelled ordered trees FO2 is also of interest: it
+is known to have the same expressiveness as navigational XPath, a common query
+language for XML documents. Prior work on XPath and FO2 gives a 2EXPTIME bound
+for satisfiability of FO2. In this work we give the first in-depth look at the
+complexity of FO2 on trees, and on the size and depth of models. We show that
+the doubly-exponential bound is not tight, and neither do the
+NEXPTIME-completeness results from the word case carry over: the exact
+complexity varies depending on the vocabulary used, the presence or absence of
+a schema, and the encoding used for labels. Our results depend on an analysis
+of subformula types in models of FO2 formulas, including techniques for
+controlling the number of distinct subtrees, the depth, and the size of a
+witness to finite satisfiability for FO2 sentences over trees.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Benaim_S/0/1/0/all/0/1&quot;&gt;Saguy Benaim&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Benedikt_M/0/1/0/all/0/1&quot;&gt;Michael Benedikt&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lenhardt_R/0/1/0/all/0/1&quot;&gt;Rastislav Lenhardt&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Worrell_J/0/1/0/all/0/1&quot;&gt;James Worrell&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6933">
+<title>Digit Recognition in Handwritten Weather Records. (arXiv:1304.6933v1 [cs.CV])</title>
+<link>http://arxiv.org/abs/1304.6933</link>
+<description rdf:parseType="Literal">&lt;p&gt;This paper addresses the automatic recognition of handwritten temperature
+values in weather records. The localization of table cells is based on line
+detection using projection profiles. Further, a stroke-preserving line removal
+method which is based on gradient images is proposed. The presented digit
+recognition utilizes features which are extracted using a set of filters and a
+Support Vector Machine classifier. It was evaluated on the MNIST and the USPS
+dataset and our own database with about 17,000 RGB digit images. An accuracy of
+99.36% per digit is achieved for the entire system using a set of 84 weather
+records.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Keglevic_M/0/1/0/all/0/1&quot;&gt;Manuel Keglevic&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Sablatnig_R/0/1/0/all/0/1&quot;&gt;Robert Sablatnig&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6945">
+<title>A bibliometric index based on the complete list of cited publications. (arXiv:1304.6945v1 [cs.DL])</title>
+<link>http://arxiv.org/abs/1304.6945</link>
+<description rdf:parseType="Literal">&lt;p&gt;We propose a new index, the $j$-index, which is defined for an author as the
+sum of the square roots of the numbers of citations to each of the author&apos;s
+publications. The idea behind the $j$-index it to remedy a drawback of the
+$h$-index $-$ that the $h$-index does not take into account the full citation
+record of a researcher. The square root function is motivated by our desire to
+avoid the possible bias that may occur with a simple sum when an author has
+several very highly cited papers. We compare the $j$-index to the $h$-index,
+the $g$-index and the total citation count for three subject areas using
+several association measures.
+&lt;/p&gt;
+&lt;p&gt;Our results indicate that that the association between the $j$-index and the
+other indices varies according to the subject area. One explanation of this
+variation may be due to the proportion of citations to publications of the
+researcher that are in the $h$-core. The $j$-index is {\em not} an $h$-index
+variant, and as such is intended to complement rather than necessarily replace
+the $h$-index and other bibliometric indicators, thus providing a more complete
+picture of a researcher&apos;s achievements.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Levene_M/0/1/0/all/0/1&quot;&gt;Mark Levene&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Fenner_T/0/1/0/all/0/1&quot;&gt;Trevor Fenner&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Bar_Ilan_J/0/1/0/all/0/1&quot;&gt;Judit Bar-Ilan&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6962">
+<title>Variable projection methods for approximate (greatest) common divisor computations. (arXiv:1304.6962v1 [math.OC])</title>
+<link>http://arxiv.org/abs/1304.6962</link>
+<description rdf:parseType="Literal">&lt;p&gt;We consider the problem of finding for a given $N$-tuple of polynomials the
+closest $N$-tuple that has a common divisor of degree at least $d$. Extended
+weighted Euclidean seminorm of the coefficients is used as a measure of
+closeness. Two equivalent representations of the problem are considered: (i)
+direct optimization over the common divisors and cofactors (image
+representation), and (ii) Sylvester low-rank approximation (kernel
+representation). We use the duality between least-squares and least-norm
+problems to show that (i) and (ii) are closely related to mosaic Hankel
+low-rank approximation. This allows us to apply to the approximate common
+divisor problem recent results on complexity and accuracy of computations for
+mosaic Hankel low-rank approximation. We develop optimization methods based on
+the variable projection principle both for image and kernel representation.
+These methods have linear complexity in the degrees of the polynomials if
+either $d$ is small or $d$ is of the same order as the degrees of the
+polynomials. We provide a software implementation of the developed methods,
+which is based on a software package for structured low-rank approximation.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Usevich_K/0/1/0/all/0/1&quot;&gt;Konstantin Usevich&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Markovsky_I/0/1/0/all/0/1&quot;&gt;Ivan Markovsky&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6969">
+<title>A Deterministic Annealing Approach to Optimization of Zero-delay Source-Channel Codes. (arXiv:1304.6969v1 [cs.IT])</title>
+<link>http://arxiv.org/abs/1304.6969</link>
+<description rdf:parseType="Literal">&lt;p&gt;This paper studies optimization of zero-delay source-channel codes, and
+specifically the problem of obtaining globally optimal transformations that map
+between the source space and the channel space, under a given transmission
+power constraint and for the mean square error distortion. Particularly, we
+focus on the setting where the decoder has access to side information, whose
+cost surface is known to be riddled with local minima. Prior work derived the
+necessary conditions for optimality of the encoder and decoder mappings, along
+with a greedy optimization algorithm that imposes these conditions iteratively,
+in conjunction with the heuristic &quot;noisy channel relaxation&quot; method to mitigate
+poor local minima. While noisy channel relaxation is arguably effective in
+simple settings, it fails to provide accurate global optimization results in
+more complicated settings including the decoder with side information as
+considered in this paper. We propose a global optimization algorithm based on
+the ideas of &quot;deterministic annealing&quot;- a non-convex optimization method,
+derived from information theoretic principles with analogies to statistical
+physics, and successfully employed in several problems including clustering,
+vector quantization and regression. We present comparative numerical results
+that show strict superiority of the proposed algorithm over greedy optimization
+methods as well as over the noisy channel relaxation.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Mehmetoglu_M/0/1/0/all/0/1&quot;&gt;Mustafa S. Mehmetoglu&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Akyol_E/0/1/0/all/0/1&quot;&gt;Emrah Akyol&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Rose_K/0/1/0/all/0/1&quot;&gt;Kenneth Rose&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6983">
+<title>A denotational semantics for a Lewis-style modal system close to S1. (arXiv:1304.6983v1 [cs.LO])</title>
+<link>http://arxiv.org/abs/1304.6983</link>
+<description rdf:parseType="Literal">&lt;p&gt;While possible worlds semantics provides a natural framework for normal modal
+logics, there is no such intuitive semantics for modal system S1 designed by C.
+I. Lewis as a logic of strict implication. In this paper, we interpret strict
+equivalence
+$\square(\varphi\rightarrow\psi)\wedge\square(\psi\rightarrow\varphi)$ as
+propositional identity $\varphi\equiv\psi$ (read: &quot;$\varphi$ and $\psi$ denote
+the same proposition&quot;) and extend S1 by an inference rule which is a natural
+generalization of the rule of Substitutions of Proved Strict Equivalents. The
+resulting modal system is only slightly stronger than S1 and satisfies the
+principles of non-Fregean logic. This enables us to develop an intuitive,
+non-Fregean denotational semantics for which the system is sound and complete.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lewitzka_S/0/1/0/all/0/1&quot;&gt;Steffen Lewitzka&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6990">
+<title>Euclidean Upgrade from a Minimal Number of Segments. (arXiv:1304.6990v1 [cs.CV])</title>
+<link>http://arxiv.org/abs/1304.6990</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper, we propose an algebraic approach to upgrade a projective
+reconstruction to a Euclidean one, and aim at computing the rectifying
+homography from a minimal number of 9 segments of known length. Constraints are
+derived from these segments which yield a set of polynomial equations that we
+solve by means of Gr\&quot;obner bases. We explain how a solver for such a system of
+equations can be constructed from simplified template data. Moreover, we
+present experiments that demonstrate that the given problem can be solved in
+this way.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Schilling_T/0/1/0/all/0/1&quot;&gt;Tanja Schilling&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Pajdla_T/0/1/0/all/0/1&quot;&gt;Tomas Pajdla&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6994">
+<title>Sp\&apos;eculation et auto-stabilisation. (arXiv:1304.6994v1 [cs.DC])</title>
+<link>http://arxiv.org/abs/1304.6994</link>
+<description rdf:parseType="Literal">&lt;p&gt;Self-stabilization ensures that, after any transient fault, the system
+recovers in a finite time and eventually exhibits a correct behaviour.
+Speculation consists in guaranteeing that the system satisfies its requirements
+for any execution but exhibits significantly better performances for a subset
+of executions that are more probable. A speculative protocol is in this sense
+supposed to be both robust and efficient in practice. We introduce the notion
+of speculative stabilization which we illustrate through the mutual exclusion
+problem. We then present a novel speculatively stabilizing mutual exclusion
+protocol. Our protocol is self-stabilizing for any asynchronous execution. We
+prove that its stabilization time for synchronous executions is diam(g)/2 steps
+(where diam(g) denotes the diameter of the system). This complexity result is
+of independent interest. The celebrated mutual exclusion protocol of Dijkstra
+stabilizes in n steps (where n is the number of processes) in synchronous
+executions and the question whether the stabilization time could be strictly
+smaller than the diameter has been open since then (almost 40 years). We show
+that this is indeed possible for any underlying topology. We also provide a
+lower bound proof that shows that our new stabilization time of diam(g)/2 steps
+is optimal for synchronous executions, even if asynchronous stabilization is
+not required.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Dubois_S/0/1/0/all/0/1&quot;&gt;Swan Dubois&lt;/a&gt; (LPD, EPFL), &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Guerraoui_R/0/1/0/all/0/1&quot;&gt;Rachid Guerraoui&lt;/a&gt; (LPD, EPFL)</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6996">
+<title>Virtual Delamination Testing through Non-Linear Multi-Scale Computational Methods: Some Recent Progress. (arXiv:1304.6996v1 [math.NA])</title>
+<link>http://arxiv.org/abs/1304.6996</link>
+<description rdf:parseType="Literal">&lt;p&gt;This paper deals with the parallel simulation of delamination problems at the
+meso-scale by means of multi-scale methods, the aim being the Virtual
+Delamination Testing of Composite parts. In the non-linear context, Domain
+Decomposition Methods are mainly used as a solver for the tangent problem to be
+solved at each iteration of a Newton-Raphson algorithm. In case of strongly
+nonlinear and heterogeneous problems, this procedure may lead to severe
+difficulties. The paper focuses on methods to circumvent these problems, which
+can now be expressed using a relatively general framework, even though the
+different ingredients of the strategy have emerged separately. We rely here on
+the micro-macro framework proposed in (Ladev\`eze, Loiseau, and Dureisseix,
+2001). The method proposed in this paper introduces three additional features:
+(i) the adaptation of the macro-basis to situations where classical
+homogenization does not provide a good preconditioner, (ii) the use of
+non-linear relocalization to decrease the number of global problems to be
+solved in the case of unevenly distributed non-linearities, (iii) the
+adaptation of the approximation of the local Schur complement which governs the
+convergence of the proposed iterative technique. Computations of delamination
+and delamination-buckling interaction with contact on potentially large
+delaminated areas are used to illustrate those aspects.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Allix_O/0/1/0/all/0/1&quot;&gt;Olivier Allix&lt;/a&gt; (LMT), &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Gosselet_P/0/1/0/all/0/1&quot;&gt;Pierre Gosselet&lt;/a&gt; (LMT), &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Kerfriden_P/0/1/0/all/0/1&quot;&gt;Pierre Kerfriden&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Saavedra_K/0/1/0/all/0/1&quot;&gt;Karin Saavedra&lt;/a&gt; (LMT)</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1108.5985">
+<title>An Oracle-based, Output-sensitive Algorithm for Projections of Resultant Polytopes. (arXiv:1108.5985v4 [cs.SC] UPDATED)</title>
+<link>http://arxiv.org/abs/1108.5985</link>
+<description rdf:parseType="Literal">&lt;p&gt;We design an algorithm to compute the Newton polytope of the resultant, known
+as resultant polytope, or its orthogonal projection along a given direction.
+The resultant is fundamental in algebraic elimination, optimization, and
+geometric modeling. Our algorithm exactly computes vertex- and
+halfspace-representations of the polytope using an oracle producing resultant
+vertices in a given direction, thus avoiding walking on the polytope whose
+dimension is alpha-n-1, where the input consists of alpha points in Z^n. Our
+approach is output-sensitive as it makes one oracle call per vertex and facet.
+It extends to any polytope whose oracle-based definition is advantageous, such
+as the secondary and discriminant polytopes. Our publicly available
+implementation uses the experimental CGAL package triangulation. Our method
+computes 5-, 6- and 7-dimensional polytopes with 35K, 23K and 500 vertices,
+respectively, within 2hrs, and the Newton polytopes of many important surface
+equations encountered in geometric modeling in &amp;lt;1sec, whereas the corresponding
+secondary polytopes are intractable. It is faster than tropical geometry
+software up to dimension 5 or 6. Hashing determinantal predicates accelerates
+execution up to 100 times. One variant computes inner and outer approximations
+with, respectively, 90% and 105% of the true volume, up to 25 times faster.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Emiris_I/0/1/0/all/0/1&quot;&gt;Ioannis Z. Emiris&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Fisikopoulos_V/0/1/0/all/0/1&quot;&gt;Vissarion Fisikopoulos&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Konaxis_C/0/1/0/all/0/1&quot;&gt;Christos Konaxis&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Penaranda_L/0/1/0/all/0/1&quot;&gt;Luis Pe&amp;#xf1;aranda&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1110.0259">
+<title>Fixed-Parameter Tractability of Directed Multiway Cut Parameterized by the Size of the Cutset. (arXiv:1110.0259v2 [cs.DS] UPDATED)</title>
+<link>http://arxiv.org/abs/1110.0259</link>
+<description rdf:parseType="Literal">&lt;p&gt;Given a directed graph $G$, a set of $k$ terminals and an integer $p$, the
+\textsc{Directed Vertex Multiway Cut} problem asks if there is a set $S$ of at
+most $p$ (nonterminal) vertices whose removal disconnects each terminal from
+all other terminals. \textsc{Directed Edge Multiway Cut} is the analogous
+problem where $S$ is a set of at most $p$ edges. These two problems indeed are
+known to be equivalent. A natural generalization of the multiway cut is the
+\emph{multicut} problem, in which we want to disconnect only a set of $k$ given
+pairs instead of all pairs. Marx (Theor. Comp. Sci. 2006) showed that in
+undirected graphs multiway cut is fixed-parameter tractable (FPT) parameterized
+by $p$. Marx and Razgon (STOC 2011) showed that undirected multicut is FPT and
+directed multicut is W[1]-hard parameterized by $p$. We complete the picture
+here by our main result which is that both \textsc{Directed Vertex Multiway
+Cut} and \textsc{Directed Edge Multiway Cut} can be solved in time
+$2^{2^{O(p)}}n^{O(1)}$, i.e., FPT parameterized by size $p$ of the cutset of
+the solution. This answers an open question raised by Marx (Theor. Comp. Sci.
+2006) and Marx and Razgon (STOC 2011). It follows from our result that
+\textsc{Directed Multicut} is FPT for the case of $k=2$ terminal pairs, which
+answers another open problem raised in Marx and Razgon (STOC 2011).
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Chitnis_R/0/1/0/all/0/1&quot;&gt;Rajesh Chitnis&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Hajiaghayi_M/0/1/0/all/0/1&quot;&gt;MohammadTaghi Hajiaghayi&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Marx_D/0/1/0/all/0/1&quot;&gt;D&amp;#xe1;niel Marx&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1209.1003">
+<title>A C++11 implementation of arbitrary-rank tensors for high-performance computing. (arXiv:1209.1003v2 [cs.MS] UPDATED)</title>
+<link>http://arxiv.org/abs/1209.1003</link>
+<description rdf:parseType="Literal">&lt;p&gt;This article discusses an efficient implementation of tensors of arbitrary
+rank by using some of the idioms introduced by the recently published C++ ISO
+Standard (C++11). With the aims at providing a basic building block for
+high-performance computing, a single Array class template is carefully crafted,
+from which vectors, matrices, and even higher-order tensors can be created. An
+expression template facility is also built around the array class template to
+provide convenient mathematical syntax. As a result, by using templates, an
+extra high-level layer is added to the C++ language when dealing with algebraic
+objects and their operations, without compromising performance.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Aragon_A/0/1/0/all/0/1&quot;&gt;Alejandro M. Arag&amp;#xf3;n&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1210.6908">
+<title>Some instances of a sub-permutation problem on pattern avoiding permutations. (arXiv:1210.6908v3 [math.CO] UPDATED)</title>
+<link>http://arxiv.org/abs/1210.6908</link>
+<description rdf:parseType="Literal">&lt;p&gt;We study here the enumeration problem of permutations which satisfy certain
+additional constraints. Given a class of permutations K a pattern {\mu} and a
+fixed integer j, we ask for the number of permutations avoiding {\mu} whose
+biggest sub-permutation in K has size bounded by j. We provide several new
+results considering different instances of this problem depending on {\mu} and
+K. In particular, we derive enumerations when the avoided pattern {\mu} is 312,
+123 and 1-32 and when the considered test sets K are also of pattern avoidance
+type. Most (but not all) of the cases studied correspond to interesting
+sub-tree properties of binary trees. In this sense, by the use of pattern
+avoiding conditions, we extend a problem considered by Flajolet et al. in a
+previous work.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Disanto_F/0/1/0/all/0/1&quot;&gt;Filippo Disanto&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Wiehe_T/0/1/0/all/0/1&quot;&gt;Thomas Wiehe&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1211.4473">
+<title>Online Energy Generation Scheduling for Microgrids with Intermittent Energy Sources and Co-Generation. (arXiv:1211.4473v2 [cs.OH] UPDATED)</title>
+<link>http://arxiv.org/abs/1211.4473</link>
+<description rdf:parseType="Literal">&lt;p&gt;Microgrids represent an emerging paradigm of future electric power systems
+that can utilize both distributed and centralized generations. Two recent
+trends in microgrids are the integration of local renewable energy sources
+(such as wind farms) and the use of co-generation (i.e., to supply both
+electricity and heat). However, these trends also bring unprecedented
+challenges to the design of intelligent control strategies for microgrids.
+Traditional generation scheduling paradigms rely on perfect prediction of
+future electricity supply and demand. They are no longer applicable to
+microgrids with unpredictable renewable energy supply and with co-generation
+(that needs to consider both electricity and heat demand). In this paper, we
+study online algorithms for the microgrid generation scheduling problem with
+intermittent renewable energy sources and co-generation, with the goal of
+maximizing the cost-savings with local generation. Based on the insights from
+the structure of the offline optimal solution, we propose a class of
+competitive online algorithms, called CHASE (Competitive Heuristic Algorithm
+for Scheduling Energy-generation), that track the offline optimal in an online
+fashion. Under typical settings, we show that CHASE achieves the best
+competitive ratio among all deterministic online algorithms, and the ratio is
+no larger than a small constant 3.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lu_L/0/1/0/all/0/1&quot;&gt;Lian Lu&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Tu_J/0/1/0/all/0/1&quot;&gt;Jinlong Tu&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Chau_C/0/1/0/all/0/1&quot;&gt;Chi-Kin Chau&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Chen_M/0/1/0/all/0/1&quot;&gt;Minghua Chen&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lin_X/0/1/0/all/0/1&quot;&gt;Xiaojun Lin&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1212.6576">
+<title>Denotational semantics for normal modal logics with propositional quantifiers and identity. (arXiv:1212.6576v3 [cs.LO] UPDATED)</title>
+<link>http://arxiv.org/abs/1212.6576</link>
+<description rdf:parseType="Literal">&lt;p&gt;We present a denotational semantics for modal propositional logics with
+propositional quantifiers and connectives for propositional identity and
+reference. A proposition is here not given as a set of possible worlds but as
+the denotation of a formula under a valuation function. In fact, the semantics
+is independent from the possible worlds framework and derives from principles
+of non-Fregean Logic. Modal laws such as Necessitation are not a priori given.
+Our aim is to restore modal principles and to axiomatize normal modal logics as
+first-order theories with identity. We start with a basic system containing
+axiom \textbf{K} as the only modal principle and establish completeness
+results. Following an earlier approach (S. Lewitzka, Studia Logica 97(2), 233
+-- 264, 2011), we regard a modality as an appropriate subset of the
+propositional universe of a model. We show that the Necessitation Rule as well
+as further modal principles can be restored by imposing specific semantic
+constraints. As a main result, we present model constructions proving that
+normal modal systems, such as K, T, S4, S5, K45, KD45, can be captured
+precisely by our denotational semantics. This paper can be seen as a proposal
+to study modal logics as first-order theories of propositions.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lewitzka_S/0/1/0/all/0/1&quot;&gt;Steffen Lewitzka&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1301.1609">
+<title>Two Design Issues in Cognitive Sub-Small Cell for Sojourners. (arXiv:1301.1609v4 [cs.IT] UPDATED)</title>
+<link>http://arxiv.org/abs/1301.1609</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper, we propound a solution named Cognitive Sub-Small Cell for
+Sojourners (CSCS) in allusion to a broadly representative small cell scenario,
+where users can be categorized into two groups: sojourners and inhabitants.
+CSCS contributes to save energy, enhance the number of concurrently supportable
+users and enshield inhabitants. We consider two design issues in CSCS: i)
+determining the number of transmit antennas on sub-small cell APs; ii)
+controlling downlink inter-sub-small cell interference. For issue i), we
+excogitate an algorithm helped by the probability distribution of the number of
+concurrent sojourners. For issue ii), we propose an interference control scheme
+named BDBF: Block Diagonalization (BD) Precoding based on uncertain channel
+state information in conjunction with auxiliary optimal Beamformer (BF). In the
+simulation, we delve into the issue: how the factors impact the number of
+transmit antennas on sub-small cell APs. Moreover, we verify a significant
+conclusion: Using BDBF gains more capacity than using optimal BF alone within a
+bearably large radius of uncertainty region.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Jin_X/0/1/0/all/0/1&quot;&gt;Xin Jin&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Marzouki_A/0/1/0/all/0/1&quot;&gt;Abdelwaheb Marzouki&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Zeghlache_D/0/1/0/all/0/1&quot;&gt;Djamal Zeghlache&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Kong_L/0/1/0/all/0/1&quot;&gt;Linghe Kong&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Vasilakos_A/0/1/0/all/0/1&quot;&gt;Athanasios V. Vasilakos&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1301.2840">
+<title>Unsupervised Feature Learning for low-level Local Image Descriptors. (arXiv:1301.2840v4 [cs.CV] UPDATED)</title>
+<link>http://arxiv.org/abs/1301.2840</link>
+<description rdf:parseType="Literal">&lt;p&gt;Unsupervised feature learning has shown impressive results for a wide range
+of input modalities, in particular for object classification tasks in computer
+vision. Using a large amount of unlabeled data, unsupervised feature learning
+methods are utilized to construct high-level representations that are
+discriminative enough for subsequently trained supervised classification
+algorithms. However, it has never been \emph{quantitatively} investigated yet
+how well unsupervised learning methods can find \emph{low-level
+representations} for image patches without any additional supervision. In this
+paper we examine the performance of pure unsupervised methods on a low-level
+correspondence task, a problem that is central to many Computer Vision
+applications. We find that a special type of Restricted Boltzmann Machines
+(RBMs) performs comparably to hand-crafted descriptors. Additionally, a simple
+binarization scheme produces compact representations that perform better than
+several state-of-the-art descriptors.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Osendorfer_C/0/1/0/all/0/1&quot;&gt;Christian Osendorfer&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Bayer_J/0/1/0/all/0/1&quot;&gt;Justin Bayer&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Urban_S/0/1/0/all/0/1&quot;&gt;Sebastian Urban&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Smagt_P/0/1/0/all/0/1&quot;&gt;Patrick van der Smagt&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1301.6798">
+<title>Estimation in slow mixing, long memory channels. (arXiv:1301.6798v13 [cs.IT] UPDATED)</title>
+<link>http://arxiv.org/abs/1301.6798</link>
+<description rdf:parseType="Literal">&lt;p&gt;We consider estimation of finite alphabet channels with memory where the
+transition probabilities (\emph{channel parameters}) from the input to output
+are determined by prior outputs (\emph{state of the channel}). While the
+channel is unknown, we observe the joint input/output process of the
+channel---we have $n$ \iid input symbols and their corresponding outputs.
+Motivated by applications related to the backplane channel, we want to estimate
+the channel parameters as well as the stationary probabilities for each state.
+&lt;/p&gt;
+&lt;p&gt;Two distinct problems that complicate estimation in this setting are (i) long
+memory, and (ii) \emph{slow mixing} which could happen even with only one bit
+of memory. In this setting, any consistent estimator can only converge
+pointwise over the model class. Namely,given any estimator and any sample size
+$n$, the underlying model could be such that the estimator performs poorly on a
+sample of size $n$ with high probability. But can we look at a length-$n$
+sample and identify \emph{if} an estimate is likely to be accurate?
+&lt;/p&gt;
+&lt;p&gt;Since the memory is unknown a-priori, a natural approach, known to be
+consistent, is to use a potentially coarser model with memory $k_n=\alpha_n\log
+n$ with $\alpha_n$ being a function of $n$ that grows $\cO_n(1)$. While
+effective asymptotically, the situation is quite different when we want answers
+with a length-$n$ sample, rather than just consistency. Combining results on
+universal compression and Aldous&apos; coupling arguments, we obtain sufficient
+conditions (even for slow mixing models) to identify when naive estimates of
+the (i) channel parameters and (ii) stationary probabilities of the channel
+states are accurate, and bound their deviations from true values.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Asadi_M/0/1/0/all/0/1&quot;&gt;Meysam Asadi&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Torghabeh_R/0/1/0/all/0/1&quot;&gt;Ramezan Paravi Torghabeh&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Santhanam_N/0/1/0/all/0/1&quot;&gt;Narayana P. Santhanam&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1302.2112">
+<title>Cryptanalysis and Improvement of Akleylek et al.&apos;s cryptosystem. (arXiv:1302.2112v2 [cs.CR] UPDATED)</title>
+<link>http://arxiv.org/abs/1302.2112</link>
+<description rdf:parseType="Literal">&lt;p&gt;Akleylek et al. [S. Akleylek, L. Emmungil and U. Nuriyev, A mod ified
+algorithm for peer-to-peer security, journal of Appl. Comput. Math., vol. 6(2),
+pp.258-264, 2007.], introduced a modified public-key encryption scheme with
+steganographic approach for security in peer-to-peer (P2P) networks. In this
+cryptosystem, Akleylek et al. attempt to increase security of the P2P networks
+by mixing ElGamal cryptosystem with knapsack problem. In this paper, we present
+a ciphertext-only attack against their system to recover message. In addition,
+we show that for their scheme completeness property is not holds, and
+therefore, the receiver cannot uniquely decrypts messages. Furthermore, we also
+show that this system is not chosen-ciphertext secure, thus the proposed scheme
+is vulnerable to man-in-the-middle-attack, one of the most pernicious attacks
+against P2P networks. Therefore, this scheme is not suitable to implement in
+the P2P networks.
+&lt;/p&gt;
+&lt;p&gt;We modify this cryptosystem in order to increase its security and efficiency.
+Our construction is the efficient CCA2-secure variant of the Akleylek et al.&apos;s
+encryption scheme in the standard model, the de facto security notion for
+public-key encryption schemes.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Rastaghi_R/0/1/0/all/0/1&quot;&gt;Roohallah Rastaghi&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1302.2551">
+<title>No-Wait Flowshop Scheduling is as Hard as Asymmetric Traveling Salesman Problem. (arXiv:1302.2551v3 [cs.DS] UPDATED)</title>
+<link>http://arxiv.org/abs/1302.2551</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper we study the classical no-wait flowshop scheduling problem with
+makespan objective (F|no-wait|C_max in the standard three-field notation). This
+problem is well-known to be a special case of the asymmetric traveling salesman
+problem (ATSP) and as such has an approximation algorithm with logarithmic
+performance guarantee. In this work we show a reverse connection, we show that
+any polynomial time \alpha-approximation algorithm for the no-wait flowshop
+scheduling problem with makespan objective implies the existence of a
+polynomial-time \alpha(1+\epsilon)-approximation algorithm for the ATSP, for
+any \epsilon&amp;gt;0. This in turn implies that all non-approximability results for
+the ATSP (current or future) will carry over to its special case. In
+particular, it follows that no-wait flowshop problem is APX-hard, which is the
+first non-approximability result for this problem.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Mucha_M/0/1/0/all/0/1&quot;&gt;Marcin Mucha&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Sviridenko_M/0/1/0/all/0/1&quot;&gt;Maxim Sviridenko&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1303.0415">
+<title>Distributed Power Allocation for Coordinated Multipoint Transmissions in Distributed Antenna Systems. (arXiv:1303.0415v3 [cs.IT] UPDATED)</title>
+<link>http://arxiv.org/abs/1303.0415</link>
+<description rdf:parseType="Literal">&lt;p&gt;This paper investigates the distributed power allocation problem for
+coordinated multipoint (CoMP) transmissions in distributed antenna systems
+(DAS). Traditional duality based optimization techniques cannot be directly
+applied to this problem, because the non-strict concavity of the CoMP
+transmission&apos;s achievable rate with respect to the transmission power induces
+that the local power allocation subproblems have non-unique optimum solutions.
+We propose a distributed power allocation algorithm to resolve this non-strict
+concavity difficulty. This algorithm only requires local information exchange
+among neighboring base stations serving the same user, and is thus scalable as
+the network size grows. The step-size parameters of this algorithm are
+determined by only local user access relationship (i.e., the number of users
+served by each antenna), but do not rely on channel coefficients. Therefore,
+the convergence speed of this algorithm is quite robust to different channel
+fading coefficients. We rigorously prove that this algorithm converges to an
+optimum solution of the power allocation problem. Simulation results are
+presented to demonstrate the effectiveness of the proposed power allocation
+algorithm.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Zhang_X/0/1/0/all/0/1&quot;&gt;Xiujun Zhang&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Sun_Y/0/1/0/all/0/1&quot;&gt;Yin Sun&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Chen_X/0/1/0/all/0/1&quot;&gt;Xiang Chen&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Zhou_S/0/1/0/all/0/1&quot;&gt;Shidong Zhou&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Wang_J/0/1/0/all/0/1&quot;&gt;Jing Wang&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Shroff_N/0/1/0/all/0/1&quot;&gt;Ness B. Shroff&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1303.7286">
+<title>On the symmetrical Kullback-Leibler Jeffreys centroids. (arXiv:1303.7286v2 [cs.IT] UPDATED)</title>
+<link>http://arxiv.org/abs/1303.7286</link>
+<description rdf:parseType="Literal">&lt;p&gt;Due to the success of the bag-of-word modeling paradigm, clustering
+histograms has become an important ingredient of modern information processing.
+Clustering histograms can be performed using the celebrated $k$-means
+centroid-based algorithm. From the viewpoint of applications, it is usually
+required to deal with symmetric distances. In this letter, we consider the
+Jeffreys divergence that symmetrizes the Kullback-Leibler divergence, and
+investigate the computation of Jeffreys centroids. We first prove that the
+Jeffreys centroid can be expressed analytically using the Lambert $W$ function
+for positive histograms. We then show how to obtain a fast guaranteed
+approximation when dealing with frequency histograms. Finally, we conclude with
+some remarks on the $k$-means histogram clustering.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Nielsen_F/0/1/0/all/0/1&quot;&gt;Frank Nielsen&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.5575">
+<title>Inverse Density as an Inverse Problem: The Fredholm Equation Approach. (arXiv:1304.5575v2 [cs.LG] UPDATED)</title>
+<link>http://arxiv.org/abs/1304.5575</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper we address the problem of estimating the ratio $\frac{q}{p}$
+where $p$ is a density function and $q$ is another density, or, more generally
+an arbitrary function. Knowing or approximating this ratio is needed in various
+problems of inference and integration, in particular, when one needs to average
+a function with respect to one probability distribution, given a sample from
+another. It is often referred as {\it importance sampling} in statistical
+inference and is also closely related to the problem of {\it covariate shift}
+in transfer learning as well as to various MCMC methods. It may also be useful
+for separating the underlying geometry of a space, say a manifold, from the
+density function defined on it.
+&lt;/p&gt;
+&lt;p&gt;Our approach is based on reformulating the problem of estimating
+$\frac{q}{p}$ as an inverse problem in terms of an integral operator
+corresponding to a kernel, and thus reducing it to an integral equation, known
+as the Fredholm problem of the first kind. This formulation, combined with the
+techniques of regularization and kernel methods, leads to a principled
+kernel-based framework for constructing algorithms and for analyzing them
+theoretically.
+&lt;/p&gt;
+&lt;p&gt;The resulting family of algorithms (FIRE, for Fredholm Inverse Regularized
+Estimator) is flexible, simple and easy to implement.
+&lt;/p&gt;
+&lt;p&gt;We provide detailed theoretical analysis including concentration bounds and
+convergence rates for the Gaussian kernel in the case of densities defined on
+$\R^d$, compact domains in $\R^d$ and smooth $d$-dimensional sub-manifolds of
+the Euclidean space.
+&lt;/p&gt;
+&lt;p&gt;We also show experimental results including applications to classification
+and semi-supervised learning within the covariate shift framework and
+demonstrate some encouraging experimental comparisons. We also show how the
+parameters of our algorithms can be chosen in a completely unsupervised manner.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Que_Q/0/1/0/all/0/1&quot;&gt;Qichao Que&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Belkin_M/0/1/0/all/0/1&quot;&gt;Mikhail Belkin&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6528">
+<title>Nonanticipative Rate Distortion Function for General Source-Channel Matching. (arXiv:1304.6528v2 [cs.IT] UPDATED)</title>
+<link>http://arxiv.org/abs/1304.6528</link>
+<description rdf:parseType="Literal">&lt;p&gt;In this paper we invoke a nonanticipative information Rate Distortion
+Function (RDF) for sources with memory, and we analyze its importance in
+probabilistic matching of the source to the channel so that transmission of a
+symbol-by-symbol code with memory without anticipation is optimal, with respect
+to an average distortion and excess distortion probability. We show
+achievability of the symbol-by-symbol code with memory without anticipation,
+and we evaluate the probabilistic performance of the code for a Markov source.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Kourtellaris_C/0/1/0/all/0/1&quot;&gt;Christos Kourtellaris&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Charalambous_C/0/1/0/all/0/1&quot;&gt;Charalambos D. Charalambous&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Stavrou_P/0/1/0/all/0/1&quot;&gt;Photios A. Stavrou&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6663">
+<title>Low-rank optimization for distance matrix completion. (arXiv:1304.6663v2 [math.OC] UPDATED)</title>
+<link>http://arxiv.org/abs/1304.6663</link>
+<description rdf:parseType="Literal">&lt;p&gt;This paper addresses the problem of low-rank distance matrix completion. This
+problem amounts to recover the missing entries of a distance matrix when the
+dimension of the data embedding space is possibly unknown but small compared to
+the number of considered data points. The focus is on high-dimensional
+problems. We recast the considered problem into an optimization problem over
+the set of low-rank positive semidefinite matrices and propose two efficient
+algorithms for low-rank distance matrix completion. In addition, we propose a
+strategy to determine the dimension of the embedding space. The resulting
+algorithms scale to high-dimensional problems and monotonically converge to a
+global solution of the problem. Finally, numerical experiments illustrate the
+good performance of the proposed algorithms on benchmarks.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Mishra_B/0/1/0/all/0/1&quot;&gt;B. Mishra&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Meyer_G/0/1/0/all/0/1&quot;&gt;G. Meyer&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/math/1/au:+Sepulchre_R/0/1/0/all/0/1&quot;&gt;R. Sepulchre&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6551">
+<title>Decision-Theoretic Troubleshooting: Hardness of Approximation. (arXiv:1304.6551v1 [cs.AI] CROSS LISTED)</title>
+<link>http://arxiv.org/abs/1304.6551</link>
+<description rdf:parseType="Literal">&lt;p&gt;Decision-theoretic troubleshooting is one of the application areas of
+Bayesian networks. Given a probabilistic model of a malfunctioning man-made
+device, the task is to construct a repair strategy with minimal expected cost.
+The problem has received considerable attention over the past two decades.
+Efficient solution algorithms have been found for simple cases, whereas other
+variants have been proven NP-complete. We study several variants of the problem
+found in the literature, and prove that computing approximate troubleshooting
+strategies is NP-hard. In the proofs, we exploit a close connection to
+set-covering problems.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/cs/1/au:+Lin_V/0/1/0/all/0/1&quot;&gt;V&amp;#xe1;clav L&amp;#xed;n&lt;/a&gt;</dc:creator>
+</item>
+<item rdf:about="http://arxiv.org/abs/1304.6601">
+<title>Time evolution of Wikipedia network ranking. (arXiv:1304.6601v1 [physics.soc-ph] CROSS LISTED)</title>
+<link>http://arxiv.org/abs/1304.6601</link>
+<description rdf:parseType="Literal">&lt;p&gt;We study the time evolution of ranking and spectral properties of the Google
+matrix of English Wikipedia hyperlink network during years 2003 - 2011. The
+statistical properties of ranking of Wikipedia articles via PageRank and
+CheiRank probabilities, as well as the matrix spectrum, are shown to be
+stabilized for 2007 - 2011. A special emphasis is done on ranking of Wikipedia
+personalities and universities. We show that PageRank selection is dominated by
+politicians while 2DRank, which combines PageRank and CheiRank, gives more
+accent on personalities of arts. The Wikipedia PageRank of universities
+recovers 80 percents of top universities of Shanghai ranking during the
+considered time period.
+&lt;/p&gt;
+</description>
+<dc:creator> &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Eom_Y/0/1/0/all/0/1&quot;&gt;Young-Ho Eom&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Frahm_K/0/1/0/all/0/1&quot;&gt;Klaus M. Frahm&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Benczur_A/0/1/0/all/0/1&quot;&gt;Andr&amp;#xe1;s Bencz&amp;#xfa;r&lt;/a&gt;, &lt;a href=&quot;http://arxiv.org/find/physics/1/au:+Shepelyansky_D/0/1/0/all/0/1&quot;&gt;Dima L. Shepelyansky&lt;/a&gt;</dc:creator>
+</item>
+</rdf:RDF>

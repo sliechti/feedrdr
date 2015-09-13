@@ -1,0 +1,11 @@
+DELETE FROM feedreader.userstreamgroupfeedsubscription;
+DELETE FROM feedreader.userkeyvalues;
+DELETE FROM feedreader.userfeedentriesinfo;
+DELETE FROM feedreader.userfeedsubscriptions;
+DELETE FROM feedreader.userstreamgroups;
+DELETE FROM feedreader.userstreamgroupviewoptions;
+DELETE FROM feedreader.usersavedentries;
+DELETE FROM feedreader.userprofilestreamgroup;
+DELETE FROM feedreader.userprofiles;
+DELETE FROM feedreader.userauthtokens;
+DELETE FROM feedreader.users;

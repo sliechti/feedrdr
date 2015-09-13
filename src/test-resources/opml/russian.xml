@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Аналитика created by Konstantin Pavlov in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Аналитика" title="Аналитика">
+      <outline text="Петте кьошета" title="Петте кьошета" type="rss" xmlUrl="http://www.5corners.eu/feed/" htmlUrl="http://www.5corners.eu/"/>
+      <outline text="Reduta - Хроно-синкластичен инфундибулум" title="Reduta - Хроно-синкластичен инфундибулум" type="rss" xmlUrl="http://reduta.bg/v2/rss.xml" htmlUrl="http://reduta.bg/v2/"/>
+      <outline text="Интересни времена" title="Интересни времена" type="rss" xmlUrl="http://www.ivremena.com/feed/rss?format=feed" htmlUrl="http://www.ivremena.com/"/>
+      <outline text="Портал за култура, изкуство и общество" title="Портал за култура, изкуство и общество" type="rss" xmlUrl="http://kultura.bg/web/feed/" htmlUrl="http://kultura.bg/web"/>
+      <outline text="Banitza" title="Banitza" type="rss" xmlUrl="http://www.banitza.net/feed/" htmlUrl="http://www.banitza.net/"/>
+      <outline text="Bivol.bg" title="Bivol.bg" type="rss" xmlUrl="https://bivol.bg/feed" htmlUrl="https://bivol.bg/"/>
+      <outline text="Клуб 'Z' НАЙ-НОВИ" title="Клуб 'Z' НАЙ-НОВИ" type="rss" xmlUrl="http://clubz.bg/Rss" htmlUrl="http://clubz.bg/Rss"/>
+      <outline text="ЕКИП" title="ЕКИП" type="rss" xmlUrl="http://ekipbg.com/feed/" htmlUrl="http://ekipbg.com/"/>
+      <outline text="Свободата" title="Свободата" type="rss" xmlUrl="http://www.svobodata.com/rss.php" htmlUrl="http://www.svobodata.com/"/>
+      <outline text="Librev" title="Librev" type="rss" xmlUrl="http://feeds.feedburner.com/librev/ngVE" htmlUrl="http://librev.com/"/>
+      <outline text="Analysis" title="Analysis" type="rss" xmlUrl="http://kafene.net/fb_rss_1101652" htmlUrl="http://kafene.net/analysis.html"/>
+      <outline text="News and Analyisis" title="News and Analyisis" type="rss" xmlUrl="http://kafene.net/fb_rss_33654253" htmlUrl="http://kafene.net/news_and_analysis.html"/>
+      <outline text="Marginalia" title="Marginalia" type="rss" xmlUrl="http://www.marginalia.bg/feed/" htmlUrl="http://www.marginalia.bg/"/>
+      <outline text="DW-WORLD´s Bulgarian Politics" title="DW-WORLD´s Bulgarian Politics" type="rss" xmlUrl="http://rss.dw.de/rdf/rss-bul-pol" htmlUrl="http://www.dw.de/bulgarian/?maca=bul-rss-bul-pol-1477-rdf"/>
+      <outline text="euinside.eu" title="euinside.eu" type="rss" xmlUrl="http://www.euinside.eu/bg/rss/" htmlUrl="http://www.euinside.eu/"/>
+      <outline text="ВЪПРЕКИ" title="ВЪПРЕКИ" type="rss" xmlUrl="http://xn--b1agjhxg2e.com/rss" htmlUrl="http://xn--b1agjhxg2e.com/"/>
+      <outline text="e-vestnik.bg" title="e-vestnik.bg" type="rss" xmlUrl="http://e-vestnik.bg/feed/" htmlUrl="http://e-vestnik.bg/"/>
+      <outline text="София за нас / Sofia for us" title="София за нас / Sofia for us" type="rss" xmlUrl="http://sofiazanas.blogspot.com/feeds/posts/default" htmlUrl="http://sofiazanas.blogspot.com/"/>
+    </outline>
+  </body>
+</opml>

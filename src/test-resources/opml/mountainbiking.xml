@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Mountain biking created by Yordan Yordanov in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Mountain biking" title="Mountain biking">
+      <outline text="BikeRadar.com Mountain Biking" title="BikeRadar.com Mountain Biking" type="rss" xmlUrl="http://www.bikeradar.com/rss/mtb" htmlUrl="http://www.bikeradar.com/"/>
+      <outline text="Sick Lines - mountain bike reviews, news,  videos  | Your comprehensive downhill and freeride mountain bike resource" title="Sick Lines - mountain bike reviews, news,  videos  | Your comprehensive downhill and freeride mountain bike resource" type="rss" xmlUrl="http://www.sicklines.com/feed/" htmlUrl="http://www.sicklines.com/"/>
+      <outline text="Pinkbike.com" title="Pinkbike.com" type="rss" xmlUrl="http://www.pinkbike.com/pinkbike_xml_feed.php" htmlUrl="http://www.pinkbike.com/"/>
+      <outline text="Vital MTB" title="Vital MTB" type="rss" xmlUrl="http://feeds.vitalmtb.com/VitalMtbSpotlights" htmlUrl="http://feeds.vitalmtb.com/www.vitalmtb.com"/>
+      <outline text="Mountain Bike Review" title="Mountain Bike Review" type="rss" xmlUrl="http://reviews.mtbr.com/feed" htmlUrl="http://reviews.mtbr.com/"/>
+      <outline text="Mountain Bike Strength Training | MTB Strength Training Systems" title="Mountain Bike Strength Training | MTB Strength Training Systems" type="rss" xmlUrl="http://www.bikejames.com/feed/" htmlUrl="http://www.bikejames.com/"/>
+    </outline>
+  </body>
+</opml>

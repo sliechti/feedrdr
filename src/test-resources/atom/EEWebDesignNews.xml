@@ -1,0 +1,864 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>EEWeb Design News</title>
+    <link href="http://www.eeweb.com/feeds/news/" rel="self" />
+    <link href="http://www.eeweb.com/news/" />
+    <id>http://www.eeweb.com/feeds/news/</id>
+    <updated>2013-05-02T21:25:57-07:00</updated>
+    <author>
+        <name>EEWeb</name>
+        <email>info@eeweb.com</email>
+    </author>
+    
+        <entry>
+            <title>Lowest Component Count Switcher</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/lowest-component-count-switcher/" />
+            <id>http://www.eeweb.com/news/lowest-component-count-switcher/</id>
+            <published>2013-05-02T16:00:31-07:00</published>
+            <updated>2013-05-02T14:00:32-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/02/Lowest-Component-Count-Switcher-1367524832_300_318.gif" alt="Lowest Component Count Switcher" width="300" height="318" /></p>
+                
+                	<p><strong>Lowest System Cost and Advanced Safety Features Provide Superior Performance over Linear and <span class="caps">RCC</span></strong>
+	<ul>
+		<li>Lowest component count switcher</li>
+		<li>Very tight parameter tolerances using proprietary IC trimming technology and transformer construction techniques enable Clampless™ designs – decreases component count/system cost and increases efficiency</li>
+		<li>Hysteretic thermal shutdown protection – eliminates the thermal fuse used with linear transformers or additional components in <span class="caps">RCC</span> designs</li>
+		<li>Frequency jittering greatly reduces <span class="caps">EMI</span> – enables low cost input filter configuration</li>
+		<li>Proprietary E-Shield™ transformer eliminates Y capacitor</li>
+		<li>Universal input range allows worldwide operation</li>
+		<li>Auto-restart reduces delivered power by &gt;85% during short circuit and open loop fault conditions</li>
+		<li>Simple ON/OFF control, no loop compensation needed</li>
+		<li>High bandwidth provides fast turn on with no overshoot and excellent transient load response</li>
+	</ul></p>
+
+	<p><strong>Applications</strong>:
+	<ul>
+		<li>Chargers for cell/cordless phones, <span class="caps">PDA</span>s, power tools, MP3/portable audio devices, shavers, etc.</li>
+		<li>Standby and auxiliary supplies</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>30V 1A Buck LED Driver</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/30v-1a-buck-led-driver/" />
+            <id>http://www.eeweb.com/news/30v-1a-buck-led-driver/</id>
+            <published>2013-05-02T14:00:19-07:00</published>
+            <updated>2013-05-02T13:12:20-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/02/30V-1A-Buck-LED-Driver-1367521940_300_220_75.jpg" alt="30V 1A Buck LED Driver" width="300" height="220" /></p>
+                
+                	<p>Diodes Inc. AL8808 30V 1A Buck <span class="caps">LED</span> Driver is a step-down DC/DC converter designed to drive <span class="caps">LED</span>s with a constant current. This Diodes Inc. device can drive up to 8 <span class="caps">LED</span>s, depending on the forward voltage of the <span class="caps">LED</span>s, in series from a voltage source of 6V to 30V. Series connection of the <span class="caps">LED</span>s provides identical <span class="caps">LED</span> currents, which results in uniform brightness and eliminates the need for ballast resistors. AL8808 switches at a frequency up to 1MHz with controlled rise and fall times to reduce <span class="caps">EMI</span>. This allows the use of small size external components, minimizing the <span class="caps">PCB</span> area needed. Maximum output current of AL8808 is set via an external resistor connected between the <span class="caps">VIN</span> and <span class="caps">SET</span> input pins. Dimming is achieved by applying either an analog DC voltage or a <span class="caps">PWM</span> signal at the <span class="caps">CTRL</span> input pin. An input voltage of 0.4V or lower at <span class="caps">CTRL</span> switches off the output <span class="caps">MOSFET</span>, simplifying <span class="caps">PWM</span> dimming.</p>
+
+	<p><strong>Features</strong>
+	<ul>
+		<li><span class="caps">LED</span> Driving Current Up to 1A</li>
+		<li>Better Than 5% Accuracy</li>
+		<li>High Efficiency Up to 96%</li>
+		<li>Fast Controlled Falling Edges 7ns</li>
+		<li>Operating Input Voltage from 6V to 30V</li>
+		<li>High Switching Frequency Up to 1MHz</li>
+		<li><span class="caps">PWM</span>/DC Input for Dimming Control</li>
+		<li>Built-In Output Open-Circuit Protection</li>
+		<li>Built-In Over-Temperature Protection</li>
+	</ul></p>
+
+	<p><strong>Applications</strong>
+	<ul>
+		<li>MR16 Lamps</li>
+		<li>General Illumination Lamps</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>3A Step&#45;Down DC&#45;DC Converter</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/3a-step-down-dc-dc-converter/" />
+            <id>http://www.eeweb.com/news/3a-step-down-dc-dc-converter/</id>
+            <published>2013-05-02T13:03:58-07:00</published>
+            <updated>2013-04-26T12:19:59-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/26/Maxim-news-1366999733_300_188.PNG" alt="" width="300" height="188" /></p>
+                
+                	<p>The MAX16961 is a high-efficiency, synchronous step-down converter that operates with a 2.7V to 5.5V input voltage range and provides a 0.8V to 3.6V output voltage range. The wide input/output voltage range and the ability to provide up to 3A to load current make this device ideal for on-board point-of-load and post-regulation applications. The device achieves -3.7%/+2.6% output error over load, line, and temperature ranges. </p>
+
+	<p>The device features a 2.2MHz fixed-frequency <span class="caps">PWM</span> mode for better noise immunity and load transient response, and a pulse-frequency modulation mode (skip) for increased efficiency during light-load operation. The 2.2MHz frequency operation allows for the use of all-ceramic capacitors and minimizes external components. The optional spread-spectrum frequency modulation minimizes radiated electromagnetic emissions. </p>
+
+	<p>Integrated low <span class="caps">RDSON</span> switches improve efficiency at heavy loads and make the layout a much simpler task with respect to discrete solutions. </p>
+
+	<p>The device is offered with factory-preset output voltages or with an adjustable output voltage. (See the Selector Guide in the full data sheet for options). Factory-preset output-voltage versions allow customers to achieve -3.7%/+2.6% output-voltage accuracy without using external resistors, while the adjustable output-voltage version provides the flexibility to set the output voltage to any desired value between 0.8V to 3.6V using an external resistive divider. </p>
+
+	<p>Additional features include 8ms soft-start, 16ms power-good output delay, overcurrent, and overtemperature protections. </p>
+
+	<p>The MAX16961 is available in thermally enhanced 16-pin <span class="caps">TSSOP</span>-EP and 16-pin (4mm x 4mm) <span class="caps">TQFN</span>-EP packages, and is specified for operation over the -40°C to +125°C automotive temperature range.</p>
+
+	<p><strong>Key Features</strong>
+	<ul>
+		<li>Small External Components
+	<ul>
+		<li>2.2MHz Operating Frequency</li>
+	</ul></li>
+		<li>Ideal for Point-of-Load Applications
+	<ul>
+		<li>3A Maximum Load Current</li>
+		<li>Adjustable Output Voltage: 0.8V to 3.6V</li>
+		<li>2.7V to 5.5V Operating Supply Voltage</li>
+	</ul></li>
+		<li>High Efficiency at Light Load
+	<ul>
+		<li>26µA Skip Mode Quiescent Current</li>
+	</ul></li>
+		<li>Minimizes Electromagnetic Interference
+	<ul>
+		<li>Programmable <span class="caps">SYNC</span> I/O Pin</li>
+		<li>Operates Above AM-Radio Band</li>
+		<li>Available Spread Spectrum</li>
+	</ul></li>
+		<li>Low Power Mode Saves Energy
+	<ul>
+		<li>1µA Shutdown Current</li>
+	</ul></li>
+		<li>Open-Drain Power-Good Output</li>
+		<li>Limits Inrush Current During Startup
+	<ul>
+		<li>Soft-Start</li>
+	</ul></li>
+		<li>Overtemperature and Short-Circuit Protections</li>
+		<li>16-Pin <span class="caps">TSSOP</span>-EP and 16-Pin (4mm x 4mm) <span class="caps">TQFN</span>-EP Packages</li>
+		<li>-40°C to 125°C Operating Temperature Range</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Top Mount Chip LED</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/top-mount-chip-led/" />
+            <id>http://www.eeweb.com/news/top-mount-chip-led/</id>
+            <published>2013-05-02T12:09:55-07:00</published>
+            <updated>2013-04-24T11:16:56-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/24/Avago-news-1366823692_300_232.PNG" alt="Top Mount Chip LED" width="300" height="232" /></p>
+                
+                	<p>This small chip-type <span class="caps">LED</span> utilize high efficient and high brightness InGaN material to deliver competitively priced high performance blue. This 470 nm blue is unique hues which provide color differentiation to a product.</p>
+
+	<p>This ChipLED comes in top emitting package with their wide viewing angle, is suitable for direct backlighting application or being used with light pipes. In order to facilitate pick and place operation, this ChipLED is shipped in tape and reel.  The package is compatible with IR soldering and binned by both color and intensity.</p>
+
+	<p><strong>Features</strong>
+	<ul>
+		<li>High brightness</li>
+		<li>Small size</li>
+		<li>Industrial standard footprint</li>
+		<li>Diffused Optics</li>
+		<li>Top Emitting</li>
+		<li>Compatible With IR Soldering</li>
+		<li>Compatible for use with light piping</li>
+		<li>Available in 8mm Tape on 7&#8221; Diameter Reel</li>
+		<li>Reel Sealed in Zip Locked Moisture Barrier Bags</li>
+	</ul></p>
+
+	<p>Signup for the Avago Now Newsletter:<br />
+<a href="http://www.avagotech.com/pages/contact/newsletter_signup/?WR.mc_id=EEweb_2013">http://www.avagotech.com/pages/contact/newsletter_signup/?WR.mc_id=EEweb_2013</a></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>12&#45;Bit 500Msps Receiver and Feedback IC</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/12-bit-500msps-receiver-and-feedback-ic/" />
+            <id>http://www.eeweb.com/news/12-bit-500msps-receiver-and-feedback-ic/</id>
+            <published>2013-05-02T05:32:36-07:00</published>
+            <updated>2013-05-02T19:01:37-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/02/TI-News-1367542780_300_148.PNG" alt="" width="300" height="148" /></p>
+                
+                	<p>The ADS5403 is a high linearity single channel 12-bit, 500 <span class="caps">MSPS</span> analog-to-digital converter (<span class="caps">ADC</span>) easing front end filter design for wide bandwidth receivers. The analog input buffer isolates the internal switching of the on-chip track-and-hold from disturbing the signal source as well as providing a high-impedance input. Optionally the output data can be decimated by two. Designed for high <span class="caps">SFDR</span>, the <span class="caps">ADC</span> has low-noise performance and outstanding spurious-free dynamic range over a large input-frequency range. The device is available in a 196pin <span class="caps">BGA</span> package and is specified over the full industrial temperature range (–40°C to 85°C).</p>
+
+	<p><strong>Features</strong>
+	<ul>
+		<li>Single Channel</li>
+		<li>12-Bit Resolution</li>
+		<li>Maximum Clock Rate: 500 Msps</li>
+		<li>Low Swing Fullscale Input: 1.0 Vpp</li>
+		<li>Analog Input Buffer with High Impedance Input</li>
+		<li>Input Bandwidth (3dB): &gt;1.2GHz</li>
+		<li>Data Output Interface: <span class="caps">DDR</span> <span class="caps">LVDS</span></li>
+		<li>196-Pin <span class="caps">BGA</span> Package (12&#215;12mm)</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>3 New Low Cost 1.5A Gate Drivers</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/3-new-low-cost-1.5a-gate-drivers/" />
+            <id>http://www.eeweb.com/news/3-new-low-cost-1.5a-gate-drivers/</id>
+            <published>2013-05-02T03:23:34-07:00</published>
+            <updated>2013-05-02T16:40:35-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/02/ixys-news-1367534304_300_109.PNG" alt="3 New Low Cost 1.5A Gate Drivers" width="300" height="109" /></p>
+                
+                	<p><span class="caps">IXYS</span> Integrated Circuits Division ((“IXYS ICD”) formerly Clare, Inc.), a wholly owned subsidiary of <span class="caps">IXYS</span> Corporation (<span class="caps">NASDAQ</span>: <span class="caps">IXYS</span>), announced the immediate availability of the IX4426, IX4427, and IX4428 low-cost dual lowside gate driver ICs. Each of the IX4426/7/8 outputs is capable of sourcing and sinking 1.5A, and they have a wide operating voltage range of 4.5V to 35V, which is much higher than competitive parts. The inputs of each driver are <span class="caps">TTL</span> and <span class="caps">CMOS</span> compatible, and are virtually immune to latch-up. The IX4426/7/8 drivers are specified with an operating temperature range of -40C to +125C.</p>
+
+	<p>The IX4426 is configured as a dual inverting driver; the IX4427 is configured as a dual noninverting driver; and the IX4428 is configured with one inverting and one non-inverting driver. All versions have an industry standard pinout, and are available in an 8-lead <span class="caps">SOIC</span> package. The IX4426N, IX4427N and IX4428N devices are lower cost drop in replacements for various competitive 1.5A gate drivers, while providing a much higher 35V operating capability.</p>
+
+	<p>The low cost IX4426/7/8 drivers are well suited for driving power <span class="caps">MOSFETS</span> and <span class="caps">IGBT</span>s in switching power supplies, motor controls, and DC to DC converters. The IX4426/7/8 drivers are added to <span class="caps">IXYS</span> <span class="caps">ICD</span>&#8217;s extensive gate driver IC portfolio, which includes its popular <span class="caps">IXD</span>_600 series of low side gate driver ICs. The <span class="caps">IXD</span>_600 series offers gate drivers rated from 2A up to 30A.</p>
+
+	<p>These expanded ranges of gate drivers offer <span class="caps">IXYS</span> customers a wide variety of gate drivers that are compatible for direct digital drive with the Zilog line of <span class="caps">MCU</span>s, for digital power control applications. The IX446/7/8 drivers are available in production quantities. For additional information, please contact your local sales representative: <a href="http://www.ixysic.com/home/pages.nsf/locate.rep">http://www.ixysic.com/home/pages.nsf/locate.rep</a> or visit</p>
+
+	<p><a href="http://www.ixysic.com/home/pdfs.nsf/www/IX4426-27-28.pdf/$file/IX4426-27-28.pdf">http://www.ixysic.com/home/pdfs.nsf/www/IX4426-27-28.pdf/$file/IX4426-27-28.pdf</a> for the datasheet.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Multi&#45;Mode Wireless Power Receiver IC</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/multi-mode-wireless-power-receiver-ic/" />
+            <id>http://www.eeweb.com/news/multi-mode-wireless-power-receiver-ic/</id>
+            <published>2013-05-01T18:07:10-07:00</published>
+            <updated>2013-05-02T14:39:11-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/02/IDT-News-1367527152_300_290.PNG" alt="Multi-Mode Wireless Power Receiver IC" width="300" height="290" /></p>
+                
+                	<p>The IDTP9020 is a highly-integrated single-chip <span class="caps">WPC</span>-compliant wireless power receiver IC. The device receives an AC power signal from a compatible wireless transmitter and converts it into a regulated 5V output voltage which can be used to power devices or supply the charger input in mobile applications. The IDTP9020 integrates a high-efficiency synchronous full-bridge rectifier, high-efficiency synchronous buck converter, and control circuits used to modulate the load to transmit <span class="caps">WPC</span>-compliant message packets to the transmitter station to optimize power delivery. Power delivery is limited to 5W in accordance with the Qi specification.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Integrated High&#45;Side MOSFET</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/integrated-high-side-mosfet/" />
+            <id>http://www.eeweb.com/news/integrated-high-side-mosfet/</id>
+            <published>2013-05-01T16:12:46-07:00</published>
+            <updated>2013-05-01T17:19:47-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/01/Integrated-High-Side-MOSFET-1367450387_300_203_75.jpg" alt="Integrated High-Side MOSFET" width="300" height="203" /></p>
+                
+                	<p>The ISL78200 is a synchronous buck controller with a 90mΩhigh-side <span class="caps">MOSFET</span> and low-side driver integrated. The ISL78200 supports wide input range of 3V to 40V in buck mode. It supports 2.5A continuous load under conditions of 5V <span class="caps">VOUT</span>, <span class="caps">VIN</span> range of 8V to 36V, 500kHz and +85°C ambient temperature with still air. For any specific application, the actual maximum output current depends upon the die temperature not exceeding +125°C with the power dissipated in the IC, which is related to input voltage, output voltage, duty cycle, switching frequency, ambient temperature and board layout, etc. Refer to section “Output Current” on page 14 for more details.</p>
+
+	<p>The ISL78200 has flexible selection of operation modes of forced <span class="caps">PWM</span> mode and <span class="caps">PFM</span> mode. In <span class="caps">PFM</span> mode, the quiescent input current is as low as 300µA and can be further reduced to 180µA with <span class="caps">AUXVCC</span> connected to <span class="caps">VOUT</span> under 12V <span class="caps">VIN</span> and 5V <span class="caps">VOUT</span>application. The load boundary between <span class="caps">PFM</span> and <span class="caps">PWM</span> can be programmed to cover wide applications.</p>
+
+	<p>The low-side driver can be either used to drive an external low-side <span class="caps">MOSFET</span> for a synchronous buck, or left unused for a standard non-synchronous buck. The low-side driver can also be used to drive a boost converter as a pre-regulator that greatly expands the operating input voltage range down to 2.5V or lower (refer to “Typical Application Schematic <span class="caps">III</span> &#8211; Boost Buck Converters” on page 5).</p>
+
+	<p>The ISL78200 offers the most robust current protections. It uses peak current mode control with cycle-by-cycle current limiting. It is implemented with frequency foldback under current limit condition; in addition, the hiccup overcurrent mode is also implemented to guarantee reliable operations under harsh short conditions.</p>
+
+	<p>The ISL78200 has comprehensive protections against various faults including overvoltage and over-temperature protections, etc.</p>
+
+	<p><span class="caps">KEY</span> <span class="caps">FEATURES</span>
+	<ul>
+		<li>Buck Mode: Input Voltage Range 3V to 40V (Refer to “Input Voltage” on page 14 for more details)</li>
+		<li>Boost Mode Expands Operating Input Voltage Lower Than 2.5V (Refer to “Input Voltage” on page 14 for more details)</li>
+		<li>Selectable Forced <span class="caps">PWM</span> Mode or <span class="caps">PFM</span> Mode</li>
+		<li>300µA IC Quiescent Current (<span class="caps">PFM</span>, No Load); 180µA Input Quiescent Current (<span class="caps">PFM</span>, No Load, <span class="caps">VOUT</span> Connected to <span class="caps">AUXVCC</span>)</li>
+		<li>Less than 3µA Shut Down Input Current (IC Disabled)</li>
+		<li>Operational Topologies</li>
+		<li>Synchronous Buck</li>
+		<li>Non-Synchronous Buck</li>
+		<li>Two Stage Boost Buck</li>
+		<li>Programmable Frequency from 200kHz &#8211; 2.2MHz and Frequency Synchronization Capability</li>
+		<li>±1% Tight Voltage Regulation Accuracy</li>
+		<li>Reliable Cycle-by-Cycle Overcurrent Protection</li>
+		<li>Temperature Compensated Current Sense</li>
+		<li>Frequency Foldback</li>
+		<li>Programmable OC Limit</li>
+		<li>Hiccup Mode Protection in Worst Case Short Condition</li>
+		<li>20 Ld <span class="caps">HTSSOP</span> Package</li>
+		<li><span class="caps">AEC</span> &#8211; Q100 Qualified</li>
+		<li>Pb-Free (RoHS Compliant)</li>
+	</ul></p>
+
+	<p><span class="caps">APPLICATIONS</span>
+	<ul>
+		<li>Automotive Applications</li>
+		<li>General Purpose Power Regulator</li>
+		<li>24V Bus Power</li>
+		<li>Battery Power</li>
+		<li>Embedded Processor and I/O Supplies</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>LIN RGB Slave for Ambient Light</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/lin-rgb-slave-for-ambient-light/" />
+            <id>http://www.eeweb.com/news/lin-rgb-slave-for-ambient-light/</id>
+            <published>2013-05-01T14:20:52-07:00</published>
+            <updated>2013-05-02T16:15:53-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/02/melexis-news-1367529961_300_290.PNG" alt="LIN RGB Slave for Ambient Light" width="300" height="290" /></p>
+                
+                	<p>The Melexis MLX81106 <span class="caps">LIN</span> <span class="caps">RGB</span> slave provides a single chip solution for driving up to 4 <span class="caps">LED</span>s (<span class="caps">RGB</span>+1) via constant current sources in automotive ambient lighting applications. Every output can be programmed to a maximum current of 35 mA through the built-in Flash memory. </p>
+
+	<p>All necessary components like physical layer <span class="caps">LIN</span> transceiver, <span class="caps">LIN</span> controller, voltage regulator, and 16-bit <span class="caps">RISC</span>-based microcontroller, as well as supporting functions like <span class="caps">ADC</span>, 16-bit current modulation, constant current high voltage capable outputs and <span class="caps">LED</span> color and aging compensation are integrated into the chip. </p>
+
+	<p>It also includes the possibility for <span class="caps">LIN</span> auto-configuration and can thus be used for other applications requiring a low pin count fully integrated <span class="caps">LIN</span> slave.The <span class="caps">LIN</span> protocol handler meets all <span class="caps">LIN</span> standards including LIN2.x, as well as <span class="caps">SAE</span> J2602.</p>
+
+	<p>To support a high thermal performance by keeping the low cost target, MLX81106 is offered in a thermally enhanced SOIC8 package.</p>
+
+	<p>You&#8217;ll find more details here: <br />
+<a href="http://softdist.melexis.com">http://softdist.melexis.com</a></p>
+
+	<p><strong>MLX81106 Features and Benefits</strong>
+	<ul>
+		<li>16-bit <span class="caps">RISC</span> <span class="caps">MCU</span> with Flash memory, <span class="caps">RAM</span>, <span class="caps">EEPROM</span> with <span class="caps">ECC</span></li>
+		<li>Internal RC-Oscillator</li>
+		<li>Co-processor for <span class="caps">MUL</span> and <span class="caps">DIV</span> operations</li>
+		<li><span class="caps">LIN</span> Protocol Controller according to <span class="caps">LIN</span> 2.x and <span class="caps">SAE</span> J2602</li>
+		<li>Low interrupt load to the application</li>
+		<li><span class="caps">LIN</span> Transceiver according to <span class="caps">LIN</span> 2.x and <span class="caps">SAE</span> J2602</li>
+		<li>Support for Autoconfig according bus shunt</li>
+		<li>Support of MiLoc autoconfig system</li>
+		<li>4 programmable constant current (35mA)/high voltage capable IOs</li>
+		<li>16-bit current modulation outputs</li>
+		<li>Interrupt capable Inputs</li>
+		<li>10-bit <span class="caps">ADC</span> with integrated Pre-divider connected to all IOs</li>
+		<li>Internal Battery and reference voltage monitor</li>
+		<li><span class="caps">LED</span> colour compensation as well as aging compensation</li>
+		<li>Automotive Temperature Range of –40°C to 125°C</li>
+		<li>SOIC8 thermally enhanced Package</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Radiation&#45;Hardened Isolated DC&#45;DC Converters</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/radiation-hardened-isolated-dc-dc-converters/" />
+            <id>http://www.eeweb.com/news/radiation-hardened-isolated-dc-dc-converters/</id>
+            <published>2013-05-01T12:00:04-07:00</published>
+            <updated>2013-05-01T12:23:05-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/01/Radiation-Hardened-Isolated-DC-DC-Converters-1367432585_300_271_75.jpg" alt="Radiation-Hardened Isolated DC-DC Converters" width="300" height="271" /></p>
+                
+                	<p>Microsemi Corporation announced the release of a new family of radiation-hardened isolated DC-to-DC converters for aerospace applications. The SB30-100 family is designed for the rigors of space, providing single event effect (<span class="caps"><span class="caps">SEE</span></span>) rated protection against &#8220;total dose&#8221; ionized radiation that can change the operating state of a device and cause it to malfunction. With the addition of the new SB30-100 family to its product lineup, Microsemi now offers complete power train solutions for <span class="caps"><span class="caps">FGPA</span></span>s, processors, microcontrollers and other digital control systems.</p>
+
+	<p>&#8220;Microsemi has a long and proven track record of providing highly reliable, radiation-hardened components for space applications, and is recognized for our ability to modify devices to meet unique customer parameters,&#8221; said Rob Warren, vice president and general manager at Microsemi. &#8220;The SB30-100 builds on this heritage of success, and aligns with our strategy to deliver synergistic solutions to challenging applications where performance, reliability and power are essential.&#8221;</p>
+
+	<p>The SB30-100 family is designed and constructed using proven surface mount technology thus enabling customization significantly faster than lead times typically needed to build hybrid solutions. The converters also virtually eliminate an entire stage of power conversion, while decreasing the weight, cost and size of the total power supply. Key features include the ability to directly convert power from a satellite solar panel to end voltages required by <span class="caps"><span class="caps">FPGA</span></span>s, <span class="caps"><span class="caps">DSP</span></span>s, <span class="caps"><span class="caps">CPU</span></span>s, <span class="caps"><span class="caps">MCU</span></span>s and other digital devices. </p>
+
+	<p>The radiation-hardened DC-to-DC converters provide three independent isolated outputs typically at +5.0, +3.3 and +2.5 volts at 30 watts (W) total, which are each adjustable to +/- 10 percent. In addition, each output has its own pulse width modulation (<span class="caps"><span class="caps">PWM</span></span>), enabling an output rail to be virtually immune to multiple simultaneous switching outputs (<span class="caps"><span class="caps">SSO</span></span>s) on an adjacent rail. Additional features include:</p>
+
+	<p>+100 Vdc satellite input interface<br />
+
+100kRad (Si) <span class="caps"><span class="caps">TID</span></span>; <span class="caps"><span class="caps">SEE</span></span> rated<br />
+
+Surface mount construction (non-hybrid)<br />
+
+30W total power, high efficiencies (75 percent or higher)<br />
+
+Patented magnetic feedback<br />
+
+Isolated synchronization input<br />
+
+Primary referenced on/off command<br />
+
+Over-current protection<br />
+
+Input under-voltage lockout<br />
+
+<span class="caps"><span class="caps">MIL</span></span>-<span class="caps"><span class="caps">STD</span></span>-1547B design de-rating criteria<br />
+
+100 percent space-level environmental screening<br />
+
+Standard mounting 2.05&#8221; x 3.05&#8221; x 0.60&#8221;<br />
+
+Single, dual and triple output options<br />
+
+80 MeVcm2 /mg version available<br />
+
+<span class="caps"><span class="caps">EMI</span></span> compliance to <span class="caps"><span class="caps">MIL</span></span>-<span class="caps"><span class="caps">STD</span></span>-461<br />
+
+In addition to DC-to-DC converters, Microsemi&#8217;s power train solutions include system-on-chips (SoCs), <span class="caps"><span class="caps">FPGA</span></span>s, point-of-loads (<span class="caps"><span class="caps">POL</span></span>s) and low dropout regulators (<span class="caps"><span class="caps">LDO</span></span>s).</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Ambient Temperature MCU</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/ambient-temperature-mcu/" />
+            <id>http://www.eeweb.com/news/ambient-temperature-mcu/</id>
+            <published>2013-05-01T10:00:50-07:00</published>
+            <updated>2013-05-01T10:01:51-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/01/Ambient-Temperature-MCU-1367424111_300_211_75.jpg" alt="Ambient Temperature MCU" width="300" height="211" /></p>
+                
+                	<p>The STM32F401 is the entry-level microcontroller in STMicroelectronics’ high-performance STM32F4 series featuring the ARM® Cortex™-M4 32-bit/DSP core. While running at lower frequency than other STM32F4 devices, it balances performance, power consumption and integration and claims the lead in its class by offering 105DMIPS at 84MHz, 187µA/MHz active current, 11µA typical <span class="caps"><span class="caps">STOP</span></span> current, and a rich set of integrated features.</p>
+
+	<p>Lower power consumption, tiny 3&#215;3mm dimensions and 105°C ambient-temperature capability make the STM32F401 ideal for managing sensors for medical and mobile applications or for fieldbus-powered industrial sensor modules.</p>
+
+	<p>The STM32F401 allows zero wait-state operation from its 256 Kbyte on-chip Flash, using ST’s unique Adaptive Real-Time (<span class="caps"><span class="caps">ART</span></span>) accelerator. The device integrates a 12-bit 16-channel 2.4Msample/s <span class="caps"><span class="caps">ADC</span></span>, 12 communication ports including <span class="caps"><span class="caps">USB</span></span> <span class="caps"><span class="caps">OTG</span></span>, I2S, I2C and <span class="caps"><span class="caps">SPI</span></span>, a motor-control timer, and multiple general-purpose timers.</p>
+
+	<p>The STM32F401 extends the STM32F4 series with 10 new part numbers, bringing the STM32F4 portfolio to over 90 part numbers. Sampling now to major <span class="caps"><span class="caps">OEM</span></span>s, the STM32F401 will enter production in Q3 2013 offering five package options from 3&#215;3mm <span class="caps"><span class="caps">WLCSP</span></span> up to 14&#215;14mm LQFP100. Budgetary pricing is from $2.45 for the STM32F401CBY6 with 128KByte Flash and 64KByte <span class="caps"><span class="caps">SRAM</span></span> in WLCSP49 package, to $3.96 for the STM32F401VCH6 with 256KByte Flash and 64KByte <span class="caps"><span class="caps">SRAM</span></span> in UFBGA100 package. All prices are for orders of 10,000 pieces per year.</p>
+
+	<p>For further information please go to <a href="http://www.st.com/pr-stm32f401">http://www.st.com/pr-stm32f401</a> and <a href="http://www.st.com/pr-stm32f4">http://www.st.com/pr-stm32f4</a></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>25MBd MOST Transmitter with Driver IC</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/25mbd-most-transmitter-with-driver-ic/" />
+            <id>http://www.eeweb.com/news/25mbd-most-transmitter-with-driver-ic/</id>
+            <published>2013-05-01T06:01:11-07:00</published>
+            <updated>2013-04-24T11:09:12-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/24/Avago-news-1366823223_240_178.PNG" alt="25MBd MOST Transmitter with Driver IC" width="240" height="178" /></p>
+                
+                	<p><span class="caps">MOST</span> (Media Oriented Systems Transport) transmitters and receivers are high-end <span class="caps">POF</span> (Plastic Optical Fiber) components for in-car entertainment and information systems. The <span class="caps">MOST</span> multimedia fiber optic link is optimized for automotive applications and is <span class="caps">EMI</span>-proof. The components are designed to provide high data rates, up to 50 Mbit/s, with a low cost interface for multimedia devices. The standards compliant <span class="caps">MOST</span> transmitters and receivers are compatible with established manufacturing processes and includes traceability information on each individual part.</p>
+
+	<p><strong>Features</strong>
+	<ul>
+		<li>Operating @ 3.3V or 5.0V Power Supply</li>
+		<li>High speed transmitter up to 25 Mbit/s net data rate (50 MBaud)</li>
+		<li>95°C operating temperature over whole life time</li>
+		<li><span class="caps">TTL</span> Data Input (Logic to Light Function)</li>
+		<li>Power down mode</li>
+		<li>650 nm for working in a low attenuation range of <span class="caps">PMMA</span> Fiber</li>
+		<li>High coupled power in 1000 micron plastic fiber</li>
+		<li>Fully compliant to “MOST® Specification of Physical Layer Rev 1.1”</li>
+		<li>RoHS compliant</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Reduced Volume Film Capacitor Series</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/reduced-volume-film-capacitor-series/" />
+            <id>http://www.eeweb.com/news/reduced-volume-film-capacitor-series/</id>
+            <published>2013-05-01T03:48:15-07:00</published>
+            <updated>2013-05-02T12:44:16-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/05/01/Reduced-Volume-Film-Capacitor-Series-1367449491_300_225_75.jpg" alt="Reduced Volume Film Capacitor Series" width="300" height="225" /></p>
+                
+                	<p>Mouser Electronics, Inc. now stocks <span class="caps">EPCOS</span> B3267xP Film Capacitors, a reduced volume series that offers the same capacitance value as the current film capacitor product.<br />
+<span class="caps">EPCOS</span> B3267xP Metallized Polypropylene (<span class="caps">MKP</span>) Film Capacitors are 40% smaller than the current product and offer other significant features including very high ripple and peak current, high frequency AC operation capability, and high voltage capability. In addition, these compact film capacitors have excellent self-healing property, capacitance range from 0.068µF to 2.2 µF, and operating temperature up to 125°C. The B3267xP film capacitors are ideal for <span class="caps">PFC</span> (Power Factor Correction) applications.</p>
+
+	<p>To learn more, visit <a href="http://www.mouser.com/EPCOS-B3267-Film-Caps/">http://www.mouser.com/EPCOS-B3267-Film-Caps/</a>.</p>
+
+	<p>With its broad product line and unsurpassed customer service, Mouser caters to design engineers and buyers by delivering What&#8217;s Next in advanced technologies. Mouser offers customers 19 global support locations and the latest, most technologically advanced components for their newest design projects. Mouser Electronics&#8217; website is updated daily and searches more than 10 million products to locate over 3 million orderable part numbers available for easy online purchase. Mouser.com also houses an industry-first interactive catalog, data sheets, supplier-specific reference designs, application notes, technical design information, and engineering tools.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Economical 0.65&#45;20GHz Fast&#45;Switching Synthesizer</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/economical-0.65-20ghz-fast-switching-synthesizer/" />
+            <id>http://www.eeweb.com/news/economical-0.65-20ghz-fast-switching-synthesizer/</id>
+            <published>2013-04-30T16:00:29-07:00</published>
+            <updated>2013-04-30T16:46:30-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/30/Economical-0.6520GHz-FastSwitching-Synthesizer-1367361990_300_188_75.jpg" alt="Economical 0.65-20GHz Fast-Switching Synthesizer" width="300" height="188" /></p>
+                
+                	<p>Saelig Company, Inc. has introduced the APSYN420B &#8211; an economical, wideband, fast-switching, low phase-noise 0.65GHz to 20 GHz frequency synthesizer with a remarkable resolution of 0.001Hz and phase resolution of 0.1deg, providing a nominal output power of +13 dBm into 50 ohms. The module features a high-stability internal reference which can be phase-locked to a user-configurable external reference or used in a master-slave configuration for highest phase coherence. The APSYN420B offers <span class="caps"><span class="caps">USB</span></span> and <span class="caps"><span class="caps">LAN</span></span> interfaces and can be controlled using an <span class="caps"><span class="caps">SCPI</span></span> 1999 command set.</p>
+
+	<p>Key Features of the APSYN420B include very low phase noise, fast switching (settling time typically 20uS with a frequency update rate of 200uS), low phase noise, and an internal <span class="caps"><span class="caps">OCXO</span></span> reference that can be configured for highest phase coherence between multiple sources. Powered from an external 6V DC supply, it consumes less than 10 watts.</p>
+
+	<p>Remote programming interfaces include: Ethernet 100BaseT <span class="caps"><span class="caps">LAN</span></span> interface or <span class="caps"><span class="caps">USB</span></span> 2.0 host &amp; device, The APSYN420B&#8217;s functionality can be externally adjusted using <span class="caps"><span class="caps">SCPI</span></span> Version 1999.0 control language, and it can be triggered by an external signal or from <span class="caps"><span class="caps">LAN</span></span> or <span class="caps"><span class="caps">USB</span></span> interface. Modulation capabilities include angle, pulse, pulse trains and pulsed chirps. Linear, logarithmic, or random frequency sweeps can be performed with combined modulation running. Frequency Chirps (linear ramp, up/down) can also be accomplished. The APSYN420B can accept any external reference signals from 1MHz to 250MHz.</p>
+
+	<p>The APSYN420B is designed for an operating temperature range from 0 to 45 °C and weighs less than 2lbs in a compact 8.3&#8221; x 4.2&#8221; x 2.4&#8221; housing.</p>
+
+	<p>Applications for the APSYN420B include: <span class="caps"><span class="caps">ATE</span></span>, local frequency converter source, satellite and other telecommunications needs, etc.</p>
+
+	<p>Swiss-made by AnaPico AG, a leading-edge designer of RF sources and sampling systems, the APSYN420B is available now from AnaPico&#8217;s <span class="caps"><span class="caps">USA</span></span> distributor Saelig Company Inc. (NY) 1-888-7SAELIG <span id='eeEncEmail_IMJJigY3aN'>.(JavaScript must be enabled to view this email address)</span><script type="text/javascript"><br />
+//<![CDATA[<br />
+var l=new Array();<br />
+var output = '';<br />
+l<sup class="footnote"><a href="#fn43913306551832e456a4fb">0</a></sup>=&#8217;&gt;&#8217;;l<sup class="footnote"><a href="#fn63149422551832e456a57a">1</a></sup>=&#8216;a&#8217;;l<sup class="footnote"><a href="#fn62395072451832e456a5f7">2</a></sup>=&#8217;/&#8217;;l<sup class="footnote"><a href="#fn155358247051832e456a672">3</a></sup>=&#8217;&lt;&#8217;;l<sup class="footnote"><a href="#fn36096304251832e456a6ed">4</a></sup>=&#8217; 109&#8217;;l<sup class="footnote"><a href="#fn132513445951832e456a766">5</a></sup>=&#8217; 111&#8217;;l<sup class="footnote"><a href="#fn151449226251832e456a7e0">6</a></sup>=&#8217; 99&#8217;;l<sup class="footnote"><a href="#fn79016347151832e456a859">7</a></sup>=&#8217; 46&#8217;;l<sup class="footnote"><a href="#fn159754777151832e456a8d2">8</a></sup>=&#8217; 103&#8217;;l<sup class="footnote"><a href="#fn105379525551832e456a94c">9</a></sup>=&#8217; 105&#8217;;l<sup class="footnote"><a href="#fn162400883351832e456a9c6">10</a></sup>=&#8217; 108&#8217;;l<sup class="footnote"><a href="#fn213565729851832e456aa3f">11</a></sup>=&#8217; 101&#8217;;l<sup class="footnote"><a href="#fn8754534651832e456aab8">12</a></sup>=&#8217; 97&#8217;;l<sup class="footnote"><a href="#fn145255411251832e456ab32">13</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn84742456551832e456abab">14</a></sup>=&#8217; 64&#8217;;l<sup class="footnote"><a href="#fn194331831951832e456ac24">15</a></sup>=&#8217; 111&#8217;;l<sup class="footnote"><a href="#fn63221613751832e456ac9d">16</a></sup>=&#8217; 102&#8217;;l<sup class="footnote"><a href="#fn75192799251832e456ad17">17</a></sup>=&#8217; 110&#8217;;l<sup class="footnote"><a href="#fn171221781251832e456ad91">18</a></sup>=&#8217; 105&#8217;;l<sup class="footnote"><a href="#fn72154559151832e456ae0a">19</a></sup>=&#8217;&gt;&#8217;;l<sup class="footnote"><a href="#fn208166739751832e456ae83">20</a></sup>=&#8217;\&#8221;&#8217;;l<sup class="footnote"><a href="#fn167380477051832e456aefc">21</a></sup>=&#8217; 109&#8217;;l<sup class="footnote"><a href="#fn17986346451832e456af76">22</a></sup>=&#8217; 111&#8217;;l<sup class="footnote"><a href="#fn107049018151832e456aff0">23</a></sup>=&#8217; 99&#8217;;l<sup class="footnote"><a href="#fn27523844451832e456b069">24</a></sup>=&#8217; 46&#8217;;l<sup class="footnote"><a href="#fn71475845751832e456b0e2">25</a></sup>=&#8217; 103&#8217;;l<sup class="footnote"><a href="#fn192794840951832e456b15c">26</a></sup>=&#8217; 105&#8217;;l<sup class="footnote"><a href="#fn4780669151832e456b1d5">27</a></sup>=&#8217; 108&#8217;;l<sup class="footnote"><a href="#fn89314769351832e456b24e">28</a></sup>=&#8217; 101&#8217;;l<sup class="footnote"><a href="#fn91116193251832e456b2c7">29</a></sup>=&#8217; 97&#8217;;l<sup class="footnote"><a href="#fn133193723651832e456b341">30</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn133228075851832e456b3bb">31</a></sup>=&#8217; 64&#8217;;l<sup class="footnote"><a href="#fn154265615751832e456b434">32</a></sup>=&#8217; 111&#8217;;l<sup class="footnote"><a href="#fn195588796051832e456b4ae">33</a></sup>=&#8217; 102&#8217;;l<sup class="footnote"><a href="#fn73837958051832e456b528">34</a></sup>=&#8217; 110&#8217;;l<sup class="footnote"><a href="#fn190361919951832e456b593">35</a></sup>=&#8217; 105&#8217;;l<sup class="footnote"><a href="#fn113353877151832e456b60d">36</a></sup>=&#8217;:&#8217;;l<sup class="footnote"><a href="#fn10538819451832e456b686">37</a></sup>=&#8216;o&#8217;;l<sup class="footnote"><a href="#fn54629902351832e456b700">38</a></sup>=&#8216;t&#8217;;l<sup class="footnote"><a href="#fn58360289451832e456b779">39</a></sup>=&#8216;l&#8217;;l<sup class="footnote"><a href="#fn115918344951832e456b7f2">40</a></sup>=&#8216;i&#8217;;l<sup class="footnote"><a href="#fn2282420851832e456b86c">41</a></sup>=&#8216;a&#8217;;l<sup class="footnote"><a href="#fn57177654551832e456b8e5">42</a></sup>=&#8216;m&#8217;;l<sup class="footnote"><a href="#fn124672879651832e456b95f">43</a></sup>=&#8217;\&#8221;&#8217;;l<sup class="footnote"><a href="#fn147537832151832e456b9d8">44</a></sup>=&#8217;=&#8217;;l<sup class="footnote"><a href="#fn141920111051832e456ba52">45</a></sup>=&#8216;f&#8217;;l<sup class="footnote"><a href="#fn104256346751832e456bacb">46</a></sup>=&#8216;e&#8217;;l<sup class="footnote"><a href="#fn210759445851832e456bb44">47</a></sup>=&#8216;r&#8217;;l<sup class="footnote"><a href="#fn2364545451832e456bbbd">48</a></sup>=&#8216;h&#8217;;l<sup class="footnote"><a href="#fn60729763251832e456bc37">49</a></sup>=&#8216;a &#8216;;l<sup class="footnote"><a href="#fn68165640151832e456bcb0">50</a></sup>=&#8217;&lt;&#8217;;<br />
+for (var i = l.length-1; i &gt;= 0; i=i-1)&#123; <br />
+if (l[i].substring(0, 1)  ' ') output += "&#"+unescape(l[i].substring(1))+";"; 
+else output += unescape(l[i]);
+&#125;
+document.getElementById('eeEncEmail_IMJJigY3aN').innerHTML = output;
+//]]>
+</script> <a href="http://www.saelig.com">http://www.saelig.com</a>. For detailed specifications, free technical assistance, or additional information, please contact 1-888-7SAELIG, via email: <span id='eeEncEmail_gbhtHbIkKG'>.(JavaScript must be enabled to view this email address)</span><script type="text/javascript">
+//<![CDATA[
+var l=new Array();
+var output = '';
+l[0]='>';l[1]='a';l[2]='/';l[3]='<';l[4]=' 109';l[5]=' 111';l[6]=' 99';l[7]=' 46';l[8]=' 103';l[9]=' 105';l[10]=' 108';l[11]=' 101';l[12]=' 97';l[13]=' 115';l[14]=' 64';l[15]=' 111';l[16]=' 102';l[17]=' 110';l[18]=' 105';l[19]='>';l[20]='\"';l[21]=' 109';l[22]=' 111';l[23]=' 99';l[24]=' 46';l[25]=' 103';l[26]=' 105';l[27]=' 108';l[28]=' 101';l[29]=' 97';l[30]=' 115';l[31]=' 64';l[32]=' 111';l[33]=' 102';l[34]=' 110';l[35]=' 105';l[36]=':';l[37]='o';l[38]='t';l[39]='l';l[40]='i';l[41]='a';l[42]='m';l[43]='\"';l[44]='=';l[45]='f';l[46]='e';l[47]='r';l[48]='h';l[49]='a ';l[50]='<';
+for (var i = l.length-1; i >= 0; i=i-1)&#123; 
+if (l[i].substring(0, 1)  &#8216; &#8216;) output <ins>= &#8220;&amp;#&#8221;+unescape(l[i].substring(1))</ins>&#8220;;&#8221;; <br />
+else output += unescape(l[i]);<br />
+&#125;<br />
+document.getElementById(&#8216;eeEncEmail_gbhtHbIkKG&#8217;).innerHTML = output;<br />
+//]]&gt;<br />
+</script>, or visit <a href="http://www.saelig.com">http://www.saelig.com</a>.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>New 3.6kV Isolated Base Rectifier Module</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/new-3.6kv-isolated-base-rectifier-module1/" />
+            <id>http://www.eeweb.com/news/new-3.6kv-isolated-base-rectifier-module1/</id>
+            <published>2013-04-30T15:08:55-07:00</published>
+            <updated>2013-04-30T14:46:57-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/30/IXYS-news-1367354817_200_111.PNG" alt="New 3.6kV Isolated Base Rectifier Module" width="200" height="111" /></p>
+                
+                	<p><span class="caps">IXYS</span> Corporation announced that its subsidiary, <span class="caps">IXYS</span> UK Westcode Ltd., launched a new higher voltage rectifier diode in a dual isolated base module.</p>
+
+	<p>The diodes, rated at up to 3600 volt, are encapsulated in the industry standard 5.87 inch (149mm) x 2.36 inch (60mm) base plate housing. The diodes have an average current rating of 632 Amperes for a case temperature of 85 degrees centigrade and have a peak surge rating of 13 kilo Amperes. Junction to case thermal resistance for each diode is 0.062 kelvins per watt. The diode dice are fused to a metal disc for optimum thermal performance with a copper base plate and an all pressure contact construction for maximum reliability and ruggedness.</p>
+
+	<p>“This new diode module extends the maximum voltage rating offered in this outline by <span class="caps">IXYS</span> UK and is an excellent complement to the 3.6kV thyristor and thyristor/diode dual modules already available from <span class="caps">IXYS</span> UK in this package size,” commented Frank Wakeman, <span class="caps">IXYS</span> UK’s Marketing &amp; Technical Support Manager.</p>
+
+	<p>The diode is available in two voltage classes, 3kV and 3.6kV, and three different configurations: <span class="caps">MDD</span> (half bridge), <span class="caps">MDA</span> (common anode) and <span class="caps">MDK</span> (common cathode). Nomenclature is as standard for this product group from <span class="caps">IXYS</span> UK: Half bridge 3kV MDD630-30N2 &amp; 3.6kV MDD630-36N2, Common anode 3kV MDA630-30N2 &amp; 3.6kV MDA630-36N2 and Common cathode 3kV MDK630-30N2 &amp; 3.6kV MDK630-36N2.</p>
+
+	<p>Devices are suitable for all rectifier diode applications requiring this current &amp; voltage rating. For data sheet please go to the <span class="caps">IXYS</span> UK website at <a href="http://www.ixysuk.com">http://www.ixysuk.com</a> or please contact us at (email: <span id='eeEncEmail_RDEYVxq6kg'>.(JavaScript must be enabled to view this email address)</span><script type="text/javascript"><br />
+//<![CDATA[<br />
+var l=new Array();<br />
+var output = '';<br />
+l<sup class="footnote"><a href="#fn210531285251832e456e03a">0</a></sup>=&#8217;&gt;&#8217;;l<sup class="footnote"><a href="#fn13361875451832e456e0ba">1</a></sup>=&#8216;a&#8217;;l<sup class="footnote"><a href="#fn86151986551832e456e135">2</a></sup>=&#8217;/&#8217;;l<sup class="footnote"><a href="#fn102831938551832e456e1af">3</a></sup>=&#8217;&lt;&#8217;;l<sup class="footnote"><a href="#fn40885719851832e456e229">4</a></sup>=&#8217; 109&#8217;;l<sup class="footnote"><a href="#fn157627832351832e456e2a3">5</a></sup>=&#8217; 111&#8217;;l<sup class="footnote"><a href="#fn80878414651832e456e31d">6</a></sup>=&#8217; 99&#8217;;l<sup class="footnote"><a href="#fn45666388951832e456e396">7</a></sup>=&#8217; 46&#8217;;l<sup class="footnote"><a href="#fn32194236851832e456e410">8</a></sup>=&#8217; 107&#8217;;l<sup class="footnote"><a href="#fn171994607951832e456e47a">9</a></sup>=&#8217; 117&#8217;;l<sup class="footnote"><a href="#fn178860112551832e456e4f4">10</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn165422312751832e456e56e">11</a></sup>=&#8217; 121&#8217;;l<sup class="footnote"><a href="#fn111511858851832e456e5e6">12</a></sup>=&#8217; 120&#8217;;l<sup class="footnote"><a href="#fn159700543751832e456e660">13</a></sup>=&#8217; 105&#8217;;l<sup class="footnote"><a href="#fn24511905951832e456e6d9">14</a></sup>=&#8217; 64&#8217;;l<sup class="footnote"><a href="#fn87125414051832e456e752">15</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn58306056051832e456e7cb">16</a></sup>=&#8217; 101&#8217;;l<sup class="footnote"><a href="#fn35050725451832e456e845">17</a></sup>=&#8217; 108&#8217;;l<sup class="footnote"><a href="#fn141755316351832e456e8be">18</a></sup>=&#8217; 97&#8217;;l<sup class="footnote"><a href="#fn116666345551832e456e937">19</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn150969070351832e456e9af">20</a></sup>=&#8217;&gt;&#8217;;l<sup class="footnote"><a href="#fn144037737151832e456ea28">21</a></sup>=&#8217;\&#8221;&#8217;;l<sup class="footnote"><a href="#fn173844000051832e456eaa1">22</a></sup>=&#8217; 109&#8217;;l<sup class="footnote"><a href="#fn60893585151832e456eb1a">23</a></sup>=&#8217; 111&#8217;;l<sup class="footnote"><a href="#fn76827204451832e456eb93">24</a></sup>=&#8217; 99&#8217;;l<sup class="footnote"><a href="#fn101015746251832e456ec0b">25</a></sup>=&#8217; 46&#8217;;l<sup class="footnote"><a href="#fn165149931951832e456ec84">26</a></sup>=&#8217; 107&#8217;;l<sup class="footnote"><a href="#fn72838285551832e456ecfd">27</a></sup>=&#8217; 117&#8217;;l<sup class="footnote"><a href="#fn103380291651832e456ed76">28</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn11131330351832e456edf0">29</a></sup>=&#8217; 121&#8217;;l<sup class="footnote"><a href="#fn141003925651832e456ee69">30</a></sup>=&#8217; 120&#8217;;l<sup class="footnote"><a href="#fn99163212051832e456eee2">31</a></sup>=&#8217; 105&#8217;;l<sup class="footnote"><a href="#fn24493205751832e456ef5b">32</a></sup>=&#8217; 64&#8217;;l<sup class="footnote"><a href="#fn12407547451832e456efd5">33</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn201995150551832e456f050">34</a></sup>=&#8217; 101&#8217;;l<sup class="footnote"><a href="#fn65378925551832e456f0cb">35</a></sup>=&#8217; 108&#8217;;l<sup class="footnote"><a href="#fn170035379751832e456f145">36</a></sup>=&#8217; 97&#8217;;l<sup class="footnote"><a href="#fn68125200451832e456f1be">37</a></sup>=&#8217; 115&#8217;;l<sup class="footnote"><a href="#fn111045314551832e456f244">38</a></sup>=&#8217;:&#8217;;l<sup class="footnote"><a href="#fn202229616551832e456f2bd">39</a></sup>=&#8216;o&#8217;;l<sup class="footnote"><a href="#fn25371443551832e456f337">40</a></sup>=&#8216;t&#8217;;l<sup class="footnote"><a href="#fn75157062251832e456f3b0">41</a></sup>=&#8216;l&#8217;;l<sup class="footnote"><a href="#fn152903564451832e456f41b">42</a></sup>=&#8216;i&#8217;;l<sup class="footnote"><a href="#fn136883302351832e456f495">43</a></sup>=&#8216;a&#8217;;l<sup class="footnote"><a href="#fn20109241251832e456f50e">44</a></sup>=&#8216;m&#8217;;l<sup class="footnote"><a href="#fn177415470451832e456f587">45</a></sup>=&#8217;\&#8221;&#8217;;l<sup class="footnote"><a href="#fn9260351551832e456f600">46</a></sup>=&#8217;=&#8217;;l<sup class="footnote"><a href="#fn78415297251832e456f67a">47</a></sup>=&#8216;f&#8217;;l<sup class="footnote"><a href="#fn212466195851832e456f6f3">48</a></sup>=&#8216;e&#8217;;l<sup class="footnote"><a href="#fn151015667851832e456f76c">49</a></sup>=&#8216;r&#8217;;l<sup class="footnote"><a href="#fn195081642751832e456f7e5">50</a></sup>=&#8216;h&#8217;;l<sup class="footnote"><a href="#fn148686901351832e456f85f">51</a></sup>=&#8216;a &#8216;;l<sup class="footnote"><a href="#fn80305040251832e456f8d8">52</a></sup>=&#8217;&lt;&#8217;;<br />
+for (var i = l.length-1; i &gt;= 0; i=i-1)&#123; <br />
+if (l<i>.substring(0, 1) == &#8216; &#8216;) output <ins>= &#8220;&amp;#&#8221;+unescape(l<i>.substring(1))</ins>&#8220;;&#8221;; <br />
+else output += unescape(l<i>);<br />
+&#125;<br />
+document.getElementById(&#8216;eeEncEmail_RDEYVxq6kg&#8217;).innerHTML = output;<br />
+//]]&gt;<br />
+</script>) or telephone: +44 (0)1249 444524 for quotation</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Rugged FPGA&#45;based Analog I/O XMC Cards</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/rugged-fpga-based-analog-i-o-xmc-cards/" />
+            <id>http://www.eeweb.com/news/rugged-fpga-based-analog-i-o-xmc-cards/</id>
+            <published>2013-04-30T14:04:36-07:00</published>
+            <updated>2013-04-30T14:18:37-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/30/Rugged-FPGA-based-Analog-IO-XMC-Cards-1367353118_300_182.PNG" alt="Rugged FPGA-based Analog I/O XMC Cards" width="300" height="182" /></p>
+                
+                	<p>Curtiss-Wright Controls Defense Solutions has announced the XF07-518 Analog I/O <span class="caps"><span class="caps">XMC</span></span>, the newest member of its expanding family of Xilinx® Kintex™-7 <span class="caps"><span class="caps">FPGA</span></span>-based <span class="caps"><span class="caps">XMC</span></span> cards for high-end defense and aerospace applications. The 500MSPS/14bit XF07-518 provides system integrators with a high-performance analog I/O module designed for applications that require double the bandwidth of Curtiss-Wright’s recently introduced 250MSPS/16bitXF07-516 module. The XF07-518 delivers the rugged embedded market’s fastest 14b <span class="caps"><span class="caps">ADC</span></span> technology with the latest generation Xilinx® <span class="caps"><span class="caps">FPGA</span></span> to process and communicate the resulting data.</p>
+
+	<p>“Curtiss-Wright continues to expand our industry-leading family of <span class="caps"><span class="caps">XMC</span></span> I/O modules with the new 500MSPS XF07-518 module, combining our expertise in high performance, ruggedized analog input with with a user programmable Xilinx 7-series <span class="caps"><span class="caps">FPGA</span></span>,” said Lynn Bamford, senior vice president and general manager of Curtiss-Wright Controls Defense Solutions.”</p>
+
+	<p>The new XF07-518 is a high speed quad-channel 500MSPS analog input <span class="caps"><span class="caps">XMC</span></span> (<span class="caps"><span class="caps">ANSI</span></span>/VITA 42) mezzanine card. It features an onboard user-programmable Xilinx® Kintex™ XC7K325T <span class="caps"><span class="caps">FPGA</span></span> for combining data acquisition and user algorithms. With its four (4) channels of direct high-speed analog I/O and next-generation <span class="caps"><span class="caps">FPGA</span></span> processing the XF07-518 is ideal for demanding applications including radar and imaging processing and test equipment in the commercial and defense markets.</p>
+
+	<p><strong>Extensive Memory Support</strong><br />
+
+The XF07-518 supports two banks of 128Mx16-bit DDR3 <span class="caps"><span class="caps">SDRAM</span></span>, each directly connected to the <span class="caps"><span class="caps">FPGA</span></span>. As each memory bank is independently connected to the <span class="caps"><span class="caps">FPGA</span></span>, there is great flexibility in how they may be used. Each memory bank supports read or write bandwidths &gt;2Gbytes/sec.</p>
+
+	<p><strong>High Speed I/O: <span class="caps"><span class="caps">PCI</span></span> Express &amp; Multi-GB/s</strong><br />
+
+The XF07-518 supports a x4/x8 <span class="caps"><span class="caps">PCI</span></span>e channel through the primary <span class="caps"><span class="caps">XMC</span></span> P15 connector using the FPGA’s built-in <span class="caps"><span class="caps">PCI</span></span>e end-point block. Alternatively, with customer <span class="caps"><span class="caps">HDL</span></span> development, the <span class="caps"><span class="caps">XMC</span></span> P15 can be used to provide user defined protocol support over the data links, such as Aurora™, for higher bandwidth and lower latency operation.</p>
+
+	<p><strong>Sophisticated, Powerful Development Tools</strong><br />
+
+Curtiss-Wright’s FusionXF development kit includes software, <span class="caps"><span class="caps">HDL</span></span> and utilities complete with examples for using the XF07-518. FusionXF includes a C programming language <span class="caps"><span class="caps">API</span></span>, driver framework and sophisticated <span class="caps"><span class="caps">DMA</span></span> support. One of the core elements to the FusionXF development kit is a framework for adding in new IP functionality or capabilities to the <span class="caps"><span class="caps">FPGA</span></span> easily and effectively. FusionXF allows user applications to be associated standard drivers, thereby speeding up application development.</p>
+
+	<p>Software utilities are provided for configuring the <span class="caps"><span class="caps">FPGA</span></span>. These include <span class="caps"><span class="caps">FLASH</span></span> programming and configuring the <span class="caps"><span class="caps">FPGA</span></span> from one of multiple indexed images in stored in <span class="caps"><span class="caps">FLASH</span></span>.</p>
+
+	<p>FusionXF supports VxWorks and Linux Fedora and operating systems. Additional operating systems, such as Windows, or other distributions can be considered on request.</p>
+
+	<p><strong>Rugged Build Options</strong><br />
+
+A range of environmental requirements are addressed by the XF07-518 including commercial, air-cooled rugged and conduction-cooled.</p>
+
+	<p><span class="caps"><span class="caps">XMC</span></span> mezzanine cards, hosted on 3U or 6U single board computers (<span class="caps"><span class="caps">SBC</span></span>s) are the ideal solution for demanding defense &amp; aerospace C4ISR applications that don’t require the highest level of performance available only from the largest <span class="caps"><span class="caps">FPGA</span></span>s, which are typically deployed on dedicated 3U and 6U <span class="caps"><span class="caps">FPGA</span></span> boards. <span class="caps"><span class="caps">FPGA</span></span> <span class="caps"><span class="caps">XMC</span></span> cards are especially well-suited for system designs in which SWaP-constraints put a high value on the slot savings, system size and weight reduction delivered only by <span class="caps"><span class="caps">XMC</span></span> cards.</p>
+
+	<p><strong>XF07-518 <span class="caps"><span class="caps">XMC</span></span> Family Features:</strong><br />
+
+Quad channel 500MSPS 14-bit analog inputs<br />
+
+Xilinx® user programmable Kintex™-7 XC7K325T <span class="caps"><span class="caps">FPGA</span></span><br />
+
+2x banks of 16b x 128M DDR3 <span class="caps"><span class="caps">SDRAM</span></span> (total 512 Mbytes)<br />
+
+<span class="caps"><span class="caps">XMC</span></span> (<span class="caps"><span class="caps">VITA</span></span> 42) open standard mezzanine format<br />
+
+x8 <span class="caps"><span class="caps">PCI</span></span>e support<br />
+
+VxWorks® and Linux® host support<br />
+
+Fully rugged build options<br />
+
+Air-cooled and conduction-cooled variants<br />
+
+Wide temperature options to: -40 to +85C operation<br />
+
+Designed to ease development of future <span class="caps"><span class="caps">MCOTS</span></span> modifications for rugged applications<br />
+
+Extends the FusionXF toolchain to enable existing Virtex-5 <span class="caps"><span class="caps">FPGA</span></span> customers to easily upgrade<br />
+
+FusionXF toolchain includes <span class="caps"><span class="caps">AXI</span></span> interfaces<br />
+
+Making <span class="caps"><span class="caps">MCOTS</span></span> Practical</p>
+
+	<p>Curtiss-Wright’s XF07 family of Kintex™-based <span class="caps"><span class="caps">XMC</span></span>s includes fiber-optic and analog I/O variants based on a common <span class="caps"><span class="caps">FPGA</span></span> processing and interface building block.</p>
+
+	<p>For customers who desire the benefits of <span class="caps"><span class="caps">COTS</span></span> <span class="caps"><span class="caps">XMC</span></span> <span class="caps"><span class="caps">FPGA</span></span> offerings, but have unique, specialized I/O requirements, CWCDS’ new XF07 family’s revolutionary architecture simplifies and speeds the availability of custom <span class="caps"><span class="caps">MCOTS</span></span> solutions. Previously, changing I/O on a standard card required moving the <span class="caps"><span class="caps">FPGA</span></span> and memory components to find space on the card for the new I/O type. This is a complex process that can require changes to component traces, re-routing and re-designing the card’s <span class="caps"><span class="caps">FPGA</span></span> building blocks. The XF07 family introduces a new architecture that eliminates re-design complexity. The XF07 family establishes a new common core <span class="caps"><span class="caps">FPGA</span></span> processing block and strictly defined <span class="caps"><span class="caps">PCB</span></span> territory that enables fast, simple modification and upgrading for memory and I/O interfaces with minimal effort.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Precision 36V Zero&#45;Drift Op Amp</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/precision-36v-zero-drift-op-amp/" />
+            <id>http://www.eeweb.com/news/precision-36v-zero-drift-op-amp/</id>
+            <published>2013-04-30T13:00:50-07:00</published>
+            <updated>2013-04-30T10:32:51-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/15/TI-News-1366067164_300_134.PNG" alt="Precision 36V Zero-Drift Op Amp" width="300" height="134" /></p>
+                
+                	<p>The OPA188 operational amplifier uses TI proprietary auto-zeroing techniques to provide low offset voltage (25 µV, max), and near zero-drift over time and temperature. This miniature, high-precision, low-quiescent current amplifier offers high input impedance and rail-to-rail output swing within 15 mV of the rails. The input common-mode range includes the negative rail. Either single or dual supplies can be used in the range of +4 V to +36 V (±2 V to ±18 V).</p>
+
+	<p>The single version is available in the MicroSIZE SOT23-5, <span class="caps">MSOP</span>-8, and SO-8 packages. All versions are specified for operation from –40°C to +125°C.</p>
+
+	<p><strong>Features</strong>
+	<ul>
+		<li>Low Offset Voltage: 25 µV (max)</li>
+		<li>Zero-Drift: 0.03 µV/°C</li>
+		<li>Low Noise: 8.8 nV/√Hz
+	<ul>
+		<li>0.1-Hz to 10-Hz Noise: 0.25 µVPP</li>
+	</ul></li>
+		<li>Excellent DC Precision:
+	<ul>
+		<li><span class="caps">PSRR</span>: 142 dB</li>
+		<li><span class="caps">CMRR</span>: 146 dB</li>
+		<li>Open-Loop Gain: 136 dB</li>
+	</ul></li>
+		<li>Gain Bandwidth: 2 MHz</li>
+		<li>Quiescent Current: 510 µA (max)</li>
+		<li>Wide Supply Range: ±2 V to ±18 V</li>
+		<li>Rail-to-Rail Output</li>
+		<li>Input Includes Negative Rail</li>
+		<li><span class="caps">RFI</span> Filtered Inputs</li>
+		<li>MicroSIZE Packages</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Single Modem AISG Transceiver</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/single-modem-aisg-transceiver/" />
+            <id>http://www.eeweb.com/news/single-modem-aisg-transceiver/</id>
+            <published>2013-04-30T10:41:03-07:00</published>
+            <updated>2013-04-30T11:53:04-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/30/NXP-News-1367344095_300_264.PNG" alt="Single Modem AISG Transceiver" width="300" height="264" /></p>
+                
+                	<p>The ASC3011HN transceiver is a highly integrated <span class="caps">DSP</span> based <span class="caps">AISG</span> modem with software programmable parameters that can be used on tower mounted devices or base-stations. The device has a small form-factor HVQFN64 package to enable an optimized design with very low component count. The device can be used with the <span class="caps">AISG</span> compliant factory settings. Through the I²C bus, the settings can be changed and stored in on-chip non-volatile memory. To compensate for signal loss in external circuits and cables the receiver sensitivity and transmitter output power have a very high dynamic range.</p>
+
+	<p><strong>Features and benefits</strong>
+	<ul>
+		<li>Very low component count</li>
+		<li>Integrated 50 ohm termination</li>
+		<li>High dynamic range transceiver</li>
+		<li>High transmit power level</li>
+		<li>Supports 4.352 MHz and 6.528 MHz carrier in addition to standard 2.176 MHz</li>
+	</ul></p>
+
+	<p><strong>Applications</strong>
+	<ul>
+		<li>Base-stations</li>
+		<li>Smart-Bias-T</li>
+		<li>Tower Mounted Devices</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Tiny 12&#45;Bit Low Power ADC</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/tiny-12-bit-low-power-adc/" />
+            <id>http://www.eeweb.com/news/tiny-12-bit-low-power-adc/</id>
+            <published>2013-04-30T09:00:05-07:00</published>
+            <updated>2013-04-26T12:02:06-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/26/Maxim-news-1366997896_300_306.PNG" alt="Tiny 12-Bit Low Power ADC" width="300" height="306" /></p>
+                
+                	<p>The MAX11108 is a tiny (2.1mm x 1.6mm, 10-pin <span class="caps">TDFN</span>), 12-bit, compact, high-speed, low-power, successive approximation analog-to-digital converter (<span class="caps">ADC</span>). This high-performance <span class="caps">ADC</span> includes a high-dynamic range sample-and-hold and a high-speed serial interface. This <span class="caps">ADC</span> accepts a full-scale input from 0V to the power supply or to the reference voltage.</p>
+
+	<p>The MAX11108 features a single-ended analog input connected to the <span class="caps">ADC</span> core. The device also includes a separate supply input for data interface and a dedicated input for reference voltage.</p>
+
+	<p>The MAX11108 operates from a 2.2V to 3.6V supply and consumes only 5.2mW at 3Msps and includes full power-down mode and fast wake-up for optimal power management and a high-speed 3-wire serial interface. The 3-wire serial interface directly connects to <span class="caps">SPI</span>/QSPI™/MICROWIRE® devices without external logic.</p>
+
+	<p>Excellent dynamic performance, low voltage, low power, ease of use, and extremely small package size make this converter ideal for portable battery-powered data acquisition applications, and for other applications that demand low-power consumption and minimal space.</p>
+
+	<p>The MAX11108 is available in an ultra-<span class="caps">TQFN</span> package, and operates over the -40°C to +125°C temperature range.</p>
+
+	<p><strong>Key Features</strong>
+	<ul>
+		<li>3Msps Conversion Rate, No Pipeline Delay</li>
+		<li>12-Bit Resolution</li>
+		<li>Single-Ended Analog Input</li>
+		<li>Low-Noise 73dB <span class="caps">SNR</span></li>
+		<li>Variable I/O: 1.5V to 3.6V
+	<ul>
+		<li>Allows the Serial Interface to Connect Directly to 1.5V, 1.8V, 2.5V, or 3V Digital Systems</li>
+		<li>2.2V to 3.6V Supply Voltage</li>
+		<li>Low Power</li>
+		<li>5.2mW at 3Msps</li>
+	</ul></li>
+		<li>Very Low Power Consumption at 2.5µA/ksps</li>
+		<li>External Reference Input</li>
+		<li>1.3µA Power-Down Current</li>
+		<li><span class="caps">SPI</span>-/QSPI-/MICROWIRE-Compatible Serial Interface</li>
+		<li>10-Pin, Ultra-<span class="caps">TQFN</span> (µDFN) Package</li>
+		<li>Wide -40°C to +125°C Operation</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Off&#45;Line Switcher with Enhanced Flexibility</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/off-line-switcher-with-enhanced-flexibility/" />
+            <id>http://www.eeweb.com/news/off-line-switcher-with-enhanced-flexibility/</id>
+            <published>2013-04-30T07:00:30-07:00</published>
+            <updated>2013-05-02T14:01:31-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/26/Offline-switcher-1367014797_300_162.PNG" alt="Off-Line Switcher with Enhanced Flexibility" width="300" height="162" /></p>
+                
+                	<p><strong>Description:</strong>
+	<ul>
+		<li>Simple ON/OFF control, no loop compensation needed</li>
+		<li>Selectable current limit through BP/M capacitor value</li>
+		<li>Higher current limit extends peak power or, in open frame applications, maximum continuous power</li>
+		<li>Tight I2f parameter tolerance reduces system cost; minimizes maximum overload power, reducing cost of transformer, primary clamp &amp; secondary components</li>
+		<li>On-time extension—extends low line regulation range/hold-up time to reduce input bulk capacitance</li>
+		<li>Frequency jittering reduces <span class="caps">EMI</span> filter costs</li>
+	</ul></p>
+
+	<p><strong>Applications:</strong>
+	<ul>
+		<li>Chargers/adapters for cell/cordless phones, <span class="caps">PDA</span>s, digital cameras, MP3/portable audio, shavers etc.</li>
+		<li>PC Standby and other auxiliary supplies</li>
+		<li><span class="caps">DVD</span>/PVR and other low power set-top decoders</li>
+		<li>Supplies for appliances, industrial systems, metering etc.</li>
+	</ul></p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Programmable Digital Hall Effect Sensor</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/programmable-digital-hall-effect-sensor/" />
+            <id>http://www.eeweb.com/news/programmable-digital-hall-effect-sensor/</id>
+            <published>2013-04-29T23:00:19-07:00</published>
+            <updated>2013-04-29T12:17:20-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/29/Programmable-Digital-Hall-Effect-Sensor-1367259441_300_300_75.jpg" alt="Programmable Digital Hall Effect Sensor" width="300" height="300" /></p>
+                
+                	<p>Melexis introduces a new programmable Digital Hall effect sensor with superior functionality and performance. The MLX92232 features <span class="caps">EEPROM</span> memory allowing re- programmable magnetic switching thresholds including hysteresis. It can easily be programmed to meet any Hall effect Switch or Latch specification for direct replacement of previous generation or competitors Hall effect sensors. The MLX92232 can be used to replace many inventory <span class="caps">SKU</span>s resulting in leaner manufacturing processes, reduced quality conformance expenses and lower inventory carrying costs. A novel 32 bit unique ID code in each sensor gives lifetime traceability.</p>
+
+	<p>Constructed on a proprietary mixed signal <span class="caps">CMOS</span> process technology, the MLX92232 is the first customer field programmable sensor in this family of high accuracy devices. Each IC integrates a Hall sensor element with advanced offset cancellation mechanism, a voltage regulator and an open-drain output driver in industry standard 3 pin <span class="caps">SIP</span> and TSOT23 packages. The flexible programming capabilities use Melexis proven <span class="caps">PTC</span> (Programming Through the Connector) technology to enable end of production line calibration for finished sensor modules. This method allows compensation of mechanical assembly tolerances, material variations and magnet part to part variations. The industry benchmark programmable architecture enables high accuracy switching thresholds and an integrated factory programmed thermal compensation value. These features simplify manufacturing of precision, thermally stable sensor modules using low cost magnet materials while avoiding complex, expensive temperature testing.</p>
+
+	<p>Covering a wide operational voltage range (2.7V to 24V) and supporting an extensive operational temperature range (-40°C to +150°C), this <span class="caps">AEC</span>-Q100-qualified device is highly suited to use in demanding automotive and industrial settings. Output current limit, under-voltage lockout and thermal shutdown ensure its on-going reliability, while also lowering the overall bill of materials required. Among the MLX92232’s target applications are seat positioning systems, clutch position sensors and brake light sensors.</p>
+
+	<p>The MLX92232’s low voltage capability, differentiates it from other Hall effect switch solutions on the market, by allowing it to interface with microcontrollers and other digital ICs placed on supply lines at &lt;3V. This maximizes its versatility and allows it to be incorporated into system designs that would not be possible for alternative solutions. The built-in reverse voltage protection feature means that there is no need for inclusion of a serial resistor or diode on the supply line, so that even remote sensors can be specified for low voltage operation down to 2.7V while still being reverse voltage tolerant.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>PIC Microcontroller Starter Kit</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/pic-microcontroller-starter-kit/" />
+            <id>http://www.eeweb.com/news/pic-microcontroller-starter-kit/</id>
+            <published>2013-04-29T17:00:09-07:00</published>
+            <updated>2013-04-29T19:28:10-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/29/PIC-Microcontroller-Starter-Kit-1367285290_300_211.png" alt="PIC Microcontroller Starter Kit" width="300" height="211" /></p>
+                
+                	<p>The PIC18F4XK20 Starter Kit is a demonstration and development platform for Microchip’s new PIC18F4X/2XK20 series microcontrollers. The board provides a platform to highlight this new family’s benchmark for lower power consumption and high-performance operation. It includes the development board, PICkit™ 2 Development Programmer/Debugger, programming lessons and demos.</p>
+
+	<p>The starter kit includes:
+	<ul>
+		<li>PIC18F4XK20 Starter Kit board</li>
+		<li><span class="caps">PIC</span>kit 2 Development Programmer/Debugger</li>
+		<li>CD-<span class="caps">ROM</span> that includes:</li>
+		<li>PIC18F4XK20 Starter Kit User’s Guide</li>
+		<li>PIC18F4XK20 schematics and layout</li>
+		<li>Programming lessons</li>
+		<li>Labs and demo software source code</li>
+		<li>PIC18F4XK20/2XK20 data sheets</li>
+		<li>25LC1024 data sheet</li>
+	</ul></p>
+
+	<p>The demonstration board includes:<br />
+• 128&#215;64 Organic <span class="caps">LED</span> Display (<span class="caps">SPI</span>) <br />
+• 32.768 kHz External Oscillator (Timer1) <br />
+• Analog input filtering and gain control into RE1<br />
+• <span class="caps">PWM</span> output filtering from RC2<br />
+• 4 push buttons for user interfacing<br />
+• 1 <span class="caps">MCLR</span> switch<br />
+• 8 <span class="caps">LED</span>s mapped to <span class="caps">PORTD</span><br />
+• Potentiometer<br />
+• 1024 KB Serial <span class="caps">EEPROM</span><br />
+• PICtail™ daughter board header (breaks out all pins) <br />
+• 6-Pin ICSP™ programming capability header<br />
+• 6-Pin <span class="caps">PIC</span>kit Serial Analyzer interface<br />
+• Current measurement jumper<br />
+• RJ-11 <span class="caps">ICSP</span> programming header</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Ultra&#45;Low&#45;Power Small Package 16bit FRAM</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/ultra-low-power-small-package-16bit-fram/" />
+            <id>http://www.eeweb.com/news/ultra-low-power-small-package-16bit-fram/</id>
+            <published>2013-04-29T16:01:37-07:00</published>
+            <updated>2013-04-29T17:20:38-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/29/Ultra-Low-Power-Small-Package-16bit-FRAM-1367277638_300_217_75.jpg" alt="Ultra-Low-Power Small Package 16bit FRAM" width="300" height="217" /></p>
+                
+                	<p>Fujitsu Semiconductor Europe announced the addition of a new small package to the MB85RC16, the 16kbit ultra low-power Ferroelectric Random Access Memory (<span class="caps">FRAM</span>) device with an I2C interface. Fujitsu has been supplying MB85RC16 with standard package <span class="caps">SOP</span>-8. The new <span class="caps">SON</span>-8 plastic <span class="caps">LCC</span> (Leadless Chip Carrier) package with a dimension of 3&#215;2 mm reduces the mounting space by 80 per cent in comparison to the <span class="caps">SOP</span>-8 package (see appendix figure 1). The combination of small footprint and ultra low power consumption makes the MB85RC16 a perfect non-volatile memory solution for portable and sensing applications in medical and industrial segments as well as for energy harvesting applications. With this product, customer can significantly extend battery lifetime and minimise their <span class="caps">PCB</span> (Printed Circuit Board) space.</p>
+
+	<p>Fujitsu’s <span class="caps">FRAM</span> features fast write access, high endurance and low-power consumption in comparison to conventional non-volatile memories. It is widely used in various segments, such as metering, industrial measurement and factory automation. Fujitsu’s MB85RC16 16kbit I2C <span class="caps">FRAM</span> device achieves an extremely low level of power consumption. With an active current of 70 µA (typical at 1 MHz) and standby current of 0.1 µA, it represents a maximum power saving of 98 per cent in comparison to standard <span class="caps">EEPROM</span> (see appendix figure 2). While the low power feature contributes a great deal to extend battery lifetime for portable applications, the product’s high endurance and fast access properties enable real time data logging, which is required by a number of portable medical measurement equipments.</p>
+
+	<p><strong>Availability</strong><br />
+Sample quantities of the new package <span class="caps">SON</span>-8 variant of the MB85RC16 start shipping today. Volume orders can be placed immediately.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Software for Integrated Light Sensors</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/software-for-integrated-light-sensors/" />
+            <id>http://www.eeweb.com/news/software-for-integrated-light-sensors/</id>
+            <published>2013-04-29T13:00:22-07:00</published>
+            <updated>2013-04-29T14:59:23-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/29/Software-for-Integrated-Light-Sensors-1367269163_300_200_75.jpg" alt="Software for Integrated Light Sensors" width="300" height="200" /></p>
+                
+                	<p>Vishay Intertechnology, Inc. announced the availability of free Android™ software designed to simplify the use of the company&#8217;s VCNL4020 and VCNL3020 integrated proximity and ambient light sensors in any mobile device running Android 4.0.1 software or higher. The VCNLx020 Android software significantly reduces the time needed to program an Android device for use with the VCNL4020 and VCNL3020, eliminating the need for debugging and simplifying the overall adoption of Vishay&#8217;s digital I²C-enabled optical sensors. </p>
+
+	<p>In devices such as smartphones, ambient light sensors optimize the visibility of the <span class="caps"><span class="caps">LCD</span></span> display by allowing the backlight to adjust its brightness automatically based on surrounding light levels. The proximity sensor is used to turn off the backlight of the display and disable the touch functionality when the phone is brought next to the user&#8217;s ear, preventing his or her cheek from ending a call accidentally. Both types of sensors are designed to reduce power consumption and extend battery life in mobile electronics. For these devices, the Vishay Semiconductors VCNL4020 and VCNL3020 are fully integrated solutions, containing an infrared emitter and photo detector for proximity sensing, an ambient light sensor (VCNL4020), and signal processing, all in a single surface-mount package. </p>
+
+	<p>The VCNLx020 Android software package includes the documentation, source code, and patch files required to allow an Android-based platform to communicate with the VCNL4020 or VCNL3020. This communication follows the standard Android sensors framework. The supplied Android VCNL4020 driver consists of two parts: the kernel module responsible for the data control and acquisition from the VCNL4020 and the subsequent <span class="caps"><span class="caps">HAL</span></span> (Hardware Abstraction Layer) module to link the kernel to the main Android framework, allowing the information supplied by the sensor to be used by Android applications. To demonstrate this, a demo Android app is included (VCNL40&#215;0-DemoApp.apk), along with its associated source code, which can serve as a base for building user-specific Android applications.</p>
+
+	<p>The VCNLx020 Android software package can be downloaded for free, after registration on Vishay&#8217;s website, by clicking on the Android robot at <a href="http://www.vishay.com/optical-sensors/">http://www.vishay.com/optical-sensors/</a>.</p>
+            ]]></summary>
+        </entry>
+    
+        <entry>
+            <title>Optical Gesture &amp; Proximity Sensing ICs</title>
+            <link rel="alternate" href="http://www.eeweb.com/news/optical-gesture-proximity-sensing-ics/" />
+            <id>http://www.eeweb.com/news/optical-gesture-proximity-sensing-ics/</id>
+            <published>2013-04-29T11:13:14-07:00</published>
+            <updated>2013-04-29T12:15:15-07:00</updated>
+            <summary type="html"><![CDATA[
+                
+                    <p><img src="http://d3i5bpxkxvwmz.cloudfront.net/resized/images/remote/http_s.eeweb.com/articles/2013/04/29/Optical-Gesture-Proximity-Sensing-ICs-1367259315_300_300_75.jpg" alt="Optical Gesture & Proximity Sensing ICs" width="300" height="300" /></p>
+                
+                	<p>Melexis releases a product family designed for easy implementation of robust optical proximity and gesture detection systems into automotive environments. Automotive Human-Machine Interfaces (<span class="caps">HMI</span>s) need to be intuitive and safe to use, On the other hand, new car buyers expect functions and features like smartphone and media integration. Optical proximity and gesture detection enable a more intuitive <span class="caps">HMI</span> experience. Typical challenges for such systems are cost, sunlight robustness, electro-magnetic interference and mechanical integration constraints, while supporting multiple <span class="caps">OEM</span> configurations. The MLX75030 and MLX75031 Optical Gesture and Proximity Sensing ICs address these challenges with Melexis’ proprietary integrated ambient light suppression, proven electro-magnetic compliance, a small footprint and flexible system architecture.</p>
+
+	<p>The MLX75030 and MLX75031 feature two simultaneously operating light measurement channels which can detect the active optical reflection from a target. The proprietary integrated, ambient light suppression makes these channels highly tolerant to background light interference. Two additional channels are available to measure ambient light. </p>
+
+	<p>On system level, the MLX75030 and MLX75031should be complemented by one or two <span class="caps">LED</span>s and photodiodes, of any type, for active light detection. The MLX75030 allows external switches to drive the <span class="caps">LED</span>s up to 1 A peak current, while the MLX75031 integrates the <span class="caps">LED</span> drivers to minimize external component count. Ambient light can be detected with up to two independent photodiodes.Any amount ofdetection channels can be added through multiplexing. Internal control logic, configurable user registers and <span class="caps">SPI</span> communication enable intuitive, programmable operation. Additional circuit functions like a watchdog timer, on-board temperature sensor and self-diagnostics are built-in to facilitate robust product design.</p>
+
+	<p>The digital output from the MLX75030 and MLX75031 ICs contain the measured active light and ambient light levels, which should be processed on the customer’s microcontroller to detect gestures such as swipe, zoom or scroll.A measurement rate of up to 700 Hz per measurement channel allows smooth interface response times.</p>
+
+	<p>The MLX75030 and MLX75031ICs are offered in a compact (4 mm x 4 mm), 24-pin surface mount <span class="caps">QFN</span> package. Both devices have been <span class="caps">AEC</span>-Q100 qualified for &#8211; 40°C to 105°C operational temperature range.</p>
+            ]]></summary>
+        </entry>
+    
+</feed>

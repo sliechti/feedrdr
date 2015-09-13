@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Tech created by Yordan Yordanov in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Tech" title="Tech">
+      <outline text="Engadget RSS Feed" title="Engadget RSS Feed" type="rss" xmlUrl="http://www.engadget.com/rss.xml" htmlUrl="http://www.engadget.com/"/>
+      <outline text="Slashdot" title="Slashdot" type="rss" xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
+      <outline text="Mashable" title="Mashable" type="rss" xmlUrl="http://feeds.mashable.com/Mashable" htmlUrl="http://mashable.com/stories/?utm_campaign=Mash-Prod-RSS-Feedburner-All-Partial&amp;utm_cid=Mash-Prod-RSS-Feedburner-All-Partial&amp;utm_medium=feed&amp;utm_source=rss"/>
+      <outline text="TechCrunch" title="TechCrunch" type="rss" xmlUrl="http://feeds.feedburner.com/TechCrunch" htmlUrl="http://techcrunch.com/"/>
+    </outline>
+  </body>
+</opml>

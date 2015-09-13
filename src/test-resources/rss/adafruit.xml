@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>adafruit industries blog</title>
+	<atom:link href="http://www.adafruit.com/blog/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.adafruit.com/blog</link>
+	<description>electronics, open source hardware, hacking and more...</description>
+	<lastBuildDate>Fri, 26 Apr 2013 17:01:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.5.1</generator>
+		<item>
+		<title>Adafruit at You-Do-It Electronics!</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/adafruit-at-you-do-it-electronics/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/adafruit-at-you-do-it-electronics/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 17:01:39 +0000</pubDate>
+		<dc:creator>bill</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61706</guid>
+		<description><![CDATA[&#160; While shopping for components at the Boston Area&#8217;s biggest retail electronics store, I spotted some Adafruit Plushies on display!]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/031-1024.jpg"><img class="alignnone size-large wp-image-61709" alt="031-1024" src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/031-1024-360x480.jpg" width="360" height="480" /></a></p>
+<p>&nbsp;</p>
+<p>While shopping for components at the Boston Area&#8217;s biggest retail electronics store, I spotted some Adafruit Plushies on display!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61706</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>NEW PRODUCT &#8211; BeagleBone Black</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/new-product-beaglebone-black/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/new-product-beaglebone-black/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 16:44:06 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[announce]]></category>
+		<category><![CDATA[beaglebone]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61705</guid>
+		<description><![CDATA[NEW PRODUCT &#8211; BeagleBone Black in stock and shipping! We have them here and these ship immediately while they are in stock. If you liked the BeagleBone, you will love the next gen BeagleBone Black! With a blistering 1GHz processor, 512MB onboard DDR3 RAM, built in 2GB storage with pre-installed Linux operating system (no microSD [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="https://www.adafruit.com/products/1278"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1278_LRG.jpg" height="461" width="600" border="0" hspace="4" vspace="4" alt="1278 Lrg" /></a></p>
+<p><a href="https://www.adafruit.com/products/1278">NEW PRODUCT &#8211; BeagleBone Black in stock and shipping!</a> We have them here and these ship immediately while they are in stock. If you liked the BeagleBone, you will love the next gen BeagleBone Black! With a blistering 1GHz processor, 512MB onboard DDR3 RAM, built in 2GB storage with pre-installed Linux operating system (no microSD card required!), and best of all, the addition of a MicroHDMI connector for audio/video output. This is a ultra-powered embedded computer that can fit in a mint tin. </p>
+<p><a href="https://www.adafruit.com/products/1278"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1278scale_LRG.jpg" height="461" width="600" border="0" hspace="4" vspace="4" alt="1278Scale Lrg" /></a></p>
+<p><a href="https://www.adafruit.com/products/1278"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1278side_LRG.jpg" height="461" width="600" border="0" hspace="4" vspace="4" alt="1278Side Lrg" /></a></p>
+<p><a href="https://www.adafruit.com/products/1278"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1278bottom_LRG.jpg" height="461" width="600" border="0" hspace="4" vspace="4" alt="1278Bottom Lrg" /></a></p>
+<p>Comes with a mini B cable for powering it up ASAP. No microSD card is included as the BBB now has onboard flash storage. </p>
+<p><a href="https://www.adafruit.com/products/1278"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1278kit_LRG.jpg" height="461" width="600" border="0" hspace="4" vspace="4" alt="1278Kit Lrg" /></a></p>
+<p>We&#8217;ll be filling in with more information on supported accessories as we test them for compatibility. For now we suggest picking up a 5V 2A power supply and a micro-HDMI cable. If you want to use it &#8216;head-less&#8217;, a USB console cable is suggested as the &#8216;Black does not have an onboard USB-to-Serial converter like the original BeagleBone.</p>
+<ul>
+<li>Processor: Sitara AM3359AZCZ100 1GHz, 2000 MIPS
+<li>Graphics Engine: SGX530 3D, 20M Polygons/S
+<li>SDRAM Memory: 512MB DDR3L 606MHZ
+<li>Onboard Flash: 2GB, 8bit Embedded MMC
+<li>PMIC: TPS65217C PMIC regulator and one additional LDO.
+<li>Debug Support: Optional Onboard 20-pin CTI JTAG, Serial Header
+<li>Power Source: miniUSB USB or DC Jack, 5VDC External Via Expansion Header
+<li>PCB 3.4” x 2.1” 6 layers
+<li>Indicators 1-Power, 2-Ethernet, 4-User Controllable LEDs
+<li>HiSpeed USB 2.0 Client Port: Access to USB0, Client mode via miniUSB
+<li>HiSpeed USB 2.0 Host Port Access to USB1, Type A Socket, 500mA LS/FS/HS
+<li>Serial Port UART0 access via 6 pin 3.3V TTL Header. Header is populated
+<li>Ethernet 10/100, RJ45
+<li>SD/MMC Connector microSD , 3.3V
+<li>User Input: Reset Button, Boot Button, Power Button
+<li>Video Out: 16b HDMI, 1280&#215;1024 (MAX), 1024&#215;768,1280&#215;720,1440&#215;900<br />
+w/EDID Support</p>
+<li>Audio Via HDMI Interface, Stereo
+<li>Expansion Connectors:
+<ul>
+<li>Power 5V, 3.3V , VDD_ADC(1.8V)
+<li>3.3V I/O on all signals
+<li>McASP0, SPI1, I2C, GPIO(65), LCD, GPMC, MMC1, MMC2, 7<br />
+AIN(1.8V MAX), 4 Timers, 3 Serial Ports, CAN0,<br />
+EHRPWM(0,2),XDMA Interrupt, Power button, Expansion Board ID<br />
+(Up to 4 can be stacked)
+</ul>
+<li>Weight 1.4 oz (39.68 grams)
+</ul>
+<p><a href="https://www.adafruit.com/products/1278">In stock and shipping now!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61705</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Expand the Number of GPIO Pins on the Raspberry PI #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/expand-the-number-of-gpio-pins-on-the-raspberry-pi/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/expand-the-number-of-gpio-pins-on-the-raspberry-pi/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 14:00:17 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61628</guid>
+		<description><![CDATA[Squeeze a few more pins from a Pi: As of revision 2 boards, there is space to add some header pins to get access to eight more GPIO pins. See how here!]]></description>
+				<content:encoded><![CDATA[<p><a href="http://marks-space.com/2013/04/25/expand-the-number-of-gpio-pins-on-the-raspberry-pi/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/p5-header51-600x397.jpg" alt="p5-header5" width="600" height="397" class="alignright size-large wp-image-61629" /></a></p>
+<p><a href="http://marks-space.com/2013/04/25/expand-the-number-of-gpio-pins-on-the-raspberry-pi/">Squeeze a few more pins from a Pi</a>:</p>
+<blockquote><p>As of revision 2 boards, there is space to add some header pins to get access to eight more GPIO pins. </p></blockquote>
+<p><a href="http://marks-space.com/2013/04/25/expand-the-number-of-gpio-pins-on-the-raspberry-pi/">See how here!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61628</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Motorized snowboard!</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/motorized-snowboard/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/motorized-snowboard/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 13:11:39 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[random]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61665</guid>
+		<description><![CDATA[Motorized snowboard!]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/wl7_CerNYuo?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Motorized snowboard!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61665</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Justin Hayes&#8217; Raspberry Pi GPS Clock #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/61599/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/61599/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 13:00:22 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61599</guid>
+		<description><![CDATA[&#8220;The most ridiculously over-built clock ever?&#8221; via Justin Hayes: As you can see here, it takes the combined efforts of 3 small, low-cost Linux running computers for me to tell time The Pi in the blue Pi shell has an ultimate GPS soldered onto a custom stripboard PCB that exports its time via NTP. The [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://imgur.com/FDBETnc"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/FDBETnc-600x338.jpg" alt="" title="FDBETnc" width="600" height="338" class="alignright size-large wp-image-61600" /></a></p>
+<p><a href="http://imgur.com/FDBETnc">&#8220;The most ridiculously over-built clock ever?&#8221; via Justin Hayes</a>:</p>
+<blockquote><p>As you can see here, it takes the combined efforts of 3 small, low-cost Linux running computers for me to tell time <img src='http://www.adafruit.com/adablog/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  The Pi in the blue Pi shell has an ultimate GPS soldered onto a custom stripboard PCB that exports its time via NTP. The only things here I didn&#8217;t purchase from Adafruit  are the Ethernet cables and the Linksys router, turned wireless bridge that connects it all to my network.</p></blockquote>
+<hr />
+<h2>Featured Adafruit Products</h2>
+<p><a href="http://www.adafruit.com/products/1144"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1144_MED.jpg" alt="" title="1144_MED" width="400" height="308" class="alignright size-full wp-image-61606" /></a></p>
+<p><a href="http://www.adafruit.com/products/1144">Pi Shell &#8211; Blue Raspberry Pi Model A or B Case</a> &#8211; A snap-together case for your Pi, this case has tons of slots for connecting to the Pi, making it a Pi-hacker&#8217;s best friend. This case fits all Model A and Model B Raspberry Pi&#8217;s. There&#8217;s a slot for plugging in a GPIO cable as well as slots for the (future) Pi Camera and a Pi Display connections. This case is simple but well designed!  (<a href="http://www.adafruit.com/products/1144">read more</a>)</p>
+<hr />
+<a href="https://www.adafruit.com/products/998"><img src="http://www.adafruit.com/ThingsThatChange/freepi.jpeg" height="57" width="97" border="0" align="left" hspace="4" vspace="4" alt="998" /></a>Each Friday is PiDay here at Adafruit, be sure to check out our <a href="http://www.adafruit.com/blog/category/raspberry-pi/">posts,</a> <a href="http://learn.adafruit.com/category/raspberry-pi">tutorials</a> and new <a href="https://www.adafruit.com/raspberrypi">Raspberry Pi related products.</a> Have you tried the new <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro">&#8220;Adafruit Raspberry Pi Educational Linux Distro&#8221;</a>? It&#8217;s our tweaked distribution for teaching electronics using the Raspberry Pi. But wait, there&#8217;s more! <a href="http://learn.adafruit.com/webide/">Try our new Raspberry Pi WebIDE!</a> The easiest way to learn programming on a Raspberry Pi.</p>
+<p>We now have <a href="https://www.adafruit.com/products/998">Raspberry Pi Model B with 512MB RAM</a> in stock and shipping now!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61599</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Raspberry Pi &amp; WebSphere Liberty Profile controlled car #piday @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-websphere-liberty-profile-controlled-car-piday-raspberry_pi/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-websphere-liberty-profile-controlled-car-piday-raspberry_pi/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 12:40:35 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61651</guid>
+		<description><![CDATA[Video of a remote controlled car where the radio receiver has been replaced with a raspberry pi and a PWM controller board. The Car has its own WiFi network thanks to a USB powered WiFi router plugged into the Raspberry Pi and attached the the underside of the chassis. The web pages and web application [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/kYFhxLQECLw?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<blockquote><p>
+Video of a remote controlled car where the radio receiver has been replaced with a raspberry pi and a PWM controller board. The Car has its own WiFi network thanks to a USB powered WiFi router plugged into the Raspberry Pi and attached the the underside of the chassis. The web pages and web application that lets you control the car from any device with a JavaScript capable web browser are running on a Liberty Profile server that is running on the Raspberry Pi.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61651</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Make games together with CraftStudio</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/make-games-together-with-craftstudio/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/make-games-together-with-craftstudio/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 12:05:47 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[educators]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61650</guid>
+		<description><![CDATA[Make games together with CraftStudio. CraftStudio lets you build games from scratch in real-time over the Internet. Come jam with your team or join others to make your dream games come true!]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/FighterModelEditor.jpg" height="333" width="600" border="0" hspace="4" vspace="4" alt="Fightermodeleditor" /></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/VisualScripting.jpg" height="333" width="600" border="0" hspace="4" vspace="4" alt="Visualscripting" /></p>
+<p><a href="http://craftstud.io/?hnbeta">Make games together with CraftStudio</a>.</p>
+<blockquote><p>
+CraftStudio lets you build games from scratch in real-time over the Internet. Come jam with your team or join others to make your dream games come true!
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61650</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Raspberry Pi Controlled Canon DSLR #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-controlled-canon-dslr/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-controlled-canon-dslr/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 12:00:56 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61577</guid>
+		<description><![CDATA[Great Raspberry Pi project to remotely control a Canon DSLR: Having made a DIY shutter release for my Canon1000D camera the obvious next step was to build a remote release and the device most suited to this task was of course my RaspberryPi&#8230;.. &#8220;How to&#8221; with source code and more here! Each Friday is PiDay [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://musingsofadrian.blogspot.co.uk/2013/04/raspberry-pi-controlled-canon-dslr.html"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/slRm6ZU-600x400.jpg" alt="" title="slRm6ZU" width="600" height="400" class="alignright size-large wp-image-61587" /></a></p>
+<p><a href="http://musingsofadrian.blogspot.co.uk/2013/04/raspberry-pi-controlled-canon-dslr.html">Great Raspberry Pi project to remotely control a Canon DSLR</a>:</p>
+<blockquote><p>Having made a DIY shutter release for my Canon1000D camera the obvious next step was to build a remote release and the device most suited to this task was of course my RaspberryPi&#8230;..</p></blockquote>
+<p><a href="http://musingsofadrian.blogspot.co.uk/2013/04/raspberry-pi-controlled-canon-dslr.html">&#8220;How to&#8221; with source code and more here!</a></p>
+<hr />
+<a href="https://www.adafruit.com/products/998"><img src="http://www.adafruit.com/ThingsThatChange/freepi.jpeg" height="57" width="97" border="0" align="left" hspace="4" vspace="4" alt="998" /></a>Each Friday is PiDay here at Adafruit, be sure to check out our <a href="http://www.adafruit.com/blog/category/raspberry-pi/">posts,</a> <a href="http://learn.adafruit.com/category/raspberry-pi">tutorials</a> and new <a href="https://www.adafruit.com/raspberrypi">Raspberry Pi related products.</a> Have you tried the new <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro">&#8220;Adafruit Raspberry Pi Educational Linux Distro&#8221;</a>? It&#8217;s our tweaked distribution for teaching electronics using the Raspberry Pi. But wait, there&#8217;s more! <a href="http://learn.adafruit.com/webide/">Try our new Raspberry Pi WebIDE!</a> The easiest way to learn programming on a Raspberry Pi.</p>
+<p>We now have <a href="https://www.adafruit.com/products/998">Raspberry Pi Model B with 512MB RAM</a> in stock and shipping now!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61577</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Raspberry Pi RFID Automated Door Access System #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-rfid-automated-door-access-system/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-rfid-automated-door-access-system/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 11:00:17 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61560</guid>
+		<description><![CDATA[The NESIT Raspberry Pi RFID Automated Door Access System: This project came out of necessity. With the amount of members we have, it made more sense to make an automated door access system, than to give everyone keys. We originally used an Arduino for the last 2 years, but we wanted to be able to [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/MTWdaVdO240" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://nesit.org/projects/">The NESIT Raspberry Pi RFID Automated Door Access System</a>:</p>
+<blockquote><p>This project came out of necessity. With the amount of members we have, it made more sense to make an automated door access system, than to give everyone keys. We originally used an Arduino for the last 2 years, but we wanted to be able to control the database of users easier, our current setup wrote the users to the eeprom of the Arduino. We were thinking about using an ethernet module to talk with a server on our network but if our network had issues that would prevent someone from entering. The small footprint of the Pi makes it a better choice than to run a server fulltime. Our modest server burns through around $200 a year worth of electricity. By comparison a Raspberry Pi consumes about $3 per year. With the Raspberry Pi we could now have ethernet capabilities, could store its own database, gpio pins , video output and more.</p></blockquote>
+<div id="attachment_61567" class="wp-caption alignright" style="width: 610px"><a href="http://nesit.org/projects/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/RFPiD-inside3-600x450.png" alt="" title="RFPiD-inside3" width="600" height="450" class="size-large wp-image-61567" /></a><p class="wp-caption-text">Phone box retrofitted to house the RFPiD and LCD screen inside</p></div>
+<blockquote><p>Starting the project I needed to figure out how to interface a RFID reader with the Pi. I wanted to interface it with the UART pins but due to time constraints I ended up using a sparkfun USB adapter with my Innovations ID-20 RFID reader. The only thing I has to do was monitor the USB in /dev and receive the RFID tag ID when someone scanned their card. To do this I used python script that monitored serial connection on /dev/ttyUSB0 the base of the script which I have posted to my github account and used a sqlite3 database to verify if the card scanned was a valid member, if so it would trigger the door. Also used a RGB LED to notify if the card was good or not.</p></blockquote>
+<p><a href="http://nesit.org/projects/">Read more!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61560</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Balancing Robot using a Raspberry Pi #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/balancing-robot-using-a-raspberry-pi/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/balancing-robot-using-a-raspberry-pi/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 10:00:31 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61399</guid>
+		<description><![CDATA[Balancing Robot using a Raspberry Pi: When I saw my first two wheel balancing robot I was very fascinated. And after receiving my Raspberry Pi, I decided to build one myself. PiBBOT (Pi Balancing roBOT) is my first successful balancing robot. And it has room for improvement and extra functionality. Read more! Each Friday is [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/D0ydpIZFtuM" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://marks-space.com/2013/04/18/success-with-a-balancing-robot-using-a-raspberry-pi/">Balancing Robot using a Raspberry Pi</a>:</p>
+<blockquote><p>When I saw my first two wheel balancing robot I was very fascinated.  And after receiving my Raspberry Pi, I decided to build one myself.<br />
+PiBBOT (Pi Balancing roBOT) is my first successful balancing robot. And it has room for improvement and extra functionality.</p></blockquote>
+<p><a href="http://marks-space.com/2013/04/18/success-with-a-balancing-robot-using-a-raspberry-pi/">Read more!</a></p>
+<hr />
+<a href="https://www.adafruit.com/products/998"><img src="http://www.adafruit.com/ThingsThatChange/freepi.jpeg" height="57" width="97" border="0" align="left" hspace="4" vspace="4" alt="998" /></a>Each Friday is PiDay here at Adafruit, be sure to check out our <a href="http://www.adafruit.com/blog/category/raspberry-pi/">posts,</a> <a href="http://learn.adafruit.com/category/raspberry-pi">tutorials</a> and new <a href="https://www.adafruit.com/raspberrypi">Raspberry Pi related products.</a> Have you tried the new <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro">&#8220;Adafruit Raspberry Pi Educational Linux Distro&#8221;</a>? It&#8217;s our tweaked distribution for teaching electronics using the Raspberry Pi. But wait, there&#8217;s more! <a href="http://learn.adafruit.com/webide/">Try our new Raspberry Pi WebIDE!</a> The easiest way to learn programming on a Raspberry Pi.</p>
+<p>We now have <a href="https://www.adafruit.com/products/998">Raspberry Pi Model B with 512MB RAM</a> in stock and shipping now!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61399</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Scratch GPIO Version 2 – Using Stepper Motors #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/scratch-gpio-version-2-using-stepper-motors/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/scratch-gpio-version-2-using-stepper-motors/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 09:00:05 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61391</guid>
+		<description><![CDATA[Scratch GPIO Version 2 – Using Stepper Motors: If you would like to build a neat little vehicular robot then you can do so by connecting up a pair of Stepper Motors through a couple of ULN2003. Read more!]]></description>
+				<content:encoded><![CDATA[<p><a href="http://cymplecy.wordpress.com/2013/04/23/scratch-gpio-version-2-using-stepper-motors/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/stepper-motors_bb-417x480.png" alt="" title="stepper-motors_bb" width="417" height="480" class="alignright size-large wp-image-61392" /></a></p>
+<p><a href="http://cymplecy.wordpress.com/2013/04/23/scratch-gpio-version-2-using-stepper-motors/">Scratch GPIO Version 2 – Using Stepper Motors</a>:</p>
+<blockquote><p>If you would like to build a neat little vehicular robot then you can do so by connecting up a pair of Stepper Motors through a couple of ULN2003.</p></blockquote>
+<p><a href="http://cymplecy.wordpress.com/2013/04/23/scratch-gpio-version-2-using-stepper-motors/">Read more!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61391</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Led Dimming &amp; Motor Speed Control with Soft PWM in RPi.GPIO 0.5.2a #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/led-dimming-motor-speed-control-with-soft-pwm-in-rpi-gpio-0-5-2a/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/led-dimming-motor-speed-control-with-soft-pwm-in-rpi-gpio-0-5-2a/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 08:00:50 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[python]]></category>
+		<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61377</guid>
+		<description><![CDATA[How to drive leds and motors with PWM &#038; RPi.GPIO on the Raspberry Pi: In part 1 of this series, we looked at the basic commands for using software pulse-width modulation (PWM) in RPi.GPIO 0.5.2a and higher. In this article we&#8217;ll get a bit more hands-on and into some practical applications for it. It&#8217;s all [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/AIwOMNa1bEM" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://raspi.tv/2013/how-to-use-soft-pwm-in-rpi-gpio-pt-2-led-dimming-and-motor-speed-control">How to drive leds and motors with PWM &#038; RPi.GPIO on the Raspberry Pi</a>:</p>
+<blockquote><p>In part 1 of this series, we looked at the basic commands for using software pulse-width modulation (PWM) in RPi.GPIO 0.5.2a and higher. In this article we&rsquo;ll get a bit more hands-on and into some practical applications for it. It&rsquo;s all very well being able to make nice square-wave pulses on an oscilloscope, but what&rsquo;s it actually useful for?</p></blockquote>
+<p><a href="http://raspi.tv/2013/how-to-use-soft-pwm-in-rpi-gpio-pt-2-led-dimming-and-motor-speed-control"> Source code and more here!</a></p>
+<hr />
+<a href="https://www.adafruit.com/products/998"><img src="http://www.adafruit.com/ThingsThatChange/freepi.jpeg" height="57" width="97" border="0" align="left" hspace="4" vspace="4" alt="998" /></a>Each Friday is PiDay here at Adafruit, be sure to check out our <a href="http://www.adafruit.com/blog/category/raspberry-pi/">posts,</a> <a href="http://learn.adafruit.com/category/raspberry-pi">tutorials</a> and new <a href="https://www.adafruit.com/raspberrypi">Raspberry Pi related products.</a> Have you tried the new <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro">&#8220;Adafruit Raspberry Pi Educational Linux Distro&#8221;</a>? It&#8217;s our tweaked distribution for teaching electronics using the Raspberry Pi. But wait, there&#8217;s more! <a href="http://learn.adafruit.com/webide/">Try our new Raspberry Pi WebIDE!</a> The easiest way to learn programming on a Raspberry Pi.</p>
+<p>We now have <a href="https://www.adafruit.com/products/998">Raspberry Pi Model B with 512MB RAM</a> in stock and shipping now!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61377</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Scratch GPIO Version 2 – Using Motors #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/scratch-gpio-version-2-using-motors/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/scratch-gpio-version-2-using-motors/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 07:00:52 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61241</guid>
+		<description><![CDATA[David Ferguson shows a very cheap way of getting 2 motors connected safely to your Raspberry Pi.]]></description>
+				<content:encoded><![CDATA[<p><a href="http://cymplecy.wordpress.com/2013/04/22/scratchgpio2-using-motors/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/motor_pinout-600x419.png" alt="" title="motor_pinout" width="600" height="419" class="alignright size-large wp-image-61242" /></a></p>
+<p><a href="http://cymplecy.wordpress.com/2013/04/22/scratchgpio2-using-motors/">David Ferguson shows a very cheap way of getting 2 motors connected safely to your Raspberry Pi.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61241</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>EE Bookshelf: Algorithms for Image Processing and Computer Vision</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/ee-bookshelf-algorithms-for-image-processing-and-computer-vision/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/ee-bookshelf-algorithms-for-image-processing-and-computer-vision/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 06:51:57 +0000</pubDate>
+		<dc:creator>Kevin</dc:creator>
+				<category><![CDATA[EE bookshelf]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61645</guid>
+		<description><![CDATA[While this is somewhat of a specialised book, if you have to do any work with image processing (OCR, shape recognition, etc.), there are some good frameworks out there, but there&#8217;s hardly an abundance of easily accessible information on the subject if you need to implement something yourself.  Algorithms for Image Processing and Computer Vision [...]]]></description>
+				<content:encoded><![CDATA[<p><img class="alignnone size-full wp-image-61646" alt="imageprocessing" src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/imageprocessing.gif" width="180" height="225" /></p>
+<p>While this is somewhat of a specialised book, if you have to do any work with image processing (OCR, shape recognition, etc.), there are some good frameworks out there, but there&#8217;s hardly an abundance of easily accessible information on the subject if you need to implement something yourself.  <a href="http://shop.oreilly.com/product/9780470643853.do" target="_blank">Algorithms for Image Processing and Computer Vision (2nd Edition)</a> is one of the better books available, and while &#8212; like most specialised technical books &#8212; it isn&#8217;t cheap, it is a good value given the amount of information it covers in one place.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61645</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Scratch GPIO Version 2 – Introduction for Beginners #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/scratch-gpio-version-2-introduction-for-beginners/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/scratch-gpio-version-2-introduction-for-beginners/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 06:00:28 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61125</guid>
+		<description><![CDATA[Scratch GPIO Version 2 – Introduction for Beginners: This post is intended to make it as Simple as Pi to get up and running and make your Raspberry Pi control some lights and to respond to switches and sensors. Examples and more here! Each Friday is PiDay here at Adafruit, be sure to check out [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://cymplecy.wordpress.com/2013/04/22/scratch-gpio-version-2-introduction-for-beginners/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/led-power-test_bb-600x449.jpg" alt="" title="led-power-test_bb" width="600" height="449" class="alignright size-large wp-image-61126" /></a></p>
+<p><a href="http://cymplecy.wordpress.com/2013/04/22/scratch-gpio-version-2-introduction-for-beginners/">Scratch GPIO Version 2 – Introduction for Beginners</a>:</p>
+<blockquote><p>This post is intended to make it as Simple as Pi to get up and running and make your Raspberry Pi control some lights and to respond to switches and sensors.</p></blockquote>
+<p><a href="http://cymplecy.wordpress.com/2013/04/22/scratch-gpio-version-2-introduction-for-beginners/">Examples and more here!</a></p>
+<hr />
+<a href="https://www.adafruit.com/products/998"><img src="http://www.adafruit.com/ThingsThatChange/freepi.jpeg" height="57" width="97" border="0" align="left" hspace="4" vspace="4" alt="998" /></a>Each Friday is PiDay here at Adafruit, be sure to check out our <a href="http://www.adafruit.com/blog/category/raspberry-pi/">posts,</a> <a href="http://learn.adafruit.com/category/raspberry-pi">tutorials</a> and new <a href="https://www.adafruit.com/raspberrypi">Raspberry Pi related products.</a> Have you tried the new <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro">&#8220;Adafruit Raspberry Pi Educational Linux Distro&#8221;</a>? It&#8217;s our tweaked distribution for teaching electronics using the Raspberry Pi. But wait, there&#8217;s more! <a href="http://learn.adafruit.com/webide/">Try our new Raspberry Pi WebIDE!</a> The easiest way to learn programming on a Raspberry Pi.</p>
+<p>We now have <a href="https://www.adafruit.com/products/998">Raspberry Pi Model B with 512MB RAM</a> in stock and shipping now!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61125</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Making a GoFreeRange printer with a Raspberry Pi #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/making-a-gofreerange-printer-with-a-raspberry-pi/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/making-a-gofreerange-printer-with-a-raspberry-pi/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 05:00:46 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61079</guid>
+		<description><![CDATA[Morrissey approved GoFreeRange printer with a Raspberry Pi: I love the idea of the Berg Little Printer, but it&#8217;s expensive. I already have a thermal printer I used for my Little Box of Poems, so I decided to use a Raspberry Pi to make an open source GoFreeRange printer instead. This would make a great [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.suppertime.co.uk/blogmywiki/2013/04/making-a-gofreerange-printer-with-a-raspberry-pi/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/8672191826_af7da40b86_b-600x448.jpg" alt="" title="8672191826_af7da40b86_b" width="600" height="448" class="alignright size-large wp-image-61082" /></a></p>
+<p><a href="http://www.suppertime.co.uk/blogmywiki/2013/04/making-a-gofreerange-printer-with-a-raspberry-pi/">Morrissey approved GoFreeRange printer with a Raspberry Pi</a>:</p>
+<blockquote><p>I love the idea of the Berg Little Printer, but it&rsquo;s expensive. I already have a thermal printer I used for my Little Box of Poems, so I decided to use a Raspberry Pi to make an open source GoFreeRange printer instead.</p></blockquote>
+<p>This would make a great addition to the <a href="http://adafruit.com/products/1289">Adafruit IoT Pi Printer Project Pack</a>!  Learn how to make your own GoFreeRange printer <a href="http://www.suppertime.co.uk/blogmywiki/2013/04/making-a-gofreerange-printer-with-a-raspberry-pi/">here!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61079</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Raspberry Pi Arduino GSM phone #piday #raspberrypi @Raspberry_Pi</title>
+		<link>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-arduino-gsm-phone/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/26/raspberry-pi-arduino-gsm-phone/#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 04:01:00 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[Raspberry Pi]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61070</guid>
+		<description><![CDATA[Raspberry Pi Arduino GSM phone: This is a Raspberry Pi Model B attached to an Arduino Uno R3 with a GSM shield. The Pi is sending SMS and making calls based on some triggers. More photos here! Each Friday is PiDay here at Adafruit, be sure to check out our posts, tutorials and new Raspberry [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.flickr.com/photos/scott-42/8666063608/in/pool-72222164@N00"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/8666063608_f1fd280405_b-600x450.jpg" alt="" title="8666063608_f1fd280405_b" width="600" height="450" class="alignright size-large wp-image-61071" /></a></p>
+<p><a href="http://www.flickr.com/photos/scott-42/8666063608/in/pool-72222164@N00">Raspberry Pi Arduino GSM phone</a>:</p>
+<blockquote><p>This is a Raspberry Pi Model B attached to an Arduino Uno R3 with a GSM shield. The Pi is sending SMS and making calls based on some triggers.</p></blockquote>
+<p><a href="http://www.flickr.com/photos/scott-42/8666063608/in/pool-72222164@N00">More photos here!</a></p>
+<hr />
+<a href="https://www.adafruit.com/products/998"><img src="http://www.adafruit.com/ThingsThatChange/freepi.jpeg" height="57" width="97" border="0" align="left" hspace="4" vspace="4" alt="998" /></a>Each Friday is PiDay here at Adafruit, be sure to check out our <a href="http://www.adafruit.com/blog/category/raspberry-pi/">posts,</a> <a href="http://learn.adafruit.com/category/raspberry-pi">tutorials</a> and new <a href="https://www.adafruit.com/raspberrypi">Raspberry Pi related products.</a> Have you tried the new <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro">&#8220;Adafruit Raspberry Pi Educational Linux Distro&#8221;</a>? It&#8217;s our tweaked distribution for teaching electronics using the Raspberry Pi. But wait, there&#8217;s more! <a href="http://learn.adafruit.com/webide/">Try our new Raspberry Pi WebIDE!</a> The easiest way to learn programming on a Raspberry Pi.</p>
+<p>We now have <a href="https://www.adafruit.com/products/998">Raspberry Pi Model B with 512MB RAM</a> in stock and shipping now!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61070</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Future of Wearable Technology @pbsoffbook (video)</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/the-future-of-wearable-technology-pbsoffbook-video/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/the-future-of-wearable-technology-pbsoffbook-video/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 21:31:33 +0000</pubDate>
+		<dc:creator>Becky Stern</dc:creator>
+				<category><![CDATA[FLORA]]></category>
+		<category><![CDATA[wearables]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61625</guid>
+		<description><![CDATA[I was recently interviewed by PBS Off Book for this episode, The Future of Wearable Technology. As computing moves from our desktops to our phones, we look into the future to see how technology will become increasingly ingrained in our movements and our active lives. From the Nike Fuelband to Google Glass, consumers are already [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe src="http://www.youtube.com/embed/4qFW4zwXzLs" width="601" height="338" frameborder="0"></iframe></p>
+<p>I was recently interviewed by PBS Off Book for this episode, <a href="http://youtu.be/4qFW4zwXzLs">The Future of Wearable Technology</a>.</p>
+<blockquote><p>As computing moves from our desktops to our phones, we look into the future to see how technology will become increasingly ingrained in our movements and our active lives. From the Nike Fuelband to Google Glass, consumers are already seeing hints of the future of wearable devices. They have the possibility to make us more knowledgeable about ourselves and our surroundings, and connect us with each other in an uninterrupted, more intimate way. From DIY wearables to high-tech sensors and smart fabrics, the years ahead will show how integrated technology can impact our lives for the better.</p>
+<p>Featuring: Sandy Pentland, MIT<br />Sabine Seymour, Parsons<br /> Steven Dean, G51Studio<br /> Becky Stern, Adafruit</p>
+</blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61625</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Technical Sales Account Manager Needed / Adafruit Jobs Board</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/technical-sales-account-manager-needed-adafruit-jobs-board/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/technical-sales-account-manager-needed-adafruit-jobs-board/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 19:22:31 +0000</pubDate>
+		<dc:creator>Tyler Cooper</dc:creator>
+				<category><![CDATA[Jobs Board]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61622</guid>
+		<description><![CDATA[Technical Sales Account Manager Needed / Adafruit Jobs Board This position is available immediately! (April 19, 2013) Parallax Inc. is a small (40 employees) privately held company located in Rocklin, California. Parallax designs and manufactures microcontroller development tools and small single-board computers that are used by electronic engineers, educational institutions, and hobbyists. The company&#8217;s abilities [...]]]></description>
+				<content:encoded><![CDATA[<p><img class="alignnone size-full wp-image-61623" alt="ParallaxLogo" src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/ParallaxLogo.jpg" width="600" height="211" /></p>
+<p><a href="http://www.adafruit.com/jobs/job/372/technical-sales-account-manager-at-parallax-inc/">Technical Sales Account Manager Needed / Adafruit Jobs Board</a></p>
+<blockquote><p>This position is available immediately! (April 19, 2013)</p>
+<p>Parallax Inc. is a small (40 employees) privately held company located in Rocklin, California. Parallax designs and manufactures microcontroller development tools and small single-board computers that are used by electronic engineers, educational institutions, and hobbyists. The company&rsquo;s abilities include manufacturing, marketing, sales, technical support, and assembly, both domestically and abroad. Examples of how Parallax customers use our products can be viewed on our website www.parallax.com</p>
+<p>Parallax is looking for an enthusiastic, self-motivated, organized, and knowledgeable individual to work as a Technical Sales Account Manager in the Marketing Department. This position is a regular full-time and exempt level position that requires working in the Rocklin, CA facility, reporting to Parallax&rsquo;s Director of Marketing and Education. The primary purpose of the Technical Sales Account Manager is to identify the new and cultivate the existing business opportunities, grow and develop Parallax&rsquo;s position in the industry while maintaining relationships and the company&rsquo;s focus on customer service and superior quality. Successful candidates will do all of this by demonstrating their knowledge in sales, analytics, strategic planning, customer relationship management, and global travel. Applicants that enjoy a fast-paced work environment and who thrive while juggling multiple competing tasks and demands are encouraged to apply.</p>
+<p>Duties associated with position include:</p>
+<p>• Convey expertise in Parallax products, services, and capabilities by presenting the company&rsquo;s vision and product roadmap; capturing various audiences ranging from internal staff, school districts and universities, industry experts, and distributors.<br />
+• Travel to generate new business and meet with current distributors (travel up to 50% of the time).<br />
+• Represent Parallax at 4-6 events per year; establish rapport and follow-up with frequent Skype/phone meetings.<br />
+• Demonstrate expert use of the company&rsquo;s Customer Relationship Management system.<br />
+• Employ technical aptitude for querying and analyzing large volumes of data from multiple sources; provide accurate and timely reporting of critical sales data with management to identify opportunities, clarify assumptions, uncover potential problems, and meet sales initiatives.<br />
+• Integrate with Marketing and Engineering departments; maximize use of extracted data to support decision making for new products, initiatives, and market demands.<br />
+• Create, review, and revise distribution channels in consideration of a well-balanced, productive assortment for both domestic and international growth.<br />
+• Support, guide, and educate distributors by learning and adapting to their processes to guarantee that their websites provide a correct and current array of Parallax products. Offer further education to properly segment the professional products from those specific to education, hobby, and open-source. Accomplish all of this with in-person meetings as necessary.<br />
+• Maintain projections for larger, repetitive purchases; provide and review data with Marketing and Purchasing on a quarterly basis.<br />
+• Adhere to pricing structure, carefully allowing exceptions; perform regular pricing profile maintenance and recommend/implement sales and gross profit improvements.<br />
+• Read, review, modify, and write agreements while working with assistance from internal legal staff.<br />
+• Coordinate and arrange travel according to trip budget; complete timely and accurate travel expense reports.</p>
+<p>QUALIFICATIONS:<br />
+• Bachelor&rsquo;s degree and 3+ years in technology.<br />
+• 2-3 successful years of experience in outside sales.<br />
+• Familiar with microcontrollers is a plus; interest to learn and become a user is required.<br />
+• Willing and able to travel globally both independently and with a team (travel up to 50% of the time)<br />
+• Valid and clean motor vehicle report.<br />
+• Valid and renewable passport.<br />
+• Outstanding interpersonal skills with verbal, written, and face-to-face communication; confident and charismatic public speaking experience.<br />
+• Clear and productive communication style that can vary based on intended audience.<br />
+• Comfortable with representing the company in front of a camera.<br />
+• Highly proficient with Word, Google Apps, Excel, Access, PowerPoint, Gmail.<br />
+• Experience with Crystal Reports, CRM, and enterprise resource planning (ERP) software (SysPro) is preferred.<br />
+• Proficient in the use of statistics and other quantitative techniques to evaluate data.<br />
+• Demonstrated ability to write and present analytical summaries to all levels.<br />
+• Detail oriented, self starter with a high emphasis on teamwork, timeliness, and quality of work.</p>
+<p>OTHER RELATED DUTIES:<br />
+• Any other duties as needed or assigned.<br />
+• Enthusiasm, positive attitude, ability to work well with others and a friendly, polite demeanor.<br />
+• Willing and motivated to learn more about the above items as necessary.<br />
+• Able to contribute to cooperative meetings.<br />
+• Able to take on new tasks that arise from future needs in the department/company.<br />
+• Ensuring quality control.</p>
+<p>Salary determined on employment, commensurate with experience, qualifications and enthusiasm.</p></blockquote>
+<p><a href="http://www.adafruit.com/jobs/job/372/technical-sales-account-manager-at-parallax-inc/">Learn More</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61622</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Nerdy Derby 2013</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/nerdy-derby-2013/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/nerdy-derby-2013/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 18:55:10 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[events]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61620</guid>
+		<description><![CDATA[Nerdy Derby 2013. Nerdy Derby Denver is a non-regulation miniature car building and racing competition inspired by the Cub Scouts&#8217; Pinewood Derby and the first ever Nerdy Derby in NYC. With a larger, more undulating track and no restrictions on the size of the cars (as long as they fit on the track) or materials [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/adafruit_1428.jpg" height="784" width="600" border="0" hspace="4" vspace="4" alt="Adafruit 1428" /></p>
+<p><a href="http://www.bwevans.net/nerdyderby/">Nerdy Derby 2013</a>.</p>
+<blockquote><p>
+Nerdy Derby Denver is a non-regulation miniature car building and racing competition inspired by the Cub Scouts&#8217; Pinewood Derby and the first ever Nerdy Derby in NYC. With a larger, more undulating track and no restrictions on the size of the cars (as long as they fit on the track) or materials participants can use (as long as they are safe), the Nerdy Derby rewards creativity, cleverness and ingenuity.</p>
+<p>The inaugural Nerdy Derby Denver will take place at the Emmanuel Gallery on Tuesday April 30on the Auraria Campus as part of Performance Art Week. Visitors can bring their own cars to race and stick around to watch.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61620</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Gadgets to Help Tend a Garden</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/gadgets-to-help-tend-a-garden/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/gadgets-to-help-tend-a-garden/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 18:08:17 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[sensorsparts]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61616</guid>
+		<description><![CDATA[Gadgets to Help Tend a Garden &#8211; NYTimes.com. Picture a tiny drone that arises from your vegetable garden to shoo away hungry deer. Or maybe a houseplant that, when you&#8217;re away, meanders through your rooms like a cat following a sunbeam. Or one that posts a request for water on Twitter. The future is knocking [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/25toolkit-articleLarge.jpg" height="411" width="600" border="0" hspace="4" vspace="4" alt="25Toolkit-Articlelarge" /></p>
+<p><a href="http://www.nytimes.com/2013/04/25/technology/personaltech/calling-on-gadgetry-to-keep-the-garden-growing.html?smid=pl-share">Gadgets to Help Tend a Garden &#8211; NYTimes.com</a>.</p>
+<blockquote><p>
+Picture a tiny drone that arises from your vegetable garden to shoo away hungry deer. Or maybe a houseplant that, when you&rsquo;re away, meanders through your rooms like a cat following a sunbeam. Or one that posts a request for water on Twitter.</p>
+<p>The future is knocking at the door of home gardening. And, if some do-it-yourselfers have their way, there is no aspect of nature that can&rsquo;t be improved with a rechargeable motor and a sensor or two.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61616</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>American Graphite to develop 3D printing material, including exploration with graphene #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/american-graphite-to-develop-3d-printing-material-including-exploration-with-graphene-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/american-graphite-to-develop-3d-printing-material-including-exploration-with-graphene-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 17:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+		<category><![CDATA[science]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61549</guid>
+		<description><![CDATA[American Graphite to develop 3D printing material, from 3ders.org: American Graphite Technologies Inc. (OTCBB: AGIN), a mineral exploration and technology development company, announces Letter of Intent with a European institute for research and development collaboration for 3D printing. American Graphite Technologies, in collaboration with the National Academy of Science of Ukraine; National Science Centre; Kharkiv [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/dTSnnlITsVg?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p><a href="http://www.3ders.org/articles/20130424-american-graphite-to-develop-3d-printing-material.html">American Graphite to develop 3D printing material, from 3ders.org</a>:</p>
+<blockquote><p><a href="http://americangraphitetechnologies.com/">American Graphite Technologies Inc</a>. (OTCBB: AGIN), a mineral exploration and technology development company, announces Letter of Intent with a European institute for research and development collaboration for 3D printing.</p>
+<p>American Graphite Technologies, in collaboration with the National Academy of Science of Ukraine; National Science Centre; Kharkiv Institute of Physics and Technology (&#8220;KIPT&#8221;), Kharkov, Ukraine, will research the properties of <a href="http://en.wikipedia.org/wiki/Graphene">graphene</a> contained matter as working material for 3D printing. More details will be released shortly.</p>
+<p>Graphene is a nano-material directly derived from graphite. It is a single layer of carbon only one atom thick, and it is very cheap. Graphene has been described as the &#8220;miracle material&#8221; of the 21st Century. According to mechanical engineering professor James Hone, of Columbia University, graphene is strongest material ever measured, some 200 times stronger than structural steel.</p>
+<p>In addition, Graphene is ultra thin, transparent, flexible and electrically conductive. Because of these remarkable properties Graphene can be used to make excellent transistors, gas sensors, lower cost solar cells and display screens in mobile devices etc.</p>
+<p>Watch [above] the short film produced by the European Graphene-Flagship initiative, &#8220;introducing graphene&#8221;.</p></blockquote>
+<p><a href="http://www.3ders.org/articles/20130424-american-graphite-to-develop-3d-printing-material.html">Read more.</a></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Graphene01.png" alt="Graphene01" title="Graphene01.png" border="0" width="263" height="199" style="float:left;" /><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Graphene02.png" alt="Graphene02" title="Graphene02.png" border="0" width="262" height="198" /></p>
+<hr />
+<p><a href="http://www.adafruit.com/blog/category/3d-printing/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/10/649-1.jpg" height="102" width="133" border="0" align="left" hspace="4" vspace="4" alt="649-1" /></a><br />
+Every Thursday is <a href="http://www.adafruit.com/blog/category/3d-printing/">#3dthursday</a> here at Adafruit! The DIY 3D printing community has passion and dedication for making solid objects from digital models. Recently, we have noticed electronics projects integrated with 3D printed enclosures, brackets, and sculptures, so each Thursday we celebrate and highlight these bold pioneers!</p>
+<p>Have you considered building a 3D project around an <a href="http://www.adafruit.com/category/17">Arduino</a> or other microcontroller? How about printing a bracket to mount your <a href="http://www.adafruit.com/category/105">Raspberry Pi</a> to the back of your HD monitor? And don&#8217;t forget the countless <a href="http://www.adafruit.com/category/37">LED projects</a> that are possible when you are modeling your projects in 3D!</p>
+<p>The <a href="http://learn.adafruit.com">Adafruit Learning System</a> has dozens of great tools to get you well on your way to creating incredible works of engineering, interactive art, and design with your 3D printer! If you&#8217;ve made a cool project that combines 3D printing and electronics, be sure to let us know, and we&#8217;ll <a href="http://www.adafruit.com/blog/category/3d-printing/">feature</a> it here!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61549</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Darwin&#8217;s Cladogram Tree With Finches 3D Printed Object @ Shapeways</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/darwins-cladogram-tree-with-finches-3d-printed-object-shapeways/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/darwins-cladogram-tree-with-finches-3d-printed-object-shapeways/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 16:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61541</guid>
+		<description><![CDATA[Gorgeous object highlighted on the Shapeways blog created from drawings from Darwin&#8217;s Cladogram Tree map of the relationship of the finches that were key to the formulation of his theory of evolution: Whether you&#8217;re fascinated by evolution theories or not, check out this amazing replication of Charles Darwin&#8217;s first ever sketch of a tree of [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/darwin2.jpg" alt="Darwin2" title="darwin2.jpg" border="0" width="600" height="446" /></p>
+<p>Gorgeous object highlighted on the <a href="http://www.shapeways.com/blog/archives/2031-3D-Printed-Product-of-the-Day-Darwins-Cladogram-Tree.html">Shapeways blog</a> created from drawings from Darwin&#8217;s Cladogram Tree map of the relationship of the finches that were key to the formulation of his theory of evolution:</p>
+<blockquote><p>Whether you&#8217;re fascinated by evolution theories or not, check out this amazing <a href="http://www.shapeways.com/model/999231/darwin-s-cladogram-tree-with-finches.html">replication</a> of Charles Darwin&#8217;s first ever sketch of a tree of life by <a href="http://www.shapeways.com/shops/joabaldwin">joabaldwin</a>.</p>
+<p>The detailed replication pays homage to Darwin&#8217;s original sketch found in his private notebook, &#8220;Notebook B on the transmutation of species,&#8221; 1837-1838.</p>
+<p>The finches perched upon the end of each branch represent the A, B, C and D marks on the original drawing. Each is slightly different; the more apart the finches are from each other in the evolutionary tree, the more distinct are the differences between them.</p>
+<p>From a side view, the shape of the printed tree mirrors Darwin&#8217;s sketch exactly.</p>
+<p>This fantastic piece also comes in the form of a <a href="http://www.shapeways.com/model/971216/darwin-s-silver-cladogram-tree.html?li=productBox-search">necklace</a>.</p>
+<p>As taken from Darwin&#8217;s notebook itself, &#8220;I think &#8230; Case must be that one generation then should be as many living as now. To do this and to have many species in same genus (as is) requires extinction. Thus between A &#038; B immense gap of relation. C &#038; B the finest gradation, B &#038; D rather greater distinction. Thus genera would be formed.—bearing relation.&#8221;
+</p></blockquote>
+<p><a href="http://www.shapeways.com/blog/archives/2031-3D-Printed-Product-of-the-Day-Darwins-Cladogram-Tree.html">Read more.</a></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/darwin3.jpg" alt="Darwin3" title="darwin3.jpg" border="0" width="600" height="446" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61541</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>3D Printing with Nylon 618 filament in Tie-Dye colours #3DThursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/3d-printing-with-nylon-618-filament-in-tie-dye-colours-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/3d-printing-with-nylon-618-filament-in-tie-dye-colours-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 15:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61534</guid>
+		<description><![CDATA[Check out these great resources from the RichRap blog for learning about Taluman Nylon 618 print material and how to dye it! Taluman Nylon 618 is a very versatile printing material. Nylon does not require a heated bed, has low warp, and cooling fans are not required for both big or tiny printing. You can [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Many_NYLON_Pots.jpg" alt="Many NYLON Pots" title="Many_NYLON_Pots.jpg" border="0" width="600" height="444" /></p>
+<p />
+<p>Check out these great resources from the <a href="http://richrap.blogspot.de/2013/04/3d-printing-with-nylon-618-filament-in.html">RichRap blog</a> for learning about Taluman Nylon 618 print material and how to dye it!</p>
+<blockquote><p><a href="http://taulman3d.com/index.html">Taluman Nylon 618</a> is a very versatile printing material. Nylon does not require a heated bed, has low warp, and cooling fans are not required for both big or tiny printing.</p>
+<p>You can print big and really tiny things in Nylon. No fans or heated beds required! Nylon has amazing self-bonding properties making any FFF (layer-by-layer) printed objects very strong and less prone to de-lamination. Another aspect of its development was the ability to colour the Nylon with fabric Dye. That hits almost every spot for me!</p>
+<p>From the moment I spotted the 618 Nylon was available I wanted to try colouring the raw filament with more than one colour, something I have always wanted manufacturers to make is a range of filaments that have changes of colour during the roll or even across the roll, now I had a way to do it myself.</p>
+<p>Taulman 3D recommends printing with the natural filament and then dyeing the parts afterwards for best results, but I wanted to see what happened when dyeing the filament first as that sounded a lot more fun…. </p></blockquote>
+<p><a href="http://richrap.blogspot.de/2013/04/3d-printing-with-nylon-618-filament-in.html">Read more.</a></p>
+<p>Check out his videos below for further details!</p>
+<p>
+<iframe width="599" height="337" src="http://www.youtube.com/embed/Klseu2xV68o?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>
+<iframe width="599" height="337" src="http://www.youtube.com/embed/nNUHwPP5FMU?list=UUvGQ-pMFD1C5HShRin8RVDA" frameborder="0" allowfullscreen></iframe></p>
+<p>
+<img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/TalumanNylon618.png" alt="TalumanNylon618" title="TalumanNylon618.png" border="0" width="400" height="340" /></p>
+<hr />
+<p><a href="http://www.adafruit.com/blog/category/3d-printing/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/10/649-1.jpg" height="102" width="133" border="0" align="left" hspace="4" vspace="4" alt="649-1" /></a><br />
+Every Thursday is <a href="http://www.adafruit.com/blog/category/3d-printing/">#3dthursday</a> here at Adafruit! The DIY 3D printing community has passion and dedication for making solid objects from digital models. Recently, we have noticed electronics projects integrated with 3D printed enclosures, brackets, and sculptures, so each Thursday we celebrate and highlight these bold pioneers!</p>
+<p>Have you considered building a 3D project around an <a href="http://www.adafruit.com/category/17">Arduino</a> or other microcontroller? How about printing a bracket to mount your <a href="http://www.adafruit.com/category/105">Raspberry Pi</a> to the back of your HD monitor? And don&#8217;t forget the countless <a href="http://www.adafruit.com/category/37">LED projects</a> that are possible when you are modeling your projects in 3D!</p>
+<p>The <a href="http://learn.adafruit.com">Adafruit Learning System</a> has dozens of great tools to get you well on your way to creating incredible works of engineering, interactive art, and design with your 3D printer! If you&#8217;ve made a cool project that combines 3D printing and electronics, be sure to let us know, and we&#8217;ll <a href="http://www.adafruit.com/blog/category/3d-printing/">feature</a> it here!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61534</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>3D Printing, Kids &amp; CAD: Henry makes an “Annoyinator” #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/3d-printing-kids-cad-henry-makes-an-annoyinator-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/3d-printing-kids-cad-henry-makes-an-annoyinator-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 14:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61526</guid>
+		<description><![CDATA[Here&#8217;s a cool passive sound amplification project for the iPhone from a talented middle schooler, shared by the Cubify blog: Henry, a middle school student, has a natural talent for design. He has learned CAD this semester and has produced a cool design. Coming back from Easter Break, Henry brought his latest creation, The Annoyinator. As [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/ablog21.png" alt="Ablog21" title="ablog21.png" border="0" width="498" height="569" /></p>
+<p>Here&#8217;s a cool passive sound amplification project for the iPhone from a talented middle schooler, shared by the <a href="http://cubify.com/blog/3d-printing-kids-cad-henry-makes-an-annoyinator/">Cubify</a> blog:</p>
+<blockquote><p>Henry, a middle school student, has a natural talent for design. He has learned CAD this semester and has produced a cool design.</p>
+<p>Coming back from Easter Break, Henry brought his latest creation, The Annoyinator.</p>
+<p>As Henry explains it, The Annoyinator is designed to amplify the output of an i-Pod and to make that output directional. The core science is the passive amplification available via an acoustic horn (like an old Victrola) coupled some directional capabilities. With some help from his dad, an audio guy, Henry took the dimensions of an i-Pod and started to design.</p>
+<p>Henry wanted a device that would:</p>
+<ul>
+<li>Securely hold the i-Pod</li>
+<li>Allow access to the controls</li>
+<li>Provide passive amplification (look ma, no batteries)</li>
+<li>Allow for directional projection of annoying noise</li>
+</ul>
+<p>“The tolerances and clearances in The Annoyinator are excellent. It holds my i-Pod snugly and still allows access to the controls,” Henry said.</p>
+<p>The design also works in terms of Henry&rsquo;s audio goals as it amplifies the small internal speaker in the i-Pod and gives significant directionality to the sounds being played (Henry favors the high-pitched mosquito drone). </p>
+<p>The Irritator is constructed of several pieces and printed on a Cube II printer. The neon orange color allows for easy location of The Irritator in a crowded backpack or desk. </p></blockquote>
+<p><a href="http://cubify.com/blog/3d-printing-kids-cad-henry-makes-an-annoyinator/">Read more.</a></p>
+<p>
+<img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/ablog4.png" alt="Ablog4" title="ablog4.png" border="0" width="464" height="530" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61526</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>DIY Robot Arm</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/diy-robot-arm/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/diy-robot-arm/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 13:04:54 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[robotics]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61558</guid>
+		<description><![CDATA[Jacob&#8217;s robot arm via Hacked Gadgets &#038; Dangerous prototypes - An old steampunk prop that I figured out how to build from plans on the internet.]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/iZHHg1xgnFY?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Jacob&#8217;s robot arm via <a href="http://hackedgadgets.com/2013/04/23/build-a-robot-hand/">Hacked Gadgets</a> &#038; <a href="http://dangerousprototypes.com/2013/04/25/build-a-robot-arm/">Dangerous prototypes</a> -</p>
+<blockquote><p>
+An old steampunk prop that I figured out how to build from plans on the internet.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61558</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Midas Touch: 2.5D &#8220;Sculptures&#8221; of Masterworks of Visual Art Help Blind ‘See’ Paintings #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/midas-touch-2-5d-sculptures-of-masterworks-of-visual-art-help-blind-see-paintings-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/midas-touch-2-5d-sculptures-of-masterworks-of-visual-art-help-blind-see-paintings-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 13:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61512</guid>
+		<description><![CDATA[From the perspective of art restoration and research, all paintings are sculptural artifacts &#8212; with laters of pigment piled up in a particular stroke order of touches by brush, pallet knife, drip, etc.. But while this may be the case, this tactile information tends to be available only to the visual scanning and topology instruments [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/midas-touch.png" alt="Midas touch" title="midas-touch.png" border="0" width="558" height="280" /></p>
+<p>From the perspective of art restoration and research, all paintings are sculptural artifacts &#8212; with laters of pigment piled up in a particular stroke order of touches by brush, pallet knife, drip, etc.. But while this may be the case, this tactile information tends to be available only to the visual scanning and topology instruments and not to the humans standing near to them &#8212; for rather obvious reasons. </p>
+<p>No one is going to let you touch masterworks of oil or acrylic because the oils in your hands and the friction of your fingertips have the potential to damage or change the surface of the work. However, take a look at this project Midas Touch &#8212; which approaches the task of transforming the 2.5D sculptural potential of visual artworks even further to help provide safe &#8220;tactile-viewing&#8221; replicas of this fragile work by running computer graphics processes to generate a 3D printable model of works of visual art for the visually impaired. From <a href="http://venturebeat.com/2013/04/16/midas-touch-harvard-3d-printing-blind/">Venture Beat</a>:
+</p>
+<blockquote><p>For the visually impaired, the basic problem with art is that they can&rsquo;t see it. But with a project called “Midas Touch” a group of Harvard kids say they have a fix: Use 3D printing to help the blind “see” what they cannot actually see.</p>
+<p>“We want to bridge the gap between the visually impaired and the visual world of art,” Constantine Tarabanis, one of the brains behind the project, told me.</p>
+<p>Basically, what Midas Touch does is take a flat image — say, of “Starry Night” — and use 3D printing to add layers of texture to it, creating an image that&rsquo;s half painting, half relief sculpture. Essentially, Midas Touch takes the visual nature of art and translates it to a physical world that the visually impaired can understand.</p>
+<p>In theory, anyway. The thing to keep in mind with Midas Touch is that the whole project is at this point a concept. While Tarabanis and his team have a great idea and a bunch of funding, they&rsquo;re still working on creating working prototypes to prove their idea has legs.</p>
+<p>As result, its a bit tough to fully understand or even convey what we&rsquo;re talking about here — and somehow, I&rsquo;m fine with that: In fact, the inability to describe Midas Touch is in its own way a meta-reference to what the project is trying to accomplish. How do you understand something that you can&rsquo;t see? &#8230;</p></blockquote>
+<p><a href="http://venturebeat.com/2013/04/16/midas-touch-harvard-3d-printing-blind/">Read more.</a></p>
+<hr />
+<p><a href="http://www.adafruit.com/blog/category/3d-printing/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/10/649-1.jpg" height="102" width="133" border="0" align="left" hspace="4" vspace="4" alt="649-1" /></a><br />
+Every Thursday is <a href="http://www.adafruit.com/blog/category/3d-printing/">#3dthursday</a> here at Adafruit! The DIY 3D printing community has passion and dedication for making solid objects from digital models. Recently, we have noticed electronics projects integrated with 3D printed enclosures, brackets, and sculptures, so each Thursday we celebrate and highlight these bold pioneers!</p>
+<p>Have you considered building a 3D project around an <a href="http://www.adafruit.com/category/17">Arduino</a> or other microcontroller? How about printing a bracket to mount your <a href="http://www.adafruit.com/category/105">Raspberry Pi</a> to the back of your HD monitor? And don&#8217;t forget the countless <a href="http://www.adafruit.com/category/37">LED projects</a> that are possible when you are modeling your projects in 3D!</p>
+<p>The <a href="http://learn.adafruit.com">Adafruit Learning System</a> has dozens of great tools to get you well on your way to creating incredible works of engineering, interactive art, and design with your 3D printer! If you&#8217;ve made a cool project that combines 3D printing and electronics, be sure to let us know, and we&#8217;ll <a href="http://www.adafruit.com/blog/category/3d-printing/">feature</a> it here!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61512</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Lego school promises the building blocks to successful learning</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/lego-school-promises-the-building-blocks-to-successful-learning/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/lego-school-promises-the-building-blocks-to-successful-learning/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 12:44:00 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[educators]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61556</guid>
+		<description><![CDATA[Lego school promises the building blocks to successful learning &#8211; Danish firm brings its research into child development as well as cash to new Billund venture centred on inquiry-based education&#8230; For many children, it&#8217;s the ultimate fantasy. For a few, it&#8217;s about to become a reality. In August a newly refurbished building in Billund, Denmark, [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Lego-school-010.jpg" height="276" width="460" border="0" hspace="4" vspace="4" alt="Lego-School-010" /></p>
+<p><a href="http://m.guardian.co.uk/education/2013/apr/22/lego-school-building-learning">Lego school promises the building blocks to successful learning</a> &#8211; Danish firm brings its research into child development as well as cash to new Billund venture centred on inquiry-based education&#8230;</p>
+<blockquote><p>
+For many children, it&#8217;s the ultimate fantasy. For a few, it&#8217;s about to become a reality. In August a newly refurbished building in Billund, Denmark, will open its doors to become the first ever &#8220;Lego school&#8221;.<br />
+The fee-paying establishment is the brainchild of the toy manufacturer&#8217;s billionaire owner, Kjeld Kirk Kristiansen, who hopes the school will help put the town in rural Jutland – a place Copenhageners refer to as Hicksville – on the map as the Capital of Children.</p>
+<p>The International School of Billund will combine the international baccalaureate (IB) with the Danish school system and Lego&#8217;s emphasis on creativity and play. Centred around &#8220;inquiry-based learning&#8221;, the idea is that children are more motivated when they generate their own questions. As one prospective parent of the new school put it: &#8220;In the UK you&#8217;re taught how to pass exams. In Scandinavia you&#8217;re taught how to think.&#8221;</p>
+<p>The school&#8217;s champions hope that by combining this free and easy approach to learning with Lego&#8217;s research into child development and the international baccalaureate, pupils will have the tools to both &#8220;think&#8221; and &#8220;do&#8221; in their chosen careers.</p>
+<p>The headteacher is British physicist-turned-international-school-tsar Richard Matthews, a seasoned head, having led schools all over the world from Botswana to Grimsby. As one of the few men in Denmark to wear a tie, he is referred to by some prospective parents as &#8220;Tie Man&#8221;.</p>
+<p>&#8220;Allowing time for creativity, play and getting into a state of flow is at the centre of Lego&#8217;s philosophy and we&#8217;ll be experimenting with this and other ideas in the timetabling,&#8221; he said. &#8220;But we also have a responsibility — the children&#8217;s education comes first and sometimes the old methods will be the best.&#8221;</p>
+<p>The UK debate about child-centred learning was revived on Monday when Liz Truss, the early years minister, complained to the Daily Mail that in nurseries she had &#8220;seen too many chaotic settings, where children are running around&#8221; in an environment with &#8220;no sense of purpose&#8221;.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61556</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Self-assembling furniture &#8216;grows like popcorn&#8217;  #3dthursday #smartfoam</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/self-assembling-furniture-grows-like-popcorn-3dthursday-smartfoam/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/self-assembling-furniture-grows-like-popcorn-3dthursday-smartfoam/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 12:37:35 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61553</guid>
+		<description><![CDATA[Assembling your own furniture, after you have brought it home from the showroom, is a nightmare for many people. So, what if flat-pack furniture was smart enough to assemble itself? Belgian designer and engineer Carl de Smet is experimenting with a kind of smart foam technology, which he believes could do just that. Once heated [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/-fDsPBmVD0w?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<blockquote><p>
+Assembling your own furniture, after you have brought it home from the showroom, is a nightmare for many people.</p>
+<p>So, what if flat-pack furniture was smart enough to assemble itself?</p>
+<p>Belgian designer and engineer Carl de Smet is experimenting with a kind of smart foam technology, which he believes could do just that.</p>
+<p>Once heated to a set temperature, the material he works with, shape memory polyurethane (SMPU), will expand to a given design.</p>
+<p>Currently working with scaled-down models, de Smet is close to building the technology to achieve the effect with full-size furniture.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61553</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Forbes: My Kindergartner Can 3D Print. So Can Yours #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/forbes-my-kindergartner-can-3d-print-so-can-yours-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/forbes-my-kindergartner-can-3d-print-so-can-yours-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 12:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61498</guid>
+		<description><![CDATA[A short opinions piece from Forbes that makes a good point about grade school kids and creativity. From Forbes.com: Experts like Joris Peels, creator of the first 3D printer for children, agrees that grade school kids are ideally suited to the brave new world of 3D printing.  Why?  Because they&#8217;re the most creative.  As he [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/3d-Printed-Doodle.jpg" alt="3d Printed Doodle" title="3d-Printed-Doodle.jpg" border="0" width="600" height="448" /></p>
+<p>A short opinions piece from Forbes that makes a good point about grade school kids and creativity. From <a href="http://www.forbes.com/sites/kaifalkenberg/2013/04/24/my-kindergartner-can-3d-print-so-can-yours/">Forbes.com</a>:</p>
+<blockquote><p>Experts like Joris Peels, <a href="http://www.origo3dprinting.com/">creator of the first 3D printer for children,</a> agrees that grade school kids are ideally suited to the brave new world of 3D printing.  Why?  Because they&rsquo;re the most creative.  As he explained recently in a <a href="http://www.bbc.co.uk/news/technology-22093072">BBC interview</a>: “Children make a lot of things but as we hit our teens we make less…  We become afraid of designing.  We hit that blank canvas problem and think ‘what am I going to make?&rsquo; We are basically very lazy creatures.”</p>
+<p>Blank canvases are certainly not a problem for my kids and the others participating in the 3D printing workshop that I&rsquo;ve been hosting at my apartment these past few weekends.  Run by digital fabrication expert <a href="http://dfmsummit.com/speaker/arthuryoungspivey/">Arthur Young-Spivey</a>, the kids are learning several highly intuitive 3D modeling software programs.  Among them is Sculptris, a program that allows users to digitally sculpt objects onscreen  — virtually molding it like a piece of clay.  Last week, the kids experimented with <a href="http://www.doodle3d.com/">Doodle3D</a>, the sketching tool that brings 2D drawings to life.</p>
+<p><a href="http://www.kickstarter.com/projects/companje/doodle3d">Doodle3D</a> was the breakaway hit at <a href="http://3dea.openhouse.me/3dea/">3DEA</a>, the 3D printing pop-up store in midtown Manhattan where I met Arthur in February.   Created by Dutch developer Rick Companje, the software is amazingly simple to use.  You just draw a sketch on a computer or tablet, click print, and the attached printer turns it into a 3D object.</p>
+<p>Doodle3D and <a href="http://pixologic.com/sculptris/">Sculptris</a> are among the growing number of kid-friendly programs that don&rsquo;t require knowledge of sophisticated modeling software.  One app, <a href="https://itunes.apple.com/us/app/lets-create!-pottery-hd/id380090605?mt=8">Lets Create!</a>, recently <a href="http://www.forbes.com/sites/jenniferhicks/2013/03/12/3d-printed-pottery-from-your-mobile-phone/">featured on Forbes</a>, lets you design and paint pottery that you can have 3D printed and mailed to you.  Another site, <a href="http://cubify.com/store/3dme.aspx">3DMe</a>, lets kids create 3D printed action figures that look just like themselves….</p></blockquote>
+<p><a href="http://www.forbes.com/sites/kaifalkenberg/2013/04/24/my-kindergartner-can-3d-print-so-can-yours/">Read more.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61498</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Broken Things &#8211; Beomyoung Sohn</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/broken-things-beomyoung-sohn/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/broken-things-beomyoung-sohn/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 11:49:41 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[art]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61537</guid>
+		<description><![CDATA[Broken Things &#8211; Beomyoung Sohn. Installation, 102 x 940 mm, 2011. The broken image icon is to replace an image that failed to load or is missing, which is used only in cyber space and has no reason to exist in physical reality. Through this installation, I tried to crack the border between them by [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Broken-Things_800.jpg" height="641" width="600" border="0" hspace="4" vspace="4" alt="Broken Things 800" /></p>
+<p><a href="http://beom-young.com/Broken-Things-1">Broken Things &#8211; Beomyoung Sohn</a>.</p>
+<blockquote><p>
+Installation, 102 x 940 mm, 2011. The broken image icon is to replace an image that failed to load or is missing, which is used only in cyber space and has no reason to exist in physical reality. Through this installation, I tried to crack the border between them by transferring the symbol from one world to another world. I am wondering how people will react to the broken image icons in the real stuff. Will they feel blankness and imagine missing images, focusing on its original information, or will they accept them as just small images?
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61537</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Drill-Extension Rotary Pool Cleaner</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/drill-extension-rotary-pool-cleaner/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/drill-extension-rotary-pool-cleaner/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 11:40:27 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[random]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61530</guid>
+		<description><![CDATA[Kris writes- I made this during spring break in March but didn&#8217;t have time to upload the Videos and pictures of it until now. This is my &#8220;Drill-Extension Rotary Pool Cleaner&#8221;. I made it using Channel and Bearing parts from ServoCity and shafting from McMaster-CARR as well as my trusty Milwaukee hand-drill. My goal was [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/peMBf6FIwMA?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<p>Kris writes-</p>
+<blockquote><p>
+I made this during spring break in March but didn&#8217;t have time to upload the Videos and pictures of it until now. This is my &#8220;Drill-Extension Rotary Pool Cleaner&#8221;. <img src='http://www.adafruit.com/adablog/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I made it using Channel and Bearing parts from ServoCity and shafting from McMaster-CARR as well as my trusty Milwaukee hand-drill. My goal was to come up with a way to clean the pool without killing my hands and arms as I have in years past without spending a trillion bucks. </p>
+<p>The solution I came up with is a light-weight extension to a common hand-drill (and drill would do) and using a shoulder strap for ergonomics. I had some spare pistol-grips laying around that I wasn&#8217;t going to use, so I bolted 3 of them onto the Channel to create multiple holding options (3D printed handles would work even better!). This way I can brush the floor while standing upright, and yet brush the walls while holding the tool closer to me with a shoulder strap, all without generating nearly the fatigue that I have in the past using other methods.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61530</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Todd Bailey&#8217;s: New video synth prototype</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/todd-baileys-new-video-synth-prototype/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/todd-baileys-new-video-synth-prototype/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 11:17:26 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[art]]></category>
+		<category><![CDATA[music]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61522</guid>
+		<description><![CDATA[Todd Bailey&#8217;s: New video synth prototype.]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/BIqvgJCCQAIOt0w.jpg" height="450" width="600" border="0" hspace="4" vspace="4" alt="Biqvgjccqaiot0W" /><br />
+<a href="https://twitter.com/ToddBailey/status/327266889648717824/photo/1">Todd Bailey&#8217;s: New video synth prototype</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61522</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Adafruit 6 second electronics film festival! #adafruit6secs</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/the-adafruit-6-second-electronics-film-festival-adafruit6secs-3/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/the-adafruit-6-second-electronics-film-festival-adafruit6secs-3/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 11:15:11 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[announce]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61519</guid>
+		<description><![CDATA[Call For Entries: Announcing The Adafruit 6 second electronics film festival! Share your cool project in 6 seconds of video and win up to $600 at the Adafruit store, with six runners up winning $60 store credit each.In a 6 second video, we want you to share the best project you&#8217;ve made.  Be sure not to use [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="https://twitter.com/search/realtime?q=%23adafruit6secs&#038;src=typd"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/adafruit6secs_banner_600.jpg" alt="Adafruit6Secs Banner 600" width="600" height="400" border="0" hspace="4" vspace="4" /></a></p>
+<p>Call For Entries: Announcing The Adafruit 6 second electronics film festival! Share your cool project in 6 seconds of video and win up to $600 at the Adafruit store, with six runners up winning $60 store credit each.In a 6 second video, we want you to share the best project you&#8217;ve made.  Be sure not to use any copyrighted music, video, etc.  This should be all your project, all by you. The Adafruit team will be looking on <a href="https://twitter.com/search/realtime?q=%20%23adafruit6secs&amp;src=typd">Twitter</a>, <a href="https://plus.google.com/u/0/s/%23adafruit6secs">G+</a>/<a href="http://www.youtube.com/results?search_query=%23adafruit6secs">youtube</a> and beyond for <a href="https://vine.co/">Vines</a>, 6 second videos and more tagged with #adafruit6secs. The deadline is 6pm ET, 5/6/13. The Adafruit team of judges will pick their favorites and announce the winner on May, 12th at 6pm ET.</p>
+<p>tl;dr &#8211; Post a 6 second video of your electronic project(s) using <a href="https://twitter.com/search/realtime?q=%23adafruit6secs&#038;src=typd">Vine on Twitter and tag it #adafruit6secs</a> !</p>
+<p>Keep reading for all the details!</p>
+<h1>STEP ONE: MAKE A 6 SECOND VIDEO, PLEASE USE VINE!</h1>
+<p>The easiest way to make a 6 second video for The Adafruit 6 second electronics film festival is to use Vine. If you don&#8217;t have an iOS device, no big deal &#8211; most everything can take 6 second videos and upload. With Vine and looping a 6 second video you can make cool videos that repeat what you&#8217;ve made that&#8217;s blinking, moving or making noise &#8211; get creative, and enter as often as you&#8217;d like. Make sure you do not use any copyrighted music, video, etc. This should be your cool project you are sharing, in 6 seconds.</p>
+<h1>STEP TWO: TAG THE VIDEO with #adafruit6secs</h1>
+<p>The most important thing is to tag the video with #adafruit6secs . We&#8217;ll be mostly using Twitter to find most of these, you can also send a link to your video via the contact form (do not email us video files!).</p>
+<h1>STEP THREE: POST TO TWITTER, G+, YOUTUBE, ETC.</h1>
+<p>Post your tagged <a href="https://twitter.com/search/realtime?q=%23adafruit6secs&#038;src=typd">6 second video from Vine</a> or on <a href="http://www.youtube.com/results?search_query=%23adafruit6secs">Youtube</a>, <a href="https://plus.google.com/u/0/s/%23adafruit6secs">Google+</a>, <a href="http://www.flickr.com/search/?q=%23adafruit6secs">Flickr</a>, <a href="https://twitter.com/search/realtime?q=%23adafruit6secs&#038;src=typd">Twitter (Vine can post to Twitter)</a> just make sure it&#8217;s easily searchable on those services by tagging it with <a href="https://twitter.com/search/realtime?q=%23adafruit6secs&#038;src=typd">#adafruit6secs</a> .</p>
+<h1>STEP FOUR: THERE IS NO STEP 4!</h1>
+<p>That&#8217;s it!</p>
+<h1>PRIZES: $600 GRAND PRIZE, SIX $60 PRIZES (ADAFRUIT STORE)</h1>
+<p>The team of Adafruit judges will pick our favorites. Grand prize is a $600 gift certificate in the Adafruit store and six runners-up will receive $60 in store credit each. THE DEADLINE IS 6:00 PM ON MONDAY 5/6/13!</p>
+<p>Make sure to tag &amp; upload by 6pm ET, Monday, May 6th, 2013, that&#8217;s the deadline.</p>
+<h1>WINNERS ANNOUNCED LIVE ON ASK AN ENGINEER: 5/12/13!</h1>
+<p>We will play the videos on <a href="http://adafruit.com/ask/">ASK AN ENGINEER</a> Saturday night 10pm ET on May 12th, 2013. The judges from Adafruit John De Cristofaro, Becky Stern, Matt Griffin, Molly Rae Thorkelson &amp; Ladyada. Adafruit staff &amp; partners may make entries but cannot win <img src='http://www.adafruit.com/adablog/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61519</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>LED Matrix Animations with a Flora from Adafruit</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/led-matrix-animations-with-a-flora-from-adafruit/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/led-matrix-animations-with-a-flora-from-adafruit/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 11:05:27 +0000</pubDate>
+		<dc:creator>bill</dc:creator>
+				<category><![CDATA[FLORA]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61503</guid>
+		<description><![CDATA[KKolbo from the Adafruit Forums posts: This is a mockup of the matrix and animations for my backpack project. The nice thing is the running light configuration only uses 60ma and the brake lights spike at 400ma for short periods. The turn signal mode stays under 300ma. LED Animation with Flora]]></description>
+				<content:encoded><![CDATA[<p>KKolbo from the Adafruit Forums posts:</p>
+<blockquote><p>This is a mockup of the matrix and animations for my backpack project. The nice thing is the running light configuration only uses 60ma and the brake lights spike at 400ma for short periods. The turn signal mode stays under 300ma.</p></blockquote>
+<p><a href="http://youtu.be/gORUVaalj8c">LED Animation with Flora</a></p>
+<p><iframe width="500" height="375" src="http://www.youtube.com/embed/gORUVaalj8c?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61503</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Organovo 3D-prints a liver, probably has a room full of them somewhere #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/organovo-3d-prints-a-liver-probably-has-a-room-full-of-them-somewhere-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/organovo-3d-prints-a-liver-probably-has-a-room-full-of-them-somewhere-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 11:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61489</guid>
+		<description><![CDATA[Perhaps I was initially a bit of a victim of link-baiting, I found this article about the real-world Organovo organ bioprinter pretty hilarious, as well as sharing the breaking news about the &#8220;mini-livers.&#8221; From IDG, via New Scientist. At this week&#8217;s annual Experimental Biology conference in Boston, California-based Organovo announced that it&#8217;s one step closer [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Organovo1.png" alt="Organovo" title="Organovo.png" border="0" width="450" height="300" /></p>
+<p>Perhaps I was initially a bit of a victim of link-baiting, I found this article about the real-world Organovo organ bioprinter pretty hilarious, as well as sharing the breaking news about the &#8220;mini-livers.&#8221; From <a href="http://news.idg.no/cw/art.cfm?id=59D4CE40-93A0-88CC-BBE5C7A69BC07D34">IDG</a>, via <a href="http://linkpuls.idg.no/go/e/page_news/http://www.newscientist.com/article/dn23419-3d-printer-makes-tiniest-human-liver-ever.html">New Scientist</a>.
+</p>
+<blockquote><p>At this week&#8217;s annual Experimental Biology conference in Boston, California-based <a href="http://linkpuls.idg.no/go/e/page_news/http://www.organovo.com/">Organovo</a> announced that it&#8217;s one step closer to <a href="http://linkpuls.idg.no/go/e/page_news/http://www.newscientist.com/article/dn23419-3d-printer-makes-tiniest-human-liver-ever.html">3D-printing a functional human liver</a> for transplants.</p>
+<p>In fact, the scientists over at Organovo already made a human liver in the lab that can perform most of the tasks that an in-body liver can perform. Unfortunately, it also happens to be the smallest human liver ever&#8211;only a millimeter deep and four millimeters across. As you can imagine, it&#8217;s not really big enough for your average human body.</p>
+<p>The liver was &#8220;built&#8221; using a 3D printer loaded up with human cells. The printer assembles these cells the same way a normal 3D printer uses plastic, layering them into a final form. All told, Organovo&#8217;s mini-livers contain approximately 20 layers of cells, including some taken from blood vessels. The blood vessel cells are especially important, as they allow the mini-liver to take in nutrients and stay alive for a longer period of time.</p>
+<p>Even though you can&#8217;t use these mini-livers for transplants, they do have a broad range of applications in the lab. Because Organovo&#8217;s livers function almost exactly like real human livers, they could help scientists test the effects of drugs on the human body. The mini-livers also produce the same compounds as a real liver, including cytochrome P450s, used by the body for drug metabolism and detoxification.</p>
+<p>The next challenge for Organovo is to figure out how to print a larger support structure for blood vessels&#8211;essential if we&#8217;re ever going to get full-sized 3D-printed livers suitable for human transplant….</p>
+<p>Still, not too long ago 3D printers were just assembling small plastic prototypes. Next it was guns, and now organs. Science seems destined to bring me to a future where I can indeed abuse my body as much as I want with no repercussions, and I can&#8217;t wait.</p></blockquote>
+<p><a href="http://news.idg.no/cw/art.cfm?id=59D4CE40-93A0-88CC-BBE5C7A69BC07D34">Read more.</a></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Organovo.png" alt="Organovo" title="Organovo.png" border="0" width="400" height="307" /></p>
+<hr />
+<p><a href="http://www.adafruit.com/blog/category/3d-printing/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/10/649-1.jpg" height="102" width="133" border="0" align="left" hspace="4" vspace="4" alt="649-1" /></a><br />
+Every Thursday is <a href="http://www.adafruit.com/blog/category/3d-printing/">#3dthursday</a> here at Adafruit! The DIY 3D printing community has passion and dedication for making solid objects from digital models. Recently, we have noticed electronics projects integrated with 3D printed enclosures, brackets, and sculptures, so each Thursday we celebrate and highlight these bold pioneers!</p>
+<p>Have you considered building a 3D project around an <a href="http://www.adafruit.com/category/17">Arduino</a> or other microcontroller? How about printing a bracket to mount your <a href="http://www.adafruit.com/category/105">Raspberry Pi</a> to the back of your HD monitor? And don&#8217;t forget the countless <a href="http://www.adafruit.com/category/37">LED projects</a> that are possible when you are modeling your projects in 3D!</p>
+<p>The <a href="http://learn.adafruit.com">Adafruit Learning System</a> has dozens of great tools to get you well on your way to creating incredible works of engineering, interactive art, and design with your 3D printer! If you&#8217;ve made a cool project that combines 3D printing and electronics, be sure to let us know, and we&#8217;ll <a href="http://www.adafruit.com/blog/category/3d-printing/">feature</a> it here!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61489</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>How to make 3D Printed Lithophanes #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/how-to-make-3d-printed-lithophanes-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/how-to-make-3d-printed-lithophanes-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 10:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61485</guid>
+		<description><![CDATA[Lately on Thingiverse, thanks to Cymon and pp3dpNL, there have been a number of fun printed lithophanes projects appearing. Here is a post from Cymon&#8217;s blog about how to make them for yourself! I have been having a blast figuring out lithophanes and working out how to best make them. I think I&#8217;m going to [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/lithophaneExperiment2.jpg" alt="LithophaneExperiment2" title="lithophaneExperiment2.jpg" border="0" width="600" height="201" /></p>
+<p>Lately on Thingiverse, thanks to <a href="http://www.thingiverse.com/cymon/designs/">Cymon</a> and <a href="http://www.thingiverse.com/pp3dpNL/designs">pp3dpNL</a>, there have been a number of fun printed <a href="http://en.wikipedia.org/wiki/Lithophane">lithophanes</a> projects appearing. Here is a post from <a href="http://joesmakerbot.blogspot.com/2013/03/how-to-make-lithophanes.html">Cymon&#8217;s blog</a> about how to make them for yourself!</p>
+<blockquote><p>I have been having a blast figuring out lithophanes and working out how to best make them. I think I&#8217;m going to start offering custom lithophane services in the store, which technically means I shouldn&#8217;t give away how I&#8217;m making them&#8230; but that&#8217;s not the sort of guy I am.</p>
+<p>First thing I discovered is the local dollar store sells nightlights that I can print a holder for that will illuminate the lithophanes really well.</p>
+<p>Another things I discovered was about thickness. From left to right (1) the source picture (my daughter), (2) white at 3mm thick, (3) tan at 3mm thick, (4) tan at 2.5mm thick. I thought I needed to make it thicker so I could have more color depth. Since I print these laying down I only get as many shades as I have layers. And sure enough if I want more layers I have to print in white, the tan just doesn&#8217;t let enough light through. But after comparing them side by side I really prefer the sepia-tone look of the tan ones. The white looks better in the picture, but in real life the tan is just superior. And at 2.5mm thick I&#8217;m getting about 16 layers, so that&#8217;s enough color for anything.</p>
+<p>If you would like to make your own just follow these steps:</p>
+<ol>
+<li><a href="http://geisel.ba-bautzen.de/bmp2iges.htm">Download BMPtoIGES</a></li>
+<li>Choose a source image with good contrast.</li>
+<li>Scale the picture to about 800&#215;600 (the more pixels the more points in the final mesh the harder to process)</li>
+<li>In BMPtoIGES load your picture</li>
+<li>Set your edgecolor to black (so the holder has something to hold on to)</li>
+<li>Enter the following settings:<br />
+<blockquote><p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/NewImage5.png" alt="NewImage" title="NewImage.png" border="0" width="314" height="157" /></p></blockquote>
+<li>File->Save and Process, choose STL and save your file</li>
+<li>Import the STL in Blender or your favorite mesh editing program</li>
+<li>Scale the STL by 50% in the Z only (I suppose you could change the 75 to 150 and just scale in all directions by 50%)</li>
+<li>Slice and print (I like to lay mine down. That works pretty well in my experience)</li>
+</ol>
+<p>The Z-scaling is because I don&#8217;t think BMPtoIGES likes decimals in its boxes. </p>
+<p>I&#8217;m really surprised at how easy the process is&#8230; once I figured everything out. There was a lot of experimentation to get here, but in the end I&#8217;m fairly satisfied with the results. So don&#8217;t let my suffering be in vain and enjoy making your own Lithophanes.</p></blockquote>
+<p><a href="http://joesmakerbot.blogspot.com/2013/03/how-to-make-lithophanes.html">Read more.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61485</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Art Institute Chicago Collaborates With Museum Lovers For Ongoing Digital Curation Effort #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/art-institute-chicago-collaborates-with-museum-lovers-for-ongoing-digital-curation-effort-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/art-institute-chicago-collaborates-with-museum-lovers-for-ongoing-digital-curation-effort-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 09:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61474</guid>
+		<description><![CDATA[Liz Neely, the Director of Digital Information and Access at the Art Institute of Chicago, has been doing a great job encouraging visitors to participate in capturing digital models of their collection, including the Saint John the Baptist sculpture above, captured by Christian Oiticica and posted just a few hours before I put together this [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Saint_John_the_Baptist_ready_preview_featured.jpg" alt="Saint John the Baptist ready preview featured" title="Saint_John_the_Baptist_ready_preview_featured.jpg" border="0" width="300" height="225" style="float:left;"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/8425_764363_preview_featured.jpg" alt="8425 764363 preview featured" title="8425_764363_preview_featured.jpg" border="0" width="300" height="225" style="float:left;" /></p>
+<p style="clear:both;">Liz Neely, the Director of Digital Information and Access at the Art Institute of Chicago, has been doing a great job encouraging visitors to participate in capturing digital models of their collection, including the <a href="http://www.thingiverse.com/thing:79613">Saint John the Baptist sculpture above</a>, captured by <a href="https://www.facebook.com/pages/Christian-Oiticica/125083464451">Christian Oiticica</a> and posted just a few hours before I put together this post. </p>
+<p>While several museums, including the <a href="http://www.youtube.com/watch?v=o1dqXVe2GVo">Met Museum</a> and the <a href="http://blog.asianart.org/blog/index.php/2012/09/27/a-model-week-3d-scanning-at-the-museum/">Asian Art Museum of San Francisco</a> have held special events for the purpose of exploring the possibilities of scanning and sharing replicas of work, Neely boldly pushes this curatorial practice into an ongoing collaboration between museum and those who love the museum. </p>
+<p>Here is the message Neely shared on <a href="http://www.thingiverse.com/ArtInstituteChicago/designs/page:1">Thingiverse</a> about this project:
+</p>
+<blockquote><p><strong>Art Institutue of Chicago</strong></p>
+<p>The Art Institute of Chicago is a world-renowned art museum housing one of the largest permanent collections in the United States. With more than 260,000 art works and artifacts, the museum has particularly strong holdings in Impressionist and Post-Impressionist painting, early 20th-century European painting and sculpture, contemporary art, Japanese prints, and photography. The museum also offers exceptional programming that informs and inspires, including lectures, workshops, performances, and guided tours.</p>
+<p>Do you have a scan or derivative of an Art Institute artwork? Message us and we&#8217;ll add it to our Thingiverse collections.</p>
+<p>Find Art Institute &#8216;Things&#8217;<br />
+Check out Things related to the Art Institute in My Collections including <a href="http://www.thingiverse.com/ArtInstituteChicago/collections/artwork-from-the-art-institute-of-chicago">Artwork from the Collection</a>, <a href="http://www.thingiverse.com/ArtInstituteChicago/collections/art-institute-mods-">Art Institute /Mods/</a> and <a href="http://www.thingiverse.com/ArtInstituteChicago/collections/museum-love-in-3d">Museum Love in 3D</a>.</p></blockquote>
+<p><a href="http://www.thingiverse.com/ArtInstituteChicago/designs/page:1">Read more.</a></p>
+<hr />
+<p><a href="http://www.adafruit.com/blog/category/3d-printing/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/10/649-1.jpg" height="102" width="133" border="0" align="left" hspace="4" vspace="4" alt="649-1" /></a><br />
+Every Thursday is <a href="http://www.adafruit.com/blog/category/3d-printing/">#3dthursday</a> here at Adafruit! The DIY 3D printing community has passion and dedication for making solid objects from digital models. Recently, we have noticed electronics projects integrated with 3D printed enclosures, brackets, and sculptures, so each Thursday we celebrate and highlight these bold pioneers!</p>
+<p>Have you considered building a 3D project around an <a href="http://www.adafruit.com/category/17">Arduino</a> or other microcontroller? How about printing a bracket to mount your <a href="http://www.adafruit.com/category/105">Raspberry Pi</a> to the back of your HD monitor? And don&#8217;t forget the countless <a href="http://www.adafruit.com/category/37">LED projects</a> that are possible when you are modeling your projects in 3D!</p>
+<p>The <a href="http://learn.adafruit.com">Adafruit Learning System</a> has dozens of great tools to get you well on your way to creating incredible works of engineering, interactive art, and design with your 3D printer! If you&#8217;ve made a cool project that combines 3D printing and electronics, be sure to let us know, and we&#8217;ll <a href="http://www.adafruit.com/blog/category/3d-printing/">feature</a> it here!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61474</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Future of Data-Driven 3D Printed Food: Could 3D Printers Actually Make Donuts Healthy? #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/the-future-of-data-driven-3d-printed-food-could-3d-printers-actually-make-donuts-healthy-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/the-future-of-data-driven-3d-printed-food-could-3d-printers-actually-make-donuts-healthy-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 08:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61470</guid>
+		<description><![CDATA[Check out this article over at Huffington Post covering Jeffrey Lipton&#8216;s talk at Inside 3D Printing on Tuesday: &#8220;Digital Cuisine: Bringing 3D Printing to the Cooking Realm.&#8221; This was one of my favorite sessions at the conference, and I enjoyed standing by after the talk while the article&#8217;s author followed up with Lipton to collect [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/o-3D-PRINTING-FOOD-570.jpg" alt="O 3D PRINTING FOOD 570" title="o-3D-PRINTING-FOOD-570.jpg" border="0" width="570" height="427" /></p>
+<p>Check out this article over at <a href="http://www.huffingtonpost.com/2013/04/24/3d-printed-food_n_3148598.html">Huffington Post</a> covering <a href="http://blog.makezine.com/2011/10/24/jeffrey-lipton-of-fabhome-on-3d-printing/">Jeffrey Lipton</a>&#8216;s talk at Inside 3D Printing on Tuesday: &#8220;<a href="http://www.mediabistro.com/inside3dprinting/agenda_day2.asp">Digital Cuisine: Bringing 3D Printing to the Cooking Realm</a>.&#8221; This was one of my favorite sessions at the conference, and I enjoyed standing by after the talk while the article&#8217;s author followed up with Lipton to collect quotes and data for her article.</p>
+<blockquote><p>These days, restaurant dishes can&rsquo;t be customized too far beyond requests to hold the dressing or to cook the meat medium-rare.</p>
+<p>But thanks to 3D printing technology, along with the proliferation of sensors tracking our activities and tastes, future meals &#8212; even mass-produced ones &#8212; could be tailored specifically to suit an individual&rsquo;s dietary needs. A dish someone is served might even be calibrated to the calories she burned that day.</p>
+<p>Jeffrey Lipton, a doctoral candidate at Cornell University&rsquo;s Creative Machines Lab and chief technology officer of Seraph Robotics, argues that the emerging category of data-driven food is destined to make up a much larger part of our diet in the years to come.</p>
+<p>Lipton predicts that cloud computing, 3D printing and the explosion in digitized personal data will together allow for the mass customization of meals, letting chefs instantly produce dishes that offer the recommended quantities of sugar, fat or sodium when given diners&#8217; health records.</p>
+<p>Instead of eating a quarter of a donut to cut calories, you instead might be able to buy a whole pastry from the corner deli, then watch the donut 3D printed before your eyes &#8212; with one-fourth the calories and just the right amount of fiber to bring you up to your daily minimum.</p>
+<p>&#8220;Once you have the automatic collection of what you&rsquo;re eating and when, you can predict &#8212; based off your activity levels, your planned diet and your health records &#8212; exactly how much and what types of food you should be eating. That&rsquo;s really ultimately the long-term potential of food printing,&#8221; explained Lipton during a lecture at the Inside 3D Printing conference in New York City on Tuesday. &#8220;It&rsquo;s going to be about this automated production of food where you have the entire cloud of information helping to guide you forward.&#8221;<br />
+&#8230;</p></blockquote>
+<p><a href="http://www.huffingtonpost.com/2013/04/24/3d-printed-food_n_3148598.html">Read more.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61470</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Flexiscale Model Train Company Invites Customers To Propose What They Should 3D Scan &amp; 3D Print For Store #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/flexiscale-model-train-company-invites-customers-to-propose-what-they-should-3d-scan-3d-print-for-store-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/flexiscale-model-train-company-invites-customers-to-propose-what-they-should-3d-scan-3d-print-for-store-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 07:00:58 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61465</guid>
+		<description><![CDATA[The model train company Flexiscale has adapted to the new 3D technologies available by inviting their customers to select subjects for them to then carefully 3D scan and 3D print &#8212; adding intricately precise scale model units with each new project. Via Fabbaloo. Hello. We&#8217;re trying something new in model kits. The way we design [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/DINORWIC_QUARRY_SLATE_WAGON.jpg" alt="DINORWIC QUARRY SLATE WAGON" title="DINORWIC_QUARRY_SLATE_WAGON.jpg" border="0" width="600" height="401" /></p>
+<p>The model train company <a href="http://www.flexiscale.co/">Flexiscale</a> has adapted to the new 3D technologies available by inviting their customers to select subjects for them to then carefully 3D scan and 3D print &#8212; adding intricately precise scale model units with each new project. Via <a href="http://fabbaloo.com/blog/2013/4/24/flexiscale-makes-your-railway-models.html">Fabbaloo</a>.</p>
+<blockquote><p>Hello. We&#8217;re trying something new in model kits. The way we design them is different, the way they&#8217;re made is different and the way we choose which kits to make is different.</p>
+<p>We&#8217;re using modern surveying methods on real life objects to make precise three dimensional plans. We split up the plans into kits that we feel are simple, yet fun to make, detail and paint. We&#8217;re producing the kits on demand using 3D printing.</p>
+<p>Now we&#8217;ve worked out how to do it, what we want to do is to make the kits you want. So we&#8217;ve made a system for you to propose kits to us.</p></blockquote>
+<p><a href="http://www.flexiscale.co/">Read more.</a></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/DinorwicOriginal.png" alt="DinorwicOriginal" title="DinorwicOriginal.png" border="0" width="600" height="249" /></p>
+<hr />
+<p><a href="http://www.adafruit.com/blog/category/3d-printing/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/10/649-1.jpg" height="102" width="133" border="0" align="left" hspace="4" vspace="4" alt="649-1" /></a><br />
+Every Thursday is <a href="http://www.adafruit.com/blog/category/3d-printing/">#3dthursday</a> here at Adafruit! The DIY 3D printing community has passion and dedication for making solid objects from digital models. Recently, we have noticed electronics projects integrated with 3D printed enclosures, brackets, and sculptures, so each Thursday we celebrate and highlight these bold pioneers!</p>
+<p>Have you considered building a 3D project around an <a href="http://www.adafruit.com/category/17">Arduino</a> or other microcontroller? How about printing a bracket to mount your <a href="http://www.adafruit.com/category/105">Raspberry Pi</a> to the back of your HD monitor? And don&#8217;t forget the countless <a href="http://www.adafruit.com/category/37">LED projects</a> that are possible when you are modeling your projects in 3D!</p>
+<p>The <a href="http://learn.adafruit.com">Adafruit Learning System</a> has dozens of great tools to get you well on your way to creating incredible works of engineering, interactive art, and design with your 3D printer! If you&#8217;ve made a cool project that combines 3D printing and electronics, be sure to let us know, and we&#8217;ll <a href="http://www.adafruit.com/blog/category/3d-printing/">feature</a> it here!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61465</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Hoekentronics Launches BotQueue v0.3 #3dthursday</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/hoekentronics-launches-botqueue-v0-3-3dthursday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/hoekentronics-launches-botqueue-v0-3-3dthursday/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 06:00:00 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61459</guid>
+		<description><![CDATA[Exciting new developments from Zach Hoeken Smith&#8217;s BotQueue.com project: &#8220;Webcams, Pausing, and More!&#8221; Coming quickly on the heels of the last release, the latest v0.3 release of BotQueue adds some really exciting new features that make it much nicer to use. I hope you enjoy this new version as much as I do. Be careful [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/DevQueue-Internets-+-Digital-Fabrication-Win-2.jpg" alt="DevQueue Internets + Digital Fabrication Win 2" title="DevQueue-Internets-+-Digital-Fabrication-Win-2.jpg" border="0" width="600" height="455" /></p>
+<p>Exciting new developments from Zach Hoeken Smith&#8217;s <a href="http://www.hoektronics.com/2013/04/24/botqueue-v0-3-webcams-pausing-and-more/">BotQueue.com</a> project: &#8220;Webcams, Pausing, and More!&#8221;</p>
+<blockquote><p>Coming quickly on the heels of the <a href="http://www.hoektronics.com/2013/04/08/botqueue-update-raspberry-pi-temperature-dashboard/">last release</a>, the latest v0.3 release of BotQueue adds some really exciting new features that make it much nicer to use. I hope you enjoy this new version as much as I do. Be careful though, the new webcam feature is addictive – you can watch your machine from anywhere you have an internet connection and a display.</p>
+<p>If you want to take advantages of the new BotQueue, you&rsquo;ll need to upgrade the BotQueue client, bumblebee. See instructions at the end of the article for how to do that.</p>
+<p><strong>Webcam Support</strong></p>
+<p>This is the biggest new feature for BotQueue, and the one that I&rsquo;m most excited about. The BotQueue client, Bumblebee, can now grab webcam images and upload them to the BotQueue site. This allows you to be able to see whats happening on your bot through the BotQueue.com website. That&rsquo;s right, you can see how your bot is printing from any device (computer, phone, tablet, etc) from anywhere in the world.</p>
+<p>I&rsquo;ve also modified the dashboard and various pages throughout the website to support showing the webcams. The default dashboard view is now large thumbnail images, although you can switch to medium, small, and the old list-style view of your bots. BotQueue will also save the final image of each job so you can have a historical view of how each print turned out. In the future, we&rsquo;ll even be able to automatically create timelapse videos of each job.</p>
+<p>In order to add webcam support, please see the <a href="http://www.botqueue.com/help">help page</a> with information on how to configure bumblebee to start capturing and uploading webcam images….</p></blockquote>
+<p><a href="http://www.hoektronics.com/2013/04/24/botqueue-v0-3-webcams-pausing-and-more/">Read more.</a></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/LiveDashboard.png" alt="LiveDashboard" title="LiveDashboard.png" border="0" width="600" height="248" /></p>
+<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/Leaderboard.png" alt="Leaderboard" title="Leaderboard.png" border="0" width="600" height="198" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61459</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>From the mail bag&#8230;</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/from-the-mail-bag-93/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/from-the-mail-bag-93/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 05:00:22 +0000</pubDate>
+		<dc:creator>Matt</dc:creator>
+				<category><![CDATA[mail bag]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=40646</guid>
+		<description><![CDATA[From the mail bag! I just like to thank Adafruit for the exceptional job on: 1. Product variety 2. Product documentation 3. Shipping 4. General support Thank you very much !!! Via the forum!]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.adafruit.com/blog/category/mailbag/"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2012/03/adafruit_mailbag.jpg" alt="Adafruit" width="600" height="431" border="0" hspace="4" vspace="4" /></a></p>
+<p><a href="http://www.adafruit.com/blog/category/mailbag/">From the mail bag!</a></p>
+<blockquote><p>I just like to thank Adafruit for the exceptional job on:</p>
+<p>1. Product variety<br />
+2. Product documentation<br />
+3. Shipping<br />
+4. General support</p>
+<p>Thank you very much !!!</p></blockquote>
+<p>Via the <a href="http://forums.adafruit.com/viewtopic.php?f=10&amp;t=33100&amp;p=163983" target="_blank">forum</a>!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=40646</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Drone proposal</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/drone-proposal/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/drone-proposal/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 04:00:14 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[educational mini UAVs]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61450</guid>
+		<description><![CDATA[Fresno Wedding Photographer http://www.chrisgeigerphoto.com. Jason proposes to his girlfriend Christina at Alamo Square park in San Francisco on April 7th 2013. Jason told Christina that he wanted to take some photos of her in the park. During the photo session the engagement ring flies in on top of a small RC helicopter and he proposes [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/ai2bwOuLGAQ?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<blockquote><p>
+Fresno Wedding Photographer <a href="http://www.chrisgeigerphoto.com">http://www.chrisgeigerphoto.com</a>. Jason proposes to his girlfriend Christina at Alamo Square park in San Francisco on April 7th 2013. Jason told Christina that he wanted to take some photos of her in the park. During the photo session the engagement ring flies in on top of a small RC helicopter and he proposes to her on the spot. Jason was shooting with a 5D mark II. Two aerial cameras were used on the helicopter, a Gopro Hero 3 black and an 808 keychain camera. Additional ground footage shot with my 5D mark III.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61450</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>GeekDad&#8217;s Ken Denmead &#8211; now Editorial Director of Make</title>
+		<link>http://www.adafruit.com/blog/2013/04/25/geekdads-ken-denmead-now-editorial-director-of-make/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/25/geekdads-ken-denmead-now-editorial-director-of-make/#comments</comments>
+		<pubDate>Thu, 25 Apr 2013 04:00:11 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[maker business]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61453</guid>
+		<description><![CDATA[A Big Congratulations to GeekDad&#8217;s Ken Denmead! @ GeekDad. Ken has accepted a position as the Editorial Director of Make. If you&#8217;re not familiar with Make, here&#8217;s a quick summary. Make is a magazine (both print and digital). It&#8217;s also a blog – makezine.com. It has a retail arm — MakerShed. And it also just [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/cropped-logo-geekdad.jpg" height="255" width="468" border="0" hspace="4" vspace="4" alt="Cropped-Logo-Geekdad" /></p>
+<p><a href="http://geekdad.com/2013/04/a-big-congratulations-to-geekdads-ken-denmead/">A Big Congratulations to GeekDad&#8217;s Ken Denmead! @ GeekDad</a>.</p>
+<blockquote><p>
+Ken has accepted a position as the Editorial Director of Make.</p>
+<p>If you&rsquo;re not familiar with Make, here&rsquo;s a quick summary. Make is a magazine (both print and digital). It&rsquo;s also a blog – makezine.com. It has a retail arm — MakerShed. And it also just happens to be the host of an event that bills itself as The Greatest Show (and Tell) on Earth. And if you&rsquo;ve never attended a Maker Faire, you&rsquo;ll just have to take my word for it that it&rsquo;s two days you&rsquo;ll never forget.<br />
+And Ken is now a part of that family.</p>
+<p>So, what does this mean for GeekDad? Well, it does mean a change in leadership. Ken will be stepping down as Editor-in-Chief, and taking charge will be Matt Blum. The writing staff at GeekDad isn&rsquo;t worried, and while we&rsquo;re all congratulating Ken, we&rsquo;re also congratulating Matt. As I told Ken in an email, he&rsquo;s now involved with two of my most favorite resources.
+</p></blockquote>
+<p>Big news in the maker world!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61453</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Laser Forest by Marshmallow Laser Feast</title>
+		<link>http://www.adafruit.com/blog/2013/04/24/laser-forest-by-marshmallow-laser-feast/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/24/laser-forest-by-marshmallow-laser-feast/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 22:40:39 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[art]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61448</guid>
+		<description><![CDATA[&#8216;Forest&#8217; is a large interactive musical laser installation. Commissioned by and premiered at the STRP Biennale in Eindhoven, this giant interactive forest covers almost 450 square meters and is composed of over 150 musical &#8216;trees&#8217; made of rods and lasers. The audience can freely explore the space, physically tapping, shaking, plucking, and vibrating the trees [...]]]></description>
+				<content:encoded><![CDATA[<p><iframe width="600" height="338" src="http://www.youtube.com/embed/oRIP_i-TC5o?rel=0" frameborder="0" allowfullscreen></iframe></p>
+<blockquote><p>
+&#8216;Forest&#8217; is a large interactive musical laser installation. Commissioned by and premiered at the STRP Biennale in Eindhoven, this giant interactive forest covers almost 450 square meters and is composed of over 150 musical &#8216;trees&#8217; made of rods and lasers. The audience can freely explore the space, physically tapping, shaking, plucking, and vibrating the trees to trigger sounds and lasers. Due to the natural springiness of the material, interacting with the trees causes them to swing and oscillate, creating vibrating patterns of light and sound. Each tree is tuned to a specific tone, creating harmonious sounds spatialized and played through a powerful surround sound setup. </p>
+<p>The installation is designed to bring out in adults those feelings of curiosity and wonderment which are so alive and evident in children.</p>
+<p>Forest exists as a tourable interactive installation, open to the public, and also a performance. The performance premiered at the STRP Biennale opening, consisting of 12 local children between the age of 8 and 12 years old. They were choreographed to move around the space, strumming and triggering the lasers and sounds.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61448</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>NEW PRODUCT &#8211; Welcome to your Awesome Robot by Viviane Schwarz</title>
+		<link>http://www.adafruit.com/blog/2013/04/24/new-product-welcome-to-your-awesome-robot-by-viviane-schwarz/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/24/new-product-welcome-to-your-awesome-robot-by-viviane-schwarz/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 20:18:31 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[books]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61439</guid>
+		<description><![CDATA[NEW PRODUCT &#8211; Welcome to your Awesome Robot by Viviane Schwarz &#8211; This is a early-learning activity book for Young Makers (sug. 5-7 years) with some cut-out/popsicle-stick/glue/rubber-band type projects. No electronics and soldering so it&#8217;s very simple and safe. We think it&#8217;s an adorable introduction to having robot friends. From the publisher: &#8220;Build your very [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.adafruit.com/product/1340"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/WAR_slide02-600x399.jpg" alt="" title="WAR_slide02" width="600" height="399" class="alignright size-large wp-image-61442" /></a></p>
+<p><a href="http://www.adafruit.com/product/1340">NEW PRODUCT &#8211; Welcome to your Awesome Robot by Viviane Schwarz</a> &#8211; This is a early-learning activity book for Young Makers (sug. 5-7 years) with some cut-out/popsicle-stick/glue/rubber-band type projects. No electronics and soldering so it&#8217;s very simple and safe. We think it&#8217;s an adorable introduction to having robot friends.</p>
+<p><a href="http://www.adafruit.com/product/1340"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/WAR_slide13-600x399.jpg" alt="" title="WAR_slide13" width="600" height="399" class="alignright size-large wp-image-61443" /></a></p>
+<p>From the publisher: &#8220;Build your very own awesome automaton step by step from a base unit to the towering, terrifying, tremor-triggering robot of your dreams. This book provides everything you need to create a robot costume from objects you&rsquo;d normally just throw out and have a fun day in!</p>
+<p><a href="http://www.adafruit.com/product/1340"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/WAR_slide08-600x399.jpg" alt="" title="WAR_slide08" width="600" height="399" class="alignright size-large wp-image-61444" /></a></p>
+<p>Designed to be enjoyed by children with an adult on hand – this book provides perfect material for a fun family activity day or a kids&rsquo; workshop. Viviane Schwarz has illustrated hilarious comics throughout the book to explain the blueprint instruction pages, so this is just as much a story as it is an activity book.&#8221;</p>
+<p>This is a large format, 32 page book with many big pictures and diagrams.</p>
+<p><a href="http://www.adafruit.com/product/1340">In stock and shipping now!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61439</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>NEW PRODUCTS &#8211; LPCXpresso LPC1769 &amp; LPCXpresso LPC1347 Development Boards with LPC-Link</title>
+		<link>http://www.adafruit.com/blog/2013/04/24/new-products-lpcxpresso-lpc1769-lpcxpresso-lpc1347-development-boards-with-lpc-link/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/24/new-products-lpcxpresso-lpc1769-lpcxpresso-lpc1347-development-boards-with-lpc-link/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 19:56:51 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[arm development]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61416</guid>
+		<description><![CDATA[NEW PRODUCT &#8211; LPCXpresso LPC1769 Development Board with LPC-Link &#8211; If you want a fast, modern MCU that has just about everything covered for you, the ARM Cortex-M3 based LPC1769 is a pretty reliable choice! 120MHz ARM Cortex-M3 MCU with 512 kB flash and 64 kB SRAM Full-Speed (12 Mb/s) USB 2.0 with on-chip PHY [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.adafruit.com/product/1341"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1341_LRG-600x461.jpg" alt="" title="1341_LRG" width="600" height="461" class="alignright size-large wp-image-61419" /></a></p>
+<p><a href="http://www.adafruit.com/product/1341">NEW PRODUCT &#8211; LPCXpresso LPC1769 Development Board with LPC-Link</a> &#8211; If you want a fast, modern MCU that has just about everything covered for you, the ARM Cortex-M3 based LPC1769 is a pretty reliable choice!</p>
+<ul>
+<li>120MHz ARM Cortex-M3 MCU with 512 kB flash and 64 kB SRAM</li>
+<li>Full-Speed (12 Mb/s) USB 2.0 with on-chip PHY support USB device, host and OTG</li>
+<li>Ethernet support (with dedicated DMA for high speed memory transfers)</li>
+<li>Four UARTs, CAN 2.0, Three SPI buses, Three I2C buses, and I2S for audio</li>
+<li>12-bit ADC and 10-bit DAC</li>
+<li>Four HW timers, including one motor control PWM timer with support for three-phase motor control</li>
+<li>Quadrature encoder interface</li>
+<li>RTC with a separate power domain to keep track of the time even when the board is powered down</li>
+</ul>
+<p>With a modern, highly efficient Cortex-M3 core, the LPC1769 packs a lot of punch (single cycle 32-bit multiply, etc.), and has all the peripherals you&#8217;re likely to need to get just about any sensor hooked up to it, get some motors whirling, and have it talking to the outside world via USB, Ethernet, CAN or UART.</p>
+<p><a href="http://www.adafruit.com/product/1341"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1341bottom_LRG-600x461.jpg" alt="" title="1341bottom_LRG" width="600" height="461" class="alignright size-large wp-image-61422" /></a></p>
+<p>While the LPC1769 doesn&#8217;t have the super-handy USB bootloader found on it&#8217;s newer, smaller cousin the LPC1347, it does still have a UART-based bootloader built into the ROM memory, so it&#8217;s almost impossible to brick the MCU.</p>
+<p>The LPCXpresso board includes an on-board SWD/JTAG debugger than can be used to debug your LPC1769 project in NXP&#8217;s free LPCXpresso IDE (free for up to 128KB), but you can also debug the board with any other SWD or JTAG debugger using the optional SWD connector, or program the boards via the free Flash Magic tool or an open source utility like lpc2isp.</p>
+<p><a href="http://www.adafruit.com/product/1341"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1341isobottom_LRG-600x461.jpg" alt="" title="1341isobottom_LRG" width="600" height="461" class="alignright size-large wp-image-61425" /></a></p>
+<p>The LPC1769 isn&#8217;t the most beginner friendly devices out there, but for those of us who have microcontroller experience and want to step it up, they are an excellent introduction to proper embedded design and development. Given the popularity of these chips there are quite a few resources out there for them, such as ports of popular open source RTOSes like FreeRTOS, and stacks like LWIP or uIP.</p>
+<p>Best of all, this is the same MCU that&#8217;s used on most of the mbed boards out there, and the mbed source code has recently been republished under an open source license, so you have a large pool of proven, well-thought-out code to take advantage of trying to build something amazing with this kitchen-sink of an MCU!</p>
+<p><a href="http://www.adafruit.com/product/1341"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1341top_LRG-600x461.jpg" alt="" title="1341top_LRG" width="600" height="461" class="alignright size-large wp-image-61426" /></a></p>
+<p>Technical Details:</p>
+<li>Datasheet: <a href="http://www.nxp.com/documents/data_sheet/LPC1769_68_67_66_65_64_63.pdf">http://www.nxp.com/documents/data_sheet/LPC1769_68_67_66_65_64_63.pdf</a></li>
+<li>User Manual: <a href="http://www.nxp.com/documents/user_manual/UM10360.pdf">http://www.nxp.com/documents/user_manual/UM10360.pdf</a></li>
+<li>Chip Overview (app notes, etc.): <a href="http://www.nxp.com/products/microcontrollers/cortex_m3/LPC1769FBD100.html">http://www.nxp.com/products/microcontrollers/cortex_m3/LPC1769FBD100.html</a></li>
+<li>Weight: 19g</li>
+<li>Dimensions: 34.24mm / 1.34&#8243; x 138.39mm / 5.44&#8243;</li>
+</ul>
+<p><a href="http://www.adafruit.com/product/1341">In stock and shipping now!</a></p>
+<hr />
+<p><a href="http://www.adafruit.com/product/1342"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1342_LRG-600x461.jpg" alt="" title="1342_LRG" width="600" height="461" class="alignright size-large wp-image-61429" /></a></p>
+<p><a href="http://www.adafruit.com/product/1342">NEW PRODUCT &#8211; LPCXpresso LPC1347 Development Board with LPC-Link</a> &#8211; The LPC1347 LPCXpresso board is part of NXP&#8217;s LPCXpresso eco-system of low cost development boards based around the free (GCC and Eclipse-based) LPCXpresso IDE. All LPCXpresso boards include an on-board hardware SWD/JTAG debugger, so you don&#8217;t need any additional hardware (other than a USB mini-B cable) to start some serious debugging (including setting and stepping through breakpoints, etc.).</p>
+<p>The LPCXpresso boards are actually two separate boards, and the debugger (called the LPC-Link) can actually be separated from the LPC1347 MCU half, but this is only useful if you plan to use the debugger with other boards inside the LPCXpresso IDE. The MCU side of the board breakout out every pin on the LPC1347, and is actually a really nice dev board because it&#8217;s so minimal! You can do what you want with the MCU, without all kinds of conflicts, and it comes in a pretty breadboard friendly size.</p>
+<p><a href="http://www.adafruit.com/product/1342"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1342bottom_LRG-600x461.jpg" alt="" title="1342bottom_LRG" width="600" height="461" class="alignright size-large wp-image-61432" /></a></p>
+<p>This LPCXpresso is for the LPC1347:</p>
+<ul>
+<li>72MHz ARM Cortex-M3 MCU with 64 KB flash and 12 KB SRAM</li>
+<li>Full-Speed (12Mb/s) USB 2.0, with ROM-based drivers for USB HID, MSC, CDC and DFU</li>
+<li>Built in USB bootloader makes it easy to update the flash on any PC (no extra HW or SW required!)</li>
+<li>4KB internal EEPROM</li>
+<li>12-bit 500k sample/s ADC, 4 HW timers, 2 SPI ports, I2C, and USART</li>
+</ul>
+<p>Looking for an affordable general-purpose, USB-enabled MCU that packs a lot of punch in a small package? The LPC1347 is an excellent choice with a highly efficient ARM Cortex-M3 core at up to 72MHz, 64KB flash and 12KB SRAM. What makes it stand out in the crowd of small M3 MCUs? It has built in ROM-based USB drivers that make it relatively easy to implement USB, but more importantly it includes a super-handy USB bootloader that makes the device appear as a USB Mass Storage device with 64KB flash. To update your firmware, just drag and drop your binaries files onto the flash drive, reset, and voila &#8230; your device is programmed! No extra HW, no special software, and no worries about being able to de-brick your device in the future!</p>
+<p><a href="http://www.adafruit.com/product/1342"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1342isobottom_LRG-600x461.jpg" alt="" title="1342isobottom_LRG" width="600" height="461" class="alignright size-large wp-image-61433" /></a></p>
+<p>In traditional Adafruit fashion, though, we wouldn&#8217;t just throw something fun at you and say &#8216;have at it!&#8217;. <a href="https://github.com/microbuilder/LPC11U_LPC13U_CodeBase">KTOWN has put together a completely open source code base for the LPC1347 (and it&#8217;s Cortex M0-based cousins the LPC11U24 and LPC11U37) that makes it easy to get started with this board and MCU from the command-line (using a Makefile), or with several modern IDEs (NXP&#8217;s free LPCXpresso IDE, Rowley Associates Crossworks for ARM, The free cross-platform CodeLite IDE, as well as experimental project files for Keil)</a>. The code base also includes drivers for a lot of popular Adafruit sensors, like the ADXL345, the BMP085, some OLED and graphic displays, and lot of other goodies!</p>
+<p>If you&#8217;re new to ARM, and need a bit of hand-holding to get started, this is probably the board you want to pick up: its got that nice built in USB boot-loader, lots of example code, GCC support and a debugger built in.</p>
+<p><a href="http://www.adafruit.com/product/1342"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1342top_LRG-600x461.jpg" alt="" title="1342top_LRG" width="600" height="461" class="alignright size-large wp-image-61434" /></a></p>
+<p>Technical Details:</p>
+<ul>
+<li>Weight: 19.78g</li>
+<li>Dimensions: 34.33mm / 1.35&#8243; x 138.41mm / 5.44&#8243;</li>
+</ul>
+<p><a href="http://www.adafruit.com/product/1342">In stock and shipping now!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61416</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>NEW PRODUCT &#8211; Hacking Electronics by Simon Monk</title>
+		<link>http://www.adafruit.com/blog/2013/04/24/new-product-hacking-electronics-by-simon-monk/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/24/new-product-hacking-electronics-by-simon-monk/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 19:03:15 +0000</pubDate>
+		<dc:creator>jeff</dc:creator>
+				<category><![CDATA[books]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61409</guid>
+		<description><![CDATA[NEW PRODUCT &#8211; Hacking Electronics by Simon Monk &#8211; You don&#8217;t need an electrical engineering degree to start hacking electronics! This intuitive guide shows how to wire, disassemble, tweak, and re-purpose everyday devices quickly and easily. Packed with full-color illustrations, photos, and diagrams, Hacking Electronics teaches by doing&#8211;each topic features fun, easy-to-follow projects. Discover how [...]]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.adafruit.com/products/1339#Description"><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1339_LRG-600x450.jpg" alt="" title="1339_LRG" width="600" height="450" class="alignright size-large wp-image-61410" /></a></p>
+<p><a href="http://www.adafruit.com/products/1339#Description">NEW PRODUCT &#8211; Hacking Electronics by Simon Monk</a> &#8211; You don&#8217;t need an electrical engineering degree to start hacking electronics! This intuitive guide shows how to wire, disassemble, tweak, and re-purpose everyday devices quickly and easily. Packed with full-color illustrations, photos, and diagrams, Hacking Electronics teaches by doing&#8211;each topic features fun, easy-to-follow projects. Discover how to hack sensors, accelerometers, remote controllers, ultrasonic rangefinders, motors, stereo equipment, microphones, and FM transmitters. The final chapter contains useful information on getting the most out of cheap or free bench and software tools.</p>
+<ul>
+<li>Safely solder, join wires, and connect switches</li>
+<li>Identify components and read schematic diagrams</li>
+<li>Understand the how and why of electronics theory</li>
+<li>Work with transistors, LEDs, and laser diode modules</li>
+<li>Power your devices with a/c supplies, batteries, or solar panels</li>
+<li>Get up and running on Arduino boards and pre-made modules</li>
+<li>Use sensors to detect everything from noxious gas to acceleration</li>
+<li>Build and modify audio amps, microphones, and transmitters</li>
+<li>Fix gadgets and scavenge useful parts from dead equipment</li>
+</ul>
+<p>This 300 page book is a nice review of the most common skills and techniques a maker needs to hack electronics, and the color photos are awesome.</p>
+<p><a href="http://www.adafruit.com/products/1339#Description">In stock and shipping now!</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61409</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>MarioChron Ported to Pebble Watch #WearableWednesday</title>
+		<link>http://www.adafruit.com/blog/2013/04/24/mariochron-ported-to-pebble-watch-wearablewednesday/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/24/mariochron-ported-to-pebble-watch-wearablewednesday/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 15:57:25 +0000</pubDate>
+		<dc:creator>Becky Stern</dc:creator>
+				<category><![CDATA[clocks & watches]]></category>
+		<category><![CDATA[wearables]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61407</guid>
+		<description><![CDATA[Trammel Hudson writes: A year ago Super Awesome Sylvia demoed MarioChron for the Adafruit MonoChron dekstop clock kit. It&#8217;s really neat — once per minute Mario hits the box and receives a coin, so his score is equal to the time. Now thanks to the GPL license on the code, you can carry it on [...]]]></description>
+				<content:encoded><![CDATA[<p><object type="application/x-shockwave-flash" data="http://www.flickr.com/apps/video/stewart.swf?v=109786" width="600" height="341" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param name="flashvars" value="intl_lang=en-us&amp;photo_secret=8a710d9ddc&amp;photo_id=8525725229&amp;hd_default=false" /><param name="movie" value="http://www.flickr.com/apps/video/stewart.swf?v=109786" /><param name="bgcolor" value="#000000" /><param name="allowFullScreen" value="true" /><embed src="http://www.flickr.com/apps/video/stewart.swf?v=109786" type="application/x-shockwave-flash" width="600" height="341" flashvars="intl_lang=en-us&amp;photo_secret=8a710d9ddc&amp;photo_id=8525725229&amp;hd_default=false" bgcolor="#000000" allowfullscreen="true" /></object></p>
+<p><a href="http://www.nycresistor.com/2013/04/23/mariochron-pebble/">Trammel Hudson writes:</a></p>
+<blockquote><p>A year ago Super Awesome Sylvia demoed <a href="http://sylviashow.com/episodes/s2/e3/mini/monochron">MarioChron</a> for the <a href="http://www.adafruit.com/blog/2011/09/06/mariochron-monochron-clock-kit-with-customer-made-super-mario-clock-mod/">Adafruit MonoChron</a> dekstop clock kit. It&rsquo;s really neat — once per minute Mario hits the box and receives a coin, so his score is equal to the time. Now thanks to the GPL license on the code, you can carry it on your wrist with the port of MarioChron to the <a href="http://getpebble.com/">Pebble Smart Watch</a>.</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61407</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Nano-Nonobjective-Oriented Ontographs and Qubit-Built Quilts &#8211; Shane Hope</title>
+		<link>http://www.adafruit.com/blog/2013/04/24/nano-nonobjective-oriented-ontographs-and-qubit-built-quilts-shane-hope/</link>
+		<comments>http://www.adafruit.com/blog/2013/04/24/nano-nonobjective-oriented-ontographs-and-qubit-built-quilts-shane-hope/#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 13:56:25 +0000</pubDate>
+		<dc:creator>adafruit</dc:creator>
+				<category><![CDATA[3D printing]]></category>
+		<category><![CDATA[art]]></category>
+
+		<guid isPermaLink="false">http://www.adafruit.com/blog/?p=61375</guid>
+		<description><![CDATA[Nano-Nonobjective-Oriented Ontographs and Qubit-Built Quilts &#8211; Shane Hope via Bruce - Winkleman Gallery is very pleased to present Nano-Nonobjective-Oriented Ontographs and Qubit-Built Quilts,our third solo exhibition by New York artist Shane Hope.Featuring two series of new work, the exhibition runs March 29 through May 4, 2013. In the gallery project space, we will also present [...]]]></description>
+				<content:encoded><![CDATA[<p><img src="http://www.adafruit.com/adablog/wp-content/uploads/2013/04/1366732521-1.jpg" height="799" width="600" border="0" hspace="4" vspace="4" alt="1366732521-1" /></p>
+<p><a href="http://www.winkleman.com/exhibitions/782">Nano-Nonobjective-Oriented Ontographs and Qubit-Built Quilts &#8211; Shane Hope</a> via <a href="http://feedproxy.google.com/~r/wiredbeyond/~3/ENAJ59lAGWw/">Bruce</a> -</p>
+<blockquote><p>
+Winkleman Gallery is very pleased to present Nano-Nonobjective-Oriented Ontographs and Qubit-Built Quilts,our third solo exhibition by New York artist Shane Hope.Featuring two series of new work, the exhibition runs March 29 through May 4, 2013. In the gallery project space, we will also present a selection of Hope&rsquo;s “Folk-Computronium Laptops.”</p>
+<p>Accelerating progress in nanometer-scale science and technology continues to expand the toolkit with which we can eventually assemble things from the atom up. This will potentially give rise to nearly costless systems for controlling the structure of matter itself. In the interim, the 3D printing revolution is said to have already arrived, promising content-to-print solutions and on-demand means of increasingly customizable production. But molecular manufacturing and 3D printing won&rsquo;t merely make for an end to material scarcity as we know it. These so-called “abundance” technologies will make for objecthoods the likes of which we&rsquo;ve not known and maybe can&rsquo;t know this side of some sort of technological singularity (i.e, the theoretical emergence of superintelligence through technological means beyond which events cannot be predicted). It&rsquo;s in anticipation of that reality race that Shane Hope&rsquo;s work starts.
+</p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://www.adafruit.com/adablog/?feed=rss2&#038;p=61375</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

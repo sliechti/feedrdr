@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">Recent Questions - Electrical Engineering Stack Exchange</title>
+    <link rel="self" href="http://electronics.stackexchange.com/feeds" type="application/atom+xml" />
+    <link rel="alternate" href="http://electronics.stackexchange.com/questions" type="text/html" />
+    <subtitle>most recent 30 from electronics.stackexchange.com</subtitle>
+    <updated>2013-04-27T22:18:07Z</updated>
+    <id>http://electronics.stackexchange.com/feeds</id>
+    <creativeCommons:license>http://www.creativecommons.org/licenses/by-sa/3.0/rdf</creativeCommons:license> 
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67402</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">How to solve this problem?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="arduino"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="pic"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="basic-stamp"/>
+        <author>
+            <name>jimmis98</name>
+            <uri>http://electronics.stackexchange.com/users/23036</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67402/how-to-solve-this-problem" />
+        <published>2013-04-27T20:54:27Z</published>
+        <updated>2013-04-27T21:36:54Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I am part of the team who makes the scenery for a theatrical play at school. What is needed to be done is to have a scoreboard in the middle of the room, that one will control from backstage. The scoreboard will have two 3-digit numbers, controlled individually. Whenever the score changes, a little irritating sound should ... sound. &lt;/p&gt;
+
+&lt;p&gt;What is the easiest, more efficient and cheapest way to do this? I have found how to make the scoreboard (MANY LEDs, some resistors, transistors, shift registers, an external power-source and an Arduino), but I have almost no idea about the rest. What should I do? &lt;/p&gt;
+
+&lt;p&gt;I already have the Arduino, a Basic Stamp, a Raspberry Pi (to play the sounds) and a PIC (PIC16C63, but I have no way of programming it)s and an OlinuXino (Yes I am desperate) lying around. I have 3 weeks to finish it. My budget is very low (30 euros). What is the least minimum I need? Where can I buy it?&lt;/p&gt;
+
+&lt;p&gt;If you mention a shop, please take into account that I live in Greece, so the e-shop should ship internationally.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67400</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">Mimic a condenser mic with a dynamic mic and a FET</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="microphone"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="telephone"/>
+        <author>
+            <name>Ed Davis</name>
+            <uri>http://electronics.stackexchange.com/users/23146</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67400/mimic-a-condenser-mic-with-a-dynamic-mic-and-a-fet" />
+        <published>2013-04-27T20:14:42Z</published>
+        <updated>2013-04-27T20:14:42Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I read all I could find here before posting, so far nothing is close enough to the question.&lt;/p&gt;
+
+&lt;p&gt;Assume a dynamic mic, kind of like the one Radio Shack sells for old school tape players, and assume an Android/iPhone/Blackberry with the usual TRRS connector.&lt;/p&gt;
+
+&lt;p&gt;In theory, a dynamic mic can be used in place of a condenser mic by means of a simple 3-component transistor circuit to raise the level of the dynamic to that of a condenser mic.  Thom Enghdal is famous for his circuits similar to that, but Thom and I been chatting for a couple weeks about this and we can&#39;t find a way to make the dynamic work on a phone.  &lt;/p&gt;
+
+&lt;p&gt;The reason is that the phone never switches over to external mic.  Most TRRS headsets on phones use condenser mics, and they of course will switch to external easily, but plug in a dynamic mic, even if the output looks like the 1.6kOhm the phone is expecting, and you will be guaranteed to get nothing into the phone.&lt;/p&gt;
+
+&lt;p&gt;Any thoughts that Thom and I might have missed?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67396</id>
+        <re:rank scheme="http://electronics.stackexchange.com">2</re:rank>
+        <title type="text">Drive MOSFET from LBO output of switching regulator</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="voltage-regulator"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="mosfet"/>
+        <author>
+            <name>James</name>
+            <uri>http://electronics.stackexchange.com/users/23147</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67396/drive-mosfet-from-lbo-output-of-switching-regulator" />
+        <published>2013-04-27T19:52:37Z</published>
+        <updated>2013-04-27T20:37:55Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;Is it safe to use a MOSFET with gate connected to the low battery comparator output of this TPS61027 switching regulator in order to disconnect the load once batteries become low? The LBO is open-drain, and recommends a 1M-ohm pullup to the 5V boost output line (I&#39;m also wondering whether that resistor is a bit too big to effectively turn on the MOSFET when the open-drain is not active [no low battery condition]). Datasheet with example schematic: &lt;a href=&quot;http://www.ti.com/lit/ds/symlink/tps61027.pdf&quot; rel=&quot;nofollow&quot;&gt;http://www.ti.com/lit/ds/symlink/tps61027.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67391</id>
+        <re:rank scheme="http://electronics.stackexchange.com">3</re:rank>
+        <title type="text">Does this use of IR2183 as high-side n-channel gate driver work?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="mosfet"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="boost"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="gate-driver"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="bootstrap"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="ir2183"/>
+        <author>
+            <name>Jon Watte</name>
+            <uri>http://electronics.stackexchange.com/users/8494</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67391/does-this-use-of-ir2183-as-high-side-n-channel-gate-driver-work" />
+        <published>2013-04-27T19:30:02Z</published>
+        <updated>2013-04-27T21:53:31Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I&#39;m building a switching power supply taking 12V to 19V at 3A max out. I&#39;ve already built one of these using a Schottky diode for the rectifier, but this time I&#39;m thinking of trying a high-side-switched N-channel as the rectifier to reduce losses. The end result is to power a small computer based on a battery input (range 9.9V -&gt; 16.8V, 3S or 4S LiPo.)&lt;/p&gt;
+
+&lt;p&gt;The battery circuit is separately fused/switched; this is the boost power supply part only.&lt;/p&gt;
+
+&lt;p&gt;My question is: The MOSFET driver IR2183 has a &quot;typical circuit&quot; that ties the VS signal for the bootstrap capacitor to the load in a different way than I&#39;m doing here. Specifically, it shows the load as connected between the source and drain of the two MOSFETs, whereas I tie them together to provide a single output. Will the 2183 still properly bootstrap the gate drive of Q4? My guess is &quot;yes&quot; but I&#39;d like a double-check by someone who&#39;s ideally done this before :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/dmSVp.png&quot; alt=&quot;MC34063 and IR2183 based boost converter&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.irf.com/product-info/datasheets/data/ir2183.pdf&quot; rel=&quot;nofollow&quot;&gt;IR2183 datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.onsemi.com/pub_link/Collateral/MC34063A-D.PDF&quot; rel=&quot;nofollow&quot;&gt;MC34063 datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67388</id>
+        <re:rank scheme="http://electronics.stackexchange.com">4</re:rank>
+        <title type="text">Controlling an electromagnet strengh with arduino</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="arduino"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="electromagnetism"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="inductance"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="coil"/>
+        <author>
+            <name>repied2</name>
+            <uri>http://electronics.stackexchange.com/users/23143</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67388/controlling-an-electromagnet-strengh-with-arduino" />
+        <published>2013-04-27T18:19:22Z</published>
+        <updated>2013-04-27T18:39:48Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;This previous question &lt;a href=&quot;http://electronics.stackexchange.com/questions/30918/controlling-an-electromagnet-with-arduino&quot;&gt;Controlling an electromagnet with Arduino&lt;/a&gt; deals with binary control (ON or OFF) only.
+On my side I need to choose the strength of the magnetic field.&lt;/p&gt;
+
+&lt;p&gt;It is a home made electromagnet, I managed to power it with 12V DC + a 5ohm resistor which gives around 2Amps. The resulting magnetic field is big enough. The resistor gets hot, but this is bearable.&lt;/p&gt;
+
+&lt;p&gt;Now I want to modulate the intensity between 0 and 2 amps from some sensor reading, so I&#39;m planning to use an Arduino. &lt;/p&gt;
+
+&lt;p&gt;Can I use PWM knowing that the inductive load is significant? Is the frequency choice of the PWM critical? Will I have trouble with Eddy currents in the soft core? (I can&#39;t use laminated core).&lt;/p&gt;
+
+&lt;p&gt;So my question is : is PWM a good choice really? 
+If yes, should I keep the 5ohm resistor? How can I calibrate my PWM frequency + alpha?
+If no, what could I do instead? Which circuit?&lt;/p&gt;
+
+&lt;p&gt;Thanks&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67383</id>
+        <re:rank scheme="http://electronics.stackexchange.com">1</re:rank>
+        <title type="text">adc of atmega32</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="microcontroller"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="avr"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="adc"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="atmega"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="atmel"/>
+        <author>
+            <name>Asad Ismail</name>
+            <uri>http://electronics.stackexchange.com/users/22163</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67383/adc-of-atmega32" />
+        <published>2013-04-27T17:12:31Z</published>
+        <updated>2013-04-27T17:26:12Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I want to use atmega32 adc i want to use its 4 channel (in single end mode)  to convert four analouge signals into digital (one at a time) i have written the c code what i cannot figure out is [b]what should i do with the ground pins of those four analog signals should i common them and give them to controller ground?and why there are two ground pins in atmega 32 (11 and 31) is one of them is for analouge signal ground?[/b]&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67382</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">Motor not working via transistor</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="motor"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="netduino"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="5v"/>
+        <author>
+            <name>Wayneio</name>
+            <uri>http://electronics.stackexchange.com/users/23141</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67382/motor-not-working-via-transistor" />
+        <published>2013-04-27T17:06:04Z</published>
+        <updated>2013-04-27T18:10:06Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I have a very simple circuit as follows&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/9eS3I.png&quot; alt=&quot;schematic&quot;&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;/plugins/schematics?image=http%3a%2f%2fi.stack.imgur.com%2f9eS3I.png&quot;&gt;simulate this circuit&lt;/a&gt; &amp;ndash; Schematic created using &lt;a href=&quot;https://www.circuitlab.com/&quot; rel=&quot;nofollow&quot;&gt;CircuitLab&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;when the motor is connected in this fashion, the netduino activates the transistor, but nothing happens. If i swap the motor with an LED, the LED does light up, so that incidates that the motor isnt getting enough power...&lt;/p&gt;
+
+&lt;p&gt;So i connect the motor direct to power and gnd, and it spins. Does this mean that the transistor is drawing so much current that it is stopping the motor working?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67377</id>
+        <re:rank scheme="http://electronics.stackexchange.com">-4</re:rank>
+        <title type="text">How can you hook up a Motorola power circuit to another motherboard? [closed]</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="power-supply"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="circuit"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="cellphone"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="motherboard"/>
+        <author>
+            <name>Lou</name>
+            <uri>http://electronics.stackexchange.com/users/23140</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67377/how-can-you-hook-up-a-motorola-power-circuit-to-another-motherboard" />
+        <published>2013-04-27T14:59:10Z</published>
+        <updated>2013-04-27T14:59:10Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I have a Motorola razr v, power circuits. I wanted to know, how can you hook up a Motorola power circuit to another motherboard. So it can power and charge the motherboard. How can this be done?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67375</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">Maximum and Minimum delay of combinational logic circuits</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="digital-logic"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="delay"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="synthesis"/>
+        <author>
+            <name>Saurabh</name>
+            <uri>http://electronics.stackexchange.com/users/23139</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67375/maximum-and-minimum-delay-of-combinational-logic-circuits" />
+        <published>2013-04-27T14:35:29Z</published>
+        <updated>2013-04-27T17:19:01Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I am preparing for my exam and I am stuck with this past year question:&lt;/p&gt;
+
+&lt;p&gt;In the circuit shown below, the blocks A, B, C, and S are combination logic circuits. FF1 to FF3 are D flip-flops with same timing, i.e. TClk_Q = 0.2ns, Tsetup= 0.5 ns, and Thold = 1 ns. The clock frequency is 100MHz with 50% duty cycle. The clock skew on clock tree network is 0.2ns.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/6BozF.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;(i) Assume that the worst case delay of the circuit S is 2ns. What is the maximum delay for circuit C?&lt;/p&gt;
+
+&lt;p&gt;(ii) Assume that the fastest arrival time of the circuit S is 0.5ns. What is the minimum delay for circuit C?&lt;/p&gt;
+
+&lt;p&gt;Any help will be really appreciated. Also some explanation to how your arrived to your answer will be helpful.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67370</id>
+        <re:rank scheme="http://electronics.stackexchange.com">2</re:rank>
+        <title type="text">What material should I use to insulate my MOSFET from a heatsink?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="mosfet"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="heatsink"/>
+        <author>
+            <name>skyler</name>
+            <uri>http://electronics.stackexchange.com/users/10190</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67370/what-material-should-i-use-to-insulate-my-mosfet-from-a-heatsink" />
+        <published>2013-04-27T14:00:48Z</published>
+        <updated>2013-04-27T19:27:53Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I have a heat-sink and I want to put two FET&#39;s on it. I know I have to insulate it so the metal showing on it doesn&#39;t connect and create a path. Is there any good everyday material that would work? (ex. plastic bag)  My packaging is TO-247 (irfp250/450) and I found 1 insulator laying around, but not 2 for both of them. So do I need to put the insulator on both MOSFETs or is one good enough?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67369</id>
+        <re:rank scheme="http://electronics.stackexchange.com">-3</re:rank>
+        <title type="text">Simple amplifier Cuircuit</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="transistors"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="audio"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="amplifier"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="darlington"/>
+        <author>
+            <name>Rahul Mitra</name>
+            <uri>http://electronics.stackexchange.com/users/23066</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67369/simple-amplifier-cuircuit" />
+        <published>2013-04-27T13:44:08Z</published>
+        <updated>2013-04-27T14:55:31Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I am new in electrical transistors. My project is to make a 1 watt audio amplifier. Can anyone provide a best amplifier circuit using darlington pair and 2N3904 transistor. i searched google. So please dont refer anything from google. &lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67359</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">Microphones disturbed by capacitance</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="audio"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="microphone"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="capacitance"/>
+        <author>
+            <name>Danio</name>
+            <uri>http://electronics.stackexchange.com/users/23129</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67359/microphones-disturbed-by-capacitance" />
+        <published>2013-04-27T06:05:49Z</published>
+        <updated>2013-04-27T17:53:36Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I&#39;ve used several KE 4-211-2 Sennheiser microphones to assemble a device for acoustic signal analysis. They are connected to a National Instruments data acquisition device with ~1 m long cable and sampling rate is set to 50kHz.&lt;/p&gt;
+
+&lt;p&gt;I&#39;ve added a resistor and a capacitor as described &lt;a href=&quot;http://www.music.mcgill.ca/caml/lib/exe/fetch.php?media=equipment%3ake_4_211_2_gb.pdf&quot; rel=&quot;nofollow&quot;&gt;here&lt;/a&gt;  (2nd page). However after a start of data collection instead of clear acoustic signal I get strong disturbance looking like a step function in low pass filter. It obviously distorts my frequency spectrum. &lt;/p&gt;
+
+&lt;p&gt;After investigation I found out that when NI device is not collecting data, capacitors charge slowly and start of collection probably results in dramatic drop of impedance on inputs. What might be a reason for this behavior and what should I do to make it work properly?&lt;/p&gt;
+
+&lt;p&gt;I think there is everything on this picture&lt;br&gt;
+&lt;img src=&quot;http://i.stack.imgur.com/36VCK.png&quot; alt=&quot;http://tinypic.com/view.php?pic=9tdcmr&amp;amp;s=5&quot;&gt;&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67351</id>
+        <re:rank scheme="http://electronics.stackexchange.com">7</re:rank>
+        <title type="text">Where can I send my 0.005% 1 PPM tempco calibration resistors to find out their &quot;true&quot; value?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="resistors"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="calibration"/>
+        <author>
+            <name>Nick</name>
+            <uri>http://electronics.stackexchange.com/users/23126</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67351/where-can-i-send-my-0-005-1-ppm-tempco-calibration-resistors-to-find-out-their" />
+        <published>2013-04-27T02:07:20Z</published>
+        <updated>2013-04-27T22:03:09Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I imagine there are plenty of labs that do this kind of thing, but any that I can find via google do not disclose pricing and seem geared exclusively towards volume / B2B and are not hobbyist friendly.&lt;/p&gt;
+
+&lt;p&gt;Are there any cheap-ish labs that are friendly to the hobbyist where I could send my precision resistors to find out their true value down to the PPM range or better?  PPB would be ideal.  I&#39;m using these to calibrate my 5.5 and 6.5 digit multimeters.&lt;/p&gt;
+
+&lt;p&gt;Bonus question: I&#39;m interested in getting a calibration report on my precision 5v reference and a few capacitors / inductors as well so a place that can do all of that on the cheap would be ideal.&lt;/p&gt;
+
+&lt;p&gt;edit: additional notes based on clarifying questions people have asked:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;I don&#39;t have a specific need aside from just being able to calibrate my bench multimeters up to 6.5 digits&lt;/li&gt;
+&lt;li&gt;It was recommended that I send a multimeter in for calibration instead of the resistors and use it as a transfer standard. Fair enough, but whether resistors or a meter, this is the heart of the question: where can I get this done cheaply by a place that is hobbyist friendly? I don&#39;t even know where to look.&lt;/li&gt;
+&lt;/ol&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67346</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">Digilent Basys 2 using TinyOS-nesC</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="microcontroller"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="fpga"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="xilinx"/>
+        <author>
+            <name>Moumouni Dera Illa Salifou</name>
+            <uri>http://electronics.stackexchange.com/users/23125</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67346/digilent-basys-2-using-tinyos-nesc" />
+        <published>2013-04-27T01:01:58Z</published>
+        <updated>2013-04-27T13:50:49Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I wonder if it is possible to use the TinyOS-nesC environment to program a Basys2 card? Digilent has developed a driver for this card under Linux but their technical department says that it utilizes Xilinx-VHDL programs for Basys2. Does anyone have an idea?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67343</id>
+        <re:rank scheme="http://electronics.stackexchange.com">3</re:rank>
+        <title type="text">MOSFET as a switch?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="switches"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="mosfet"/>
+        <author>
+            <name>user1406716</name>
+            <uri>http://electronics.stackexchange.com/users/16872</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67343/mosfet-as-a-switch" />
+        <published>2013-04-27T00:35:25Z</published>
+        <updated>2013-04-27T17:50:48Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;In the picture shown, can &quot;Output&quot; be controlled to be 0V or 12V based on &quot;Control&quot;?&lt;/p&gt;
+
+&lt;p&gt;Will be Drain and Source the way it is connected be a problem?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/IQ0ri.png&quot; alt=&quot;P-Channel MOSFET as Switch&quot;&gt;&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67308</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">What does 0 and 1 mean in logic gate (NOT gate to be specific here)</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="digital-logic"/>
+        <author>
+            <name>Muhammad Rafique</name>
+            <uri>http://electronics.stackexchange.com/users/17688</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67308/what-does-0-and-1-mean-in-logic-gate-not-gate-to-be-specific-here" />
+        <published>2013-04-26T19:07:34Z</published>
+        <updated>2013-04-27T20:03:38Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;When the input to a NOT gate is 1, the output is 0. When the input is 0, the output is 1.&lt;/p&gt;
+
+&lt;p&gt;Now, does the input being 0 mean that no current is flowing into the gate and then out of the gate towards the load? And does the input being 1 mean that current is flowing into the gate and then out towards the load?&lt;/p&gt;
+
+&lt;p&gt;If it does mean this then i have a question. When the input of NOT gate is 0 i.e current is not flowing into the NOT gate then how can the output be 1 i.e current is flowing out of the NOT gate.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/67241</id>
+        <re:rank scheme="http://electronics.stackexchange.com">9</re:rank>
+        <title type="text">Why does a simple conductor start to emit EM waves when carrying a signal?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="electromagnetism"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="emc"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="interference"/>
+        <author>
+            <name>quantum231</name>
+            <uri>http://electronics.stackexchange.com/users/20711</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/67241/why-does-a-simple-conductor-start-to-emit-em-waves-when-carrying-a-signal" />
+        <published>2013-04-26T08:51:56Z</published>
+        <updated>2013-04-27T17:12:17Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I understand that on circuit board traces with a clock, if the higher harmonics have sufficient power, it results in electromagnetic waves being emitted from the traces which creates EMI. What I don&#39;t understand is why this happens in the first place? &lt;/p&gt;
+
+&lt;p&gt;Why does a high frequency current have to pass through the conductor for it to emit EM radiation and why does this not happen with low frequency currents? What I understand is that the board trace is essentially starting to behave as an antenna in this case but I do not know the reason.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/66949</id>
+        <re:rank scheme="http://electronics.stackexchange.com">1</re:rank>
+        <title type="text">NiMh or LiPo batteries for unattended charging/usage</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="batteries"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="battery-charging"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="lipo"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="nimh"/>
+        <author>
+            <name>SimpleCoder</name>
+            <uri>http://electronics.stackexchange.com/users/2473</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/66949/nimh-or-lipo-batteries-for-unattended-charging-usage" />
+        <published>2013-04-25T17:19:26Z</published>
+        <updated>2013-04-27T20:12:10Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I&#39;m in the planning stage of a summer project: A WiFi controlled robot for remotely monitoring a shore home. The robot will consist of a 4-wheel platform (4 motors, 1 A stall current each, 7 V), Raspberry Pi Model A + WiFi dongle, and Raspberry Pi camera module.&lt;/p&gt;
+
+&lt;p&gt;Since this robot will be operated while I&#39;m not at the house, I need to be able to remotely recharge it. The plan is to implement something similar to the Roomba&#39;s drive-on charging base:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/szjnG.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;My issue is that I&#39;m unsure which battery chemistry to choose.&lt;/p&gt;
+
+&lt;p&gt;LiPo has the benefit of being lighter, but since their nominal voltage is 3.7 V, I&#39;d have to put two or three packs in series to be able to run my motors (which need 7 V, as I mentioned). But, I know this not recommended because then charging the batteries in series is complicated/unsafe.&lt;/p&gt;
+
+&lt;p&gt;NiMh seems attractive: wide range of voltage/current ratings, not as prone to fireballs, albeit heavier. My thinking is I could build a simple charging base that trickle charges the robot&#39;s NiMh battery. No fast charging is needed (the robot will spend most of its time on the charging base, when not in use anyway).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Summary of requirements:&lt;/strong&gt; rechargeable battery for unattended charging/usage, somewhere in range of 8-12 V, several amp-hours capacity (4-6 Ah, maybe).&lt;/p&gt;
+
+&lt;p&gt;Is my evaluation of this correct - that NiMh seems the way to go? Or should I consider LiPo?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/63679</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">STM32 and GDB - Watchpoint</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="stm32"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="gdb"/>
+        <author>
+            <name>metRo_</name>
+            <uri>http://electronics.stackexchange.com/users/20762</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/63679/stm32-and-gdb-watchpoint" />
+        <published>2013-03-28T14:55:39Z</published>
+        <updated>2013-04-27T18:01:50Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I&#39;m reading the book &lt;a href=&quot;http://www.cs.indiana.edu/~geobrown/book.pdf&quot; rel=&quot;nofollow&quot;&gt;http://www.cs.indiana.edu/~geobrown/book.pdf&lt;/a&gt; and I have a question regarding the Exercise 3.1.2 on page 50.&lt;/p&gt;
+
+&lt;p&gt;It ask to set a watchpoint on i. I set a watchpoint but it never break the code. I tried breakpoint a function as the book said and it worked.&lt;/p&gt;
+
+&lt;p&gt;It is related to tool stlink?&lt;/p&gt;
+
+&lt;p&gt;thanks :)&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/63667</id>
+        <re:rank scheme="http://electronics.stackexchange.com">7</re:rank>
+        <title type="text">Stepper Motor high frequency sound</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="stepper-motor"/>
+        <author>
+            <name>Geo P</name>
+            <uri>http://electronics.stackexchange.com/users/18760</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/63667/stepper-motor-high-frequency-sound" />
+        <published>2013-03-28T13:05:14Z</published>
+        <updated>2013-04-27T22:13:14Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I am using a stepper motor for a gantry setup. When I run the motor above certain speeds, in this case 4rev/sec, it produces a high frequency sort of whinny sound. It is a 4.5A motor and I am running it with 24V.&lt;/p&gt;
+
+&lt;p&gt;If I run the motor at 48V, I am able to reduce the high frequency sound quite a bit, in fact I have to go up to 6rev/sec for it to be at audible/annoying levels.&lt;/p&gt;
+
+&lt;p&gt;My initial guess is that at 48V the stepper is able generate more torque since the current in the coils is able to overcome back EMF and rise to higher levels than in 24V. Is this a correct assumption or is there more to it?&lt;/p&gt;
+
+&lt;p&gt;I do not believe the motor is defective since I tried a few different motors with the same 4.5A rating and they all have a point in the speed where they begin to produce the high frequency noise.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/51407</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">How to burn Arduino Uno bootloader to ATMega328P via CP2102 USB-2-UART?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="arduino"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="atmega"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="bootloader"/>
+        <author>
+            <name>georgejh</name>
+            <uri>http://electronics.stackexchange.com/users/16979</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/51407/how-to-burn-arduino-uno-bootloader-to-atmega328p-via-cp2102-usb-2-uart" />
+        <published>2012-12-15T21:27:57Z</published>
+        <updated>2013-04-27T13:53:43Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;Following the &lt;a href=&quot;http://shrimping.it/blog/shrimp/?utm_medium=referral&amp;amp;utm_source=pulsenews&quot; rel=&quot;nofollow&quot;&gt;The Shrimp&lt;/a&gt; I&#39;ve acquired CP2102 USB to UART converter. I already have ATMega328P but without burned bootloader. I want to burn Arduino UNO bootloader to it using the CP2102 converter under Windows.&lt;/p&gt;
+
+&lt;p&gt;Any ideas?&lt;/p&gt;
+
+&lt;p&gt;Thanks in advance&lt;/p&gt;
+
+&lt;p&gt;PS I have no any Arduino boards neither want to buy any, so please skip the advices pointing to how to use Arduino for this job :)&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/49008</id>
+        <re:rank scheme="http://electronics.stackexchange.com">4</re:rank>
+        <title type="text">Wired headset circuit</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="microphone"/>
+        <author>
+            <name>superno</name>
+            <uri>http://electronics.stackexchange.com/users/11821</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/49008/wired-headset-circuit" />
+        <published>2012-11-15T11:23:52Z</published>
+        <updated>2013-04-27T19:54:13Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I&#39;m trying to understand how mobile phone headsets work. I figured out that the electret mic gets supplied with 2.7V by the phone.&lt;/p&gt;
+
+&lt;p&gt;Opening a headset revealed the following PCB:
+&lt;img src=&quot;http://i.stack.imgur.com/MKcsW.png&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I looked and measured and came up with the following circuit:
+&lt;img src=&quot;http://i.stack.imgur.com/LXDDM.png&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Shouldn&#39;t there be at least one cap in series with the mic?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/45744</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">replacing disposable lithium-thionyl batteries with rechargable lithium batteries?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="batteries"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="lithium"/>
+        <author>
+            <name>Daniela Birkelbach</name>
+            <uri>http://electronics.stackexchange.com/users/15679</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/45744/replacing-disposable-lithium-thionyl-batteries-with-rechargable-lithium-batterie" />
+        <published>2012-10-29T14:07:09Z</published>
+        <updated>2013-04-27T21:01:50Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I have a device that takes 2 disposable 3.6 V 1/2AA 1100 mAh lithium-thionyl batteries and I would like to replace them with rechargable ones. It is a device that measures angles in wireless mode, and I only get a life span of 10 hours for 2 disposable batteries, not nice for the environment at all.&lt;/p&gt;
+
+&lt;p&gt;I understand I need to make sure the voltage matches.  But what about the mAh that it outputs to the device?  Does it have to be the same?  Can they be higher?  I&#39;m having problems finding an exact match...which is what brought me here.&lt;/p&gt;
+
+&lt;p&gt;And also does it have to be a lithium thionyl chloride rechargable or can it be a different type? I am clueless when it comes to electronics...&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/34925</id>
+        <re:rank scheme="http://electronics.stackexchange.com">6</re:rank>
+        <title type="text">HDMI Mixer/Blender/Superimposer-Chip (2 to 1) wanted</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="integrated-circuit"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="hdmi"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="mixer"/>
+        <author>
+            <name>Guido</name>
+            <uri>http://electronics.stackexchange.com/users/10644</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/34925/hdmi-mixer-blender-superimposer-chip-2-to-1-wanted" />
+        <published>2012-07-02T23:28:17Z</published>
+        <updated>2013-04-27T21:47:05Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;Is there a chip on the market which can overlay one HDMI-input over another ?&lt;/p&gt;
+
+&lt;p&gt;Chip should have 2 * HDMI -IN and 1 * HDMI-OUT&lt;/p&gt;
+
+&lt;p&gt;HDMI-IN-1 connected with Sat-receiver or other TV-Source
+HDMI-IN-2 connected with Android-Box or Network Player&lt;/p&gt;
+
+&lt;p&gt;The Menues of HDMI-2 shall be superimposed/blended/overlayed over TV-Screen of HDMI-1.
+e.g. by replacing the black background color of Android-Screen with TV-Screen-Pixel.&lt;/p&gt;
+
+&lt;p&gt;If superimposing is not available a splitscreen function would be sufficient, e.g. upper or lower part of HDMI-OUT reserved for HDMI-2 IN and rest for HDMI 1 in.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/29564</id>
+        <re:rank scheme="http://electronics.stackexchange.com">4</re:rank>
+        <title type="text">Circuit to Convert Line Level to Mic Level</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="impedance"/>
+        <author>
+            <name>kittachami</name>
+            <uri>http://electronics.stackexchange.com/users/9139</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/29564/circuit-to-convert-line-level-to-mic-level" />
+        <published>2012-04-09T18:20:14Z</published>
+        <updated>2013-04-27T19:50:33Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;How would I design a circuit that converts a line level signal to be able to be fed into a microphone input? The input impedance of the microphone jack is 2 kohms.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/29437</id>
+        <re:rank scheme="http://electronics.stackexchange.com">0</re:rank>
+        <title type="text">Multiple-microphones and mic-switcher</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="audio"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="switches"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="microphone"/>
+        <author>
+            <name>icarus74</name>
+            <uri>http://electronics.stackexchange.com/users/6406</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/29437/multiple-microphones-and-mic-switcher" />
+        <published>2012-04-07T09:36:35Z</published>
+        <updated>2013-04-27T19:40:49Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;Trying to make a round-robin (time-slice based) array of microphones, which feed to the microphone input of a PC.&lt;/p&gt;
+
+&lt;p&gt;There are 2 things I am looking for some ideas / pointers on:-&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The distance between mic and pc can be upto 50ft. What can I do to ensure that signal reaches PC with acceptable fidelity ? Do I need to do a pre-amp and feed to line-in of the PC instead ?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I need to run upto 20 mics, all connected to the same PC, with a single ordinary sound-card. The mics inputs are switched near the PC, based on a selection logic which is running on the PC. Clearly, I need only input from one mic at a time. Are there some pit-falls I should watch out for with this approach ?&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Any existing schematics for such purpose would be really useful, but I do intend to upload a schematic for community validation shortly.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/25229</id>
+        <re:rank scheme="http://electronics.stackexchange.com">2</re:rank>
+        <title type="text">Do electret condenser microphones require phantom power?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="microphone"/>
+        <author>
+            <name>Sean</name>
+            <uri>http://electronics.stackexchange.com/users/3210</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/25229/do-electret-condenser-microphones-require-phantom-power" />
+        <published>2012-01-18T06:45:04Z</published>
+        <updated>2013-04-27T19:36:06Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I was under the assumption that electret microphone capsules do not require any phantom power an can be connected in the same way dynamic microphone capsules can be, due to the fact that they contain a small permanent static charge built in. I am trying to build a really simple mic to hook up to my computer via the 3.5mm mic jack, and after wiring everything up, it doesn&#39;t seem to be working. Is this because there &lt;em&gt;is&lt;/em&gt; in fact supposed to be some sort of phantom power circuit, or should I just double and triple check my wiring again?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/24817</id>
+        <re:rank scheme="http://electronics.stackexchange.com">4</re:rank>
+        <title type="text">Handling audio (from mic to headphones)</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="audio"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="output"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="input"/>
+        <author>
+            <name>Ben Everard</name>
+            <uri>http://electronics.stackexchange.com/users/6059</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/24817/handling-audio-from-mic-to-headphones" />
+        <published>2012-01-09T23:21:02Z</published>
+        <updated>2013-04-27T19:44:13Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;Right, I&#39;m new to electronics, but this is what want to know:&lt;/p&gt;
+
+&lt;p&gt;What do I need to take a mic input, and output it to some ear phones (standard jack, can be mono). I want to build a motorcycle intercom, here are some other requirements I have in mind:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Volume controllable&lt;/li&gt;
+&lt;li&gt;Turned off by a switch&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, if I have two inputs that I want to send to one output, is it as simple as joining those two inputs together and the connecting with output? Perhaps with a few diodes... I&#39;m starting to guess here.&lt;/p&gt;
+
+&lt;p&gt;Anyway any advice to nudge me in the right direction would be appreciated.&lt;/p&gt;
+
+&lt;p&gt;Thanks, Ben :-)&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/21040</id>
+        <re:rank scheme="http://electronics.stackexchange.com">2</re:rank>
+        <title type="text">What power motor should be used to power a Segway-like device</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="batteries"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="motor"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="speedcontroller"/>
+        <author>
+            <name>LouwHopley</name>
+            <uri>http://electronics.stackexchange.com/users/6202</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/21040/what-power-motor-should-be-used-to-power-a-segway-like-device" />
+        <published>2011-10-19T15:19:00Z</published>
+        <updated>2013-04-27T14:17:24Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;I am planning on building a personal transportation device which will either be a skateboard with a motor etc or a Segway-like device.&lt;/p&gt;
+
+&lt;p&gt;I will have two wheels and must be capable of getting me to move from still-position to at least 20-30 km/h for fun/fast transportation.&lt;/p&gt;
+
+&lt;p&gt;The device will be controlled by an Arduino (for some other cool features)&lt;/p&gt;
+
+&lt;p&gt;My problem is selecting an electronic motor. Where should I look? What type of motor?
+It must probably be a DC motor, but what should I be looking for?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Voltage&lt;/li&gt;
+&lt;li&gt;Wattage&lt;/li&gt;
+&lt;li&gt;Amperage&lt;/li&gt;
+&lt;li&gt;Size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Maybe also what type of battery &amp;amp; speedcontroller should be used with it? It needs to be able to go at least 20 min on a cycle - hope it won&#39;t become too expensive.&lt;/p&gt;
+
+&lt;p&gt;Thanks&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Take note: This is just a fun project so I have a very small budget&lt;/em&gt;&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>http://electronics.stackexchange.com/q/20731</id>
+        <re:rank scheme="http://electronics.stackexchange.com">3</re:rank>
+        <title type="text">Is there any way to feed a signal (line-in) into a mobile phone?</title>
+        <category scheme="http://electronics.stackexchange.com/feeds/tags" term="audio"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="analog"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="microphone"/><category scheme="http://electronics.stackexchange.com/feeds/tags" term="bias"/>
+        <author>
+            <name>Phonon</name>
+            <uri>http://electronics.stackexchange.com/users/4289</uri>
+        </author>
+        <link rel="alternate" href="http://electronics.stackexchange.com/questions/20731/is-there-any-way-to-feed-a-signal-line-in-into-a-mobile-phone" />
+        <published>2011-10-10T19:09:31Z</published>
+        <updated>2013-04-27T20:02:48Z</updated>
+        <summary type="html">
+            
+            &lt;p&gt;My first post here, so please point out if I say anything silly.&lt;/p&gt;
+
+&lt;p&gt;I&#39;m working on an audio application for mobile phones. At this point in time I&#39;m trying to measure audio latency of a mobile device by feeding colored noise into its microphone jack and having it play it back through the headphones, and correlating/deconvolving the two to obtain the time delay.&lt;/p&gt;
+
+&lt;p&gt;This all sounds great on paper, but my problem is that the phone will only accept inputs of certain impedance as microphones, or at least that&#39;s my guess. I&#39;ve tried several microphones (actual transducers), and some of them worked while others didn&#39;t. As a rule of thumb, headset-like mics worked. Vocal-like dynamic mics didn&#39;t. I&#39;m guessing there has to be enough bias current for a microphone to work. When simply taking an audio cable from the output of a computer or MP3 player and putting it into the microphone jack of the mobile phone it never works. What I mean by that is that the device does not recognize presence of an external microphone and does not switch to it as default input.&lt;/p&gt;
+
+&lt;p&gt;I don&#39;t know a whole lot about current biases and such, but do you suppose there&#39;s a way of building a circuit to somehow &quot;trick&quot; the phone into thinking that there&#39;s a microphone plugged into it when it&#39;s a line in instead?&lt;/p&gt;
+
+        </summary>
+    </entry>
+</feed>

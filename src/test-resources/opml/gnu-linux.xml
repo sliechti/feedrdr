@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Gnu/Linux created by Ali H Zadeh in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Gnu/Linux" title="Gnu/Linux">
+      <outline text="Ubuntu-News - Your one stop for news about Ubuntu" title="Ubuntu-News - Your one stop for news about Ubuntu" type="rss" xmlUrl="http://www.ubuntu-news.net/feed/rss/" htmlUrl="http://www.ubuntu-news.net/"/>
+      <outline text="HowtoForge - Linux Howtos and Tutorials -" title="HowtoForge - Linux Howtos and Tutorials -" type="rss" xmlUrl="http://www.howtoforge.com/node/feed" htmlUrl="http://www.howtoforge.com/"/>
+      <outline text="LinuxGizmos" title="LinuxGizmos" type="rss" xmlUrl="http://linuxgizmos.com/feed/" htmlUrl="http://linuxgizmos.com/"/>
+      <outline text="LXer Linux News" title="LXer Linux News" type="rss" xmlUrl="http://lxer.com/module/newswire/headlines.rss" htmlUrl="http://lxer.com/"/>
+      <outline text="Web Upd8 - Ubuntu / Linux blog" title="Web Upd8 - Ubuntu / Linux blog" type="rss" xmlUrl="http://www.webupd8.org/feeds/posts/default" htmlUrl="http://www.webupd8.org/"/>
+      <outline text="OStatic blogs" title="OStatic blogs" type="rss" xmlUrl="http://ostatic.com/blog/feed" htmlUrl="http://ostatic.com/blog"/>
+      <outline text="Linux Journal - The Original Magazine of the Linux Community" title="Linux Journal - The Original Magazine of the Linux Community" type="rss" xmlUrl="http://www.linuxjournal.com/node/feed" htmlUrl="http://www.linuxjournal.com/"/>
+      <outline text="OMG! Ubuntu!" title="OMG! Ubuntu!" type="rss" xmlUrl="http://feeds.feedburner.com/d0od" htmlUrl="http://www.omgubuntu.co.uk/"/>
+      <outline text="LinuxInsider" title="LinuxInsider" type="rss" xmlUrl="http://www.linuxinsider.com/perl/syndication/rssfull.pl" htmlUrl="http://www.linuxinsider.com/"/>
+      <outline text="Phoronix" title="Phoronix" type="rss" xmlUrl="http://feeds.feedburner.com/Phoronix" htmlUrl="http://www.phoronix.com/"/>
+      <outline text="Slashdot: Linux" title="Slashdot: Linux" type="rss" xmlUrl="http://rss.slashdot.org/Slashdot/slashdotLinux" htmlUrl="http://linux.slashdot.org/"/>
+      <outline text="Ubuntu Geek" title="Ubuntu Geek" type="rss" xmlUrl="http://www.ubuntugeek.com/feed/" htmlUrl="http://www.ubuntugeek.com/"/>
+      <outline text="Xmodulo" title="Xmodulo" type="rss" xmlUrl="http://feeds.feedburner.com/linuxfaq" htmlUrl="http://xmodulo.com/"/>
+      <outline text="Softpedia News &gt; Reviews &gt; Linux software reviews" title="Softpedia News &gt; Reviews &gt; Linux software reviews" type="rss" xmlUrl="http://news.softpedia.com/newsRSS/Linux-Software-Reviews-132.xml" htmlUrl="http://news.softpedia.com/"/>
+      <outline text="Softpedia News &gt; Linux" title="Softpedia News &gt; Linux" type="rss" xmlUrl="http://news.softpedia.com/newsRSS/Linux-news-7.xml" htmlUrl="http://news.softpedia.com/"/>
+      <outline text="LME Linux" title="LME Linux" type="rss" xmlUrl="http://lmelinux.net/feed/" htmlUrl="http://lmelinux.net/"/>
+      <outline text="DistroWatch.com: DistroWatch Weekly" title="DistroWatch.com: DistroWatch Weekly" type="rss" xmlUrl="http://distrowatch.com/news/dww.xml" htmlUrl="http://distrowatch.com/"/>
+      <outline text="NoobsLab | Ubuntu/Linux News, Reviews, Tutorials, Apps" title="NoobsLab | Ubuntu/Linux News, Reviews, Tutorials, Apps" type="rss" xmlUrl="http://www.noobslab.com/feeds/posts/default" htmlUrl="http://www.noobslab.com/"/>
+      <outline text="iWillFolo" title="iWillFolo" type="rss" xmlUrl="http://www.iwillfolo.com/feed/" htmlUrl="http://www.iwillfolo.com/"/>
+      <outline text="Netrunner MAG" title="Netrunner MAG" type="rss" xmlUrl="http://netrunner-mag.com/feed/" htmlUrl="http://netrunner-mag.com/"/>
+      <outline text="Tecmint: Linux Howtos, Tutorials &amp; Guides" title="Tecmint: Linux Howtos, Tutorials &amp; Guides" type="rss" xmlUrl="http://www.tecmint.com/feed" htmlUrl="http://www.tecmint.com/"/>
+      <outline text="The Open Road" title="The Open Road" type="rss" xmlUrl="http://blogs.cnet.com/8300-13505_1-16.xml" htmlUrl="http://blogs.cnet.com/8300-13505_1-16.html"/>
+      <outline text="Segfault" title="Segfault" type="rss" xmlUrl="http://segfault.linuxmint.com/feed/" htmlUrl="http://segfault.linuxmint.com/"/>
+      <outline text="The Linux Mint Blog" title="The Linux Mint Blog" type="rss" xmlUrl="http://blog.linuxmint.com/?feed=rss2" htmlUrl="http://blog.linuxmint.com/"/>
+    </outline>
+  </body>
+</opml>

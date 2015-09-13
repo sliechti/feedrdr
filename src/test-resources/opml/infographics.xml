@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Infographics created by Dorian in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Infographics" title="Infographics">
+      <outline text="Daily Infographic" title="Daily Infographic" type="rss" xmlUrl="http://dailyinfographic.com/feed" htmlUrl="http://dailyinfographic.com/"/>
+      <outline text="Cool Infographics" title="Cool Infographics" type="rss" xmlUrl="http://www.coolinfographics.com/blog/rss.xml" htmlUrl="http://www.coolinfographics.com/blog/"/>
+      <outline text="News I Like | News I Like" title="News I Like | News I Like" type="rss" xmlUrl="http://www.newsilike.in/feed/" htmlUrl="http://www.newsilike.in/"/>
+      <outline text="Funders and Founders Notes" title="Funders and Founders Notes" type="rss" xmlUrl="http://notes.fundersandfounders.com/rss" htmlUrl="http://notes.fundersandfounders.com/"/>
+      <outline text="Uploads from InfographicsMagazine" title="Uploads from InfographicsMagazine" type="rss" xmlUrl="https://www.flickr.com/services/feeds/photos_public.gne?id=69188917@N06&amp;lang=en-us&amp;format=rss_200" htmlUrl="https://www.flickr.com/photos/69188917@N06/"/>
+      <outline text="Infographics on Huffington Post" title="Infographics on Huffington Post" type="rss" xmlUrl="http://www.huffingtonpost.com/tag/infographics/feed/" htmlUrl="http://www.huffingtonpost.com/tag/infographics"/>
+      <outline text="Data Visualization Encyclopedia, Information Technology, Symbols, Posters, Infographic" title="Data Visualization Encyclopedia, Information Technology, Symbols, Posters, Infographic" type="rss" xmlUrl="http://www.visualinformation.info/feed/" htmlUrl="http://www.visualinformation.info/"/>
+      <outline text="TechCrunch » infographic" title="TechCrunch » infographic" type="rss" xmlUrl="http://techcrunch.com/tag/infographic/feed/" htmlUrl="http://techcrunch.com/"/>
+      <outline text="WIRED » Infographics" title="WIRED » Infographics" type="rss" xmlUrl="http://www.wired.com/tag/infographics/feed/" htmlUrl="http://www.wired.com/"/>
+      <outline text="Gigaom Search » infographic" title="Gigaom Search » infographic" type="rss" xmlUrl="http://search.gigaom.com/tag/infographic/feed/" htmlUrl="http://search.gigaom.com/"/>
+    </outline>
+  </body>
+</opml>

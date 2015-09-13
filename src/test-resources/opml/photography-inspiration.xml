@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Photography inspiration created by Vassilena Valchanova in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Photography inspiration" title="Photography inspiration">
+      <outline text="Flickr Blog" title="Flickr Blog" type="rss" xmlUrl="http://blog.flickr.net/en/feed/" htmlUrl="http://blog.flickr.net/"/>
+      <outline text="Photojojo" title="Photojojo" type="rss" xmlUrl="http://www.photojojo.com/content/feed" htmlUrl="http://content.photojojo.com/"/>
+      <outline text="In Focus" title="In Focus" type="rss" xmlUrl="http://feeds.feedburner.com/theatlantic/infocus" htmlUrl="http://www.theatlantic.com/infocus/"/>
+      <outline text="National Geographic Photo of the Day" title="National Geographic Photo of the Day" type="rss" xmlUrl="http://feeds.nationalgeographic.com/ng/photography/photo-of-the-day/" htmlUrl="http://photography.nationalgeographic.com/photography/photo-of-the-day/"/>
+      <outline text="The Big Picture" title="The Big Picture" type="rss" xmlUrl="http://www.boston.com/bigpicture/index.xml" htmlUrl="http://www.bostonglobe.com/bigpicture/"/>
+      <outline text="500px / Blog" title="500px / Blog" type="rss" xmlUrl="http://feed.500px.com/500px-blog" htmlUrl="https://500px.com/blog/rss.rss"/>
+      <outline text="Feature Shoot" title="Feature Shoot" type="rss" xmlUrl="http://feeds.feedburner.com/FeatureShoot" htmlUrl="http://www.featureshoot.com/"/>
+      <outline text="Stuck in Customs" title="Stuck in Customs" type="rss" xmlUrl="http://www.stuckincustoms.com/feed/" htmlUrl="http://www.stuckincustoms.com/"/>
+    </outline>
+  </body>
+</opml>

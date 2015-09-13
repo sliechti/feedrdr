@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>DIY created by amdou in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="DIY" title="DIY">
+      <outline text="Copyblogger" title="Copyblogger" type="rss" xmlUrl="http://feeds.copyblogger.com/Copyblogger" htmlUrl="http://www.copyblogger.com/"/>
+      <outline text="DIY Life" title="DIY Life" type="rss" xmlUrl="http://www.diylife.com/rss.xml" htmlUrl="http://www.diylife.com/"/>
+      <outline text="Project Steps" title="Project Steps" type="rss" xmlUrl="http://fulltextrssfeed.com/projectsteps.blogspot.com/atom.xml" htmlUrl="http://www.projectsteps.com/"/>
+      <outline text="IKEA Hackers" title="IKEA Hackers" type="rss" xmlUrl="http://feeds.feedburner.com/Ikeahacker" htmlUrl="http://www.ikeahackers.net/"/>
+      <outline text="Instructables: exploring" title="Instructables: exploring" type="rss" xmlUrl="http://www.instructables.com/tag/type:instructable/rss.xml" htmlUrl="http://www.instructables.com/"/>
+      <outline text="Life Pro Tips" title="Life Pro Tips" type="rss" xmlUrl="http://www.reddit.com/r/LifeProTips/.rss" htmlUrl="http://www.reddit.com/r/LifeProTips/"/>
+      <outline text="How to of the Day" title="How to of the Day" type="rss" xmlUrl="http://www.wikihow.com/feed.rss" htmlUrl="http://www.wikihow.com/Main-Page"/>
+      <outline text="Lifehack" title="Lifehack" type="rss" xmlUrl="http://www.lifehack.org/feed/" htmlUrl="http://www.lifehack.org/"/>
+      <outline text="Hackaday" title="Hackaday" type="rss" xmlUrl="http://hackaday.com/feed/" htmlUrl="http://hackaday.com/"/>
+    </outline>
+  </body>
+</opml>

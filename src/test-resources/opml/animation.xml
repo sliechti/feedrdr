@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Animation created by Yordan Yordanov in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Animation" title="Animation">
+      <outline text="Animated Views" title="Animated Views" type="rss" xmlUrl="http://www.animatedviews.com/feed/" htmlUrl="http://animatedviews.com/"/>
+      <outline text="Amazing Animated Short Films" title="Amazing Animated Short Films" type="rss" xmlUrl="http://shortanimatedfilms.blogspot.com/feeds/posts/default" htmlUrl="http://shortanimatedfilms.blogspot.com/"/>
+      <outline text="Walt Disney Animation Studios" title="Walt Disney Animation Studios" type="rss" xmlUrl="http://disneyanimation.tumblr.com/rss" htmlUrl="http://disneyanimation.tumblr.com/"/>
+      <outline text="Animation Magazine" title="Animation Magazine" type="rss" xmlUrl="http://www.animationmagazine.net/feed/" htmlUrl="http://www.animationmagazine.net/"/>
+      <outline text="The Art of Disney" title="The Art of Disney" type="rss" xmlUrl="http://artofdisney.canalblog.com/rss.xml" htmlUrl="http://artofdisney.canalblog.com/"/>
+      <outline text="The Animation Blog.com | Est. 2007" title="The Animation Blog.com | Est. 2007" type="rss" xmlUrl="http://www.theanimationblog.com/feed/" htmlUrl="http://www.theanimationblog.com/"/>
+      <outline text="Rotoscopers" title="Rotoscopers" type="rss" xmlUrl="http://www.rotoscopers.com/feed/" htmlUrl="http://www.rotoscopers.com/"/>
+      <outline text="Schwabblog" title="Schwabblog" type="rss" xmlUrl="http://billschwabdesign.blogspot.com/feeds/posts/default" htmlUrl="http://billschwabdesign.blogspot.com/"/>
+      <outline text="Animation Tidbits" title="Animation Tidbits" type="rss" xmlUrl="http://animationtidbits.tumblr.com/rss" htmlUrl="http://animationtidbits.tumblr.com/"/>
+    </outline>
+  </body>
+</opml>

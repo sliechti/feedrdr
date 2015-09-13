@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Geek.com</title>
+	<atom:link href="http://www.geek.com/articles/chips/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.geek.com</link>
+	<description>Tech News, Reviews &#38; Tips</description>
+	<lastBuildDate>Sat, 27 Apr 2013 15:00:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.5.1</generator>
+		<item>
+		<title>World&#8217;s fastest CompactFlash card now available from Toshiba</title>
+		<link>http://www.geek.com/chips/worlds-fastest-compactflash-card-now-available-from-toshiba-1553438</link>
+		<comments>http://www.geek.com/chips/worlds-fastest-compactflash-card-now-available-from-toshiba-1553438#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 19:21:34 +0000</pubDate>
+		<dc:creator>James Plafke</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[compactflash]]></category>
+		<category><![CDATA[Exceria PRO]]></category>
+		<category><![CDATA[memory cards]]></category>
+		<category><![CDATA[storage]]></category>
+		<category><![CDATA[Toshiba]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1553438</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/toshcard-590x330.jpg" class="attachment-medium wp-post-image" alt="Toshiba card" /><br />Normally, the main issue with expandable flash memory isn&#8217;t that it&#8217;s too expensive or that it can&#8217;t reac larger storage capacities, but that it&#8217;s just not that fast. Video game memory cards don&#8217;t&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/worlds-fastest-compactflash-card-now-available-from-toshiba-1553438/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Intel&#8217;s Haswell prototype performs screen size switch when in tablet mode</title>
+		<link>http://www.geek.com/chips/intels-haswell-prototype-performs-screen-size-switch-when-in-tablet-mode-1553379</link>
+		<comments>http://www.geek.com/chips/intels-haswell-prototype-performs-screen-size-switch-when-in-tablet-mode-1553379#comments</comments>
+		<pubDate>Fri, 26 Apr 2013 15:30:24 +0000</pubDate>
+		<dc:creator>Lee Mathews</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[haswell]]></category>
+		<category><![CDATA[hybrids]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[laptops]]></category>
+		<category><![CDATA[north cape]]></category>
+		<category><![CDATA[tablets]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1553379</guid>
+		<description><![CDATA[<img width="590" height="392" src="http://www.geek.com/wp-content/uploads/2013/04/inteldsc08326mat8001-590x392.jpg" class="attachment-medium wp-post-image" alt="Intel Haswell hybrid" /><br />Today&#8217;s Windows 8 laptop-tablet hybrids can already do some pretty neat transformational tricks. Intel&#8217;s Haswell-packing North Cape prototype, however, has a unique trick up its sleeve. Its 13-inch 1080p display adjusts itself to&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/intels-haswell-prototype-performs-screen-size-switch-when-in-tablet-mode-1553379/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>AMD launches $999 Radeon HD 7990 with 8 games, 8.6 billion transistors</title>
+		<link>http://www.geek.com/games/amd-launches-999-radeon-hd-7990-with-8-games-8-6-billion-transistors-1553087</link>
+		<comments>http://www.geek.com/games/amd-launches-999-radeon-hd-7990-with-8-games-8-6-billion-transistors-1553087#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 12:48:17 +0000</pubDate>
+		<dc:creator>Matthew Humphries</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Games]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[amd]]></category>
+		<category><![CDATA[dual-GPU]]></category>
+		<category><![CDATA[graphics cards]]></category>
+		<category><![CDATA[Never Settle]]></category>
+		<category><![CDATA[Radeon HD 7990]]></category>
+		<category><![CDATA[Titan]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1553087</guid>
+		<description><![CDATA[<img width="590" height="325" src="http://www.geek.com/wp-content/uploads/2013/04/Radeon7990-590x325.jpg" class="attachment-medium wp-post-image" alt="Radeon7990" /><br />The graphics card everyone has been talking about lately is the Nvidia GeForce GTX Titan. Not only because of the performance on offer, but due to its $1,000 price tag. Now AMD has&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/games/amd-launches-999-radeon-hd-7990-with-8-games-8-6-billion-transistors-1553087/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Intel&#8217;s Haswell processor pricing leaks ahead of June launch</title>
+		<link>http://www.geek.com/chips/intels-haswell-processor-pricing-leaks-ahead-of-june-launch-1553058</link>
+		<comments>http://www.geek.com/chips/intels-haswell-processor-pricing-leaks-ahead-of-june-launch-1553058#comments</comments>
+		<pubDate>Wed, 24 Apr 2013 11:15:36 +0000</pubDate>
+		<dc:creator>Matthew Humphries</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[haswell]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[ivy bridge]]></category>
+		<category><![CDATA[pricing]]></category>
+		<category><![CDATA[processors]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1553058</guid>
+		<description><![CDATA[<img width="590" height="428" src="http://www.geek.com/wp-content/uploads/2013/04/Haswell_Chip-590x428.jpg" class="attachment-medium wp-post-image" alt="Haswell Chip" /><br />If you&#8217;re thinking of upgrading your PC or building a brand new rig, now is probably not the best time to spend money on a processor. Intel currently holds the performance crown with&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/intels-haswell-processor-pricing-leaks-ahead-of-june-launch-1553058/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Western Digital&#8217;s 5mm 500GB hard drive on sale for $89</title>
+		<link>http://www.geek.com/chips/western-digitals-5mm-500gb-hard-drive-on-sale-for-89-1552954</link>
+		<comments>http://www.geek.com/chips/western-digitals-5mm-500gb-hard-drive-on-sale-for-89-1552954#comments</comments>
+		<pubDate>Tue, 23 Apr 2013 14:28:57 +0000</pubDate>
+		<dc:creator>Lee Mathews</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[hard drives]]></category>
+		<category><![CDATA[tablets]]></category>
+		<category><![CDATA[ultrabooks]]></category>
+		<category><![CDATA[wd]]></category>
+		<category><![CDATA[western digital]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1552954</guid>
+		<description><![CDATA[<img width="590" height="428" src="http://www.geek.com/wp-content/uploads/2013/04/wd-blue-5mm-590x428.jpg" class="attachment-medium wp-post-image" alt="Western Digital Blue 5mm HDD" /><br />Almost a year ago, Western Digital began showing off its thinnest SATA hard drive ever: the 5mm-thin UltraSlim. Now the drives are shipping, and the 500GB drives are selling for just $89. Thanks&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/western-digitals-5mm-500gb-hard-drive-on-sale-for-89-1552954/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Upcoming USB SuperSpeed 3.0 will let you ditch the power adapter</title>
+		<link>http://www.geek.com/chips/upcoming-usb-superspeed-3-0-will-let-you-ditch-the-power-adapter-1552834</link>
+		<comments>http://www.geek.com/chips/upcoming-usb-superspeed-3-0-will-let-you-ditch-the-power-adapter-1552834#comments</comments>
+		<pubDate>Mon, 22 Apr 2013 18:25:30 +0000</pubDate>
+		<dc:creator>Lee Mathews</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[thunderbolt]]></category>
+		<category><![CDATA[usb]]></category>
+		<category><![CDATA[USB 3.0]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1552834</guid>
+		<description><![CDATA[<img width="590" height="308" src="http://www.geek.com/wp-content/uploads/2013/04/1223375-superspeed-usb-logo-590x308.png" class="attachment-medium wp-post-image" alt="USB SuperSpeed" /><br />USB 3.0 and Thunderbolt are both a big improvement over last-generation external hook-ups. But there&#8217;s always room for improvement, and Intel&#8217;s announced some big changes for the new specs. The biggest: total maximum&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/upcoming-usb-superspeed-3-0-will-let-you-ditch-the-power-adapter-1552834/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The 8 most awesome deals on Monoprice</title>
+		<link>http://www.geek.com/chips/the-8-most-awesome-deals-on-monoprice-1552433</link>
+		<comments>http://www.geek.com/chips/the-8-most-awesome-deals-on-monoprice-1552433#comments</comments>
+		<pubDate>Fri, 19 Apr 2013 13:30:55 +0000</pubDate>
+		<dc:creator>Ryan Whitwam</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Gadgets]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[audio]]></category>
+		<category><![CDATA[cables]]></category>
+		<category><![CDATA[deals]]></category>
+		<category><![CDATA[earbuds]]></category>
+		<category><![CDATA[hdmi]]></category>
+		<category><![CDATA[mechanical keyboards]]></category>
+		<category><![CDATA[monitors]]></category>
+		<category><![CDATA[monoprice]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1552433</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/Monoprice-590x330.jpg" class="attachment-medium wp-post-image" alt="Monoprice" /><br />When looking for deals, it's a good idea to swing by Monoprice first. More often than not, there is a real bargain to be found on the site.]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/the-8-most-awesome-deals-on-monoprice-1552433/feed/</wfw:commentRss>
+		<slash:comments>14</slash:comments>
+		</item>
+		<item>
+		<title>A $99 Linux supercomputer has been built, will ship this summer</title>
+		<link>http://www.geek.com/chips/a-99-linux-supercomputer-has-been-built-will-ship-this-summer-1552343</link>
+		<comments>http://www.geek.com/chips/a-99-linux-supercomputer-has-been-built-will-ship-this-summer-1552343#comments</comments>
+		<pubDate>Wed, 17 Apr 2013 21:21:16 +0000</pubDate>
+		<dc:creator>James Plafke</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[adapteva]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Parallela]]></category>
+		<category><![CDATA[supercomputers]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1552343</guid>
+		<description><![CDATA[<img width="590" height="376" src="http://www.geek.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-17-at-5.20.44-PM-590x376.jpg" class="attachment-medium wp-post-image" alt="Adapteva" /><br />Cheap, tiny, underpowered computers are becoming a hot new trend in the computing world ever since the $25 and $35 Raspberry Pi models broke onto the scene. For the most part, the Raspberry&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/a-99-linux-supercomputer-has-been-built-will-ship-this-summer-1552343/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>DARPA makes GPS-like device that&#8217;s smaller than a penny</title>
+		<link>http://www.geek.com/science/darpa-makes-gps-like-device-thats-smaller-than-a-penny-1551779</link>
+		<comments>http://www.geek.com/science/darpa-makes-gps-like-device-thats-smaller-than-a-penny-1551779#comments</comments>
+		<pubDate>Thu, 11 Apr 2013 12:29:28 +0000</pubDate>
+		<dc:creator>Ryan Whitwam</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Science!]]></category>
+		<category><![CDATA[darpa]]></category>
+		<category><![CDATA[engineering]]></category>
+		<category><![CDATA[GPS]]></category>
+		<category><![CDATA[location]]></category>
+		<category><![CDATA[Mobile]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551779</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/Penny-TIMU-590x330.jpg" class="attachment-medium wp-post-image" alt="Penny TIMU" /><br />When you think about it, GPS is kind of insane. This vital system relies on satellites floating through space, where repair is virtually impossible. If you go into a tunnel or mountainous area,&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/science/darpa-makes-gps-like-device-thats-smaller-than-a-penny-1551779/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Crucial M500: A 1TB SSD that is almost affordable</title>
+		<link>http://www.geek.com/chips/crucial-m500-a-1tb-ssd-that-is-almost-affordable-1551592</link>
+		<comments>http://www.geek.com/chips/crucial-m500-a-1tb-ssd-that-is-almost-affordable-1551592#comments</comments>
+		<pubDate>Tue, 09 Apr 2013 18:46:51 +0000</pubDate>
+		<dc:creator>James Plafke</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[crucial]]></category>
+		<category><![CDATA[data storage]]></category>
+		<category><![CDATA[ssds]]></category>
+		<category><![CDATA[storage]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551592</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/m5001-590x330.jpg" class="attachment-medium wp-post-image" alt="Crucial M500" /><br />Today, having a large amount of storage space on a desktop computer isn&#8217;t a premium feature. Accessing data at great speed isn&#8217;t necessarily a premium feature either. Unfortunately, combining the two significantly adds&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/crucial-m500-a-1tb-ssd-that-is-almost-affordable-1551592/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Skydog router brings awesome cloud-powered management to your home LAN</title>
+		<link>http://www.geek.com/chips/skydog-router-brings-awesome-cloud-powered-management-to-your-home-lan-1551574</link>
+		<comments>http://www.geek.com/chips/skydog-router-brings-awesome-cloud-powered-management-to-your-home-lan-1551574#comments</comments>
+		<pubDate>Tue, 09 Apr 2013 17:57:14 +0000</pubDate>
+		<dc:creator>Lee Mathews</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[internet]]></category>
+		<category><![CDATA[routers]]></category>
+		<category><![CDATA[Skydog]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551574</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/skydog-590x330.jpg" class="attachment-medium wp-post-image" alt="Skydog" /><br />A wireless router with gigabit Ethernet that you can configure via a companion iOS app? So last year. Skydog is taking things to the next level by leveraging the power of the cloud&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/skydog-router-brings-awesome-cloud-powered-management-to-your-home-lan-1551574/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+		<item>
+		<title>Leak shows Intel&#8217;s NUC will soon catch up with last year&#8217;s mini systems</title>
+		<link>http://www.geek.com/chips/leak-shows-intels-nuc-will-soon-catch-up-with-last-years-mini-systems-1551524</link>
+		<comments>http://www.geek.com/chips/leak-shows-intels-nuc-will-soon-catch-up-with-last-years-mini-systems-1551524#comments</comments>
+		<pubDate>Tue, 09 Apr 2013 14:05:53 +0000</pubDate>
+		<dc:creator>Lee Mathews</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[computers]]></category>
+		<category><![CDATA[desktops]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[mini-itx]]></category>
+		<category><![CDATA[Next Unit of Computing]]></category>
+		<category><![CDATA[NUC]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551524</guid>
+		<description><![CDATA[<img width="590" height="264" src="http://www.geek.com/wp-content/uploads/2013/04/intel_nuc1-590x264.jpg" class="attachment-medium wp-post-image" alt="Intel&#039;s Next Unit of Computing" /><br />Intel&#8217;s Next Unit of Computing is in line for a major upgrade. According to a new leak, the computing Oompa Loompa will soon be available with an Intel Ivy Bridge Core i5 or&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/leak-shows-intels-nuc-will-soon-catch-up-with-last-years-mini-systems-1551524/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>BioShock Infinite steampunk case mod opens dimensional portal to your heart</title>
+		<link>http://www.geek.com/games/bioshock-infinite-steampunk-case-mod-opens-dimensional-portal-to-your-heart-1551443</link>
+		<comments>http://www.geek.com/games/bioshock-infinite-steampunk-case-mod-opens-dimensional-portal-to-your-heart-1551443#comments</comments>
+		<pubDate>Mon, 08 Apr 2013 20:48:28 +0000</pubDate>
+		<dc:creator>James Plafke</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Games]]></category>
+		<category><![CDATA[bioshock infinite]]></category>
+		<category><![CDATA[case mods]]></category>
+		<category><![CDATA[DIY]]></category>
+		<category><![CDATA[FlashGordon]]></category>
+		<category><![CDATA[pc gaming]]></category>
+		<category><![CDATA[Steampunk]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551443</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/bipccasemod-590x330.jpg" class="attachment-medium wp-post-image" alt="BioShock Infinite case mod" /><br />You finished BioShock Infinite, and after sifting through the wealth of very complex and contradictory feelings the game left you with, you decided to immortalize Irrational&#8217;s latest epic tale on the very platform on&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/games/bioshock-infinite-steampunk-case-mod-opens-dimensional-portal-to-your-heart-1551443/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Get prints of your favorite video game maps and classic computers</title>
+		<link>http://www.geek.com/games/get-prints-of-your-favorite-video-game-maps-and-classic-computers-1551221</link>
+		<comments>http://www.geek.com/games/get-prints-of-your-favorite-video-game-maps-and-classic-computers-1551221#comments</comments>
+		<pubDate>Sat, 06 Apr 2013 14:00:24 +0000</pubDate>
+		<dc:creator>Ryan Whitwam</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Games]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[circuit boards]]></category>
+		<category><![CDATA[maps]]></category>
+		<category><![CDATA[Nintendo]]></category>
+		<category><![CDATA[schematics]]></category>
+		<category><![CDATA[Zelda]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551221</guid>
+		<description><![CDATA[<img width="590" height="330" src="http://www.geek.com/wp-content/uploads/2013/04/maps-590x330.jpg" class="attachment-medium wp-post-image" alt="Maps" /><br />Art does not have to be a confusing presentation all about the tragedy of modern consumerism in western culture. No, sometimes art can be cool and nerdy. Such is the case with these&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/games/get-prints-of-your-favorite-video-game-maps-and-classic-computers-1551221/feed/</wfw:commentRss>
+		<slash:comments>16</slash:comments>
+		</item>
+		<item>
+		<title>Dell&#8217;s $600 Alienware X51 is now available with Ubuntu</title>
+		<link>http://www.geek.com/games/alienware-x51-ubuntu-linux-gaming-1551328</link>
+		<comments>http://www.geek.com/games/alienware-x51-ubuntu-linux-gaming-1551328#comments</comments>
+		<pubDate>Fri, 05 Apr 2013 22:17:31 +0000</pubDate>
+		<dc:creator>Sal Cangeloso</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Games]]></category>
+		<category><![CDATA[Alienware]]></category>
+		<category><![CDATA[Alienware X51]]></category>
+		<category><![CDATA[desktop linux]]></category>
+		<category><![CDATA[Linux Gaming]]></category>
+		<category><![CDATA[Steam]]></category>
+		<category><![CDATA[Steam for Linux]]></category>
+		<category><![CDATA[ubuntu]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551328</guid>
+		<description><![CDATA[<img width="590" height="283" src="http://www.geek.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-05-at-5.27.02-PM-590x283.jpg" class="attachment-medium wp-post-image" alt="Ubuntu Alienware X51" /><br />Dell, the on-again-off-again friend of desktop Linux, has announced its first Ubuntu-powered gaming PC. The X51, Alienware&#8217;s console-lookalike, will soon ship with Ubuntu Linux and full graphics driver support, with gaming-ready specs, starting&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/games/alienware-x51-ubuntu-linux-gaming-1551328/feed/</wfw:commentRss>
+		<slash:comments>22</slash:comments>
+		</item>
+		<item>
+		<title>Raspberry Pis to control massive video walls with no size limit</title>
+		<link>http://www.geek.com/chips/raspberry-pis-to-control-massive-video-walls-with-no-real-size-limit-1551255</link>
+		<comments>http://www.geek.com/chips/raspberry-pis-to-control-massive-video-walls-with-no-real-size-limit-1551255#comments</comments>
+		<pubDate>Fri, 05 Apr 2013 16:30:52 +0000</pubDate>
+		<dc:creator>Matthew Humphries</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[News]]></category>
+		<category><![CDATA[Alex Goodyear]]></category>
+		<category><![CDATA[CCFE]]></category>
+		<category><![CDATA[Colin Hogben]]></category>
+		<category><![CDATA[Culham Centre of Fusion Energy]]></category>
+		<category><![CDATA[display]]></category>
+		<category><![CDATA[Raspberry Pi]]></category>
+		<category><![CDATA[video wall]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551255</guid>
+		<description><![CDATA[<img width="590" height="326" src="http://www.geek.com/wp-content/uploads/2013/04/raspberrypi_videowall-590x326.jpg" class="attachment-medium wp-post-image" alt="raspberrypi_videowall" /><br />The Raspberry Pi has already turned out to be a very diverse little PC. It forms the brain of a terrifying spider robot, can be used to power a retro arcade, or even&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/raspberry-pis-to-control-massive-video-walls-with-no-real-size-limit-1551255/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Asus launches a tiny graphics card for mini-ITX gamers</title>
+		<link>http://www.geek.com/chips/asus-launches-a-tiny-graphics-card-for-mini-itx-gamers-1551183</link>
+		<comments>http://www.geek.com/chips/asus-launches-a-tiny-graphics-card-for-mini-itx-gamers-1551183#comments</comments>
+		<pubDate>Thu, 04 Apr 2013 19:55:38 +0000</pubDate>
+		<dc:creator>Matthew Humphries</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[asus]]></category>
+		<category><![CDATA[DirectCU]]></category>
+		<category><![CDATA[geforce]]></category>
+		<category><![CDATA[graphics card]]></category>
+		<category><![CDATA[GTX 670]]></category>
+		<category><![CDATA[mini]]></category>
+		<category><![CDATA[mini-itx]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1551183</guid>
+		<description><![CDATA[<img width="590" height="403" src="http://www.geek.com/wp-content/uploads/2013/04/ASUS-GeForce-GTX-670-DirectCU-Mini-with-box-590x403.jpg" class="attachment-medium wp-post-image" alt="ASUS-GeForce-GTX-670-DirectCU-Mini-with-box" /><br />I am a big fan of the mini-ITX form factor. You can pack just about any combination of CPU, RAM, and storage onto a mini-ITX motherboard and into a case that&#8217;s small enough&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/asus-launches-a-tiny-graphics-card-for-mini-itx-gamers-1551183/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>Toshiba&#8217;s U925T hybrid ultrabook works as a laptop, fails as a tablet</title>
+		<link>http://www.geek.com/review/toshiba-u925t-hybrid-ultrabook-1544599</link>
+		<comments>http://www.geek.com/review/toshiba-u925t-hybrid-ultrabook-1544599#comments</comments>
+		<pubDate>Wed, 03 Apr 2013 14:34:43 +0000</pubDate>
+		<dc:creator>Russell Holly</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Microsoft]]></category>
+		<category><![CDATA[Reviews]]></category>
+		<category><![CDATA[hybrid ultrabooks]]></category>
+		<category><![CDATA[samsung]]></category>
+		<category><![CDATA[Surface Pro]]></category>
+		<category><![CDATA[tablets]]></category>
+		<category><![CDATA[Toshiba]]></category>
+		<category><![CDATA[ultrabooks]]></category>
+		<category><![CDATA[windows 8]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com/articles/auto-draft-20130329//</guid>
+		<description><![CDATA[<img width="580" height="384" src="http://www.geek.com/wp-content/uploads/2013/03/Toshiba-Tab-1-580x384.jpg" class="attachment-medium wp-post-image" alt="Toshiba U925T ultrabook" /><br />Toshiba's newest Ultrabook is a perfect example, with a hinge design that makes touchscreen computing make a lot of sense.]]></description>
+		<wfw:commentRss>http://www.geek.com/review/toshiba-u925t-hybrid-ultrabook-1544599/feed/</wfw:commentRss>
+		<slash:comments>12</slash:comments>
+		</item>
+		<item>
+		<title>Seagate ships first 4TB hard drive with 1TB per platter</title>
+		<link>http://www.geek.com/chips/seagate-ships-first-4tb-hard-drive-with-1tb-per-platter-1550920</link>
+		<comments>http://www.geek.com/chips/seagate-ships-first-4tb-hard-drive-with-1tb-per-platter-1550920#comments</comments>
+		<pubDate>Wed, 03 Apr 2013 13:30:37 +0000</pubDate>
+		<dc:creator>Matthew Humphries</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[1tb]]></category>
+		<category><![CDATA[4tb]]></category>
+		<category><![CDATA[hard drive]]></category>
+		<category><![CDATA[platter]]></category>
+		<category><![CDATA[seagate]]></category>
+		<category><![CDATA[storage]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com//-1550920</guid>
+		<description><![CDATA[<img width="580" height="414" src="http://www.geek.com/wp-content/uploads/2013/04/seagate-desktop-hdd-pen-580x414.jpg" class="attachment-medium wp-post-image" alt="seagate-desktop-hdd-pen" /><br />Two things that aren&#8217;t new today: 4TB hard drives and disk platters that hold 1TB of data. We&#8217;ve been hearing about 4TB hard drives for over a year now, with Hitachi being the&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/chips/seagate-ships-first-4tb-hard-drive-with-1tb-per-platter-1550920/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>Mastering the art of kitchen computing</title>
+		<link>http://www.geek.com/tablets/mastering-the-art-of-kitchen-computing-1544529</link>
+		<comments>http://www.geek.com/tablets/mastering-the-art-of-kitchen-computing-1544529#comments</comments>
+		<pubDate>Tue, 02 Apr 2013 16:29:34 +0000</pubDate>
+		<dc:creator>Russell Holly</dc:creator>
+				<category><![CDATA[Chips]]></category>
+		<category><![CDATA[Gadgets]]></category>
+		<category><![CDATA[Tablets]]></category>
+		<category><![CDATA[all recipes]]></category>
+		<category><![CDATA[Android]]></category>
+		<category><![CDATA[apps]]></category>
+		<category><![CDATA[computers]]></category>
+		<category><![CDATA[IOS]]></category>
+		<category><![CDATA[kitchen]]></category>
+		<category><![CDATA[kitchen computing]]></category>
+		<category><![CDATA[remember the milk]]></category>
+		<category><![CDATA[smartphone]]></category>
+		<category><![CDATA[tablets]]></category>
+
+		<guid isPermaLink="false">http://www.geek.com/articles/auto-draft-20130329//</guid>
+		<description><![CDATA[<img width="580" height="324" src="http://www.geek.com/wp-content/uploads/2013/03/kitchen_computing-580x324.jpg" class="attachment-medium wp-post-image" alt="kitchen computing" /><br />As technology shifts to allow simple tasks using inexpensive pieces of technology, it becomes easier to consider having a computer live, full-time, in the kitchen. If you&#8217;ve ever given the concept any serious&#8230;]]></description>
+		<wfw:commentRss>http://www.geek.com/tablets/mastering-the-art-of-kitchen-computing-1544529/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Technology created by amdou in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Technology" title="Technology">
+      <outline text="VentureBeat" title="VentureBeat" type="rss" xmlUrl="http://feeds.venturebeat.com/Venturebeat" htmlUrl="http://venturebeat.com/"/>
+      <outline text="OnStartups" title="OnStartups" type="rss" xmlUrl="http://feed.onstartups.com/onstartups" htmlUrl="http://onstartups.com/"/>
+      <outline text="Naked Security" title="Naked Security" type="rss" xmlUrl="http://nakedsecurity.sophos.com/feed/" htmlUrl="https://nakedsecurity.sophos.com/"/>
+      <outline text="Softpedia News &amp;gt; Security" title="Softpedia News &amp;gt; Security" type="rss" xmlUrl="http://fulltextrssfeed.com/news.softpedia.com/newsRSS/Security-5.xml" htmlUrl="http://news.softpedia.com/"/>
+      <outline text="Legit Reviews" title="Legit Reviews" type="rss" xmlUrl="http://www.legitreviews.com/feed" htmlUrl="http://www.legitreviews.com/"/>
+      <outline text="MacRumors: Mac News and Rumors - iOS Blog" title="MacRumors: Mac News and Rumors - iOS Blog" type="rss" xmlUrl="http://www.macrumors.com/iphone/iphone.xml" htmlUrl="http://www.macrumors.com/"/>
+      <outline text="PandoDaily" title="PandoDaily" type="rss" xmlUrl="http://pandodaily.com/feed/" htmlUrl="http://pando.com/"/>
+      <outline text="Geek.com" title="Geek.com" type="rss" xmlUrl="http://www.geek.com/feed/" htmlUrl="http://www.geek.com/"/>
+      <outline text="Engadget Full RSS Feed" title="Engadget Full RSS Feed" type="rss" xmlUrl="http://www.engadget.com/rss-full.xml" htmlUrl="http://www.engadget.com/"/>
+      <outline text="9to5Mac" title="9to5Mac" type="rss" xmlUrl="http://feeds.feedburner.com/9To5Mac-MacAllDay" htmlUrl="http://9to5mac.com/"/>
+      <outline text="NextPowerUp" title="NextPowerUp" type="rss" xmlUrl="http://www.nextpowerup.com/rss/" htmlUrl="http://www.nextpowerup.com/"/>
+      <outline text="The Verge -  All Posts" title="The Verge -  All Posts" type="rss" xmlUrl="http://www.theverge.com/rss/full.xml" htmlUrl="http://www.theverge.com/"/>
+      <outline text="Redmond Pie" title="Redmond Pie" type="rss" xmlUrl="http://fulltextrssfeed.com/feeds.feedburner.com/RedmondPie" htmlUrl="http://www.redmondpie.com/"/>
+      <outline text="WIRED » Threat Level" title="WIRED » Threat Level" type="rss" xmlUrl="http://fulltextrssfeed.com/feeds.wired.com/wired27b" htmlUrl="http://www.wired.com/"/>
+      <outline text="Techdirt." title="Techdirt." type="rss" xmlUrl="http://www.techdirt.com/techdirt_rss.xml" htmlUrl="https://www.techdirt.com/"/>
+      <outline text="Cult of Mac" title="Cult of Mac" type="rss" xmlUrl="http://feeds.feedburner.com/cultofmac/bFow" htmlUrl="http://www.cultofmac.com/"/>
+      <outline text="The Tech Report - News" title="The Tech Report - News" type="rss" xmlUrl="http://feeds.feedburner.com/techreport/all" htmlUrl="http://techreport.com/"/>
+      <outline text="ServeTheHome - Server and Workstation Reviews" title="ServeTheHome - Server and Workstation Reviews" type="rss" xmlUrl="http://feeds.feedburner.com/ServeTheHome" htmlUrl="http://www.servethehome.com/"/>
+      <outline text="AnandTech" title="AnandTech" type="rss" xmlUrl="http://fulltextrssfeed.com/www.anandtech.com/rss" htmlUrl="http://www.anandtech.com/"/>
+      <outline text="OS X Daily" title="OS X Daily" type="rss" xmlUrl="http://feeds.feedburner.com/osxdaily?format=xml" htmlUrl="http://osxdaily.com/"/>
+      <outline text="TechCrunch" title="TechCrunch" type="rss" xmlUrl="http://feeds.feedburner.com/TechCrunch" htmlUrl="http://techcrunch.com/"/>
+      <outline text="WIRED » Business" title="WIRED » Business" type="rss" xmlUrl="http://www.wired.com/epicenter/feed/" htmlUrl="http://www.wired.com/"/>
+      <outline text="Boing Boing" title="Boing Boing" type="rss" xmlUrl="http://feeds.boingboing.net/boingboing/iBag" htmlUrl="http://boingboing.net/"/>
+      <outline text="WIRED" title="WIRED" type="rss" xmlUrl="http://fulltextrssfeed.com/feeds.wired.com/wired/index" htmlUrl="http://www.wired.com/"/>
+      <outline text="BGR" title="BGR" type="rss" xmlUrl="http://www.boygeniusreport.com/feed/" htmlUrl="http://bgr.com/"/>
+      <outline text="WIRED » Reviews" title="WIRED » Reviews" type="rss" xmlUrl="http://fulltextrssfeed.com/www.wired.com/reviews/feeds/latestProductsRss" htmlUrl="http://www.wired.com/"/>
+      <outline text="Information Is Beautiful" title="Information Is Beautiful" type="rss" xmlUrl="http://www.informationisbeautiful.net/feed/" htmlUrl="http://www.informationisbeautiful.net/"/>
+      <outline text="Techmeme" title="Techmeme" type="rss" xmlUrl="http://www.techmeme.com/index.xml" htmlUrl="http://www.techmeme.com/"/>
+      <outline text="Entrepreneur" title="Entrepreneur" type="rss" xmlUrl="http://feeds.feedburner.com/entrepreneur/latest" htmlUrl="http://www.entrepreneur.com/"/>
+      <outline text="TUAW: Apple news, reviews and how-tos since 2004" title="TUAW: Apple news, reviews and how-tos since 2004" type="rss" xmlUrl="http://www.tuaw.com/category/iphone/rss.xml" htmlUrl="http://www.tuaw.com/"/>
+      <outline text="New on MIT Technology Review" title="New on MIT Technology Review" type="rss" xmlUrl="http://fulltextrssfeed.com/www.technologyreview.com/rss/rss.aspx" htmlUrl="http://www.technologyreview.com/stream/?sort=recent"/>
+      <outline text="SlashGear" title="SlashGear" type="rss" xmlUrl="http://feeds.slashgear.com/slashgear?format=xml" htmlUrl="http://www.slashgear.com/"/>
+      <outline text="The Next Web" title="The Next Web" type="rss" xmlUrl="http://feeds2.feedburner.com/thenextweb" htmlUrl="http://thenextweb.com/"/>
+      <outline text="Valleywag" title="Valleywag" type="rss" xmlUrl="http://valleywag.gawker.com/rss" htmlUrl="http://valleywag.gawker.com/"/>
+      <outline text="MediaNama: Digital Media in India" title="MediaNama: Digital Media in India" type="rss" xmlUrl="http://feeds.feedburner.com/medianama" htmlUrl="http://www.medianama.com/"/>
+      <outline text="Gizmag Emerging Technology Magazine" title="Gizmag Emerging Technology Magazine" type="rss" xmlUrl="http://feeds.feedblitz.com/gizmag&amp;x=1" htmlUrl="http://www.gizmag.com/"/>
+      <outline text="BetaNews" title="BetaNews" type="rss" xmlUrl="http://www.betanews.com/rss" htmlUrl="http://betanews.com/"/>
+      <outline text="Ars Technica" title="Ars Technica" type="rss" xmlUrl="http://fulltextrssfeed.com/feeds.feedburner.com/arstechnica/BAaf" htmlUrl="http://arstechnica.com/"/>
+      <outline text="Electronista | Gadgets for Geeks" title="Electronista | Gadgets for Geeks" type="rss" xmlUrl="http://fulltextrssfeed.com/electronista.feedsportal.com/c/34342/f/626172/index.rss" htmlUrl="http://www.electronista.com/"/>
+      <outline text="Lifehacker" title="Lifehacker" type="rss" xmlUrl="http://feeds.gawker.com/lifehacker/vip" htmlUrl="http://lifehacker.com/"/>
+      <outline text="Quartz » Technology" title="Quartz » Technology" type="rss" xmlUrl="http://qz.com/re/technology/feed/" htmlUrl="http://qz.com/"/>
+      <outline text="AllThingsD" title="AllThingsD" type="rss" xmlUrl="https://allthingsd.com/feed/" htmlUrl="http://allthingsd.com/"/>
+      <outline text="Tech" title="Tech" type="rss" xmlUrl="http://feedproxy.google.com/typepad/alleyinsider/silicon_alley_insider" htmlUrl="http://www.businessinsider.com/sai"/>
+      <outline text="Google Operating System" title="Google Operating System" type="rss" xmlUrl="http://feeds2.feedburner.com/GoogleOperatingSystem" htmlUrl="http://googlesystem.blogspot.com/"/>
+      <outline text="The Red Ferret Journal - gadgets, cool sites, freeware and tech trivia" title="The Red Ferret Journal - gadgets, cool sites, freeware and tech trivia" type="rss" xmlUrl="http://www.redferret.net/?feed=rss2" htmlUrl="http://www.redferret.net/"/>
+      <outline text="Mashable" title="Mashable" type="rss" xmlUrl="http://fulltextrssfeed.com/feeds.mashable.com/Mashable?format=xml" htmlUrl="http://mashable.com/stories/?utm_campaign=Mash-Prod-RSS-Feedburner-All-Partial&amp;amp;utm_cid=Mash-Prod-RSS-Feedburner-All-Partial&amp;amp;utm_medium=feed&amp;amp;utm_source=rss"/>
+      <outline text="Valleywag" title="Valleywag" type="rss" xmlUrl="http://feeds.gawker.com/valleywag/vip" htmlUrl="http://valleywag.gawker.com/"/>
+      <outline text="Gnoted - Tips and Tricks" title="Gnoted - Tips and Tricks" type="rss" xmlUrl="http://feeds.feedburner.com/gnoted" htmlUrl="http://gnoted.com/"/>
+      <outline text="FanlessTech" title="FanlessTech" type="rss" xmlUrl="http://www.fanlesstech.com/feeds/posts/default" htmlUrl="http://"/>
+      <outline text="Gizmodo" title="Gizmodo" type="rss" xmlUrl="http://feeds.gawker.com/gizmodo/vip" htmlUrl="http://gizmodo.com/"/>
+      <outline text="Gigaom Search" title="Gigaom Search" type="rss" xmlUrl="http://feeds.feedburner.com/ommalik" htmlUrl="http://search.gigaom.com/"/>
+      <outline text="Adblock Plus and (a little) more - Blog" title="Adblock Plus and (a little) more - Blog" type="rss" xmlUrl="http://adblockplus.org/atom/?section=blog" htmlUrl="https://adblockplus.org/"/>
+      <outline text="Digital Trends" title="Digital Trends" type="rss" xmlUrl="http://www.digitaltrends.com/feed/?key=f00edf6a58d2a8740e624dda919cab37" htmlUrl="http://www.digitaltrends.com/"/>
+      <outline text="Download Squad" title="Download Squad" type="rss" xmlUrl="http://feedproxy.google.com/weblogsinc/downloadsquad" htmlUrl="http://downloadsquad.switched.com/"/>
+      <outline text="Slashdot" title="Slashdot" type="rss" xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
+      <outline text="ReadWrite" title="ReadWrite" type="rss" xmlUrl="http://www.readwriteweb.com/rss.xml" htmlUrl="http://readwrite.com/"/>
+    </outline>
+  </body>
+</opml>

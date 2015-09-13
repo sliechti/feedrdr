@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+    <head>
+        <title>Stvn subscriptions in feedly Cloud</title>
+    </head>
+    <body>
+        <outline text="Electronics" title="Electronics">
+            <outline type="rss" text="Upverter" title="Upverter" xmlUrl="http://blog.upverter.com/rss.xml" htmlUrl="http://blog.upverter.com/"/>
+            <outline type="rss" text="Electronics-Lab.com Blog" title="Electronics-Lab.com Blog" xmlUrl="http://www.electronics-lab.com/blog/?feed=rss2" htmlUrl="http://www.electronics-lab.com/blog"/>
+            <outline type="rss" text="Seeed Studio Blog" title="Seeed Studio Blog" xmlUrl="http://www.seeedstudio.com/blog/feed/" htmlUrl="http://www.seeedstudio.com/blog"/>
+        </outline>
+        <outline text="Materials" title="Materials">
+            <outline type="rss" text="ARCHITERIALS" title="ARCHITERIALS" xmlUrl="http://www.architerials.com/feed/" htmlUrl="http://www.architerials.com"/>
+            <outline type="rss" text="Metals | About.com" title="Metals | About.com" xmlUrl="http://0.tqn.com/6/g/metals/b/rss2.xml" htmlUrl="http://metals.about.com/"/>
+            <outline text="Futurist" title="Futurist">
+			  <outline type="rss" text="Resilient Communities" title="Resilient Communities" xmlUrl="http://resilientcommunities.com/feed/" htmlUrl="http://www.resilientcommunities.com"/>
+			  <outline type="rss" text="Singularity Hub" title="Singularity Hub" xmlUrl="http://singularityhub.com/feed/" htmlUrl="http://singularityhub.com"/>
+			  <outline type="rss" text="Factor E Farm Blog" title="Factor E Farm Blog" xmlUrl="http://blog.opensourceecology.org/feed/" htmlUrl="http://blog.opensourceecology.org"/>
+			  <outline type="rss" text="Global Guerrillas" title="Global Guerrillas" xmlUrl="http://globalguerrillas.typepad.com/globalguerrillas/atom.xml" htmlUrl="http://globalguerrillas.typepad.com/globalguerrillas/"/>
+			</outline>
+        </outline>
+    </body>
+</opml>

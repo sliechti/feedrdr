@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>MySQL created by Yordan Yordanov in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="MySQL" title="MySQL">
+      <outline text="Facebook Engineering's Facebook Notes" title="Facebook Engineering's Facebook Notes" type="rss" xmlUrl="http://www.facebook.com/feeds/notes.php?id=9445547199&amp;viewer=0&amp;key=AWglrFzTBTPhFS1j&amp;format=rss20" htmlUrl="http://www.facebook.com/feeds/notes.php?id=9445547199&amp;amp;viewer=0&amp;amp;key=AWglrFzTBTPhFS1j&amp;amp;format=rss20"/>
+      <outline text="High Availability MySQL" title="High Availability MySQL" type="rss" xmlUrl="http://mysqlha.blogspot.com/feeds/posts/default" htmlUrl="http://mysqlha.blogspot.com/"/>
+      <outline text="domas mituzas" title="domas mituzas" type="rss" xmlUrl="http://dom.as/feed/" htmlUrl="http://dom.as/"/>
+      <outline text="Saving you from MySQL quicksand!" title="Saving you from MySQL quicksand!" type="rss" xmlUrl="https://mysqlquicksand.wordpress.com/feed/" htmlUrl="https://mysqlquicksand.wordpress.com/"/>
+      <outline text="MySQL Performance Blog" title="MySQL Performance Blog" type="rss" xmlUrl="http://www.mysqlperformanceblog.com/feed/" htmlUrl="http://www.percona.com/blog"/>
+      <outline text="Latest Updates from MySQL" title="Latest Updates from MySQL" type="rss" xmlUrl="http://www.mysql.com/mysql.rss" htmlUrl="http://www.mysql.com/"/>
+    </outline>
+  </body>
+</opml>

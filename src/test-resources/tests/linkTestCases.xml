@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+  <channel>
+    <description>channel description</description>
+    <title>channel title</title>
+    <generator>channel generator</generator>
+    <link>http://channellink.com/channellink/test</link>	
+	
+	<item>
+	  <link rel="alternate" type="text/html" href="http://link.com/#1"/>
+	  <link rel="enclosure" type="video/mp4" href="http://link.com/enclosure1/#1"/>
+	  <link rel="enclosure" type="video/mp4" href="http://link.com/enclosure2/#1"/>
+    </item>	
+	
+	<item>
+	  <link>http://link.com/#2</link>
+	</item>
+	
+	<item>
+	  <link>http://link.com/#3</link>
+	  <description>HTML &lt;a href="http://contentlink.com/#3">TEXT#3&lt;/a> FINISHING HTML</description>
+	</item>
+	
+	<item>
+	  <link>http://link.com/#4</link>
+	  <content:encoded><![CDATA[ LINK ENCODED IN CDATA <a href="http://contentlink.com/#4">TEXT#4
+		  </a>]]></content:encoded>	  
+	</item>
+	
+	<item>
+		<link rel="replies" type="application/atom+xml" href="http://0xax.blogspot.com/feeds/1796325594040232969/comments/default" title="Post Comments"/>
+		<link rel="edit" type="application/atom+xml" href="http://www.blogger.com/feeds/2577019642309200630/posts/default/1796325594040232969"/>
+		<link rel="self" type="application/atom+xml" href="http://www.blogger.com/feeds/2577019642309200630/posts/default/1796325594040232969"/>
+		<link rel="alternate" type="text/html" href="http://link.com/#5" title="LINK#5"/>
+	   <content type="html">&lt;h3&gt;Floating point numbers&lt;/h3&gt; It is eight and final part of &lt;b&gt;Say hello to x86_64 Assembly&lt;/b&gt; and here we will take a look on how to work with non-integer numbers in assembler. There are a couple of ways how to work with floating point data:  &lt;ul&gt;&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Floating-point_unit"&gt;fpu&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Streaming_SIMD_Extensions"&gt;sse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt; First of all let's look how floating point number stored in memory. There are three floating point data types:  &lt;ul&gt;&lt;li&gt;single-precision&lt;/li&gt;&lt;li&gt;double-precision&lt;/li&gt;&lt;li&gt;double-extended precision&lt;/li&gt;&lt;/ul&gt; As Intel's &lt;i&gt;64-ia-32-architecture-software-developer-vol-1-manual&lt;/i&gt; described:  &lt;blockquote&gt;The data formats for these data types correspond directly to formats specified in the &lt;a href="http://en.wikipedia.org/wiki/IEEE_floating_point"&gt;IEEE Standard 754&lt;/a&gt; for Binary Floating-Point Arithmetic. &lt;/blockquote&gt; Single-precision floating-point float point data presented in memory:  &lt;ul&gt;&lt;li&gt;sign - 1 bit&lt;/li&gt;&lt;li&gt;exponent - 8  bits&lt;/li&gt;&lt;li&gt;mantissa - 23 bits&lt;/li&gt;&lt;/ul&gt; So for example if we have following number:  &lt;br/&gt;&lt;br/&gt;&lt;script src="https://gist.github.com/0xAX/7d9f40578b872efff1e5.js"&gt;&lt;/script&gt;  &lt;br/&gt; Exponent is either an 8 bit signed integer from −128 to 127 or an 8 bit unsigned integer from 0 to 255. Sign bit is zero, so we have positive number. Exponent is 00001111b or 15 in decimal. For single-precision displacement is 127, it means that we need to calculate &lt;b&gt;exponent - 127&lt;/b&gt; or &lt;b&gt;15 - 127 = -112&lt;/b&gt;. Since the normalized binary integer part of the mantissa is always equal to one, then in the mantissa is recorded only its fractional part, so mantissa or our number is &lt;b&gt;1,110000000000000000000000&lt;/b&gt;. Result value will be:  &lt;blockquote&gt;value = mantissa * 2^-112  &lt;/blockquote&gt; Double precision number is 64 bit of memory where:  &lt;ul&gt;&lt;li&gt;sign     - 1 bit&lt;/li&gt;&lt;li&gt;exponent - 11 bit&lt;/li&gt;&lt;li&gt;mantissa - 52 bit&lt;/li&gt;&lt;/ul&gt; Result number we can get by:  &lt;blockquote&gt;value = (-1)^sign * (1 + mantissa / 2 ^ 52) * 2 ^ exponent - 1023) &lt;/blockquote&gt; Extended precision is 80 bit numbers where:  &lt;ul&gt;&lt;li&gt;sign - 1 bit&lt;/li&gt;&lt;li&gt;exponent - 15 bit&lt;/li&gt;&lt;li&gt;mantissa - 112 bit&lt;/li&gt;&lt;/ul&gt; Read more about it - &lt;a href="http://en.wikipedia.org/wiki/Extended_precision"&gt;here&lt;/a&gt;.  Let's look at simple example.  &lt;br /&gt;&lt;a name='more'&gt;&lt;/a&gt; &lt;br/&gt;&lt;h3&gt;x87 FPU&lt;/h3&gt;&lt;br/&gt; The x87 Floating-Point Unit (FPU) provides high-performance floating-point processing. It supports the floating-point, integer, and packed BCD integer data types and the floating-point processing algorithms. x87 provides following instructions set:  &lt;ul&gt;&lt;li&gt;Data transfer instructions&lt;/li&gt;&lt;li&gt;Basic arithmetic instructions&lt;/li&gt;&lt;li&gt;Comparison instructions&lt;/li&gt;&lt;li&gt;Transcendental instructions&lt;/li&gt;&lt;li&gt;Load constant instructions&lt;/li&gt;&lt;li&gt;x87 FPU control instructions&lt;/li&gt;&lt;/ul&gt; Of course we will not see all instructions here provided by x87, for additional information see &lt;i&gt;64-ia-32-architecture-software-developer-vol-1-manual Chapter 8&lt;/i&gt;. There are a couple of data transfer instructions:  &lt;ul&gt;&lt;li&gt;FDL  -  load floating point&lt;/li&gt;&lt;li&gt;FST  -  store floating point (in ST(0) register)&lt;/li&gt;&lt;li&gt;FSTP - store floating point and pop (in ST(0) register)&lt;/li&gt;&lt;/ul&gt; Arithmetic instructions:  &lt;ul&gt;&lt;li&gt;FADD - add floating point&lt;/li&gt;&lt;li&gt;FIADD - add integer to floating point&lt;/li&gt;&lt;li&gt;FSUB  - subtract floating point&lt;/li&gt;&lt;li&gt;FISUB - subtract 
+integer from floating point&lt;/li&gt;&lt;li&gt;FABS</content>
+	</item>
+	
+	<item>
+		<link>http://link.com/IGNORE_OVERRIDE_WITH_ORIG</link>
+		<feedburner:origLink>http://link.com/#6</feedburner:origLink>
+	</item>
+
+	<item>
+	  <link>http://link.com/?utm_source=rss&#038;utm_medium=rss&#038;utm_#7</link>  
+	</item>
+	
+  </channel>
+</rss>	

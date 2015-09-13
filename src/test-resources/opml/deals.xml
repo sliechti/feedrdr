@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Deals created by amdou in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Deals" title="Deals">
+      <outline text="Techbargains.com" title="Techbargains.com" type="rss" xmlUrl="http://www.techbargains.com/rss.xml" htmlUrl="http://www.techbargains.com/"/>
+      <outline text="SlickDeals.net Forums" title="SlickDeals.net Forums" type="rss" xmlUrl="http://forums.slickdeals.net/external.php?type=rss&amp;forumids=9" htmlUrl="http://forums.slickdeals.net/"/>
+      <outline text="Woot" title="Woot" type="rss" xmlUrl="http://www.woot.com/blog/rss.aspx" htmlUrl="http://www.woot.com/blog/rss.aspx"/>
+      <outline text="Dealcatcher - Today's Deals" title="Dealcatcher - Today's Deals" type="rss" xmlUrl="http://www.dealcatcher.com/rss.asp" htmlUrl="http://www.dealcatcher.com/"/>
+      <outline text="Dealhack" title="Dealhack" type="rss" xmlUrl="http://www.dealhack.com/index.xml" htmlUrl="http://www.dealhack.com/"/>
+      <outline text="Ben's Bargains - Latest Headlines" title="Ben's Bargains - Latest Headlines" type="rss" xmlUrl="http://bensbargains.net/rss.xml/0" htmlUrl="http://bensbargains.net/rss/"/>
+      <outline text="SlickDeals.net" title="SlickDeals.net" type="rss" xmlUrl="http://www.slickdeals.net/rss.php" htmlUrl="http://slickdeals.net/"/>
+      <outline text="DealNews - Most Recent Deals" title="DealNews - Most Recent Deals" type="rss" xmlUrl="http://content.dealnews.com/dealnews/rss/last-twenty.xml" htmlUrl="http://dealnews.com/"/>
+      <outline text="Fatwallet.com Hot Deals" title="Fatwallet.com Hot Deals" type="rss" xmlUrl="http://www.fatwallet.com/rssfeed.php?c=18" htmlUrl="http://www.fatwallet.com/"/>
+    </outline>
+  </body>
+</opml>

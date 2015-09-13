@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>jQuery created by amdou in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="jQuery" title="jQuery">
+      <outline text="Perfection Kills" title="Perfection Kills" type="rss" xmlUrl="http://feeds.feedburner.com/PerfectionKills" htmlUrl="http://perfectionkills.com/"/>
+      <outline text="Official jQuery Blog" title="Official jQuery Blog" type="rss" xmlUrl="http://jquery.com/blog/feed/" htmlUrl="http://blog.jquery.com/"/>
+      <outline text="9lessons Programming Blog" title="9lessons Programming Blog" type="rss" xmlUrl="http://feeds2.feedburner.com/9lesson" htmlUrl="http://www.9lessons.info/"/>
+      <outline text="David Walsh Blog" title="David Walsh Blog" type="rss" xmlUrl="http://davidwalsh.name/feed/atom" htmlUrl="http://davidwalsh.name/"/>
+      <outline text="Badass JavaScript" title="Badass JavaScript" type="rss" xmlUrl="http://badassjs.com/rss" htmlUrl="http://badassjs.com/"/>
+      <outline text="NCZOnline" title="NCZOnline" type="rss" xmlUrl="http://feeds.nczonline.net/blog/" htmlUrl="http://www.nczonline.net/blog"/>
+      <outline text="JavaScript Weekly Archive Feed" title="JavaScript Weekly Archive Feed" type="rss" xmlUrl="http://us1.campaign-archive.com/feed?u=0618f6a79d6bb9675f313ceb2&amp;id=596bcf37c5" htmlUrl="http://us1.campaign-archive.com/feed?u=0618f6a79d6bb9675f313ceb2&amp;id=596bcf37c5"/>
+      <outline text="DailyJS" title="DailyJS" type="rss" xmlUrl="http://feeds.feedburner.com/dailyjs?format=xml" htmlUrl="http://dailyjs.com/"/>
+      <outline text="jQuery UI Blog" title="jQuery UI Blog" type="rss" xmlUrl="http://blog.jqueryui.com/feed/" htmlUrl="http://blog.jqueryui.com/"/>
+      <outline text="Codrops" title="Codrops" type="rss" xmlUrl="http://feeds.feedburner.com/codrops" htmlUrl="http://tympanus.net/codrops"/>
+      <outline text="jQuery Mobile" title="jQuery Mobile" type="rss" xmlUrl="http://jquerymobile.com/feed/" htmlUrl="http://jquerymobile.com/"/>
+      <outline text="jQuery for Designers" title="jQuery for Designers" type="rss" xmlUrl="http://feeds.feedburner.com/JqueryForDesigners" htmlUrl="http://jqueryfordesigners.com/"/>
+      <outline text="②ality – JavaScript and more" title="②ality – JavaScript and more" type="rss" xmlUrl="http://feeds.feedburner.com/2ality?format=xml" htmlUrl="http://www.2ality.com/"/>
+      <outline text="Codrops » Tutorials" title="Codrops » Tutorials" type="rss" xmlUrl="http://tympanus.net/codrops/category/tutorials/feed/" htmlUrl="http://tympanus.net/codrops"/>
+      <outline text="Learning jQuery" title="Learning jQuery" type="rss" xmlUrl="http://feeds.feedburner.com/LearningJquery" htmlUrl="http://www.learningjquery.com/"/>
+    </outline>
+  </body>
+</opml>

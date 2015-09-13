@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Too Cute! created by Andrew Incarnadine in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Too Cute!" title="Too Cute!">
+      <outline text="inline reddit: aww" title="inline reddit: aww" type="rss" xmlUrl="http://inline-reddit.com/feed/?subreddit=aww" htmlUrl="http://inline-reddit.com/feed/index.php"/>
+      <outline text="BuzzFeed Animals" title="BuzzFeed Animals" type="rss" xmlUrl="http://buzzfeedanimals.tumblr.com/rss" htmlUrl="http://buzzfeedanimals.tumblr.com/"/>
+      <outline text="wannasmile.com" title="wannasmile.com" type="rss" xmlUrl="http://feeds.feedburner.com/Wannasmilecom" htmlUrl="http://www.wannasmile.com/"/>
+      <outline text="Fuck Yeah Interspecies Friendships" title="Fuck Yeah Interspecies Friendships" type="rss" xmlUrl="http://fuckyeahinterspeciesfriendships.tumblr.com/rss" htmlUrl="http://fuckyeahinterspeciesfriendships.tumblr.com/"/>
+      <outline text="Cute Overload" title="Cute Overload" type="rss" xmlUrl="http://feeds.feedburner.com/typepad/CuteOverload" htmlUrl="http://cuteoverload.com/"/>
+      <outline text="The Daily Cute" title="The Daily Cute" type="rss" xmlUrl="http://feeds.feedburner.com/TheDailyCute" htmlUrl="http://www.thedailycute.com/"/>
+      <outline text="Animals - Izismile.com" title="Animals - Izismile.com" type="rss" xmlUrl="http://izismile.com/animals/rss.xml" htmlUrl="http://izismile.com/"/>
+      <outline text="Bunny Food" title="Bunny Food" type="rss" xmlUrl="http://bunnyfood.tumblr.com/rss" htmlUrl="http://bunnyfood.tumblr.com/"/>
+      <outline text="I Can Has Cheezburger?" title="I Can Has Cheezburger?" type="rss" xmlUrl="http://feeds.feedburner.com/ICanHasCheezburger" htmlUrl="http://icanhas.cheezburger.com/"/>
+      <outline text="Holy Cuteness" title="Holy Cuteness" type="rss" xmlUrl="http://feeds.feedburner.com/HolyCuteness" htmlUrl="http://holycuteness.com/"/>
+      <outline text="CuteStuff.co - Cute Animals, Cute Pictures, Cute Videos and MORE!" title="CuteStuff.co - Cute Animals, Cute Pictures, Cute Videos and MORE!" type="rss" xmlUrl="http://cutestuff.co/feed/" htmlUrl="http://cutestuff.co/"/>
+      <outline text="Daily Squee" title="Daily Squee" type="rss" xmlUrl="http://feeds.feedburner.com/DailySquee" htmlUrl="http://icanhas.cheezburger.com/squee"/>
+      <outline text="Cutest Paw" title="Cutest Paw" type="rss" xmlUrl="http://www.cutestpaw.com/feed/" htmlUrl="http://www.cutestpaw.com/"/>
+      <outline text="The Fluffington Post" title="The Fluffington Post" type="rss" xmlUrl="http://thefluffingtonpost.com/rss" htmlUrl="http://thefluffingtonpost.com/"/>
+      <outline text="ZooBorns" title="ZooBorns" type="rss" xmlUrl="http://feeds.feedburner.com/ZooBorns" htmlUrl="http://www.zooborns.com/zooborns/"/>
+      <outline text="Animal Capshunz" title="Animal Capshunz" type="rss" xmlUrl="http://feeds.feedburner.com/AnimalCapshunz" htmlUrl="http://icanhas.cheezburger.com/justcapshunz"/>
+      <outline text="Capybara Madness" title="Capybara Madness" type="rss" xmlUrl="http://gianthamster.com/feed/atom/" htmlUrl="http://gianthamster.com/"/>
+      <outline text="Animal Gifs" title="Animal Gifs" type="rss" xmlUrl="http://feeds.feedburner.com/AnimalGifs" htmlUrl="http://icanhas.cheezburger.com/gifs"/>
+      <outline text="Cute Animals!" title="Cute Animals!" type="rss" xmlUrl="http://fuckyeah-cuteanimals.tumblr.com/rss" htmlUrl="http://fuckyeah-cuteanimals.tumblr.com/"/>
+    </outline>
+  </body>
+</opml>

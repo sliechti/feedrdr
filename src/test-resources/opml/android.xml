@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Android created by amdou in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Android" title="Android">
+      <outline text="APK Releases" title="APK Releases" type="rss" xmlUrl="http://www.apkreleases.com/feed/" htmlUrl="http://www.apkreleases.com/"/>
+      <outline text="Android Police - Android News, Apps, Games, Phones, Tablets" title="Android Police - Android News, Apps, Games, Phones, Tablets" type="rss" xmlUrl="http://fulltextrssfeed.com/androidpolice.com" htmlUrl="http://www.androidpolice.com/"/>
+      <outline text="AndroidGuys" title="AndroidGuys" type="rss" xmlUrl="http://feeds.feedburner.com/androidguyscom" htmlUrl="http://www.androidguys.com/"/>
+      <outline text="Phandroid" title="Phandroid" type="rss" xmlUrl="http://feeds2.feedburner.com/AndroidPhoneFans" htmlUrl="http://phandroid.com/"/>
+      <outline text="Android Central - Android Forums - News - Reviews - Help and Android Wallpapers" title="Android Central - Android Forums - News - Reviews - Help and Android Wallpapers" type="rss" xmlUrl="http://feeds.feedburner.com/androidcentral" htmlUrl="http://www.androidcentral.com/"/>
+      <outline text="Android Developers Blog" title="Android Developers Blog" type="rss" xmlUrl="http://feeds.feedburner.com/blogspot/hsDu" htmlUrl="http://android-developers.blogspot.com/"/>
+      <outline text="Official Android Blog" title="Official Android Blog" type="rss" xmlUrl="http://officialandroid.blogspot.com/feeds/posts/default" htmlUrl="http://officialandroid.blogspot.com/"/>
+      <outline text="Android Authority" title="Android Authority" type="rss" xmlUrl="http://www.androidauthority.com/feed/" htmlUrl="http://www.androidauthority.com/"/>
+      <outline text="Droid Life" title="Droid Life" type="rss" xmlUrl="http://feeds.feedburner.com/DroidLife" htmlUrl="http://www.droid-life.com/"/>
+      <outline text="Android News, Rumours, and Updates" title="Android News, Rumours, and Updates" type="rss" xmlUrl="http://www.talkandroid.com/feed/" htmlUrl="http://www.talkandroid.com/"/>
+      <outline text="Android Geeks" title="Android Geeks" type="rss" xmlUrl="http://feeds.feedburner.com/Androidgs" htmlUrl="http://www.android.gs/"/>
+      <outline text="Android and Me" title="Android and Me" type="rss" xmlUrl="http://androidandme.com/feed/" htmlUrl="http://androidandme.com/"/>
+      <outline text="Cult of Android" title="Cult of Android" type="rss" xmlUrl="http://cultofandroid.com/feed/rss/" htmlUrl="http://www.cultofandroid.com/"/>
+      <outline text="Android News + App Reviews + Hardware Reviews - AndroidPIT" title="Android News + App Reviews + Hardware Reviews - AndroidPIT" type="rss" xmlUrl="http://www.androidpit.com/en/android/blog/subscribe/atom.xml" htmlUrl="http://www.androidpit.com/"/>
+      <outline text="Android Apps Review" title="Android Apps Review" type="rss" xmlUrl="http://www.androidappsreview.com/feed/" htmlUrl="http://www.androidappsreview.com/"/>
+    </outline>
+  </body>
+</opml>

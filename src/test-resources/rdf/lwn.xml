@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+>
+
+  <channel rdf:about="http://lwn.net/headlines/rss">
+    <title>LWN.net</title>
+    <link>http://lwn.net</link>
+    <description>
+ LWN.net is a comprehensive source of news and opinions from
+        and about the Linux community.  This is the main LWN.net feed,
+        listing all articles which are posted to the site front page.
+
+    </description>
+
+    <syn:updatePeriod>hourly</syn:updatePeriod>
+    <syn:updateFrequency>2</syn:updateFrequency>
+    <items>
+      <rdf:Seq>
+	<rdf:li resource="http://lwn.net/Articles/548669/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548644/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548554/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548548/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548530/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548447/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548429/rss" />
+	<rdf:li resource="http://lwn.net/Articles/547851/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548325/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548298/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548089/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548187/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548159/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548155/rss" />
+	<rdf:li resource="http://lwn.net/Articles/548146/rss" />
+      
+      </rdf:Seq>
+    </items>
+
+  </channel>
+    <item rdf:about="http://lwn.net/Articles/548669/rss">
+      <title>New stable kernels</title>
+      <link>http://lwn.net/Articles/548669/rss</link>
+      <dc:date>2013-04-26T16:54:57+00:00</dc:date>
+      <dc:creator>n8willis</dc:creator>
+      <description>
+      &lt;p&gt;A fresh batch of new stable kernels is now available.  Greg
+Kroah-Hartman has released &lt;a href=&quot;http://lwn.net/Articles/548668/&quot;&gt;3.8.9&lt;/a&gt;, &lt;a
+href=&quot;http://lwn.net/Articles/548667/&quot;&gt;3.4.42&lt;/a&gt;, and &lt;a
+href=&quot;http://lwn.net/Articles/548664/&quot;&gt;3.0.75&lt;/a&gt;, while Ben Hutchings has released
+&lt;a href=&quot;http://lwn.net/Articles/548665/&quot;&gt;3.2.44&lt;/a&gt;.  Each release includes the usual
+battery of important fixes and updates.&lt;/p&gt;
+
+&lt;p&gt;UPDATE: Greg Kroah-Hartman has subsequently released &lt;a href=&quot;http://lwn.net/Articles/548698/&quot;&gt;3.8.10&lt;/a&gt;, which fixes a build error in 3.8.9 when compiling with user namespaces enabled.&lt;/p&gt;
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548644/rss">
+      <title>Friday's security updates</title>
+      <link>http://lwn.net/Articles/548644/rss</link>
+      <dc:date>2013-04-26T15:06:14+00:00</dc:date>
+      <dc:creator>n8willis</dc:creator>
+      <description>
+      &lt;p&gt;
+&lt;b&gt;CentOS&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548646/&quot;&gt;mysql&lt;/a&gt; (C6;
+ multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Fedora&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548647/&quot;&gt;qemu&lt;/a&gt; (F18;
+host file disclosure).
+
+&lt;p&gt;
+&lt;b&gt;Mandriva&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548649/&quot;&gt;curl&lt;/a&gt;
+(session hijacking) and &lt;b&gt;subversion&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548650/&quot;&gt;ES5&lt;/a&gt;, &lt;a href=&quot;http://lwn.net/Articles/548651/&quot;&gt;BS1&lt;/a&gt;;
+multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;openSUSE&lt;/b&gt; has updated &lt;a
+href=&quot;http://lwn.net/Articles/548652/&quot;&gt;icedtea-web&lt;/a&gt; (multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Oracle&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548654/&quot;&gt;mysql&lt;/a&gt;
+(multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Red Hat&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548655/&quot;&gt;mysql&lt;/a&gt;
+(multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Scientific Linux&lt;/b&gt; has updated &lt;a
+href=&quot;http://lwn.net/Articles/548656/&quot;&gt;mysql&lt;/a&gt; (SL6; multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Ubuntu&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548657/&quot;&gt;mysql&lt;/a&gt; (multiple vulnerabilities).
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548554/rss">
+      <title>Development Update, Schedule, and Funds (OpenShot blog)</title>
+      <link>http://lwn.net/Articles/548554/rss</link>
+      <dc:date>2013-04-25T21:04:28+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      Hot on the heels of a successful Kickstarter campaign, the &lt;a href=&quot;http://www.openshot.org/&quot;&gt;OpenShot video editor&lt;/a&gt; project has &lt;a href=&quot;http://www.openshotvideo.com/2013/04/development-update-schedule-and-funds.html&quot;&gt;announced&lt;/a&gt; its schedule (still targeting December 2013, more detailed plan coming soon) and a switch to Qt&amp;nbsp;5. &quot;&lt;span&gt;One of the biggest decisions we have made so far is to switch the user interface toolkit that OpenShot uses from GTK+ to Qt. We have carefully considered our options, and our team believes it is the only reasonable path forward. A few big contributing factors to choosing Qt was the performance of embedding HTML and JavaScript (for our timeline and curve editing widgets), native-looking widget rendering (on Mac, Windows, and Linux), improved tools for designing interfaces, and the easy ability to use OpenGL to display our video preview widget.&lt;/span&gt;&quot;
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548548/rss">
+      <title>Deloget: The SoC GPU driver interview</title>
+      <link>http://lwn.net/Articles/548548/rss</link>
+      <dc:date>2013-04-25T20:40:15+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      In a lengthy blog post, Emmanuel Deloget &lt;a href=&quot;http://blog.emmanueldeloget.com/index.php?post/2013/03/08/The-SoC-GPU-driver-interview&quot;&gt;interviews nine developers of GPU drivers and tools&lt;/a&gt; for ARM system-on-chip (SoC) devices.  Questions range from the status of various projects and how the projects got started to intra-project collaboration and the future of the ARM platform.  The developers and projects are: 
+    Connor Abbot - Open GPU Tools, 
+    Eric Faye-Lund - grate (for Tegra GPUs), 
+    Herman H. Hermitage - Videocore (for Broadcom GPUs),
+    Luc Verhaegen - lima (for MALI GPUs),
+    Matthias Gottschlag - Videocore (for Broadcom GPUs),
+    Rob Clark - freedreno (for Adreno GPUs),
+    Thierry Reding - grate (for Tegra GPUs),
+    Scott Mansell - Videocore (for Broadcom GPUs), and
+    Wladimir J. van der Laan - etna_viv (for Vivante GPUs).
+
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548530/rss">
+      <title>Shuttleworth: The Supercalifragilisticexpialidocious Scorpionfish. Not.</title>
+      <link>http://lwn.net/Articles/548530/rss</link>
+      <dc:date>2013-04-25T19:04:23+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      On his blog, Mark Shuttleworth &lt;a href=&quot;http://www.markshuttleworth.com/archives/1252&quot;&gt;dashes the hopes&lt;/a&gt; of those looking for a &lt;a href=&quot;http://en.wikipedia.org/wiki/Mary_Poppins_%28film%29&quot;&gt;Mary Poppins&lt;/a&gt;-inspired release name for Ubuntu 13.10. &quot;&lt;span&gt;Slipping the phrase 'ring ring' into the codename of 13.04 was, frankly, a triumph of linguistic engineering. And I thought I might quit on a high ... For a while, there was the distinct possibility that Rick's Rolling Release Rodeo would absolve me of the twice-annual rite of composition that goes into the naming of a new release. That, together with the extent of my travels these past few months, have left me a little short in the research department.&lt;/span&gt;&quot;  No spoilers here, other than: the name is two words, an adjective and an animal, both of which start with &quot;S&quot;.
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548447/rss">
+      <title>Thursday's security updates</title>
+      <link>http://lwn.net/Articles/548447/rss</link>
+      <dc:date>2013-04-25T16:23:06+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      &lt;p&gt;
+&lt;b&gt;CentOS&lt;/b&gt; has updated &lt;b&gt;curl&lt;/b&gt; (&lt;a href=&quot;http://lwn.net/Articles/548453/&quot;&gt;C5&lt;/a&gt;;
+&lt;a href=&quot;http://lwn.net/Articles/548454/&quot;&gt;C6&lt;/a&gt;: cookie disclosure),
+&lt;b&gt;java-1.6.0-openjdk&lt;/b&gt; (&lt;a href=&quot;http://lwn.net/Articles/548455/&quot;&gt;C5&lt;/a&gt;; &lt;a
+href=&quot;http://lwn.net/Articles/548456/&quot;&gt;C6&lt;/a&gt;: many vulnerabilities), and &lt;a
+href=&quot;http://lwn.net/Articles/548457/&quot;&gt;glibc&lt;/a&gt; (C5: two denial of service flaws).
+
+&lt;p&gt;
+&lt;b&gt;Fedora&lt;/b&gt; has updated &lt;b&gt;libxml2&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548461/&quot;&gt;F18&lt;/a&gt;; &lt;a href=&quot;http://lwn.net/Articles/548462/&quot;&gt;F19&lt;/a&gt;:
+multiple unspecified vulnerabilities), &lt;b&gt;mantis&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548465/&quot;&gt;F17&lt;/a&gt;; &lt;a href=&quot;http://lwn.net/Articles/548466/&quot;&gt;F18&lt;/a&gt;: two
+vulnerabilities), &lt;a href=&quot;http://lwn.net/Articles/548468/&quot;&gt;owncloud&lt;/a&gt; (F19: two
+vulnerabilities), &lt;a href=&quot;http://lwn.net/Articles/548469/&quot;&gt;mediawiki&lt;/a&gt; (F19: multiple
+vulnerabilities), &lt;a href=&quot;http://lwn.net/Articles/548470/&quot;&gt;icedtea-web&lt;/a&gt; (F19: two
+vulnerabilities), &lt;a href=&quot;http://lwn.net/Articles/548471/&quot;&gt;qemu&lt;/a&gt; (F19: host file
+disclosure), and &lt;a href=&quot;http://lwn.net/Articles/548472/&quot;&gt;java-1.7.0-openjdk&lt;/a&gt; (F19:
+update to previous security fix).
+
+&lt;p&gt;
+&lt;b&gt;Oracle&lt;/b&gt; has updated &lt;b&gt;java-1.6.0-openjdk&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548483/&quot;&gt;OL5&lt;/a&gt;; &lt;a href=&quot;http://lwn.net/Articles/548481/&quot;&gt;OL6&lt;/a&gt;: many
+vulnerabilities), &lt;b&gt;curl&lt;/b&gt; (&lt;a href=&quot;http://lwn.net/Articles/548484/&quot;&gt;OL5&lt;/a&gt;; &lt;a
+href=&quot;http://lwn.net/Articles/548485/&quot;&gt;OL6&lt;/a&gt;: cookie disclosure), &lt;a
+href=&quot;http://lwn.net/Articles/548486/&quot;&gt;glibc&lt;/a&gt; (OL5: two denial of service flaws), &lt;b&gt;kernel-2.6.39&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548488/&quot;&gt;OL5&lt;/a&gt;; &lt;a href=&quot;http://lwn.net/Articles/548489/&quot;&gt;OL6&lt;/a&gt;:
+multiple vulnerabilities), and &lt;b&gt;kernel-2.6.32&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548490/&quot;&gt;OL5&lt;/a&gt;; &lt;a href=&quot;http://lwn.net/Articles/548491/&quot;&gt;OL6&lt;/a&gt;:
+multiple vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Red Hat&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548449/&quot;&gt;glibc&lt;/a&gt; (RHEL5:
+two denial of service flaws), &lt;a
+href=&quot;http://lwn.net/Articles/548450/&quot;&gt;java-1.6.0-openjdk&lt;/a&gt; (many vulnerabilities), and
+&lt;a href=&quot;http://lwn.net/Articles/548451/&quot;&gt;curl&lt;/a&gt; (cookie disclosure).
+
+&lt;p&gt;
+&lt;b&gt;Scientific Linux&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548492/&quot;&gt;glibc&lt;/a&gt;
+(SL5: two denial of service flaws), &lt;a href=&quot;http://lwn.net/Articles/548493/&quot;&gt;curl&lt;/a&gt;
+(cookie disclosure), and &lt;a href=&quot;http://lwn.net/Articles/548494/&quot;&gt;java-1.6.0-openjdk&lt;/a&gt; (many vulnerabilities).
+
+&lt;p&gt;
+&lt;b&gt;Ubuntu&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548459/&quot;&gt;mysql&lt;/a&gt; (many vulnerabilities) and &lt;a href=&quot;http://lwn.net/Articles/548460/&quot;&gt;EC2 kernel&lt;/a&gt; (10.04:
+multiple vulnerabilities).
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548429/rss">
+      <title>Ubuntu 13.04 (Raring Ringtail) released</title>
+      <link>http://lwn.net/Articles/548429/rss</link>
+      <dc:date>2013-04-25T13:02:12+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      Ubuntu has announced the release of 13.04, &quot;Raring Ringtail&quot;, with versions for  both &lt;a href=&quot;http://ubunt.eu/1304Server&quot;&gt;servers&lt;/a&gt; and &lt;a href=&quot;http://ubunt.eu/1304Client&quot;&gt;desktops&lt;/a&gt;.  Many improvements and updates have come with 13.04 and there are also corresponding Kubuntu, Xubuntu, Edubuntu, Lubuntu, and Ubuntu Studio releases. &quot;&lt;span&gt;Along with performance improvements to Unity, updates to common desktop
+packages, and updated core and toolchain components, Ubuntu 13.04 also
+includes the new Friends service, to consolidate all social networking
+accounts via Ubuntu Online Accounts.  Also included is a tech preview
+of Upstart's new user session feature.&lt;/span&gt;&quot;
+
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/547851/rss">
+      <title>[$] LWN.net Weekly Edition for April 25, 2013</title>
+      <link>http://lwn.net/Articles/547851/rss</link>
+      <dc:date>2013-04-25T00:51:35+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The LWN.net Weekly Edition for April 25, 2013 is available.
+
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548325/rss">
+      <title>Kügler: Plasma Pow-wow Produces Detailed Plans for Workspace Convergence</title>
+      <link>http://lwn.net/Articles/548325/rss</link>
+      <dc:date>2013-04-24T17:42:11+00:00</dc:date>
+      <dc:creator>ris</dc:creator>
+      <description>
+      Sebastian Kügler &lt;a
+href=&quot;http://dot.kde.org/2013/04/24/plasma-pow-wow-produces-detailed-plans-workspace-convergence&quot;&gt;covers
+a meeting&lt;/a&gt; of the Plasma team.  &quot;&lt;span&gt;The developers laid out the plans for an eventual release of Plasma Workspaces 2, based on KDE Frameworks 5 and Qt5. Wayland is also part of this plan. Starting with Plasma Worskpaces 2, Wayland will join X11 as a supported windowing environment, and all new development is taking this into consideration. Wayland is a replacement for most of the functionality which is today offered by Xorg. Wayland simplifies the graphics stack significantly with the goal of making every frame shown on screen perfect, something that is hard to achieve reliably with X11. Wayland's leaner graphics stack and improved security model also make it more appropriate for use on modern devices. As such, it is widely seen as the successor to X11 in the Free software ecosystem. Most of the gruntwork needed for this transition is already offered in Qt, however, there are still quite some X11-dependent code pathes in the KDE Frameworks, especially in KWin and the Oxygen widget style. While KWin is making excellent progress towards being able to be used as Wayland compositor, the future of the Oxygen widget style is still an unsolved problem.&lt;/span&gt;&quot;
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548298/rss">
+      <title>Security advisories for Wednesday</title>
+      <link>http://lwn.net/Articles/548298/rss</link>
+      <dc:date>2013-04-24T16:51:11+00:00</dc:date>
+      <dc:creator>ris</dc:creator>
+      <description>
+      &lt;b&gt;CentOS&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548303/&quot;&gt;kernel&lt;/a&gt; (C6:
+multiple vulnerabilities).
+&lt;p&gt;
+&lt;b&gt;Fedora&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548311/&quot;&gt;owncloud&lt;/a&gt; (F18:
+unspecified vulnerability).
+&lt;p&gt;
+&lt;b&gt;Oracle&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548313/&quot;&gt;kernel&lt;/a&gt; (OL6:
+multiple vulnerabilities).
+&lt;p&gt;
+&lt;b&gt;Red Hat&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548299/&quot;&gt;kernel&lt;/a&gt; (RHEL6:
+multiple vulnerabilities).
+&lt;p&gt;
+&lt;b&gt;Scientific Linux&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548304/&quot;&gt;kernel&lt;/a&gt;
+(SL6: multiple vulnerabilities).
+&lt;p&gt;
+&lt;b&gt;SUSE&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548305/&quot;&gt;java-1_4_2-ibm&lt;/a&gt;
+(multiple vulnerabilities), &lt;a href=&quot;http://lwn.net/Articles/548306/&quot;&gt;postgresql&lt;/a&gt;
+(multiple vulnerabilities), and &lt;a
+href=&quot;http://lwn.net/Articles/548308/&quot;&gt;java-1_6_0-ibm&lt;/a&gt; (multiple vulnerabilities).
+&lt;p&gt;
+&lt;b&gt;Ubuntu&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548309/&quot;&gt;openjdk-7&lt;/a&gt;
+(multiple vulnerabilities) and &lt;a href=&quot;http://lwn.net/Articles/548310/&quot;&gt;icedtea-web&lt;/a&gt;
+(regression in previous update).
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548089/rss">
+      <title>[$] The 2013 Linux Filesystem, Storage, and Memory Management Summit</title>
+      <link>http://lwn.net/Articles/548089/rss</link>
+      <dc:date>2013-04-23T21:45:36+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The &lt;a href=&quot;http://events.linuxfoundation.org/events/lsfmm-summit&quot;&gt;2013
+Linux Filesystem, Storage, and Memory Management Summit&lt;/a&gt; was held
+April 18 and 19 in San Francisco, California, immediately after the Linux
+Foundation's Collaboration Summit.  The first set of notes from that
+gathering is now available; at this point, we have most of the plenary
+sessions and the entire memory management track written up.  The rest of
+our notes from the Summit will be added in the near future.
+
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548187/rss">
+      <title>FSFE: German Parliament says: Stop Granting Software Patents</title>
+      <link>http://lwn.net/Articles/548187/rss</link>
+      <dc:date>2013-04-23T18:55:48+00:00</dc:date>
+      <dc:creator>ris</dc:creator>
+      <description>
+      The Free Software Foundation Europe reports that the German Parliament has
+adopted a joint motion against software patents.  &quot;&lt;span&gt;In the resolution,
+the Parliament says that patents on software restrict developers from
+exercising their copyright privileges, including the right to distribute
+their programs as Free Software. Patents help to create monopolies in the
+software market, and hurt innovation and job creation. The Parliament calls
+on the German government to make sure that Free Software development is not
+restricted by patents.&lt;/span&gt;&quot;
+
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548159/rss">
+      <title>Tuesday's security updates</title>
+      <link>http://lwn.net/Articles/548159/rss</link>
+      <dc:date>2013-04-23T16:23:58+00:00</dc:date>
+      <dc:creator>ris</dc:creator>
+      <description>
+      &lt;b&gt;Debian&lt;/b&gt; has updated &lt;a href=&quot;http://lwn.net/Articles/548164/&quot;&gt;tinc&lt;/a&gt; (code
+execution).
+&lt;p&gt;
+&lt;b&gt;Mandriva&lt;/b&gt; has updated &lt;b&gt;roundcubemail&lt;/b&gt; (&lt;a
+href=&quot;http://lwn.net/Articles/548161/&quot;&gt;ES&amp;nbsp;5.0&lt;/a&gt;; &lt;a
+href=&quot;http://lwn.net/Articles/548162/&quot;&gt;BS&amp;nbsp;1.0&lt;/a&gt;: cross-site scripting/file
+disclosure) and &lt;a href=&quot;http://lwn.net/Articles/548163/&quot;&gt;mysql&lt;/a&gt; (multiple unspecified
+vulnerabilities).
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548155/rss">
+      <title>Villa: Why feed reading is an open web problem, and what browsers could do about it</title>
+      <link>http://lwn.net/Articles/548155/rss</link>
+      <dc:date>2013-04-23T15:31:50+00:00</dc:date>
+      <dc:creator>n8willis</dc:creator>
+      <description>
+      At his blog, Luis Villa &lt;a href=&quot;http://tieguy.org/blog/2013/04/21/why-feed-reading-is-an-open-web-problem-and-what-browsers-could-do-about-it/&quot;&gt;muses&lt;/a&gt; on the topic of RSS and what can be learned from Google's decision to kill Google Reader.  Villa contends that &quot;&lt;span&gt;the widely perceived failure of RSS is not really a failure of RSS, but rather a failure of the user experience of discovering and subscribing to RSS.&lt;/span&gt;&quot;  In other words, Mozilla and other browser vendors have dropped the ball by not treating feeds as &quot;&lt;span&gt;a first-class web citizen&lt;/span&gt;,&quot;  which helps walled-in, proprietary solutions like Facebook and Twitter.  Solving the problem is not simple, he admits, but he does float the idea that browsers &quot;&lt;span&gt;provide a minimum viable product for light web users – possibly by supplementing the current 'here are your favorite sites' links with a clean, light reader focused on only the current top headlines&lt;/span&gt;.&quot;
+      
+      </description>
+    </item>
+    <item rdf:about="http://lwn.net/Articles/548146/rss">
+      <title>Fedora 19 Alpha released</title>
+      <link>http://lwn.net/Articles/548146/rss</link>
+      <dc:date>2013-04-23T14:19:44+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The Fedora 19 alpha release is available for testers.  &quot;&lt;span&gt;We need your help to make Fedora 19 the best release yet, so please
+take a moment of your time to download and try out the Alpha and make
+sure the things that are important to you are working.&lt;/span&gt;&quot;  There is a
+lot of new stuff in this release; see the announcement for an overview.
+
+      
+      </description>
+    </item>
+</rdf:RDF>

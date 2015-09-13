@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>A Gaming Bundle created by Ali Riza Saçan in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="A Gaming Bundle" title="A Gaming Bundle">
+      <outline text="Uploads by TotalBiscuit, The Cynical Brit" title="Uploads by TotalBiscuit, The Cynical Brit" type="rss" xmlUrl="http://gdata.youtube.com/feeds/base/users/TotalHalibut/uploads?alt=rss&amp;v=2&amp;orderby=published&amp;client=ytapi-youtube-profile" htmlUrl="http://www.youtube.com/channel/UCy1Ms_5qBTawC-k7PVjHXKQ/videos"/>
+      <outline text="Penny Arcade" title="Penny Arcade" type="rss" xmlUrl="http://penny-arcade.com/feed" htmlUrl="http://penny-arcade.com/"/>
+      <outline text="Uploads by Game Informer" title="Uploads by Game Informer" type="rss" xmlUrl="http://gdata.youtube.com/feeds/base/users/gameinformer/uploads?alt=rss&amp;v=2&amp;orderby=published&amp;client=ytapi-youtube-profile" htmlUrl="http://www.youtube.com/channel/UCK-65DO2oOxxMwphl2tYtcw/videos"/>
+      <outline text="Polygon -  All" title="Polygon -  All" type="rss" xmlUrl="http://www.polygon.com/rss/index.xml" htmlUrl="http://www.polygon.com/"/>
+      <outline text="Quality Gaming Content and Discussion -- /r/Games" title="Quality Gaming Content and Discussion -- /r/Games" type="rss" xmlUrl="http://www.reddit.com/r/Games/.rss" htmlUrl="http://www.reddit.com/r/Games/"/>
+      <outline text="GOG.com News" title="GOG.com News" type="rss" xmlUrl="http://www.gog.com/frontpage/rss" htmlUrl="http://www.gog.com/frontpage/rss"/>
+      <outline text="Steam RSS News Feed" title="Steam RSS News Feed" type="rss" xmlUrl="http://store.steampowered.com/feeds/news.xml" htmlUrl="http://www.steampowered.com/"/>
+      <outline text="Joystiq RSS Feed" title="Joystiq RSS Feed" type="rss" xmlUrl="http://www.joystiq.com/rss.xml" htmlUrl="http://www.joystiq.com/"/>
+      <outline text="Rock, Paper, Shotgun" title="Rock, Paper, Shotgun" type="rss" xmlUrl="http://feeds.feedburner.com/RockPaperShotgun" htmlUrl="http://www.rockpapershotgun.com/"/>
+      <outline text="Dead End Thrills" title="Dead End Thrills" type="rss" xmlUrl="http://deadendthrills.com/feed/" htmlUrl="http://deadendthrills.com/"/>
+    </outline>
+  </body>
+</opml>

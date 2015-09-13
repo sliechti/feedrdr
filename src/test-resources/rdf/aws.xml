@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss1full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:cc="http://web.resource.org/cc/" xmlns="http://purl.org/rss/1.0/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+
+<channel rdf:about="http://aws.typepad.com/aws/">
+<title>Amazon Web Services Blog</title>
+<link>http://aws.typepad.com/aws/</link>
+<description>Amazon Web Services, Products, Tools, and Developer Information...</description>
+<dc:language>en-US</dc:language>
+<dc:creator />
+<dc:date>2013-04-26T15:37:34-07:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.typepad.com/" />
+
+
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/aws-summit-2013-update.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/amazon-coins-virtual-currency-for-app-and-in-app-purchases.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/aws-marketplace-support-for-the-asia-pacific-sydney-region.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/aws-management-console-for-aws-govcloud-us.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/aws-week-in-review-april-15-2013.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/now-available-red-hat-enterprise-linux-64-amis.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/amazon-partner-network-new-training-and-competencies.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/amazon-rds-for-oracle-database-data-and-network-encryption.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/local-secondary-indexes-for-amazon-dynamodb.html" />
+<rdf:li rdf:resource="http://aws.typepad.com/aws/2013/04/amazon-s3-two-trillion-objects-11-million-requests-second.html" />
+</rdf:Seq>
+</items>
+
+<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rdf+xml" href="http://feeds.feedburner.com/AmazonWebServicesBlog" /><feedburner:info uri="amazonwebservicesblog" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><feedburner:emailServiceId>AmazonWebServicesBlog</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><feedburner:browserFriendly>This
+    is an XML content stream. It is intended to be viewed in a newsreader or syndicated to another site, subject to
+    copyright and fair use.</feedburner:browserFriendly></channel>
+
+<item rdf:about="http://aws.typepad.com/aws/2013/04/aws-summit-2013-update.html">
+<title>AWS Summit 2013 Update</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/MgBHEz-5RuA/aws-summit-2013-update.html</link>
+<description>It is Friday afternoon inbox-clearing time for me! Before I abandon my keyboard for the weekend I want to share a few items related to our popular AWS Summit series. For The Record The 2013 summits in New York, Australia,...</description>
+<content:encoded><![CDATA[<p>It is Friday afternoon inbox-clearing time for me! Before I abandon my keyboard for the weekend I want to share a few items related to our popular <a href="http://aws.amazon.com/aws-summit-2013/" target="_self">AWS Summit</a> series.</p>
+<p><span style="text-decoration: underline;"><strong>For The Record</strong></span><br />The 2013 summits in New York, Australia, and London opened to capacity crowds in each city. The keynote and breakout talks at each event inspired a plethora of intriguing tweets and left the attendees with an even better sense of what AWS is about, how it has grown, what kinds of customers are using it, and what it can do. You can find the breakout presentations for New York and London at the following locations:</p>
+<ul>
+<li class="litight"><a href="http://www.slideshare.net/AmazonWebServices/tag/nycsummit2013" target="_self">New York AWS Summit 2013 Presentations</a></li>
+<li class="litight"><a href="http://www.slideshare.net/AmazonWebServices/tagged/AWS%20Summit%20-%20London%202013" target="_self">London AWS Summit 2013 Presentations</a></li>
+</ul>
+<p>I'm tracking down the presentations for the Australia summit and will update this post as soon as I find the link!</p>
+<p><span style="text-decoration: underline;"><strong>Coming Soon</strong></span><br />Next on the agenda is the <a href="http://aws.amazon.com/aws-summit-2013/san-francisco/" target="_self">AWS Summit in San Francisco</a>, scheduled for Tuesday, April 30th at the Moscone Conference Center. Advance registration is full, but you are welcome to camp out on the sidewalk and stand in line for walk-up registration. If your camping days are over or if you won't be able to make it to San Francisco, please r<a href="http://aws.amazon.com/aws-summit-2013/san-francisco/" target="_self">egister for the live stream</a> and watch the keynote from the comfort of your desk. I will be in the audience at this summit; please say hello if you happen to see me.</p>
+<p>Still on the agenda are Summits in Berlin, Tokyo, Mumbai, Paris, Delhi, Bangalore, Singapore, and São Paolo. If you'd like to attend a summit in one of these cities, visit the <a href="http://aws.amazon.com/aws-summit-2013/" target="_self">AWS Summit page</a> and register now.</p>
+<p><span style="text-decoration: underline;"><strong>The Other Kind of Networking</strong></span><br />Please join AWS employees in San Francisco for a
+Pre-AWS Developer Summit Networking event at <strong><a href="http://www.jillianssf.com/">Jillian’s</a> (175 Fourth Street, San
+Francisco, CA 94103) on Monday April 29<sup>th</sup> from 6:30 PM – 9:30 PM.</strong>
+This is your chance to meet with AWS employees and other Summit
+attendees. You’ll also be able to explore the exciting opportunities that
+AWS has brought to the Bay Area as well as our other geographic
+locations. Socialize and connect while enjoying food, drinks and a game
+or two. </p>
+<p>-- Jeff;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=MgBHEz-5RuA:d8isx_bCDTc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=MgBHEz-5RuA:d8isx_bCDTc:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=MgBHEz-5RuA:d8isx_bCDTc:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/MgBHEz-5RuA" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Conference</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-26T15:37:34-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/aws-summit-2013-update.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/amazon-coins-virtual-currency-for-app-and-in-app-purchases.html">
+<title>Amazon Coins - Virtual Currency for App and In-App Purchases</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/qLg4S1dXXtY/amazon-coins-virtual-currency-for-app-and-in-app-purchases.html</link>
+<description>Amazon Coins are a new virtual currency that will be made available to Kindle Fire users this coming May. They can be used to pay for apps and for most in-app purchases. If your app runs on the Kindle Fire,...</description>
+<content:encoded><![CDATA[<p><a href="https://developer.amazon.com/sdk/coins/landing.html" target="_self">Amazon Coins</a> are a new virtual currency that will be made available to Kindle Fire users this coming May. They can be used to pay for apps and for most in-app purchases.</p>
+<p>If your app runs on the Kindle Fire, it is eligible for Amazon Coins with no further work on your part. If it runs on another Android device and is already in the Amazon Appstore for Android, you&#39;ll need to review the <a href="https://developer.amazon.com/sdk/fire/best-practices.html" target="_self">Kindle Fire Best Practices</a> and then re-submit your app with the appropriate Kindle Fire devices checked in the Device Support section of the submission form.</p>
+<p>For more information about how to use Amazon Coins in your app, read our new blog post, <a href="https://developer.amazon.com/post/Tx2KQ7KN7TXIQTU/Taking-Advantage-of-Amazon-Coins.html" target="_self">Taking Advantage of Amazon Coins</a>.</p>
+<p>I would also like to encourage you to take a look at some other AWS services that you can use to build and host mobile apps of all types:</p>
+<ul>
+<li>The <a href="http://aws.amazon.com/sdkforandroid/" target="_self">AWS SDK for Android</a> lets you build Android apps that access and take advantage of AWS services.</li>
+<li><a href="http://aws.amazon.com/ec2/" target="_self">Amazon EC2</a> makes a great, scalable host for your application&#39;s backend processing and logic.</li>
+<li><a href="http://aws.amazon.com/s3/" target="_self">Amazon S3</a> is perfect for storing application assets, for low-latency worldwide distribution via <a href="http://aws.amazon.com/cloudfront/" target="_self">Amazon CloudFront</a>.</li>
+<li><a href="http://aws.amazon.com/dynamodb/" target="_self">Amazon DynamoDB</a> is a fully managed NoSQL service that can scale to any desired level of throughput.</li>
+</ul>
+<p>You can also visit our <a href="http://aws.amazon.com/web-mobile-social/" target="_self">Web, Mobile, and Social Apps</a> page to get some ideas and to see how your competitors are already using these services!</p>
+<p>-- Jeff;</p>
+<p>&#0160;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=qLg4S1dXXtY:XFO6fWuOfk8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=qLg4S1dXXtY:XFO6fWuOfk8:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=qLg4S1dXXtY:XFO6fWuOfk8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/qLg4S1dXXtY" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Amazon DynamoDB</dc:subject>
+<dc:subject>Amazon EC2</dc:subject>
+<dc:subject>Amazon S3</dc:subject>
+<dc:subject>Games</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-25T13:16:07-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/amazon-coins-virtual-currency-for-app-and-in-app-purchases.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/aws-marketplace-support-for-the-asia-pacific-sydney-region.html">
+<title>AWS Marketplace - Support for the Asia Pacific (Sydney) Region</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/SzWPsjChgys/aws-marketplace-support-for-the-asia-pacific-sydney-region.html</link>
+<description>The AWS Marketplace is an online store that helps you to find, compare, and immediately start using any one of a large number of software infrastructure components, developer tools, and business solutions, all using 1-Click Deployment. You can now launch...</description>
+<content:encoded><![CDATA[<p>The <a href="https://aws.amazon.com/marketplace" target="_self">AWS Marketplace</a> is an online store that helps you to find, compare, and immediately start using any one of a large number of software infrastructure components, developer tools, and business solutions, all using 1-Click Deployment.</p>
+<div style="text-align: center;">
+<img alt="" src="http://media.amazonwebservices.com/blog/2013/aws_marketplace_netscaler_1.png" style="border: 1px solid black;" />
+</div>
+<p>You can now launch AWS Marketplace products in the Asia Pacific (Sydney) Region, with the potential for lower latency and higher performance.</p>
+<div style="text-align: center;">
+<img alt="" src="http://media.amazonwebservices.com/blog/2013/aws_marketplace_sydney_1.png" />
+</div>
+<p>Over 100 software products are currently available for production, testing and
+development purposes, including <a href="https://aws.amazon.com/marketplace/search/results/ref=gtw_navgno_search_box?searchTerms=MongoDB" target="_self">MongoDB</a>, <a href="https://aws.amazon.com/marketplace/search/results/ref=srh_navgno_search_box?searchTerms=aiCache&amp;search=" target="_self">aiCache</a>,
+<a href="https://aws.amazon.com/marketplace/search/results/ref=srh_navgno_search_box?searchTerms=NetScaler&amp;search=" target="_self">Citrix NetScaler</a>, <a href="https://aws.amazon.com/marketplace/pp/B00B9KW32I/ref=srh_res_product_title?ie=UTF8&amp;sr=0-2&amp;qid=1366732133617" target="_self">F5</a>, <a href="https://aws.amazon.com/marketplace/pp/B00A41ASWK/ref=srh_res_product_title?ie=UTF8&amp;sr=0-2&amp;qid=1366732161394" target="_self">MicroStrategy</a> and <a href="https://aws.amazon.com/marketplace" target="_self">others</a>. Our Sellers continually add
+new AWS Marketplace products for deployment in the AWS Sydney Region.</p>
+<p>-- Jeff;</p>
+<p>PS - If you have a product or solution that runs on AWS, you may be interested in our <a href="https://aws.amazon.com/marketplace/help/200899830" target="_self">information for Sellers</a>.</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=SzWPsjChgys:iqhYG1nu5A8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=SzWPsjChgys:iqhYG1nu5A8:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=SzWPsjChgys:iqhYG1nu5A8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/SzWPsjChgys" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>AWS Marketplace</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-24T10:55:48-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/aws-marketplace-support-for-the-asia-pacific-sydney-region.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/aws-management-console-for-aws-govcloud-us.html">
+<title>AWS Management Console for AWS GovCloud (US)</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/pr1zncCa4ro/aws-management-console-for-aws-govcloud-us.html</link>
+<description>The AWS GovCloud (US) was built with government customers in mind. It is an isolated AWS Region designed to allow US government agencies and customers to move sensitive workloads into the cloud. AWS GovCloud (US) adheres to US International Traffic...</description>
+<content:encoded><![CDATA[<p>The AWS GovCloud (US) was built with government customers in mind. It is an isolated AWS Region designed to allow US government agencies and customers to move sensitive workloads into the cloud. AWS GovCloud (US) adheres to US International Traffic in Arms Regulations (ITAR) as well as a variety of other audited and certified compliance regimes (see the <a href="https://aws.amazon.com/security/" target="_self">AWS Security and Compliance Center</a> for more info).</p>
+<p>I&#39;m happy to announce that the <a href="http://aws.amazon.com/console/" target="_self">AWS Management Console</a> can now be used to manage AWS resources in the AWS GovCloud (US) Region. This instance of the console is separate and distinct from the instance used to manage AWS resources in the public AWS Regions. The UI is the same and all of the functionality is there, but access to the console is restricted and the console works only for AWS GovCloud (US).</p>
+<div style="text-align: center;">
+<img alt="" src="http://media.amazonwebservices.com/blog/2013/govcloud_us_console_4.jpg" />
+</div>
+<p><span style="text-decoration: underline;"><strong>The Console in Action at JHC</strong></span><br />While working on this post, I spoke to James Hirmas, CEO of <a href="http://www.jhctechnology.com" target="_self">JHC Technology</a>, to learn about how his company uses the new console to build and run applications for the US government. James told me that they have been beta testing the console and that they are happy to see it launched. Their federal clients generally run from locked-down desktops and cannot install <a href="http://www.elasticwolf.com/" target="_self">ElasticWolf</a> or other client-side applications. The new console GUI and the wizards make AWS more accessible to their customers and runs well in government environments.</p>
+<p>We also talked about some of the systems and applications that JHC has built for their US government clients. Here&#39;s what I learned:</p>
+<p>To help transition developers to cloud computing, JHC built a templated development environment that can be launched on-demand. The environment includes Active Directory, SQL Server, <a href="http://office.microsoft.com/en-us/lync/" target="_self">Lync</a>, and a set of development tools. By launching copies of this stack as needed, developers can work within a clean, isolated environment. They avoid running out of resources and no longer get in each other&#39;s way. </p>
+<p>JHC built an AWS-powered source control environment using TeamFoundation and Active Directory. Developers sign in and are connected to the on-demand development environment by means of an RDP session.</p>
+<p>They also build public-facing government websites using EC2, Elastic Load Balancing, the Relational Database Service, and S3 (Earlier in his career, James designed and managed the implementation of <a href="http://www.recovery.gov/" target="_self">Recovery.gov</a>, the first AWS-powered federal government website).</p>
+<p><span style="text-decoration: underline;"><strong>Getting Access to the Console</strong></span><br />AWS GovCloud (US) accounts can be obtained only by individuals or entities that qualify as <a href="http://pmddtc.state.gov/regulations_laws/documents/official_itar/ITAR_Part_120.pdf" target="_self">U.S. Persons</a> under applicable regulations. To initiate the sign-up process, contact your AWS GovCloud (US) Region Business Representative. You will need to sign the AWS Customer Agreement and the AWS GovCloud (US) Region Addendum.</p>
+<p>If you are an AWS GovCloud (US) user and you want to gain access to the new console, please consult the <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/getting-started-console.html" target="_self">AWS GovCloud (US) User&#39;s Guide</a>.</p>
+<p>-- Jeff;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=pr1zncCa4ro:k99xUzynjOQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=pr1zncCa4ro:k99xUzynjOQ:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=pr1zncCa4ro:k99xUzynjOQ:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/pr1zncCa4ro" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>AWS GovCloud</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-23T18:27:04-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/aws-management-console-for-aws-govcloud-us.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/aws-week-in-review-april-15-2013.html">
+<title>AWS Week in Review - April 15, 2013</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/23LS7h4pRzo/aws-week-in-review-april-15-2013.html</link>
+<description>Let's take a quick look at what happened in AWS-land last week: Wednesday, April 17 We announced IAM Roles for AWS Elastic Beanstalk. The AWS Ruby Blog discussed Locking Dependency Versions with Bundler. Thursday, April 18 We announced that Amazon...</description>
+<content:encoded><![CDATA[<p>Let&#39;s take a quick look at what happened in AWS-land last week:</p>
+<table cellpadding="4" cellspacing="4" style="border: 2px solid black; border-collapse: collapse;">
+<tbody>
+<tr style="border-bottom: 1px dotted black;">
+<td>Wednesday, April 17<br /></td>
+<td>
+<ul>
+<li class="litight">We announced <a href="http://aws.typepad.com/aws/2013/04/iam-roles-for-aws-elastic-beanstalk.html" target="_self">IAM Roles for AWS Elastic Beanstalk</a>.</li>
+<li class="litight">The <a href="http://ruby.awsblog.com/" target="_self">AWS Ruby Blog</a> discussed <a href="http://ruby.awsblog.com/post/Tx3JYT9EGRVIC9A/Locking-Dependency-Versions-with-Bundler" target="_self">Locking Dependency Versions with Bundler</a>.</li>
+</ul>
+</td>
+</tr>
+<tr style="border-bottom: 1px dotted black;">
+<td>Thursday, April 18<br /></td>
+<td>
+<ul>
+<li class="litight">We announced that <a href="http://aws.typepad.com/aws/2013/04/amazon-s3-two-trillion-objects-11-million-requests-second.html" target="_self">Amazon S3 now stores 2 trillion objects and handles 1.1 million requests per second</a>.</li>
+<li class="litight">We announced <a href="http://aws.typepad.com/aws/2013/04/amazon-rds-for-oracle-database-data-and-network-encryption.html" target="_self">Data and Network Encryption for Amazon RDS for Oracle Database</a>.</li>
+<li class="litight">We announced <a href="http://aws.typepad.com/aws/2013/04/local-secondary-indexes-for-amazon-dynamodb.html" target="_self">Local Secondary Indexes for Amazon DynamoDB</a>.</li>
+<li class="litight">We announced <a href="http://aws.typepad.com/aws/2013/04/amazon-partner-network-new-training-and-competencies.html" target="_self">New Training and Competencies for the Amazon Partner Network</a>.</li>
+<li class="litight">We updated the <a href="https://aws.amazon.com/sdkforandroid" target="_self">AWS SDK for Android</a> and the <a href="https://aws.amazon.com/sdkforios" target="_self">AWS SDK for iOS</a>.</li>
+</ul>
+</td>
+</tr>
+<tr style="border-bottom: 1px dotted black;">
+<td>Friday, April 19<br /></td>
+<td>
+<ul>
+<li class="litight">We announced that <a href="http://aws.typepad.com/aws/2013/04/now-available-red-hat-enterprise-linux-64-amis.html" target="_self">EC2 AMIs for Red Hat Enterprise Linux 6.4 are now available</a>.</li>
+<li class="litight">We posted a new presentation, <a href="http://www.slideshare.net/AmazonWebServices/whole-site-delivery-with-amazon-cloudfront" target="_self">Whole Site Delivery with Amazon CloudFront</a>.</li>
+<li class="litight">The <a href="http://mobile.awsblog.com/" target="_self">AWS Mobile Blog</a> talked about <a href="http://mobile.awsblog.com/post/Tx1IB9IG6ZKMTPZ/Understanding-the-Frameworks-of-the-AWS-SDK-for-iOS" target="_self">Understanding the Frameworks of the AWS SDK for iOS</a>.</li>
+<li>This week AWS Marketplace added new products including <a href="https://aws.amazon.com/marketplace/pp/B00CFPZ9SG/Ref=mtk_wir_gitlab">GitLab</a>,
+<a href="https://aws.amazon.com/marketplace/pp/B00CFPRK1U/Ref=mtk_wir_openerp">OpenERP</a>,
+<a href="https://aws.amazon.com/marketplace/pp/B00CFPUSVY/Ref=mtk_wir_resourcespace">ResourceSpace</a>,
+<a href="https://aws.amazon.com/marketplace/pp/B00CFPVPZW/Ref=mtk_wir_tikiwiki">Tiki
+Wiki CMS Groupware</a>, <a href="https://aws.amazon.com/marketplace/pp/B00CFPUT5O/Ref=mtk_wir_zurmo">Zurmo</a>,
+<a href="https://aws.amazon.com/marketplace/pp/B00C2EOLBG/Ref=mtk_wir_cloudlinux_cpanel">CloudLinux
+with cPanel</a>, <a href="https://aws.amazon.com/marketplace/pp/B00CFSTEEI/Ref=mtk_wir_redis">Redis
+To Go</a>, and <a href="https://aws.amazon.com/marketplace/pp/B00CF5JX60/ref=mtk_wir_acobot">Acobot</a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Stay tuned for next week! In the meantime, <a href="https://twitter.com/jeffbarr" target="_self">follow me on Twitter</a> and <a href="http://feeds.feedburner.com/AmazonWebServicesBlog" target="_self">subscribe to the RSS feed</a>.</p>
+<p>-- <a href="https://twitter.com/jeffbarr">Jeff</a>;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=23LS7h4pRzo:tBInyuIdGBE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=23LS7h4pRzo:tBInyuIdGBE:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=23LS7h4pRzo:tBInyuIdGBE:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/23LS7h4pRzo" height="1" width="1"/>]]></content:encoded>
+
+
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-22T08:26:19-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/aws-week-in-review-april-15-2013.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/now-available-red-hat-enterprise-linux-64-amis.html">
+<title>Now Available on Amazon EC2: Red Hat Enterprise Linux 6.4 AMIs</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/Dlt61FFbD0k/now-available-red-hat-enterprise-linux-64-amis.html</link>
+<description>Version 6.4 of Red Hat Enterprise Linux (RHEL) is now available as an Amazon Machine Image (AMI) for use on all EC2 instance types in all AWS Regions. With this release, AMIs are available for 32 and 64-bit PVM (paravirtualized)...</description>
+<content:encoded><![CDATA[<p>Version 6.4 of Red Hat Enterprise Linux (RHEL) is now available as an Amazon Machine Image (AMI) for use on all <a href="http://aws.amazon.com/ec2/instance-types/" target="_self">EC2 instance types</a> in all <a href="http://aws.amazon.com/about-aws/globalinfrastructure/" target="_self">AWS Regions</a>. </p>
+<div style="text-align: center;">
+<img alt="" src="http://media.amazonwebservices.com/blog/2013/rh64_console_launch_one_1.png" />
+</div>
+<p>With this release, AMIs are available for 32 and 64-bit PVM (paravirtualized) and 64-bit HVM (hardware-assisted virtualization). The new HVM support means that you can now run RHEL on a wider variety of EC2 instance types including the Cluster Compute (<strong>cc</strong>), High Memory Cluster Compute (<strong>cr</strong>), Cluster GPU (<strong>cg</strong>), High Storage (hs), and High I/O (<strong>hi</strong>) families (availability of instance types varies by Region).</p>
+<div style="text-align: center;">
+<img alt="" src="http://media.amazonwebservices.com/blog/2013/rh64_console_instance_types_1.png" />
+</div>
+<p>RHEL 6.4 now includes support for the popular <a href="https://help.ubuntu.com/community/CloudInit" target="_self">CloudInit</a> package. You can use CloudInit to customize your instances at boot time by using EC2&#39;s user data feature to pass an include file, a script, an Upstart job, a bootstrap hook to the instance. This mechanism can be used to create and modify files, install and configure packages, generate SSH keys, set the host name, and so forth. </p>
+<p>This release also changes the default user login from &quot;root&quot; to &quot;ec2_user.&quot;</p>
+<p>More information on the availability of Red Hat Enterprise Linux, including a global list of AMI IDs for all versions of RHEL can be found on the <a href="http://aws.amazon.com/redhat/" target="_self">Red Hat Partner Page</a>.</p>
+Support for these AMIs is available through <a href="http://aws.amazon.com/premiumsupport/" target="_self">AWS Premium Support</a> and <a href="http://www.redhat.com/support/" target="_self">Red Hat Global Support</a>.
+<p>-- Jeff;</p>
+<p>&#0160;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=Dlt61FFbD0k:CbUDLPMNfF8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=Dlt61FFbD0k:CbUDLPMNfF8:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=Dlt61FFbD0k:CbUDLPMNfF8:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/Dlt61FFbD0k" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Amazon EC2</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-19T09:11:41-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/now-available-red-hat-enterprise-linux-64-amis.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/amazon-partner-network-new-training-and-competencies.html">
+<title>Amazon Partner Network - New Training and Competencies</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/ih6R9vwTNi4/amazon-partner-network-new-training-and-competencies.html</link>
+<description>The Amazon Partner Network (APN) focuses on helping our partners to build successful AWS-powered businesses by providing them with strong technical, sales, marketing, and go-to-market support. Today we are taking a step forward with the introduction of new training, accreditation,...</description>
+<content:encoded><![CDATA[<p>The <a href="http://aws.amazon.com/partners/overview/" target="_self">Amazon Partner Network</a> (APN) focuses on helping our partners to build successful AWS-powered businesses by providing them with strong technical, sales, marketing, and go-to-market support.</p>
+<p>Today we are taking a step forward with the introduction of new training, accreditation, and competencies for APN members. Let&#39;s take a look at each one.</p>
+<p><span style="text-decoration: underline;"><strong>Training and Accreditation</strong></span><br />As a partner, you want to learn all that you can about AWS, and you want to show potential customers that you have the business and technical skills needed to address their needs.</p>
+<p>Our new <a href="http://aws.amazon.com/partners/overview/partner-training/" target="_self">online partner training and accreditation</a> is designed to address this need, with distinct tracks for <a href="http://aws.amazon.com/partners/overview/partner-training/#AWS_Business_Professional" target="_self">AWS Business Professionals</a> and <a href="http://aws.amazon.com/partners/overview/partner-training/#AWS_Technical_Professional" target="_self">AWS Technical Professionals</a>. </p>
+<p>The AWS Business Professional training program consists of four self-paced modules: Amazon and Cloud Computing, AWS Products and Services, AWS Solutions, and AWS Pricing. You should plan to spend 4.5 to 6 hours on this training.</p>
+<p>The AWS Technical Professional training program consists of five self-paced modules: Introduction to the AWS Platform, AWS Products and Services, Batch Processing, Scalable Web Applications, and Disaster Recovery. You should be able to complete this program in about 3.5 hours.</p>
+<p>After you complete a training program, you will need to pass the appropriate assessment in order to earn your accreditation.</p>
+<p><span style="text-decoration: underline;"><strong>Competencies</strong></span><br /><a href="http://aws.amazon.com/partners/overview/apn-competencies/" target="_self">APN Competencies</a> give you the ability to differentiate your offering by showing your expertise in building solutions of a particular type.</p>
+<p>As a partner, you can currently apply for one or both of the following APN Competencies:</p>
+<ul>
+<li><strong>Big Data</strong> - If you help your customers to evaluate and use the tools, techniques, and technologies needed to work productively with data, at any scale.</li>
+<li><strong>Managed Service Provider</strong> - if you fully manage your customers&#39; AWS-based infrastructure, databases, and applications.</li>
+</ul>
+<p>To qualify for a competency, you must be a Standard or Advanced APN Consulting Partner with at least 3 customer references within the competency, a public endorsement, and at least $5,000 in direct or indirect AWS revenue.</p>
+<p><a href="http://aws.amazon.com/partners/contact-us/" target="_self">Contact the APN team</a> if you have questions about Training and APN Competencies.</p>
+<p>-- Jeff;</p>
+<p>&#0160;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=ih6R9vwTNi4:HRRZ8_ocEQ4:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=ih6R9vwTNi4:HRRZ8_ocEQ4:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=ih6R9vwTNi4:HRRZ8_ocEQ4:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/ih6R9vwTNi4" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Amazon Partner Network</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-18T09:51:19-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/amazon-partner-network-new-training-and-competencies.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/amazon-rds-for-oracle-database-data-and-network-encryption.html">
+<title>Amazon RDS for Oracle Database - Data and Network Encryption</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/IANABzKb28M/amazon-rds-for-oracle-database-data-and-network-encryption.html</link>
+<description>Amazon RDS for Oracle Database now supports a pair of important features to help protect your mission-critical data: Transparent Data Encryption protects data at rest. It encrypts your data before it is written to storage, and decrypts it after it...</description>
+<content:encoded><![CDATA[<p><a href="http://aws.amazon.com/rds/oracle/" target="_self">Amazon RDS for Oracle Database</a> now supports a pair of important features to help protect your mission-critical data:</p>
+<ul>
+<li><a href="http://www.oracle.com/technetwork/database/options/advanced-security/index-099011.html" target="_self">Transparent Data Encryption</a> protects data at rest. It encrypts your data before it is written to storage, and decrypts it after it is read from storage. You can choose to encrypt tablespaces or specific table columns using a number of industry standard encryption algorithms including <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_self">Advanced Encryption Standard</a> (AES) and <a href="http://en.wikipedia.org/wiki/Data_Encryption_Standard" target="_self">Data Encryption Standard</a> (Triple DES).</li>
+<li>Native Network Encryption protects data in motion using the <a href="http://www.oracle.com/technetwork/database/enterprise-edition/index-098579.html" target="_self">Oracle Net Services</a>. You can choose between AES, Triple DES, and <a href="http://en.wikipedia.org/wiki/RC4" target="_self">RC4</a></li>
+</ul>
+<p>These features are components of Oracle&#39;s Advanced Security Option (ASO) for Oracle Database 11g Enterprise Edition, available for use on Amazon RDS under the Bring-Your-Own-License (BYOL) model. There is no additional charge for either feature.</p>
+<p><span style="text-decoration: underline;"><strong>Enabling Native Network Encryption</strong></span><br />To enable Native Network Encryption, add the NATIVE_NETWORK_ENCRYPTION option to an option group associated with the RDS DB Instance and specify the option settings. The settings are described in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.html" target="_self">Options for Oracle DB Engine</a> section of the <a href="http://aws.amazon.com/documentation/rds/" target="_self">Amazon RDS Documentation</a> and include SQLNET.ENCRYPTION_SERVER (encryption behavior), SQLNET.CRYPTO_CHECKSUM_SERVER (data integrity behavior),&#0160; SQLNET.ENCRYPTION_TYPES_SERVER (encryption algorithm), and SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER (checksum algorithm). You must also make the corresponding changes in the <strong>sqlnet.ora</strong> file on the client in order to be able to connect to the DB Instance.</p>
+<p><span style="text-decoration: underline;"><strong>Enabling Transparent Data Encryption</strong></span><br />You can choose to encrypt entire tables (tablespaces) or individual columns. </p>
+<p>To enable Transparent Data Encryption, add the TDE option to an option group associated with the RDS DB Instance. Once you choose to enable this option for a DB Instance, it becomes permanent, and cannot be disabled.</p>
+<p>For more information on these and other options, take a look at the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.html" target="_self">Options for Oracle DB Engine</a> section of the <a href="http://aws.amazon.com/documentation/rds/" target="_self">Amazon RDS Documentation</a>.</p>
+<p><span style="text-decoration: underline;"><strong>Ready Now</strong></span><br />This feature is available today and you can start using it now (I never get tired of typing that!).</p>
+<p>-- Jeff;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=IANABzKb28M:5UEx5Cm79WA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=IANABzKb28M:5UEx5Cm79WA:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=IANABzKb28M:5UEx5Cm79WA:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/IANABzKb28M" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Amazon RDS</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-18T08:31:34-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/amazon-rds-for-oracle-database-data-and-network-encryption.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/local-secondary-indexes-for-amazon-dynamodb.html">
+<title>Local Secondary Indexes for Amazon DynamoDB</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/ZhHQn2-f-xM/local-secondary-indexes-for-amazon-dynamodb.html</link>
+<description>You can now create local secondary indexes for Amazon DynamoDB tables. These indexes provide give you the power to query your tables in new ways, and can also increase retrieval efficiency. What's a Local Secondary Index? The local secondary index...</description>
+<content:encoded><![CDATA[<p>You can now create local secondary indexes for <a href="http://aws.amazon.com/dynamodb/" target="_self">Amazon DynamoDB</a> tables. These indexes provide give you the power to query your tables in new ways, and can also increase retrieval efficiency.</p>
+<p><span style="text-decoration: underline;"><strong>What&#39;s a Local Secondary Index?</strong></span><br />The local secondary index model builds on DynamoDB&#39;s existing key model. </p>
+<p>Up until today you would have to select one of the following two primary key options when you create a table:</p>
+<ul>
+<li><strong>Hash</strong> - A strongly typed (string, number, or binary) value that uniquely identifies each item in a particular table. DynamoDB allows you to retrieve items by their hash keys.</li>
+<li><strong>Hash + Range</strong> - A pair of strongly typed items that collectively form a unique identifier for each item in a particular table. DynamoDB supports range queries that allow you to retrieve some or all of the items that match the hash portion of the primary key.</li>
+</ul>
+<p>With today&#39;s release we are extending the <strong>Hash + Range</strong> option with support for up to five local secondary indexes per table. Like the primary key, the indexes must be defined when you create the table. Each index references a non-primary attribute, and enables efficient retrieval using a combination of the hash key and the specified secondary key.</p>
+<p>You can also choose to <em>project</em> some or all of the table&#39;s other attributes into a secondary index. DynamoDB will automatically retrieve attribute values from the table or from the index as required. Projecting a particular attribute will improve retrieval speed and lessen the amount of provisioned throughput consumed, but will require additional storage space. Items within a secondary index are stored physically close to each other and in sorted order for fast query performance.</p>
+<p><span style="text-decoration: underline;"><strong>Show Me an Example!</strong></span><br />Let&#39;s say that you need to access a table containing information about heads of state. You create a table like this, with <strong>Country</strong> as the hash key and <strong>PresNumber</strong> as the range key:</p>
+<table cellpadding="2" cellspacing="2" style="border: 2px solid black; border-collapse: collapse; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="background-color: #e0e0e0;">
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Country</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">PresNumber</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Name</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">VP</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Party</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Age</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">YearsInOffice</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">1</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">George Washington</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">John Adams</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">None</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">57</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">6.34</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">2</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">John Adams</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Thomas Jefferson</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Federalist</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">61</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">4</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">3</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Thomas Jefferson</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Aaron Burr</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Democratic-Republican</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">57</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">8</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">4</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">James Madison</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">George Clinton</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Democratic-Republican</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">57</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">8</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">5</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">James Monroe</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Daniel Tompkins</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Democratic-Republican</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">58</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">8</td>
+</tr>
+</tbody>
+</table>
+<p>With this schema, you can retrieve heads of state using a country and the ordinal number for the presidency. Now, let&#39;s say that you want to query by <strong>Age</strong> (upon taking office) as well. You would create the table with a local secondary index (<strong>Age</strong>) like this:</p>
+<table cellpadding="2" cellspacing="2" style="border: 2px solid black; border-collapse: collapse; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="background-color: #e0e0e0;">
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Country</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Age</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">PresNumber</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Name</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">VP</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Party</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">YearsInOffice</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">57</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">1</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">George Washington</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">John Adams</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">None</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">6.34</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">61</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">2</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">John Adams</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Thomas Jefferson</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Federalist</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">4</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">57</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">3</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Thomas Jefferson</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Aaron Burr</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Democratic-Republican</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">8</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">57</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">4</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">James Madison</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">George Clinton</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Democratic-Republican</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">8</td>
+</tr>
+<tr>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">United States</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">58</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">5</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">James Monroe</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Daniel Tompkins</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">Democratic-Republican</td>
+<td style="border-bottom: 1px solid black; border-right: 1px solid black;">8</td>
+</tr>
+</tbody>
+</table>
+<p><span style="text-decoration: underline;"><strong>How Do I Create and Use a Local Secondary Index?</strong></span><br />As I noted earlier, you must create your local secondary indexes when you create the DynamoDB table. Here is how you would create them in the AWS Management Console:</p>
+<div style="text-align: center;">
+<img alt="" src="http://media.amazonwebservices.com/blog/2013/ddb_add_age_index_1.png" />
+</div>
+<p>DynamoDB&#39;s existing <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/queryingdynamodb.html" target="_self">Query API</a> now supports the use of local secondary indexes. Your call must specify the table, the name of the index, the attributes you want to be returned, and any query conditions that you want to apply. We have examples in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LowLevelJavaQuerying.html" target="_self">Java</a>, <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LowLevelPHPQuerying.html" target="_self">PHP</a>, and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LowLevelDotNetQuerying.html" target="_self">.NET / C#</a>.</p>
+<p><span style="text-decoration: underline;"><strong>Costs and Provisioned Throughput</strong></span><br />Let&#39;s talk about the implications of local secondary indexes on the DynamoDB cost structure.</p>
+<p>Every secondary index means more work for DynamoDB. When you add, delete, or replace items in a table that has local secondary indexes, DynamoDB will use additional write capacity units to update the relevant indexes.</p>
+<p>When you query a table that has one or more local secondary indexes, you need to consider two distinct cases:</p>
+<p style="padding-left: 30px;">For queries that use index keys and projected attributes, DynamoDB will read from the index instead of from the table and will compute the number of read capacity units accordingly. This can result in lower costs if there are less attributes in the index than in the table. </p>
+<p style="padding-left: 30px;">For index queries that read non-projected attributes, DynamoDB will need to read the table and the index. This will consume additional read capacity units.</p>
+<p><span style="text-decoration: underline;"><strong>Get Started Now</strong></span><br />Today, local secondary indexes must be defined at the
+time you create your DynamoDB tables.&#0160; In the future, we plan to provide
+you with an ability to add or drop them for existing tables.&#0160; If you want
+to equip an existing DynamoDB table to local secondary indexes immediately, you
+can <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EMRforDynamoDB.html">export
+the data from your existing table using Elastic Map Reduce</a>, and import it
+to a new table with local secondary indexes defined.</p>
+<p>Local secondary indexes are available today in the US East (Northern Virginia), US West (Oregon and Northern California), South America (São Paulo), Europe (Ireland), and Asia Pacific (Singapore, Tokyo, and Sydney) Regions and you can start using them today.</p>
+<p>-- Jeff;</p>
+<p>&#0160;</p><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=ZhHQn2-f-xM:gQdYRW6Nb-c:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=ZhHQn2-f-xM:gQdYRW6Nb-c:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=ZhHQn2-f-xM:gQdYRW6Nb-c:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/ZhHQn2-f-xM" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Amazon DynamoDB</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-18T07:07:37-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/local-secondary-indexes-for-amazon-dynamodb.html</feedburner:origLink></item>
+<item rdf:about="http://aws.typepad.com/aws/2013/04/amazon-s3-two-trillion-objects-11-million-requests-second.html">
+<title>Amazon S3 - Two Trillion Objects, 1.1 Million Requests / Second</title>
+<link>http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/osO0RE3cFgg/amazon-s3-two-trillion-objects-11-million-requests-second.html</link>
+<description>Last June I blogged about the first trillion objects stored in Amazon S3. On the first day of re:Invent I updated that number to 1.3 trillion. It is time for another update! I'm pleased to announce that there are now...</description>
+<content:encoded><![CDATA[<p>Last June I blogged about the <a href="http://aws.typepad.com/aws/2012/06/amazon-s3-the-first-trillion-objects.html" target="_self">first trillion objects</a> stored in Amazon S3. On the first day of re:Invent I updated that <a href="http://aws.typepad.com/aws/2012/11/amazon-s3-price-reduction-december-1-2012.html" target="_self">number to 1.3 trillion</a>.</p>
+<p>It is time for another update!</p>
+<p>I&#39;m pleased to announce that there are now more than 2 trillion (2 x 10<sup>12</sup>) objects stored in <a href="http://aws.amazon.com/s3/" target="_self">Amazon S3</a> and that the service is regularly peaking at over 1.1 million requests per second.</p>
+<p>It took us six years to grow to one trillion stored objects, and less than a year to double that number.&#0160; </p>
+<p><span style="text-decoration: underline;"><strong>What Does That Mean?</strong></span><br />It is always fun to try and put these numbers into real-world terms:</p>
+<p>I spoke at a cloud computing conference in China last week. With a population of <a href="http://en.wikipedia.org/wiki/List_of_countries_by_population" target="_self">1.35 billion</a>, there are 1,481 Amazon S3 objects per Chinese citizen!</p>
+<p>Our galaxy is estimated to contain about <a href="http://en.wikipedia.org/wiki/Milky_Way" target="_self">400 billion stars</a>. That works out to five objects for every star in the galaxy.</p>
+<p>The field of <a href="http://en.wikipedia.org/wiki/Paleodemography" target="_self">Paleodemography</a> estimates that 100 billion people have been born on planet Earth. Each of them can have 20 S3 objects.</p>
+<p>And one more -- our universe is about 13.6 billion years old. If you added one S3 object every 60 hours starting at the <a href="http://en.wikipedia.org/wiki/Big_Bang" target="_self">Big Bang</a>, you&#39;d have accumulated almost two trillion of them by now.</p>
+<p><span style="text-decoration: underline;"><strong>Getting Started With Amazon S3</strong></span><br />If you aren&#39;t using S3, now is the time to start! </p>
+<p>You can read the <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/" target="_self">S3 Getting Started Guide</a> and the <a href="http://docs.aws.amazon.com/AmazonS3/latest/UG/" target="_self">Console User Guide</a>, use the <a href="http://aws.amazon.com/code" target="_self">AWS SDKs</a> to access the <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/" target="_self">S3 APIs</a>, use some of these <a href="http://aws.amazon.com/developertools/Amazon-S3" target="_self">S3 tools</a>, or <a href="http://aws.amazon.com/customerapps/Amazon-S3" target="_self">S3 apps</a>. </p>
+<p>-- Jeff;</p>
+<div class="mcePaste" id="_mcePaste" style="position: absolute; left: -10000px; top: 179px; width: 1px; height: 1px; overflow: hidden;">https://aws.amazon.com/solutions/case-studies/uswitch/</div><div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=osO0RE3cFgg:pn0P3kOqlZ0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=osO0RE3cFgg:pn0P3kOqlZ0:dnMXMwOfBR0"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=dnMXMwOfBR0" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?a=osO0RE3cFgg:pn0P3kOqlZ0:7Q72WNTAKBA"><img src="http://feeds.feedburner.com/~ff/AmazonWebServicesBlog?d=7Q72WNTAKBA" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/AmazonWebServicesBlog/~4/osO0RE3cFgg" height="1" width="1"/>]]></content:encoded>
+
+
+<dc:subject>Amazon S3</dc:subject>
+
+<dc:creator>AWS Evangelist</dc:creator>
+<dc:date>2013-04-18T06:58:20-07:00</dc:date>
+<feedburner:origLink>http://aws.typepad.com/aws/2013/04/amazon-s3-two-trillion-objects-11-million-requests-second.html</feedburner:origLink></item>
+
+
+</rdf:RDF><!-- ph=1 -->

@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ch00ftech Industries</title>
+	<atom:link href="http://ch00ftech.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://ch00ftech.com</link>
+	<description>What if it actually works?</description>
+	<lastBuildDate>Fri, 03 May 2013 00:04:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.4.2</generator>
+		<item>
+		<title>Vendor Bender</title>
+		<link>http://ch00ftech.com/2013/05/02/vendor-bender/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=vendor-bender</link>
+		<comments>http://ch00ftech.com/2013/05/02/vendor-bender/#comments</comments>
+		<pubDate>Thu, 02 May 2013 05:20:10 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[QR Clock]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3624</guid>
+		<description><![CDATA[I found out this week that sometimes goods and services purchased in China can be of low quality. Disclaimer If you purchased a QR clock and are reading this, don't worry.  I have every intention of shipping you exactly what &#8230; <a href="http://ch00ftech.com/2013/05/02/vendor-bender/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>I found out this week that sometimes goods and services purchased in China can be of low quality.</p>
+<p><span id="more-3624"></span></p>
+<p><strong>Disclaimer</strong> <em>If you purchased a QR clock and are reading this, don't worry.  I have every intention of shipping you exactly what you paid for.  If your clock is found to have any issues or if you are in any way dissatisfied, don't hesitate to contact me, and I will do whatever I can to make it right.</em></p>
+<p>I just spent last weekend installing the LED modules on the <a title="Making 55 of Something Without Lifting a Soldering Iron" href="http://ch00ftech.com/2013/04/16/making-55-of-something-without-lifting-a-soldering-iron/">QR clock PCBs</a> that I discussed a few posts ago.  At the time of writing, I was really impressed with the overall quality of the soldering job on the PCBs I received from Myro, and although I wasn't exactly looking forward to the prospect of soldering for 20 to 25 hours, I was excited to finish my QR clocks and ship them to my customers.</p>
+<p>Unfortunately, I ran into a few hiccoughs.</p>
+<h1>Displays</h1>
+<p>The QR clocks require nine 8x8 LED matrices to work, and they work best with displays with square pixels.  Square pixel LED matrices are apparently a rarity, so I had to get these special ordered from a manufacturer that I found on Alibaba.  You can read all about it <a title="Bigger, Brighter, Cheaper, Whiter" href="http://ch00ftech.com/2013/02/17/bigger-brighter-cheaper-whiter/">here</a>.</p>
+<p>I got samples from two different vendors and was very impressed by the one I ended up choosing.  Their displays were bright, evenly lit, and didn't show any defects like I found with the first vendor I picked out:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_0952.jpg"><img class="aligncenter size-full wp-image-3346" title="IMG_0952" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_0952.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Soon after my <a title="QR Clock Fundraiser is Live! GOGOGO!" href="http://ch00ftech.com/2013/02/18/qr-clock-fundraiser-is-live-gogogo/">fundraiser</a> ended, I ordered 500 LED modules from the better manufacturer.  I only needed 405 for the 45 preorders I received, but I figured it'd be a good idea to order a bunch extra to install into my extra PCBs and sell to any interested customers in the future.</p>
+<p>I was informed shortly after placing my order that there was going to be an unexpectedly long lead time on these displays of 35 days.  This wasn't a problem since I was waiting for the PCBs anyway, and sure enough, almost exactly 35 days later, I got the shipment.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2111.jpg"><img class="aligncenter size-full wp-image-3625" title="IMG_2111" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2111.jpg" alt="" width="1024" height="683" /></a></p>
+<p>They were for the most part very well packaged, and showed very little if any cosmetic damage.</p>
+<p>I wasn't planning on trusting them entirely though.  Part of the reason I decided to install the LED modules myself was that it would give me the opportunity to test all of the modules before installing them.  Removing the modules isn't impossible with a hot air gun, but I'd rather just choose not to install them in the first place.</p>
+<p>Well, about 10 modules in, I found a defective module:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2139.jpg"><img class="aligncenter size-full wp-image-3626" title="IMG_2139" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2139.jpg" alt="" width="1024" height="683" /></a></p>
+<p>No bother. Set it aside and move on...</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2140.jpg"><img class="aligncenter size-full wp-image-3627" title="IMG_2140" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2140.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Huh...</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2141.jpg"><img class="aligncenter size-full wp-image-3628" title="IMG_2141" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2141.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Well, I mean, I bought some extras right?</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2143.jpg"><img class="aligncenter size-full wp-image-3630" title="IMG_2143" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2143.jpg" alt="" width="1024" height="683" /></a><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2144.jpg"><img class="aligncenter size-full wp-image-3631" title="IMG_2144" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2144.jpg" alt="" width="1024" height="683" /></a><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2145.jpg"><img class="aligncenter size-full wp-image-3632" title="IMG_2145" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2145.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Alright, I'll save you some scrolling:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2176.jpg"><img class="aligncenter size-full wp-image-3633" title="IMG_2176" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2176.jpg" alt="" width="1024" height="683" /></a></p>
+<p>38 of the 500 displays I ordered showed at least one pixel missing.  That's a 7.6% failure rate.  More importantly, these things cost me $2.67 a piece, so that's around $100 worth of product I'll be throwing in the trash.</p>
+<p>The good news is that I still had more than enough displays to fulfill all of my preorders with around 5 complete clocks to spare (I'm still in the process of assembling the extras as of time of writing).</p>
+<p>The bad news is that some of the modules that passed my initial test on the breadboard showed problems after they were soldered in place.  It seems that some have intermittent internal connections that may have been broken through the soldering process.  I'm really hoping that none of the working ones I've already installed and shipped have this problem.</p>
+<p>I'm not certain if this level of drop out is to be expected with parts like this.<del>  I contacted the vendor two days ago and still haven't gotten a reply.  If it comes down to it, I might try to file a complaint with Alibaba, but I'm not naive enough to expect this issue to be resolved in my favor.</del></p>
+<p><strong>Update</strong><br />
+<em>Not two hours after I posted this, I got this email:</em><br />
+<em><span style="color: #ff9900;">I very much regret the difficulties you have been with our company.</span></em><em><span style="color: #ff9900;"> </span></em><br />
+<em><span style="color: #ff9900;">I checked with our production Dept again, we would like to remake 30pcs goods for you. </span>(This was in response to an email I wrote before I found the last 8)</em><br />
+<em><span style="color: #ff9900;">After finished, I will text them one by one. Please don't worry. And the shipping cost, we will pay it.</span></em><br />
+<em><span style="color: #ff9900;">Apologize for the inconvenience cause by our error. Kindly contact me if any problem!</span></em><br />
+<em>Looks like everything's coming up Milhouse!</em></p>
+<p><em>This is a major inconvenience for me, but at least they're taking the effort to make the situation right.</em></p>
+<p>In addition to this issue, the new LEDs are not quite as bright as the samples I was sent for the prototype:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2174.jpg"><img class="aligncenter size-full wp-image-3634" title="IMG_2174" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2174.jpg" alt="" width="1024" height="683" /></a></p>
+<p>This is not as big of a deal however because at maximum brightness, the original QR clock prototype will often force a cellphone camera to increase the shutter speed to the point where you start to see refresh artifacts:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/photo.png"><img class="aligncenter size-full wp-image-3635" title="photo" src="http://ch00ftech.com/wp-content/uploads/2013/05/photo.png" alt="" width="426" height="640" /></a></p>
+<p>These interfere with the ability to scan the display.  I tried mitigating this effect in the firmware by increasing the refresh rate, but even after maxing out around 240Hz, the problem still persists.</p>
+<p>Basically, in any environment where the maximum brightness of the sample LEDs is required for contrast, the clock couldn't be scanned anyway because of refresh artifacts. Besides, the new LEDs are plenty bright for indoor use anyway.</p>
+<p>Still would have been nice if the samples matched the product though.</p>
+<h1>PCBs</h1>
+<p>In my previous article where I discussed ordering these QR clock PCBs, I raved about how good they looked.  After soldering on the displays and installing firmware however, I was less excited:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2129.jpg"><img class="aligncenter size-full wp-image-3636" title="IMG_2129" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2129.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Something like 50% of the assembled clocks had at least one row of LEDs blacked out.</p>
+<p>Because all of these LEDs were on the same row of the same display module, I had reason to believe that the problem existed outside the displays themselves.  The LEDs in the display are addressed by row and column, so an entirely dead row of LEDs tells me that there's something wrong with the components addressing them.</p>
+<p>A quick visual inspection of the parts on the backside showed no immediate issues.  I ran some more solder over the IC to clear up any potential cold solder joints, but it didn't fix the problem.  Only after adding some solder to the current limiting resistors did I see something I've never seen before.</p>
+<p>The resistor <strong>split in half.</strong></p>
+<p>Seriously, right down the center.</p>
+<p>Apparently, a large portion of these resistors had very very small hairline fractures through them which are invisible to the naked eye.</p>
+<p>Let's run through one such case.  A resistance measurement across this 62<span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_2e9ef3d6ef62a48d70720728d3e90e31.gif' style='vertical-align: middle; border: none; ' class='tex' alt="\Omega" /></span><script type='math/tex'>\Omega</script> resistor shows a resistance of:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2138.jpg"><img class="aligncenter size-full wp-image-3637" title="IMG_2138" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2138.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Infinity.</p>
+<p>A (very very) close visual inspection shows a very faint crack:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/crack.jpg"><img class="aligncenter size-full wp-image-3638" title="crack" src="http://ch00ftech.com/wp-content/uploads/2013/05/crack.jpg" alt="" width="1000" height="750" /></a></p>
+<p>And any attempt to rework this resistor renders it in twain:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/split.jpg"><img class="aligncenter size-full wp-image-3639" title="split" src="http://ch00ftech.com/wp-content/uploads/2013/05/split.jpg" alt="" width="1000" height="750" /></a></p>
+<p>This is one of the stranger things I've ever seen happen to a PCB.  The good news is that it's very easy to fix by replacing the broken resistors with fresh new ones.  The bad news is that it can be difficult to find.  Some of the resistors were held together so well that the display appeared to be working flawlessly until it was jostled and the halves of the resistor very slightly separated.</p>
+<p>As a precaution, I manually flexed the PCB of every clock I shipped out to locate broken resistors.  I believe I found all of them (over 30), but there's still a possibility that more will pop up after shipment.</p>
+<p>Though the problem was easy to resolve, it still doesn't answer the question of what the heck happened here.  I contacted Myro to ask such a question.  I went through the typical round of back and forth and finger pointing:</p>
+<p><span style="color: #ffcc00;">Do you think somewhere is shorting caused it or resistors problem? Or current is big?</span></p>
+<p>Until I finally got a fairly straight answer:</p>
+<p><span style="color: #ffcc00;">I just checked your order. There was a information about V-cut. Dring separated boards , they felt V-cut too thin, which v-cut was not enoug for separated boards. Maybe they did press too much and broke the resistors. We promise do not happen again. We will control the V-cut for a panel. Or Use machine to cut to single board.</span></p>
+<p>Translated to English, when PCBs are manufactured, they are often made in panels.  These panels are large and easier to deal with than multiple smaller PCBs.  The components are soldered on in this panel state, and then the panels are separated.  One of the methods of separation or "depanelization" is "V-scoring" where channels are cut in the PCB to make it weaker at the separating edges.  Once panelization is complete, the boards need to simply be flexed, and they should break along the v-scored edges.</p>
+<p>In this case, the v-score channel wasn't deep enough, so the PCBs had to be bent exceptionally far in order to separate the boards.  I imagine it went down something like this:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/vscore.gif"><img class="aligncenter size-full wp-image-3640" title="vscore" src="http://ch00ftech.com/wp-content/uploads/2013/05/vscore.gif" alt="" width="299" height="166" /></a></p>
+<p>I suspect the edges were bent downwards away from the soldered on components.  Because the resistors were on the outside of this curve, they were literally pulled end from end and split in two.</p>
+<p><del>As of writing, I am very displeased with my service from Myro.  They have not yet offered any kind of compensation for the time that I've wasted cleaning up their mistakes, and I will not be using them or promoting them again in my future projects.</del></p>
+<p>Besides, in addition to these broken resistors, I also saw a few of these:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2126.jpg"><img class="aligncenter size-full wp-image-3641" title="IMG_2126" src="http://ch00ftech.com/wp-content/uploads/2013/05/IMG_2126.jpg" alt="" width="1024" height="683" /></a></p>
+<p>and some cases where resistors were missing entirely.</p>
+<p>Really shoddy work.</p>
+<p><strong>Update</strong></p>
+<p><em>After some more negotiation, I got this:</em></p>
+<p><em><span style="color: #ff9900;">Thanks. We refunded $30 to your account. You can use it for your future orders.</span></em></p>
+<p><em>The margins on their assembly services are very tight, so they couldn't afford to pay me for my time, but it's still something.  I would have rather gotten a cash refund, but since I've had so few problems with Myro produced PCBs, I think I will continue to use their PCB fab services and avoid their assembly especially when I have pre-orders to worry about.</em></p>
+<h1>Conclusion</h1>
+<p>To be clear, I'm not disparaging outsourcing manufacturing in general.  The system works, and a lot of really high quality products get manufactured in China.  I just ran into some bad luck with the vendors I chose who sent me poor quality work after I had already verified the quality of some of their work earlier.</p>
+<p>Despite these setbacks, the QR clocks were all extensively tested and shown to work and have already begun to ship.  If any problems do crop up in the field, I'm ready to pounce on customer complaints and resolve them professionally.  Besides, I never planned to turn a profit with this project but instead to learn as much as I could about the whole process.</p>
+<p>I'll elaborate on this with a later article, but if you were to work out the math, I will probably be making less than a dollar an hour on this whole arrangement.  The lessons learned, however are invaluable.</p>
+<p>Still, I would have liked to have learned these lessons when the quantities were smaller and stakes were lower.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/05/02/vendor-bender/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>EL Dimmer Circuit Questions</title>
+		<link>http://ch00ftech.com/2013/04/23/el-dimmer-circuit-questions/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=el-dimmer-circuit-questions</link>
+		<comments>http://ch00ftech.com/2013/04/23/el-dimmer-circuit-questions/#comments</comments>
+		<pubDate>Tue, 23 Apr 2013 07:51:48 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Reader Mail]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3614</guid>
+		<description><![CDATA[Hey Michael, I had a couple questions about your EL dimmer circuit where you released the Eagle project files (V1.0). It looks like your microphone is biased to 5V through R11, which is also the upper rail for your opamps.  &#8230; <a href="http://ch00ftech.com/2013/04/23/el-dimmer-circuit-questions/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><em>Hey Michael,</em></p>
+<p><em>I had a couple questions about your EL dimmer circuit where you released the Eagle project files (V1.0).</em></p>
+<p><em>It looks like your microphone is biased to 5V through R11, which is also the upper rail for your opamps.  Aren't you clipping your usable mic signal in half by doing this since the output of the microphone wants to swing in both directions around the bias point?</em></p>
+<p><em>From there, its AC coupled to a noninverting, adjustable gain stage, and then goes through a 1o LPF, and then a voltage follower that chops off the negative-going part of the waveform with D1.  I'm actually not sure how this works since your opamps are operating from 0-5V.  Am I missing something?  The signal then goes through another 1o LPF with a leaky capacitor array to produce the low frequency signal envelope.  Why does the leakyness help?</em></p>
+<p><em>I'm pretty lost on how Q2 (npn) and Q3 (pnp) function.  I can see that the U6G4 opamp will drive its output until the voltage at R10-R8 divider node equals the voltage of the low frequency envelope, but I'm not really sure whats going on with Q2 and Q3.  Any hints?</em></p>
+<p><em>Thanks,</em><br />
+<em> Alex</em></p>
+<hr />
+<p><em>D'oh, just saw your explanation of the feedback block here: <a href="http://ch00ftech.com/2012/12/14/sound-reactive-el-panel-dimmer-pretty-much-done/" target="_blank">http://ch00ftech.com/2012/12/14/sound-reactive-el-panel-dimmer-pretty-much-done/</a></em></p>
+<p><em>My others questions still stand, though.</em></p>
+<p><em>Thanks,</em><br />
+<em>Alex</em></p>
+<hr />
+<p>Hi Alex,</p>
+<p>Electret microphones have internal amplifiers that are actually powered by the biasing signal. The datasheets states that you just need to provide a bias of somewhere between 3 and 9V (not 100% sure on these numbers). I'm not sure where the signal coming straight out of the microphone is biased, but it doesn't really matter because R4 re-biases the AC component around 0. I don't have a high enough impedance oscilloscope to measure this signal because it's so weak, but again, it doesn't matter.</p>
+<p>D1 isn't there to chop off the negative portion of the waveform. That task is already achieved with U6G2. Take a look at the power gate of the opamp. It has no negative supply, so it cannot output anything lower than 0V.</p>
+<p>D1 is there to prevent the opamp from sucking any current out of the capacitor array. As a high magnitude audio pulse comes in, current will quickly fill the capacitor array through R19, but it will leave more slowly through R5. This means that the device will more or less directly follow any rising audio waveform, but take more time to follow decreasing signal. The effect is an output waveform that rises quickly to any loud noise (base drum), but dies down slowly. This provides the pulsing effect you can see in the video. Typically with this design, I set R19 to 0 ohms (see kanye glasses for details), but I found that slightly slowing down the rising waveform produced a more pleasing pulsing effect at the cost of an imperceptible time lag.</p>
+<p>Q3 is a current control for the resonant supply. The more current you suck out of its base, the more current the resonant supply will receive, and the brighter your panel will get.</p>
+<p>Q2 is just an inverter. When the envelope waveform is at a higher voltage, more current will flow through the base of Q2 which will increase the current pulled down through R14 and in turn the current through Q3's base. Higher voltage out of U6G4 -&gt; brighter output of EL.</p>
+<p>This circuit controls current, but the output brightness is proportional to the voltage provided to the resonant driver. The feedback loop through R10 and R8 is provided as a way to make sure that Q3 supplies enough current to get the resonant driver's voltage at the desired level. Ideally, the output of the opamp would drive the resonant driver directly (assuming it could supply enough current), but because the audio signal is operating at 0-5V and the resonant driver needs 0-9V, Q3 and Q2 are required to step up the voltage.</p>
+<p>Hope that helps. Feel free to bug me with more questions if you get stuck!</p>
+<p>~ch00f</p>
+<hr />
+<p><em>Hi Michael,</em></p>
+<p><em>Thanks for the prompt reply!</em></p>
+<p><em>Electret microphone: got it. The signal output of the microphone is biased at the biasing voltage, but, like you said, it doesn't matter since you're re-biasing it to GND with R4.</em><br />
+<em> http://upload.wikimedia.org/wikipedia/commons/5/57/Electret_condenser_microphone_schematic.png</em></p>
+<p><em>D1: got it. You don't want the envelope to follow the audio waveform directly, and instead have it be controlled by the values of R19 and R5. Larger values of R5 result in a slower decay and larger values of R19 increase the ramp-up time for aesthetics. Without R5, it would just be pseudo-peak detector.</em></p>
+<p><em>Q2 and Q3... So after hearing your explanation, I get the purpose of Q2 and Q3, but am having trouble fitting that into the context of U6G4's feedback loop.</em><br />
+<em> Lets say we power up the device and apply 1V to the (+) input of U6G4.</em><br />
+<em> It will drive its output to try and make its (-) input 1V as well, which is at the junction of R10 and R8.</em><br />
+<em> For this to happen, the collector of Q3 needs to be at 151V, but since we're powered with a 9V bat, it can only be 9V at most, which in turn means that V_R10R8 can only be 0.060V at most.</em><br />
+<em> Does this mean the output of U6G4 will hit the rail for inputs greater than 0.060V?</em></p>
+<hr />
+<p>You know, your question is totally valid. A lot of the values on this schematic were empirically determined (i.e. guess and check), and I'm not entirely certain that the schematic even reflects what I ended up using. Judging by the response shown in the plots under the "feedback" section of the post, I'm guessing I ended up using something else. maybe something like 10k instead of 100?</p>
+<p>Your math is right. I'll take a look at it when I get home.</p>
+<p>~ch00f</p>
+<hr />
+<p>Just took another look at the circuit. The values are as I specified on the schematic.</p>
+<p>As it turns out, the entire audio rail for this circuit is incredibly low voltage. Just took a measurement of the signal coming out of U6G3, and never gets above 100mV, so 60mV seems right on the money. Apparently the entire audio system runs at about that voltage. Yay analog electronics amirite?</p>
+<p>This might help explain why this circuit is so succeptible to feedback.</p>
+<p>If I designed it again, I'd accomodate a larger audio rail, but it appears to be working regardless.</p>
+<p>~ch00f</p>
+<hr />
+<p><em>Ahh, that makes sense. Dem got dern electrons are at it again! I definitely need more practice with analog. When I last needed a mic preamp, I just threw a MAX4062 at it so I could have something working on the first go. The hoodie videos looks pretty awesome, and I agree that it appears to be working well. Have you had the chance to test the circuit in a noisier, concert-like environment?</em></p>
+<hr />
+<p>I brought it to a pretty loud club a few weeks ago. Definitely worked just as advertised, just had to turn the gain down some. Got some positive attention.</p>
+<hr />
+<p><em>That is really cool. So many sound-reactive projects are possible.</em></p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/04/23/el-dimmer-circuit-questions/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Optimizing the QR Clock</title>
+		<link>http://ch00ftech.com/2013/04/23/optimizing-the-qr-clock/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=optimizing-the-qr-clock</link>
+		<comments>http://ch00ftech.com/2013/04/23/optimizing-the-qr-clock/#comments</comments>
+		<pubDate>Tue, 23 Apr 2013 05:57:14 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[QR Clock]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3594</guid>
+		<description><![CDATA[Looks like a second hand is possible after all. Objective Since I started development on the QR clock, one of the biggest requests has been to enable the clock to display seconds as well as minutes. When I original wrote &#8230; <a href="http://ch00ftech.com/2013/04/23/optimizing-the-qr-clock/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><iframe width="584" height="438" src="http://www.youtube.com/embed/Z9p7RLJ4v7E?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>Looks like a second hand is possible after all.</p>
+<p><span id="more-3594"></span></p>
+<h1>Objective</h1>
+<p>Since I started development on the QR clock, one of the biggest requests has been to enable the clock to display seconds as well as minutes.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/comment1.png"><img class="aligncenter size-full wp-image-3596" title="comment1" src="http://ch00ftech.com/wp-content/uploads/2013/04/comment1.png" alt="" width="815" height="77" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/comment2.png"><img class="aligncenter size-full wp-image-3597" title="comment2" src="http://ch00ftech.com/wp-content/uploads/2013/04/comment2.png" alt="" width="818" height="66" /></a></p>
+<p>When I original wrote the clock's firmware, it took about 7 seconds to generate a QR code.  Of course, this was without refreshing the display.  The display needs to be refreshed at least two dozen times a second, and these interruptions extended the QR generation time to around 40 seconds.</p>
+<p>This was far too long to generate a QR code every second, but it could definitely update once a minute which is all that was absolutely necessary for a clock.  I've never done something so computationally intensive on an AVR before, so I just assumed that 45 seconds was a reasonable amount of time.  While it would have been nice to update every second, I was amazed I got it to work at all.</p>
+<p>Later, I saw a comment on one of the Hack-A-Day posts that got me thinking:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/hackadaycomment.png"><img class="aligncenter size-full wp-image-3598" title="hackadaycomment" src="http://ch00ftech.com/wp-content/uploads/2013/04/hackadaycomment.png" alt="" width="591" height="220" /></a></p>
+<p>Regardless of the fact that my clock doesn't meet the guidelines for border thickness, he linked to a library that was supposedly able to generate a QR code in less than a second.  This got me thinking that it might be worth trying to optimize my code before resigning to a once a minute update.</p>
+<p>With my shipment date just around the corner, I thought it'd be fun to discuss what I discovered.</p>
+<h1>Auto-Optimize</h1>
+<p>The first step was to change the compiler settings.  A compiler is a piece of code that takes human readable code and creates machine readable code.  It's not a super straight forward process though because there are often multiple ways to achieve exactly the same outcome, and the compiler has to decide which method to use.</p>
+<p>Say for example that you have a function that returns two times its argument:</p>
+<pre>uint8_t double(uint8_t x)
+{
+return 2*x;
+}</pre>
+<p>This function is small and simple enough that when your compiler turns it into machine code, it may choose to "inline" the function.  This means that the function's operation (that single line) will be literally copied and pasted into every spot that it's called from.  This has the advantage of reducing the amount of time it takes to call the function (no need for time-wasting jumps to the location where the function is stored), but it increases the size of the program by storing another copy of the function every time it's called.</p>
+<p>Like I said, the compiler has the option to do either, and you can often guide its hand by setting your compile time flags.</p>
+<p>I was surprised to see that my Makefile called avr-gcc with the -Os flag set.  This flag compiles the code optimizing it for space.  At the cost of speed, it tries to make the program as small as possible.  With just an 8k program on a 32k micro-controller, I figured I had plenty of space to stretch out and speed up.</p>
+<p>I changed the -Os flag to -O2 which allows for small optimizations for speed.  This increased the program size by about 1k, and increased the speed by a similarly unremarkable margin.</p>
+<p>I then changed the flag to -O3 which had a drastic impact.  It optimized the code well enough to generate a QR code in about 1.5 seconds, but it also ballooned the program size up to a wholloping 27k!  It took about 30 seconds to program and verify it was such a big file.</p>
+<p>It was nice to see that the compiler had a lot more to offer than I originally thought, but it still wasn't perfect.  The compiler can try to remove redundant and unnecessary program loops and inline some functions, but it isn't smart enough to recognize what it is I'm trying to do and find a faster way to achieve the results I need.  For that, I'd needed to change my code by hand.</p>
+<p>Besides, 27k is absurdly large.</p>
+<h1>The Usual Suspects</h1>
+<p>To get an idea of how long particular functions were taking, I connected my oscilloscope to the exposed Tx and Rx lines and wrote a simple set of functions that let me toggle these pins.  By inserting these function calls into my code, I could determine how long the function they surrounded took to operate.</p>
+<p>My first inclination was to attack the functions that are called the most often.  My first target was the screen refresh function which is called dozens of times every second.  Considering the refresh rate seemed to have the largest bearing on the QR generation time, it seemed like an especially fitting start.</p>
+<p>In addiction to refreshing the display, every time the full display is refreshed (8 calls to this function as the display is scanned in 8 lines), a measurement is made from the ADC to adjust the display brightness to match ambient light.</p>
+<pre>IISR(TIMER2_COMPA_vect)
+{
+if (col&lt;7)
+{
+    col++;
+}
+else
+{
+    //only update brightness once per refresh
+    if(!(ADCSRA &amp; (0b01000000))) //Is the ADC done?
+    {
+    ADCSRA|=(0b00010000);//CLEAR FLAG
+    OCR0A = convertbrightness(ADCH);
+    TCNT0 = 0;
+    ADCSRA|=0b01000000; //START ANOTHER CONVERSION
+    }
+    col=0;
+}
+printrow(&amp;masterimage[col*9]);
+displayenable(0);
+setcol(col);
+storageclock();
+displayenable(1);
+}</pre>
+<p>There were a number of things I could fix with this function.  Firstly, because I control the refresh rate manually, there's no reason to check to see if the ADC is done.  I am certain that enough time has elapsed for the ADC to complete a measurement.</p>
+<p>I took a look at the setcol function.  This function set which of the 8 columns the display is writing to.</p>
+<pre>void setcol(uint8_t column)
+{
+    uint8_t order[8] = {0,4,2,6,1,5,3,7};
+    PORTB = ((PORTB &amp; 0XF8)|(order[column]));
+}</pre>
+<p>The look up table is provided to account for the strange ordering of the displays due to layout limitations.  Although it might not seem like much, in this implementation, this array must be created every time this function is called.  I improved time by making the array a <del>global variable</del> static variable (Thanks Alex). This means that the array will be created just once when the function is first called.</p>
+<p>Just these two changes changed my refresh time from 108<span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_c9faf6ead2cd2c2187bd943488de1d0a.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="\mu" /></span><script type='math/tex'>\mu</script>s to 76<span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_c9faf6ead2cd2c2187bd943488de1d0a.gif' style='vertical-align: middle; border: none; padding-bottom:1px;' class='tex' alt="\mu" /></span><script type='math/tex'>\mu</script>s.</p>
+<p>To be honest, I was proud of this increase at the time, but I had no idea exactly how poorly optimized the rest of my code was.</p>
+<h1>Penalty Box</h1>
+<p>To introduce this next part, I need to give a little background on how QR codes work.  The QR code pattern is generated by a computer with some complicated mathematical algorithms.  It's designed to allow for a large amount of corruption without losing the message.  Unfortunately, it doesn't automatically account for its own machine legibility.</p>
+<p>Looking at a QR code, you might be able to imagine what kind of things could severely confuse a computer:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/qrfree.kaywa_.com_.png"><img class="aligncenter size-full wp-image-3599" title="qrfree.kaywa.com" src="http://ch00ftech.com/wp-content/uploads/2013/04/qrfree.kaywa_.com_.png" alt="" width="184" height="184" /></a>For example, if exactly the right kind of data was fed in, it's possible that the random bits of pixels at the bottom right might start looking like one of the localization boxes present in the other three corners.  Such a thing might confuse a QR reader.</p>
+<p>Likewise, large sections of black or white pixels with no interruptions might also make it difficult for a reader to determine exactly where the pixel boundaries lie.</p>
+<p>For these reasons, every QR code generated from the algorithm has to have a mask pattern applied to it.  This image from <a href="http://en.wikipedia.org/wiki/File:QR_Format_Information.svg">Wikipedia</a> demonstrates these different mask patterns:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/masks.png"><img class="aligncenter size-full wp-image-3605" title="masks" src="http://ch00ftech.com/wp-content/uploads/2013/05/masks.png" alt="" width="570" height="365" /></a></p>
+<p>If you look at the eight options on the right of the image, these patterns are overlaid onto the QR code and every time a black pixel appears, the corresponding QR code pixel is reversed.</p>
+<p>The hope is that when a QR code is potentially difficult for a machine to read due to the types of reasons I mentioned, applying one of these mask patterns will scramble it enough to fix that.  The QR code also encodes which mask pattern was used so that the scanner knows how to make sense of it.</p>
+<p>Of course, in order to determine which mask pattern is best, a good QR generator needs to try all eight options and score them all in some way.</p>
+<p>The standard method is to perform four different tests.  Whichever pattern scores the least number of penalty points is the best option.</p>
+<ol>
+<li>Gain points for large arrays of consecutive white or consecutive black pixels.</li>
+<li>Gain points for 2x2 boxes of the same color.</li>
+<li>Gain points for patterns that look like localization boxes showing up.</li>
+<li>Gain points for having an uneven representation of white and black pixels.</li>
+</ol>
+<p>I won't go into the details of exactly how many points are assigned for each of these infractions, but you can read all about it <a href="http://www.thonky.com/qr-code-tutorial/data-masking/">here</a>.</p>
+<h1>The Squeaky Wheel</h1>
+<p>When I first set out to do this optimization, I assumed that my incredibly poorly optimized code generation and frame buffer implementation was responsible for the delay.  What I found when I measured the code was that the penalty scoring section of code was taking up almost all of the 40 second generation time!</p>
+<p>I captured one such penalty scoring section on my oscilloscope:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/penalty3suckinguptime.png"><img class="aligncenter size-full wp-image-3601" title="penalty3suckinguptime" src="http://ch00ftech.com/wp-content/uploads/2013/04/penalty3suckinguptime.png" alt="" width="1233" height="751" /></a></p>
+<p>The yellow section represents the time spent applying penalties, while the green section represents the time spent applying penalty 3 alone!  Considering that each of these operations takes about a second, and it must take place eight times per QR code, it's definitely a good place for improvement.</p>
+<h1>Penalty 3</h1>
+<p>More specifically, mask penalty 3 is looking for vertical and horizontal arrangements of pixels that look like these:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/left.png"><img class="aligncenter size-full wp-image-3606" title="left" src="http://ch00ftech.com/wp-content/uploads/2013/05/left.png" alt="" width="174" height="15" /></a>or</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/right.png"><img class="aligncenter size-full wp-image-3607" title="right" src="http://ch00ftech.com/wp-content/uploads/2013/05/right.png" alt="" width="174" height="15" /></a></p>
+<p>And adding penalty points every time one is found.  To be clear, there are 4 white pixels to the right and left of the pattern respectively.</p>
+<p>Firstly, for some unknown reason, I was also checking for this:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/Screen-Shot-2013-04-22-at-11.03.01-PM.png"><img class="aligncenter size-full wp-image-3608" title="symmetrical" src="http://ch00ftech.com/wp-content/uploads/2013/05/Screen-Shot-2013-04-22-at-11.03.01-PM.png" alt="" width="252" height="13" /></a></p>
+<p>I have no idea why I was searching for this pattern, and removing that search reduced the penalty time by a third.</p>
+<p>Secondly, it became immediately clear why this operation took so long.  In short, my code was scanning through the pixels and comparing the previous 11 pixels with the desired search pattern.  Keep in mind that every pixel comparison required a call of the "getbit" function which is a nontrivial function that extracts a single bit from a byte.</p>
+<p>This means that in total, the getbit function was called somewhere in the ballpark of 2904 times every time a QR code was generated.</p>
+<p>My solution to this problem was to do a running comparison between the desired pattern and the QR code.  Basically, I compared pixel 1 of the pattern to pixel 1 of the QR.  If they match, I move to pixel 2 of the pattern and pixel 2 of the QR.  This continues until a complete match is found or it isn't at which point the pattern is started back at the 1st pixel.</p>
+<p>There were a few special considerations that had to be taken into account for this to work though, and it's a classic example of faster code being more meticulous and less elegant than slower code.</p>
+<p>For example, using this method, the second pattern would fail if there were 5 white pixels in a row followed by the design.  In order to accommodate an arbitrary number of white pixels before the first black pixel, I made a special update that prevents the pattern from failing in this scenario.</p>
+<p>Likewise, very particular pixel orders could cause the first pattern to miss targets.  If a portion of the QR looked like this:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/badpattern.png"><img class="aligncenter size-full wp-image-3609" title="badpattern" src="http://ch00ftech.com/wp-content/uploads/2013/05/badpattern.png" alt="" width="233" height="15" /></a></p>
+<p>The pattern would fail and reset on the second white pixel and then fail again on the black pixel triplet.  I had to implement a particular check for exactly this kind of failure.</p>
+<p>Furthermore, I made another check to prevent the code from continuing to look for the pattern in a row if there wasn't enough room left in the row to complete the pattern.</p>
+<p>With all of these changes in place, penalty 3 operates much faster as you can see here:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/penalty3optimized.png"><img class="aligncenter size-full wp-image-3610" title="penalty3optimized" src="http://ch00ftech.com/wp-content/uploads/2013/05/penalty3optimized.png" alt="" width="1233" height="751" /></a></p>
+<h1>A Few More Changes</h1>
+<p>With penalty 3 trimmed down to size, it was time to attack the other penalty methods.  Each of them takes a rather large amount of time, and they're each called 8 times per code.  Although the clock must be able to produce a QR code within a second given a worst case scenario, I thought it might be a good idea to reduce the generation time for more ideal situations.  Perhaps a future application of my algorithm will need the fastest QR generation possible rather than just needing it to fit inside a generous second.</p>
+<p>To improve time, I had my code perform each test separately and evaluate the score between them.  If the penalty score of the current mask pattern is already higher than the previous best, the code stops applying penalties and moves on to the next mask pattern.  There's no need to continue applying penalties when a particular mask has already lost.</p>
+<p>There are numerous other minor changes I've made throughout the code, but I'm not going to bore you by mentioning them here.  If you're interested, I recommend checking out the completed code that I will be posting to the blog shortly.</p>
+<h1>I'm a Dope</h1>
+<p>At one point, I was considering optimizing the code by "cheating".  Technically speaking, applying any mask pattern is correct.  Given a clear enough image, any mask pattern should resolve with a QR scanner.  The only point of the penalty system is to choose the mask pattern that will resolve more easily/quickly.</p>
+<p>During my investigation, I wrote a program that would run through all 1440 minutes in a day and return a count of how many times each mask pattern was chosen.  I came up with this:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/05/Screen-Shot-2013-04-17-at-11.17.45-PM.png"><img class="aligncenter size-full wp-image-3611" title="Screen Shot 2013-04-17 at 11.17.45 PM" src="http://ch00ftech.com/wp-content/uploads/2013/05/Screen-Shot-2013-04-17-at-11.17.45-PM.png" alt="" width="1024" height="698" /></a></p>
+<p>AS IT TURNS OUT</p>
+<p>If you happened to download my <a href="http://ch00ftech.com/wp-content/uploads/2012/10/main1.c">main.c</a> code from my original <a title="QR Clock" href="http://ch00ftech.com/qr-clock/">QR Clock</a> post, you might find this line:</p>
+<pre>if (currentscore&lt;bestscore)
+{
+    bestscore=currentscore;
+    bestmask=i;
+}</pre>
+<p>Which is run after the score of each mask pattern is determined to hold on to which one has currently scored the best.  After this has iterated three times however, the following routine is run:</p>
+<pre>adddatabits(&amp;outputmatrix[0],&amp;outputarray[0]);
+addtypeinformation(&amp;outputmatrix[0],0);
+applymask(&amp;outputmatrix[0],0);
+printcode(&amp;outputmatrix[0]);</pre>
+<p>Apparently at some point in development, I modified my code so that it always uses mask zero in the applymask function.  This went unnoticed all the way through development probably because as I said, any mask pattern is technically correct, and on top of that, code 0 would have been used a majority of the time anyway.</p>
+<p>Fortunately, this bug didn't make its way into the actual QR clock, so the one that's been sitting on my wall for six months has been doing it right all this time.</p>
+<h1>Conclusion</h1>
+<p>Optimizing code is a lot of fun.  There are a few times where it pays to understand exactly what the microcontroller is doing to shave a few microseconds off here or there, but other times, all you need to do is rethink how you're accomplishing a task.</p>
+<p>Generating a QR code in under a second has a ton of possible applications.  I might even remove the "time set" mode and allow it to display the QR code live as the user is setting the time.  That was impossible with a 40 second generation time, but only mildly inconvenient with a &lt;1 second time.</p>
+<p>Most importantly, this new code will allow me to have a working seconds hand on the clock.  One thing I can say after looking at it though is that I will be making this an optional setting as I think that a lot of the people requesting it have no idea how goddamn distracting a QR clock can be!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/04/23/optimizing-the-qr-clock/feed/</wfw:commentRss>
+		<slash:comments>18</slash:comments>
+		</item>
+		<item>
+		<title>Making 55 of Something Without Lifting a Soldering Iron</title>
+		<link>http://ch00ftech.com/2013/04/16/making-55-of-something-without-lifting-a-soldering-iron/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=making-55-of-something-without-lifting-a-soldering-iron</link>
+		<comments>http://ch00ftech.com/2013/04/16/making-55-of-something-without-lifting-a-soldering-iron/#comments</comments>
+		<pubDate>Tue, 16 Apr 2013 03:41:31 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Beat Tracking Windshield Wipers]]></category>
+		<category><![CDATA[Processes]]></category>
+		<category><![CDATA[QR Clock]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3564</guid>
+		<description><![CDATA[So I got the populated QR clock PCBs in: And they look fantastic! Objective As you probably already know, I recently held a fundraiser to help bring my new and improved QR clock to market.  The fundraising goal was 50 preorders, and &#8230; <a href="http://ch00ftech.com/2013/04/16/making-55-of-something-without-lifting-a-soldering-iron/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>So I got the populated QR clock PCBs in:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2093.jpg"><img class="aligncenter size-full wp-image-3565" title="IMG_2093" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2093.jpg" alt="" width="1024" height="683" /></a></p>
+<p>And they look fantastic!</p>
+<p><span id="more-3564"></span></p>
+<h1>Objective</h1>
+<p>As you probably already know, I recently held a <a title="QR Clock Fundraiser is Live! GOGOGO!" href="http://ch00ftech.com/2013/02/18/qr-clock-fundraiser-is-live-gogogo/">fundraiser</a> to help bring my new and improved <a title="Bigger, Brighter, Cheaper, Whiter" href="http://ch00ftech.com/2013/02/17/bigger-brighter-cheaper-whiter/">QR clock</a> to market.  The fundraising goal was 50 preorders, and although I only got 45 within the allotted time, I decided to proceed anyway figuring I'd sell the remainder after the fundraiser was over.</p>
+<p>The original prototype took about an hour and a half to assemble, and since I don't feel like quitting my day job to take up a career in burning my fingers, I decided it might be a good idea to look at some other options for assembly.</p>
+<p>This post outlines my experiences of ordering PCBs pre-assembled.  I decided to go into a lot of detail with this post because while the ordering process was fairly straight forward, there were some slightly confusing parts to it, and if there's one thing you don't want to be when you're dropping a few hundred/thousand dollars on PCBs, it's unsure.  I figure this will be a rich resource for anyone planning on placing a similar order.</p>
+<p>For anyone else, it'll be pretty boring, so sorry about that.</p>
+<p>As a caveat, I am not writing this at the time of my original order, so there's a chance I left some details out as I didn't feel like ordering another 50-some PCBs just for the sake of getting a few screenshots and forgotten details of the process.</p>
+<h1>To LED or not to LED</h1>
+<p>The clocks are a single PCB with a bunch of through hole LED matrix modules on the front and a bunch of surface mount components on the back.  Originally, I was planning to have the entire clock assembled by a third party, but when I realized how long the lead time was on the LED modules, I thought it might not be a good idea to do it myself.  Otherwise, I'd have to stack the lead time for the LED modules onto the lead time for the PCBs.</p>
+<p>Besides, considering how important aesthetics are for this design, I thought it might be prudent to handle that myself.  I was concerned that a 3rd party might make all the appropriate electrical connections but solder the displays unevenly which would severely lower the value of the clock.</p>
+<p>When assembling the prototype, soldering the LED modules and ambient light sensor only took about 10 minutes.  I can probably cut that down even more if I develop some kind of system.  That means that all the clocks might take me around 8-10 hours or a busy Saturday.</p>
+<p>So maybe the title to this post isn't 100% accurate, but by following a similar process, similar devices could be made without any soldering.</p>
+<h1>Quoting</h1>
+<p>Starting out, I knew I had 45 guaranteed sales.  I'll go into specifics in a later article, but suffice it to say, once you cover setup fees additional units aren't that expensive.  I figured it would be a good idea to order some extras (since they weren't that much extra cost) and sell them at a later time.</p>
+<p>So 55 clocks.</p>
+<p>I ordered the original PCBs from <a href="https://www.myropcb.com">Myro</a>.  They're a quality PCB manufacturer, and they also offer a PCB assembly option.  Their website isn't the greatest though, so it took me a few tries to place my order.  I often found myself getting trapped in holes and having to re-enter the URL and start over.</p>
+<p>I started out by clicking the <a href="https://www.myropcb.com/online-quote/pcb-assembly-quote/">PCB Assembly</a> link on the home page.  This brought me to a window where they ask to fill in a bunch of details on the board to help them produce a quote.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-15-at-6.45.25-PM.png"><img class="aligncenter size-full wp-image-3567" title="Screen Shot 2013-04-15 at 6.45.25 PM" src="http://ch00ftech.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-15-at-6.45.25-PM.png" alt="" width="1131" height="867" /></a></p>
+<p>They ask for a lot of numbers such as number of SMD parts, number of Through Hole connectors, etc.  The bottom line is that this information doesn't have to be 100% accurate or 100% filled in, but it will help them give you your quote faster and more accurately.  They reserve the right to charge you more after inspecting your project files if assembly is significantly more expensive than what you specified on this form.</p>
+<p>Running the "statistic-brd" ULP inside Eagle's PCB editor will bring up a window that can help you fill out some of these:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-15-at-6.42.56-PM.png"><img class="aligncenter size-full wp-image-3566" title="Screen Shot 2013-04-15 at 6.42.56 PM" src="http://ch00ftech.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-15-at-6.42.56-PM.png" alt="" width="1031" height="729" /></a></p>
+<p>Now this quote is only for the process of assembling the PCB (soldering on components).  This doesn't include the parts to be soldered or the actual PCBs themselves.  To add a PCB to the order, I clicked the "Quote Now" button in the top right of the assembly order window.</p>
+<p>This brought me to a familiar window:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-15-at-6.46.25-PM.png"><img class="aligncenter size-full wp-image-3568" title="Screen Shot 2013-04-15 at 6.46.25 PM" src="http://ch00ftech.com/wp-content/uploads/2013/04/Screen-Shot-2013-04-15-at-6.46.25-PM.png" alt="" width="1131" height="824" /></a></p>
+<p>Which I had used before when ordering my prototype PCBs.  Once I finished filling out this page, I clicked the "Quote Now" button which brought me to a page reviewing the information I input and allowing me to select a lead time.  In general, the longer the lead time, the cheaper the process, though the savings have to bottom out at some point or they'd be giving you stuff for free.  Because I was in no particular hurry to get these boards made (since I was waiting for the LED modules anyway), I figured that I would select the longest lead time possible that still provided me a cost savings.</p>
+<p>They provide radio buttons for lead times up to 10 days, but I found that the cost savings leveled out at 12 days which I input into the "Other Lead Time" box.  After clicking "Save Quote", I was brought back to the assembly page.</p>
+<p>Before finishing up the assembly quote, I made sure to select the check box "Partial or all parts to be supplied by Myro".  This is important as for some reason, you cannot modify this selection later.  Myro has the capability to place part orders for you from Digikey.  You just have to pay for them.</p>
+<p>Now this whole quoting business is kind of strange.  Myro treats the printing of the PCBs and the assembly of the parts to be two totally separate things.  Each asks for a quantity.  Presumably, you can order more PCBs than you assemble, but I'm guessing they'd throw some kind of error if you ordered more assemblies than PCBs.</p>
+<p>It's especially weird because in the quote review page, they show your "Qty." as being the sum of your PCBs and assemblies as if they're two different things.  Suddenly, I found myself ordering 110 of something.</p>
+<p>With all of the assembly information input, I clicked "Save Quote" where I was brought to another page where I could select lead time.  This lead time was for the assembly process though and was to be added to my PCB printing lead time to produce the total production time.  Clicking "Save Quote" again brought me to a page where I could review my quotes and choose which to order.</p>
+<h1>Design Files</h1>
+<p>In order to start ordering, I needed to add some design files (y'know, because it's hard to print a PCB when you're only told how big it is).  Clicking on my quote brought me to a review page.  My quote was split into two parts, 1(fab) and 2(assemble).  The titles are pretty self explanatory.</p>
+<p>The window for 1(fab) brought me to a page where I could upload my design files.  Just like most other fab houses, Myro accepts their PCB design files as Gerber files in a .zip folder.</p>
+<p>I laid out my PCB just like I always do, but this time making sure that my part labels were extremely orderly.  When I'm assembling a PCB myself, I can always look at my Eagle file if I'm unsure where to place a part, but Myro won't have that luxury.  Some fab houses require a "pick and place" file to tell them where to put parts, but fortunately Myro only needs good labels.  There's a $70 "programming fee" included on the invoice, so I'm guessing they have someone there who generates the files.</p>
+<p>I also included the BOM (as they would need it for identifying and ordering parts).  Writing up the BOM was a fairly stressful activity also.  Sometimes the changepart function of Eagle doesn't work right and you end up keeping the attributes of the old part in the BOM, so I was extra careful to check through each line to make sure everything was okay.  Fortunately there were only 22 different types of parts, so it wasn't too much work.</p>
+<p>After uploading my design .zip, I returned to my quotes list and noticed a cool little paper clip next to my quote indicating that it had design files associated with it and a puzzle piece indicating that I had assembly included in my order.</p>
+<h1>Ordering</h1>
+<p>With the design files attached appropriately, I added the quote to my cart and clicked "Check Out".</p>
+<p>The rest of the process continued like any normal online checkout process.  I entered my credit card information and finished up the order.</p>
+<p>Unlike most online transactions though, the buck didn't stop here.  I was simply paying for the <em>quoted</em> amount.  This amount was subject to change after my design files were reviewed.  There is also of course the matter of the parts that Myro would be supplying that I hadn't yet paid for.</p>
+<p>Upon completing the order, I got a number of emails in my inbox.  The first was a receipt for the order.  About an hour later, I received an email from a Myro representative asking me to reformat my BOM file to fit their <a href="http://ch00ftech.com/wp-content/uploads/2013/04/Sample_Bill_of_Materials_BOM_.xls">format</a>.  I modified my BOM to fit their format and attached it my reply.</p>
+<p>I was also sent an email from the rep asking me to approve a few new charges.  The original quote didn't take into account shipping cost.  Also, once they reviewed the newly formatted BOM, I was sent another invoice to cover the cost of components.  These charges were added to my order on the Myro website and could be paid from the order review page.</p>
+<h1>Delivery</h1>
+<p>I knew this order was going to take a while, so I just kind of let it sit on the back burner and tried not to get too excited about it.  The website provided a "delivered date" on the order review page, but I wasn't really sure what that meant.</p>
+<p>I randomly checked in at some point shortly after the "delivered date" and noticed that they added a link under "delivery info" to a tracking number.  Surprisingly, the package was set to arrive just four days later.  From Shenzhen, China!</p>
+<p>Sure enough, four days later, this arrived:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2076.jpg"><img class="aligncenter size-full wp-image-3570" title="IMG_2076" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2076.jpg" alt="" width="1024" height="683" /></a></p>
+<h1>Quality Control</h1>
+<p>Eager to check out my new PCBs, I donned some rubber gloves (to keep my greasy fingerprints off the boards) and dug in.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2078.jpg"><img class="aligncenter size-full wp-image-3571" title="IMG_2078" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2078.jpg" alt="" width="1024" height="683" /></a></p>
+<p>The boards were very well packaged.  Each board was in its own antistatic bag, and there were tons of layers of bubble wrap to keep them from dinging each other up.</p>
+<p>The box included a packing slip:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2095.jpg"><img class="aligncenter size-full wp-image-3572" title="IMG_2095" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2095.jpg" alt="" width="1024" height="683" /></a></p>
+<p>But I have no idea what it's for.  I think they must have slipped it in there by mistake...</p>
+<p>Unwrapping my first PCB, I was a little worried.  The board had a major scratch on the front surface that actually exposed the copper ground plane:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2083.jpg"><img class="aligncenter size-full wp-image-3573" title="IMG_2083" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2083.jpg" alt="" width="1024" height="683" /></a></p>
+<p>As well as some kind of sticky residue along one edge:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2088.jpg"><img class="aligncenter size-full wp-image-3576" title="IMG_2088" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2088.jpg" alt="" width="1024" height="683" /></a></p>
+<p>The residue didn't look like it would be a huge deal to clean, but I certainly couldn't ship a clock with such an awful gouge in it, and this representative sample was spelling bad news for my clocks.  I'm sure Myro would lend an ear if a large portion of the clocks had electrical problems, but I'm sure they're not too concerned with a scratch here or there considering PCBs are designed to be locked inside enclosures.</p>
+<p>Frantic, I started opening more clocks to see how they fared.  The second PCB didn't have any scratches, but it did have some more of the residue.  The next two or three didn't have any visible problems, but I soon realized that I had nowhere safe to put all the clocks I was unwrapping.  Stacking the up would likely scratch them even more.  I decided to stop and place an order for the adhesive backed rubber feet that would allow me to inspect and stack the clocks.</p>
+<p>I ordered a few extra clocks in anticipation of some issues, but I wasn't ready to start dealing with a 50% yield.</p>
+<p>I think the guys at Myro must have been playing some kind of mean trick on me, because it turns out that those two clocks were the only two out of the whole order with any kind of cosmetic issue.  The rest of the boards look <em>fantastic</em>.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2100.jpg"><img class="aligncenter size-full wp-image-3577" title="IMG_2100" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2100.jpg" alt="" width="1024" height="683" /></a></p>
+<p>I've run electrical tests on a handful to make sure that they were working, but considering how perfectly clean the solder joints look, I don't anticipate having any issues.</p>
+<h1>Conclusion</h1>
+<p>From order to delivery took 29 days.  Had I been willing to shell out another $100-200, I could have gotten that trimmed down, but again, considering I was waiting on the LEDs anyway, it was a great deal.</p>
+<p>I have to say that ordering these PCBs was one of the most stressful things I've done in recent history.  PCBs are pricey, and it isn't easy to give $2k to someone in China and hope that they don't mess anything up.</p>
+<p>But considering it saved me...I dunno...about 85 hours of work, I'd have to say that it's definitely worth it!</p>
+<p>Stay tuned for more updates on the QR clock's production.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/04/16/making-55-of-something-without-lifting-a-soldering-iron/feed/</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+		<item>
+		<title>Soil Moisture Sensor</title>
+		<link>http://ch00ftech.com/2013/04/09/soil-moisture-sensor/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=soil-moisture-sensor</link>
+		<comments>http://ch00ftech.com/2013/04/09/soil-moisture-sensor/#comments</comments>
+		<pubDate>Tue, 09 Apr 2013 07:32:58 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Soil Moisture Sensor]]></category>
+		<category><![CDATA[analog circuits]]></category>
+		<category><![CDATA[low power]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3531</guid>
+		<description><![CDATA[My girlfriend has trouble keeping plants alive, so I made her this! Motivation In the June 2012 issue of Nuts &#38; Volts, they did a spread about making a soil moisture sensor with an iPhone interface: And when I heard &#8230; <a href="http://ch00ftech.com/2013/04/09/soil-moisture-sensor/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>My girlfriend has trouble keeping plants alive, so I made her this!</p>
+<p><iframe width="584" height="329" src="http://www.youtube.com/embed/Ao1HgfUXrQs?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<h1><span id="more-3531"></span>Motivation</h1>
+<p>In the June 2012 issue of Nuts &amp; Volts, they did a spread about making a soil moisture sensor with an iPhone interface:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2067.jpg"><img class="aligncenter size-full wp-image-3532" title="IMG_2067" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2067.jpg" alt="" width="1024" height="683" /></a></p>
+<p>And when I heard my girlfriend say that she has trouble remembering to water her plants, I put two and two together.</p>
+<p>Most of the N&amp;V article discussed the code required to interface with the iPhone, but the important part for me was that their soil moisture sensor was nothing more than a simple conductivity sensor.  The more water in the soil, the lower its resistance.</p>
+<p>Such a sensor doesn't measure soil moisture in any kind of universal unit, but for a single sensor in a particular soil sample, the measured conductivity is repeatable and proportional to the moisture level.  I call these conductivity units "AMU"s or "Arbitrary Moisture Units".</p>
+<h1>Objective</h1>
+<p>So I wanted to create a device that reminds her to water her plant when it gets dry.  Such a device needs a user interface where she can set her AMU threshold and an alarm to alert her when the plant slips below that.  It also needs to read out the current moisture level so she can know where to set the threshold.  Simply taking a measurement before and after watering should provide good basis for determining threshold.</p>
+<p>Once set, the device needs to stay put; moving it in and out of the soil will make it very difficult to get the same AMU reading twice. Besides, if she could remember to insert the sensor on regular intervals, she wouldn't have trouble watering the plant in the first place!</p>
+<p>Leaving the sensor in place offers a interesting challenge.  For the most part, this device doesn't need to do anything.  Soil moisture changes extremely slowly, and anything over a .1Hz sample rate is hardly necessary.  Also, the device needs to stay on for months or even years at a time.  Plugging it into a wall is inconvenient if there isn't a wall outlet near the ideal plant spot, so the device needs to be battery powered.  The question is, how do you get batteries to last for months or years?</p>
+<p>Another sub-objective of this project was to make it happen entirely using parts that I already had on hand.</p>
+<h1>Schematic</h1>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/moisturesensor.png"><img class="aligncenter size-full wp-image-3533" title="moisturesensor" src="http://ch00ftech.com/wp-content/uploads/2013/04/moisturesensor.png" alt="" width="1743" height="1437" /></a></p>
+<h1>Display</h1>
+<p>The display is a multiplexed pair of 7-segments LED modules.  I had some left over 7-segment displays from a commissioned piece that ended up falling through.  They're from <a href="http://www.mouser.com/ProductDetail/Kingbright/ACSA03-41PBWA-A-F01/?qs=sGAEpiMZZMvkC18yXH9iIgUw74MlgdmVDsxsOPkO6x0%3d">Mouser</a>, and as beautiful and blue as they are, at $4.68 a pop, they're ridiculously expensive.  I basically designed this thing to find a use for the ones I already had since I couldn't return them.</p>
+<p>One note: the connections as they appear in the schematic are reversed.  I went through all of the effort of creating a symbol that lines up with the physical part just to mirror the symbol on the schematic and mess everything up.  I don't think you can specify schematic symbols as "un-mirrorable", but this particular orientation made my schematic cleaner anyway, so I just had to be careful when writing my firmware not to reverse the digits.</p>
+<h1>Buzzer</h1>
+<p>The <a href="http://www.digikey.com/product-detail/en/CCV-084B16/102-1265-1-ND/610973">buzzer module</a> I used for this project is the one I acquired wayyy back in the day for <a title="Look at all these paaaarts!" href="http://ch00ftech.com/2010/09/10/look-at-all-these-paaaarts/">this post</a> on my old watch blog (the watch is still happening, I swear!).</p>
+<p>Driving it is fairly straightforward.  The datasheet specifies that it's loudest at 2.73kHz, so I just needed to feed it a 3-ish Volt square wave at approximately this frequency.  D3 is included as a freewheeling diode.  Since this device draws such a large amount of current,  I had to make sure that the voltage spike associated with the sharp current change didn't blow up the input to my micro controller.</p>
+<h1>Buttons</h1>
+<p>The buttons are in a simple pull-down configuration.  SW1 is connected to INT1 and SW2 is connected to INT0.  INT0 and INT1 are the external interrupt pins.  This allows the user to pull the device out of sleep manually by pushing a button.  More on that later.</p>
+<h1>Power</h1>
+<p>Similar to my <a title="Longboard Wheel Display" href="http://ch00ftech.com/2012/11/15/lonboard-wheel-display/">longboard wheel display</a>, this device has no power switch, but rather drops into a super low power sleep mode when not in use.  Of course, this was a little annoying during development when the device would keep beeping to let me know that it was too dry (or that there's no soil at all for that matter), but yanking out a battery was easy enough to do to shut it up.</p>
+<h1>Moisture Sensor</h1>
+<p>U2 is a 3V linear voltage regulator that I also used in...actually, I just spent the last 30 minutes trying to figure out why I bought this thing in the first place.  Apparently, I purchased it on April 18, 2012, but I can't remember why.  My guess is that it had something to do with an earlier draft of the <a title="Dimming an EL panel is harder than it looks" href="http://ch00ftech.com/2012/05/14/dimming-an-el-panel-is-harder-than-it-looks/">EL Shirt</a> fiasco, but I'm not sure...</p>
+<p>Anyway, because my device needs to measure current through soil, it needs a steady voltage source to make sure it gets a steady current.  Otherwise, as the batteries begin to die, their lower voltage will affect the measurement.  In addition to supplying the current that actually travels through the soil, it also connects to the AREF pin of the AVR which provides the scale for the ADC on board.  With this configuration, the ADC will read the highest value when the input voltage is 3V.</p>
+<p>PROBE 1 and PROBE 2 are what actually goes into the soil.  Q1 is configured as an <a href="http://en.wikipedia.org/wiki/Common_collector">emitter follower</a> similar to what I saw used in the <a title="Transistor Clock Part 2: Prescaler" href="http://ch00ftech.com/2012/07/10/transistor-clock-part-2-prescaler/">transistor clock</a>.  When current leaks out of PROBE 1 and trickles into the base of Q1 through PROBE 2, Q1 passes current through R1 causing its voltage to rise.  The ADC7 pin of the AVR measures this voltage and uses it to determine the moisture level.</p>
+<h1>Microcontroller</h1>
+<p>This circuit is driven by an ATMega48 microcontroller.  I've used this device many times before.  In this circuit, it's running off its internal 8MHz oscillator, but I also included an external 32kHz oscillator to keep it running while it's in Power-Save mode.</p>
+<h1>Energy Efficiency</h1>
+<p>You'll notice looking at the schematic that all of my FETs have pull up or pull down resistors on their gates.  This is to keep them off while the micro-controller is asleep.  To reduce power draw during sleep, I switch all microcontroller pins to high-impedance inputs, so these external components are required to keep the FETs off.</p>
+<p>Likewise, the 3V regulator's enable pin is pulled down.  According to its <a href="http://ch00ftech.com/wp-content/uploads/2013/04/FAN2500.pdf">datasheet</a>, it draws a maximum of 1$\mu$A of current when in shutdown mode which is small enough for my needs.</p>
+<h1>PCB</h1>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2068.jpg"><img class="aligncenter size-full wp-image-3534" title="IMG_2068" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2068.jpg" alt="" width="1024" height="683" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2069.jpg"><img class="aligncenter size-full wp-image-3535" title="IMG_2069" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2069.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Because of the complexity of the displays, this circuit required a lot of vias.  I decided to try out my new .0135" <a href="http://www.digikey.com/product-search/en?x=0&amp;y=0&amp;lang=en&amp;site=us&amp;KeyWords=pc300-80-nd">drill bit</a> which worked like a charm.  To give you an idea of how small this thing is, here's me picking Lincoln's nose on a U.S. Penny:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/lincoln.jpg"><img class="aligncenter size-full wp-image-3537" title="lincoln" src="http://ch00ftech.com/wp-content/uploads/2013/04/lincoln.jpg" alt="" width="1024" height="768" /></a></p>
+<p>This thing was so small that I could only thread the holes with a single fiber of copper from a stranded piece of wire.</p>
+<p>I used the liquid electrical tape from the <a title="Strongerer Glasses (with digital EL sequencer)" href="http://ch00ftech.com/2012/10/23/strongerer-glasses-with-digital-el-sequencer/">Strongerer Glasses</a> to protect the fragile unshielded copper strands and keep them from shorting together.</p>
+<p>This is also the first project where I've laid parts out at a 45 degree angle.  It just turned out to be easier for this particular layout.  Getting Eagle to do it is kind of tricky though.  The program by default will only rotate a part in multiples of 90 degrees, so I had to manually type in the angle of 45 and then let it rotate at 90 degree intervals starting from there.</p>
+<p>The two sensor prongs are just giant exposed copper planes.  Ideally, I'd coat them in something that both won't corrode and won't poison the plants, but I don't have anything like that on hand at the moment.  Can you say proof of concept?!</p>
+<h1>Firmware</h1>
+<p>Many of the elements involved in writing this firmware are things that I've done before in other projects with a few exceptions.</p>
+<h1>User Interface</h1>
+<p>The device only has two buttons which are assigned to "up" and "down".  When initially powered up, the device displays the current AMU reading.  Pressing the up or down button will temporarily display the threshold value and allow you to adjust it.  This is the kind of interface I've seen used in some thermostats, so it seemed appropriate.</p>
+<p>Leaving the buttons alone for about 1 second will cause the display to switch back to the AMU reading, and leaving them alone for 30 seconds will put the device to sleep where it will wake up periodically to take measurements and beep if the moisture is too low.</p>
+<p>Pressing either button immediately wakes the device up and sets it back to the original mode.</p>
+<h1>Tone Generator</h1>
+<p>The buzzer component needs a square wave of frequency 2.73kHz.  To generate such a tone, I used Timer1A configured as a CTC timer.  This means that the timer increments until it reaches OCR1A and then resets while triggering an interrupt.  This interrupt only toggles the output pin, so I actually had to generate twice the desired frequency (5.46kHz).</p>
+<p>With a base clock of 8MHz and a 1/64 prescaler on Timer 1, I set OCR1A to 23.  That works out to:</p>
+<p><span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_c70e3c2c2b924c528aa16988f12b1763.gif' style='vertical-align: middle; border: none; ' class='tex' alt="\frac{8MHz}{64*23} \approx 5.435kHz" /></span><script type='math/tex'>\frac{8MHz}{64*23} \approx 5.435kHz</script></p>
+<p>Which when divided by two gave me a square wave output of approximately 2.747kHz.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/square-wave.png"><img class="aligncenter size-full wp-image-3538" title="square wave" src="http://ch00ftech.com/wp-content/uploads/2013/04/square-wave.png" alt="" width="922" height="599" /></a></p>
+<p>Not exactly 2.73kHz, but as you can see on the <a href="http://ch00ftech.com/wp-content/uploads/2013/04/CCV-084B16.pdf">datasheet</a>:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/buzzerdatasheet1.png"><img class="aligncenter size-full wp-image-3542" title="buzzerdatasheet" src="http://ch00ftech.com/wp-content/uploads/2013/04/buzzerdatasheet1.png" alt="" width="730" height="444" /></a></p>
+<p>There's a small flat zone around the optimal point, so I should be fine.</p>
+<h1>Power-Save Mode</h1>
+<p>Getting the power draw of this device down to as low as possible was the biggest challenge of this design.  I've done a few experiments with sleep-mode devices before, but most of my projects are woken up by a user pressing a button.  This device needs to wake itself up to take periodic measurements of the soil.  I've only done this <a title="Tik Tok" href="http://ch00ftech.com/2010/09/28/tik-tok/">once before</a>, and that was for a quick demo on a breadboard and was like a billion years ago.</p>
+<p>With an external low-power 32kHz crystal, the ATMega48 can go into "Power-Save" mode where it shuts down just about everything except for Timer2 which counts in time with the external oscillator.  Once this Timer2 overflows, the device wakes up to handle the interrupt and stays awake until it's told to do otherwise.</p>
+<p>Given that soil dries out on a time scale of the order hours instead of seconds (or milliseconds), the device needs to stay in Power-Save mode as much as possible.  In order to extend this time, I configured Timer2 to interrupt on overflow (256) with a 1/1024 prescaler.  This sets my sleep interval to:</p>
+<p><span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_9bdd609c8f8f91e830ac91908ff76201.gif' style='vertical-align: middle; border: none; ' class='tex' alt="\frac{32.768kHz}{1024\times 256}=.125Hz \rightarrow 8 seconds" /></span><script type='math/tex'>\frac{32.768kHz}{1024\times 256}=.125Hz \rightarrow 8 seconds</script></p>
+<p>So every 8 seconds, the device wakes up.  I designed the software to immediately go back to sleep unless a certain number of 8 second intervals have already passed at which point it takes a measurement of the soil and beeps if it's too dry.</p>
+<p>I noticed an interesting bug during development where it seemed to ignore this programmed number of intervals and take a measurement earlier than it was supposed to.  It was always earlier in multiples of 8 seconds, but always some arbitrary multiple.</p>
+<p>I soon discovered that my device was actually waking up, updating its current count of 8 second intervals, and then going back to sleep all before the 32kHz clock ticked once! Because the 8MHz clock is so much faster than the 32kHz clock, it's perfectly possible for the device to go back to sleep before the next 32kHz tick.  The flag that wakes up the microcontroller is still set until that next tick, so just as it woke up the first time, the part will immediately wake up again as soon as it goes back to sleep.</p>
+<p>Unfortunately, there's no way to directly determine when the next clock tick happens.  I could have my code wait in a delay loop for a specified amount of time, but as it's burning battery every millisecond it's awake, making this delay any longer absolutely necessary is inefficient.</p>
+<p>To fix this, I found a neat tip on page 156 of the <a href="http://ch00ftech.com/wp-content/uploads/2013/04/ATMega48a.pdf">ATMega48a</a> datasheet.  The ASSR register is provided to deal with many of the features of an asynchronous clock (the 32kHz clock is asynchronous).  There are a few bits of the register that indicate when changes to clock settings (TCCR2x, TNCT2, etc) go into effect.  They always go into effect on the next clock edge, so by changing one of those registers and then waiting for the proper bit of the ASSR register to change, I can indirectly determine when the next clock edge has occurred and it's safe to go back to sleep.  Of course, the registers are already set where I want them, so I just had it redundantly set a register to its original value.</p>
+<p>On the way to solving this issue, I also realized that leaving my ADC on causes the device to draw substantial power (.3mA) even while asleep.  I thus changed my code to only enable the ADC while taking a measurement.</p>
+<p>With all of these precautions in place, the device draws an incredibly low amount of power while in sleep mode:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2073.jpg"><img class="aligncenter size-full wp-image-3546" title="IMG_2073" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2073.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Assuming the average AAA battery has about 1000mAh of capacity, that's going to give you over 15 <strong><a href="http://www.wolframalpha.com/input/?i=1000mAh%2F7.3uA+in+years">years</a></strong> of use.  Now, the device does have to wake up every 8 seconds to do its thing, and it'll draw even more power if it has to run the buzzer to let you know the plant is dying, but these operations take a very short period of time (a number of milliseconds at the slowest), so the user can at least expect a few years of use before having to replace the batteries.</p>
+<h1>Conclusion</h1>
+<p>So nothing terribly ground-breaking with this design, but it was a quick and fun refresher, and I learned a few more things about the different power down modes of the ATmega48.</p>
+<p>It's also a surprisingly practical device coming from me.  I can't wait to hear what she thinks of it once she puts it to use!</p>
+<hr />
+<p><strong>Project files can be found here: <a href="http://ch00ftech.com/wp-content/uploads/2013/04/Soil-Moisture-Sensor-v1.0.zip">Soil Moisture Sensor v1.0</a></strong></p>
+<hr />
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/04/09/soil-moisture-sensor/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Electronic Birthday Candle</title>
+		<link>http://ch00ftech.com/2013/04/07/electronic-birthday-candle/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=electronic-birthday-candle</link>
+		<comments>http://ch00ftech.com/2013/04/07/electronic-birthday-candle/#comments</comments>
+		<pubDate>Sun, 07 Apr 2013 23:30:49 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Birthday Candle]]></category>
+		<category><![CDATA[analog circuits]]></category>
+		<category><![CDATA[audio]]></category>
+		<category><![CDATA[led]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3510</guid>
+		<description><![CDATA[My girlfriend's birthday was this past week, and I couldn't find any birthday candles, so I made one instead! No, she's not turning 2... I ran out of parts for the 8... Background So the concept here is pretty simple. &#8230; <a href="http://ch00ftech.com/2013/04/07/electronic-birthday-candle/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>My girlfriend's birthday was this past week, and I couldn't find any birthday candles, so I made one instead!</p>
+<p><iframe width="584" height="329" src="http://www.youtube.com/embed/RtVSv04nwG4?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>No, she's not turning 2... I ran out of parts for the 8...</p>
+<p><span id="more-3510"></span></p>
+<h1>Background</h1>
+<p>So the concept here is pretty simple.  I wanted to mount a microphone on a stick with an LED and design a circuit that would react to a large amount of noise on the microphone input (blowing) to turn off the LED.</p>
+<p>This could easily be accomplished with a micro controller, but I thought it'd be more thrifty and challenging to do it with analog components.</p>
+<h1>Schematic</h1>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/candle.png"><img class="aligncenter size-full wp-image-3512" title="candle" src="http://ch00ftech.com/wp-content/uploads/2013/04/candle.png" alt="" width="1521" height="477" /></a></p>
+<p>As you might expect, the schematic for this thing is very straight forward.  The device is powered by a CR2016 3V coin cell battery which always supplies power to the circuit (there's no power switch).  If left in, even when the LED is turned off, the battery will die, but I figure for something with such a limited one-time use, it was an acceptable requirement.</p>
+<h1> Gain and Envelope Follower</h1>
+<p>The left side of the circuit is the familiar gain stage/envelope follower that you've seen in many of my <a title="Can I get this thing off my desk now?" href="http://ch00ftech.com/2013/01/20/can-i-get-this-thing-off-my-desk-now/">sound reactive</a> circuits.  I left the low pass filter in (R6 and C7), though it's not really necessary.  The only difference this time is that there is no gain on the microphone.  Typically, blowing on a microphone actually clips the mic which means you're producing the largest electrical signal possible.  I experimented with different gain levels until I realized that anything more than 0dB gain caused the candle to be too sensitive and made it blow itself out.</p>
+<p>Originally, I was hoping to flex my analog muscles and make a straight up FET gain stage, but I realized that with a CR2016 battery as my voltage source, there would be too much variability on the rail to set a good bias point.</p>
+<h1>Flip Flop</h1>
+<p>The second half of the circuit is a standard BJT flip flop.  You probably saw a lot of these in my <a title="Transistor Clock Part 1: Power and Time Base" href="http://ch00ftech.com/2012/06/20/2279/">transistor clock</a> posts.  This is a "bi-stable" circuit which means it must always exist in one or two states.  Specifically, either Q2 is on and pulling current down through the D2 (the LED) and keeping Q1 off, or Q1 is on which keeps Q2 off.  If you try modeling a circuit like this, you might find that it can balance between states, but in reality, this never happens as a tiny bit of noise will cause it to fall into one of the two states.</p>
+<p>So once the flip flop is in a state, you have to apply a signal to flip it to the other state.  This type of flip flop can also be called a "Set-Reset Latch" which means that you have a signal to "set" it in one state and then a different signal to flip it to the other state ("reset" it).</p>
+<p>Typically with this kind of circuit, these signals are low pulses on the bases of the transistors.  Imagine Q2 is turned on and pulling the base of Q1 low.  If you were to apply a low pulse to the base of Q2 for a moment, Q2 would immediately turn off.  While off, current would begin to pass through R5 and raise the base of Q1 turning it on.</p>
+<p>Once Q1 is on, the low pulse can be removed, and the device will stay stuck in the alternate state.</p>
+<p>I had to change this around a bit because my "set" signal would be a high pulse (the output of the envelope follower) instead of a low pulse.  Instead of applying a low pulse to the transistor's base that is currently turned on, I applied a high pulse to the transistor that's currently turned off.  Once that pulse hit about 0.7V (a diode drop), the BJT would turn on.  This is generally frowned upon because for a moment, you have both transistors turned on which can cause excessive power draw as well as instability in more complicated circuits, but for my needs, it works fine.</p>
+<p>So I pass the output of the envelope follower to the base of Q1 to turn it on and have a switch connecting the voltage rail to the base of Q2 to turn it on.</p>
+<p>The other thing to watch out for is R7 and R8.  In order for a bistable circuit like this to work, the load on the collector of each BJT must be more or less equal.  For example, if R7 is too large, it might happen that the current through it is not enough to keep Q2 turned on if Q2's collector current is too big.</p>
+<p>Nominally, you'd want the load on each collector current to be a resistive load of approximately equal value, but I didn't have this option as I had an LED's diode drop on one side.  With a 3V rail, the current through D2 will be about 5mA (<span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_9efb82495af6e054a0e82a7acc252dd3.gif' style='vertical-align: middle; border: none; ' class='tex' alt="V_F \approx 2V" /></span><script type='math/tex'>V_F \approx 2V</script>), so I chose R7 to provide approximately that much current to Q1's collector.  This will only work if the rail is 3V.  As the battery dies, the current through Q2 will drop off faster than the current through Q1 because the diode drop won't change with the battery voltage.</p>
+<p>If I wanted to do this right, I'd add another diode in series with R7 (or maybe 3 silicon diodes in series to get closer to 2V), but I designed, laid out, etched, assembled, and debugged this thing in like 5 hours, so give me a break.</p>
+<h1>PCB</h1>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2059.jpg"><img class="aligncenter size-full wp-image-3513" title="IMG_2059" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2059.jpg" alt="" width="1024" height="683" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2060.jpg"><img class="aligncenter size-full wp-image-3514" title="IMG_2060" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2060.jpg" alt="" width="1024" height="683" /></a></p>
+<p>I was pretty proud that I managed to get this whole thing on to one layer with no vias.  The only place I had to cheat was with R10, which is a 0<span class='MathJax_Preview'><img src='http://ch00ftech.com/wp-content/plugins/latex/cache/tex_2e9ef3d6ef62a48d70720728d3e90e31.gif' style='vertical-align: middle; border: none; ' class='tex' alt="\Omega" /></span><script type='math/tex'>\Omega</script> resistor included just to let me hop over a trace.</p>
+<p>I also etched this board with the minimum isolation space between my traces and ground plane.  I was in a hurry, and when increasing the gap produced some ground plane islands and disconnected some components from ground, I wasn't in the mood to start moving stuff around.</p>
+<p>I was surprised to find that I only had two or three very small shorts between traces and ground planes.  It looks like my PCB <a title="The Ch00ftech Guide to PCB Printing" href="http://ch00ftech.com/2012/11/12/the-ch00ftech-guide-to-pcb-printing/">printing techniques</a> give me much cleaner boards than I anticipated.  The biggest problem was soldering.  My soldering iron's tip isn't super fine, and any tiny application of heat to the ground plane created a bunch of solder bridges to ground.  In some places, I was able to clean these up with solderwick, but a lot of times I just had to go at it with a razor blade.  I wonder if there's an easy way to do DIY soldermask...</p>
+<p>The toothpick was a last minute add.  I had originally planned to make a small spike out of PCB, but once I printed out the stencil and realized how much of my copper clad that was going to use up, I thought it might be better trim it off and glue a toothpick on with super glue.  Of course, it might also not be the best idea to take a piece of fiberglass, dip it in sodium hydroxide, ferric chloride, and acetone and then stick it into something you're planning to eat.</p>
+<p>I created the numbers by first placing a gigantic 2 on a blank layer in Eagle and then tracing it with the ground plane tool.  I was hoping I could just drop the 2 into the copper layer and have it work, but Eagle doesn't let you assign net names to text.  I can't imagine too many scenarios where someone would really want to do that, so I guess it's understandable.</p>
+<p>I also created an 8 (y'know, because she's 28, not 2), but I ran out of microphone modules (and time), so I stuck with the 2.  She thought it was pretty cool anyway.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2057.jpg"><img class="aligncenter size-full wp-image-3515" title="IMG_2057" src="http://ch00ftech.com/wp-content/uploads/2013/04/IMG_2057.jpg" alt="" width="1024" height="683" /></a></p>
+<p>I actually managed to somehow lose the layout file for the 8 (I was in a hurry), so if you want anything other than a 2, you'll have to lay it out yourself.</p>
+<h1>Performance</h1>
+<p>The candle works just like you'd expect.  You push the button the turn the candle on, and blowing on it a decent amount turns it off.  Because the current through the LED is what keeps Q1 on while it's in the "off" state, it never quite turns all the way off, but it does drop to a very faint glow that almost emulates the glowing wick after a real candle is blown out.  It's a <del>bug</del> feature!</p>
+<h1>Conclusion</h1>
+<p>So it's not the most attractive birthday candle ever.  The microphone module is pretty unattractive. I would have liked to have made it less conspicuous.  Though considering I made this thing in 5 hours with parts that I had on hand, it's a pretty solid device.</p>
+<p>And she was definitely impressed!</p>
+<hr />
+<p><strong>Project files can be found here: <a href="http://ch00ftech.com/wp-content/uploads/2013/04/Electronic-Birthday-Candle-v1.0.zip">Electronic Birthday Candle v1.0</a></strong></p>
+<hr />
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/04/07/electronic-birthday-candle/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Making a Cooler Business Card</title>
+		<link>http://ch00ftech.com/2013/03/25/making-a-cooler-business-card/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=making-a-cooler-business-card</link>
+		<comments>http://ch00ftech.com/2013/03/25/making-a-cooler-business-card/#comments</comments>
+		<pubDate>Mon, 25 Mar 2013 03:23:00 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Business Card]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3472</guid>
+		<description><![CDATA[It works! New and Improved If you've been following my blog, you probably read up on my last attempt at creating a cooler business card.  The basic concept was to design a small circuit that when connected to a computer &#8230; <a href="http://ch00ftech.com/2013/03/25/making-a-cooler-business-card/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>It works!</p>
+<p><iframe width="584" height="329" src="http://www.youtube.com/embed/lF31aDuSZ6E?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p><span id="more-3472"></span></p>
+<h1>New and Improved</h1>
+<p>If you've been following my blog, you probably read up on my last attempt at creating a <a title="Failing to Make a Cooler Business Card" href="http://ch00ftech.com/2013/01/06/failing-to-make-a-cooler-business-card/">cooler</a> business card.  The basic concept was to design a small circuit that when connected to a computer via USB will emulate a mouse and draw out a design.  This utilized the ATTiny85 and <a href="http://www.obdev.at/products/vusb/index.html">VUSB</a> platform which makes writing USB peripherals very easy.</p>
+<p>The problem with the original design was that I was controlling the mouse in an open loop manner.  I was telling the mouse cursor which way to go, but I had no way to read back the cursor's position. I couldn't account for minor inaccuracies brought about by things like mouse acceleration settings, and the design ended up getting distorted.</p>
+<p>After writing that post, I realized that it's possible to configure a mouse to be an absolute input device.  An absolute input device is something like a graphics tablet where the device selects precisely where the mouse cursor should go.</p>
+<h1>Firmware</h1>
+<p>Most major operating systems will include drivers for so called "generic" human interface devices.  This way you never get stuck with a "press any key to install keyboard driver" when you plug in a keyboard.  The OS has the driver built in for most basic functions.</p>
+<p>These basic functions are defined by the USB spec and cover common things like mouse and keyboard as well as less common peripherals like USB audio and MIDI devices.  What I didn't know last time was that they also cover absolute input devices.</p>
+<p>This is all specified by the USB device descriptor.  A device descriptor is just a series of bytes that are sent to the host machine when a USB device is connected.  This includes information such as the device type (mouse, keyboard, etc) as well as info like the manufacturer (USB-licensed manufacturers need to pay for their specific manufacturer IDs.  My card just "borrows" one from Logitech).</p>
+<p>I don't know anything about the physical aspects of sending a device descriptor, but fortunately, the VUSB firmware that I based my card on handles all of that and only requires that I specify a descriptor array.  If you're interested in how this works, I recommend reading their code/documentation.</p>
+<p>USB descriptors are literally just a series of bytes, so you need to put them in a very specific order for it to work.  I'm not going to go into a whole lot of detail, but I will show you the descriptors I used:</p>
+<pre>0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
+0x09, 0x02,                    // USAGE (Mouse)
+0xa1, 0x01,                    // COLLECTION (Application)
+0x09, 0x01,                    //   USAGE (Pointer)
+0xa1, 0x00,                    //   COLLECTION (Physical)
+0x05, 0x09,                    //     USAGE_PAGE (Button)
+0x19, 0x01,                    //     USAGE_MINIMUM (Button 1)
+0x29, 0x03,                    //     USAGE_MAXIMUM (Button 3)
+0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+0x95, 0x03,                    //     REPORT_COUNT (3)
+0x75, 0x01,                    //     REPORT_SIZE (1)
+0x81, 0x02,                    //     INPUT (Data,Var,Abs)
+0x95, 0x01,                    //     REPORT_COUNT (1)
+0x75, 0x05,                    //     REPORT_SIZE (5)
+0x81, 0x03,                    //     INPUT (Cnst,Var,Abs)
+0x05, 0x01,                    //     USAGE_PAGE (Generic Desktop)
+0x09, 0x30,                    //     USAGE (X)
+0x09, 0x31,                    //     USAGE (Y)
+0x35, 0x00,                    //     PHYSICAL_MINIMUM (0)
+0x46, 0x9d, 0x0b,              //     PHYSICAL_MAXIMUM (2973)
+0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+0x26, 0x9d, 0x0b,              //     LOGICAL_MAXIMUM (2973)
+0x65, 0x11,                    //     UNIT (SI Lin:Distance)
+0x55, 0x0e,                    //     UNIT_EXPONENT (-2)
+0x75, 0x10,                    //     REPORT_SIZE (16)
+0x95, 0x02,                    //     REPORT_COUNT (2)
+0x81, 0x02,                    //     INPUT (Data,Var,Abs)
+0xc0,                          //   END_COLLECTION
+0xc0                           // END_COLLECTION</pre>
+<p>The key to this whole operation is where it says INPUT (Data, Var, <strong>Abs</strong>).  Those two bytes (0x81, 0x02) specify that this will be an absolute input device.  Of course, reporting absolute position is very different from reporting relative movement.</p>
+<p>For starters, when a normal mouse sends information to the host machine, it only needs to send how far the mouse has moved since the last update.  This can easily be reported in a single signed byte as it updates very frequently, so distances are short.</p>
+<p>Mapping the absolute position of the mouse however requires a lot more data if it's going to provide enough resolution for normal tasks.  This is why the "REPORT_SIZE" is set to 0x10.  This specifies that each report will be 16 bits in length.</p>
+<p>With this configuration, the cursor's location will be specified with two 16 bit numbers.  The size of the coordinate plane on which the cursor's location is specified is determined by the "LOGICAL_MAXIMUM" AND "LOGICAL_MINIMUM" values.  The larger these numbers, the finer control you have over the mouse cursor.  The numbers I used were mostly arbitrary.  As long as they're larger than a typical monitor's resolution, you should be good.</p>
+<p>One thing I noticed while playing around is that the coordinate plane actually overscans the display.  This means that the cursor can actually be told to go beyond the edge of the monitor.  I'm not exactly sure why this is the case, and I don't think it's even consistent between displays and operating systems.  In my case, the coordinate system overscanned the edge of the display by about 300 units in every direction.</p>
+<p>Taking that into account, the coordinate plane looked something like this:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/overscan.png"><img class="aligncenter size-full wp-image-3476" title="overscan" src="http://ch00ftech.com/wp-content/uploads/2013/03/overscan.png" alt="" width="1024" height="641" /></a></p>
+<p>The good news is that as long as my design is relatively small and centered in the coordinate plane, it'll make it onto the useable portion of the plane.  What's also convenient is that these coordinate planes scale to the size of the screen, so it should work on anything from a netbook to a 30" monitor.</p>
+<h1>Artwork</h1>
+<p>To generate my design, I wrote a quick and dirty Python script that lets me click on an image and record the coordinates of my clicks.  I designed the card's firmware so that two clicks at the same exact coordinates causes the firmware to toggle the status of the left click button.  This way I just needed to double click at the beginning and end of every line I wanted to draw.</p>
+<p>The script also split up each 16 bit coordinate into two 8 bit bytes because the AVR has an 8 bit processor and is only able to store single byte blocks in its program memory.  Furthermore, you can only index 256 bytes in a single program memory array, so I had to split my design into two separate stacks of arrays that were each less than 256 bytes long.</p>
+<p>This left me with 8 arrays:</p>
+<ul>
+<li>Low byte of X for first half of design</li>
+<li>High byte of X for first half of design</li>
+<li>Low byte of Y for first half of design</li>
+<li>High byte of Y for first half of design</li>
+<li>Low byte of X for second half of design</li>
+<li>High byte of X for second half of design</li>
+<li>Low byte of Y for second half of design</li>
+<li>High byte of Y for second half of design</li>
+</ul>
+<p><strong>Edit: </strong><em>I just remembered that AVR-GCC supports multi-dimensional program space arrays.  This means that I could have just defined a 256x8 array rather than 8 separate arrays.  This is the solution I used to store color mixtures in my <a title="Light up Leather Jacket" href="http://ch00ftech.com/2012/01/16/light-up-leather-jacket/">DJ Jacket</a>.  In the end, the assembled code looks more or less the same, but I could have cleaned up my C code a bit and made this solution more scalable for larger designs.</em></p>
+<p>Once compiled, the code was only slightly larger than 4Kbytes.  The ATTiny85 has 8K of memory, so I could actually make a much more sophisticated design in the future.</p>
+<p>This process of clicking can get pretty exhausting, so I was prone to make mistakes.  To help with this, I wrote another Python script that converts my mouse clicks back into an image, so I can make adjustments without having to actually flash the business card.  I'm sure a more capable coder could write a script to generate this data automatically, but I'm a hardware guy, so...</p>
+<h1>Hardware</h1>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2041.jpg"><img class="aligncenter size-full wp-image-3477" title="IMG_2041" src="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2041.jpg" alt="" width="1024" height="683" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2042.jpg"><img class="aligncenter size-full wp-image-3478" title="IMG_2042" src="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2042.jpg" alt="" width="1024" height="683" /></a></p>
+<p>You might have noticed that I borrowed a lot of this design from <a href="http://www.frank-zhao.com/cache/usbbusinesscard_details.php">Frank Zhao</a>.  He came up with the idea of obfuscating the programmer pins inside the design of the card.  Six of the many exposed vias on the board connect to the six pins of the AVR programming header.  The other hundred or so don't do anything at all.</p>
+<p>Placing those vias was a blast.</p>
+<p>The card was programmed with this small helper circuit:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2045.jpg"><img class="aligncenter size-full wp-image-3479" title="IMG_2045" src="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2045.jpg" alt="" width="1024" height="683" /></a></p>
+<p>The device cannot be programmed while it's connected to USB, so the + and - leads let me power the board using an external power supply during programming.  These supply leads bypassed the two diode drops coming from the 5V rail (see schematic below), so as long as I kept the external supply voltage high enough, I could actually keep it connected while I plugged the device into the USB port. The diodes wouldn't conduct unless their forward voltage was greater than their potential drop.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/tiny45-rc.png"><img class="aligncenter size-full wp-image-3480" title="tiny45-rc" src="http://ch00ftech.com/wp-content/uploads/2013/03/tiny45-rc.png" alt="" width="1365" height="451" /></a></p>
+<p>The USB connector was taken from <a href="https://github.com/sparkfun/SparkFun-Eagle-Libraries">SparkFun Connectors</a> Eagle library.  The PCB itself wasn't thick enough to seat the card properly, so I added some solder to the pins to thicken it up a bit.  This still wasn't quite enough for some USB ports, so maybe next time I'll see about ordering thicker PCB.</p>
+<p>Also, the dongle doesn't stick out far enough for some USB hubs, so in the next version, I'll make it longer.</p>
+<p>I was surprised to find that the ATTin85 only comes in the wide version of SOIC-8 on Digikey.  This is wider than my standard footprint, and I didn't realize until I had already received the PCBs.  Fortunately, I got it to work with some creative soldering:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2024.jpg"><img class="aligncenter size-full wp-image-3481" title="IMG_2024" src="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2024.jpg" alt="" width="1024" height="682" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2027.jpg"><img class="aligncenter size-full wp-image-3482" title="IMG_2027" src="http://ch00ftech.com/wp-content/uploads/2013/03/IMG_2027.jpg" alt="" width="1024" height="682" /></a></p>
+<p>I fixed the footprint anyway for the next version.  Fortunately, I didn't have to rearrange anything else to make room.</p>
+<p>I also included a simple set of instructions on the back of the board.  For most setups, the card should work on the first try, but I also included a URL to a <a href="http://ch00ftech.com/card">small page</a> that offers some troubleshooting tips as well reassurance that this thing won't immediately upload a virus as soon as it's connected.</p>
+<h1>Performance</h1>
+<p>As you can see in the video above, the card does more or less exactly what it's supposed to.  I have also tested the firmware on OSX, but the USB port of my Mac (that's actually running OSX) is shaped so that the card itself won't fit right.</p>
+<p>I don't anticipate it working immediately for everyone, but I figure that it'll still be a fun thing for the recipient to figure out.  Besides, all of the important info is printed right on the card, so if nothing else, it's a neat looking card!</p>
+<hr />
+<p><strong>Project files can be found here: <a href="http://ch00ftech.com/wp-content/uploads/2013/03/Business-Card-v2.0.zip">Business Card v2.0</a> </strong></p>
+<hr />
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/03/25/making-a-cooler-business-card/feed/</wfw:commentRss>
+		<slash:comments>18</slash:comments>
+		</item>
+		<item>
+		<title>QR Clock is a go!</title>
+		<link>http://ch00ftech.com/2013/03/05/qr-clock-is-a-go/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=qr-clock-is-a-go</link>
+		<comments>http://ch00ftech.com/2013/03/05/qr-clock-is-a-go/#comments</comments>
+		<pubDate>Tue, 05 Mar 2013 05:54:09 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[QR Clock]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3449</guid>
+		<description><![CDATA[Thank you all for your support on my Tindie QR Clock fundraiser!  If you participated, you were probably a little confused when you checked your email this morning. My original fundraiser goal was 50 pre-orders.  I came up with this &#8230; <a href="http://ch00ftech.com/2013/03/05/qr-clock-is-a-go/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>Thank you all for your support on my <a href="https://tindie.com/shops/ch00ftech/qr-clock-1/">Tindie QR Clock </a>fundraiser!  If you participated, you were probably a little confused when you checked your email this morning.</p>
+<p>My original fundraiser goal was 50 pre-orders.  I came up with this number after working out the cost-per-unit to produce them in various quantities.  If I wanted to sell the clock at $100, I needed to make at least 50.  Any fewer and the price would rise.</p>
+<p>Well, when I got to 45 pre-orders, I started thinking it might be a good idea to go ahead with the production of 50 and sell the last 5 off in the future.  This was a better option than losing the 45 guaranteed sales I already had (and probably never having another chance to make the clock happen).  If I dropped the goal to 45, my fundraiser would go through as a "success" despite the fact that I never actually reached my original target.</p>
+<p>Unfortunately, due to a timing error on my part (being on China time at the moment), I forgot to make this change until it was too late!  Fortunately, the folks at Tindie were nice enough to let me retroactively change my target number.  If you backed my fundraiser, you probably got an email telling you that it failed followed by one congratulating me on my success.  Sorry for the confusion!</p>
+<p>So I'm definitely going forward on the QR clock.  If you didn't get a chance to back the fundraiser but still want a clock, make sure to sign up for updates on the Tindie page.  I'm going to have at least 5 extras ready as soon as I start shipping and those will go out to the first buyers.</p>
+<p>I'll be posting production updates on my blog and twitter, so stay tuned!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/03/05/qr-clock-is-a-go/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ch00ftech Emergency Preparedness Kit V1.0</title>
+		<link>http://ch00ftech.com/2013/02/21/ch00ftech-emergency-preparedness-kit-v1-0/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=ch00ftech-emergency-preparedness-kit-v1-0</link>
+		<comments>http://ch00ftech.com/2013/02/21/ch00ftech-emergency-preparedness-kit-v1-0/#comments</comments>
+		<pubDate>Thu, 21 Feb 2013 09:52:42 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Briefcase]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3419</guid>
+		<description><![CDATA[What? So this is something I've wanted for a long time, and thanks to an incredibly perceptive gift giver this past holiday season, I finally have.  I've been doing a lot of traveling for work, and it's a real pain &#8230; <a href="http://ch00ftech.com/2013/02/21/ch00ftech-emergency-preparedness-kit-v1-0/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/outside.jpg"><img class="aligncenter size-full wp-image-3420" title="outside" src="http://ch00ftech.com/wp-content/uploads/2013/02/outside.jpg" alt="" width="987" height="682" /></a></p>
+<p><span id="more-3419"></span></p>
+<h1>What?</h1>
+<p>So this is something I've wanted for a long time, and thanks to an incredibly perceptive gift giver this past holiday season, I finally have.  I've been doing a lot of traveling for work, and it's a real pain to pack up all of my tools into a bag where they can get all tangled.  Even for small local jobs, I always find myself packing in a hurry and forgetting something critical.  I'd really like something that I can grab as I'm running out the door and know that everything I need is inside.  Furthermore, I've always wanted to be the guy who slams a briefcase on the table, opens it, and says "I've got this".</p>
+<p>So what's the best briefcase for the job?  None other than the Zero Haliburton Premium Attache.  You might recognize this briefcase from basically every action movie ever.  For example:</p>
+<p>Mission Impossible 4:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/MI4.jpg"><img class="aligncenter size-full wp-image-3424" title="MI4" src="http://ch00ftech.com/wp-content/uploads/2013/02/MI4.jpg" alt="" width="1024" height="576" /></a></p>
+<p>Inception:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/inception.jpg"><img class="aligncenter size-full wp-image-3422" title="inception" src="http://ch00ftech.com/wp-content/uploads/2013/02/inception.jpg" alt="" width="600" height="250" /></a></p>
+<p>Hellboy:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/hellboy.jpg"><img class="aligncenter size-full wp-image-3425" title="hellboy" src="http://ch00ftech.com/wp-content/uploads/2013/02/hellboy.jpg" alt="" width="1024" height="576" /></a></p>
+<p>Some episodes of CSI:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/csi.jpg"><img class="aligncenter size-full wp-image-3426" title="csi" src="http://ch00ftech.com/wp-content/uploads/2013/02/csi.jpg" alt="" width="1278" height="719" /></a></p>
+<p>A dream I had the other night:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/briefcase.jpg"><img class="aligncenter size-full wp-image-3427" title="briefcase" src="http://ch00ftech.com/wp-content/uploads/2013/02/briefcase.jpg" alt="" width="856" height="583" /></a></p>
+<p>Basically, if you want it to look important, it goes in a Zero Haliburton.</p>
+<h1>First draft</h1>
+<p>So it's currently 1:33AM on a Wednesday night.  I'm leaving for China tomorrow morning, and like I always do, I'm staying up as late as I can to get a head start on jet lag.  I didn't have a whole lot of time to prepare my briefcase, but I found some foam to cut out, and set to work making everything fit.  I'm not sure what kind of foam it was, but it cut very easily with a razor blade.  Unfortunately, it was only about half an inch thick, so I had to do layers which don't always line up quite right.</p>
+<p>Here's what I came up with:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/bottom1.jpg"><img class="aligncenter size-full wp-image-3430" title="bottom" src="http://ch00ftech.com/wp-content/uploads/2013/02/bottom1.jpg" alt="" width="1600" height="1067" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/top.jpg"><img class="aligncenter size-full wp-image-3429" title="top" src="http://ch00ftech.com/wp-content/uploads/2013/02/top.jpg" alt="" width="1600" height="1067" /></a></p>
+<p>Even with zero adhesives, the tool set seems to stay put.  I'll have to see what kind of state everything is in once I get it off the luggage carousel in Hong on Kong on Friday.  Fortunately, if I need to reshape one of the slots, I've got the tools I need to do that right there!</p>
+<h1>Next draft</h1>
+<p>I'm pretty sure this collection will last me through this coming trip; It might even be overkill. I plan to see what I end up using this time around so I can "trim the fat" and leave some unnecessary/redundant tools out for the next version.  Whatever space I clear will probably be filled with some of the following that didn't make it into the first draft:</p>
+<ul>
+<li>Low current adjustable power supply</li>
+<li>Soldering iron (perhaps butane to keep it simple)</li>
+<li>Small SMT parts containers</li>
+<li>Assorted wire</li>
+<li>Waveform generator.  Nothing fancy.  One of those cheap analog ones.</li>
+</ul>
+<p>Once I get it all figured out, I know of a few companies online who will cut custom foam inserts for cases like this, though if I find the right foam, I could probably do it myself with knife like I did this time.</p>
+<p>I just really hope customs doesn't think I'm trying to smuggle a million dollars in cash or a pound of cocaine or a nuclear football into the country.  That's profiling against badasses.</p>
+<h1>Update 2/22/13: Contents may have shifted during flight</h1>
+<p>So unsurprisingly, when I got my case back after my 13 hour flight today, my tools had all bounced out of their spots.  I snapped a quick photo in the airport:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/inside.jpg"><img class="aligncenter size-full wp-image-3437" title="inside" src="http://ch00ftech.com/wp-content/uploads/2013/02/inside.jpg" alt="" width="1024" height="768" /></a></p>
+<p>Like I said before, the foam is still a first draft, so I anticipated this being a problem. Perhaps more surprising was the outside of the case.  Now, I was fully expecting the beautiful brushed aluminum exterior to get scuffed up a bit in transit, but I'm pretty sure these dudes accidentally backed the airplane over it...</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1875.jpg"><img class="aligncenter size-full wp-image-3438" title="IMG_1875" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1875.jpg" alt="" width="1024" height="682" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1878.jpg"><img class="aligncenter size-full wp-image-3439" title="IMG_1878" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1878.jpg" alt="" width="1024" height="682" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1879.jpg"><img class="aligncenter size-full wp-image-3440" title="IMG_1879" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1879.jpg" alt="" width="1024" height="682" /></a></p>
+<p>I think the last image is the most interesting.  What the hell was it that left yellow paint?</p>
+<p>While I would have liked the case to stay pristine longer, I'm not too upset about it getting dinged up.  If anything, it looks like any respectable Zero Haliburton case should look at the end of a Jerry Bruckheimer film.  The damage is just cosmetic, and I suspect it will continue to stand up to abuse in future trips.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/02/21/ch00ftech-emergency-preparedness-kit-v1-0/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Small Improvements on the Longboard Wheel Display</title>
+		<link>http://ch00ftech.com/2013/02/19/small-improvements-on-the-longboard-wheel-display/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=small-improvements-on-the-longboard-wheel-display</link>
+		<comments>http://ch00ftech.com/2013/02/19/small-improvements-on-the-longboard-wheel-display/#comments</comments>
+		<pubDate>Tue, 19 Feb 2013 02:33:04 +0000</pubDate>
+		<dc:creator>ch00f</dc:creator>
+				<category><![CDATA[Longboard Wheel Display]]></category>
+
+		<guid isPermaLink="false">http://ch00ftech.com/?p=3398</guid>
+		<description><![CDATA[While my Tindie QR Clock fundraiser is underway, I thought I'd take the opportunity to post an update on another project I'm working on. Remember this guy? Reflecting on Reflectors If you recall, the last time I talked about my &#8230; <a href="http://ch00ftech.com/2013/02/19/small-improvements-on-the-longboard-wheel-display/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+			<content:encoded><![CDATA[<p>While my <a href="https://tindie.com/shops/ch00ftech/qr-clock-1/">Tindie QR Clock fundraiser</a> is underway, I thought I'd take the opportunity to post an update on another project I'm working on.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1858.jpg"><img class="aligncenter size-full wp-image-3399" title="IMG_1858" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1858.jpg" alt="" width="1024" height="683" /></a></p>
+<p>Remember this guy?</p>
+<h1><span id="more-3398"></span>Reflecting on Reflectors</h1>
+<p>If you recall, the last time I talked about my <a title="Longboard Wheel Display" href="http://ch00ftech.com/2012/11/15/lonboard-wheel-display/">longboard wheel display</a>, I had pretty much given up on the whole concept.  The main issue was providing an inexpensive and robust method for detecting the wheel's velocity.  I had previously tried using an IR reflection sensor which worked fairly well for a short demonstration.</p>
+<p>The reflector was attached to the wheel's axel and stayed stationary as the circuit board rotated around it (more detail/pictures in the other post).  There were two main problems with this strategy.  Firstly, the reflector was pretty far away from the proximity sensor.  In order to successfully bounce an IR beam off the reflector and back into the sensor, I needed to boost the IR LED's power by quite a bit.  By the time I got it working, the LED was drawing about 15-20mA of current which rapidly killed the battery.</p>
+<p>Secondly, the shape of the reflector didn't really give me much leeway when it came to different wheel shapes/designs.  Longboard wheels aren't standard, and if I was hoping to make a universal display that fits all shapes, I wasn't going to do it with that reflector scheme.</p>
+<h1>New Method</h1>
+<p>Shortly after I finished up writing that blog post, I went to see a movie.  By the way, if you want to see a block buster movie on opening weekend, it helps to go alone.  You show up 10 minutes before the movie starts and still get the best seat in the house.</p>
+<p>Walking home, I turned my phone back on and noticed a new comment from reader MarkS.  He suggested making a flange that stemmed outward in the direction of the axel.  Such a device would work in virtually any wheel and could be easily modified to fit by the end user.  The best part is that rather than being used as a reflector, it could actually be used as a beam-break.  This would drastically reduce the amount of power required.</p>
+<p>If you don't quite understand what I'm describing, read on.</p>
+<h1>PCBs</h1>
+<p>Considering there was only a small change from my last design to accommodate a new  sensor, there was very little different between my new PCB and the original one.  I wasn't too keen on the prospect of spending the afternoon etching exactly the same thing over again, so I opted to instead get the PCBs made this time.</p>
+<p>Someone I met at a party (yes, I talk about Electrical Engineering at parties, shoot me) recommended I try out <a href="http://www.seeedstudio.com">Seedstudios</a>.  They offer an incredibly cheap PCB printing service. They save money by combining multiple smaller orders into one big one that they ship off to a CM to print all at once.</p>
+<p>What it means is that I got 10 fairly high quality PCBs for just $30 including shipping.  Of course, they didn't ship for over a week, but that still isn't that bad considering the price.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1723.jpg"><img class="aligncenter size-full wp-image-3401" title="IMG_1723" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1723.jpg" alt="" width="1024" height="683" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1724.jpg"><img class="aligncenter size-full wp-image-3402" title="IMG_1724" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1724.jpg" alt="" width="1024" height="683" /></a></p>
+<p>The quality wasn't flawless;  My new <a href="http://www.digikey.com/product-detail/en/GP1S092HCPIF/425-1962-1-ND/720589">beam-break sensor</a> has a oddly shaped asymmetrical alignment post.  They tried to create the corresponding slot in the PCB by drilling two small holes, but they didn't quite get it right:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_18631.jpg"><img class="aligncenter size-full wp-image-3404" title="IMG_1863" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_18631.jpg" alt="" width="1024" height="683" /></a></p>
+<p>You can sort of make out on the top left and right of that hole that the back end is supposed to be square.  This is to fit the sensor:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1862.jpg"><img class="aligncenter size-full wp-image-3405" title="IMG_1862" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1862.jpg" alt="" width="1024" height="683" /></a></p>
+<p>I can't really fault them though.  It's an incredibly small slot and a very cheap printing service.  In the future, I'll probably just bore the slot out into a larger hole and indicate alignment using a silkscreen label.  For now, the hole was easily "repaired" with some careful razor blade work.</p>
+<h1>Beam Break</h1>
+<p>When flipped upright, the beam break sensor has a horseshoe shape.  You can just barely make out the slot containing either the LED or phototransistor (they look the same) in the image below:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1861.jpg"><img class="aligncenter size-full wp-image-3406" title="IMG_1861" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1861.jpg" alt="" width="1024" height="683" /></a></p>
+<p>The principle is that the LED keeps the phototransistor turned on until something passes through the horseshoe and blocks the signal.  The small gap between the LED and sensor means that a very small amount of power is required to keep the phototransistor turned on.  I managed to pull this off with just 3mA of current.  That's almost 1/6th of what I was using before.</p>
+<p>Of course, now I needed a proper beam-break, so I flew to Arizona and picked up some fruit punch.</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1728.jpg"><img class="aligncenter size-full wp-image-3407" title="IMG_1728" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1728.jpg" alt="" width="683" height="1024" /></a></p>
+<p>I really wish they sold the stuff anywhere outside of Arizona...</p>
+<p>Soda cans are a great source for really cheap and really thin aluminum sheeting.  I measured the thickness of my can to be about .004 inches.  While I was originally only planning on using the can as a temporary solution for my prototype, I later reasoned that I could sell the unit with a set of instructions for the end user on how to make their own beam-break out of a can.  This would reduce production costs.</p>
+<p>Using a pair of scissors, I cut the soda can into a wrench-like shape:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1730.jpg"><img class="aligncenter size-full wp-image-3408" title="IMG_1730" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1730.jpg" alt="" width="1024" height="683" /></a></p>
+<p>This easily fit between the nut and washer on the wheel's axle:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1731.jpg"><img class="aligncenter size-full wp-image-3409" title="IMG_1731" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1731.jpg" alt="" width="1024" height="683" /></a></p>
+<p>I designed the circuit board so that the aluminum flange should be exactly flush with one side of the nut.  This ensures that it doesn't extend too far outwards radially where it could get caught in the wheel.</p>
+<p>After screwing down the nut, I cut the beam-brake down to size so that it fit inside the sensor without touching the sides or the bottom:</p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1733.jpg"><img class="aligncenter size-full wp-image-3411" title="IMG_1733" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1733.jpg" alt="" width="1024" height="683" /></a></p>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1735.jpg"><img class="aligncenter size-full wp-image-3410" title="IMG_1735" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1735.jpg" alt="" width="1024" height="682" /></a></p>
+<p>It took a few tries to get the length and positioning right.  I imagine this thing would need to come with some kind of cardboard guide to help the end-user determine the appropriate length.</p>
+<p>With everything assembled, the unit worked!  I didn't take any pictures of it or anything because it honestly looked exactly like the old one.  I didn't even need to change the firmware.</p>
+<h1>Durability Issues</h1>
+<p>The biggest problem with this solution is durability.  The axel of a skateboard (or in my case Freeline Skates) undergoes a lot of stress as the texture of the ground causes it to vibrate.  I found that these vibrations were enough to bend my thin slice of soda can.</p>
+<p>The sensor's gap is only 2mm wide, so even a small misalignment was enough to cause the sensor to strike the beam break and bend it entirely out of shape.  I found that just a minute or so of relatively smooth riding indoors was enough to cause this to happen.  The rhythmic ticking sound of the sensor striking the aluminum was a dead give away.  Also, given that the beam-break was located under the PCB which was attached with adhesive, it was incredibly difficult to re-straighten the beam-break without use of a pair of tweezers.</p>
+<p>The obvious solution would be to make the beam-break out of a thicker metal, but I'm afraid that if I make it too durable, a minor misalignment would cause it to destroy the sensor.  I'd rather have the beam-break bend.</p>
+<p>Besides, I'd be loosing the benefit of the DIY aluminum can solution.  I looked into some online laser-cutting services, and it looks like making something like what I need could cost up to $1-2 a piece for orders of over 100.  That's simply too much to add to what is otherwise a very low BOM cost.</p>
+<h1>Looking Forward</h1>
+<p><a href="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1866.jpg"><img class="aligncenter size-full wp-image-3412" title="IMG_1866" src="http://ch00ftech.com/wp-content/uploads/2013/02/IMG_1866.jpg" alt="" width="1024" height="683" /></a></p>
+<p>So I'm already on the 3rd generation of this thing, and I'm still not satisfied with the solution, but I think I'm getting closer. On the original post, reader Derek Lewis left a comment suggesting that I try a Hall-effect or magnetic sensor and use a small magnet instead of a reflector or beam-break.  I originally overlooked Hall-effect sensors as I assumed that they were too pricey, but after some research, I found some that were actually cheaper than my optical sensors!</p>
+<p>Also, reddit user cypherpunks suggested that I change the current-limiting resistors of my LEDs to reduce the amount of light that the inner LEDs give off.  Given that they won't be moving as fast, they don't need to be as bright.  This could further increase the battery life of the light.  I'll have to roll that suggestion into the next revision.</p>
+<p>I still have 9 more of these PCBs, so I might keep playing with different beam-break materials to see if I can increase the durability, but I'm still glad that I've got a few backup ideas anyway.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://ch00ftech.com/2013/02/19/small-improvements-on-the-longboard-wheel-display/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

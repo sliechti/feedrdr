@@ -1,0 +1,1 @@
+pg_dump -U sliechti -n feedreader -s -C postgres

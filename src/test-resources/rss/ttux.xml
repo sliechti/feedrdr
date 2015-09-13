@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:inebium="http://ttux.net/rss/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+	<channel>
+		<title>ttux.net: Latest Posts</title>
+		<language>en-us</language>
+		<description>ttux.net: Latest Posts</description>
+		<link>http://ttux.net/</link>
+		<item>
+			<title>Java 1.8 (JDK8): What's new? Code examples and performance</title>
+			<link>http://ttux.net/post/java-8-new-features-release-performance-code</link>
+			<description>In a previous post, I talked about <a href="/post/java-7-new-release-performance-code/">new features and performance of java 1.7</a>. Java 7 has now been released a while ago and Java 8 is coming. Java 1.8 is planned to be released on the 9th of September 2013. I'm going to present the main new features of the Java 8 (JDK8). I will show some code examples and run some simple benchmarks to compare it with its predecessor Java 1.6 and Java 1.7.</description>
+			<pubDate>Apr, 20 2013 03:54:52 +0000</pubDate>
+		</item>
+		<item>
+			<title>Make your gnome-shell experience more enjoyable</title>
+			<link>http://ttux.net/post/improve-gnome-shell-experience</link>
+			<description>I'm using gnome-shell since it was released along gnome 3.0 in April 2011. I know lot of people don't like it but I do. However I do need to add a few things to make it more enjoyable and to be fair more usable for work. So here is a post to give you the tips and extensions you need.</description>
+			<pubDate>Jan, 25 2013 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to: Wake On Lan</title>
+			<link>http://ttux.net/post/wake-on-lan-linux</link>
+			<description>This is a step by step how to which explain you how to setup your computer and network to take advantage of Wake On Lan feature.</description>
+			<pubDate>Sep, 12 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to get webex to work on Linux?</title>
+			<link>http://ttux.net/post/webex-linux-how-to</link>
+			<description>A company I work for is using <a href="http://www.webex.com/">webex</a> for audio/video conferencing. Webex say they support linux and more specifically Ubuntu 10x, Red Hat (5/6), Open SuSE (11.3/11.4) and Fedora (13/14) with Firefox 3.x, 4.x, 5.x. As I am using Arch Linux and I don't want to use a virtual machine, I have been trying to get it to work on it. As we all know, any linux distributions is pretty much the same thing so if it works on 1 distribution it should be possible to get it to work on any other. So let's see how to get webex to work on Linux in general and Arch Linux in particular.</description>
+			<pubDate>Sep, 11 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>pulseaudio: set default device from command line</title>
+			<link>http://ttux.net/post/pulseaudio-linux-default-device-cli</link>
+			<description>This post is just a few commands in order to control pulseaudio from command line. The main purpose for me is to set the default input device as I have two and the one I use is not the one being set as default automatically.</description>
+			<pubDate>Sep, 01 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Skype 4 on Arch Linux</title>
+			<link>http://ttux.net/post/skype4-skype-arch-linux</link>
+			<description>Can't wait for skype 4 package to make it in arch repository, here is how to get skype 4 on arch linux by using the .deb from skype website.</description>
+			<pubDate>Jun, 14 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to create a self signed certificate?</title>
+			<link>http://ttux.net/post/create-self-signed-certificate-ssl</link>
+			<description>You need a self signed certificate for your website over https, this post is here to take you through the few steps necessary to create your self signed certificate.</description>
+			<pubDate>Apr, 26 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Skype: fix crackling sound</title>
+			<link>http://ttux.net/post/skype-crackling-sound-no-sound</link>
+			<description>If skype on linux gives you crackling sound and you use pulseaudio, here is the solution to fix it. Also if you have no sound and use archlinux/pulseaudio, solution is here too.</description>
+			<pubDate>Apr, 17 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>To not increase PCM value when increasing volume with pulseaudio</title>
+			<link>http://ttux.net/post/sound-pcm-volume-increase-pulseaudio</link>
+			<description>When you use pulseaudio and you increase the volume, it will increase the front volume but also the PCM value leading to crackling sound when reaching value above 80%. Here is how to change this behaviour.</description>
+			<pubDate>Apr, 17 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Install grub when booting from live CD or usb</title>
+			<link>http://ttux.net/post/linux-install-grub-boot-usb</link>
+			<description>You need to re-install grub on your drive when booting from usb or live CD. This post is made for you, very straight forward step to do so.</description>
+			<pubDate>Apr, 12 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Git: common and useful commands</title>
+			<link>http://ttux.net/post/git-commands-common-useful</link>
+			<description>I use git and literally love it but I have one problem with it, I often forget how to do things meaning I always have to go look for it either on the internet or in the manual. Therefore I have decided to write this post to regroup all the commands I use/need when using git.</description>
+			<pubDate>Mar, 22 2012 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to run glxgears at full speed and not synchronized to vertical refresh?</title>
+			<link>http://ttux.net/post/glxgears-vertical-refresh-vblank-mode</link>
+			<description>You normally use glxgears to check performance of your graphic card but you get the same as your monitor refresh rate (60Hz = 60fps). You simply need to override a variable to not run synchronized to the vertical refresh.</description>
+			<pubDate>Nov, 15 2011 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>catalyst 11.10 / gnome-shell still not usable</title>
+			<link>http://ttux.net/post/catalyst-11-10-gnome-shell-still-not-usable</link>
+			<description>In my post about catalyst 11.9, I wrote a rant about the AMD catalyst driver which after 6 months were still not working with gnome-shell. Another month has passed and unfortunately gnome-shell is still not usable with the catalyst driver.</description>
+			<pubDate>Nov, 01 2011 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>A list of useful regexp</title>
+			<link>http://ttux.net/post/regexp-validate-email-regexp-replace</link>
+			<description>regexp or in other words regular expression is something you have to regularly use in your applications. I've decided to write this post as a placeholder for regexp I believe are common and useful such as regexp for email validation or some you might use to replace characters in a string. I might write some piece of java code but you can use these regular expression in many other languages.</description>
+			<pubDate>Oct, 30 2011 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>catalyst 11.9 still doesn't work with gnome-shell!</title>
+			<link>http://ttux.net/post/catalyst-11-9-gnome-shell-broken</link>
+			<description>Gnome 3.0 was released on the 6th of April 2011. At the time I write this post, Gnome 3.2 has been released, we are on the 29th of September. Guess what, they have just released catalyst 11.9. I have tried it and gnome-shell still doesn't work properly!! Are they testing their driver goddammit?!</description>
+			<pubDate>Sep, 29 2011 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>3DES Encryption in Java and DES Encryption in Java</title>
+			<link>http://ttux.net/post/3des-java-encrypter-des-java-encryption</link>
+			<description>Here is a small post with just code to do 3DES (Triple DES) and DES Encryption in Java. You can simply copy/paste it in a Class you call Encrypter and it's ready to use. The public constructor takes the key and the IV as arguments.</description>
+			<pubDate>Nov, 13 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>A short introduction to VisualVM and the JVM</title>
+			<link>http://ttux.net/post/visualvm-java-monitor-profile</link>
+			<description>While I was reading the comments in my previous post about java 1.7, I realized that there is one thing that Java as which is great: VisualVM. If you don't know it, this is a must read post. You will discover it and see how to use it. I will talk about the Garbage Collector as well, only basic things to be able to understand Visual GC.</description>
+			<pubDate>Nov, 03 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Java 1.7 - What's new? Release date, code examples and performance</title>
+			<link>http://ttux.net/post/java-7-new-release-performance-code</link>
+			<description>I have been reading quite a lot about Java 1.7. There are articles about what's new, some code examples, some benchmark to compare performance with previous version of Java and discussion on when it will be released. I have decided to regroup all I have discovered in this article so that I and maybe you, won't have to spend hours surfing the web to find all this information.</description>
+			<pubDate>Apr, 10 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Become a friend of Gnome</title>
+			<link>http://ttux.net/post/linux-gnome-friend</link>
+			<description>For those of you who don't know, GNOME offers an easy to understand desktop for your GNU/Linux or UNIX computer. To put it simple, it's a desktop environment and if you are using Ubuntu then that's what you are using the most when you are using Linux. Today they are trying to hire a Sysadmin and they need the help of the community. Maybe you can help?</description>
+			<pubDate>Mar, 28 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>An example on how to use sed</title>
+			<link>http://ttux.net/post/sed-example-replace-multiple-files</link>
+			<description>This post is a very short one but might be really useful. You have multiple files they all contains the same string like a parameter for config files and you would like to change it in all the files. That would take you a while if you have 100 files so here is exactly what you need in 1 simple command line using <strong>sed</strong> on Linux.</description>
+			<pubDate>Mar, 25 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Best android apps</title>
+			<link>http://ttux.net/post/best-android-apps</link>
+			<description>I have the Nexus One since the 6th of January. I discovered few apps which I find really good so I've decided to make a list of them. If you found better ones or you believe some other apps diserve to be here, leave a comment. That will be useful for everyone.</description>
+			<pubDate>Mar, 17 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Tips about vim</title>
+			<link>http://ttux.net/post/vim</link>
+			<description>I am a vim user and I thought it would be interesting if I was sharing some of the stuff I like the most about vim as well as having this post as a reminder for myself. So here are few things about vim.</description>
+			<pubDate>Mar, 09 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>lighttpd: tips, url.redirect, url.rewrite, mod_proxy, etc...</title>
+			<link>http://ttux.net/post/tips-lighttpd-url-redirect-url-rewrite</link>
+			<description>If you are using lighttpd or you intend to use it then you should check this post. You'll find quite a few interesting things about url-redirect and url-rewrite using respectively mod_redirect and mod_rewrite. I have added some other tips as well such as enabling compression, getting drupal to work with lighttpd or how to use mod_proxy (useful if you run a java webapp for example).</description>
+			<pubDate>Mar, 05 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Resume a scp transfer</title>
+			<link>http://ttux.net/post/resume-scp-transfer-rsync-limit-scp-speed</link>
+			<description>You are copying big files using scp and unfortunately the transfer fails. You get "stalled". You have already copied 80% of the file and you don't want to start from the beginning especially because it could fail again. Here is the solution to your problem. How to resume a scp transfer? Using rsync.</description>
+			<pubDate>Mar, 04 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Clear memory caches on Linux</title>
+			<link>http://ttux.net/post/clear-memory-cache-linux</link>
+			<description>You have a machine with a lot of RAM. After sometimes you notice that you have hardly any RAM left and that it starts to swap. Though if you look at your process using top for example you notice that none of your application are using all your memory. This is because Linux is caching stuff into memory and unfortunately when you need to use more memory rather than freeing some cache it will start to swap. So let's see how to clear the memory cache.</description>
+			<pubDate>Mar, 04 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to: postfix, dovecot with imap, smtp sasl authentication, encryption</title>
+			<link>http://ttux.net/post/postfix-dovecot-sasl-authentication-smtp-imap-spamassassin</link>
+			<description>This is a great how-to if you want to install and configure an email server. If you are struggling to do so, this post will put an end to it. I myself was struggling getting everything to work as I wanted especially for the smtp to do authentication and solve the relay access denied error message I was getting even with the authentication working. On top of having a working email server with encryption and authentication we will configure spamassassin in order to get rid of the SPAM. Configuration files are available for download and it is guarantee to work not like the thousand of tutorials I read.</description>
+			<pubDate>Feb, 06 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Install linux on a eeepc 1000he</title>
+			<link>http://ttux.net/post/install-linux-eeepc-1000he-archlinux-kernel-config</link>
+			<description><p>I came across a eeepc 1000he over christmas where I had to install Linux (more precisely Archlinux). It was for my brother who wanted to try Linux and use it for his work. That gave me the idea for my previous post "<a href="http://inebium.com/post/discover-install-try-linux-archlinux">Discover, install and try a new Linux distribution: archlinux</a>". Indeed I didn't know any real good tutorial for archlinux when someone never used Linux before. As he managed to install Archlinux few problems remained: the touchpad was not working perfectly and the hardware acceleration for compiz was not working out of the box. So I decided, as I wanted him to have a good experience with Linux, to create a good kernel config and compile the kernel myself as well as make a good xorg.conf (I am not a big fan of the AutoAddDevices as things don't work really perfectly for a specific machine).</p></description>
+			<pubDate>Jan, 10 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>udev is slow to start at boot time</title>
+			<link>http://ttux.net/post/udev-slow-start</link>
+			<description>You are compiling your kernel yourself or after a kernel update from your distribution, udev takes forever to start but you don't know why. I will give you the solution to this problem in this post.</description>
+			<pubDate>Jan, 09 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Create a VPN on Linux with Poptop</title>
+			<link>http://ttux.net/post/vpn-linux-pptp-windows-client</link>
+			<description>You are using Linux and you need to create a VPN where both Windows and Linux users will be able to connect to really easily. This post is done for you. In few lines we will see how to install and configure <a href="http://www.poptop.org">Poptop</a>, an open source PPTP server for Linux. On top of that we'll see the options you need in the kernel as well as how to configure iptables properly if ever you use it. Then how to connect to it using pptpclient on Linux which is the client for the proprietary Microsoft Point-to-Point Tunneling Protocol, PPTP. Finally we'll see how to connect to your VPN on Windows.</description>
+			<pubDate>Jan, 06 2010 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Discover, install and try a new Linux distribution: archlinux</title>
+			<link>http://ttux.net/post/discover-install-try-linux-archlinux</link>
+			<description>You are not using Linux yet or maybe you are but a different linux distribution. Maybe you are using ubuntu? This post is done for you. You are about to discover and learn about the best linux distribution ever. Archlinux might not be the easiest distribution to install but with this complete guide, it will. Archlinux let you have the entire control on every part of your system.</description>
+			<pubDate>Dec, 25 2009 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to use spring-jdbc from the springframework?</title>
+			<link>http://ttux.net/post/spring-jdbc</link>
+			<description>In my <a href="http://inebium.com/post/create-webapp-java-spring-maven-eclipse">previous post</a> we have seen how to create a webapp. Today we will see how to use spring-jdbc which is the Spring Framework's JDBC abstraction framework. Thanks to this you will be able to connect your webapp to a database. In my example I will use <a href="http://dev.mysql.com/">mysql</a> but it is really easy to use any other database.</description>
+			<pubDate>Dec, 15 2009 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>How to create a webapp? A step by step tutorial about the springframework, maven and eclipse.</title>
+			<link>http://ttux.net/post/create-webapp-java-spring-maven-eclipse</link>
+			<description>This post is a short introduction on how to create a web application in java from scratch. We will use the springframework, a really popular java framework. The current stable version of this framework is 2.5.6 but we will see the features of the next major version: 3.0. At the time I write these lines it is in RC3 so it should be released pretty soon. I will do a short introduction about maven as we will use it. The IDE I am using is eclipse so if you don't already know about it, you can learn few things there.</description>
+			<pubDate>Dec, 12 2009 12:00:00 +0000</pubDate>
+		</item>
+	</channel>
+</rss>

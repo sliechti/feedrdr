@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Programming Blogs created by Chris in Inoreader [http://www.inoreader.com]</title>
+  </head>
+  <body>
+    <outline text="Programming Blogs" title="Programming Blogs">
+      <outline text="MS Open Tech" title="MS Open Tech" type="rss" xmlUrl="http://msopentech.com/feed/" htmlUrl="http://msopentech.com/"/>
+      <outline text="ScottGu's Blog" title="ScottGu's Blog" type="rss" xmlUrl="http://weblogs.asp.net/scottgu/rss.aspx" htmlUrl="http://weblogs.asp.net/scottgu/"/>
+      <outline text="Scott Hanselman's Blog" title="Scott Hanselman's Blog" type="rss" xmlUrl="http://feeds.feedburner.com/ScottHanselman" htmlUrl="http://www.hanselman.com/blog/"/>
+      <outline text="Steve Sanderson’s blog" title="Steve Sanderson’s blog" type="rss" xmlUrl="http://blog.stevensanderson.com/feed/" htmlUrl="http://blog.stevensanderson.com/"/>
+      <outline text="endjin blog » Alice Waddicor" title="endjin blog » Alice Waddicor" type="rss" xmlUrl="http://blogs.endjin.com/author/alice-waddicor/feed/" htmlUrl="http://blogs.endjin.com/"/>
+      <outline text="Regular Geek" title="Regular Geek" type="rss" xmlUrl="http://feeds.feedburner.com/RegularGeek" htmlUrl="http://regulargeek.com/"/>
+      <outline text="LinkedIn Engineering - Blog" title="LinkedIn Engineering - Blog" type="rss" xmlUrl="http://engineering.linkedin.com/taxonomy/term/1/feed" htmlUrl="http://engineering.linkedin.com/blog"/>
+      <outline text="Pluralsight blog" title="Pluralsight blog" type="rss" xmlUrl="http://blog.pluralsight.com/feed/" htmlUrl="http://blog.pluralsight.com/"/>
+      <outline text="Michael Kennedy on Technology" title="Michael Kennedy on Technology" type="rss" xmlUrl="http://blog.michaelckennedy.net/feed/" htmlUrl="http://blog.michaelckennedy.net/"/>
+      <outline text="The Netflix Tech Blog" title="The Netflix Tech Blog" type="rss" xmlUrl="http://techblog.netflix.com/feeds/posts/default" htmlUrl="http://techblog.netflix.com/"/>
+      <outline text="High Scalability" title="High Scalability" type="rss" xmlUrl="http://highscalability.com/rss.xml" htmlUrl="http://highscalability.com/blog/"/>
+      <outline text="Quantitative Steezing" title="Quantitative Steezing" type="rss" xmlUrl="https://www.simple.com/engineering-rss.xml" htmlUrl="https://www.simple.com/engineering"/>
+      <outline text="Channel 9" title="Channel 9" type="rss" xmlUrl="http://channel9.msdn.com/Feeds/RSS/" htmlUrl="http://channel9.msdn.com/"/>
+      <outline text="Brian Harry's blog" title="Brian Harry's blog" type="rss" xmlUrl="http://blogs.msdn.com/bharry/rss.xml" htmlUrl="http://blogs.msdn.com/b/bharry/"/>
+      <outline text="You've Been Haacked" title="You've Been Haacked" type="rss" xmlUrl="http://feeds.haacked.com/haacked" htmlUrl="http://haacked.com/"/>
+      <outline text="The Morning Brew" title="The Morning Brew" type="rss" xmlUrl="http://blog.cwa.me.uk/feed/" htmlUrl="http://blog.cwa.me.uk/"/>
+      <outline text="OdeToCode by K. Scott Allen" title="OdeToCode by K. Scott Allen" type="rss" xmlUrl="http://feeds.feedburner.com/OdeToCode" htmlUrl="http://odetocode.com/"/>
+      <outline text="Oleg Sych" title="Oleg Sych" type="rss" xmlUrl="http://feeds.olegsych.com/olegsych" htmlUrl="http://www.olegsych.com/"/>
+      <outline text="Tumblr Engineering" title="Tumblr Engineering" type="rss" xmlUrl="http://engineering.tumblr.com/rss" htmlUrl="http://engineering.tumblr.com/"/>
+      <outline text="Simple Programmer | RSS Feed" title="Simple Programmer | RSS Feed" type="rss" xmlUrl="http://simpleprogrammer.com/feed/" htmlUrl="http://simpleprogrammer.com/"/>
+      <outline text="Hello Android" title="Hello Android" type="rss" xmlUrl="http://www.helloandroid.com/rss.xml" htmlUrl="http://www.helloandroid.com/"/>
+      <outline text="Morning Dew" title="Morning Dew" type="rss" xmlUrl="http://feeds2.feedburner.com/alvinashcraft" htmlUrl="http://www.alvinashcraft.com/"/>
+      <outline text="Plenty of fish blog" title="Plenty of fish blog" type="rss" xmlUrl="http://plentyoffish.wordpress.com/feed/" htmlUrl="http://plentyoffish.wordpress.com/"/>
+      <outline text="Daniel Cazzulino" title="Daniel Cazzulino" type="rss" xmlUrl="http://blogs.clariusconsulting.net/kzu/feed/" htmlUrl="http://www.cazzulino.com/"/>
+      <outline text="Instagram Engineering" title="Instagram Engineering" type="rss" xmlUrl="http://instagram-engineering.tumblr.com/rss" htmlUrl="http://instagram-engineering.tumblr.com/"/>
+      <outline text="Skinner's Blog" title="Skinner's Blog" type="rss" xmlUrl="http://blogs.msdn.com/camerons/rss.xml" htmlUrl="http://blogs.msdn.com/b/camerons/"/>
+      <outline text="Sprintfeed" title="Sprintfeed" type="rss" xmlUrl="http://www.sprintfeed.com/feed/" htmlUrl="http://www.sprintfeed.com/"/>
+      <outline text="Jeffrey Palermo (.com)" title="Jeffrey Palermo (.com)" type="rss" xmlUrl="http://jeffreypalermo.com/feed/" htmlUrl="http://jeffreypalermo.com/"/>
+      <outline text="ADO.NET Blog" title="ADO.NET Blog" type="rss" xmlUrl="http://blogs.msdn.com/adonet/rss.xml" htmlUrl="http://blogs.msdn.com/b/adonet/"/>
+      <outline text="Tech Tips, Tricks &amp; Trivia" title="Tech Tips, Tricks &amp; Trivia" type="rss" xmlUrl="http://feeds.feedburner.com/WebDevelopmentTipsTricksTrivia" htmlUrl="http://mvark.blogspot.com/"/>
+      <outline text="Windows Azure  : windows azure," title="Windows Azure  : windows azure," type="rss" xmlUrl="http://blogs.msdn.com/b/windowsazure/rss.aspx?Tags=windows azure/" htmlUrl="http://blogs.msdn.com/b/windowsazure/archive/tags/windows azure//"/>
+      <outline text="Magnus Mårtensson" title="Magnus Mårtensson" type="rss" xmlUrl="http://magnusmartensson.com/feed" htmlUrl="http://magnusmartensson.com/blog"/>
+      <outline text="Steve Wellens" title="Steve Wellens" type="rss" xmlUrl="http://feeds2.feedburner.com/SteveWellens" htmlUrl="http://weblogs.asp.net/stevewellens/"/>
+    </outline>
+  </body>
+</opml>
