@@ -7,7 +7,6 @@ import java.util.List;
 
 import feedreader.oauth.OAuthType;
 import feedreader.store.DBFields;
-import feedreader.store.test.UserDataTest;
 
 /**
  * @see UserDataTest

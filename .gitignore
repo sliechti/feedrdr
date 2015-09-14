@@ -9,3 +9,4 @@ src/test-resources/downloaded
 src/test-resources/xml
 /out/
 *.log
+lib
