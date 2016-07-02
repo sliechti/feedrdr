@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/java"/>
-	<classpathentry kind="src" path="src/test-java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="libraries/restfb-1.11.0/restfb-1.11.0.jar">
@@ -150,5 +150,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/dev/programs/tomcat8/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="C:/dev/programs/tomcat8/lib/jsp-api.jar"/>
 	<classpathentry kind="output" path="out"/>
 </classpath>
