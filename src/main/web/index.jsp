@@ -35,33 +35,27 @@
 			}
 		}
 
-		if (Parameter.asString(request, "signup", "").equalsIgnoreCase(
-				"signup")) {
+		if (Parameter.asString(request, "signup", "").equalsIgnoreCase("signup")) {
 			UserSession.createNew(response, request);
 			return;
-		};
+		} ;
 
 		if (!Parameter.asString(request, "recover_email", "").isEmpty()) {
-			String recoverEmail = Parameter.asString(request,
-					"recover_email", "");
+			String recoverEmail = Parameter.asString(request, "recover_email", "");
 			if (Validate.isValidEmailAddress(recoverEmail)) {
-				UserData data = UsersTable.get(Parameter.asString(
-						request, "recover_email", ""));
+				UserData data = UsersTable.get(Parameter.asString(request, "recover_email", ""));
 				if (data.getUserId() > 0) {
-					byte[] code = SimpleEncryption.encrypt(
-							FeedAppConfig.ENC_KEY_REOVER_EMAIL_CODE,
-							true, data.getEmail());
-					int r = UsersTable.setForgotPassword(
-							data.getUserId(), new String(code));
+					byte[] code = SimpleEncryption.encrypt(FeedAppConfig.ENC_KEY_REOVER_EMAIL_CODE, true,
+							data.getEmail());
+					int r = UsersTable.setForgotPassword(data.getUserId(), new String(code));
 					if (r >= 0) {
 						info = "An email will be sent to "
-								+ Parameter.asString(request,
-										"recover_email", "user@domain")
+								+ Parameter.asString(request, "recover_email", "user@domain")
 								+ ", please contact us if you don't receive it in the next couple of minutes. Thank you.";
 					} else {
 						err = "There was a problem. We were informed and will have a look as soon as possible.";
 					}
-				};
+				} ;
 			} else {
 				err = "Invalid email. ";
 			}
@@ -80,10 +74,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>free news feed reader</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description"
+	content="free and open source online news reader to keep track of all the content you care about" />
+<meta name="keywords" content="news reader,feed reader,rss,atom" />
 
-<title><%=FeedAppConfig.APP_NAME%></title>
 <link href="<%=PageUtils.getPath("/css/bootstrap" + mincss)%>"
 	rel="stylesheet" type="text/css" />
 <link href="<%=PageUtils.getPath("/css/default" + mincss)%>"
@@ -114,8 +112,8 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -147,17 +145,25 @@
 		<%
 			}
 		%>
-		<a href="https://github.com/sliechti/feedrdr">
-			<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
-		</a>
-		
-		<div><center><p>A feed reader to keep track of all the content you care about.
-		<a href="http://rdr.uservoice.com/">user feedback.</a></p></center><br><br></div>
+		<div>
+			<center> An <a href="https://github.com/sliechti/feedrdr">open source</a> news reader to
+			keep track of all the content you care about. </center>
+		</div>
 
-		
-		<div id="signup" class="noshow">
+		<div id="signup_txt" class="noshow text-center">
+			<br> <a class="text-center block"
+				onclick="$('#login').hide();$('#signup').show();$(this).parent().hide();$('#signin_txt').show();return false;"
+				href="">Sign up</a><br>
+		</div>
+		<div id="signin_txt" class="text-center">
+			<br> Sign up below or <a class="text-center block"
+				onclick="$('#login').show();$('#signup').hide();$(this).parent().hide();$('#signup_txt').show();return false;"
+				href="">sign in with your account</a><br>
+		</div>
+<br>
+		<div id="signup" class="">
 			<form id="signup_form" action="" role="form" method="POST">
-				<input type="text" placeholder="Pick a username"
+				<input type="text" id="pick" placeholder="Pick a username"
 					class="form-control" name="<%=Constants.INPUT_SCREEN_NAME%>"
 					required="true"> <input type="text"
 					placeholder="Your email" class="form-control"
@@ -169,7 +175,7 @@
 					id="btn_signup">
 			</form>
 		</div>
-		<div id="login">
+		<div id="login" class="noshow">
 			<form id="login_form" action="" role="form" method="POST">
 				<input type="text" placeholder="Username or email"
 					class="form-control" name="<%=Constants.INPUT_EMAIL_NAME%>"
@@ -185,8 +191,7 @@
 				</div>
 			</form>
 			<div class="small text-right">
-				<a href='' onclick="$('#forgot').toggle();return false;">Forgot
-					your password?</a>
+				<a href='' onclick="$('#forgot').toggle();return false;">Forgot your password?</a>
 			</div>
 			<div id='forgot' style="margin-top: 10px" class="noshow">
 				<form method="POST" action="">
@@ -197,16 +202,7 @@
 				</form>
 			</div>
 		</div>
-		<div id="signup_txt" class="text-center">
-			<br> <a class="text-center block"
-				onclick="$('#login').hide();$('#signup').show();$(this).parent().hide();$('#signin_txt').show();return false;"
-				href="">Sign up in less than a minute</a><br>
-		</div>
-		<div id="signin_txt" class="noshow text-center">
-			<br> <a class="text-center block"
-				onclick="$('#login').show();$('#signup').hide();$(this).parent().hide();$('#signup_txt').show();return false;"
-				href="">Sign in with your account</a><br>
-		</div>
+
 	</div>
 
 	<div class="login text-center">
@@ -252,15 +248,19 @@
 			       </div>
 			 */
 		%>
-		
-		<p><div class="fb-like" data-href="https://www.facebook.com/pages/feedrdrco/378471115664584" 
-		data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-		<br><br>
-		<a href="https://twitter.com/feedrdrco" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @feedrdrco</a>
+
+		<p>
+		<div class="fb-like"
+			data-href="https://www.facebook.com/pages/feedrdrco/378471115664584"
+			data-layout="button" data-action="like" data-show-faces="true"
+			data-share="true"></div>
+		<br> <br> <a href="https://twitter.com/feedrdrco"
+			class="twitter-follow-button" data-show-count="false"
+			data-show-screen-name="false">Follow @feedrdrco</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</p>
 	</div>
-	
+
 	<script type="text/javascript">
         initHello('<%=OAuthConfig.getFbKey()%>', '<%=OAuthConfig.GOOGLE_KEY%>', '<%=OAuthConfig.LIVE_KEY%>');
 		setHelloCallbacks(function(data) {
@@ -277,5 +277,40 @@
 		}, function(data) {
 		});
 	</script>
+
+	<!-- Piwik -->
+	<script type="text/javascript">
+		var _paq = _paq || [];
+		_paq.push([ 'trackPageView' ]);
+		_paq.push([ 'enableLinkTracking' ]);
+		(function() {
+			var u = "//feedrdr.piwikpro.com/";
+			_paq.push([ 'setTrackerUrl', u + 'piwik.php' ]);
+			_paq.push([ 'setSiteId', 1 ]);
+			var d = document, g = d.createElement('script'), s = d
+					.getElementsByTagName('script')[0];
+			g.type = 'text/javascript';
+			g.async = true;
+			g.defer = true;
+			g.src = u + 'piwik.js';
+			s.parentNode.insertBefore(g, s);
+		})();
+
+		$(document).ready(function() {
+			$('#pick')[0].focus();
+		})
+	</script>
+	<noscript>
+	<p>
+		<img src="//feedrdr.piwikpro.com/piwik.php?idsite=1"
+			style="border: 0;" alt="" />
+	</p>
+	</noscript>
+	<!-- End Piwik Code -->
+
+	<div>
+		<center> <p><%=FeedAppConfig.APP_NAME%></p> </center>
+	</div>
+
 </body>
 </html>
