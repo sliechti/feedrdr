@@ -28,11 +28,7 @@
 <% request.setAttribute("r", true); %>
 <% request.setAttribute("rs", true); %>
 
-<jsp:include page="header.jsp"></jsp:include>
-
-<% 
-UserData user = (UserData)request.getAttribute("user");
-%>
+<%@include file="header.jsp" %>
 
 <div id="leftbar" style="max-width: 200px; position: fixed; top: 70px;" class="hidden-xs col-sm-3 col-md-2">
     <div class="right">
@@ -55,7 +51,7 @@ UserData user = (UserData)request.getAttribute("user");
     </div>
     <br>
     <div>
-        <a title="show all" href="" onclick="showOnlyWithUnread(false); return false;"><span class="glyphicon glyphicon-eye-open"></span></a> | 
+        <a title="show all" href="" onclick="showOnlyWithUnread(false); return false;"><span class="glyphicon glyphicon-eye-open"></span></a> |
         <a title="show only unread" href="" onclick="showOnlyWithUnread(true); return false;"><span class="glyphicon glyphicon-eye-close"></span></a><br>
         <a title="sort A-Z" href="" onclick="sortByAlphabet(2);return false;"><span class="glyphicon glyphicon-sort-by-alphabet"></span></a> |
         <a title="sort Z-A" href="" onclick="sortByAlphabet(1);return false;"><span class="glyphicon glyphicon-sort-by-alphabet-alt"></span></a> |
@@ -64,7 +60,7 @@ UserData user = (UserData)request.getAttribute("user");
         <a title="refresh" href="" onclick="refreshUnread(2);return false;"><span class="glyphicon glyphicon-refresh"></span></a>
     </div>
 
-    <div>        
+    <div>
         <div class="left">
             <span class="profileColor">&nbsp;</span>
             STREAMS
@@ -73,21 +69,21 @@ UserData user = (UserData)request.getAttribute("user");
             <a href="" onclick="newStreamGroup(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
     </div>
-    
-    <div id='menusubs' onmouseover="$('#menusubs').css('overflow-y', 'auto');" 
-         onmouseout="$('#menusubs').css('overflow-y', 'hidden');"></div>    
+
+    <div id='menusubs' onmouseover="$('#menusubs').css('overflow-y', 'auto');"
+         onmouseout="$('#menusubs').css('overflow-y', 'hidden');"></div>
 </div>
-       
-<div id="stream_content" class="col-xs-12 col-sm-offset-3 col-md-offset-2 col-sm-9 col-md-10">   
-   
-    <div id="simple_view_header" class="row" onmouseover="$('#edit_tools').show()" 
+
+<div id="stream_content" class="col-xs-12 col-sm-offset-3 col-md-offset-2 col-sm-9 col-md-10">
+
+    <div id="simple_view_header" class="row" onmouseover="$('#edit_tools').show()"
      onmouseout="$('#edit_tools').hide()"></div>
-    
-    <div id="stream_group_view_header" class="row" onmouseover="$('#edit_tools').show()" 
+
+    <div id="stream_group_view_header" class="row" onmouseover="$('#edit_tools').show()"
          onmouseout="$('#edit_tools').hide()">
-        
+
         <div id="stream_group_header" class="row"></div>
-        
+
         <div id="header_subscriptions" class="noshow row">
 	        <div class="row">
 	        	<div class="col-md-12">
@@ -98,7 +94,7 @@ UserData user = (UserData)request.getAttribute("user");
 			</div>
             <div class="row">
                 <div class="col-md-6">
-                    <h4><label id="all_count"></label> subscriptions: [ <a href="<%= PageUtils.getPath("/pages/import.jsp") %>">import</a> / 
+                    <h4><label id="all_count"></label> subscriptions: [ <a href="<%= PageUtils.getPath("/pages/import.jsp") %>">import</a> /
                     <a href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>">manage</a> ]</h4>
                     <input class="form-control" type="text" id="searchQueryAll"  tabindex="5" placeholder="search" onchange="filterByKeywordAll()"><br>
                     <div id="all_subscriptions" tabindex="6" class="subsdata"></div>
@@ -107,15 +103,15 @@ UserData user = (UserData)request.getAttribute("user");
                     <h4><label id="stream_count"></label> subscriptions in this group: </h4>
                     <input class="form-control" type="text" id="searchQuerySubs" tabindex="7" placeholder="search" onchange="filterByKeywordSubs()"><br>
                     <div id="subscribed" tabindex="8" class="subsdata row"></div>
-                </div>  
+                </div>
             </div>
             <div id="reload" class="noshow theme-bgcolor text-center">
                 <a href="" onclick="reloadSelected();return false;" class="lead block">Save and reload</a>
-            </div>                
+            </div>
         </div>
-                
+
     </div>
-                
+
     <div id="stream"  class="row">
         <div id="stream_entries" class="row"></div>
         <div id="stream_more" class="noshow row block text-center lead">
@@ -125,41 +121,41 @@ UserData user = (UserData)request.getAttribute("user");
             <a href="" class="footer_links" onclick="markAllRead(); return false;">mark all read</a>
         	<div id="footer_spacing" style="height: 600px"></div>
         </div>
-        
-    </div> 
 
-                    
-</div>      
-   
+    </div>
+
+
+</div>
+
 <div style="position: fixed; left: 0px; width: 100%; bottom: 0px">
     <div id="loader" class="profileColor" style="height: 1px; "></div>
     <div class="container">
         <div class="row" style="font-size: 18px; height: 30px; text-align: center; background-color: white" >
             <div>
-                <label id="footer_unread"></label> | 
-                <a href="" class="reload_stream" onclick="reloadStream(); return false;">reload stream</a> | 
-                <a href="" class="mark_all_read" onclick="markAllRead(); return false;">mark all read</a> | 
+                <label id="footer_unread"></label> |
+                <a href="" class="reload_stream" onclick="reloadStream(); return false;">reload stream</a> |
+                <a href="" class="mark_all_read" onclick="markAllRead(); return false;">mark all read</a> |
                 <a href="" onclick="window.scrollTo(0,0);return false;">top <span class="glyphicon glyphicon-chevron-up"></span></a>
             </div>
         </div>
     </div>
 </div>
-                    
+
 <jsp:include page="tmpl/reader.tmpl.jsp"></jsp:include>
 
 <script type="text/javascript">
     window.scrollTo(0,0);
     $("#mark_all_read").css("margin-top", screen.height - (screen.height *0.3));
-    
+
     initReader();
     setEntriesPerPage(<%= FeedAppConfig.DEFAULT_API_FETCH_ARTICLES %>);
-    
+
     registerOnProfileSelected(function(data) {
         clearContent();
         moveTop();
         setProfile(selectedProfile);
-      
-        registerChangeViewListener(function() { 
+
+        registerChangeViewListener(function() {
         	$("a[name=link]").on("click", function(e) {
         		var queryData = {};
         		queryData.e = 0;
@@ -168,7 +164,7 @@ UserData user = (UserData)request.getAttribute("user");
         		updateUnread($("#unread").text() - 1);
         	});
         });
-        
+
         var route = router.getRoute();
         console.log("route " + route.length);
         if(route && route.length == 1) {
@@ -182,8 +178,8 @@ UserData user = (UserData)request.getAttribute("user");
                 }
             });
             return;
-        } 
-        
+        }
+
 		switch (route[0]) {
 			case ROUTE_FEED:
 				getStreamGroups(function() {
@@ -215,7 +211,7 @@ UserData user = (UserData)request.getAttribute("user");
 				default:
 				}
 				break;
-	
+
 			default:
 				loadUnknown();
 			}

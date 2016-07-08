@@ -6,7 +6,7 @@
 <%@page import="feedreader.store.FeedEntriesTable"%>
 <%@page import="feedreader.security.Parameter"%>
 
-<jsp:include page="/security.jsp"></jsp:include>
+<%@include file="/security.jsp" %>
 
 <%= Parameter.asString(request, "id", "noId") %><br>
 
@@ -20,7 +20,7 @@ while (e.next())
     out.append(""+new Date(e.getLong(DBFields.TIME_PUBLICATION_DATE))).append(" - ");
     out.append("<a href='").append(e.getString(DBFields.STR_LINK)).append("' targer='_parent'>")
             .append(StringUtils.cut(e.getString(DBFields.STR_TITLE), 80))
-            .append("</a><br>");    
+            .append("</a><br>");
     count++;
 }
 

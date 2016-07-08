@@ -74,41 +74,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>free news feed reader</title>
+<title>feedrdr - an open source news feed reader</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
-	content="free and open source online news reader to keep track of all the content you care about" />
+	content="open source online news reader to keep track of all the content you care about, full of features" />
 <meta name="keywords" content="news reader,feed reader,rss,atom" />
 
-<link href="<%=PageUtils.getPath("/css/bootstrap" + mincss)%>"
-	rel="stylesheet" type="text/css" />
-<link href="<%=PageUtils.getPath("/css/default" + mincss)%>"
-	rel="stylesheet" type="text/css" />
-<%
-	if (Environment.isProd()) {
-%>
-<link href="<%=PageUtils.getPath("/css/auth-buttons-prod" + mincss)%>"
-	rel="stylesheet" type="text/css" />
-<%
-	} else {
-%>
-<link href="<%=PageUtils.getPath("/css/auth-buttons-dev" + mincss)%>"
-	rel="stylesheet" type="text/css" />
-<%
-	}
-%>
-<link href="<%=PageUtils.getPath("/css/auth-buttons" + mincss)%>"
-	rel="stylesheet" type="text/css" />
-<script src="<%=PageUtils.getPath("/js/jquery" + minjs)%>"
-	type="text/javascript" /></script>
-<script src="<%=PageUtils.getPath("/js/bootstrap" + minjs)%>"
-	type="text/javascript"></script>
-<script src="<%=PageUtils.getPath("/js/hello" + minjs)%>"
-	type="text/javascript"></script>
-<script src="<%=PageUtils.getPath("/js/hello.init" + minjs)%>"
-	type="text/javascript"></script>
+<link href="<%=PageUtils.getPath("/css/bootstrap" + mincss)%>" rel="stylesheet" type="text/css" />
+<link href="<%=PageUtils.getPath("/css/default" + mincss)%>" rel="stylesheet" type="text/css" />
+<% if (Environment.isProd()) { %>
+<link href="<%=PageUtils.getPath("/css/auth-buttons-prod" + mincss)%>" rel="stylesheet" type="text/css" />
+<% } else { %>
+<link href="<%=PageUtils.getPath("/css/auth-buttons-dev" + mincss)%>" rel="stylesheet" type="text/css" />
+<% } %>
+<link href="<%=PageUtils.getPath("/css/auth-buttons" + mincss)%>" rel="stylesheet" type="text/css" />
+<script src="<%=PageUtils.getPath("/js/jquery" + minjs)%>" type="text/javascript" /></script>
+<script src="<%=PageUtils.getPath("/js/bootstrap" + minjs)%>" type="text/javascript"></script>
+<script src="<%=PageUtils.getPath("/js/hello" + minjs)%>" type="text/javascript"></script>
+<script src="<%=PageUtils.getPath("/js/hello.init" + minjs)%>" type="text/javascript"></script>
 </head>
 
 <body>
@@ -278,35 +263,21 @@
 		});
 	</script>
 
-	<!-- Piwik -->
-	<script type="text/javascript">
-		var _paq = _paq || [];
-		_paq.push([ 'trackPageView' ]);
-		_paq.push([ 'enableLinkTracking' ]);
-		(function() {
-			var u = "//feedrdr.piwikpro.com/";
-			_paq.push([ 'setTrackerUrl', u + 'piwik.php' ]);
-			_paq.push([ 'setSiteId', 1 ]);
-			var d = document, g = d.createElement('script'), s = d
-					.getElementsByTagName('script')[0];
-			g.type = 'text/javascript';
-			g.async = true;
-			g.defer = true;
-			g.src = u + 'piwik.js';
-			s.parentNode.insertBefore(g, s);
-		})();
-
-		$(document).ready(function() {
-			$('#pick')[0].focus();
-		})
-	</script>
-	<noscript>
-	<p>
-		<img src="//feedrdr.piwikpro.com/piwik.php?idsite=1"
-			style="border: 0;" alt="" />
-	</p>
-	</noscript>
-	<!-- End Piwik Code -->
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//feedrdr.piwikpro.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//feedrdr.piwikpro.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 
 	<div>
 		<center> <p><%=FeedAppConfig.APP_NAME%></p> </center>

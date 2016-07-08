@@ -22,7 +22,8 @@
 <%@page import="org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload"%>
 <%@page import="feedreader.store.DBFields"%>
 <%@page import="feedreader.utils.HelpUtils"%>
-<jsp:include page="header.jsp"></jsp:include>
+
+<%@include file="header.jsp" %>
 
 <%!
     // Form fields.
@@ -37,9 +38,6 @@
 %>
 
 <%
-    UserData user = (UserData)request.getAttribute("user");
-	ProfileData profile = (ProfileData)request.getAttribute("profile");
-	
     if (FormUploadHelper.isMultiPartContent(request)) {
         FormUploadHelper helper = new FormUploadHelper(request);
 
@@ -50,7 +48,7 @@
             ArrayList<String> selected = helper.asString(SELECTED_PROFILES);
             handler.addOnlyToProfile(selected);
         } else if (addToProfile.equals(CURRENT)) {
-            handler.addOnlyToProfile(profile.getProfileId()); // id is set in header.jsp     
+            handler.addOnlyToProfile(profile.getProfileId()); // id is set in header.jsp
         } else {
             // Default is save to all profiles.
         }
@@ -107,7 +105,7 @@
         </div>
 
     </div>
-                   
+
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include>

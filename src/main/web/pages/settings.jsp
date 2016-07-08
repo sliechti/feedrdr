@@ -7,9 +7,10 @@
 
 <% request.setAttribute("e", true);%>
 
-<jsp:include page="header.jsp"></jsp:include>
+<%@include file="header.jsp" %>
 
-<%! 
+
+<%!
 static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
 %>
 <%
@@ -31,9 +32,9 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
                 err += "Invalid display name. " + Validate.getScreenNameRules() + "<br>";
             }
         }
-        
+
         if (data.isOauthUser()) {
-            
+
             if (!displayName.isEmpty() && UsersTable.displayName(data.getUserId(), displayName) > 0) {
                 info += SAVED_RELOAD;
             } else {
@@ -41,10 +42,10 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
             }
 
         } else {
-            
+
 	        String newPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_1", "");
 	        String newPwdConfirm = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_2", "");
-	
+
 	        if (!newPwd.isEmpty() && newPwd.equals(newPwdConfirm)) {
 	            if (Validate.isValidPassword(newPwd)) {
 	                info += "Password changed. <br>";
@@ -55,7 +56,7 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 	        } else if (!newPwd.isEmpty()) {
 	            err += "New password and password confirmation don't match. <br>";
 	        }
-	
+
 	        String newEmail = Parameter.asString(request, Constants.INPUT_EMAIL_NAME + "_1", "");
 	        if (!newEmail.equalsIgnoreCase(data.getEmail())) {
 	            String newEmailConfirm = Parameter.asString(request, Constants.INPUT_EMAIL_NAME + "_2", "");
@@ -76,7 +77,7 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 	                err += "New email and email confirmation don't match. <br>";
 	            }
 	        }
-	
+
 	        String currentPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME, "");
 	        if (!currentPwd.isEmpty() && currentPwd.equals(currentDataPwd)) {
 	            if (UsersTable.update(data) > 0) {
