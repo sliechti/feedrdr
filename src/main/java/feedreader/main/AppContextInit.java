@@ -44,9 +44,7 @@ public class AppContextInit implements ServletContextListener {
     private static final String LOG_FILE_PROP_KEY = "log_file";
     private static final String LOG_LEVEL_PROP_KEY = "log_level";
     private static String logFile = "";
-    private static final String PROP_SMTP_HOST = "smtp_host";
-    private static final String PROP_SMTP_PWD = "smtp_pwd";
-    private static final String PROP_SMTP_USER = "smtp_user";
+
     private ScheduledExecutorService sc;
 
     @Override
@@ -111,7 +109,7 @@ public class AppContextInit implements ServletContextListener {
         FeedAppConfig.BASE_APP_URL_EMAIL = baseUrlEmail;
         FeedAppConfig.BASE_ADMIN_URL = baseAdminUrl;
 
-        if (setupDatabase(sce)) {
+        if (setupDatabase()) {
             if (Environment.isDev()) {
                 Logger.info(clz).log("Checking for developer configration options.").end();
                 // FeedAppConfig.FETCH_RUN_START_FETCHING = true;
@@ -152,7 +150,7 @@ public class AppContextInit implements ServletContextListener {
         return properties;
     }
 
-    private boolean setupDatabase(ServletContextEvent sce) {
+    private boolean setupDatabase() {
         Logger.info(clz).log("setting up database").end();
         Database.start(loadPropertiesFile("database/database"));
         Logger.info(clz).log("database ok").end();
@@ -162,11 +160,11 @@ public class AppContextInit implements ServletContextListener {
     private void setupLogger() {
         Properties configProperties = loadPropertiesFile("conf/conf");
         int logLevel = Integer.parseInt(configProperties.getProperty(LOG_LEVEL_PROP_KEY));
-        String logFile = configProperties.getProperty(LOG_FILE_PROP_KEY);
+        String logFileProp = configProperties.getProperty(LOG_FILE_PROP_KEY);
         try {
             Logger.get().setLevel(Logger.LogLevels.fromVal(logLevel));
             if (!Environment.isDev()) {
-                Logger.get().setWriter(new FileWriter(logFile, true));
+                Logger.get().setWriter(new FileWriter(logFileProp, true));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -175,12 +173,8 @@ public class AppContextInit implements ServletContextListener {
 
     private void setupSmtpOptions() {
         Properties mailProperties = loadPropertiesFile("conf/mail");
-        String smtpHost = mailProperties.getProperty(PROP_SMTP_HOST);
-        String smtpUser = mailProperties.getProperty(PROP_SMTP_USER);
-        String smtpPassword = mailProperties.getProperty(PROP_SMTP_PWD);
-        Logger.info(clz).log("setting up SMTP options host=").log(smtpHost).log("/user=").log(smtpUser)
-                .log("/password=not_shown, len=(").log(smtpPassword.length()).log(")").end();
-        SimpleMail.configure(smtpHost, smtpUser, smtpPassword);
+
+        SimpleMail.configure(mailProperties);
     }
 
     private void startCronThreads(ServletContextEvent sce) {

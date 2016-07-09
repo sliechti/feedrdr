@@ -12,53 +12,48 @@ import javax.mail.internet.MimeMessage;
 
 import feedreader.config.FeedAppConfig;
 
+/**
+ * https://javamail.java.net/nonav/docs/api/
+ */
 public class SimpleMail {
 
-    static String SMTP_HOST_NAME = "see mail.*.properties";
-    static String SMTP_AUTH_USER = "see mail.*.properties";
-    static String SMTP_AUTH_PWD = "see mail.*.properties";
+	private static String SMTP_AUTH_USER = "see mail.*.properties";
+	private static String SMTP_AUTH_PWD = "see mail.*.properties";
+    private static final String PROP_SMTP_PWD = "mail.smtp.password";
+    private static final String PROP_SMTP_USER = "mail.smtp.user";
 
-    Authenticator auth;
-    Session mailSession;
-    
-    public SimpleMail() {
-        Properties props = new Properties();
-        props.put("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.host", SMTP_HOST_NAME);
-        props.put("mail.smtp.auth", "true");
-        mailSession = Session.getInstance(props, new SMTPAuthenticator());
-    }
+	private final Session mailSession;
+	private static Properties mailProperties;
 
-    public static void configure(String host, String user, String pwd) {
-        SMTP_HOST_NAME = host;
-        SMTP_AUTH_USER = user;
-        SMTP_AUTH_PWD = pwd;
-    }
-    
-    public void send(String from, String fromName, String to, String toName, String subject, String plainText)
-            throws Exception {
-        mailSession.setDebug(FeedAppConfig.DEBUG_EMAIL);
+	public SimpleMail() {
+		mailSession = Session.getInstance(mailProperties, new SMTPAuthenticator());
+	}
 
-        Transport transport = mailSession.getTransport();
+	public static void configure(Properties props) {
+		SimpleMail.mailProperties = props;
+        SMTP_AUTH_USER = mailProperties.getProperty(PROP_SMTP_USER);
+		SMTP_AUTH_PWD = mailProperties.getProperty(PROP_SMTP_PWD);
+	}
 
-        MimeMessage message = new MimeMessage(mailSession);
-        message.setContent(plainText, "text/plain");
-        message.setSubject(subject);
-        message.setFrom(new InternetAddress(from, fromName));
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(to, toName));
-        message.addRecipient(Message.RecipientType.BCC, new InternetAddress(FeedAppConfig.MAIL_BCC_ADDRESS));
-        transport.connect();
-        transport.sendMessage(message, message.getAllRecipients());
-        transport.close();
-    }
+	public void send(String from, String fromName, String to, String toName, String subject, String plainText)
+			throws Exception {
+		Transport transport = mailSession.getTransport();
+		MimeMessage message = new MimeMessage(mailSession);
+		message.setContent(plainText, "text/plain");
+		message.setSubject(subject);
+		message.setFrom(new InternetAddress(from, fromName));
+		message.addRecipient(Message.RecipientType.TO, new InternetAddress(to, toName));
+		message.addRecipient(Message.RecipientType.BCC, new InternetAddress(FeedAppConfig.MAIL_BCC_ADDRESS));
+		transport.connect();
+		transport.sendMessage(message, message.getAllRecipients());
+		transport.close();
+	}
 
-    private class SMTPAuthenticator extends Authenticator {
-        @Override
-        public PasswordAuthentication getPasswordAuthentication() {
-            String username = SMTP_AUTH_USER;
-            String password = SMTP_AUTH_PWD;
-            return new PasswordAuthentication(username, password);
-        }
-    }
+	private class SMTPAuthenticator extends Authenticator {
+		@Override
+		public PasswordAuthentication getPasswordAuthentication() {
+			return new PasswordAuthentication(SMTP_AUTH_USER, SMTP_AUTH_PWD);
+		}
+	}
 
 }
