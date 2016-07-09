@@ -1,3 +1,0 @@
-Compile JSP: needed to catch JSP errors, eg when refactoring.
-http://tomcat.apache.org/tomcat-7.0-doc/jasper-howto.html
-

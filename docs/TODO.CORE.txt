@@ -1,37 +1,7 @@
-The FeedSourcesTable interface should provide a method to fetch a feed's URL and return the correct URL.
-    This is because we might link a feed id to a new feed id, for excample feedburner.com/techcrunch and
-    techcrunch.com/feed are both the same feeds.
-    So the method encapsulates all this logic.
-
-Fetcher. Fetch in groups, don't query database every second.
-
-Normalize naming conventions all over the application.
-    StreamGroups, Feeds, FeedsSubscriptions.
-    Tables, Table Columns, etc.
-    Normalize API, see RestAPI from stackoverflow and GitHub
 
 
-News entries need a new column: t_found_at
- - Reddit news appear in /r/all when the score is high, but the publication date might be in the morning. For that reason
- those stories are currently not published in the stream wall. Because pubDate < checkAt
 
-Handle multiple images in XMLEntries.
-    Check for image sizes.
-    Show them like a carrousel
-    <media:thumbnail url="http://1.bp.blogspot.com/-QY24Li8pei0/VIcdIL282MI/AAAAAAAADrw/db0Oax6fFVY/s72-c/Christmas-Tree-Lights-991.jpg" height="72" width="72"/>
-    <thumbnail>http://icdn2.digitaltrends.com/image/final-fantasy-xv-trailer-2044x1363.png</thumbnail>
-    <imageThumb>http://cdn.instructables.com/F2X/VTIR/I3H7FVLO/F2XVTIRI3H7FVLO.SQUARE2.jpg</imageThumb>
-    <squareImage>http://cdn.instructables.com/F2X/VTIR/I3H7FVLO/F2XVTIRI3H7FVLO.SQUARE.jpg</squareImage>
-    <smallImage>http://cdn.instructables.com/F2X/VTIR/I3H7FVLO/F2XVTIRI3H7FVLO.SMALL.jpg</smallImage>
 
-Handle <updated>2013-04-26T12:19:59-07:00</updated>, push to top, if user wants to.
 
-Handle update fequencies:
-    <ttl>2</ttl>
-    <sy:updatePeriod>hourly</sy:updatePeriod>
-    <sy:updateFrequency>1</sy:updateFrequency>
-    <sy:updateBase>2014-12-16T02:58:44Z</sy:updateBase>
 
-Add copyright to view source:
-    <copyright>Copyright 2014, VentureBeat</copyright>
 
