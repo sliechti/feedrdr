@@ -118,6 +118,9 @@ public class AppContextInit implements ServletContextListener {
 				// FeedAppConfig.FETCH_RUN_START_VALIDATION = true;
 				Logger.info(clz).log("FETCH_RUN_START_FETCHING true FETCH_RUN_START_VALIDATION true").end();
 				DeveloperConfig.run();
+			} else {
+				FeedAppConfig.FETCH_RUN_START_FETCHING = true;
+				FeedAppConfig.FETCH_RUN_START_VALIDATION = true;
 			}
 
 			startCronThreads(sce);
