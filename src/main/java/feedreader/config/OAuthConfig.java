@@ -2,10 +2,10 @@ package feedreader.config;
 
 public class OAuthConfig {
 
-    public static final String FB_DEV_KEY = "REPLACE_FB_DEV_KEY";
-    public static final String FB_PROD_KEY = "REPLACE_FB_PROD_KEY";
-    public static final String GOOGLE_KEY = "REPLACE_GOOGLE_KEY";
-    public static final String LIVE_KEY = "REPLACE_MS_LIVE_KEY";
+    public static String FB_DEV_KEY = "";
+    public static String FB_PROD_KEY = "";
+    public static String GOOGLE_KEY = "";
+    public static String LIVE_KEY = "";
 
     public static String getFbKey() {
         if (Environment.isProd()) {
@@ -13,4 +13,5 @@ public class OAuthConfig {
         }
         return FB_DEV_KEY;
     }
+
 }

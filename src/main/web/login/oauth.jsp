@@ -1,3 +1,4 @@
+<%@page import="feedreader.config.OAuthConfig"%>
 <%@page import="feedreader.oauth.FacebookOAuthProvider"%>
 <%@page import="feedreader.config.FeedAppConfig"%>
 <%@page import="feedreader.config.Environment"%>
@@ -20,16 +21,12 @@
 <% if (debug) {%>
 <script src="<%= PageUtils.getPath("/js/hello.min.js")%>" type="text/javascript"></script>
 <script type="text/javascript">
-    <% if (Environment.isProd()) { %>
-    var fbAppId = '1587611758138796';
-    <% } else { %>
-    var fbAppId = '1587614741471831';
-    <% }%>
+    var fbAppId = '<%= OAuthConfig.getFbKey() %>';
 
     console.log(fbAppId);
-    hello.init({google: '36068092155-cmv7gujodqru441o5kkorujs01pd7de6.apps.googleusercontent.com',
-        facebook: '1587614741471831',
-        windows: '0000000044135DC2'});
+    hello.init({google: '<%= OAuthConfig.GOOGLE_KEY %>',
+        facebook: '<%= OAuthConfig.getFbKey() %>',
+        windows: '<%= OAuthConfig.LIVE_KEY %>>'});
 
     hello.on('auth', function (data)
     {
@@ -77,7 +74,7 @@
         return;
     }
 
-    // TODO: Validate email address. 
+    // TODO: Validate email address.
     UserData data = UsersTable.get(user.getEmail());
     if (data.getUserId() != 0) {
         UsersTable.saveToken(data.getUserId(), oauthProvider.getAuthType(), token);

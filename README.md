@@ -42,7 +42,7 @@ Before starting Tomcat check the following classes/files and make the necessary 
       * If true, it starts the background thread that fetches feed sources
     * FETCH_RUN_START_VALIDATION
       * If true, it starts the background thread that validates the fetched sources
-  * WEB-INF/ *.properties
+  * Check all files under WEB-INF/ *.properties
   * see web.xml, feedreader.main.AppContextInit
     * The class is responsible for starting background threads
     * Setting up the environment
