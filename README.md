@@ -6,7 +6,7 @@ Sources for [feedrdr.co](http://feedrdr.co)
 
 ### Recommended layout
 
-  * DEVELEPMENT_DIR\workspace-feedrdr
+  * DEVELOPMENT_DIR\workspace-feedrdr
     * feedrdr - _git clone https://github.com/sliechti/feedrdr_
     * tomcat8 - [Tomcat 8](https://tomcat.apache.org/download-80.cgi), extracted .zip from link below
     * postgresql9 - [PostgreSQL 9.x](https://www.postgresql.org/download/)  installation
@@ -21,7 +21,7 @@ Sources for [feedrdr.co](http://feedrdr.co)
 ### Setting up Eclipse project
 
   * 3rd party dependencies should be picked up by ivy, see ivy.xml
-    * If not, install the Ivy DE plugin from the Eclipse's marketplace
+    * If not, install the Ivy DE plug-in from the Eclipse's marketplace
     * Go to Project Properties / Build Path / Libraries / Add
     * .. and add a new Library -> Ivy DE Managed Dependencies
   * Go to Window / Preferences / Server / Runtime Environments -> Add new Tomcat 8 runtime
@@ -30,7 +30,7 @@ Sources for [feedrdr.co](http://feedrdr.co)
 #### Troubleshooting
 
  * If the build path shows missing libraries make sure Ivy DE is installed and configured as explained above.
- * The fdollowing are inside Tomcat's lib folder, should be added automatically once the Server is added and configured as Targeted Runtimes under Project / Properties
+ * The following are inside Tomcat's lib folder, should be added automatically once the Server is added and configured as Targeted Runtimes under Project / Properties
     * _org.apache.tomcat.util.http.fileupload.*_ is in _tomcat-coyote.jar_
     * _javax.servlet.jsp.*_ is in jsp-api.jar
 
@@ -53,7 +53,7 @@ Before starting Tomcat check the following classes/files and make the necessary 
      * Make sure the JRE and JDK match or
      * Make sure to not use any special JDK optimizations
    * ClassNotFound exception errors
-      * Make sure the .WAR is exported with all dependecy .jars
+      * Make sure the .WAR is exported with all dependency .jars
       * In eclipse, go to project properties / deployment assembly / add referenced libraries
 
 ### Deployment
