@@ -51,6 +51,8 @@ Before starting Tomcat check the following classes/files and make the necessary 
 
 ###Troubleshooting
 
+   * It throws ClassNotFound exceptions
+      * Go to project / properties / deployment assembly and make sure to add Ivy
    * Tomcat app not starting
      * Make sure the JRE and JDK match or
      * Make sure to not use any special JDK optimizations
