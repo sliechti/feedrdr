@@ -74,13 +74,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>feedrdr - an open source news feed reader</title>
+<title>feedrdr - an open source rss news feed reader</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
-	content="open source online news reader to keep track of all the content you care about, full of features" />
-<meta name="keywords" content="news reader,feed reader,rss,atom" />
+	content="open source rss news reader to keep track of all the content you care about" />
+<meta name="keywords" content="rss,atom,news reader,feed reader" />
+<meta name="google-site-verification" content="w2qoFGms5i-1odj9Jj2G3CTCtMokK79Oi93mwglzNkk" />
+<meta name="msvalidate.01" content="13BFF01091BF323BC721335417DC72C4" />
 
 <link href="<%=PageUtils.getPath("/css/bootstrap" + mincss)%>" rel="stylesheet" type="text/css" />
 <link href="<%=PageUtils.getPath("/css/default" + mincss)%>" rel="stylesheet" type="text/css" />
