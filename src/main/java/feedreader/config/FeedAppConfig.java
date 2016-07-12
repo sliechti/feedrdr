@@ -86,8 +86,8 @@ public class FeedAppConfig {
 	public static long DELAY_VALIDATE_IN_S = 3;
 	public static int FETCH_SEND_STATUS_EVERY_MINUTES = 60 * 4; // 4 times a
 																// day.
-	public static boolean FETCH_RUN_START_FETCHING = false;
-	public static boolean FETCH_RUN_START_VALIDATION = false;
+	public static boolean FETCH_RUN_START_FETCHING = true;
+	public static boolean FETCH_RUN_START_VALIDATION = true;
 
 	public static final String ENC_KEY_REOVER_EMAIL_CODE = "RECOVEREMAIL";
 	public static boolean DEBUG_EMAIL = false;
