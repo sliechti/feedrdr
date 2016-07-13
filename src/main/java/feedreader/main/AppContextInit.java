@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.apache.catalina.util.ServerInfo;
+
 import feedreader.config.Constants;
 import feedreader.config.DeveloperConfig;
 import feedreader.config.Environment;
@@ -79,7 +81,9 @@ public class AppContextInit implements ServletContextListener {
         }
 
         Logger.info(clz).log("environment set to ").log(FeedAppConfig.APP_ENV).end();
-
+        Logger.info(clz).log(ServerInfo.getServerInfo()).end();
+        Logger.info(clz).log(ServerInfo.getServerBuilt()).end();
+        Logger.info(clz).log(ServerInfo.getServerNumber()).end();
         setupLogger();
         setupSmtpOptions();
         setupOAuth();
