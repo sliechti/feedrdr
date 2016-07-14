@@ -1,0 +1,191 @@
+body {
+	background-color: #EDECF2;
+	font-family: "Helvetica";
+	font-size: 1.2em;
+	margin: 0 0 60 0;
+}
+
+.hide {
+	display: none;
+}
+
+.w80p {
+	width: 60%;
+}
+
+.w100p {
+	width: 100%;
+}
+
+@media only screen and (max-device-width: 1200px) {
+	.w80p {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-device-width: 900px) {
+	.w80p {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-device-width: 480px) {
+	.w80p {
+		width: 90%;
+	}
+}
+
+.header {
+	position: relative;
+	background-color: white;
+	border-bottom: 0.8px solid #D6D6D6;
+	margin-bottom: 60px;
+	padding: 10px;
+	height: auto;
+}
+
+.header>div {
+	overflow: hidden;
+}
+
+.header-btn {
+	border: 0.8px solid #D6D6D6;
+	background-color: white;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 2px;
+	border-width: 2px;
+	padding: 5px 20px;
+}
+
+.header a {
+	text-decoration: none;
+	font-weight: normal;
+	color: #D16890;
+}
+
+.header .logo {
+	height: 30px;
+	line-height: 30px;
+}
+
+button {
+	font-size: 1.1em;
+}
+
+.btn {
+	text-decoration: none;
+	background-color: #D20154;
+	color: white;
+	text-align: center;
+	border: 0px;
+	border-radius: 2px;
+	padding: 5px 0px;
+}
+
+.btn:hover {
+	background-color: #D20154;
+}
+
+input {
+	border: 0.8px solid #D6D6D6;
+	font-size: 1.1em;
+	padding: 2px;
+}
+
+#center-piece p {
+	font-size: 1.4em;
+	color: #848484;
+}
+
+#center-piece a {
+	color: #848484;
+}
+
+p.intro {
+	font-style: italic;
+	margin: 0px 20px 0px 0px;
+	line-height: 1.2em;
+}
+
+.table {
+	display: table;
+}
+
+.cell {
+	display: table-cell;
+}
+
+.r20p {
+	margin-right: 20px;
+}
+
+.center {
+	margin: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.w100p {
+	width: 100%;
+}
+
+.block {
+	display: block;
+}
+
+.w50p {
+	width: 50%;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.vertical-middle {
+	vertical-align: middle;
+}
+
+.footer {
+	background-color: #C9C9C9;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	padding: 10px;
+	font-size: 0.8em;
+	color: #C46B8A;
+	text-align: center;
+	border-top: 1px solid #C46B8A;
+}
+
+.footer ul {
+	margin: 0 auto;
+	list-style: none;
+	width: 70%;
+}
+
+.footer ul li {
+	display: inline;
+	padding-left: 20px;
+}
+
+.footer ul li:hover {
+	text-decoration: underline;
+}
+
+.footer ul a {
+	text-decoration: none;
+	font-size: 0.8em;
+	color: #D16890;
+}
+
+.footer .app-version {
+	font-size: 0.6em;
+	color: black;
+}
