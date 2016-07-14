@@ -17,6 +17,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.apache.catalina.util.ServerInfo;
+import org.slf4j.LoggerFactory;
 
 import feedreader.config.Constants;
 import feedreader.config.DeveloperConfig;
@@ -32,6 +33,7 @@ import feedreader.store.Database;
 import feedreader.time.CurrentTime;
 import feedreader.utils.SimpleMail;
 
+
 /**
  * Called when application context is initialized.
  *
@@ -39,6 +41,7 @@ import feedreader.utils.SimpleMail;
  */
 public class AppContextInit implements ServletContextListener {
 
+	private static final org.slf4j.Logger log = LoggerFactory.getLogger(AppContextInit.class);
     public static Class<?> clz = AppContextInit.class;
     private static final String BASE_ADMIN_URL_PROP_KEY = "base_admin_url";
     private static final String BASE_URL_EMAIL_PROP_KEY = "base_url_email";
@@ -57,6 +60,7 @@ public class AppContextInit implements ServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         Logger.info(clz).log("**** contextDestroyed **** ").end();
+        
 
         if (sc != null) {
             sc.shutdown();
@@ -73,6 +77,7 @@ public class AppContextInit implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         context = sce;
         System.err.println(" ***** " + clz.getSimpleName() + " initialiazing. ***** ");
+        log.info(" ***** {}  initialiazing. ***** ", clz.getSimpleName());
 
         if (isDevPc()) {
             FeedAppConfig.APP_ENV = Constants.ENV_DEV_NAME;
