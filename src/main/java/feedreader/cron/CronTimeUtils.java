@@ -60,7 +60,7 @@ public class CronTimeUtils implements Runnable {
     }
 
     /**
-     * Use {@link #getMaxHistory(HttpSession)} instead. 
+     * Use {@link #getMaxHistory(HttpSession)} instead.
      */
     @Deprecated public static long getMaxHistory(int userType) {
         if (userType > maxHistory.length -1) {
@@ -78,7 +78,7 @@ public class CronTimeUtils implements Runnable {
 
         return maxHistory[userType].getTime();
     }
-    
+
     public CronTimeUtils() {
         resetTime();
     }

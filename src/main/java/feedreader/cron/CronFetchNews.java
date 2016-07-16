@@ -1,5 +1,7 @@
 package feedreader.cron;
 
+import java.util.Arrays;
+
 import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.FeedSourceEntry;
@@ -15,7 +17,6 @@ import feedreader.store.FeedSourcesTable;
 import feedreader.store.XmlAttrTable;
 import feedreader.time.CurrentTime;
 import feedreader.utils.SimpleMail;
-import java.util.Arrays;
 
 public class CronFetchNews implements Runnable {
 
@@ -32,18 +33,16 @@ public class CronFetchNews implements Runnable {
                 validationInstance = new CronFetchNews(true);
             }
             return validationInstance;
-        } else {
-            if (instance == null) {
-                instance = new CronFetchNews(false);
-            }
-            return instance;
         }
-
+        if (instance == null) {
+            instance = new CronFetchNews(false);
+        }
+        return instance;
     }
 
     enum Status {
         STARTING, NO_SOURCES_FOUND, PROCESSING, ERROR
-    };
+    }
 
     FetchHandler handler = new FetchHandler();
     SimpleMail mail = new SimpleMail();
