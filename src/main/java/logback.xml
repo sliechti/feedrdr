@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<!-- Console Appender -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<!-- File Logger Appender -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>co.feeder.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>co.feeder.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- keep 30 days' worth of history capped at 3GB total size -->
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>3GB</totalSizeCap>
+			<maxFileSize>100MB</maxFileSize>
+		</rollingPolicy>
+		<withJansi>true</withJansi>
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<!-- SMTP Appender -->
+	<appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+		<evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+			<marker>NOTIFY_ADMIN</marker>
+			<!-- you specify add as many markers as you want -->
+		</evaluator>
+		<smtpHost>smtp.feedrdr.co</smtpHost>
+		<to>dev@feedrdr.co</to>
+		<username>mailer@feedrdr.co</username>
+		<password>****</password>
+		<from>feeder</from>
+		<subject>%date %-5level %logger{35} - %message%n</subject>
+		<layout class="ch.qos.logback.classic.html.HTMLLayout">
+			<pattern>%date %-5level %logger{35} - %message%n</pattern>
+		</layout>
+	</appender>
+	<root level="debug">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="EMAIL" />
+	</root>
+	<logger name="feedreader" level="TRACE" />
+</configuration>
