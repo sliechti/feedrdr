@@ -10,7 +10,7 @@
 	<!-- File Logger Appender -->
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>co.feeder.log</file>
+		<file>${user.home}/logs/co.feeder.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
 			<fileNamePattern>co.feeder.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
