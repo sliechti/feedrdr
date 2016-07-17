@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+<title>feedrdr.co - open source rss news reader</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="open source rss news reader to keep track of all the content you care about" />
@@ -32,7 +33,7 @@
 			<div class="center w80p block">
 				<div class="left logo">&nbsp;</div>
 				<div class="right header-btn">
-					<a href="#" onclick="$('#login').show()">login</a>
+					<a href="${baseUrl}/login" onclick="$('#login').show()">Sign in</a>
 				</div>
 			</div>
 		</div>
@@ -68,43 +69,6 @@
 						placeholder="Create a password" class="bottom10 form-control" required="true" name="pwd"> <input type="submit"
 						class="btn btn-primary btn-block" name="signup" value="Signup" id="btn_signup">
 				</form>
-			</div>
-
-			<c:if test="${not empty errorMsg}">
-				<div id="error" class="alert alert-danger alert-dismissible">
-					<button type="button" class="close" data-dismiss="alert">
-						<span aria-hidden="true"></span><span class="sr-only">Close</span>
-					</button>
-					<p id="error_text">${errorMsg}</p>
-				</div>
-			</c:if>
-			<c:if test="${not empty infoMsg}">
-				<div id="info" class="alert alert-info alert-dismissible">
-					<button type="button" class="close" data-dismiss="alert">
-						<span aria-hidden="true"></span><span class="sr-only">Close</span>
-					</button>
-					<p id="info_text">${infoMsg}</p>
-				</div>
-			</c:if>
-
-			<div id="login" class="w80p center">
-				<form id="login_form" class="w100p" action="/login" role="form" method="POST">
-					<input type="text" placeholder="Username or email" class="form-control" name="display_name" required="true" id="txt_username">
-					<input type="password" placeholder="password" class="bottom10 form-control" required="true" name="password" id="txt_password">
-					<input type="submit" class="btn btn-primary btn-block" name="login" value="login" id="btn_login">
-					<div class="small text-right">
-						<input type="checkbox" name="stay_loggedin">&nbsp;<span>Keep me logged in (I trust this computer)</span>
-					</div>
-				</form>
-				<div class="small text-right">
-					<a href='' onclick="$('#forgot').toggle();return false;">Forgot your password?</a>
-				</div>
-				<div id='forgot' style="margin-top: 10px" class="hide">
-					<form method="POST" action="">
-						<input type="text" name="recover_email" class="form-control" placeholder="Your email" required="true" st> <input type="submit"
-							class="btn btn-info btn-block" name="recover" value="Recover password">
-					</form>
-				</div>
 			</div>
 		</div>
 

@@ -6,14 +6,6 @@
 	<listener>
 		<listener-class>feedreader.main.AppContextInit</listener-class>
 	</listener>
-	<servlet>
-		<servlet-name>WelcomeServlet</servlet-name>
-		<servlet-class>feedreader.security.WelcomeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>WelcomeServlet</servlet-name>
-		<url-pattern>/welcome</url-pattern>
-	</servlet-mapping>
 <!-- 	<welcome-file-list> -->
 <!-- 		<welcome-file>index</welcome-file> -->
 <!-- 	</welcome-file-list> -->
@@ -45,24 +37,24 @@
 		<error-code>404</error-code>
 		<location>/error/404.jsp</location>
 	</error-page>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>HTTPSOnly</web-resource-name>
-			<url-pattern>/*</url-pattern>
-		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>HTTPSOrHTTP</web-resource-name>
-			<url-pattern>*.ico</url-pattern>
-			<url-pattern>/img/*</url-pattern>
-			<url-pattern>/css/*</url-pattern>
-		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>NONE</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
+<!-- 	<security-constraint> -->
+<!-- 		<web-resource-collection> -->
+<!-- 			<web-resource-name>HTTPSOnly</web-resource-name> -->
+<!-- 			<url-pattern>/*</url-pattern> -->
+<!-- 		</web-resource-collection> -->
+<!-- 		<user-data-constraint> -->
+<!-- 			<transport-guarantee>CONFIDENTIAL</transport-guarantee> -->
+<!-- 		</user-data-constraint> -->
+<!-- 	</security-constraint> -->
+<!-- 	<security-constraint> -->
+<!-- 		<web-resource-collection> -->
+<!-- 			<web-resource-name>HTTPSOrHTTP</web-resource-name> -->
+<!-- 			<url-pattern>*.ico</url-pattern> -->
+<!-- 			<url-pattern>/img/*</url-pattern> -->
+<!-- 			<url-pattern>/css/*</url-pattern> -->
+<!-- 		</web-resource-collection> -->
+<!-- 		<user-data-constraint> -->
+<!-- 			<transport-guarantee>NONE</transport-guarantee> -->
+<!-- 		</user-data-constraint> -->
+<!-- 	</security-constraint> -->
 </web-app>
