@@ -1,6 +1,7 @@
 package feedreader.security;
 
 import java.io.IOException;
+import java.util.Locale;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,51 @@ public class UserSession {
 
     public static final Class<?> clz = UserSession.class;
 
+    public static int authenticate(HttpServletRequest req, HttpServletResponse response) {
+
+        String email = Parameter.asString(req, Constants.INPUT_EMAIL_NAME, "");
+        String pwd = Parameter.asString(req, Constants.INPUT_PWD_NAME, "");
+        boolean rememberMe = Parameter.asBoolean(req, Constants.INPUT_REMEMBER_ME, false);
+
+        UserData userData = UsersTable.get(email, pwd);
+
+        if (userData.getUserId() == 0) {
+            return -1;
+        }
+
+        if (!initUserSession(req, userData)) {
+            return 0;
+        }
+
+        if (rememberMe) {
+            String cookieKey = CookieUtils.generate(userData);
+            Cookie cookie = new Cookie(Constants.USER_COOKIE, cookieKey);
+            cookie.setMaxAge(Constants.DEFAUT_COOKIE_AGE);
+            response.addCookie(cookie);
+            UsersTable.saveCookie(userData, cookieKey);
+        }
+
+        return 1;
+    }
+
+    public static long authFromCookie(HttpServletRequest request) {
+        String cookieKey = UserSession.authCookie(request);
+        Logger.info(clz).log("authenticating from cookie " + cookieKey);
+        if (cookieKey.isEmpty()) {
+            return 0;
+        }
+
+        UserData userData = UsersTable.fromCookie(cookieKey);
+        if (userData == null) {
+            return -1;
+        }
+
+        if (!initUserSession(request, userData)) {
+            return 0;
+        }
+        return userData.getUserId();
+    }
+
     public static boolean createNew(HttpServletResponse response, HttpServletRequest request) throws IOException {
         String username = Parameter.asString(request, Constants.INPUT_SCREEN_NAME, "");
         String email = Parameter.asString(request, Constants.INPUT_EMAIL_NAME, "");
@@ -33,10 +79,12 @@ public class UserSession {
         }
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            Logger.error(clz).log("empty username, email or password").end();
             response.sendRedirect(PageUtils.getPath("?error=0"));
         }
 
         if (!Validate.isValidEmailAddress(email)) {
+            Logger.error(clz).log("invalid email ").log(email).end();
             response.sendRedirect(PageUtils.getPath("?error=1"));
         }
 
@@ -53,6 +101,38 @@ public class UserSession {
         }
 
         return false;
+    }
+
+    public static UserData createNew(String email, Locale locale) {
+        if (!Validate.isValidEmailAddress(email)) {
+            return UserData.NULL;
+        }
+
+        return UsersTable.createNewUser(email, email, null, locale.getLanguage());
+    }
+
+    public static String getLogoutLink(String oAuth, String username) {
+        return "<a href=\"/user/logout.jsp\">" + username + " (" + oAuth + ")</a>";
+    }
+
+    /**
+     * Tries to get the user id from the current session. Fall backs to the cookie {@link Constants#USER_COOKIE}.
+     */
+    public static long getUserId(HttpServletRequest req) {
+        long ret = Session.asLong(req.getSession(), Constants.SESSION_USERID_FIELD, 0);
+        if (ret == 0 && req.getCookies() != null) {
+            for (Cookie c : req.getCookies()) {
+                if (c.getName().equals(Constants.USER_COOKIE)) {
+                    try {
+                        ret = authFromCookie(req);
+                        break;
+                    } catch (Exception e) {
+                        Logger.error(clz).log("error parsing cookie value ").log(c.getValue()).end();
+                    }
+                }
+            }
+        }
+        return ret;
     }
 
     public static boolean initUserSession(HttpServletRequest req, UserData userData) {
@@ -90,81 +170,12 @@ public class UserSession {
         return true;
     }
 
-    public static long authFromCookie(HttpServletRequest request) {
-        String cookieKey = UserSession.authCookie(request);
-        Logger.info(clz).log("authenticating from cookie " + cookieKey);
-        if (cookieKey.isEmpty()) {
-            return 0;
-        }
-
-        UserData userData = UsersTable.fromCookie(cookieKey);
-        if (userData == null) {
-            return -1;
-        }
-
-        if (!initUserSession(request, userData)) {
-            return 0;
-        }
-        return userData.getUserId();
+    public static boolean isValid(long userId, Class<?> clz) {
+        return (userId > 0 && UsersTable.isValidUser(userId, clz));
     }
 
     private static String authCookie(HttpServletRequest request) {
         return CookieUtils.asString(Constants.USER_COOKIE, request.getCookies(), "");
-    }
-
-    public static int authenticate(HttpServletRequest req, HttpServletResponse response) {
-        
-        String email = Parameter.asString(req, Constants.INPUT_EMAIL_NAME, "");
-        String pwd = Parameter.asString(req, Constants.INPUT_PWD_NAME, "");
-        boolean rememberMe = Parameter.asBoolean(req, Constants.INPUT_REMEMBER_ME, false);
-
-        UserData userData = UsersTable.get(email, pwd);
-
-        if (userData.getUserId() == 0) {
-            return -1;
-        }
-
-        if (!initUserSession(req, userData)) {
-            return 0;
-        }
-
-        if (rememberMe) {
-            String cookieKey = CookieUtils.generate(userData);
-            Cookie cookie = new Cookie(Constants.USER_COOKIE, cookieKey);
-            cookie.setMaxAge(Constants.DEFAUT_COOKIE_AGE);
-            response.addCookie(cookie);
-            UsersTable.saveCookie(userData, cookieKey);
-        }
-
-        return 1;
-    }
-
-    /**
-     * Tries to get the user id from the current session. Fall backs to the cookie {@link Constants#USER_COOKIE}.
-     */
-    public static long getUserId(HttpServletRequest req) {
-        long ret = Session.asLong(req.getSession(), Constants.SESSION_USERID_FIELD, 0);
-        if (ret == 0 && req.getCookies() != null) {
-            for (Cookie c : req.getCookies()) {
-                if (c.getName().equals(Constants.USER_COOKIE)) {
-                    try {
-                        ret = authFromCookie(req);
-                        break;
-                    } catch (Exception e) {
-                        Logger.error(clz).log("error parsing cookie value ").log(c.getValue()).end();
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    public static String getLogoutLink(String oAuth, String username) {
-        return "<a href=\"/user/logout.jsp\">" + username + " (" + oAuth + ")</a>";
-    }
-
-    public static boolean isValid(long userId, Class<?> clz) {
-        return (userId > 0 && UsersTable.isValidUser(userId, clz));
     }
 
 }

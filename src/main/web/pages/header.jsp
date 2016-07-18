@@ -119,6 +119,11 @@
                     <a href="<%= PageUtils.getPath("/home.jsp") %>" class="navbar-brand"><span id="homeIcon" class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;<%= FeedAppConfig.APP_NAME_URL %></a>
                 </div>
                 <ul class="nav navbar-nav hidden-xs">
+                	<% if (user.isGenerated()) { %>
+                	<li>
+                		<a href="wizard">Wizard</a>
+                	</li>
+                	<% } %>
                     <li>
                         <a href="<%= PageUtils.getPath("/pages/collections.jsp") %>">Collections</a>
                     </li>

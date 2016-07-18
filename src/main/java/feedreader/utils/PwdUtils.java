@@ -1,9 +1,11 @@
 package feedreader.utils;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 public class PwdUtils {
 
-    // TODO: Implement.
     public static String generate() {
-        return "R$ND)MSTUFF<Y&&&&";
+        return RandomStringUtils.random(8, true, true);
     }
+
 }

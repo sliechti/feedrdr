@@ -5,6 +5,12 @@ body {
 	margin: 0 0 60 0;
 }
 
+.warning {
+	background-color: #FFFFB7;
+	padding: 3px;
+	color: #545454;
+}
+
 .hide {
 	display: none;
 }

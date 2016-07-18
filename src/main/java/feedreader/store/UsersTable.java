@@ -151,10 +151,10 @@ public class UsersTable {
 
     /**
      * Standard authentication method when logging in through our form.
-     * 
+     *
      * @param email
      * @param pwd
-     * 
+     *
      * @return
      */
     public static UserData get(String email, String pwd) {
@@ -211,7 +211,7 @@ public class UsersTable {
 
     /**
      * User created with other services oauth. The email is mandatory, as password we generate something long.
-     * 
+     *
      * @param email
      * @param oauth
      * @param authToken
@@ -228,23 +228,28 @@ public class UsersTable {
         try {
             ResultSet rs = Database.checkEntry(TABLE, DBFields.STR_EMAIL, email);
             if (rs.next()) {
+                Logger.error(clz).log("email already known = ").log(email).end();
                 return UserData.NULL;
             }
 
-            if (password.isEmpty()) {
+            boolean generated = false;
+            if (password == null || password.isEmpty()) {
                 password = PwdUtils.generate();
+                generated = true;
             }
 
             String code = getRegistrationCode(email, password);
-            String query = String.format("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s) "
-                    + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s')", 
-                    TABLE, 
-                    DBFields.STR_EMAIL, DBFields.STR_PASSWORD, DBFields.STR_LOCALE, 
+            String query = String.format("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s) "
+                    + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s', %s)",
+                    TABLE,
+                    DBFields.STR_EMAIL, DBFields.STR_PASSWORD, DBFields.STR_LOCALE,
                     DBFields.ENUM_MAIN_OAUTH, DBFields.STR_SCREEN_NAME,
-                    DBFields.TIME_SUBSCRIBED_AT, DBFields.STR_REG_CODE, 
-                    SQLUtils.asSafeString(email), password, SQLUtils.asSafeString(locale), 
+                    DBFields.TIME_SUBSCRIBED_AT, DBFields.STR_REG_CODE,
+                    DBFields.BOOL_GENERATED,
+                    SQLUtils.asSafeString(email), password, SQLUtils.asSafeString(locale),
                     oauth.getVal(), SQLUtils.asSafeString(screenName),
-                    CurrentTime.inGMT(), SQLUtils.asSafeString(code));
+                    CurrentTime.inGMT(), SQLUtils.asSafeString(code),
+                    generated);
             Logger.debugSQL(clz).log(query).end();
             if (stmt.executeUpdate(query) > 0) {
                 return get(email);
@@ -336,5 +341,5 @@ public class UsersTable {
                     .end();
         }
     }
-    
+
 }

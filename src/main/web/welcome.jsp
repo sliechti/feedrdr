@@ -30,9 +30,11 @@
 
 	<div class="body">
 		<div class="header">
-			<div class="center w80p block">
-				<div class="left logo">&nbsp;</div>
-				<div class="right header-btn">
+			<div class="table center w80p block">
+				<div class="cell left logo">
+					<img src="img/logo.svg" height="40" />
+				</div>
+				<div class="cell right header-btn">
 					<a href="${baseUrl}/login" onclick="$('#login').show()">Sign in</a>
 				</div>
 			</div>
@@ -41,13 +43,16 @@
 			<div id="center-piece" class="table center w80p">
 				<div class="cell w50p">
 					<p class="intro">
-						An <a href="http://github.com/sliechti/feedrdr">Open Source</a> RSS news reader to help you keep track of all the content you care
-						about, getting better every week and made with &#9825; in NYC.
+						An <a href="http://github.com/sliechti/feedrdr">Open Source</a> RSS news reader to help you
+						manage all the content you care about, getting better every week and made with &#9825; in NYC.
 					</p>
 				</div>
 				<div class="cell text-center w50p vertical-middle">
-					<form id="start-reading">
-						<input type="text" class="block w100p" placeholder="your@email">
+					<c:if test="${not empty signup_error}" >
+						<div class="warning">${signup_error}</div>
+					</c:if>
+					<form id="start-reading" method="post" action="signup">
+						<input type="text" class="block w100p" id="email" name="email" placeholder="your@email">
 						<button class="block w100p btn">start reading</button>
 					</form>
 					<p class="lead">Or</p>
@@ -83,6 +88,11 @@
 </body>
 </html>
 
+<script>
+	$(document).ready(function() {
+		$('#email').focus();
+	});
+</script>
 <script>
 	!function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
