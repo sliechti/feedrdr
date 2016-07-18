@@ -52,7 +52,7 @@ public class AppContextInit implements ServletContextListener {
     private static String logFile = "";
 
     private ScheduledExecutorService sc;
-    private Set<String> prodServers = new HashSet<>(Arrays.asList("vultr"));
+    private Set<String> prodServers = new HashSet<>(Arrays.asList("vultr.guest"));
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
