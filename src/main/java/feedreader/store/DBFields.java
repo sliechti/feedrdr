@@ -8,12 +8,13 @@ public class DBFields {
     public static final String BOOL_DEFAULT = "b_default";
     public static final String BOOL_FORGOT_PWD = "b_forgot_pwd";
     public static final String BOOL_GAVE_UP = "b_gaveup";
+    public static final String BOOL_GENERATED = "b_generated";
     public static final String BOOL_IS_ADMIN = "b_is_admin";
     public static final String BOOL_IS_DEFAULT = "b_default";
     public static final String BOOL_PROCESSED = "b_processed";
     public static final String BOOL_READ = "b_read";
-    public static final String BOOL_SENT = "b_sent";
     public static final String BOOL_REG_SENT = "b_reg_sent";
+    public static final String BOOL_SENT = "b_sent";
     public static final String BOOL_VERIFIED = "b_verified";
     public static final String COUNT = "COUNT";
     public static final String ENUM_MAIN_OAUTH = "e_main_oauth";
