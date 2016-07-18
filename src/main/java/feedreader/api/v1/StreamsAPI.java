@@ -273,6 +273,11 @@ public class StreamsAPI {
             return JSONUtils.error(0, "Need a name. query.sn.");
         }
 
+        // check if stream name exist in DB
+        if (UserStreamGroupsTable.isStreamExist(userId, streamName)) {
+            return JSONUtils.error(0, "Stream with same name already exist.");
+        }
+        
         long streamId = UserStreamGroupsTable.save(userId, streamName);
         if (streamId == -1) {
             return JSONUtils.error(0, "Error adding new stream group.");

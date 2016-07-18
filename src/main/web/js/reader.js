@@ -1104,6 +1104,8 @@ function saveStreamGroup() {
 			getStreamGroups(function() {
 				loadStream(data.id);
 			});
+		}else{
+			alert(data.error);
 		}
 	});
 }
