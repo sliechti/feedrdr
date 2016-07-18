@@ -272,5 +272,35 @@ public class UserStreamGroupsTable {
 
         return -1;
     }
+    
+    /**
+     * This method is created to getStream Id if stream with streamName exists.
+     * @param userId
+     * @param streamName
+     * @return
+     */
+    public static boolean isStreamExist(long userId, String streamName) {
+        if (!UserSession.isValid(userId, clz)) {
+            return false;
+        }
+
+        try {
+            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s ILIKE '%s'", DBFields.LONG_STREAM_ID, TABLE,
+                    DBFields.LONG_USER_ID, userId, DBFields.STR_STREAM_NAME, SQLUtils.asSafeString(streamName));
+            Logger.debug(clz).log("isStreamExist(select) ").log(query).end();
+            ResultSet rs = stmt.executeQuery(query);
+
+            if (rs.next()) {
+            	return true;
+            } else {
+            	return false;
+            }
+        } catch (SQLException ex) {
+            Logger.error(clz).log("isStreamExist(error) ").log(userId).log(", folder ").log(streamName).log(", message ")
+                    .log(ex.getMessage()).end();
+
+            return false;
+        }
+    }
 
 }
