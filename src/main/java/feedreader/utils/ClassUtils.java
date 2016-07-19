@@ -8,4 +8,8 @@ public class ClassUtils {
         return clzz.getClass().getClassLoader().getResourceAsStream(res);
     }
 
+    public static InputStream loadResource(Class<?> clzz, String res) {
+        return clzz.getClassLoader().getResourceAsStream(res);
+    }
+
 }

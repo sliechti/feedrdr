@@ -17,6 +17,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.apache.catalina.util.ServerInfo;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import feedreader.config.Constants;
@@ -28,9 +29,7 @@ import feedreader.cron.CronFetchNews;
 import feedreader.cron.CronForgotPasswordEmail;
 import feedreader.cron.CronNewUsersEmail;
 import feedreader.cron.CronTimeUtils;
-import feedreader.log.Logger;
 import feedreader.store.Database;
-import feedreader.time.CurrentTime;
 import feedreader.utils.ApplicationConfig;
 
 /**
@@ -46,7 +45,7 @@ public class AppContextInit implements ServletContextListener {
     private static final String DOWNLOAD_XML_PATH_PRO_KEY = "download_xml_path";
     private static String downloadXmlPath = "";
     private static final String INTERVAL_FETCH_PROP_KEY = "interval_fetch_seconds";
-    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(AppContextInit.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppContextInit.class);
     private static final String LOG_FILE_PROP_KEY = "log_file";
     private static final String LOG_LEVEL_PROP_KEY = "log_level";
     private static String logFile = "";
@@ -106,7 +105,7 @@ public class AppContextInit implements ServletContextListener {
 
         if (Environment.isProd()) {
             try {
-                Logger.get().setErrorLevel();
+                feedreader.log.Logger.get().setErrorLevel();
             } catch (IOException ex) {
                 logger.error("error setting old Logger error level: {}", ex, ex.getMessage());
             }
@@ -133,7 +132,7 @@ public class AppContextInit implements ServletContextListener {
                 FeedAppConfig.FETCH_RUN_START_VALIDATION = true;
             }
 
-            startCronThreads(context);
+            startCronThreads();
         }
 
     }
@@ -169,9 +168,9 @@ public class AppContextInit implements ServletContextListener {
         int logLevel = appConfig.getInt(LOG_LEVEL_PROP_KEY);
         String logFileProp = appConfig.getString(LOG_FILE_PROP_KEY);
         try {
-            Logger.get().setLevel(Logger.LogLevels.fromVal(logLevel));
+            feedreader.log.Logger.get().setLevel(feedreader.log.Logger.LogLevels.fromVal(logLevel));
             if (!Environment.isDev()) {
-                Logger.get().setWriter(new FileWriter(logFileProp, true));
+                feedreader.log.Logger.get().setWriter(new FileWriter(logFileProp, true));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -185,7 +184,7 @@ public class AppContextInit implements ServletContextListener {
         OAuthConfig.LIVE_KEY = appConfig.getString("ms.live", "see.oauth.properties");
     }
 
-    private void startCronThreads(ServletContextEvent sce) {
+    private void startCronThreads() {
         logger.info("starting threads");
 
         sc = Executors.newSingleThreadScheduledExecutor();

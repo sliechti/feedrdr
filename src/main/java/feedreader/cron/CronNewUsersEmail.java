@@ -1,10 +1,8 @@
 package feedreader.cron;
 
-import java.io.InputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +10,7 @@ import feedreader.config.FeedAppConfig;
 import feedreader.store.DBFields;
 import feedreader.store.Database;
 import feedreader.store.UsersTable;
-import feedreader.utils.ClassUtils;
+import feedreader.utils.ResourceUtils;
 import feedreader.utils.SQLUtils;
 import feedreader.utils.SimpleMail;
 
@@ -27,8 +25,7 @@ public class CronNewUsersEmail implements Runnable {
 
     public CronNewUsersEmail() throws Exception {
         logger.info("starting, running every: {} seconds", FeedAppConfig.DELAY_CHECK_NEW_USERS_EMAIL);
-        InputStream is = ClassUtils.loadResource(this, "templates/newregistration.tmpl");
-        emailTmpl = IOUtils.toString(is,  "UTF-8");
+        emailTmpl = ResourceUtils.loadResource("templates/newregistration.tmpl");
     }
 
     @Override
@@ -52,7 +49,7 @@ public class CronNewUsersEmail implements Runnable {
                     String emailTxt = new String().concat(emailTmpl);
                     emailTxt = emailTxt.replace("{NAME}", screenName);
                     emailTxt = emailTxt.replace("{CODE}", regCode);
-                    String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/verify.jsp?code=" + regCode;
+                    String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/verify?code=" + regCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
                     mail.send(MAIL_FROM, MAIL_FROM_NAME, email, screenName,
                             "Welcome to feedrdr, " + screenName, emailTxt);

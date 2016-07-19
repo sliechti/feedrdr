@@ -1,50 +1,69 @@
-<%@page import="feedreader.log.Logger"%>
-<%@page import="feedreader.entities.UserData"%>
-<%@page import="feedreader.utils.TextUtils"%>
-<%@page import="java.io.InputStream"%>
-<%@page import="feedreader.security.Parameter"%>
-<%@page import="feedreader.store.UsersTable"%>
-<%@page import="feedreader.config.FeedAppConfig"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html>
+<head>
+<title>Verify</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
+<script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
+</head>
 
-<%
-    String msg = "Unknown code.";
-    int redirect = 5;
-    
-    String code = Parameter.asString(request, "code", "");
-    if (!code.isEmpty()) 
-    {
-        UserData data = UsersTable.getFromRegCode(code);
-        if (data.getUserId() != 0) 
-        {
-            UsersTable.verify(data);
-            
-            InputStream is = getServletContext().getResourceAsStream("/WEB-INF/tmpl/accountverified.tmpl");
-            StringBuilder sb = TextUtils.toStringBuilder(is, new StringBuilder(), true);
-            msg = sb.toString();
-            msg = msg.replace("{NAME}", data.getScreenName());
-            redirect = 7;
-        }
-    }
-    
-%>
-<div style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 14px; width: 400px; margin: auto">
-    <%= msg %>
-<br>
-<br>
-You will be redirected to the <a href="<%= FeedAppConfig.BASE_APP_URL %>/">login page</a> in <label id='seconds'>7</label> seconds.
-</div>
+<body class="margin0">
+	<div class="header">
+		<div class="table center w80p block">
+			<div class="cell left h100">
+				<span class="h100 vertical-helper vertical-middle"></span> <img src="img/logo.svg" id="logo" class="vertical-middle" height="30" />
+			</div>
+			<div class="cell vertical-middle right header-btn">
+				<a href="login">Sign in</a>
+			</div>
+		</div>
+	</div>
 
+	<div class="content">
+		<div class="center w80p">
+			<c:choose>
+			<c:when test="${not empty verified}">
+				<p class="text-center">
+					Account verified<br>
+					You will be redirected to the <a href="${baseUrl}/login">login page</a>
+					 in <label id='seconds' class="bold">${redirectIn}</label> seconds
+				</p>
+			</c:when>
+			<c:otherwise>
+				<p class="text-center">${msg}</p>
+				<form method="get" class="lined30" action="verify">
+					<input class="w50p left" type="text" name="code" value="${code}" placeholder="Verification code">
+					<input class="w50p right" type="submit" name="submit" value="verify">
+				</form>
+			</c:otherwise>
+		</c:choose>
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<ul>
+			<li><a href="http://github.com/sliechti/feedrdr">GitHub</a></li>
+			<li><a href="https://twitter.com/feedrdrco">Twitter</a></li>
+			<li><a href="https://www.facebook.com/feedrdr">Facebook</a></li>
+		</ul>
+	</div>
+
+</body>
+
+<c:if test="${not empty verified}">
 <script type="text/javascript">
-    var seconds = <%= redirect %>;
-    function redirect()
-    {    
-        seconds--;
-        document.getElementById('seconds').innerHTML = seconds;
-        if (seconds <= 0) {
-            location.assign('<%= FeedAppConfig.BASE_APP_URL  %>/')
-        }
-        window.setTimeout(redirect, 1000);
-    };
-    window.setTimeout(redirect, 1000);
-    document.getElementById('seconds').innerHTML = <%= redirect %>;
+	    var seconds = ${redirectIn};
+	    function redirect() {
+	        seconds--;
+	        document.getElementById('seconds').innerHTML = seconds;
+	        if (seconds <= 0) {
+	            location.assign('${baseUrl}/login');
+			}
+			window.setTimeout(redirect, 1000);
+		};
+		window.setTimeout(redirect, 1000);
+		document.getElementById('seconds').innerHTML = ${redirectIn};
 </script>
+</c:if>

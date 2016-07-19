@@ -3,7 +3,6 @@ package feedreader.security;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +11,6 @@ import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.config.OAuthConfig;
 
-@WebServlet(name="welcome", urlPatterns={"/welcome"})
 public class WelcomeServlet extends HttpServlet {
 
     @Override

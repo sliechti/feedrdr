@@ -14,7 +14,57 @@
 <script src="${baseUrl}/js/hello${minifiedStr}.js" type="text/javascript"></script>
 <script src="${baseUrl}/js/hello.init${minifiedStr}.js" type="text/javascript"></script>
 </head>
-<body>
+<body class="margin0">
+
+
+	<div class="header">
+		<div class="table center w80p block">
+			<div class="cell left h100">
+				<span class="h100 vertical-helper vertical-middle"></span>
+				<img src="img/logo.svg" id="logo" class="vertical-middle" height="30" />
+			</div>
+			<div class="cell vertical-middle right header-btn">
+				<a href="login">Sign in</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div id="center-piece">
+			<div class="cell w50p">
+				<p class="intro">
+					An Open Source RSS news reader to help you manage and keep track of all the content
+					you care about, getting better every week and made with &#9825; in NYC.
+				</p>
+			</div>
+			<div class="cell text-center w50p vertical-middle bottom40">
+				<c:if test="${not empty signup_error}">
+					<div class="warning">${signup_error}</div>
+				</c:if>
+				<form id="start-reading" method="post" action="signup">
+					<input type="text" class="block w100p" id="email" name="email" placeholder="your@email">
+					<button class="block w100p btn">start reading</button>
+				</form>
+				<p class="lead">Or</p>
+				<p class="lead">
+					<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login({force: true, scope: 'public_profile,email'});return false;">
+					<i class="fa fa-facebook r20p" aria-hidden="true"></i></a>
+					<a class="btn-auth btn-google" href="#" onclick="hello('google').login({force : true, scope: 'profile email'});return false;">
+					<i class="fa fa-google r20p" aria-hidden="true"></i></a>
+					<a class="btn-auth btn-windows" href="#" onclick="hello('windows', {scope: 'wl.emails,wl.basic'}).login();return false;">
+					<i class="fa fa-windows r20p" aria-hidden="true"></i></a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<ul>
+			<li><a href="http://github.com/sliechti/feedrdr">GitHub</a></li>
+			<li><a href="https://twitter.com/feedrdrco">Twitter</a></li>
+			<li><a href="https://www.facebook.com/feedrdr">Facebook</a></li>
+		</ul>
+	</div>
+
 	<div id="fb-root"></div>
 	<script>
 		(function(d, s, id) {
@@ -28,64 +78,9 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 
-	<div class="body">
-		<div class="header">
-			<div class="table center w80p block">
-				<div class="cell left logo">
-					<img src="img/logo.svg" height="40" />
-				</div>
-				<div class="cell right header-btn">
-					<a href="${baseUrl}/login" onclick="$('#login').show()">Sign in</a>
-				</div>
-			</div>
-		</div>
-		<div class="content">
-			<div id="center-piece" class="table center w80p">
-				<div class="cell w50p">
-					<p class="intro">
-						An <a href="http://github.com/sliechti/feedrdr">Open Source</a> RSS news reader to help you
-						manage all the content you care about, getting better every week and made with &#9825; in NYC.
-					</p>
-				</div>
-				<div class="cell text-center w50p vertical-middle">
-					<c:if test="${not empty signup_error}" >
-						<div class="warning">${signup_error}</div>
-					</c:if>
-					<form id="start-reading" method="post" action="signup">
-						<input type="text" class="block w100p" id="email" name="email" placeholder="your@email">
-						<button class="block w100p btn">start reading</button>
-					</form>
-					<p class="lead">Or</p>
-					<p class="lead">
-						<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login({force: true, scope: 'public_profile,email'});return false;">
-						<i class="fa fa-facebook r20p" aria-hidden="true"> </i></a>
-						<a class="btn-auth btn-google" href="#" onclick="hello('google').login({force : true, scope: 'profile email'});return false;">
-						<i class="fa fa-google r20p" aria-hidden="true"> </i></a>
-						<a class="btn-auth btn-windows" href="#" onclick="hello('windows', {scope: 'wl.emails,wl.basic'}).login();return false;">
-						<i class="fa fa-windows r20p" aria-hidden="true"> </i></a>
-					</p>
-
-				</div>
-			</div>
-			<div id="signup" class="hide">
-				<form id="signup_form" action="" role="form" method="POST">
-					<input type="text" id="pick" placeholder="Pick a username" class="form-control" name="display_name" required="true"> <input
-						type="text" placeholder="Your email" class="form-control" name="email" required="true"> <input type="password"
-						placeholder="Create a password" class="bottom10 form-control" required="true" name="pwd"> <input type="submit"
-						class="btn btn-primary btn-block" name="signup" value="Signup" id="btn_signup">
-				</form>
-			</div>
-		</div>
-
-		<div class="footer">
-			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="https://twitter.com/feedrdrco">Twitter</a></li>
-				<li><a href="https://www.facebook.com/feedrdr">Facebook</a></li>
-			</ul>
-		</div>
-	</div>
 </body>
+
+
 </html>
 
 <script>
@@ -95,8 +90,7 @@
 </script>
 <script>
 	!function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
-				.test(d.location) ? 'http' : 'https';
+		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
 		if (!d.getElementById(id)) {
 			js = d.createElement(s);
 			js.id = id;
