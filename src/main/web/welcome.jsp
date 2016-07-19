@@ -8,6 +8,8 @@
 <meta name="keywords" content="rss,atom,news reader,feed reader" />
 <meta name="google-site-verification" content="w2qoFGms5i-1odj9Jj2G3CTCtMokK79Oi93mwglzNkk" />
 <meta name="msvalidate.01" content="13BFF01091BF323BC721335417DC72C4" />
+<link rel="shortcut icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
+<link rel="icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
 <script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
