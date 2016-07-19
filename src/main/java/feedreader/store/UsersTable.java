@@ -6,9 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import feedreader.config.Constants;
 import feedreader.entities.UserData;
-import feedreader.log.Logger;
 import feedreader.oauth.OAuthType;
 import feedreader.time.CurrentTime;
 import feedreader.utils.PwdUtils;
@@ -16,6 +18,8 @@ import feedreader.utils.SQLUtils;
 import feedreader.utils.SimpleEncryption;
 
 public class UsersTable {
+
+    private static final Logger log = LoggerFactory.getLogger(UsersTable.class);
 
     public static final String TABLE = Constants.USERS_TABLE;
     public static final String TABLE_TOKENS = Constants.USER_AUTH_TOKENS;
@@ -36,21 +40,21 @@ public class UsersTable {
                     DBFields.STR_EMAIL, DBFields.STR_PASSWORD));
             stmt = Database.getStatement();
         } catch (SQLException ex) {
-            Logger.error(clz).log("prepareCall failed ").log(ex.getMessage()).end();
+            log.error("prepareCall failed {}", ex);
         }
 
-        Logger.info(clz).log("initialized.").end();
+        log.info("initialized.");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
+        log.info("close()");
 
         try {
             stmtSelUsers.close();
             conn.close();
         } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
+            log.error("closing sql objects {}", ex.getMessage());
         }
     }
 
@@ -61,7 +65,7 @@ public class UsersTable {
         try {
             code = SimpleEncryption.encrypt(ENCKEY, true, email + password);
         } catch (Exception e) {
-            Logger.error(clz).log("error generating code ").log(e.getMessage()).end();
+            log.error("error generating code {}", e);
         }
 
         return new String(code);
@@ -71,10 +75,10 @@ public class UsersTable {
         try {
             String query = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d", TABLE, DBFields.STR_SCREEN_NAME,
                     SQLUtils.asSafeString(displayName), DBFields.LONG_USER_ID, userId);
-            Logger.debugSQL(clz).log(query).end();
+            log.debug(query);
             return stmt.executeUpdate(query);
         } catch (Exception e) {
-            Logger.error(clz).log("displayName ").log(displayName).log(", error ").log(e.getMessage()).end();
+            log.error("displayName {}, error {}", displayName, e);
         }
 
         return -1;
@@ -82,14 +86,22 @@ public class UsersTable {
 
     public static int update(UserData data) {
         try {
-            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s', %s = '%s' WHERE %s = %d", TABLE,
+            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b' WHERE %s = %d",
+                    TABLE,
                     DBFields.STR_SCREEN_NAME, SQLUtils.asSafeString(data.getScreenName()), DBFields.STR_PASSWORD,
-                    SQLUtils.asSafeString(data.getPwd()), DBFields.STR_EMAIL, SQLUtils.asSafeString(data.getEmail()),
-                    DBFields.LONG_USER_ID, data.getUserId());
-            Logger.debugSQL(clz).log(query).end();
+                    SQLUtils.asSafeString(data.getPwd()), DBFields.STR_EMAIL,
+                    SQLUtils.asSafeString(data.getEmail()),
+                    DBFields.BOOL_RECEIVE_NEWSLETTER,
+                    data.isSubscribedForNewsletter(),
+                    DBFields.BOOL_RECEIVE_PRODUCT_UPDATES,
+                    data.isSubscribedToUpdates(),
+                    DBFields.LONG_USER_ID,
+                    data.getUserId());
+            log.info("{}", query);
+
             return stmt.executeUpdate(query);
         } catch (Exception e) {
-            Logger.error(clz).log("update ").log(data).log(", error ").log(e.getMessage()).end();
+            log.error("update {}, error {}", data, e);
         }
 
         return -1;
@@ -97,26 +109,25 @@ public class UsersTable {
 
     public static UserData get(long userId) {
         try {
-            String query = "SELECT * FROM feedreader.users as t0 " +
-                    "LEFT JOIN feedreader.userprofiles as t1 " +
-                    "ON t0.l_user_id = t1.l_user_id WHERE t0.l_user_id = " + userId;
+            String query = "SELECT * FROM feedreader.users as t0 " + "LEFT JOIN feedreader.userprofiles as t1 "
+                    + "ON t0.l_user_id = t1.l_user_id WHERE t0.l_user_id = " + userId;
             ResultSet rs = Database.rawQuery(query);
+            log.debug(query);
             return UserData.fromRs(rs);
         } catch (SQLException ex) {
-            Logger.error(clz).log("get userId ").log(userId).log(" ").log(ex.getMessage()).end();
+            log.error("get userId  {}, error {}", "", ex);
             return UserData.NULL;
         }
-    };
+    }
 
     static UserData getFromCode(String fieldName, String code) {
         try {
             String query = String.format("SELECT * FROM %s WHERE %s like '%s'", TABLE, fieldName, code + "%");
-            Logger.debugSQL(clz).log(query).end();
+            log.debug(query);
             ResultSet rs = stmt.executeQuery(query);
             return UserData.fromRs(rs);
         } catch (SQLException ex) {
-            Logger.error(clz).log("getFromCode ").log(fieldName).log("/").log(code).log(", error ")
-                    .log(ex.getMessage()).end();
+            log.error("getFromCode  {}, error {}", fieldName, ex);
         }
 
         return UserData.NULL;
@@ -132,7 +143,7 @@ public class UsersTable {
 
     public static UserData get(String email) {
         return fromStringField(DBFields.STR_EMAIL, email);
-    };
+    }
 
     public static UserData fromCookie(String cookieKey) {
         return fromStringField(DBFields.STR_COOKIE, cookieKey);
@@ -143,11 +154,12 @@ public class UsersTable {
             ResultSet rs = Database.getEntry(TABLE, fieldName, fieldVal);
             return UserData.fromRs(rs);
         } catch (SQLException ex) {
-            Logger.error(clz).log("fromStringField ").log(fieldName).log(", val ").log(fieldVal).log(", ex: ")
-                    .log(ex.getMessage()).end();
+
+            log.error("fromStringField  {}, val {}, error {}", fieldName, fieldVal, ex);
+
             return UserData.NULL;
         }
-    };
+    }
 
     /**
      * Standard authentication method when logging in through our form.
@@ -162,10 +174,10 @@ public class UsersTable {
         try {
             stmtSelUsers.setString(1, SQLUtils.asSafeString(email));
             stmtSelUsers.setString(2, SQLUtils.asSafeString(pwd));
-            Logger.debug(clz).log(stmtSelUsers.toString()).end();
+            feedreader.log.Logger.debug(clz).log(stmtSelUsers.toString()).end();
             return UserData.fromRs(stmtSelUsers.executeQuery());
         } catch (SQLException e) {
-            Logger.error(UsersTable.class).log("authenticate failed ").log(e.getMessage()).end();
+            feedreader.log.Logger.error(UsersTable.class).log("authenticate failed ").log(e.getMessage()).end();
             return UserData.NULL;
         }
     }
@@ -174,10 +186,10 @@ public class UsersTable {
         try {
             String query = String.format("UPDATE %s SET %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_VERIFIED, true, DBFields.STR_REG_CODE, "", DBFields.LONG_USER_ID, data.getUserId());
-            Logger.debugSQL(clz).log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log(query).end();
             stmt.execute(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("verify ").log(data).log(", error ").log(ex.getMessage()).end();
+            feedreader.log.Logger.error(clz).log("verify ").log(data).log(", error ").log(ex.getMessage()).end();
         }
     }
 
@@ -187,10 +199,10 @@ public class UsersTable {
             String query = String.format("UPDATE %s SET %s = %b,  %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_VERIFIED, false, DBFields.BOOL_REG_SENT, false, DBFields.STR_REG_CODE,
                     SQLUtils.asSafeString(code), DBFields.LONG_USER_ID, data.getUserId());
-            Logger.debugSQL(clz).log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log(query).end();
             stmt.execute(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("unverify ").log(data).log(", error ").log(ex.getMessage()).end();
+            feedreader.log.Logger.error(clz).log("unverify ").log(data).log(", error ").log(ex.getMessage()).end();
         }
     }
 
@@ -200,9 +212,10 @@ public class UsersTable {
      * Validates an user against the Use database.
      *
      * @param userId
-     *            The user to validate
+     * The user to validate
      * @param callerClzz
-     *            The class or Application calling the function. (Will be used for reporting and monitoring)
+     * The class or Application calling the function. (Will be used
+     * for reporting and monitoring)
      * @return true if user is known
      */
     public static boolean isValidUser(long userId, Class<?> callerClzz) {
@@ -210,25 +223,26 @@ public class UsersTable {
     }
 
     /**
-     * User created with other services oauth. The email is mandatory, as password we generate something long.
+     * User created with other services oauth. The email is mandatory, as
+     * password we generate something long.
      *
      * @param email
      * @param oauth
      * @param authToken
      * @param password
-     *            leave empty if oauth is different than none.
+     * leave empty if oauth is different than none.
      * @param locale
      * @param screenName
      * @return
      */
     public static UserData createNewUser(String email, OAuthType oauth, String password, String locale,
-                                            String screenName) {
+            String screenName) {
         email = email.toLowerCase();
 
         try {
             ResultSet rs = Database.checkEntry(TABLE, DBFields.STR_EMAIL, email);
             if (rs.next()) {
-                Logger.error(clz).log("email already known = ").log(email).end();
+                feedreader.log.Logger.error(clz).log("email already known = ").log(email).end();
                 return UserData.NULL;
             }
 
@@ -239,23 +253,21 @@ public class UsersTable {
             }
 
             String code = getRegistrationCode(email, password);
-            String query = String.format("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s) "
-                    + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s', %s)",
-                    TABLE,
-                    DBFields.STR_EMAIL, DBFields.STR_PASSWORD, DBFields.STR_LOCALE,
-                    DBFields.ENUM_MAIN_OAUTH, DBFields.STR_SCREEN_NAME,
-                    DBFields.TIME_SUBSCRIBED_AT, DBFields.STR_REG_CODE,
-                    DBFields.BOOL_GENERATED,
-                    SQLUtils.asSafeString(email), password, SQLUtils.asSafeString(locale),
-                    oauth.getVal(), SQLUtils.asSafeString(screenName),
-                    CurrentTime.inGMT(), SQLUtils.asSafeString(code),
+            String query = String.format(
+                    "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s) "
+                            + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s', %s)",
+                    TABLE, DBFields.STR_EMAIL, DBFields.STR_PASSWORD, DBFields.STR_LOCALE, DBFields.ENUM_MAIN_OAUTH,
+                    DBFields.STR_SCREEN_NAME, DBFields.TIME_SUBSCRIBED_AT, DBFields.STR_REG_CODE,
+                    DBFields.BOOL_GENERATED, SQLUtils.asSafeString(email), password, SQLUtils.asSafeString(locale),
+                    oauth.getVal(), SQLUtils.asSafeString(screenName), CurrentTime.inGMT(), SQLUtils.asSafeString(code),
                     generated);
-            Logger.debugSQL(clz).log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log(query).end();
             if (stmt.executeUpdate(query) > 0) {
                 return get(email);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("createNewUser ").log(email).log("/").log(oauth).log(", error ").log(ex.getMessage())
+            feedreader.log.Logger.error(clz).log("createNewUser ").log(email).log("/").log(oauth).log(", error ")
+                    .log(ex.getMessage())
                     .end();
         }
 
@@ -272,7 +284,7 @@ public class UsersTable {
                     DBFields.LONG_SELECTED_PROFILE_ID, profileId, DBFields.LONG_USER_ID, userId);
             stmt.execute(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("setLastProfile ").log(userId).log("/").log(profileId).log(", error ")
+            feedreader.log.Logger.error(clz).log("setLastProfile ").log(userId).log("/").log(profileId).log(", error ")
                     .log(ex.getMessage()).end();
         }
     }
@@ -281,10 +293,10 @@ public class UsersTable {
         try {
             String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.STR_PASSWORD, pwd, DBFields.STR_FORGOT_CODE, "", DBFields.LONG_USER_ID, data.getUserId());
-            Logger.debugSQL(clz).log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log(query).end();
             return stmt.executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.debugSQL(clz).log("setNewPassword ").log(data).log("  ").log(pwd).log(", error ")
+            feedreader.log.Logger.debugSQL(clz).log("setNewPassword ").log(data).log("  ").log(pwd).log(", error ")
                     .log(ex.getMessage()).end();
         }
 
@@ -296,10 +308,11 @@ public class UsersTable {
             String query = String.format("UPDATE %s SET %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_FORGOT_PWD, true, DBFields.STR_FORGOT_CODE, SQLUtils.asSafeString(code),
                     DBFields.LONG_USER_ID, userId);
-            Logger.debugSQL(clz).log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log(query).end();
             return stmt.executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("setForgotPassword ").log(userId).log(", error ").log(ex.getMessage()).end();
+            feedreader.log.Logger.error(clz).log("setForgotPassword ").log(userId).log(", error ").log(ex.getMessage())
+                    .end();
         }
 
         return -1;
@@ -309,24 +322,25 @@ public class UsersTable {
         try {
             String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = %d", DBFields.LONG_USER_ID,
                     TABLE_TOKENS, DBFields.LONG_USER_ID, userId, DBFields.ENUM_OAUTH, type.getVal());
-            Logger.debugSQL(clz).log("saveToken ").log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log("saveToken ").log(query).end();
             ResultSet rs = stmt.executeQuery(query);
 
             if (rs.next()) {
                 query = String.format("UPDATE %s SET %s = %d, %s = %d, %s = '%s' WHERE %s = %d", TABLE_TOKENS,
                         DBFields.LONG_USER_ID, userId, DBFields.ENUM_OAUTH, type.getVal(), DBFields.STR_AUTH_TOKEN,
                         SQLUtils.asSafeString(token), DBFields.LONG_USER_ID, userId);
-                Logger.debugSQL(clz).log("saveToken ").log(query).end();
+                feedreader.log.Logger.debugSQL(clz).log("saveToken ").log(query).end();
                 stmt.execute(query);
             }
 
             query = String.format("INSERT INTO %s (%s, %s, %s) VALUES (%d, %d, '%s')", TABLE_TOKENS,
                     DBFields.LONG_USER_ID, DBFields.ENUM_OAUTH, DBFields.STR_AUTH_TOKEN, userId, type.getVal(),
                     SQLUtils.asSafeString(token));
-            Logger.debugSQL(clz).log("saveToken ").log(query).end();
+            feedreader.log.Logger.debugSQL(clz).log("saveToken ").log(query).end();
             stmt.execute(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("saveToken ").log(userId).log("/").log(type).log("/").log(token).log(", error ")
+            feedreader.log.Logger.error(clz).log("saveToken ").log(userId).log("/").log(type).log("/").log(token)
+                    .log(", error ")
                     .log(ex.getMessage()).end();
         }
     }
@@ -337,7 +351,8 @@ public class UsersTable {
                     SQLUtils.asSafeString(cookieKey), DBFields.LONG_USER_ID, userData.getUserId(), DBFields.ENUM_OAUTH);
             stmt.execute(query);
         } catch (SQLException e) {
-            Logger.error(clz).log("saveCookie ").log(userData.getUserId()).log("/").log(cookieKey).log(e.getMessage())
+            feedreader.log.Logger.error(clz).log("saveCookie ").log(userData.getUserId()).log("/").log(cookieKey)
+                    .log(e.getMessage())
                     .end();
         }
     }

@@ -5,6 +5,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import feedreader.oauth.OAuthType;
 import feedreader.store.DBFields;
 
@@ -22,6 +26,8 @@ public class UserData {
     private boolean generated = false;
     private boolean isAdmin = false;
 
+    private boolean isSubscribedForNewsletter;
+    private boolean isSubscribedToUpdates;
     private String locale;
     private List<ProfileData> profileData = new ArrayList<>();
     private String pwd;
@@ -96,6 +102,14 @@ public class UserData {
         return getAuthType() != OAuthType.NONE && getAuthType() != OAuthType.UNDEFINED;
     }
 
+    public boolean isSubscribedForNewsletter() {
+        return isSubscribedForNewsletter;
+    }
+
+    public boolean isSubscribedToUpdates() {
+        return isSubscribedToUpdates;
+    }
+
     public boolean isVerified() {
         return verified;
     }
@@ -116,11 +130,17 @@ public class UserData {
         this.selectedProfileId = lastProfileId;
     }
 
+    public void setSubscribedForNewsletter(boolean b) {
+        this.isSubscribedForNewsletter = b;
+    }
+
+    public void setSubscribedToProductUpdates(boolean b) {
+        this.isSubscribedToUpdates = b;
+    }
+
     @Override
     public String toString() {
-        return "UserData{" + "userId=" + userId + ", profileId=" + selectedProfileId + ", email=" + email
-                + ", screenName=" + screenName + ", pwd=" + pwd + ", verified=" + verified + ", locale=" + locale
-                + ", userType=" + userType + ", authType=" + authType + ", profileData = " + profileData.size() + "}";
+        return ReflectionToStringBuilder.toStringExclude(this, "pwd");
     }
 
     public static UserData fromRs(ResultSet rs) throws SQLException {
@@ -140,6 +160,8 @@ public class UserData {
         data.selectedProfileId = rs.getLong(DBFields.LONG_SELECTED_PROFILE_ID);
         data.subscribedAt = rs.getLong(DBFields.TIME_SUBSCRIBED_AT);
         data.generated = rs.getBoolean(DBFields.BOOL_GENERATED);
+        data.isSubscribedToUpdates = rs.getBoolean(DBFields.BOOL_RECEIVE_NEWSLETTER);
+        data.isSubscribedForNewsletter = rs.getBoolean(DBFields.BOOL_RECEIVE_PRODUCT_UPDATES);
 
         try {
             data.profileData.add(ProfileData.fromRs(rs));
@@ -147,7 +169,8 @@ public class UserData {
                 data.profileData.add(ProfileData.fromRs(rs));
             }
         } catch (SQLException ex) {
-            // query was for userdata only, not profile data, e.g UserData.get(email)
+            // query was for userdata only, not profile data, e.g
+            // UserData.get(email)
         }
 
         return data;
