@@ -71,6 +71,7 @@ public class Constants
     public static String INPUT_EMAIL_NAME = "email";
     public static String INPUT_SCREEN_NAME = "display_name";
     public static String INPUT_PWD_NAME = "pwd";
+    public static String SUBSCRIPTION_CHECKBOX = "subscription_checkbox";
 
 
     public static final String INPUT_REMEMBER_ME = "stay_loggedin";

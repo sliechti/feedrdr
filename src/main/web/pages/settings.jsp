@@ -45,6 +45,8 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 
 	        String newPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_1", "");
 	        String newPwdConfirm = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_2", "");
+	        boolean isSubscribedForNewsletter = Parameter.asBoolean(request, Constants.SUBSCRIPTION_CHECKBOX + "_1", false);
+	        data.setSubscribedForNewsletter(isSubscribedForNewsletter);
 
 	        if (!newPwd.isEmpty() && newPwd.equals(newPwdConfirm)) {
 	            if (Validate.isValidPassword(newPwd)) {
@@ -172,6 +174,11 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 					with current password</label> <input type="password" tabindex="6"
 					class="form-control" name="<%= Constants.INPUT_PWD_NAME%>">
 				<% } %>
+				 <div class="checkbox">
+    				<label>
+    				  <input type="checkbox" value="<%= data.isSubscribedForNewsletter()%>" name="<%= Constants.SUBSCRIPTION_CHECKBOX + "_1"%>"> Subscribe to stay updated with new products, offers & newsletters!
+   					 </label>
+ 			    </div>					
 				<br> <input type="submit" tabindex="7" name="submit"
 					value="Save settings" class="btn btn-primary btn">
 			</form>
