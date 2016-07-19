@@ -28,7 +28,7 @@
 			</form>
 		</div>
 		<div class="secondary">
-			New to feedrdr.co?<br> <a href="${baseUrl}">create an account</a>
+			New to feedrdr.co?<br> <a href="${baseUrlLink}">create an account</a>
 			<p>
 			</p>
 		</div>

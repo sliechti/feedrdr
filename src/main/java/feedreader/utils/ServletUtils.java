@@ -10,7 +10,9 @@ public class ServletUtils {
 
     public static void redirect(HttpServletRequest req, HttpServletResponse resp, String location)
             throws ServletException, IOException {
-        req.setAttribute("baseUrl", req.getContextPath());
+        String contextPath = req.getContextPath();
+        req.setAttribute("baseUrl", contextPath);
+        req.setAttribute("baseUrlLink", (contextPath.isEmpty()) ? "/" : contextPath + "/");
         req.getServletContext().getRequestDispatcher(location).forward(req, resp);
     }
 

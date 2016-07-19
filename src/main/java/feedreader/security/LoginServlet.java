@@ -8,13 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import feedreader.config.Environment;
-import feedreader.config.FeedAppConfig;
-import feedreader.entities.UserData;
-import feedreader.store.UsersTable;
 import feedreader.utils.PageUtils;
-import feedreader.utils.SimpleEncryption;
-import feedreader.utils.Validate;
+import feedreader.utils.ServletUtils;
 
 @WebServlet(name = "login", urlPatterns = { "/login" })
 public class LoginServlet extends HttpServlet {
@@ -26,8 +21,7 @@ public class LoginServlet extends HttpServlet {
 
     private void sendtoLoginPage(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("baseUrl", req.getContextPath());
-        getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
+        ServletUtils.redirect(req, resp, "/login.jsp");
     }
 
     @Override
