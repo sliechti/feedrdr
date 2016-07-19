@@ -1,3 +1,7 @@
+<%@page import="org.slf4j.LoggerFactory"%>
+<%@page import="org.slf4j.Logger"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page import="feedreader.utils.Validate"%>
 <%@page import="feedreader.security.UserSession"%>
 <%@page import="feedreader.security.Parameter"%>
@@ -11,18 +15,46 @@
 
 
 <%!
-static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
-%>
-<%
-	UserData data = (UserData)request.getAttribute("user");
+	// All code should be moved to a /settings servlet.
+	private static class SeetingsJsp {
+    }
 
-    String err = "";
-    String info = "";
-    String emailChanged = "";
+    static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
+    static final Logger logger = LoggerFactory.getLogger(SeetingsJsp.class);
 
-    if (request.getMethod() == "POST") {
+    public String checkedIfTrue(boolean b) {
+        return (b) ? "checked" : "";
+    }
+
+    public void updateUsers(HttpServletRequest request, UserData data) {
+        logger.debug("updating user: {}", data);
+        String info = "";
+        String err = "";
+        if (UsersTable.update(data) > 0) {
+            request.setAttribute("info",
+                    "User data updated<hr>" +
+            		"<a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>");
+        } else {
+            request.setAttribute("err", "There was a problem updating your user settings. "
+                + "Please keep using your old settings until we figure out what went wrong.<br>");
+        }
+    }
+
+    public void processNotificationsUpdate(HttpServletRequest request) {
+        UserData data = (UserData) request.getAttribute("user");
+        boolean getNewsletter = Parameter.asBoolean(request, Constants.CHECKBOX_SUBSCRIPTION_NEWSLETTER, false);
+        boolean getProductUpdates = Parameter.asBoolean(request, Constants.CHECKBOX_SUBSCRIPTION_PRODUCT_UPDATES, false);
+        data.setSubscribedForNewsletter(getNewsletter);
+        data.setSubscribedToProductUpdates(getProductUpdates);
+        updateUsers(request, data);
+    }
+
+    public void processSettingsUpdate(HttpServletRequest request) {
+        UserData data = (UserData) request.getAttribute("user");
+        String err = "";
+        String info = "";
+        String emailChanged = "";
         String currentDataPwd = data.getPwd();
-
         String displayName = Parameter.asString(request, Constants.INPUT_SCREEN_NAME, "");
         if (!displayName.equals(data.getScreenName())) {
             if (!displayName.isEmpty() && Validate.isValidScreenName(displayName)) {
@@ -43,64 +75,78 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 
         } else {
 
-	        String newPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_1", "");
-	        String newPwdConfirm = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_2", "");
-	        boolean isSubscribedForNewsletter = Parameter.asBoolean(request, Constants.SUBSCRIPTION_CHECKBOX + "_1", false);
-	        data.setSubscribedForNewsletter(isSubscribedForNewsletter);
+            String newPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_1", "");
+            String newPwdConfirm = Parameter.asString(request, Constants.INPUT_PWD_NAME + "_2", "");
 
-	        if (!newPwd.isEmpty() && newPwd.equals(newPwdConfirm)) {
-	            if (Validate.isValidPassword(newPwd)) {
-	                info += "Password changed. <br>";
-	                data.setPwd(newPwd);
-	            } else {
-	                err += "New password is invalid: " + Validate.getPasswordRules() + "<br>";
-	            }
-	        } else if (!newPwd.isEmpty()) {
-	            err += "New password and password confirmation don't match. <br>";
-	        }
+            if (!newPwd.isEmpty() && newPwd.equals(newPwdConfirm)) {
+                if (Validate.isValidPassword(newPwd)) {
+                    info += "Password changed. <br>";
+                    data.setPwd(newPwd);
+                } else {
+                    err += "New password is invalid: " + Validate.getPasswordRules() + "<br>";
+                }
+            } else if (!newPwd.isEmpty()) {
+                err += "New password and password confirmation don't match. <br>";
+            }
 
-	        String newEmail = Parameter.asString(request, Constants.INPUT_EMAIL_NAME + "_1", "");
-	        if (!newEmail.equalsIgnoreCase(data.getEmail())) {
-	            String newEmailConfirm = Parameter.asString(request, Constants.INPUT_EMAIL_NAME + "_2", "");
-	            if (!newEmail.isEmpty() && newEmail.equals(newEmailConfirm)) {
-	                if (Validate.isValidEmailAddress(newEmail)) {
-	                    UserData testData = UsersTable.get(newEmail);
-	                    if (testData.getUserId() == 0) {
-	                        info += "Email changed. <br>";
-	                        emailChanged = newEmail;
-	                        data.setEmail(emailChanged);
-	                    } else {
-	                        err += "Can't use that email. <br>";
-	                    }
-	                } else {
-	                    err += "New email is invalid: " + Validate.getEmailRules() + "<br>";
-	                }
-	            } else if (!newPwd.isEmpty()) {
-	                err += "New email and email confirmation don't match. <br>";
-	            }
-	        }
+            String newEmail = Parameter.asString(request, Constants.INPUT_EMAIL_NAME + "_1", "");
+            if (!newEmail.equalsIgnoreCase(data.getEmail())) {
+                String newEmailConfirm = Parameter.asString(request, Constants.INPUT_EMAIL_NAME + "_2", "");
+                if (!newEmail.isEmpty() && newEmail.equals(newEmailConfirm)) {
+                    if (Validate.isValidEmailAddress(newEmail)) {
+                        UserData testData = UsersTable.get(newEmail);
+                        if (testData.getUserId() == 0) {
+                            info += "Email changed. <br>";
+                            emailChanged = newEmail;
+                            data.setEmail(emailChanged);
+                        } else {
+                            err += "Can't use that email. <br>";
+                        }
+                    } else {
+                        err += "New email is invalid: " + Validate.getEmailRules() + "<br>";
+                    }
+                } else if (!newPwd.isEmpty()) {
+                    err += "New email and email confirmation don't match. <br>";
+                }
+            }
 
-	        String currentPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME, "");
-	        if (!currentPwd.isEmpty() && currentPwd.equals(currentDataPwd)) {
-	            if (UsersTable.update(data) > 0) {
-	                info += "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
-	                if (!emailChanged.isEmpty()) {
-	                    UsersTable.unverify(data);
-	                }
-	            } else {
-	                err += "There was a problem updating your user settings. "
-	                        + "Please keep using your old settings until we figure out what went wrong.<br>";
-	                info = "";
-	            }
-	        } else if (!currentPwd.isEmpty()) {
-	            info = "";
-	            err += "Current password didn't match.";
-	        } else {
-	            info = "";
-	            err += "Need your current password";
-	        }
+            String currentPwd = Parameter.asString(request, Constants.INPUT_PWD_NAME, "");
+            if (!currentPwd.isEmpty() && currentPwd.equals(currentDataPwd)) {
+                if (UsersTable.update(data) > 0) {
+                    info += "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
+                    if (!emailChanged.isEmpty()) {
+                        UsersTable.unverify(data);
+                    }
+                } else {
+                    err += "There was a problem updating your user settings. "
+                            + "Please keep using your old settings until we figure out what went wrong.<br>";
+                    info = "";
+                }
+            } else if (!currentPwd.isEmpty()) {
+                info = "";
+                err += "Current password didn't match.";
+            } else {
+                info = "";
+                err += "Need your current password";
+            }
         }
 
+        request.setAttribute("info", info);
+        request.setAttribute("error", err);
+        request.setAttribute("emailChanged", emailChanged);
+    }%>
+<%
+	UserData data = (UserData)request.getAttribute("user");
+    if (request.getMethod() == "POST") {
+        out.write(Parameter.asString(request, "section", ""));
+        switch(Parameter.asString(request, "section", "")) {
+            case "notifications":
+                processNotificationsUpdate(request);
+                break;
+            case "settings":
+                processSettingsUpdate(request);
+                break;
+        }
     }
 
 %>
@@ -112,24 +158,27 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 		<h4>
 			<a href="#/v/pro">Profiles settings</a>
 		</h4>
+		<h4>
+			<a href="#/v/notifications">Notifications</a>
+		</h4>
 	</div>
 
 	<div class="col-lg-7" id="content_panel">
 
 		<div id="error"
-			class="<% if (err.isEmpty()) { %>noshow<% }%> alert alert-danger">
+			class="<c:if test="${empty err}">noshow</c:if> alert alert-danger">
 			<button type="button" class="close" onclick="$('#error').hide();">
 				<span aria-hidden="true">×</span><span class="sr-only">Close</span>
 			</button>
-			<p id="error_text"><%= err%></p>
+			<p id="error_text">${err}</p>
 		</div>
 
 		<div id="info"
-			class="<% if (info.isEmpty()) { %>noshow<% }%> alert alert-info alert-dismissible">
+			class="<c:if test="${empty info}">noshow</c:if> alert alert-info alert-dismissible">
 			<button type="button" class="close" onclick="$('#info').hide();">
 				<span aria-hidden="true">×</span><span class="sr-only">Close</span>
 			</button>
-			<p id="info_text"><%= info%></p>
+			<p id="info_text">${info}</p>
 		</div>
 
 		<div id="account">
@@ -166,7 +215,7 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 					for="<%= Constants.INPUT_EMAIL_NAME + "_2"%>">Verify email:</label>
 				<input type="text" tabindex="5" class="form-control"
 					name="<%= Constants.INPUT_EMAIL_NAME + "_2"%>"
-					value="<%= emailChanged%>">
+					value="${emailChanged}">
 
 				<h4>Current password:</h4>
 
@@ -174,13 +223,8 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 					with current password</label> <input type="password" tabindex="6"
 					class="form-control" name="<%= Constants.INPUT_PWD_NAME%>">
 				<% } %>
-				 <div class="checkbox">
-    				<label>
-    				  <input type="checkbox" value="<%= data.isSubscribedForNewsletter()%>" name="<%= Constants.SUBSCRIPTION_CHECKBOX + "_1"%>"> Subscribe to stay updated with new products, offers & newsletters!
-   					 </label>
- 			    </div>					
-				<br> <input type="submit" tabindex="7" name="submit"
-					value="Save settings" class="btn btn-primary btn">
+				<br>
+				<input type="submit" tabindex="7" name="submit" value="Save settings" class="btn btn-primary btn">
 			</form>
 
 		</div>
@@ -190,6 +234,30 @@ static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='locati
 			<p>
 				<a href="" onclick="showCreateNewProfile(); return false;">Add new <span class="glyphicon glyphicon-plus text-right"></span></a>
 			</p>
+		</div>
+
+		<div id="notifications">
+			<h4>Notifications</h4>
+
+			<form method="POST" action="">
+				<input type="hidden" name="section" value="notifications" />
+				<div class="checkbox">
+					<div>
+						<label>
+						<input type="checkbox" value="1" <%= checkedIfTrue(data.isSubscribedForNewsletter()) %>
+							name="<%=Constants.CHECKBOX_SUBSCRIPTION_NEWSLETTER %>">Receive monthly newsletter on everything related to feedrdr
+						</label>
+					</div>
+					<div>
+						<label>
+						<input type="checkbox" value="1" <%= checkedIfTrue(data.isSubscribedToUpdates()) %>
+							name="<%=Constants.CHECKBOX_SUBSCRIPTION_PRODUCT_UPDATES %>">Receive
+						weekly updates on new product updates </label>
+
+					</div>
+				</div>
+				<br> <input type="submit" tabindex="8" name="submit" value="Save settings" class="btn btn-primary btn">
+			</form>
 		</div>
 	</div>
 </div>

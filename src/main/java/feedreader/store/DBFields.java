@@ -13,10 +13,11 @@ public class DBFields {
     public static final String BOOL_IS_DEFAULT = "b_default";
     public static final String BOOL_PROCESSED = "b_processed";
     public static final String BOOL_READ = "b_read";
+    public static final String BOOL_RECEIVE_NEWSLETTER="b_receive_newsletter";
+    public static final String BOOL_RECEIVE_PRODUCT_UPDATES = "b_receive_product_updates";
     public static final String BOOL_REG_SENT = "b_reg_sent";
     public static final String BOOL_SENT = "b_sent";
     public static final String BOOL_VERIFIED = "b_verified";
-    public static final String BOOL_RECEIVE_NEWSLETTER="b_receive_newsletter";
     public static final String COUNT = "COUNT";
     public static final String ENUM_MAIN_OAUTH = "e_main_oauth";
     public static final String ENUM_OAUTH = "e_oauth";
