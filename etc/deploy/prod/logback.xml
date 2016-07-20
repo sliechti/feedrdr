@@ -10,10 +10,9 @@
 	<!-- File Logger Appender -->
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${user.home}/logs/co.feeder.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
-			<fileNamePattern>co.feeder.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${user.home}/logs/co.feeder.%d{yyyy-MM-dd}.log</fileNamePattern>
 			<!-- keep 30 days' worth of history capped at 3GB total size -->
 			<maxHistory>30</maxHistory>
 			<totalSizeCap>3GB</totalSizeCap>
@@ -21,7 +20,7 @@
 		</rollingPolicy>
 		<withJansi>true</withJansi>
 		<encoder>
-			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n%ex
 			</pattern>
 		</encoder>
 	</appender>
@@ -34,8 +33,8 @@
 		<smtpHost>smtp.feedrdr.co</smtpHost>
 		<to>dev@feedrdr.co</to>
 		<username>mailer@feedrdr.co</username>
-		<password>****</password>
-		<from>feeder</from>
+		<password>FeedRdr007</password>
+		<from>feedrdr-slf4j</from>
 		<subject>%date %-5level %logger{35} - %message%n</subject>
 		<layout class="ch.qos.logback.classic.html.HTMLLayout">
 			<pattern>%date %-5level %logger{35} - %message%n</pattern>
