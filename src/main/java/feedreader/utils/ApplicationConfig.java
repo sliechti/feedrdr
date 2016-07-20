@@ -31,6 +31,14 @@ public class ApplicationConfig {
         }
     }
 
+    public boolean getBoolean(String key) {
+        return config.getBoolean(key);
+    }
+
+    public boolean getBoolean(String key, Boolean def) {
+        return config.getBoolean(key, def);
+    }
+
     public int getInt(String key) {
         int ret = config.getInt(key, -1);
         if (ret == -1) {
@@ -57,5 +65,4 @@ public class ApplicationConfig {
         }
         return instance;
     }
-
 }

@@ -42,13 +42,14 @@ public class AppContextInit implements ServletContextListener {
     private static final String BASE_ADMIN_URL_PROP_KEY = "base_admin_url";
     private static final String BASE_URL_EMAIL_PROP_KEY = "base_url_email";
     private static final String BASE_URL_PROP_KEY = "base_url";
+    private static final String DOWNLOAD_XML_FILES = "download_xml_files";
     private static final String DOWNLOAD_XML_PATH_PRO_KEY = "download_xml_path";
     private static String downloadXmlPath = "";
     private static final String INTERVAL_FETCH_PROP_KEY = "interval_fetch_seconds";
-    private static final Logger logger = LoggerFactory.getLogger(AppContextInit.class);
     private static final String LOG_FILE_PROP_KEY = "log_file";
     private static final String LOG_LEVEL_PROP_KEY = "log_level";
     private static String logFile = "";
+    private static final Logger logger = LoggerFactory.getLogger(AppContextInit.class);
     private static ServletContextEvent servletContext;
 
     private ApplicationConfig appConfig;
@@ -91,6 +92,7 @@ public class AppContextInit implements ServletContextListener {
         setupOAuth();
 
         downloadXmlPath = appConfig.getString(DOWNLOAD_XML_PATH_PRO_KEY);
+        FeedAppConfig.DOWNLOAD_XML_FILES = appConfig.getBoolean(DOWNLOAD_XML_FILES, false);
         int delayFetch = appConfig.getInt(INTERVAL_FETCH_PROP_KEY);
         String baseUrl = appConfig.getString(BASE_URL_PROP_KEY);
         String baseUrlEmail = appConfig.getString(BASE_URL_EMAIL_PROP_KEY);
@@ -111,7 +113,6 @@ public class AppContextInit implements ServletContextListener {
             }
         } else {
             FeedAppConfig.APP_NAME = Environment.name() + "-" + FeedAppConfig.APP_NAME;
-            FeedAppConfig.XML_SAVE = true;
         }
 
         FeedAppConfig.DOWNLOAD_XML_PATH = downloadXmlPath;
@@ -131,10 +132,14 @@ public class AppContextInit implements ServletContextListener {
                 FeedAppConfig.FETCH_RUN_START_FETCHING = true;
                 FeedAppConfig.FETCH_RUN_START_VALIDATION = true;
             }
-
             startCronThreads();
         }
 
+        try {
+            logger.info("{}", FeedAppConfig.debugFields());
+        } catch (Exception e) {
+            logger.error("failed to read feed app config values: {}", e, e.getMessage());
+        }
     }
 
     private boolean isDevPc() {

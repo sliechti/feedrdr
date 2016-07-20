@@ -1,15 +1,26 @@
 package feedreader.entities;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class FeedSourceEntry {
 
-    long id = 0;
-    String xmlUrl = "";
-    long checkedAt = 0;
-    long addedAt = 0;
+    private long addedAt = 0;
+    private long checkedAt = 0;
+    private long id = 0;
+    private String xmlUrl = "";
 
     public FeedSourceEntry(long id, String xmlUrl) {
         this.id = id;
         this.xmlUrl = xmlUrl;
+    }
+
+    public long getAddedAt() {
+        return addedAt;
+    }
+
+    public long getCheckedAt() {
+        return checkedAt;
     }
 
     public long getId() {
@@ -20,25 +31,17 @@ public class FeedSourceEntry {
         return xmlUrl.toLowerCase();
     }
 
-    public long getAddedAt() {
-        return addedAt;
-    }
-
     public void setAddedAt(long addedAt) {
         this.addedAt = addedAt;
-    }
-
-    public long getCheckedAt() {
-        return checkedAt;
     }
 
     public void setCheckedAt(long l) {
         this.checkedAt = l;
     }
 
-    @Override public String toString() {
-        return "FeedSourceEntry{" + "id=" + id + ", xmlUrl=" + xmlUrl + ", " + "checkedAt=" + checkedAt + ", addedAt="
-                + addedAt + '}';
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE);
     }
 
 }

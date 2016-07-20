@@ -1,7 +1,11 @@
 package feedreader.config;
 
+import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
+
+import org.apache.commons.lang3.reflect.FieldUtils;
 
 /**
  * TODO: Implement. The class could/should be moved to store and have an init
@@ -56,7 +60,7 @@ public class FeedAppConfig {
     public static String DEFAULT_API_SORT_PROFILES = "ASC";
 
     public static boolean XML_GATHER_INFO = false;
-    public static boolean XML_SAVE = false;
+    public static boolean DOWNLOAD_XML_FILES = false;
 
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
@@ -106,4 +110,13 @@ public class FeedAppConfig {
                                                                 // than 4h to
                                                                 // loop over all
                                                                 // feedsources.
+
+    public static String debugFields() throws Exception {
+        List<Field> fields = FieldUtils.getAllFieldsList(FeedAppConfig.class);
+        StringBuilder sb = new StringBuilder();
+        for (Field f : fields) {
+            sb.append(f.getName()).append("=[").append(FieldUtils.readStaticField(f)).append("] ");
+        }
+        return sb.toString();
+    }
 }
