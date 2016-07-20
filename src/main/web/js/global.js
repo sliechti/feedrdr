@@ -54,7 +54,11 @@ function showModal(title, contentSelector, closeCallback, postInitCallback) {
 	var content = $(contentSelector);
 	content.remove(); // so we don't have duplicates.
 	$("#modalContent").html(content.html());
+	var $exampleModal = $(MODALBOX_SELECTOR),
+    $exampleModalClose = $(".modal-header button");
 
+	//added this line to set focus on the modal to close on ESC key
+	$(".modal-header button").focus();
 	this.closeModalCallback = closeCallback;
 	
 	$(MODALBOX_SELECTOR).keydown(function(e) {
