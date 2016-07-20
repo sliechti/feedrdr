@@ -138,14 +138,11 @@
 <%
 	UserData data = (UserData)request.getAttribute("user");
     if (request.getMethod() == "POST") {
-        out.write(Parameter.asString(request, "section", ""));
-        switch(Parameter.asString(request, "section", "")) {
-            case "notifications":
+        String section = Parameter.asString(request, "section", "");
+        if ("notifications".equals(section)) {
                 processNotificationsUpdate(request);
-                break;
-            case "settings":
+        } else if ("settings".equals(section)) {
                 processSettingsUpdate(request);
-                break;
         }
     }
 
