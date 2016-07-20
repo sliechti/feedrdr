@@ -54,7 +54,13 @@ function showModal(title, contentSelector, closeCallback, postInitCallback) {
 	var content = $(contentSelector);
 	content.remove(); // so we don't have duplicates.
 	$("#modalContent").html(content.html());
+	var $exampleModal = $(MODALBOX_SELECTOR),
+    $exampleModalClose = $(".modal-header button");
 
+    $exampleModal.on("shown.bs.modal", function() {
+        document.activeElement.blur();
+        $exampleModalClose.focus();
+    });
 	this.closeModalCallback = closeCallback;
 	
 	$(MODALBOX_SELECTOR).keydown(function(e) {
