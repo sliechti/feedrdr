@@ -57,10 +57,8 @@ function showModal(title, contentSelector, closeCallback, postInitCallback) {
 	var $exampleModal = $(MODALBOX_SELECTOR),
     $exampleModalClose = $(".modal-header button");
 
-    $exampleModal.on("shown.bs.modal", function() {
-        document.activeElement.blur();
-        $exampleModalClose.focus();
-    });
+	//added this line to set focus on the modal to close on ESC key
+	$(".modal-header button").focus();
 	this.closeModalCallback = closeCallback;
 	
 	$(MODALBOX_SELECTOR).keydown(function(e) {
