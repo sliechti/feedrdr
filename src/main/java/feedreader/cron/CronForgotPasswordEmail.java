@@ -50,7 +50,7 @@ public class CronForgotPasswordEmail implements Runnable {
                     String emailTxt = new String().concat(emailTmpl);
                     emailTxt = emailTxt.replace("{NAME}", screenName);
                     emailTxt = emailTxt.replace("{CODE}", forgotCode);
-                    String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/reset.jsp?code=" + forgotCode;
+                    String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/password_reset?code=" + forgotCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
 
                     mail.send(MAIL_FROM, MAIL_FROM_NAME, email, screenName,

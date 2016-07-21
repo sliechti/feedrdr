@@ -94,7 +94,6 @@ public class FeedAppConfig {
     public static boolean FETCH_RUN_START_FETCHING = true;
     public static boolean FETCH_RUN_START_VALIDATION = true;
 
-    public static final String ENC_KEY_REOVER_EMAIL_CODE = "RECOVEREMAIL";
     public static boolean DEBUG_EMAIL = false;
     public static final int USER_0_VAL = 0;
     public static int USER_0_MAX_DAYS_BACK = -8;

@@ -98,6 +98,10 @@ public class UserData {
         return generated;
     }
 
+    public boolean isNull() {
+        return this == NULL;
+    }
+
     public boolean isOauthUser() {
         return getAuthType() != OAuthType.NONE && getAuthType() != OAuthType.UNDEFINED;
     }

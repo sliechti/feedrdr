@@ -109,6 +109,10 @@ button {
 	font-size: 1.1em;
 }
 
+.button0 {
+	  border: 0;
+}
+
 .btn {
 	text-decoration: none;
 	background-color: #5372BA;
@@ -229,4 +233,15 @@ p.intro {
 
 .lined30 input {
 	height: 30px;
+}
+
+
+.info-msg {
+	background-color: #30779B;
+	color: white;
+}
+
+.warn-msg {
+	background-color: #DBDB41;
+	color: #183C4F;
 }
