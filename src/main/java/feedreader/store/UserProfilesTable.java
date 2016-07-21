@@ -71,7 +71,7 @@ public class UserProfilesTable {
     static ProfileData getProfile(String query) {
         try {
             Logger.debug(clz).log(query).end();
-            ResultSet rs = UsersTable.stmt.executeQuery(query);
+            ResultSet rs = stmt.executeQuery(query);
             if (!rs.next()) {
                 return ProfileData.NULL;
             }

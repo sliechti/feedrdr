@@ -14,7 +14,7 @@ public class ConfigSystem {
         public String getEol() {
             return eol;
         }
-    };
+    }
 
     private static NewLineMode systemEol;
 

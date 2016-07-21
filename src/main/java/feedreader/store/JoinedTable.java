@@ -75,7 +75,6 @@ public class JoinedTable {
                     entries.append(sub.getString(1)).append(",");
                     unreadEntriesCount++;
                 }
-                ;
             }
             if (entries.length() > 0) {
                 entries.setLength(entries.length() - 1);

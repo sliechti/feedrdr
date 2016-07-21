@@ -20,9 +20,9 @@ import feedreader.log.Logger;
 
 /**
  * Xml News Parser class
- * 
+ *
  * See list of features {@see <a href='http://xerces.apache.org/xerces2-j/features.html'>apache.org/xerces2-j</a>}
- * 
+ *
  */
 public class XmlFeedParser {
 
@@ -44,7 +44,7 @@ public class XmlFeedParser {
      */
     public enum NewsFlavor {
         UNKNOWN, RSS2, ATOM1, RDF
-    };
+    }
 
     NewsFlavor flavor = NewsFlavor.UNKNOWN;
 
@@ -261,9 +261,9 @@ public class XmlFeedParser {
 
                 /*
                  * String version = attr.getValue("version"); if (version.equalsIgnoreCase("2.0")) {
-                 * 
+                 *
                  * }
-                 * 
+                 *
                  * Logger.error(this.getClass()) .log("Unknown news flavor in attribute [").log(qName).log("]").end();
                  * return;
                  */

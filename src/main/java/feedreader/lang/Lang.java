@@ -1,9 +1,10 @@
 package feedreader.lang;
 
-public class Lang
-{
+public class Lang {
     /** Available languages. */
-    public enum Type { en_US, es_AR, de_DE };
+    public enum Type {
+        en_US, es_AR, de_DE
+    }
 
     /** Default selected language. */
     public static Type langTypeDef = Type.en_US;
@@ -22,13 +23,11 @@ public class Lang
      * @return
      *
      */
-    public static String get(String languageKey, String module)
-    {
+    public static String get(String languageKey, String module) {
         return languageKey;
     }
 
-    public static String get(String languageKey)
-    {
+    public static String get(String languageKey) {
         return get(languageKey, selectedModule);
     }
 

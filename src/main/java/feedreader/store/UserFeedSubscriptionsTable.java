@@ -54,7 +54,7 @@ public class UserFeedSubscriptionsTable {
 
     public enum RetCodes {
         SUBSCRIPTION_ADDED, SUBSCRIPTION_UPDATED, SQL_ERROR
-    };
+    }
 
     /**
      * Saves a new subscription. If the folder is unknown, the subscription will be added to the root folder,
@@ -71,10 +71,10 @@ public class UserFeedSubscriptionsTable {
      */
     public static long save(long userId, long sourceId, OPMLEntry entry) {
         try {
-            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s=%d", 
-                    DBFields.LONG_SUBS_ID, 
+            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s=%d",
+                    DBFields.LONG_SUBS_ID,
                     TABLE,
-                    DBFields.LONG_USER_ID, userId, 
+                    DBFields.LONG_USER_ID, userId,
                     DBFields.LONG_XML_ID, sourceId);
             Logger.debug(clz).log("save (select) ").log(query).end();
             ResultSet rs = stmt.executeQuery(query);
@@ -83,12 +83,12 @@ public class UserFeedSubscriptionsTable {
                 // TOOD: Implement. // UPDATE
                 return rs.getLong(DBFields.LONG_SUBS_ID);
             } else {
-                query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %d, %d, '%s') RETURNING %s", 
+                query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %d, %d, '%s') RETURNING %s",
                         TABLE,
-                        DBFields.LONG_SUBS_ID, DBFields.LONG_USER_ID, 
-                        DBFields.LONG_XML_ID, DBFields.STR_SUBSCRIPTION_NAME, 
-                        Database.DEFAULT_KEYWORD, userId, 
-                        sourceId, SQLUtils.asSafeString(entry.getTitle()), 
+                        DBFields.LONG_SUBS_ID, DBFields.LONG_USER_ID,
+                        DBFields.LONG_XML_ID, DBFields.STR_SUBSCRIPTION_NAME,
+                        Database.DEFAULT_KEYWORD, userId,
+                        sourceId, SQLUtils.asSafeString(entry.getTitle()),
                         DBFields.LONG_SUBS_ID /* returning */);
                 Logger.debug(clz).log("save (insert) ").log(query).end();
                 rs = stmt.executeQuery(query);

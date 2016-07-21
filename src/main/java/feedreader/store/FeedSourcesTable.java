@@ -14,7 +14,7 @@ import feedreader.time.CurrentTime;
 import feedreader.utils.SQLUtils;
 
 /**
- * 
+ *
  */
 public class FeedSourcesTable {
 
@@ -29,11 +29,11 @@ public class FeedSourcesTable {
     static final EntriesCount emptyEntriesCount = new EntriesCount(0, 0, 0, 0, 0);
 
     /**
-     * 
+     *
      */
     public enum RetCodes {
         ERROR, QUEUED, IN_QUEUE
-    };
+    }
 
     public static boolean init() {
         conn = Database.getConnection();
@@ -202,9 +202,9 @@ public class FeedSourcesTable {
      * Gets the next {@link FeedSourceEntry} to be scanned for articles. Where {@link DBFields#TIME_VALIDATED_AT} > 0
      * AND {@link DBFields#BOOL_GAVE_UP} = false. Ordered by {@link DBFields#TIME_CHECKED_AT} and
      * {@link DBFields#TIME_ADDED_AT}, ASC.
-     * 
+     *
      * @param blockForMs
-     * 
+     *
      * @return
      */
     public static FeedSourceEntry getNextFetch(int blockForMs) {
@@ -278,7 +278,7 @@ public class FeedSourcesTable {
     /**
      * Returns an entry in the {@link FeedSourcesTable#TABLE} which hasn't been validated yet. Where
      * {@link DBFields#TIME_VALIDATED_AT} = 0 and {@link DBFields#BOOL_GAVE_UP} = false.
-     * 
+     *
      * @param blockForMs
      * @return {@link FeedSourceEntry}
      */

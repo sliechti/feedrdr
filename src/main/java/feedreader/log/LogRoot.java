@@ -16,7 +16,7 @@ public class LogRoot {
 
     public enum NewLineMode {
         UNIX, WINDOWS, HTML
-    };
+    }
 
     private NewLineMode nlMode = NewLineMode.WINDOWS;
 
@@ -36,7 +36,7 @@ public class LogRoot {
     LogRoot(Writer out, Logger.LogLevels level) {
         try {
             out.append("LogLevel set ").append(level.name()).append(" logging with ")
-                            .append(out.getClass().getSimpleName()).append(ConfigSystem.getEol());
+                    .append(out.getClass().getSimpleName()).append(ConfigSystem.getEol());
         } catch (IOException e) {
         }
         this.logLevel = level;
@@ -46,7 +46,7 @@ public class LogRoot {
     public void setWriter(Writer fileWriter) {
         out = fileWriter;
     }
-    
+
     public void setLevel(Logger.LogLevels level) throws IOException {
         this.logLevel = level;
         out.append("LogLevel set ").append(level.name()).append(ConfigSystem.getEol());
@@ -127,15 +127,15 @@ public class LogRoot {
         @Override
         public void end() {
             switch (nlMode) {
-            case HTML:
-                write("<br>", true);
-                break;
-            case UNIX:
-                write("\n", true);
-                break;
-            case WINDOWS:
-                write("\r\n", true);
-                break;
+                case HTML:
+                    write("<br>", true);
+                    break;
+                case UNIX:
+                    write("\n", true);
+                    break;
+                case WINDOWS:
+                    write("\r\n", true);
+                    break;
             }
 
             ended = true;
@@ -147,32 +147,32 @@ public class LogRoot {
         @Override
         public ILog log(long l) {
             return this;
-        };
+        }
 
         @Override
         public ILog log(CharSequence s) {
             return this;
-        };
+        }
 
         @Override
         public ILog log(Object o) {
             return this;
-        };
+        }
 
         @Override
         public ILog log(Class<?> clazz) {
             return this;
-        };
+        }
 
         @Override
         public ILog log(Date date) {
             return this;
-        };
+        }
 
         @Override
         public void end() {
             ended = true;
-        };
+        }
     }
 
     public void setNewLine(NewLineMode mode) {
