@@ -19,7 +19,7 @@ public class WelcomeServlet extends HttpServlet {
         req.setAttribute("minifiedStr", "");
         req.setAttribute("oauthFacebooKey", OAuthConfig.getFbKey());
         req.setAttribute("oauthGoogleKey", OAuthConfig.GOOGLE_KEY);
-        req.setAttribute("oauthWindowKey", OAuthConfig.LIVE_KEY);
+        req.setAttribute("oauthWindowsKey", OAuthConfig.LIVE_KEY);
         req.setAttribute("appName", FeedAppConfig.APP_NAME);
         if (Environment.isDev()) {
             req.setAttribute("oauthDebug", "&debug=true");
