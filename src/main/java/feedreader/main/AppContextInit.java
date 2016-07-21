@@ -21,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import feedreader.config.Constants;
-import feedreader.config.DeveloperConfig;
 import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.config.OAuthConfig;
@@ -122,21 +121,11 @@ public class AppContextInit implements ServletContextListener {
         FeedAppConfig.BASE_ADMIN_URL = baseAdminUrl;
 
         if (setupDatabase()) {
-            if (Environment.isDev()) {
-                logger.info("Checking for developer configration options.");
-                // FeedAppConfig.FETCH_RUN_START_FETCHING = true;
-                // FeedAppConfig.FETCH_RUN_START_VALIDATION = true;
-                logger.info("FETCH_RUN_START_FETCHING true FETCH_RUN_START_VALIDATION true");
-                DeveloperConfig.run();
-            } else {
-                FeedAppConfig.FETCH_RUN_START_FETCHING = true;
-                FeedAppConfig.FETCH_RUN_START_VALIDATION = true;
-            }
             startCronThreads();
         }
 
         try {
-            logger.info("{}", FeedAppConfig.debugFields());
+            logger.info("{}", FeedAppConfig.printAllFields());
         } catch (Exception e) {
             logger.error("failed to read feed app config values: {}", e, e.getMessage());
         }
@@ -190,34 +179,46 @@ public class AppContextInit implements ServletContextListener {
     }
 
     private void startCronThreads() {
-        logger.info("starting threads");
+        logger.info("starting cron threads");
 
         sc = Executors.newSingleThreadScheduledExecutor();
-
-        CronForgotPasswordEmail forgotPwdCron = null;
-        CronNewUsersEmail newUsersCron = null;
-        try {
-            newUsersCron = new CronNewUsersEmail();
-            forgotPwdCron = new CronForgotPasswordEmail();
-        } catch (Exception e) {
-            logger.error("failed to start crons: {}", e, e.getMessage());
-            return;
-        }
-        sc.scheduleAtFixedRate(forgotPwdCron, 0, FeedAppConfig.DELAY_CHECK_FORGOT_PASSWORD, TimeUnit.SECONDS);
-        sc.scheduleAtFixedRate(newUsersCron, 0, FeedAppConfig.DELAY_CHECK_NEW_USERS_EMAIL, TimeUnit.SECONDS);
         sc.scheduleAtFixedRate(new CronTimeUtils(), 0, 1, TimeUnit.MINUTES);
-        if (FeedAppConfig.FETCH_RUN_START_FETCHING) {
+
+        boolean startPwdCron = appConfig.getBoolean("cron_start_email_forgotpwd", false);
+        logger.info("start cron: {}={}", CronForgotPasswordEmail.class.getSimpleName(), startPwdCron);
+        if (startPwdCron) {
+            try {
+                sc.scheduleAtFixedRate(new CronForgotPasswordEmail(),
+                        0, FeedAppConfig.DELAY_CHECK_FORGOT_PASSWORD, TimeUnit.SECONDS);
+            } catch (Exception e) {
+                logger.error("failed to start forgot password cron: {}", e, e.getMessage());
+            }
+        }
+
+        boolean startNewUsersEmailCron = appConfig.getBoolean("cron_start_email_newusers", false);
+        logger.info("start cron: {}={}", CronNewUsersEmail.class.getSimpleName(), startNewUsersEmailCron);
+        if (startNewUsersEmailCron) {
+            try {
+                sc.scheduleAtFixedRate(new CronNewUsersEmail(),
+                        0, FeedAppConfig.DELAY_CHECK_NEW_USERS_EMAIL, TimeUnit.SECONDS);
+            } catch (Exception e) {
+                logger.error("failed to start new users email cron: {}", e, e.getMessage());
+                return;
+            }
+        }
+
+        boolean cronStartFetchNews = appConfig.getBoolean("cron_start_fetch_news", false);
+        logger.info("start cron: {}={}", CronFetchNews.class.getSimpleName(), cronStartFetchNews);
+        if (cronStartFetchNews) {
             sc.scheduleAtFixedRate(CronFetchNews.fetchInstance(false), 0,
                     FeedAppConfig.DELAY_FETCH_IN_S, TimeUnit.SECONDS);
-        } else {
-            logger.info("*** Not starting fetch thread as defined in FeedAppConfig.FETCH_RUN_START_FETCHING.");
         }
 
-        if (FeedAppConfig.FETCH_RUN_START_VALIDATION) {
+        boolean cronStartValidateNews = appConfig.getBoolean("cron_start_validate_news", false);
+        logger.info("start cron: {}={}", CronFetchNews.class.getSimpleName(), cronStartValidateNews);
+        if (cronStartValidateNews) {
             sc.scheduleAtFixedRate(CronFetchNews.fetchInstance(true), 0,
                     FeedAppConfig.DELAY_FETCH_IN_S, TimeUnit.SECONDS);
-        } else {
-            logger.info("*** Not starting fetch thread as defined in FeedAppConfig.FETCH_RUN_START_VALIDATION.");
         }
     }
 

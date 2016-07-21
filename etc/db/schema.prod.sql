@@ -12,6 +12,8 @@ SET client_min_messages = warning;
 -- Name: feedreader; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
+CREATE USER feedrdr PASSWORD 'feedrdr';
+
 CREATE SCHEMA feedreader;
 
 
@@ -20,22 +22,22 @@ ALTER SCHEMA feedreader OWNER TO postgres;
 SET search_path = feedreader, pg_catalog;
 
 --
--- Name: getreadentries(integer, bigint, integer, text); Type: FUNCTION; Schema: feedreader; Owner: sliechti
+-- Name: getreadentries(integer, bigint, integer, text); Type: FUNCTION; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE FUNCTION getreadentries(p1 integer, p2 bigint, p3 integer, p4 text) RETURNS text
     LANGUAGE plpgsql
     AS $_$
-declare 
+declare
     rec record;
     sql text;
     ret text;
 begin
-    sql := 'select t0.l_entry_id from feedreader.userfeedentriesinfo as t0 
+    sql := 'select t0.l_entry_id from feedreader.userfeedentriesinfo as t0
         left join feedreader.feedentries as t1
             on t0.l_entry_id = t1.l_entry_id
-    where  
-        t0.l_profile_id = ' || $1 ||' and t0.b_read = true 
+    where
+        t0.l_profile_id = ' || $1 ||' and t0.b_read = true
         and t1.t_pub_date > ' || $2 ||'
          and t1.l_xml_id in (' || $4 ||')
          limit ' || $3 || ';';
@@ -49,21 +51,21 @@ begin
     ret := trim(trailing ',' from ret);
 
     return ret;
-        
+
 end;
 $_$;
 
 
-ALTER FUNCTION feedreader.getreadentries(p1 integer, p2 bigint, p3 integer, p4 text) OWNER TO sliechti;
+ALTER FUNCTION feedreader.getreadentries(p1 integer, p2 bigint, p3 integer, p4 text) OWNER TO feedrdr;
 
 --
--- Name: gettotalentriescount(text); Type: FUNCTION; Schema: feedreader; Owner: sliechti
+-- Name: gettotalentriescount(text); Type: FUNCTION; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE FUNCTION gettotalentriescount(p1 text) RETURNS TABLE(f1 bigint, f2 bigint, f3 bigint, f4 bigint)
     LANGUAGE plpgsql
     AS $$
-declare 
+declare
     sql text;
 begin
     sql := 'select sum(i_total_entries), sum(i_count_0), sum(i_count_1), sum(i_count_2)
@@ -74,19 +76,19 @@ end;
 $$;
 
 
-ALTER FUNCTION feedreader.gettotalentriescount(p1 text) OWNER TO sliechti;
+ALTER FUNCTION feedreader.gettotalentriescount(p1 text) OWNER TO feedrdr;
 
 --
--- Name: gettotalentriescountsince(text, bigint); Type: FUNCTION; Schema: feedreader; Owner: sliechti
+-- Name: gettotalentriescountsince(text, bigint); Type: FUNCTION; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE FUNCTION gettotalentriescountsince(p1 text, t0 bigint) RETURNS TABLE(f1 bigint)
     LANGUAGE plpgsql
     AS $$
-declare 
+declare
     sql text;
 begin
-    sql := 'select count(l_entry_id) from feedreader.feedentries where l_xml_id in (' || p1 || ') 
+    sql := 'select count(l_entry_id) from feedreader.feedentries where l_xml_id in (' || p1 || ')
                 and t_pub_date > ' || t0 || ';';
 
     return query execute sql;
@@ -94,10 +96,10 @@ end;
 $$;
 
 
-ALTER FUNCTION feedreader.gettotalentriescountsince(p1 text, t0 bigint) OWNER TO sliechti;
+ALTER FUNCTION feedreader.gettotalentriescountsince(p1 text, t0 bigint) OWNER TO feedrdr;
 
 --
--- Name: updatesourcecount(bigint, bigint, bigint, bigint); Type: FUNCTION; Schema: feedreader; Owner: sliechti
+-- Name: updatesourcecount(bigint, bigint, bigint, bigint); Type: FUNCTION; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE FUNCTION updatesourcecount(xmlid bigint, t0 bigint, t1 bigint, t2 bigint) RETURNS text
@@ -121,10 +123,10 @@ CREATE FUNCTION updatesourcecount(xmlid bigint, t0 bigint, t1 bigint, t2 bigint)
 $$;
 
 
-ALTER FUNCTION feedreader.updatesourcecount(xmlid bigint, t0 bigint, t1 bigint, t2 bigint) OWNER TO sliechti;
+ALTER FUNCTION feedreader.updatesourcecount(xmlid bigint, t0 bigint, t1 bigint, t2 bigint) OWNER TO feedrdr;
 
 --
--- Name: updatestreamunreadcount(bigint, bigint, bigint, bigint); Type: FUNCTION; Schema: feedreader; Owner: sliechti
+-- Name: updatestreamunreadcount(bigint, bigint, bigint, bigint); Type: FUNCTION; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE FUNCTION updatestreamunreadcount(userid bigint, streamid bigint, c bigint, t0 bigint) RETURNS void
@@ -137,14 +139,14 @@ CREATE FUNCTION updatestreamunreadcount(userid bigint, streamid bigint, c bigint
 $$;
 
 
-ALTER FUNCTION feedreader.updatestreamunreadcount(userid bigint, streamid bigint, c bigint, t0 bigint) OWNER TO sliechti;
+ALTER FUNCTION feedreader.updatestreamunreadcount(userid bigint, streamid bigint, c bigint, t0 bigint) OWNER TO feedrdr;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: admins; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: admins; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE admins (
@@ -153,10 +155,10 @@ CREATE TABLE admins (
 );
 
 
-ALTER TABLE feedreader.admins OWNER TO sliechti;
+ALTER TABLE feedreader.admins OWNER TO feedrdr;
 
 --
--- Name: feedentries; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentries; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedentries (
@@ -173,10 +175,10 @@ CREATE TABLE feedentries (
 );
 
 
-ALTER TABLE feedreader.feedentries OWNER TO sliechti;
+ALTER TABLE feedreader.feedentries OWNER TO feedrdr;
 
 --
--- Name: feedentries_l_entry_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: feedentries_l_entry_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE feedentries_l_entry_id_seq
@@ -187,17 +189,17 @@ CREATE SEQUENCE feedentries_l_entry_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.feedentries_l_entry_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.feedentries_l_entry_id_seq OWNER TO feedrdr;
 
 --
--- Name: feedentries_l_entry_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: feedentries_l_entry_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE feedentries_l_entry_id_seq OWNED BY feedentries.l_entry_id;
 
 
 --
--- Name: feedentriesdata; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentriesdata; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedentriesdata (
@@ -207,10 +209,10 @@ CREATE TABLE feedentriesdata (
 );
 
 
-ALTER TABLE feedreader.feedentriesdata OWNER TO sliechti;
+ALTER TABLE feedreader.feedentriesdata OWNER TO feedrdr;
 
 --
--- Name: feedentriesimages; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentriesimages; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedentriesimages (
@@ -222,10 +224,10 @@ CREATE TABLE feedentriesimages (
 );
 
 
-ALTER TABLE feedreader.feedentriesimages OWNER TO sliechti;
+ALTER TABLE feedreader.feedentriesimages OWNER TO feedrdr;
 
 --
--- Name: feedentriesimages_l_image_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: feedentriesimages_l_image_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE feedentriesimages_l_image_id_seq
@@ -236,17 +238,17 @@ CREATE SEQUENCE feedentriesimages_l_image_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.feedentriesimages_l_image_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.feedentriesimages_l_image_id_seq OWNER TO feedrdr;
 
 --
--- Name: feedentriesimages_l_image_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: feedentriesimages_l_image_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE feedentriesimages_l_image_id_seq OWNED BY feedentriesimages.l_image_id;
 
 
 --
--- Name: feedentrieslinks; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentrieslinks; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedentrieslinks (
@@ -257,10 +259,10 @@ CREATE TABLE feedentrieslinks (
 );
 
 
-ALTER TABLE feedreader.feedentrieslinks OWNER TO sliechti;
+ALTER TABLE feedreader.feedentrieslinks OWNER TO feedrdr;
 
 --
--- Name: feedentrieslinks_l_link_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: feedentrieslinks_l_link_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE feedentrieslinks_l_link_id_seq
@@ -271,17 +273,17 @@ CREATE SEQUENCE feedentrieslinks_l_link_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.feedentrieslinks_l_link_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.feedentrieslinks_l_link_id_seq OWNER TO feedrdr;
 
 --
--- Name: feedentrieslinks_l_link_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: feedentrieslinks_l_link_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE feedentrieslinks_l_link_id_seq OWNED BY feedentrieslinks.l_link_id;
 
 
 --
--- Name: feedsourcechanneldata; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsourcechanneldata; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedsourcechanneldata (
@@ -295,10 +297,10 @@ CREATE TABLE feedsourcechanneldata (
 );
 
 
-ALTER TABLE feedreader.feedsourcechanneldata OWNER TO sliechti;
+ALTER TABLE feedreader.feedsourcechanneldata OWNER TO feedrdr;
 
 --
--- Name: feedsourcechannelimage; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsourcechannelimage; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedsourcechannelimage (
@@ -312,10 +314,10 @@ CREATE TABLE feedsourcechannelimage (
 );
 
 
-ALTER TABLE feedreader.feedsourcechannelimage OWNER TO sliechti;
+ALTER TABLE feedreader.feedsourcechannelimage OWNER TO feedrdr;
 
 --
--- Name: feedsourcenodes; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsourcenodes; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedsourcenodes (
@@ -323,10 +325,10 @@ CREATE TABLE feedsourcenodes (
 );
 
 
-ALTER TABLE feedreader.feedsourcenodes OWNER TO sliechti;
+ALTER TABLE feedreader.feedsourcenodes OWNER TO feedrdr;
 
 --
--- Name: feedsources; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsources; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE feedsources (
@@ -349,10 +351,10 @@ CREATE TABLE feedsources (
 );
 
 
-ALTER TABLE feedreader.feedsources OWNER TO sliechti;
+ALTER TABLE feedreader.feedsources OWNER TO feedrdr;
 
 --
--- Name: feedsources_l_xml_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: feedsources_l_xml_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE feedsources_l_xml_id_seq
@@ -363,17 +365,17 @@ CREATE SEQUENCE feedsources_l_xml_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.feedsources_l_xml_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.feedsources_l_xml_id_seq OWNER TO feedrdr;
 
 --
--- Name: feedsources_l_xml_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: feedsources_l_xml_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE feedsources_l_xml_id_seq OWNED BY feedsources.l_xml_id;
 
 
 --
--- Name: httperrors; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: httperrors; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE httperrors (
@@ -384,10 +386,10 @@ CREATE TABLE httperrors (
 );
 
 
-ALTER TABLE feedreader.httperrors OWNER TO sliechti;
+ALTER TABLE feedreader.httperrors OWNER TO feedrdr;
 
 --
--- Name: httperrors_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: httperrors_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE httperrors_id_seq
@@ -398,17 +400,17 @@ CREATE SEQUENCE httperrors_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.httperrors_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.httperrors_id_seq OWNER TO feedrdr;
 
 --
--- Name: httperrors_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: httperrors_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE httperrors_id_seq OWNED BY httperrors.id;
 
 
 --
--- Name: seq_feedsources; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: seq_feedsources; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE seq_feedsources
@@ -419,10 +421,10 @@ CREATE SEQUENCE seq_feedsources
     CACHE 1;
 
 
-ALTER TABLE feedreader.seq_feedsources OWNER TO sliechti;
+ALTER TABLE feedreader.seq_feedsources OWNER TO feedrdr;
 
 --
--- Name: sourcecollections; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: sourcecollections; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE sourcecollections (
@@ -433,10 +435,10 @@ CREATE TABLE sourcecollections (
 );
 
 
-ALTER TABLE feedreader.sourcecollections OWNER TO sliechti;
+ALTER TABLE feedreader.sourcecollections OWNER TO feedrdr;
 
 --
--- Name: sourcecollections_l_collection_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: sourcecollections_l_collection_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE sourcecollections_l_collection_id_seq
@@ -447,17 +449,17 @@ CREATE SEQUENCE sourcecollections_l_collection_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.sourcecollections_l_collection_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.sourcecollections_l_collection_id_seq OWNER TO feedrdr;
 
 --
--- Name: sourcecollections_l_collection_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: sourcecollections_l_collection_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE sourcecollections_l_collection_id_seq OWNED BY sourcecollections.l_collection_id;
 
 
 --
--- Name: sourcecollectionslist; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: sourcecollectionslist; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE sourcecollectionslist (
@@ -468,10 +470,10 @@ CREATE TABLE sourcecollectionslist (
 );
 
 
-ALTER TABLE feedreader.sourcecollectionslist OWNER TO sliechti;
+ALTER TABLE feedreader.sourcecollectionslist OWNER TO feedrdr;
 
 --
--- Name: sourcecollectionslist_l_entry_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: sourcecollectionslist_l_entry_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE sourcecollectionslist_l_entry_id_seq
@@ -482,17 +484,17 @@ CREATE SEQUENCE sourcecollectionslist_l_entry_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.sourcecollectionslist_l_entry_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.sourcecollectionslist_l_entry_id_seq OWNER TO feedrdr;
 
 --
--- Name: sourcecollectionslist_l_entry_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: sourcecollectionslist_l_entry_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE sourcecollectionslist_l_entry_id_seq OWNED BY sourcecollectionslist.l_entry_id;
 
 
 --
--- Name: userauthtokens; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userauthtokens; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userauthtokens (
@@ -502,24 +504,24 @@ CREATE TABLE userauthtokens (
 );
 
 
-ALTER TABLE feedreader.userauthtokens OWNER TO sliechti;
+ALTER TABLE feedreader.userauthtokens OWNER TO feedrdr;
 
 --
--- Name: COLUMN userauthtokens.e_oauth; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN userauthtokens.e_oauth; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN userauthtokens.e_oauth IS '0 = NONE, 1 = Facebook, 2 = Google+. See class OAuthType.';
 
 
 --
--- Name: COLUMN userauthtokens.s_auth_token; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN userauthtokens.s_auth_token; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN userauthtokens.s_auth_token IS 'oAuth Token';
 
 
 --
--- Name: userfeedentriesinfo; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userfeedentriesinfo; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userfeedentriesinfo (
@@ -533,10 +535,10 @@ CREATE TABLE userfeedentriesinfo (
 );
 
 
-ALTER TABLE feedreader.userfeedentriesinfo OWNER TO sliechti;
+ALTER TABLE feedreader.userfeedentriesinfo OWNER TO feedrdr;
 
 --
--- Name: TABLE userfeedentriesinfo; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: TABLE userfeedentriesinfo; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON TABLE userfeedentriesinfo IS '(User specific data for each feed entry.
@@ -545,7 +547,7 @@ e.g to filter out read or hidden articles)';
 
 
 --
--- Name: userfeedsubscriptions; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userfeedsubscriptions; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userfeedsubscriptions (
@@ -559,17 +561,17 @@ CREATE TABLE userfeedsubscriptions (
 );
 
 
-ALTER TABLE feedreader.userfeedsubscriptions OWNER TO sliechti;
+ALTER TABLE feedreader.userfeedsubscriptions OWNER TO feedrdr;
 
 --
--- Name: COLUMN userfeedsubscriptions.t_unread; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN userfeedsubscriptions.t_unread; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN userfeedsubscriptions.t_unread IS 'Last time we fetched the unread count.';
 
 
 --
--- Name: userfeedsubscriptions_l_subs_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: userfeedsubscriptions_l_subs_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE userfeedsubscriptions_l_subs_id_seq
@@ -580,17 +582,17 @@ CREATE SEQUENCE userfeedsubscriptions_l_subs_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.userfeedsubscriptions_l_subs_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.userfeedsubscriptions_l_subs_id_seq OWNER TO feedrdr;
 
 --
--- Name: userfeedsubscriptions_l_subs_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: userfeedsubscriptions_l_subs_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE userfeedsubscriptions_l_subs_id_seq OWNED BY userfeedsubscriptions.l_subs_id;
 
 
 --
--- Name: userkeyvalues; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userkeyvalues; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userkeyvalues (
@@ -602,10 +604,10 @@ CREATE TABLE userkeyvalues (
 );
 
 
-ALTER TABLE feedreader.userkeyvalues OWNER TO sliechti;
+ALTER TABLE feedreader.userkeyvalues OWNER TO feedrdr;
 
 --
--- Name: userkeyvalues_l_key_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: userkeyvalues_l_key_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE userkeyvalues_l_key_id_seq
@@ -616,17 +618,17 @@ CREATE SEQUENCE userkeyvalues_l_key_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.userkeyvalues_l_key_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.userkeyvalues_l_key_id_seq OWNER TO feedrdr;
 
 --
--- Name: userkeyvalues_l_key_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: userkeyvalues_l_key_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE userkeyvalues_l_key_id_seq OWNED BY userkeyvalues.l_key_id;
 
 
 --
--- Name: userprofiles; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userprofiles; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userprofiles (
@@ -638,10 +640,10 @@ CREATE TABLE userprofiles (
 );
 
 
-ALTER TABLE feedreader.userprofiles OWNER TO sliechti;
+ALTER TABLE feedreader.userprofiles OWNER TO feedrdr;
 
 --
--- Name: userprofiles_l_profile_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: userprofiles_l_profile_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE userprofiles_l_profile_id_seq
@@ -652,17 +654,17 @@ CREATE SEQUENCE userprofiles_l_profile_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.userprofiles_l_profile_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.userprofiles_l_profile_id_seq OWNER TO feedrdr;
 
 --
--- Name: userprofiles_l_profile_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: userprofiles_l_profile_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE userprofiles_l_profile_id_seq OWNED BY userprofiles.l_profile_id;
 
 
 --
--- Name: userprofilestreamgroup; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userprofilestreamgroup; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userprofilestreamgroup (
@@ -671,10 +673,10 @@ CREATE TABLE userprofilestreamgroup (
 );
 
 
-ALTER TABLE feedreader.userprofilestreamgroup OWNER TO sliechti;
+ALTER TABLE feedreader.userprofilestreamgroup OWNER TO feedrdr;
 
 --
--- Name: users; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: users; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE users (
@@ -692,30 +694,33 @@ CREATE TABLE users (
     s_forgot_code text DEFAULT ''::text NOT NULL,
     s_reg_error text DEFAULT ''::text NOT NULL,
     e_main_oauth smallint DEFAULT 0 NOT NULL,
+    b_generated BOOLEAN DEFAULT FALSE,
     e_user_type smallint DEFAULT 0 NOT NULL,
     s_cookie text DEFAULT ''::text NOT NULL,
-    b_is_admin boolean DEFAULT false NOT NULL
+    b_is_admin boolean DEFAULT false NOT NULL,
+    b_receive_newsletter BOOLEAN DEFAULT TRUE,
+    b_receive_product_updates BOOLEAN DEFAULT TRUE
 );
 
 
-ALTER TABLE feedreader.users OWNER TO sliechti;
+ALTER TABLE feedreader.users OWNER TO feedrdr;
 
 --
--- Name: COLUMN users.e_main_oauth; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN users.e_main_oauth; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN users.e_main_oauth IS 'Main oAuth Type. 0  if none, standard login. For other values see the OAuthType class.';
 
 
 --
--- Name: COLUMN users.e_user_type; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN users.e_user_type; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN users.e_user_type IS 'See userData.userType enum.';
 
 
 --
--- Name: users_l_user_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: users_l_user_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE users_l_user_id_seq
@@ -726,17 +731,17 @@ CREATE SEQUENCE users_l_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.users_l_user_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.users_l_user_id_seq OWNER TO feedrdr;
 
 --
--- Name: users_l_user_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: users_l_user_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE users_l_user_id_seq OWNED BY users.l_user_id;
 
 
 --
--- Name: usersavedentries; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: usersavedentries; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE usersavedentries (
@@ -748,10 +753,10 @@ CREATE TABLE usersavedentries (
 );
 
 
-ALTER TABLE feedreader.usersavedentries OWNER TO sliechti;
+ALTER TABLE feedreader.usersavedentries OWNER TO feedrdr;
 
 --
--- Name: userstreamgroupfeedsubscription; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroupfeedsubscription; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userstreamgroupfeedsubscription (
@@ -760,10 +765,10 @@ CREATE TABLE userstreamgroupfeedsubscription (
 );
 
 
-ALTER TABLE feedreader.userstreamgroupfeedsubscription OWNER TO sliechti;
+ALTER TABLE feedreader.userstreamgroupfeedsubscription OWNER TO feedrdr;
 
 --
--- Name: userstreamgroups; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroups; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userstreamgroups (
@@ -776,17 +781,17 @@ CREATE TABLE userstreamgroups (
 );
 
 
-ALTER TABLE feedreader.userstreamgroups OWNER TO sliechti;
+ALTER TABLE feedreader.userstreamgroups OWNER TO feedrdr;
 
 --
--- Name: COLUMN userstreamgroups.t_gr_max_time; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN userstreamgroups.t_gr_max_time; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN userstreamgroups.t_gr_max_time IS 'point in time we are at reading articles. no need to go behind this line.';
 
 
 --
--- Name: userstreamgroups_l_stream_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: sliechti
+-- Name: userstreamgroups_l_stream_id_seq; Type: SEQUENCE; Schema: feedreader; Owner: feedrdr
 --
 
 CREATE SEQUENCE userstreamgroups_l_stream_id_seq
@@ -797,17 +802,17 @@ CREATE SEQUENCE userstreamgroups_l_stream_id_seq
     CACHE 1;
 
 
-ALTER TABLE feedreader.userstreamgroups_l_stream_id_seq OWNER TO sliechti;
+ALTER TABLE feedreader.userstreamgroups_l_stream_id_seq OWNER TO feedrdr;
 
 --
--- Name: userstreamgroups_l_stream_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: sliechti
+-- Name: userstreamgroups_l_stream_id_seq; Type: SEQUENCE OWNED BY; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER SEQUENCE userstreamgroups_l_stream_id_seq OWNED BY userstreamgroups.l_stream_id;
 
 
 --
--- Name: userstreamgroupviewoptions; Type: TABLE; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroupviewoptions; Type: TABLE; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE TABLE userstreamgroupviewoptions (
@@ -820,108 +825,108 @@ CREATE TABLE userstreamgroupviewoptions (
 );
 
 
-ALTER TABLE feedreader.userstreamgroupviewoptions OWNER TO sliechti;
+ALTER TABLE feedreader.userstreamgroupviewoptions OWNER TO feedrdr;
 
 --
--- Name: COLUMN userstreamgroupviewoptions.h_sort_by; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN userstreamgroupviewoptions.h_sort_by; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN userstreamgroupviewoptions.h_sort_by IS '0 = publication date, 1 = discovery date.';
 
 
 --
--- Name: COLUMN userstreamgroupviewoptions.h_filter_by; Type: COMMENT; Schema: feedreader; Owner: sliechti
+-- Name: COLUMN userstreamgroupviewoptions.h_filter_by; Type: COMMENT; Schema: feedreader; Owner: feedrdr
 --
 
 COMMENT ON COLUMN userstreamgroupviewoptions.h_filter_by IS '0 = all, 1 = unread only.';
 
 
 --
--- Name: l_entry_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_entry_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedentries ALTER COLUMN l_entry_id SET DEFAULT nextval('feedentries_l_entry_id_seq'::regclass);
 
 
 --
--- Name: l_image_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_image_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedentriesimages ALTER COLUMN l_image_id SET DEFAULT nextval('feedentriesimages_l_image_id_seq'::regclass);
 
 
 --
--- Name: l_link_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_link_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedentrieslinks ALTER COLUMN l_link_id SET DEFAULT nextval('feedentrieslinks_l_link_id_seq'::regclass);
 
 
 --
--- Name: l_xml_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_xml_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedsources ALTER COLUMN l_xml_id SET DEFAULT nextval('feedsources_l_xml_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY httperrors ALTER COLUMN id SET DEFAULT nextval('httperrors_id_seq'::regclass);
 
 
 --
--- Name: l_collection_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_collection_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY sourcecollections ALTER COLUMN l_collection_id SET DEFAULT nextval('sourcecollections_l_collection_id_seq'::regclass);
 
 
 --
--- Name: l_entry_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_entry_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY sourcecollectionslist ALTER COLUMN l_entry_id SET DEFAULT nextval('sourcecollectionslist_l_entry_id_seq'::regclass);
 
 
 --
--- Name: l_subs_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_subs_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userfeedsubscriptions ALTER COLUMN l_subs_id SET DEFAULT nextval('userfeedsubscriptions_l_subs_id_seq'::regclass);
 
 
 --
--- Name: l_key_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_key_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userkeyvalues ALTER COLUMN l_key_id SET DEFAULT nextval('userkeyvalues_l_key_id_seq'::regclass);
 
 
 --
--- Name: l_profile_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_profile_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userprofiles ALTER COLUMN l_profile_id SET DEFAULT nextval('userprofiles_l_profile_id_seq'::regclass);
 
 
 --
--- Name: l_user_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_user_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY users ALTER COLUMN l_user_id SET DEFAULT nextval('users_l_user_id_seq'::regclass);
 
 
 --
--- Name: l_stream_id; Type: DEFAULT; Schema: feedreader; Owner: sliechti
+-- Name: l_stream_id; Type: DEFAULT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userstreamgroups ALTER COLUMN l_stream_id SET DEFAULT nextval('userstreamgroups_l_stream_id_seq'::regclass);
 
 
 --
--- Name: admins_l_user_id_key; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: admins_l_user_id_key; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY admins
@@ -929,7 +934,7 @@ ALTER TABLE ONLY admins
 
 
 --
--- Name: admins_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: admins_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY admins
@@ -937,7 +942,7 @@ ALTER TABLE ONLY admins
 
 
 --
--- Name: feedentries_l_entry_id_key; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentries_l_entry_id_key; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedentries
@@ -945,7 +950,7 @@ ALTER TABLE ONLY feedentries
 
 
 --
--- Name: feedentries_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentries_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedentries
@@ -953,7 +958,7 @@ ALTER TABLE ONLY feedentries
 
 
 --
--- Name: feedentries_s_link_key; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentries_s_link_key; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedentries
@@ -961,7 +966,7 @@ ALTER TABLE ONLY feedentries
 
 
 --
--- Name: feedentriesdata_l_entry_id_key; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentriesdata_l_entry_id_key; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedentriesdata
@@ -969,7 +974,7 @@ ALTER TABLE ONLY feedentriesdata
 
 
 --
--- Name: feedentriesimages_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentriesimages_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedentriesimages
@@ -977,7 +982,7 @@ ALTER TABLE ONLY feedentriesimages
 
 
 --
--- Name: feedentrieslinks_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentrieslinks_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedentrieslinks
@@ -985,7 +990,7 @@ ALTER TABLE ONLY feedentrieslinks
 
 
 --
--- Name: feedsourcechanneldata_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsourcechanneldata_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedsourcechanneldata
@@ -993,7 +998,7 @@ ALTER TABLE ONLY feedsourcechanneldata
 
 
 --
--- Name: feedsourcechannelimage_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsourcechannelimage_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedsourcechannelimage
@@ -1001,7 +1006,7 @@ ALTER TABLE ONLY feedsourcechannelimage
 
 
 --
--- Name: feedsources_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsources_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedsources
@@ -1009,7 +1014,7 @@ ALTER TABLE ONLY feedsources
 
 
 --
--- Name: feedsources_s_xmlurl; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedsources_s_xmlurl; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY feedsources
@@ -1017,7 +1022,7 @@ ALTER TABLE ONLY feedsources
 
 
 --
--- Name: httperrors_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: httperrors_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY httperrors
@@ -1025,7 +1030,7 @@ ALTER TABLE ONLY httperrors
 
 
 --
--- Name: sourcecollections_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: sourcecollections_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY sourcecollections
@@ -1033,7 +1038,7 @@ ALTER TABLE ONLY sourcecollections
 
 
 --
--- Name: sourcecollectionslist_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: sourcecollectionslist_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY sourcecollectionslist
@@ -1041,7 +1046,7 @@ ALTER TABLE ONLY sourcecollectionslist
 
 
 --
--- Name: userfeedsubscriptions_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userfeedsubscriptions_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY userfeedsubscriptions
@@ -1049,7 +1054,7 @@ ALTER TABLE ONLY userfeedsubscriptions
 
 
 --
--- Name: userkeyvalues_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userkeyvalues_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY userkeyvalues
@@ -1057,7 +1062,7 @@ ALTER TABLE ONLY userkeyvalues
 
 
 --
--- Name: userprofiles_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userprofiles_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY userprofiles
@@ -1065,7 +1070,7 @@ ALTER TABLE ONLY userprofiles
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY users
@@ -1073,7 +1078,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: users_s_email_key; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: users_s_email_key; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY users
@@ -1081,7 +1086,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: userstreamgroups_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroups_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY userstreamgroups
@@ -1089,7 +1094,7 @@ ALTER TABLE ONLY userstreamgroups
 
 
 --
--- Name: userstreamgroupviewoptions_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroupviewoptions_pkey; Type: CONSTRAINT; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 ALTER TABLE ONLY userstreamgroupviewoptions
@@ -1097,70 +1102,70 @@ ALTER TABLE ONLY userstreamgroupviewoptions
 
 
 --
--- Name: feedentries_l_xml_id; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentries_l_xml_id; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX feedentries_l_xml_id ON feedentries USING btree (l_xml_id);
 
 
 --
--- Name: feedentries_t_pub_date; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: feedentries_t_pub_date; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX feedentries_t_pub_date ON feedentries USING btree (t_pub_date);
 
 
 --
--- Name: httperrors_s_http_code; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: httperrors_s_http_code; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX httperrors_s_http_code ON httperrors USING btree (s_http_code);
 
 
 --
--- Name: userfeedentriesinfo_l_entry_id; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userfeedentriesinfo_l_entry_id; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX userfeedentriesinfo_l_entry_id ON userfeedentriesinfo USING btree (l_entry_id);
 
 
 --
--- Name: userfeedentriesinfo_l_user_id; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userfeedentriesinfo_l_user_id; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX userfeedentriesinfo_l_user_id ON userfeedentriesinfo USING btree (l_user_id);
 
 
 --
--- Name: userfeedsubscriptions_l_xml_id; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userfeedsubscriptions_l_xml_id; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX userfeedsubscriptions_l_xml_id ON userfeedsubscriptions USING btree (l_xml_id);
 
 
 --
--- Name: users_s_reg_code; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: users_s_reg_code; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX users_s_reg_code ON users USING btree (s_reg_code);
 
 
 --
--- Name: userstreamgroupfeedsubscription_l_stream_id; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroupfeedsubscription_l_stream_id; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX userstreamgroupfeedsubscription_l_stream_id ON userstreamgroupfeedsubscription USING btree (l_stream_id);
 
 
 --
--- Name: userstreamgroupfeedsubscription_l_subs_id; Type: INDEX; Schema: feedreader; Owner: sliechti; Tablespace: 
+-- Name: userstreamgroupfeedsubscription_l_subs_id; Type: INDEX; Schema: feedreader; Owner: feedrdr; Tablespace:
 --
 
 CREATE INDEX userstreamgroupfeedsubscription_l_subs_id ON userstreamgroupfeedsubscription USING btree (l_subs_id);
 
 
 --
--- Name: feedentries_images_l_entry_id; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: feedentries_images_l_entry_id; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedentriesimages
@@ -1168,7 +1173,7 @@ ALTER TABLE ONLY feedentriesimages
 
 
 --
--- Name: feedentries_links_l_entry_id; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: feedentries_links_l_entry_id; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedentrieslinks
@@ -1176,7 +1181,7 @@ ALTER TABLE ONLY feedentrieslinks
 
 
 --
--- Name: feedsource_channeldata_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: feedsource_channeldata_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedsourcechanneldata
@@ -1184,7 +1189,7 @@ ALTER TABLE ONLY feedsourcechanneldata
 
 
 --
--- Name: feedsource_channelimage_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: feedsource_channelimage_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedsourcechannelimage
@@ -1192,7 +1197,7 @@ ALTER TABLE ONLY feedsourcechannelimage
 
 
 --
--- Name: feedsources_feedentries_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: feedsources_feedentries_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY feedentries
@@ -1200,7 +1205,7 @@ ALTER TABLE ONLY feedentries
 
 
 --
--- Name: fkuserauthto821453; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: fkuserauthto821453; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userauthtokens
@@ -1208,7 +1213,7 @@ ALTER TABLE ONLY userauthtokens
 
 
 --
--- Name: fkuserfeeden702485; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: fkuserfeeden702485; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userfeedentriesinfo
@@ -1216,7 +1221,7 @@ ALTER TABLE ONLY userfeedentriesinfo
 
 
 --
--- Name: groups_groupsubs_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: groups_groupsubs_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userstreamgroupfeedsubscription
@@ -1224,7 +1229,7 @@ ALTER TABLE ONLY userstreamgroupfeedsubscription
 
 
 --
--- Name: profile_streamgroups_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: profile_streamgroups_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userprofilestreamgroup
@@ -1232,7 +1237,7 @@ ALTER TABLE ONLY userprofilestreamgroup
 
 
 --
--- Name: profiles_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: profiles_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userprofiles
@@ -1240,7 +1245,7 @@ ALTER TABLE ONLY userprofiles
 
 
 --
--- Name: saved_entries_profile_id_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: saved_entries_profile_id_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY usersavedentries
@@ -1248,7 +1253,7 @@ ALTER TABLE ONLY usersavedentries
 
 
 --
--- Name: saved_entries_user_id_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: saved_entries_user_id_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY usersavedentries
@@ -1256,7 +1261,7 @@ ALTER TABLE ONLY usersavedentries
 
 
 --
--- Name: stream_profiles_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: stream_profiles_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userprofilestreamgroup
@@ -1264,7 +1269,7 @@ ALTER TABLE ONLY userprofilestreamgroup
 
 
 --
--- Name: streamgroup_userfeed_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: streamgroup_userfeed_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userstreamgroupfeedsubscription
@@ -1272,7 +1277,7 @@ ALTER TABLE ONLY userstreamgroupfeedsubscription
 
 
 --
--- Name: subscription_feedsources_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: subscription_feedsources_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userfeedsubscriptions
@@ -1280,7 +1285,7 @@ ALTER TABLE ONLY userfeedsubscriptions
 
 
 --
--- Name: subscriptions_users_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: subscriptions_users_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userfeedsubscriptions
@@ -1288,7 +1293,7 @@ ALTER TABLE ONLY userfeedsubscriptions
 
 
 --
--- Name: user_streamgroup_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: user_streamgroup_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userstreamgroups
@@ -1296,7 +1301,7 @@ ALTER TABLE ONLY userstreamgroups
 
 
 --
--- Name: userfeedentriesinfo_profile_id_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: userfeedentriesinfo_profile_id_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userfeedentriesinfo
@@ -1304,7 +1309,7 @@ ALTER TABLE ONLY userfeedentriesinfo
 
 
 --
--- Name: userprofiles_userkeyvalues_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: userprofiles_userkeyvalues_fkey; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY userkeyvalues
@@ -1312,7 +1317,7 @@ ALTER TABLE ONLY userkeyvalues
 
 
 --
--- Name: users_admins; Type: FK CONSTRAINT; Schema: feedreader; Owner: sliechti
+-- Name: users_admins; Type: FK CONSTRAINT; Schema: feedreader; Owner: feedrdr
 --
 
 ALTER TABLE ONLY admins
@@ -1326,7 +1331,7 @@ ALTER TABLE ONLY admins
 REVOKE ALL ON SCHEMA feedreader FROM PUBLIC;
 REVOKE ALL ON SCHEMA feedreader FROM postgres;
 GRANT ALL ON SCHEMA feedreader TO postgres;
-GRANT ALL ON SCHEMA feedreader TO sliechti;
+GRANT ALL ON SCHEMA feedreader TO feedrdr;
 
 
 --

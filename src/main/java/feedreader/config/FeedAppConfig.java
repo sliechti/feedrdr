@@ -91,8 +91,6 @@ public class FeedAppConfig {
     public static long DELAY_VALIDATE_IN_S = 3;
     public static int FETCH_SEND_STATUS_EVERY_MINUTES = 60 * 4; // 4 times a
                                                                 // day.
-    public static boolean FETCH_RUN_START_FETCHING = true;
-    public static boolean FETCH_RUN_START_VALIDATION = true;
 
     public static boolean DEBUG_EMAIL = false;
     public static final int USER_0_VAL = 0;
@@ -110,7 +108,7 @@ public class FeedAppConfig {
                                                                 // loop over all
                                                                 // feedsources.
 
-    public static String debugFields() throws Exception {
+    public static String printAllFields() throws Exception {
         List<Field> fields = FieldUtils.getAllFieldsList(FeedAppConfig.class);
         StringBuilder sb = new StringBuilder();
         for (Field f : fields) {

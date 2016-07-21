@@ -153,6 +153,7 @@ public class CronFetchNews implements Runnable {
     /*
      * Fetch Instance
      */
+    // TODO SLU: Very wrong.
     public static CronFetchNews fetchInstance(boolean validate) {
         if (validate) {
             if (validationInstance == null) {

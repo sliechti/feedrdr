@@ -40,7 +40,7 @@
  * The following are inside Tomcat's lib folder, should be added automatically once the Server is added and configured as Targeted Runtimes under Project / Properties
     * _org.apache.tomcat.util.http.fileupload.*_ is in _tomcat-coyote.jar_
     * _javax.servlet.jsp.*_ is in jsp-api.jar
-    
+
 ### Configuring Tomcat/PostgreSQL
 
   * If you plan to run tomcat from Eclipse, there is no need to configure the server
@@ -49,7 +49,7 @@
   * [Configuring PostgreSQL/Tomcat8 on CentOS](https://docs.google.com/document/d/1t6bs5ScYc0_eTcr8a6GIq6dT5Rn2rrhSSf-ZSGgGnGo)
     * A series of notes on doing both - not a very clear guide
   * The create DB schema and tables is under _etc/db/schema.prod.sql_
-        
+
 ### Eclipse: Deploying the web app
 
   * Go to you servers view, Windows / Show View / Others / Server
@@ -64,17 +64,14 @@
 
 ### Running for the first time
 
-**Before starting Tomcat check the following classes/files and make the necessary changes**
+**Before starting Tomcat check the following and make the necessary changes for your environment**
 
-  * feedreader.config.FeedAppConfig
-    * FETCH_RUN_START_FETCHING
-      * If true, it starts the background thread that fetches feed sources
-    * FETCH_RUN_START_VALIDATION
-      * If true, it starts the background thread that validates the fetched sources
-  * Check all files under WEB-INF/ *.properties
-  * see web.xml, feedreader.main.AppContextInit
-    * The class is responsible for starting background threads
-    * Setting up the environment
+  * Go to etc/deploy/local, and review the *.properties files.
+  * Check web.xml under WEB-INF/web.xml
+
+When Tomcat starts, it calls a listener class: `feedreader.main.AppContextInit`
+
+  * This class is responsible for starting background threads and setting up the environment.
 
 ### Troubleshooting Eclipse Deployment
 
@@ -94,7 +91,7 @@
      * Make sure the JRE and JDK match or
      * Make sure to not use any special JDK optimizations
      * Make sure the Eclipse .war export didn't have any specific JRE optimizations
-     
+
 ### Contributing
 
 If you wish to contribute, checkout the [/docs](https://github.com/sliechti/feedrdr/tree/master/docs) directory or
