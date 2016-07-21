@@ -8,6 +8,16 @@
 <meta name="keywords" content="rss,atom,news reader,feed reader" />
 <meta name="google-site-verification" content="w2qoFGms5i-1odj9Jj2G3CTCtMokK79Oi93mwglzNkk" />
 <meta name="msvalidate.01" content="13BFF01091BF323BC721335417DC72C4" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="feedrdr.co">
+<meta name="application-name" content="feedrdr.co">
+<link rel="apple-touch-startup-image" href="startup.png">
+<link rel="apple-touch-icon" href="img/app-196x196.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="128x128" href="img/app-128x128.png">
+<link rel="shortcut icon" sizes="196x196" href="img/app-196x196.png">
+<link rel="shortcut icon" sizes="128x128" href="img/app-128x128.png">
 <link rel="shortcut icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
 <link rel="icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
