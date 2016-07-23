@@ -210,7 +210,7 @@
     <ul>
     {{#each groups}}
          <li id="e_{{l_stream_id}}">{{@key}}
-			<a href="#/f/{{l_stream_id}}" onclick="$('#leftbar').hide();">
+			<a href="#/f/{{l_stream_id}}" onclick="closeLeftBar()">
 				{{cut s_stream_name 17}}
 			</a>
         	 <label id="e_c_{{l_stream_id}}">{{showGroupCount this}}</label>

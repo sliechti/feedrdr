@@ -1,3 +1,37 @@
+.reader-footer-fixed {
+	position: fixed;
+	left: 0px;
+	width: 100%;
+	bottom: 0px;
+	background-color: white;
+	z-index: 999;
+	padding: 10px;
+	border-top: 1px solid #CACACA;
+}
+
+#reader-footer {
+	font-size: 18px;
+	height: 30px;
+	text-align: center;
+	background-color: white;
+}
+
+#reader-footer * {
+	padding: 0px 10px;
+}
+
+
+.left-icons-container {
+	border-bottom: 1px solid #CACACA;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.left-icons-container * {
+	padding: 5px;
+	font-size: 1.1em;
+}
+
 #leftbar {
 	position: fixed;
 	z-index: 999;
@@ -272,10 +306,11 @@ body {
 .news_card {
 	border: 1px solid #CACACA;
 	border-radius: 2px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .news_mag {
-	padding: 10px;
 	min-width: 300px;
 }
 
@@ -302,8 +337,6 @@ body {
 }
 
 .news_stream {
-	padding: 10px;
-	margin-bottom: 10px;
 	min-width: 300px;
 	clear: both;
 }

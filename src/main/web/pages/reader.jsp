@@ -37,9 +37,9 @@
        	</a>
     </div>
     <div>
-        <a href="#/v/a" id="mAll" style="display: block">All</a>
-        <a href="#/v/s" id="mSaved" style="display: block">Saved</a>
-        <a href="#/v/r" id="mRr" style="display: block">Recently read</a>
+        <a href="#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
+        <a href="#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>
+        <a href="#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
         <% if (user.isAdmin()) { %>
         	<a class="admin" href="<%= FeedAppConfig.BASE_APP_URL %>/beta/api.jsp" style="display: block">API</a>
         	<a class="admin" href="<%= FeedAppConfig.BASE_APP_URL %>/jobs/run_fetch.jsp" style="display: block">Fetch</a>
@@ -48,18 +48,25 @@
     </div>
     <br>
     <div>
-    	<a href="<%= PageUtils.getPath("/pages/import.jsp") %>" style="display: block">Import</a>
-    	<a href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>" style="display: block">Subscriptions</a>
+    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/import.jsp") %>" style="display: block">Import</a>
+    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>" style="display: block">Subscriptions</a>
     </div>
     <br>
-    <div>
-        <a title="show all" href="" onclick="showOnlyWithUnread(false); return false;"><span class="glyphicon glyphicon-eye-open"></span></a> |
-        <a title="show only unread" href="" onclick="showOnlyWithUnread(true); return false;"><span class="glyphicon glyphicon-eye-close"></span></a><br>
-        <a title="sort A-Z" href="" onclick="sortByAlphabet(2);return false;"><span class="glyphicon glyphicon-sort-by-alphabet"></span></a> |
-        <a title="sort Z-A" href="" onclick="sortByAlphabet(1);return false;"><span class="glyphicon glyphicon-sort-by-alphabet-alt"></span></a> |
-        <a title="sort by unread 9-0" href="" onclick="sortByUnread(1);return false;"><span class=" glyphicon glyphicon-sort-by-attributes-alt"></span></a> |
-        <a title="sort by unread 0-9" href="" onclick="sortByUnread(2);return false;"><span class="glyphicon glyphicon-sort-by-attributes"></span></a>
-        <a title="refresh" href="" onclick="refreshUnread(2);return false;"><span class="glyphicon glyphicon-refresh"></span></a>
+    <div class="left-icons-container">
+        <a title="show all" href="" onclick="showOnlyWithUnread(false); return false;">
+        <span class="glyphicon glyphicon-eye-open"></span></a>
+        <a title="show only unread" href="" onclick="showOnlyWithUnread(true); return false;">
+        <span class="glyphicon glyphicon-eye-close"></span></a>
+        <a title="sort A-Z" href="" onclick="sortByAlphabet(2);return false;">
+        <span class="glyphicon glyphicon-sort-by-alphabet"></span></a>
+        <a title="sort Z-A" href="" onclick="sortByAlphabet(1);return false;">
+        <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span></a>
+        <a title="sort by unread 9-0" href="" onclick="sortByUnread(1);return false;">
+        <span class=" glyphicon glyphicon-sort-by-attributes-alt"></span></a>
+        <a title="sort by unread 0-9" href="" onclick="sortByUnread(2);return false;">
+        <span class="glyphicon glyphicon-sort-by-attributes"></span></a>
+        <a title="refresh" href="" onclick="refreshUnread(2);return false;">
+        <span class="glyphicon glyphicon-refresh"></span></a>
     </div>
 
     <div>
@@ -128,15 +135,15 @@
 
 </div>
 
-<div style="position: fixed; left: 0px; width: 100%; bottom: 0px">
-    <div id="loader" class="profileColor" style="height: 1px; "></div>
-    <div class="container">
-        <div class="row" style="font-size: 18px; height: 30px; text-align: center; background-color: white" >
+<div class="reader-footer-fixed">
+    <div id="loader" class="profileColor"></div>
+    <div class="container-fluid">
+        <div class="row" id="reader-footer" >
             <div>
-                <label id="footer_unread"></label> |
-                <a href="" class="reload_stream" onclick="reloadStream(); return false;">reload stream</a> |
-                <a href="" class="mark_all_read" onclick="markAllRead(); return false;">mark all read</a> |
-                <a href="" onclick="window.scrollTo(0,0);return false;">top <span class="glyphicon glyphicon-chevron-up"></span></a>
+                <label id="footer_unread"></label>
+                <a href="" class="reload_stream" onclick="reloadStream(); return false;">Reload</a>
+                <a href="" class="mark_all_read" onclick="markAllRead(); return false;">Mark all read</a>
+                <a href="" onclick="window.scrollTo(0,0);return false;">Top</a>
             </div>
         </div>
     </div>

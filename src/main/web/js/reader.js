@@ -1221,3 +1221,7 @@ function reloadSelected() {
 function renderContentStart() {
 	$("#stream_entries").html($("#content_start_all").html());
 }
+
+function closeLeftBar() {
+	$('#leftbar').hide();
+}
