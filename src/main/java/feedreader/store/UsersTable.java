@@ -272,7 +272,7 @@ public class UsersTable {
     public static int update(UserData data) {
         try {
             String query = String.format(
-                    "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b' WHERE %s = %d",
+                    "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b', %s = '%b' WHERE %s = %d",
                     TABLE,
                     DBFields.STR_SCREEN_NAME, SQLUtils.asSafeString(data.getScreenName()), DBFields.STR_PASSWORD,
                     SQLUtils.asSafeString(data.getPwd()), DBFields.STR_EMAIL,
@@ -281,10 +281,11 @@ public class UsersTable {
                     data.isSubscribedForNewsletter(),
                     DBFields.BOOL_RECEIVE_PRODUCT_UPDATES,
                     data.isSubscribedToUpdates(),
+                    DBFields.BOOL_GENERATED,
+                    data.isGenerated(),
                     DBFields.LONG_USER_ID,
                     data.getUserId());
-            log.info("{}", query);
-
+            log.info("update user: {}", data);
             return stmt.executeUpdate(query);
         } catch (Exception e) {
             log.error("update {}, error {}", data, e);

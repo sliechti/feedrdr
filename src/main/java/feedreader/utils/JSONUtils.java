@@ -43,9 +43,12 @@ public class JSONUtils {
     }
 
     public static String error(int code, String msg) {
-        return "{\"error\" : \"" + escapeQuotes(msg) + "\", \"code\" : 0}";
+        return "{\"error\" : \"" + escapeQuotes(msg) + "\", \"code\" : " + code + "}";
     }
 
+    /**
+     * @param e unused
+     */
     public static String error(int code, String msg, Exception e) {
         return "{\"error\" : \"" + escapeQuotes(msg) + "\", \"code\" : " + code + "}";
     }

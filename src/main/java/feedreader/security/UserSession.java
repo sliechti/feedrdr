@@ -22,6 +22,14 @@ public class UserSession {
 
     public static final Class<?> clz = UserSession.class;
 
+    public static UserData getCurrentUser(HttpServletRequest req) {
+        long userId = getUserId(req);
+        if (userId <= 0) {
+            return UserData.NULL;
+        }
+        return UsersTable.get(userId);
+    }
+
     public static int authenticate(HttpServletRequest req, HttpServletResponse response) {
 
         String email = Parameter.asString(req, Constants.INPUT_EMAIL_NAME, "");

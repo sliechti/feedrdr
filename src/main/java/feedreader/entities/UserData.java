@@ -124,6 +124,7 @@ public class UserData {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+        this.generated = false;
     }
 
     public void setScreenName(String screenName) {
