@@ -68,7 +68,7 @@ public class UsersTable {
                 generated = true;
             }
 
-            String code = getRegistrationCode(email, password);
+            String code = getRegistrationCode();
             String query = String.format(
                     "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s) "
                             + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s', %s)",
@@ -259,7 +259,7 @@ public class UsersTable {
 
     public static void unverify(UserData data) {
         try {
-            String code = getRegistrationCode(data.getEmail(), data.getPwd());
+            String code = getRegistrationCode();
             String query = String.format("UPDATE %s SET %s = %b,  %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_VERIFIED, false, DBFields.BOOL_REG_SENT, false, DBFields.STR_REG_CODE,
                     SQLUtils.asSafeString(code), DBFields.LONG_USER_ID, data.getUserId());
@@ -304,17 +304,8 @@ public class UsersTable {
         }
     }
 
-    static String getRegistrationCode(String email, String password) {
-        String fallbackCode = "0xD34DB33F" + Long.toString(CurrentTime.inGMT());
-        byte[] code = fallbackCode.getBytes();
-
-        try {
-            code = SimpleEncryption.encrypt(ENCKEY, true, email + password);
-        } catch (Exception e) {
-            log.error("error generating code {}", e);
-        }
-
-        return new String(code);
+    static String getRegistrationCode() {
+        return RandomStringUtils.random(20, true, true);
     }
 
     private static UserData fromStringField(String fieldName, String fieldVal) {
