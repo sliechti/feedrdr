@@ -29,14 +29,11 @@ public class FeedAppConfig {
     public static String APP_DOMAIN = "http://feedrdr.co";
     public static String APP_VERSION = "v1.1";
     /** set by {@link FeedAppConfig} */
-    public static String APP_ENV = "DEV";
     public static String APP_NAME_URL = "feedrdr.co";
-    public static final String DEV_PC = "tux";
     public static String BASE_APP_URL = "/feedreader";
     public static String BASE_APP_URL_EMAIL = "http://feedrdr.co";
     public static String BASE_API_URL = BASE_APP_URL + "/api";
     public static String BASE_ADMIN_URL = "/venus";
-
     public static String DOWNLOAD_XML_PATH = "";
 
     // Move to context config. AUtoConfig for PROD and DEV.

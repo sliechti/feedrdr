@@ -6,7 +6,6 @@
 <%@page import="feedreader.log.Logger"%>
 <%@page import="feedreader.store.RetCodes"%>
 <%@page import="feedreader.store.FeedSourcesTable"%>
-<%@page import="feedreader.config.Environment"%>
 <%@page import="java.io.ByteArrayInputStream"%>
 <%@page import="feedreader.opml.OPMLParser"%>
 <%@page import="java.io.InputStream"%>
@@ -34,7 +33,7 @@
     {
         FormUploadHelper helper = new FormUploadHelper(request);
         OPMLFeedSourcesCallback handler = new OPMLFeedSourcesCallback();
-        
+
         try
         {
             OPMLParser parser = new OPMLParser(handler);
@@ -47,7 +46,7 @@
         {
             HtmlStackTrace.printRed(out, e.getStackTrace(), 10, "<br>");
         }
-        // TODO: Report error. 
+        // TODO: Report error.
         catch (SAXException e)
         {
             Logger.error(this.getClass()).log("error importing OPML file: ").log(e.getException()).end();

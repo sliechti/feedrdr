@@ -14,7 +14,6 @@
 <%@page import="feedreader.store.XmlAttrTable"%>
 <%@page import="feedreader.store.FeedSourcesTable"%>
 <%@page import="java.util.Date"%>
-<%@page import="feedreader.config.Environment"%>
 <%@page import="feedreader.store.FeedSourceChannelImageTable"%>
 <%@page import="feedreader.store.FeedSourceChannelDataTable"%>
 <%@page import="feedreader.entities.XmlChannelImage"%>
@@ -36,7 +35,7 @@
 	if (userId == 0) {
 	    PageUtils.gotoStart(response);
 	}
-	
+
 	UserData user = UsersTable.get(userId);
 	if (!user.isAdmin()) {
 	    PageUtils.gotoStart(response);
@@ -49,7 +48,7 @@
 </head>
 
 <script type="text/javascript">
-    function reset() 
+    function reset()
     {
         document.getElementById("xmlid").value = "";
         document.getElementById("url").value = "";
@@ -72,7 +71,7 @@
     <a href="" onclick="reset(); return false;">reset</a>
 </form>
 
-<% 
+<%
 if (!Parameter.asBoolean(request, "run", false)) {
     return;
 }
@@ -90,15 +89,15 @@ String baseUrl = request.getContextPath();
 
     FetchHandler handler = new FetchHandler();
     handler.setForceDelete(delete);
-    
+
     if (FeedAppConfig.XML_SAVE) {
-        
+
         Fetch.setDownloadPath(AppContextInit.getDownloadXmlPath());
     }
-    
+
     int code = 0;
-    
-    if (validationrun) {   
+
+    if (validationrun) {
         code = Fetch.validationRun(handler);
     } else if (xmlId > 0) {
         out.append("fetchig with id ").append(""+xmlId).append("<br>");
@@ -109,7 +108,7 @@ String baseUrl = request.getContextPath();
     } else {
         code = Fetch.run(handler);
     }
-    
+
     if (url.isEmpty() && handler.getSourceEntry() != null)
     {
         url = handler.getSourceEntry().getXmlUrl();
@@ -123,9 +122,9 @@ String baseUrl = request.getContextPath();
         out.write("<a href=\"" + request.getRequestURI() + "?url=" + url + "&force=true\">force</a> |");
         out.write("<br><br>");
     }
-    
+
     FeedSourceEntry entry = handler.getSourceEntry();
-    
+
     switch(code)
     {
         case Fetch.RetCode.NO_SOURCES_FOUND:
@@ -146,7 +145,7 @@ String baseUrl = request.getContextPath();
         case Fetch.RetCode.VALID:
             FeedSourcesTable.setValid(entry.getId());
             out.write("<b>valid source</b><br>");
-            
+
         case Fetch.RetCode.FINISHED:
         {
             XmlFeedParser parser = handler.getParser();
@@ -154,14 +153,14 @@ String baseUrl = request.getContextPath();
             if (FeedAppConfig.XML_GATHER_INFO) {
                 XmlAttrTable.save(entry.getXmlUrl(), parser.nodeList);
             }
-            
+
             out.write("url processed : " + entry.getId() + "/" + entry.getXmlUrl() + "<br>");
             out.write("added   at    : " + new Date(entry.getAddedAt()) + "<br>");
             out.write("checked at    : " + new Date(entry.getCheckedAt()) + "<br>");
             out.write("<br>");
-            
+
             out.write("<a target=\"_blank\" href="+ baseUrl +"/pages/reader.jsp#/s/" + entry.getId() + ">view in reader</a><br>");
-                    
+
             XmlChannelData channelData = parser.getChannelData();
             XmlChannelImage channelImg = parser.getChannelImage();
 
@@ -170,7 +169,7 @@ String baseUrl = request.getContextPath();
 
             FeedSourceChannelDataTable.save(entry.getId(), channelData, true);
             FeedSourceChannelImageTable.save(entry.getId(), channelImg, true);
-            
+
             if (handler.getSavedCount() > 0)
             {
                 // TODO: Update
@@ -182,7 +181,7 @@ String baseUrl = request.getContextPath();
 //                        out.write("Error saving image data. <br>");
 //                    }
             }
-            
+
             out.write("Saved         : " + handler.getSavedCount() + "<br>");
             out.write("Not changed   : " + handler.getNotChanged() + "<br>");
             out.write("Entries found : " + handler.getFound() + "<br>");

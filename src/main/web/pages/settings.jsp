@@ -16,11 +16,11 @@
 
 <%!
 	// All code should be moved to a /settings servlet.
-	private static class SeetingsJsp {
+	private static class SettingsJsp {
     }
 
     static final String SAVED_RELOAD = "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
-    static final Logger logger = LoggerFactory.getLogger(SeetingsJsp.class);
+    static final Logger logger = LoggerFactory.getLogger(SettingsJsp.class);
 
     public String checkedIfTrue(boolean b) {
         return (b) ? "checked" : "";

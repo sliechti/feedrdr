@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.config.OAuthConfig;
+import feedreader.utils.ApplicationConfig;
 
 public class WelcomeServlet extends HttpServlet {
 
@@ -17,11 +17,11 @@ public class WelcomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("baseUrl", req.getContextPath());
         req.setAttribute("minifiedStr", "");
-        req.setAttribute("oauthFacebooKey", OAuthConfig.getFbKey());
+        req.setAttribute("oauthFacebooKey", OAuthConfig.FB_KEY);
         req.setAttribute("oauthGoogleKey", OAuthConfig.GOOGLE_KEY);
         req.setAttribute("oauthWindowsKey", OAuthConfig.LIVE_KEY);
         req.setAttribute("appName", FeedAppConfig.APP_NAME);
-        if (Environment.isDev()) {
+        if (ApplicationConfig.instance().isLocal()) {
             req.setAttribute("oauthDebug", "&debug=true");
         }
         getServletContext().getRequestDispatcher("/welcome.jsp").forward(req, resp);
@@ -31,6 +31,5 @@ public class WelcomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
     }
-
 
 }

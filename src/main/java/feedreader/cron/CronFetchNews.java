@@ -7,7 +7,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.FeedSourceEntry;
 import feedreader.entities.XmlChannelData;
@@ -141,8 +140,7 @@ public class CronFetchNews implements Runnable {
 
     private boolean sendMail(String subject, String text) {
         try {
-            mail.send(fetcherEmail, fetcherEmail, fetcherToEmail, fetcherToEmail, Environment.name() + "-" + subject,
-                    text);
+            mail.send(fetcherEmail, fetcherEmail, fetcherToEmail, fetcherToEmail, subject, text);
             return true;
         } catch (Exception e) {
             logger.error("sending email due to fetch error: {}", e, e.getMessage());

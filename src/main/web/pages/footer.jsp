@@ -1,4 +1,3 @@
-<%@page import="feedreader.config.Environment"%>
 <%@page import="feedreader.entities.ProfileData"%>
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.oauth.OAuthType"%>

@@ -25,6 +25,20 @@
 <script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
 <script src="${baseUrl}/js/hello${minifiedStr}.js" type="text/javascript"></script>
 <script src="${baseUrl}/js/hello.init${minifiedStr}.js" type="text/javascript"></script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '504829576373713');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 </head>
 <body class="margin0">
 
@@ -118,9 +132,8 @@
 		console.log("on session ");
 		console.log(data);
 	}, function(data) {
-		var ext = '${debugOauth}';
-		location.href = 'login/oauth.jsp?network=' + data.network + "&token="
-				+ data.authResponse.access_token + ext;
+		var ext = '${oauthDebug}';
+		location.href = 'login/oauth.jsp?network=' + data.network + "&token=" + data.authResponse.access_token + ext;
 	}, function(data) {
 	});
 </script>

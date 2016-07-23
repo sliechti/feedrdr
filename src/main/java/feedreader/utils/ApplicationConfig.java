@@ -59,6 +59,10 @@ public class ApplicationConfig {
         return config.getString(key, def);
     }
 
+    public boolean isLocal() {
+        return config.getString("environment", "").equals("local");
+    }
+
     public static ApplicationConfig instance() {
         if (instance == null) {
             instance = new ApplicationConfig();

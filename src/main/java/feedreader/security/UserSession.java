@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import feedreader.config.Constants;
-import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.ProfileData;
 import feedreader.entities.UserData;
@@ -162,10 +161,6 @@ public class UserSession {
         Session.set(session, Constants.SESSION_SELECTED_PROFILE_ID, profile.getProfileId());
         Session.set(session, Constants.SESSION_SELECTED_PROFILE_NAME, profile.getName());
         Session.set(session, Constants.SESSION_SELECTED_PROFILE_COLOR, profile.getColor());
-
-        if (Environment.isDev()) {
-            Logger.debug(UserSession.class).log("initUserSession ").log(userData).end();
-        }
 
         return true;
     }

@@ -2,13 +2,8 @@ package feedreader.main;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.net.UnknownHostException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -20,8 +15,6 @@ import org.apache.catalina.util.ServerInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import feedreader.config.Constants;
-import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.config.OAuthConfig;
 import feedreader.cron.CronFetchNews;
@@ -52,7 +45,6 @@ public class AppContextInit implements ServletContextListener {
     private static ServletContextEvent servletContext;
 
     private ApplicationConfig appConfig;
-    private Set<String> prodServers = new HashSet<>(Arrays.asList("vultr.guest"));
     private ScheduledExecutorService sc;
 
     @Override
@@ -74,18 +66,12 @@ public class AppContextInit implements ServletContextListener {
     public void contextInitialized(ServletContextEvent context) {
         servletContext = context;
         logger.info(" ***** initialiazing. ***** ");
+        appConfig = ApplicationConfig.instance();
 
-        if (isDevPc()) {
-            FeedAppConfig.APP_ENV = Constants.ENV_DEV_NAME;
-        } else {
-            FeedAppConfig.APP_ENV = Constants.ENV_PROD_NAME;
-        }
-
-        logger.info("setting environment to: {}", FeedAppConfig.APP_ENV);
-        logger.info("server info: {}, built: {}, number: {}", ServerInfo.getServerInfo(),
+        logger.info("is local environment : {}", appConfig.isLocal());
+        logger.info("server info          : {}, built: {}, number: {}", ServerInfo.getServerInfo(),
                 ServerInfo.getServerBuilt(), ServerInfo.getServerNumber());
         printClassPath();
-        appConfig = ApplicationConfig.instance();
 
         setupLogger();
         setupOAuth();
@@ -104,16 +90,6 @@ public class AppContextInit implements ServletContextListener {
         logger.info("Param BaseURL for Emails  : [{}]", baseUrlEmail);
         logger.info("Param BaseAdminURL        : [{}]", baseAdminUrl);
 
-        if (Environment.isProd()) {
-            try {
-                feedreader.log.Logger.get().setErrorLevel();
-            } catch (IOException ex) {
-                logger.error("error setting old Logger error level: {}", ex, ex.getMessage());
-            }
-        } else {
-            FeedAppConfig.APP_NAME = Environment.name() + "-" + FeedAppConfig.APP_NAME;
-        }
-
         FeedAppConfig.DOWNLOAD_XML_PATH = downloadXmlPath;
         FeedAppConfig.DELAY_FETCH_IN_S = delayFetch;
         FeedAppConfig.BASE_APP_URL = baseUrl;
@@ -129,18 +105,6 @@ public class AppContextInit implements ServletContextListener {
         } catch (Exception e) {
             logger.error("failed to read feed app config values: {}", e, e.getMessage());
         }
-    }
-
-    private boolean isDevPc() {
-        String hostName;
-        try {
-            hostName = InetAddress.getLocalHost().getHostName();
-        } catch (UnknownHostException ex) {
-            hostName = "unknown " + ex.getMessage();
-        }
-
-        logger.info("running on host: {}", hostName);
-        return !prodServers.contains(hostName);
     }
 
     private void printClassPath() {
@@ -163,17 +127,14 @@ public class AppContextInit implements ServletContextListener {
         String logFileProp = appConfig.getString(LOG_FILE_PROP_KEY);
         try {
             feedreader.log.Logger.get().setLevel(feedreader.log.Logger.LogLevels.fromVal(logLevel));
-            if (!Environment.isDev()) {
-                feedreader.log.Logger.get().setWriter(new FileWriter(logFileProp, true));
-            }
+            feedreader.log.Logger.get().setWriter(new FileWriter(logFileProp, true));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("failed to set legacy logger: {}", e, e.getMessage());
         }
     }
 
     private void setupOAuth() {
-        OAuthConfig.FB_DEV_KEY = appConfig.getString("fb.dev", "see.oauth.properties");
-        OAuthConfig.FB_PROD_KEY = appConfig.getString("fb.prod", "see.oauth.properties");
+        OAuthConfig.FB_KEY = appConfig.getString("facebook", "see.oauth.properties");
         OAuthConfig.GOOGLE_KEY = appConfig.getString("google", "see.oauth.properties");
         OAuthConfig.LIVE_KEY = appConfig.getString("ms.live", "see.oauth.properties");
     }

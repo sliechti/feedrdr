@@ -9,7 +9,6 @@
 <%@page import="org.xml.sax.SAXException"%>
 <%@page import="feedreader.utils.HtmlStackTrace"%>
 <%@page import="javax.xml.parsers.ParserConfigurationException"%>
-<%@page import="feedreader.config.Environment"%>
 <%@page import="feedreader.opml.OPMLParser"%>
 <%@page import="feedreader.opml.UserOPMLImportHandler"%>
 <%@page import="java.io.ByteArrayInputStream"%>

@@ -1,7 +1,6 @@
 <%@page import="feedreader.config.OAuthConfig"%>
 <%@page import="feedreader.oauth.FacebookOAuthProvider"%>
 <%@page import="feedreader.config.FeedAppConfig"%>
-<%@page import="feedreader.config.Environment"%>
 <%@page import="feedreader.utils.PageUtils"%>
 <%@page import="feedreader.security.UserSession"%>
 <%@page import="java.security.AuthProvider"%>
@@ -21,11 +20,11 @@
 <% if (debug) {%>
 <script src="<%= PageUtils.getPath("/js/hello.min.js")%>" type="text/javascript"></script>
 <script type="text/javascript">
-    var fbAppId = '<%= OAuthConfig.getFbKey() %>';
+    var fbAppId = '<%= OAuthConfig.FB_KEY %>';
 
     console.log(fbAppId);
     hello.init({google: '<%= OAuthConfig.GOOGLE_KEY %>',
-        facebook: '<%= OAuthConfig.getFbKey() %>',
+        facebook: '<%= OAuthConfig.FB_KEY %>',
         windows: '<%= OAuthConfig.LIVE_KEY %>>'});
 
     hello.on('auth', function (data)

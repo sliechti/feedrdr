@@ -1,11 +1,11 @@
 
+<%@page import="feedreader.utils.ApplicationConfig"%>
 <%@page import="feedreader.config.OAuthConfig"%>
 <%@page import="feedreader.oauth.OAuthType"%>
 <%@page import="feedreader.store.UsersTable"%>
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.entities.ProfileData"%>
 <%@page import="feedreader.store.UserProfilesTable"%>
-<%@page import="feedreader.config.Environment"%>
 <%@page import="feedreader.config.FeedAppConfig"%>
 <%@page import="java.util.Date"%>
 <%@page import="feedreader.time.DateUtils"%>
@@ -22,8 +22,9 @@
 	String baseUrl = FeedAppConfig.BASE_APP_URL;
 
 	String minify = request.getParameter("minify");
-	String minjs = (Environment.isProd() && minify == "1" ? ".min.js" : ".js");
-	String mincss = (Environment.isProd() ? ".min.css" : ".css");
+	boolean isLocal = ApplicationConfig.instance().isLocal();
+	String minjs = (isLocal && minify == "1" ? ".min.js" : ".js");
+	String mincss = (isLocal ? ".min.css" : ".css");
 %>
 <!DOCTYPE html>
 <html>
@@ -75,7 +76,7 @@
             setBaseUrl("<%= request.getContextPath() %>");
 
     <% if (user.getAuthType() != OAuthType.NONE)  { %>
-            initHello('<%= OAuthConfig.getFbKey() %>',
+            initHello('<%= OAuthConfig.FB_KEY %>',
                       '<%= OAuthConfig.GOOGLE_KEY %>',
                       '<%= OAuthConfig.LIVE_KEY %>');
 

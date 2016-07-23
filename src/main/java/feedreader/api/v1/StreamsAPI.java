@@ -16,7 +16,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import feedreader.config.Constants;
-import feedreader.config.Environment;
 import feedreader.config.FeedAppConfig;
 import feedreader.cron.CronTimeUtils;
 import feedreader.log.Logger;
@@ -109,9 +108,6 @@ public class StreamsAPI {
             } catch (SQLException ex) {
                 Logger.error(clz).log("unreadCount ").log(query).log("/").log(userId).log(", error ")
                         .log(ex.getMessage()).end();
-                if (Environment.isDev()) {
-                    return JSONUtils.error(0, "couldn't get unread count " + ex.getMessage());
-                }
                 return JSONUtils.error(0, "couldn't get unread count.");
             }
         }
@@ -277,7 +273,7 @@ public class StreamsAPI {
         if (UserStreamGroupsTable.isStreamExist(userId, streamName)) {
             return JSONUtils.error(0, "Stream with same name already exist.");
         }
-        
+
         long streamId = UserStreamGroupsTable.save(userId, streamName);
         if (streamId == -1) {
             return JSONUtils.error(0, "Error adding new stream group.");
@@ -287,11 +283,10 @@ public class StreamsAPI {
             UserProfilesTable.addStreamToAllProfiles(userId, streamId);
             return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to all profiles.", "\"id\":"
                     + streamId + "");
-        } else {
-            UserProfilesTable.addStreamToProfile(streamId, profileId);
-            return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to profile.", "\"id\":" + streamId
-                    + "");
         }
+        UserProfilesTable.addStreamToProfile(streamId, profileId);
+        return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to profile.", "\"id\":" + streamId
+                + "");
     }
 
     @GET
@@ -336,7 +331,7 @@ public class StreamsAPI {
                     // 2 part of where
                     DBFields.TIME_PUBLICATION_DATE, userMaxHistTime,
                     // sort, limit
-                    DBFields.TIME_PUBLICATION_DATE, sortDir, 
+                    DBFields.TIME_PUBLICATION_DATE, sortDir,
                     FeedAppConfig.DEFAULT_API_FETCH_ARTICLES,
                     paging * FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
             Logger.debugSQL(FeedsAPI.class).log(rawQuery).end();
@@ -405,9 +400,6 @@ public class StreamsAPI {
 
                 return sb.toString();
             } catch (SQLException ex) {
-                if (Environment.isDev()) {
-                    return JSONUtils.error(0, ex.getMessage());
-                }
                 return JSONUtils.error(0, "database error.");
             }
         } else {

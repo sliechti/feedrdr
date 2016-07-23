@@ -1,7 +1,5 @@
 package feedreader.utils;
 
-import feedreader.config.Environment;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -49,11 +47,6 @@ public class JSONUtils {
     }
 
     public static String error(int code, String msg, Exception e) {
-        if (Environment.isDev()) {
-            return "{\"error\" : \"DEV : " + msg + ", error " + escapeQuotes(e.getMessage()) + "\", \"code\" : " + code
-                    + "}";
-        }
-
         return "{\"error\" : \"" + escapeQuotes(msg) + "\", \"code\" : " + code + "}";
     }
 
