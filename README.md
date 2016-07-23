@@ -92,14 +92,3 @@ When Tomcat starts, it calls a listener class: `feedreader.main.AppContextInit`
      * Make sure to not use any special JDK optimizations
      * Make sure the Eclipse .war export didn't have any specific JRE optimizations
 
-### Contributing
-
-If you wish to contribute, checkout the [/docs](https://github.com/sliechti/feedrdr/tree/master/docs) directory or
-feature requests on http://rdr.uservoice.com/.
-
-I plan to go over them one by one as I find the time to do so.
-
-Feel free to contact me at steven -at- feedrdr.co if you need help setting up the environment or
-building the sources, I'll document the steps as we go.
-
-
