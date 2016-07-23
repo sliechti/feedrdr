@@ -10,6 +10,20 @@ would be cool if /blog could be added as a news source.
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
 <script src="${baseUrl}/js/jquery.js"></script>
 <script src="${baseUrl}/js/wizard.js"></script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '504829576373713');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 <style>
 	.-hide {
 		display: block;
@@ -21,7 +35,7 @@ would be cool if /blog could be added as a news source.
 		<div class="table center w80p block">
 			<div class="cell left h100">
 				<span class="h100 vertical-helper vertical-middle"></span>
-				<img src="${baseUrl}/img/logo.svg" id="logo" class="vertical-middle" height="30" />
+				<img src="${baseUrl}/img/logo.svg" id="logo" class="vertical-middle" height="20" />
 			</div>
 		</div>
 	</div>
@@ -68,11 +82,14 @@ would be cool if /blog could be added as a news source.
 			</p>
 			<p>Let us know what you like or dislike, or what you would like us to add. <p>
 			<p>You can always contact me at <a href="mailto:steven@feedrdr.co?subject=just saying hi!&body=just signed up and only wanted to say hi! :)">Steven Liechti</a></p>
-			<a href="${home}" class="block plain-btn w100p success">Start reading</a>
+			<a href="${home}" onclick="fbq('track', 'CompleteRegistration');" class="block plain-btn w100p success">Start reading</a>
 		</div>
 
 		<div><p>&nbsp;</p></div>
 		</div>
 	</div>
+<script>
+	fbq('track', 'Lead');
+</script>
 </body>
 </html>
