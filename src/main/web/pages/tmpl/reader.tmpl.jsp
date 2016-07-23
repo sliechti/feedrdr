@@ -21,16 +21,16 @@
         <span class=" glyphicon glyphicon-eye-open"></span></a> |
         <a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">Unread (<span id="unread"></span>)
         <span class=" glyphicon glyphicon-eye-close"></span></a>
-    </div>    
+    </div>
     {{/if}}
     {{#if title}}
     {{else}}
     <div class="right">
         <a title="show newest first" href="" id="newset_first" onclick="streamSort(SORT_NEW_FIRST);return false;">
-        <span class="glyphicon glyphicon-sort-by-order"></span></a> | 
+        <span class="glyphicon glyphicon-sort-by-order"></span></a> |
         <a title="show oldest first" href="" id="oldest_first" onclick="streamSort(SORT_OLD_FIRST);return false;">
         <span class="glyphicon glyphicon-sort-by-order-alt"></span></a>
-    </div>    
+    </div>
     {{/if}}
     <div class="right">
         <a title="reload stream" href="" class="reload_stream" onclick="reloadStream(); return false;">
@@ -41,8 +41,8 @@
     <div class="right">
         <a title="mark all entries as read" href="" class="mark_all_read" onclick="markAllRead(); return false;">
         <span class="glyphicon glyphicon-ok-sign"></span></a>
-    </div>    
-    {{/if}}            
+    </div>
+    {{/if}}
     </div>
 </script>
 
@@ -53,12 +53,12 @@
     </div>
     <span id="span_stream_rename" style="float: left">
     <img class="icon" src="<%= baseUrl%>/img/icon-stream.png">{{s_stream_name}}&nbsp;</span>
-    <span id="edit_tools"> | 
+    <span id="edit_tools"> |
 		<% if (user.isAdmin()) { %>
 			<a title="share collection" href="" onclick="showShareCollection({{l_stream_id}});return false;"><span class="glyphicon glyphicon-share"></span></a> |
 		<% } %>
-		<a title="rename stream" href="" onclick="showRename('stream_rename');return false;"><span class="glyphicon glyphicon-edit"></span></a> | 
-        <a title="add single feed" href="" onclick="showImport(); return false;"><span class="glyphicon glyphicon-plus"></span></a> | 
+		<a title="rename stream" href="" onclick="showRename('stream_rename');return false;"><span class="glyphicon glyphicon-edit"></span></a> |
+        <a title="add single feed" href="" onclick="showImport(); return false;"><span class="glyphicon glyphicon-plus"></span></a> |
         <a title="show subscriptions" href="" onClick="toggleHeaderTool('subscriptions');return false;"><span class="glyphicon glyphicon-list-alt"></span></a> |
         <a title="delete stream" href="" onClick="showDeleteStream();return false;"><span class="glyphicon glyphicon glyphicon-remove-sign"></span></a>  |
     </span>
@@ -120,25 +120,25 @@
             <div id="title" class="col-xs-{{../midSize}}">
             {{timediff t_pub_date}}
             <a name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-                {{../tmplOptions.titleLen}} {{s_title}}</a>
+                {{s_title}}</a>
             </div>
             <div class="col-xs-1 text-right">
             {{#tools ../tmpl l_entry_id}}{{/tools}}
             </div>
-        </div>                
+        </div>
     {{/each}}
 </script>
 
 
 <script id="news_mag_tmpl" type="text/x-handlebars-template">
     {{#each entries}}
-        <div id="news_{{l_entry_id}}" class="news row news_mag" data-pos="{{position}}" data-id="{{l_entry_id}}">
+        <div id="news_{{l_entry_id}}" class="news row news_card news_mag" data-pos="{{position}}" data-id="{{l_entry_id}}">
             <div>
                 <img class="left margin10" width="220" height="120" id="img_{{l_entry_id}}" src="<%= baseUrl %>/img/1px.png">
                 <a class="title" name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">{{s_title}}</a>
                 <br>
                 <p class="content" id="cnt_{{l_entry_id}}">{{content}}</p>
-            </div>            
+            </div>
             <div style="clear: both">
                 <div class="left">
                 {{#showSourceData l_xml_id ../tmplOptions false}}{{/showSourceData}}
@@ -154,11 +154,11 @@
 
 <script id="news_stream_tmpl" type="text/x-handlebars-template">
     {{#each entries}}
-        <div id="news_{{l_entry_id}}" class="news row news_stream" data-pos="{{position}}" data-id="{{l_entry_id}}">
+        <div id="news_{{l_entry_id}}" class="news row news_card news_stream" data-pos="{{position}}" data-id="{{l_entry_id}}">
             <div class="img" id="img_{{l_entry_id}}"></div>
             <div>
                 <a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-                {{../tmplOptions.titleLen}} {{s_title}}</a>
+                {{s_title}}</a>
             </div>
             <div class="content" id="cnt_{{l_entry_id}}">{{content}}</div>
             <div>
@@ -177,10 +177,10 @@
 <script id="all_subscriptions_tmpl" type="text/x-handlebars-template">
     <ul class="sub_list">
    {{#each subscriptions}}
-    <li id="subscription_l_{{l_subs_id}}" class="subscription_line" 
+    <li id="subscription_l_{{l_subs_id}}" class="subscription_line"
         onmouseover="$(this).children('.right').show()"  onmouseout="$(this).children('.right').hide()">
-        <a onClick="addSubscription({{l_subs_id}});return false;" 
-            href="">{{cut s_subs_name 30}}</a>    
+        <a onClick="addSubscription({{l_subs_id}});return false;"
+            href="">{{cut s_subs_name 30}}</a>
         <a class="noshow right" target="_blank" href="#/s/{{l_xml_id}}">source</a>
         <a class="noshow right" target="_blank" href="<%= baseUrl %>/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
         <a class="noshow right" href="" onClick="addSubscription({{l_subs_id}});return false;" >add</a>
@@ -193,10 +193,10 @@
 <script id="subscribed_tmpl" type="text/x-handlebars-template">
     <ul class="sub_list">
    {{#each subscriptions}}
-    <li id="subscription_r_{{l_subs_id}}" class="subscription_line" 
+    <li id="subscription_r_{{l_subs_id}}" class="subscription_line"
         onmouseover="$(this).children('.right').show()"  onmouseout="$(this).children('.right').hide()">
-        <a title="remove subscription" onClick="removeSubscription({{l_subs_id}});return false;" 
-            href="">{{cut s_subs_name 30}}</a>    
+        <a title="remove subscription" onClick="removeSubscription({{l_subs_id}});return false;"
+            href="">{{cut s_subs_name 30}}</a>
         <a class="noshow right" target="_blank" href="#/s/{{l_xml_id}}">source</a>
         <a class="noshow right" target="_blank" href="<%= baseUrl %>/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
         <a class="noshow right" href="" onClick="removeSubscription({{l_subs_id}});return false;">remove</a>
@@ -209,8 +209,12 @@
 <script id="stream_groups_tmpl" type="text/x-handlebars-template">
     <ul>
     {{#each groups}}
-         <li id="e_{{l_stream_id}}">{{@key}}<a href="#/f/{{l_stream_id}}">{{cut s_stream_name 17}}</a>
-         <label id="e_c_{{l_stream_id}}">{{showGroupCount this}}</label></li>
+         <li id="e_{{l_stream_id}}">{{@key}}
+			<a href="#/f/{{l_stream_id}}" onclick="$('#leftbar').hide();">
+				{{cut s_stream_name 17}}
+			</a>
+        	 <label id="e_c_{{l_stream_id}}">{{showGroupCount this}}</label>
+		</li>
     {{/each}}
     </ul>
 </script>
@@ -229,7 +233,7 @@
 
 <script id="content_start_source" type="text/x-handlebars-template">
     <center><h3>Stream group has no subscriptions yet.</h3>
-        <p>Start by <a onClick="showImport();return false;" href="#">adding a new feed </a> OR 
+        <p>Start by <a onClick="showImport();return false;" href="#">adding a new feed </a> OR
         by selecting one of your <a href="" onclick="toggleHeaderTool('subscriptions');return false;">subscriptions</a>
 		<br><br></center></p>
 </script>
@@ -250,7 +254,7 @@
 
 <script id="content_start_saved" type="text/x-handlebars-template">
     <center><h3>No content saved yet. </h3>
-        <p class>You can save content to read later, just press on the save button 
+        <p class>You can save content to read later, just press on the save button
 		<span class="glyphicon glyphicon-floppy-disk"></span>, all content will start appearing here. </center></p>
 </script>
 

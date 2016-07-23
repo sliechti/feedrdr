@@ -18,34 +18,43 @@
 <%@include file="/security.jsp" %>
 
 <%
+    String baseUrl = FeedAppConfig.BASE_APP_URL;
 
-	String baseUrl = FeedAppConfig.BASE_APP_URL;
+    String minify = request.getParameter("minify");
+    boolean isLocal = ApplicationConfig.instance().isLocal();
+    String minjs = (!isLocal && minify == "1" ? ".min.js" : ".js");
+    String mincss = (!isLocal ? ".min.css" : ".css");
 
-	String minify = request.getParameter("minify");
-	boolean isLocal = ApplicationConfig.instance().isLocal();
-	String minjs = (!isLocal && minify == "1" ? ".min.js" : ".js");
-	String mincss = (!isLocal ? ".min.css" : ".css");
+    request.setAttribute("baseUrl", FeedAppConfig.BASE_APP_URL);
+
+    if (request.getRequestURI().contains("reader.jsp")) {
+        request.setAttribute("logoAction", "$('#leftbar').show(); return false;");
+        request.setAttribute("logoUrl", "");
+    } else {
+        request.setAttribute("logoAction", "");
+        request.setAttribute("logoUrl", PageUtils.getHome());
+    }
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="appVersion" content="<%= FeedAppConfig.APP_VERSION %>">
         <title><%= FeedAppConfig.APP_NAME %></title>
 
-        <link href="<%= PageUtils.getPath("/css/bootstrap" + mincss) %>" rel="stylesheet" type="text/css"/>
-        <link href="<%= PageUtils.getPath("/css/default" + mincss) %>" rel="stylesheet" type="text/css"/>
+        <link href="<%= PageUtils.getPath("/css/bootstrap.min.css") %>" rel="stylesheet" type="text/css"/>
+        <link href="<%= PageUtils.getPath("/css/default.css") %>" rel="stylesheet" type="text/css"/>
 
-        <script src="<%= PageUtils.getPath("/js/jquery" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/jquery.visible" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/handlebars" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/bootstrap" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/director" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/jquery.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/jquery.visible.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/handlebars.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/bootstrap.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/director.min.js") %>" type="text/javascript"></script>
         <script src="<%= PageUtils.getPath("/js/global" + minjs) %>" type="text/javascript"></script>
         <script src="<%= PageUtils.getPath("/js/profiles" + minjs) %>" type="text/javascript"></script>
     <% if (request.getAttribute("j") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/jlinq" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/jlinq.min.js") %>" type="text/javascript"></script>
     <% } %>
     <% if (request.getAttribute("s") != null) { %>
         <script src="<%= PageUtils.getPath("/js/subscriptions" + minjs) %>" type="text/javascript"></script>
@@ -66,10 +75,10 @@
     <% if (request.getAttribute("c") != null) { %>
         <script src="<%= PageUtils.getPath("/js/collections" + minjs) %>" type="text/javascript"></script>
     <% } %>
-        <script src="<%= PageUtils.getPath("/js/jscolor/jscolor" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/jscolor/jscolor.min.js") %>" type="text/javascript"></script>
     <% if (user.getAuthType() != OAuthType.NONE)  { %>
-        <script src="<%= PageUtils.getPath("/js/hello" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/hello.init" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/hello.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/hello.init.min.js") %>" type="text/javascript"></script>
     <% } %>
 
         <script type="text/javascript">
@@ -102,72 +111,39 @@
         }
     <% } %>
         </script>
-        <style>
-            .profileColor {
-                background-color: #<%= profile.getColor() %>;
-            }
-            .read {
-                background-color: #AFE8FF;
-            }
-        </style>
-    </head>
+			<style>
+
+			</style>
+</head>
 
     <body>
-        <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation" style="z-index: 1;">
-            <div class="container">
-                <div class="navbar-header">
-                    <a href="" style="float: left;" class="navbar-brand noshow show_menu" onclick="showMenu(); return false;"><span class="glyphicon glyphicon-list"></span></a>
-                    <a href="<%= PageUtils.getPath("/home.jsp") %>" class="navbar-brand"><span id="homeIcon" class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;<%= FeedAppConfig.APP_NAME_URL %></a>
-                </div>
-                <ul class="nav navbar-nav hidden-xs">
-                	<% if (user.isGenerated()) { %>
-                	<li>
-                		<a href="wizard">Wizard</a>
-                	</li>
-                	<% } %>
-                    <li>
-                        <a href="<%= PageUtils.getPath("/pages/collections.jsp") %>">Collections</a>
-                    </li>
-                                      <li>
-                        <a id="feedback" href="<%= PageUtils.getPath("/pages/collections.jsp") %>">Feedback</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right visible-xs">
-                    <li>
-                        <div style="margin-left: 15px">
-                            <a href="" onclick="showOnlyWithUnread(false); return false;"><span class="glyphicon glyphicon-eye-open"></span></a> |
-                            <a href="" onclick="showOnlyWithUnread(true); return false;"><span class="glyphicon glyphicon-eye-close"></span></a> |
-        <a href="" onclick="sortByAlphabet(2);return false;"><span class="glyphicon glyphicon-sort-by-alphabet"></span></a> |
-        <a href="" onclick="sortByAlphabet(1);return false;"><span class="glyphicon glyphicon-sort-by-alphabet-alt"></span></a> |
-        <a href="" onclick="sortByUnread(1);return false;"><span class=" glyphicon glyphicon-sort-by-attributes-alt"></span></a> |
-        <a href="" onclick="sortByUnread(2);return false;"><span class="glyphicon glyphicon-sort-by-attributes"></span></a>
-
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Stream Groups
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                                <div class="navbar-div">
-                                    <ul>
-                                    <li><a href="#/v/a">All</a></li>
-                                    <li><a href="#/v/s">Saved</a></li>
-                                    <li><a href="#/v/r">Recently read</a></li>
-                                    </ul>
-                                </div>
-                                <div class="navbar-div" id="small_menusubs"></div>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
-                            <span class="glyphicon glyphicon-user"></span>&nbsp;
-                            <span id="profile" data-id="<%= profile.getProfileId() %>"><%= profile.getName() %></span><span class="caret"></span></a>
-                            <ul id="profiles" class="dropdown-menu" role="menu"></ul>
-                    </li>
-                    <li class="dropdown">
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#reader-nav">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="${logoUrl}" onclick="${logoAction}">
+					<img src="${baseUrl}/img/logo.svg" height="20px" />
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="reader-nav">
+				<ul class="nav navbar-nav">
+					<% if (user.isGenerated()) { %>
+					<li><a href="wizard">Wizard</a></li>
+					<% } %>
+					<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<span id="profile" data-id="<%=profile.getProfileId()%>"><%=profile.getName()%></span>
+						<ul id="profiles" class="dropdown-menu" role="menu">
+							<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="underline"><%= user.getScreenName() %>
                             	<% if (user.isAdmin()) {%>[admin]<% } %>
@@ -189,18 +165,14 @@
                                     <a href="<%= baseUrl %>/pages/settings.jsp#/v/pro">Profile settings <span class="glyphicon glyphicon-cog text-right"></span></a>
                                 </div>
                             </li>
-                            <li>
-                        		<a href="" onClick="showClassicWidget(); return false;">Feedback</a>
-                    		</li>
                         </ul>
                     </li>
                 </ul>
-            </div>
+			</div>
+		</div>
             <div id="loader" class="profileColor" style="height: 1px; "></div>
-        </nav>
-        <div class="visible-xs" style="background-color: #f5f5f5; position: fixed; left: 15px; top: 15px; z-index: 999">
-            <a id="smallMenu" href="" onclick="toogleSmallMenu(); return false;"><span class="glyphicon glyphicon-align-justify"></span></a>
-        </div>
+	</nav>
+
 
         <%@include file="tmpl/profiles.tmpl.jsp" %>
 
@@ -220,8 +192,7 @@
                 <button type="button" class="btn btn-primary" onclick="createNewProfile('profile_name', 'picker')">Create Profile</button>
               </div>
         </div>
-        <!-- UserVoice JavaScript SDK (only needed once on a page) -->
-        <div id="content" style="margin-top: 70px;" class="container">
+        <div id="content" class="container-fluid">
         <div class="row">
 
 
