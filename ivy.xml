@@ -3,7 +3,9 @@
 	<info organisation="co.feedrdr" module="feedrdr"/>
 
 	<configurations defaultconfmapping="compile->default;sources;javadoc">
-		<conf name="compile" description="Required to compile application"/>
+		<conf name="compile" />
+		<conf name="runtime" extends="compile"/>
+		<conf name="test"    extends="runtime"/>
 		<conf name="sources" description="Source code"/>
 		<conf name="javadoc" description="Javadocs"/>
 	</configurations>
@@ -28,6 +30,17 @@
 		<dependency org="org.apache.commons" name="commons-configuration2" rev="2.0"/>
 		<dependency org="commons-beanutils" name="commons-beanutils" rev="1.9.2"/>
 		<dependency org="commons-beanutils" name="commons-beanutils-core" rev="1.8.3"/>
-	</dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/catalina -->
+		<dependency org="org.apache.tomcat" name="catalina" rev="6.0.45" />
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-coyote -->
+		<dependency org="org.apache.tomcat" name="tomcat-coyote" rev="7.0.4"/>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
+	    <dependency org="javax.servlet" name="jsp-api" rev="2.0"/>
 
+		
+
+		
+
+		
+	</dependencies>
 </ivy-module>

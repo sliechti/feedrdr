@@ -38,7 +38,7 @@ public class RealImportTest {
         p.setProperty(Database.USERNAME_PROP_KEY, "sliechti");
         p.setProperty(Database.PASSWORD_PROP_KEY, "sliechti");
         p.setProperty(Database.URL_PROP_KEY, "jdbc:postgresql://localhost/postgres");
-        Database.start(p);
+        Database.start();
     }
 
     @Test public static void run() throws FileNotFoundException, IOException, SAXException, MalformedURLException,
