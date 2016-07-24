@@ -3,25 +3,26 @@
 	<taskdef uri="antlib:org.apache.ivy.ant" resource="org/apache/ivy/ant/antlib.xml" classpath="${user.home}/.ant/lib/ivy.jar" />
 
 	<!-- Project Structure -->
+	<condition property="build.env" value="${build.env}" else="local">
+		<isset property="build.env" />
+	</condition>
 	<property name="jdk.version" value="1.8" />
 	<property name="projectName" value="feedrdr" />
 	<property name="src.dir" location="src" />
-	<property name="resources.dir" location="etc/deploy/local" />
+	<property name="resources.dir" location="etc/deploy/${build.env}" />
 	<property name="web.dir" value="src/main/web" />
 	<property name="web.classes.dir" location="target/classes" />
 	<property name="target.dir" location="target" />
 	<property name="lib.dir" value="target/lib" />
+	<property name="war.name" value="ROOT" />
 
 	<!-- ivy start -->
 	<target name="resolve" description="retrieve dependencies with ivy">
-		<echo message="Getting dependencies..." />
-		<ivy:retrieve />
+		<ivy:retrieve log="quiet" />
 		<ivy:cachepath pathid="compile.path" conf="compile" />
 		<ivy:cachepath pathid="runtime.path" conf="runtime" />
 		<ivy:cachepath pathid="test.path" conf="test" />
-		<pathconvert property="classpathProp" refid="runtime.path"/>
-
-		<echo>Classpath is ${classpathProp}</echo>
+		<pathconvert property="classpathProp" refid="runtime.path" />
 	</target>
 
 	<!-- install ivy if you don't have ivyide-->
@@ -33,8 +34,6 @@
 
 	<!-- Compile Java source from ${src.dir} and output it to ${web.classes.dir} -->
 	<target name="compile" depends="init, resolve" description="compile source code">
-		<echoproperties>
-		</echoproperties>
 		<mkdir dir="${web.classes.dir}" />
 		<javac destdir="${web.classes.dir}" source="${jdk.version}" target="${jdk.version}" debug="true" includeantruntime="false" classpathref="runtime.path">
 			<src path="${src.dir}" />
@@ -43,6 +42,7 @@
 
 	<!-- Copy *.xml or *.properties from ${resources.dir} to ${web.classes.dir} -->
 	<target name="copy-resources" description="copy Java resources like xml and properties files">
+		<echo message="copying resources from ${resources.dir}" />
 		<copy todir="${web.classes.dir}">
 			<fileset dir="${resources.dir}">
 				<exclude name="WEB-INF/web.xml" />
@@ -56,9 +56,9 @@
 	<target name="package" depends="clean, compile, copy-resources" description="create a war file">
 
 		<!-- ivy get dependencies and put it in ${lib.dir} -->
-		<ivy:retrieve pattern="${lib.dir}/[artifact]-[revision].[ext]" conf="runtime" />
+		<ivy:retrieve pattern="${lib.dir}/[artifact]-[revision].[ext]" conf="compile" />
 
-		<war destfile="${target.dir}/feedreader.war" webxml="${resources.dir}/WEB-INF/web.xml">
+		<war destfile="${target.dir}/${war.name}.war" webxml="${resources.dir}/WEB-INF/web.xml">
 			<fileset dir="${web.dir}" />
 			<lib dir="${lib.dir}" />
 			<classes dir="${web.classes.dir}" />
@@ -77,6 +77,8 @@
 		<delete dir="${target.dir}" />
 	</target>
 
-	<target name="main" depends="package" />
+	<target name="main" depends="package">
+		<echo>Created ${war.name}.war for ${build.env} environment</echo>
+	</target>
 
 </project>

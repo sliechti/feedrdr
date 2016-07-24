@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.catalina.util.ServerInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,8 +68,6 @@ public class AppContextInit implements ServletContextListener {
         appConfig = ApplicationConfig.instance();
 
         logger.info("is local environment : {}", appConfig.isLocal());
-        logger.info("server info          : {}, built: {}, number: {}", ServerInfo.getServerInfo(),
-                ServerInfo.getServerBuilt(), ServerInfo.getServerNumber());
         printClassPath();
 
         setupLogger();
