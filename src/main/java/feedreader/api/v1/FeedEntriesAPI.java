@@ -1,5 +1,17 @@
 package feedreader.api.v1;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+
 import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.log.Logger;
@@ -10,15 +22,6 @@ import feedreader.store.FeedEntriesTable;
 import feedreader.store.UserFeedEntries;
 import feedreader.store.UserStreamGroupsTable;
 import feedreader.utils.JSONUtils;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
 
 @Path("/v1/entries")
 public class FeedEntriesAPI {
@@ -84,8 +87,8 @@ public class FeedEntriesAPI {
                 paging * FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
         Logger.debugSQL(query).end();
 
-        try {
-            ResultSet rs = Database.rawQuery(query);
+        try (Connection conn = Database.getConnection()){
+            ResultSet rs = Database.rawQuery(conn, query);
             APIUtils.wrapObject(sb, rs);
         } catch (SQLException ex) {
             Logger.error(clz).log("savedEntries ").log(ex.getMessage()).end();
@@ -121,8 +124,8 @@ public class FeedEntriesAPI {
                 FeedAppConfig.DEFAULT_API_FETCH_ARTICLES,
                 paging * FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
         Logger.debugSQL(query).end();
-        try {
-            ResultSet rs = Database.rawQuery(query);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = Database.rawQuery(conn, query);
             APIUtils.wrapObject(sb, rs);
         } catch (SQLException ex) {
             Logger.error(clz).log("recentlyRead ").log(ex.getMessage()).end();

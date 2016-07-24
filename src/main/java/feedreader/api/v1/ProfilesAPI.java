@@ -14,6 +14,7 @@ import feedreader.store.UserProfilesTable;
 import feedreader.utils.JSONUtils;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -40,11 +41,11 @@ import javax.ws.rs.core.MediaType;
         StringBuilder sb = new StringBuilder();
         sb.append("{\"entries\" : [");
 
-        try {
+        try (Connection conn = Database.getConnection()){
             String query = String.format("SELECT * FROM %s WHERE %s = %d", UserProfilesTable.TABLE,
                     DBFields.LONG_USER_ID, userId);
 
-            ResultSet rs = Database.rawQuery(query);
+            ResultSet rs = Database.rawQuery(conn, query);
 
             while (rs.next()) {
                 long profileId = rs.getLong(DBFields.LONG_PROFILE_ID);

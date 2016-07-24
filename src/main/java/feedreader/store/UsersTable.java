@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
@@ -16,26 +15,15 @@ import feedreader.oauth.OAuthType;
 import feedreader.time.CurrentTime;
 import feedreader.utils.PwdUtils;
 import feedreader.utils.SQLUtils;
-import feedreader.utils.SimpleEncryption;
 
 public class UsersTable {
 
     public static final String TABLE = Constants.USERS_TABLE;
     public static final String TABLE_TOKENS = Constants.USER_AUTH_TOKENS;
-    private static Connection conn;
-    private static final String ENCKEY = "REGISTRATION";
     private static final Logger log = LoggerFactory.getLogger(UsersTable.class);
-    private static Statement stmt;
-    private static PreparedStatement stmtSelUsers;
 
     public static void close() {
         log.info("close()");
-        try {
-            stmtSelUsers.close();
-            conn.close();
-        } catch (SQLException ex) {
-            log.error("closing sql objects {}", ex.getMessage());
-        }
     }
 
     /**
@@ -55,8 +43,8 @@ public class UsersTable {
             String screenName) {
         email = email.toLowerCase();
 
-        try {
-            ResultSet rs = Database.checkEntry(TABLE, DBFields.STR_EMAIL, email);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = Database.checkEntry(conn, TABLE, DBFields.STR_EMAIL, email);
             if (rs.next()) {
                 log.info("email already known: {}", email);
                 return UserData.NULL;
@@ -78,7 +66,7 @@ public class UsersTable {
                     oauth.getVal(), SQLUtils.asSafeString(screenName), CurrentTime.inGMT(), SQLUtils.asSafeString(code),
                     generated);
             log.debug("createNewUser SQL: {}", query);
-            if (stmt.executeUpdate(query) > 0) {
+            if (conn.createStatement().executeUpdate(query) > 0) {
                 return get(email);
             }
         } catch (SQLException ex) {
@@ -93,15 +81,13 @@ public class UsersTable {
     }
 
     public static int displayName(long userId, String displayName) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d", TABLE, DBFields.STR_SCREEN_NAME,
                     SQLUtils.asSafeString(displayName), DBFields.LONG_USER_ID, userId);
-            log.debug(query);
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (Exception e) {
             log.error("displayName {}, error {}", displayName, e);
         }
-
         return -1;
     }
 
@@ -110,11 +96,10 @@ public class UsersTable {
     }
 
     public static UserData get(long userId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = "SELECT * FROM feedreader.users as t0 " + "LEFT JOIN feedreader.userprofiles as t1 "
                     + "ON t0.l_user_id = t1.l_user_id WHERE t0.l_user_id = " + userId;
-            ResultSet rs = Database.rawQuery(query);
-            log.debug(query);
+            ResultSet rs = Database.rawQuery(conn, query);
             return UserData.fromRs(rs);
         } catch (SQLException ex) {
             log.error("get userId  {}, error {}", "", ex);
@@ -136,12 +121,15 @@ public class UsersTable {
      */
     public static UserData get(String email, String pwd) {
         email = email.toLowerCase();
-        try {
-            stmtSelUsers.setString(1, SQLUtils.asSafeString(email));
-            stmtSelUsers.setString(2, SQLUtils.asSafeString(pwd));
-            return UserData.fromRs(stmtSelUsers.executeQuery());
+        try (Connection conn = Database.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(
+                    String.format("SELECT * FROM %s WHERE %s = ? AND %s = ?", TABLE,
+                            DBFields.STR_EMAIL, DBFields.STR_PASSWORD));
+            stmt.setString(1, SQLUtils.asSafeString(email));
+            stmt.setString(2, SQLUtils.asSafeString(pwd));
+            return UserData.fromRs(stmt.executeQuery());
         } catch (SQLException e) {
-            feedreader.log.Logger.error(UsersTable.class).log("authenticate failed ").log(e.getMessage()).end();
+            log.error("authenticate failed: {}", e, e.getMessage());
             return UserData.NULL;
         }
     }
@@ -155,16 +143,6 @@ public class UsersTable {
     }
 
     public static boolean init() {
-        conn = Database.getConnection();
-
-        try {
-            stmtSelUsers = conn.prepareCall(String.format("SELECT * FROM %s WHERE %s = ? AND %s = ?", TABLE,
-                    DBFields.STR_EMAIL, DBFields.STR_PASSWORD));
-            stmt = Database.getStatement();
-        } catch (SQLException ex) {
-            log.error("prepareCall failed {}", ex);
-        }
-
         log.info("initialized.");
         return true;
     }
@@ -172,59 +150,56 @@ public class UsersTable {
     /**
      * TODO: To be implemented.
      *
-     * Validates an user against the Use database.
+     * Validates an user against the User database.
      *
      * @param userId
      * The user to validate
-     * @param callerClzz
-     * The class or Application calling the function. (Will be used
-     * for reporting and monitoring)
      * @return true if user is known
      */
-    public static boolean isValidUser(long userId, Class<?> callerClzz) {
+    public static boolean isValidUser(long userId) {
         return true;
     }
 
     public static void saveCookie(UserData userData, String cookieKey) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d", TABLE, DBFields.STR_COOKIE,
                     SQLUtils.asSafeString(cookieKey), DBFields.LONG_USER_ID, userData.getUserId(), DBFields.ENUM_OAUTH);
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException e) {
             log.error("save cookie error: {}", e, e.getMessage());
         }
     }
 
     public static void saveToken(long userId, OAuthType type, String token) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = %d", DBFields.LONG_USER_ID,
                     TABLE_TOKENS, DBFields.LONG_USER_ID, userId, DBFields.ENUM_OAUTH, type.getVal());
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next()) {
                 query = String.format("UPDATE %s SET %s = %d, %s = %d, %s = '%s' WHERE %s = %d", TABLE_TOKENS,
                         DBFields.LONG_USER_ID, userId, DBFields.ENUM_OAUTH, type.getVal(), DBFields.STR_AUTH_TOKEN,
                         SQLUtils.asSafeString(token), DBFields.LONG_USER_ID, userId);
-                stmt.execute(query);
+                conn.createStatement().execute(query);
             }
 
             query = String.format("INSERT INTO %s (%s, %s, %s) VALUES (%d, %d, '%s')", TABLE_TOKENS,
                     DBFields.LONG_USER_ID, DBFields.ENUM_OAUTH, DBFields.STR_AUTH_TOKEN, userId, type.getVal(),
                     SQLUtils.asSafeString(token));
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException ex) {
             log.error("save token error: {}", ex, ex.getMessage());
         }
     }
 
     public static int setForgotPassword(long userId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String code = RandomStringUtils.random(12, true, true);
             String query = String.format("UPDATE %s SET %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_FORGOT_PWD, true,
                     DBFields.STR_FORGOT_CODE, SQLUtils.asSafeString(code),
                     DBFields.LONG_USER_ID, userId);
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
             log.error("set forgot password: {}", ex, ex.getMessage());
         }
@@ -233,23 +208,23 @@ public class UsersTable {
     }
 
     public static void setLastProfile(long userId, long profileId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = %d WHERE %s = %d", TABLE,
                     DBFields.LONG_SELECTED_PROFILE_ID, profileId, DBFields.LONG_USER_ID, userId);
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException ex) {
             log.error("set last profile error: {}", ex, ex.getMessage());
         }
     }
 
     public static int setNewPassword(UserData data, String pwd) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.STR_PASSWORD, pwd,
                     DBFields.STR_FORGOT_CODE, "", // clear code so it can't be reused.
                     DBFields.LONG_USER_ID, data.getUserId());
             log.info("password changed for: {}, email {}", data.getUserId(), data.getEmail());
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
             log.error("set new password error: {}", ex, ex.getMessage());
         }
@@ -258,19 +233,19 @@ public class UsersTable {
     }
 
     public static void unverify(UserData data) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String code = getRegistrationCode();
             String query = String.format("UPDATE %s SET %s = %b,  %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_VERIFIED, false, DBFields.BOOL_REG_SENT, false, DBFields.STR_REG_CODE,
                     SQLUtils.asSafeString(code), DBFields.LONG_USER_ID, data.getUserId());
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException ex) {
             log.error("unverify error: {}", ex, ex.getMessage());
         }
     }
 
     public static int update(UserData data) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format(
                     "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b', %s = '%b' WHERE %s = %d",
                     TABLE,
@@ -286,7 +261,7 @@ public class UsersTable {
                     DBFields.LONG_USER_ID,
                     data.getUserId());
             log.info("update user: {}", data);
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (Exception e) {
             log.error("update {}, error {}", data, e);
         }
@@ -295,10 +270,10 @@ public class UsersTable {
     }
 
     public static void verify(UserData data) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = %b, %s = '%s' WHERE %s = %d", TABLE,
                     DBFields.BOOL_VERIFIED, true, DBFields.STR_REG_CODE, "", DBFields.LONG_USER_ID, data.getUserId());
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException ex) {
             log.error("verify error: {}", ex, ex.getMessage());
         }
@@ -309,8 +284,8 @@ public class UsersTable {
     }
 
     private static UserData fromStringField(String fieldName, String fieldVal) {
-        try {
-            ResultSet rs = Database.getEntry(TABLE, fieldName, fieldVal);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = Database.getEntry(conn, TABLE, fieldName, fieldVal);
             return UserData.fromRs(rs);
         } catch (SQLException ex) {
 
@@ -321,11 +296,11 @@ public class UsersTable {
     }
 
     private static UserData getFromCode(String fieldName, String code) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT * FROM %s WHERE %s = '%s'", TABLE,
                     fieldName, code);
             log.debug(query);
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             return UserData.fromRs(rs);
         } catch (SQLException ex) {
             log.error("getFromCode  {}, error {}", fieldName, ex);

@@ -1,5 +1,6 @@
 package feedreader.api.v1;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,10 +16,12 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.cron.CronTimeUtils;
-import feedreader.log.Logger;
 import feedreader.security.Session;
 import feedreader.store.DBFields;
 import feedreader.store.Database;
@@ -36,7 +39,7 @@ public class StreamsAPI {
 
     private static final int FILTER_UNREAD = 1;
     private static final int FILTER_ALL = 0;
-    static final Class<?> clz = StreamsAPI.class;
+    private static Logger logger = LoggerFactory.getLogger(StreamsAPI.class);
 
     @GET
     @Path("/list")
@@ -49,13 +52,13 @@ public class StreamsAPI {
             return JSONErrorMsgs.getAccessDenied();
         }
 
-        try {
+        try (Connection conn = Database.getConnection()) {
             StringBuilder sb = new StringBuilder();
             sb.append("[");
-            APIUtils.wrapObject(sb, UserStreamGroupsTable.get(userId, profileId, views));
+            APIUtils.wrapObject(sb, UserStreamGroupsTable.get(conn, userId, profileId, views));
             return sb.append("]").toString();
         } catch (SQLException ex) {
-            Logger.error(clz).log("streamsList ").log(ex.getMessage()).end();
+            logger.error("failed: {}", ex, ex.getMessage());
             return JSONUtils.error(0, JSONErrorMsgs.ERROR_REQUESTING_DATA_FROM_DB, ex);
         }
     }
@@ -85,8 +88,8 @@ public class StreamsAPI {
                 + SQLUtils.asSafeString(streamIds) + ") " + "and l_user_id = " + userId;
 
         if (noCache == 0) {
-            try {
-                ResultSet rs = Database.rawQuery(query);
+            try (Connection conn = Database.getConnection()) {
+                ResultSet rs = Database.rawQuery(conn, query);
 
                 int rows = 0;
                 while (rs.next()) {
@@ -106,8 +109,7 @@ public class StreamsAPI {
                     return JSONErrorMsgs.getErrorParams();
                 }
             } catch (SQLException ex) {
-                Logger.error(clz).log("unreadCount ").log(query).log("/").log(userId).log(", error ")
-                        .log(ex.getMessage()).end();
+                logger.error("failed: {}", ex, ex.getMessage());
                 return JSONUtils.error(0, "couldn't get unread count.");
             }
         }
@@ -185,8 +187,8 @@ public class StreamsAPI {
             String query = "select t_pub_date from feedreader.feedentries as t0\n" + " where t0.l_xml_id = " + xmlId
                     + " order by t_pub_date desc limit 1";
 
-            try {
-                ResultSet rs = Database.rawQuery(query);
+            try (Connection conn = Database.getConnection()) {
+                ResultSet rs = Database.rawQuery(conn, query);
 
                 long marker = 0;
 
@@ -203,8 +205,7 @@ public class StreamsAPI {
                 int r = UserFeedSubscriptionsTable.updateReadMarker(userId, Long.parseLong(xmlId), marker);
                 out.append("\"updated\" : ").append(r).append("}");
             } catch (SQLException ex) {
-                Logger.error(clz).log(query).end();
-
+                logger.error("failed: {}", ex, ex.getMessage());
                 out.append("{").append("\"id\" : ").append(xmlId).append(",").append("\"error\" : \'")
                         .append("database").append("\",").append("}");
             }
@@ -334,10 +335,9 @@ public class StreamsAPI {
                     DBFields.TIME_PUBLICATION_DATE, sortDir,
                     FeedAppConfig.DEFAULT_API_FETCH_ARTICLES,
                     paging * FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
-            Logger.debugSQL(FeedsAPI.class).log(rawQuery).end();
             sb.append("{\"entries\" : [");
-            try {
-                ResultSet rs = Database.rawQuery(rawQuery);
+            try (Connection conn = Database.getConnection()) {
+                ResultSet rs = Database.rawQuery(conn, rawQuery);
                 int count = 0;
                 while (rs.next()) {
                     sb.append("{").append(JSONUtils.getNumber(rs, DBFields.LONG_ENTRY_ID)).append(",")
@@ -351,14 +351,14 @@ public class StreamsAPI {
                     sb.deleteCharAt(sb.length() - 1);
                 }
             } catch (SQLException ex) {
-                Logger.error(FeedsAPI.class).log("list error ").log(ex.getMessage()).end();
+                logger.error("failed: {}", ex, ex.getMessage());
             }
 
             sb.append("]}");
 
             return sb.toString();
         } else if (filter == FILTER_UNREAD) {
-            try {
+            try (Connection conn = Database.getConnection()) {
                 StringBuilder sb = new StringBuilder();
 
                 long pageStart = CurrentTime.inGMT();
@@ -379,7 +379,7 @@ public class StreamsAPI {
                         + userMaxHistTime + " order by t_pub_date " + sortDir + "" + " limit "
                         + FeedAppConfig.DEFAULT_API_FETCH_ARTICLES + " offset " + offset;
                 callStart = System.currentTimeMillis();
-                ResultSet rs = Database.rawQuery(query);
+                ResultSet rs = Database.rawQuery(conn, query);
                 long listExec = System.currentTimeMillis() - callStart;
 
                 rs.setFetchSize(FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);

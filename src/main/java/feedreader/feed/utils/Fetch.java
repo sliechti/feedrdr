@@ -95,9 +95,9 @@ public class Fetch {
 
     public static int run(FetchCallback callback, String xmlUrl, boolean force) {
         FeedSourceEntry entry = FeedSourcesTable.getByField(DBFields.STR_XML_URL, xmlUrl);
-        if (entry.getId() == 0)
+        if (entry.getId() == 0) {
             return RetCode.NO_SOURCES_FOUND;
-
+        }
         return run(callback, entry, force);
     }
 

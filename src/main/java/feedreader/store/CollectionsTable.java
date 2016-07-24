@@ -1,36 +1,28 @@
 package feedreader.store;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import feedreader.config.Constants;
-import feedreader.log.Logger;
 
 public class CollectionsTable {
 
     public static final String TABLE = Constants.SOURCE_COLLECTIONS;
     public static final String TABLE_LIST = Constants.SOURCE_COLLECTIONS_LIST;
-
-    static Class<?> clz = CollectionsTable.class; // Easier for logging.
-
+    private static final Logger logger = LoggerFactory.getLogger(CollectionsTable.class);
     static Connection conn;
     static Statement stmt;
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
     public static String getQueryCollectionEntriesByCollectionIds(String ids) {
@@ -48,6 +40,5 @@ public class CollectionsTable {
                 "ON t0.l_collection_id = t1.l_collection_id " +
                 "GROUP BY t0.l_collection_id;";
     }
-    
-}
 
+}

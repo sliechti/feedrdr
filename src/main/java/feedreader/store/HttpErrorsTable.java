@@ -1,49 +1,37 @@
 package feedreader.store;
 
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import feedreader.config.Constants;
-import feedreader.log.Logger;
 import feedreader.utils.SQLUtils;
-
 
 public final class HttpErrorsTable {
 
     public static final String TABLE = Constants.HTTP_ERRORS_TABLE;
-
-    static Class<?> clz = HttpErrorsTable.class; // Easier for logging.
-
-    static Connection conn;
-    static Statement stmt;
+    private static final Logger logger = LoggerFactory.getLogger(HttpErrorsTable.class);
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
-    
+
     public static int addError(String httpCode, String error) {
-        try {
-            String query = String.format("INSERT INTO %s (%s, %s) VALUES (%s, %s)", 
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("INSERT INTO %s (%s, %s) VALUES (%s, %s)",
                     TABLE, DBFields.STR_HTTP_CODE, DBFields.STR_HTTP_ERROR,
                     httpCode, SQLUtils.asSafeString(error));
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (Exception e) {
-            Logger.error(clz).log("addError ").log(e.getMessage()).end();
+            logger.error("add error failed: {}", e, e.getMessage());
             return -1;
         }
     }
-    
+
 }
