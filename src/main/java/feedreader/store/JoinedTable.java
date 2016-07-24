@@ -4,55 +4,34 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-import feedreader.log.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JoinedTable {
 
-    static Class<?> clz = JoinedTable.class; // Easier for logging.
-
-    static Connection conn;
-    static Statement stmt;
-
-    static PreparedStatement allXmlIdsFromStreamGroup, allReadEntriesForUserProfile;
+    private static final Logger logger = LoggerFactory.getLogger(JoinedTable.class);
+    private static final String allXmlIdsQuery = "select t2.l_xml_id from feedreader.userstreamgroups as t0 "
+            + " right join feedreader.userstreamgroupfeedsubscription as t1"
+            + "  on t0.l_stream_id = t1.l_stream_id"
+            + " inner join feedreader.userfeedsubscriptions as t2" + "  on t2.l_subs_id = t1.l_subs_id"
+            + " where t0.l_stream_id = ?  and t0.l_user_id = ?";
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-
-        try {
-            allXmlIdsFromStreamGroup = Database.getConnection().prepareStatement(
-                    "select t2.l_xml_id from feedreader.userstreamgroups as t0 "
-                            + " right join feedreader.userstreamgroupfeedsubscription as t1"
-                            + "  on t0.l_stream_id = t1.l_stream_id"
-                            + " inner join feedreader.userfeedsubscriptions as t2" + "  on t2.l_subs_id = t1.l_subs_id"
-                            + " where t0.l_stream_id = ?  and t0.l_user_id = ?");
-        } catch (SQLException ex) {
-            Logger.error(clz).log("init ").log(ex.getMessage()).end();
-        }
-
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-
-        try {
-            allXmlIdsFromStreamGroup.close();
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
     public static long allStreamUnreadEntries(long streamId, long userId, long userMaxHistTime, StringBuilder entries) {
-        ResultSet rs = getAllXmlIdsWithReadMarkers(streamId, userId);
-        Statement s = Database.getStatement();
         long start = System.currentTimeMillis();
         long unreadEntriesCount = 0;
-        try {
+
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = getAllXmlIdsWithReadMarkers(conn, streamId, userId);
             while (rs.next()) {
                 long feedMaxTime = rs.getLong(2);
                 long timelineMax = 0;
@@ -69,7 +48,7 @@ public class JoinedTable {
                         + " and t_pub_date > " + timelineMax + "\n" + "and (t1.b_read = false or t1.b_read is null)";
                 // INFO: POssible to limit query. In that case we do need to sort entries here instead
                 // of in the next big query.
-                ResultSet sub = s.executeQuery(query);
+                ResultSet sub = conn.createStatement().executeQuery(query);
 
                 while (sub.next()) {
                     entries.append(sub.getString(1)).append(",");
@@ -80,12 +59,13 @@ public class JoinedTable {
                 entries.setLength(entries.length() - 1);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("allStreamUnreadEntries error ").log(ex.getMessage()).end();
+            logger.error("all stream unread, stream id {}, user id {}, error: {}", ex, streamId, userId,
+                    ex.getMessage());
             return -1;
         }
 
         if (System.currentTimeMillis() - start > 100) {
-            Logger.error(clz).log("unread entries for stream id ").log(streamId).log(" took longer than 100ms ").end();
+            logger.error("unread entries for stream id {} took longer than 100ms", streamId);
         }
 
         return unreadEntriesCount;
@@ -94,21 +74,21 @@ public class JoinedTable {
     public static String getAllReadEntries(long profileId, long maxTime, long maxRet, String xmlIds) {
         String query = "SELECT feedreader.getreadentries(" + profileId + ", " + maxTime + "," + maxRet + ",'" + xmlIds
                 + "')";
-        try {
-            ResultSet rs = stmt.executeQuery(query);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 return rs.getString(1);
             }
             return "";
 
         } catch (SQLException ex) {
-            Logger.error(clz).log(query).log(", error ").log(ex.getMessage()).end();
+            logger.error("query error: {}, {}", ex, query, ex.getMessage());
         }
 
         return "";
     }
 
-    public static ResultSet getAllXmlIdsWithReadMarkers(long streamId, long userId) {
+    public static ResultSet getAllXmlIdsWithReadMarkers(Connection conn, long streamId, long userId) {
         try {
             String query = "select t2.l_xml_id, t2.t_read_marker from feedreader.userstreamgroups as t0  \n"
                     + "    inner join feedreader.userstreamgroupfeedsubscription as t1  \n"
@@ -117,20 +97,20 @@ public class JoinedTable {
                     + "        on t2.l_subs_id = t1.l_subs_id where \n" + "\n" + "t0.l_stream_id = " + streamId
                     + "  and t0.l_user_id = " + userId;
 
-            return stmt.executeQuery(query);
-
+            return conn.createStatement().executeQuery(query);
         } catch (SQLException e) {
-            Logger.error(clz).log(e.getMessage()).end();
+            logger.error("get all xmlids failed: {}", e, e.getMessage());
         }
 
         return null;
     }
 
     public static String getAllXmlIds(long streamId, long userId) {
-        try {
-            allXmlIdsFromStreamGroup.setLong(1, streamId);
-            allXmlIdsFromStreamGroup.setLong(2, userId);
-            ResultSet rs = allXmlIdsFromStreamGroup.executeQuery();
+        try (Connection conn = Database.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(allXmlIdsQuery);
+            stmt.setLong(1, streamId);
+            stmt.setLong(2, userId);
+            ResultSet rs = stmt.executeQuery();
             StringBuilder sb = new StringBuilder();
             while (rs.next())
                 sb.append(rs.getString(1)).append(",");
@@ -139,7 +119,7 @@ public class JoinedTable {
 
             return sb.toString();
         } catch (SQLException ex) {
-            Logger.error(clz).log(allXmlIdsFromStreamGroup.toString()).log(", error ").log(ex.getMessage()).end();
+            logger.error("get all xml ids for stream id {}, user id {}", ex, streamId, userId);
         }
 
         return "";

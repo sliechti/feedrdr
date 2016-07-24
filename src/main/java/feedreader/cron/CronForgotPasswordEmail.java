@@ -1,6 +1,7 @@
 package feedreader.cron;
 
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -32,11 +33,11 @@ public class CronForgotPasswordEmail implements Runnable {
 
     @Override
     public void run() {
-        try {
+        try (Connection conn = Database.getConnection()){
             String query = String.format("SELECT %s, %s, %s, %s FROM %s WHERE %s = %b",
                     DBFields.LONG_USER_ID, DBFields.STR_EMAIL, DBFields.STR_SCREEN_NAME, DBFields.STR_FORGOT_CODE,
                     UsersTable.TABLE, DBFields.BOOL_FORGOT_PWD, true);
-            ResultSet rs = Database.rawQuery(query);
+            ResultSet rs = Database.rawQuery(conn, query);
             int count = 0;
             while (rs.next()) {
                 long userId = rs.getLong(DBFields.LONG_USER_ID);
@@ -59,7 +60,7 @@ public class CronForgotPasswordEmail implements Runnable {
                     query = String.format("UPDATE %s SET %s = false WHERE %s = %d",
                             UsersTable.TABLE, DBFields.BOOL_FORGOT_PWD, DBFields.LONG_USER_ID, userId);
 
-                    Database.getStatement().execute(query);
+                    conn.createStatement().execute(query);
                 } catch (Exception ex) {
                     logger.error("error sending message: {}", ex, ex.getMessage());
                 }

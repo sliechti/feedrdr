@@ -1,50 +1,40 @@
 package feedreader.store;
 
-import feedreader.config.Constants;
-import feedreader.log.Logger;
-import feedreader.parser.XmlFeedEntry;
-import feedreader.time.CurrentTime;
-import feedreader.utils.SQLUtils;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import feedreader.config.Constants;
+import feedreader.parser.XmlFeedEntry;
+import feedreader.time.CurrentTime;
+import feedreader.utils.SQLUtils;
 
 public class FeedEntriesTable {
 
+    private static final Logger logger = LoggerFactory.getLogger(FeedEntriesTable.class);
     public static final String TABLE = Constants.FEED_ENTRIES_TABLE;
     public static final String TABLE_DATA = Constants.FEED_ENTRIES_DATA_TABLE;
 
-    static Class<?> clz = FeedEntriesTable.class; // Easier for logging.
-    static Connection conn;
-    static Statement stmt;
-
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
     public static int save(long sourceId, XmlFeedEntry news, boolean deleteFirst) {
         if (deleteFirst) {
-            try {
+            try (Connection conn = Database.getConnection()) {
                 String query = String.format("DELETE FROM %s WHERE %s = '%s' or %s = '%s'", TABLE, DBFields.STR_LINK,
                         news.getLink(), DBFields.STR_TITLE, SQLUtils.asSafeString(news.getTitle()));
-                Logger.debugSQL(clz).log(query).end();
-                stmt.execute(query);
+                conn.createStatement().execute(query);
             } catch (Exception e) {
-                Logger.error(clz).log("save force error ").log(e.getMessage()).end();
+                logger.error("save {}, news {}, delete {} failed {}", e, sourceId, news, deleteFirst, e.getMessage());
             }
         }
 
@@ -52,7 +42,7 @@ public class FeedEntriesTable {
     }
 
     public static int save(long sourceId, XmlFeedEntry news) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             // Fails if duplicate key.
             String query = String.format(
                     "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s, %s) VALUES  "
@@ -70,29 +60,26 @@ public class FeedEntriesTable {
                     SQLUtils.asSafeString(news.getCleanContent()), news.getEntryDate(), CurrentTime.inGMT(),
                     SQLUtils.asSafeString(news.getThumbImg()));
 
-            Logger.debugSQL(clz).log("save ").log(query).end();
-            stmt.execute(query);
-
+            conn.createStatement().execute(query);
             return 1;
-        } catch (SQLException ex) {
+        } catch (SQLException e) {
             // TODO: check for publication date. Update.
-            if (ex.getMessage().contains("duplicate")) {
+            if (e.getMessage().contains("duplicate")) {
                 return 0;
             }
-
-            Logger.error(clz).log("save error ").log(ex.getMessage()).end();
+            logger.error("save error: {}", e, e.getMessage());
             return -1;
         }
     }
 
     public static ResultSet getEntries(long sourceId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT * FROM %s WHERE %s=%d ORDER BY %s DESC", TABLE, DBFields.LONG_XML_ID,
                     sourceId, DBFields.TIME_PUBLICATION_DATE);
             // Bad place to debug.
-            return stmt.executeQuery(query);
+            return conn.createStatement().executeQuery(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("getEntries sourceId ").log(sourceId).log(", error ").log(ex.getMessage()).end();
+            logger.error("getEntries sourceId {}, error: {}", ex, sourceId, ex.getMessage());
         }
 
         return null;

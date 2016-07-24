@@ -173,8 +173,8 @@ public class UserSession {
         return true;
     }
 
-    public static boolean isValid(long userId, Class<?> clz) {
-        return (userId > 0 && UsersTable.isValidUser(userId, clz));
+    public static boolean isValid(long userId) {
+        return (userId > 0 && UsersTable.isValidUser(userId));
     }
 
     private static String authCookie(HttpServletRequest request) {

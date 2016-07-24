@@ -3,28 +3,21 @@ package feedreader.store;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.cron.CronTimeUtils;
 import feedreader.entities.FeedSourceEntry;
-import feedreader.log.Logger;
 import feedreader.time.CurrentTime;
 import feedreader.utils.SQLUtils;
 
-/**
- *
- */
 public class FeedSourcesTable {
 
+    private static final Logger logger = LoggerFactory.getLogger(FeedSourcesTable.class);
     public static final String TABLE = Constants.FEED_SOURCES_TABLE;
-
-    static Class<?> clz = FeedSourcesTable.class; // Easier for logging.
-
-    static Connection conn;
-    static Statement stmt;
-
     static final FeedSourceEntry emptyEntry = new FeedSourceEntry(0, "");
     static final EntriesCount emptyEntriesCount = new EntriesCount(0, 0, 0, 0, 0);
 
@@ -36,20 +29,12 @@ public class FeedSourcesTable {
     }
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
     /**
@@ -57,72 +42,65 @@ public class FeedSourcesTable {
      * is per default 0.
      *
      * @param xmlUrl
-     *            http URL for the feed to be added
+     * http URL for the feed to be added
      *
      * @return {@link RetCodes#ERROR} <br>
-     *         {@link RetCodes#IN_QUEUE}<br>
-     *         {@link RetCodes#QUEUED}
+     * {@link RetCodes#IN_QUEUE}<br>
+     * {@link RetCodes#QUEUED}
      *
      */
     public static RetCodes addNewSource(String xmlUrl) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             xmlUrl = xmlUrl.toLowerCase();
             String query = String.format("INSERT INTO %s (%s, %s) VALUES ('%s', %d)", TABLE, DBFields.STR_XML_URL,
                     DBFields.TIME_ADDED_AT, SQLUtils.asSafeString(xmlUrl), CurrentTime.inGMT());
-            Logger.debugSQL(clz).log("addNewSource ").log(query).end();
-            stmt.execute(query);
+            conn.createStatement().execute(query);
             return RetCodes.QUEUED;
         } catch (SQLException ex) {
             if (ex.getMessage().contains("duplicate")) {
                 return RetCodes.IN_QUEUE;
-            } else {
-                Logger.error(clz).log("addNewSource error ").log(ex.getErrorCode()).log(" : ").log(ex.getMessage())
-                        .end();
-                return RetCodes.ERROR;
             }
+            logger.error("add new source error: {}", ex, ex.getMessage());
+            return RetCodes.ERROR;
         }
     }
 
     public static void disable(long sourceId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = true WHERE %s = %d", TABLE, DBFields.BOOL_GAVE_UP,
                     DBFields.LONG_XML_ID, sourceId);
-            Logger.debugSQL(clz).log(query).end();
-            stmt.execute(query);
-        } catch (SQLException ex) {
-            Logger.error(clz).log("disable ").log(sourceId).log(", error ").log(ex.getMessage()).end();
+            conn.createStatement().execute(query);
+        } catch (SQLException e) {
+            logger.error("disable {}, failed: {}", e, sourceId, e.getMessage());
         }
     }
 
     public static int setError(long id, int code, String err) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s=%s +1, %s=%d, %s='%s' WHERE %s=%d RETURNING %s", TABLE,
                     DBFields.SHORT_ERROR_COUNT,
                     DBFields.SHORT_ERROR_COUNT, // +1
                     DBFields.SHORT_ERROR_CODE, code, DBFields.STR_LAST_ERROR, err, DBFields.LONG_XML_ID, id,
                     DBFields.SHORT_ERROR_COUNT);
-            ResultSet rs = stmt.executeQuery(query);
-            Logger.debugSQL(clz).log(query).end();
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 return rs.getInt(DBFields.SHORT_ERROR_COUNT);
             }
-        } catch (SQLException ex) {
-            Logger.error(clz).log("setTempError ").log(ex.getMessage()).end();
+        } catch (SQLException e) {
+            logger.error("set error failed: {}", e, e.getMessage());
         }
 
         return 0;
     }
 
     public static void updateCheckedTime(FeedSourceEntry entry) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s set %s = %d WHERE %s = %d", TABLE, DBFields.TIME_CHECKED_AT,
                     CurrentTime.inGMT() + FeedAppConfig.FETCH_SOURCE_WAIT_INTERVAL_IN_SECS, DBFields.LONG_XML_ID,
                     entry.getId());
-            Logger.debugSQL(clz).log("updateCheckedTime ").log(query).end();
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("updateCheckedTime id ").log(entry.getId()).log(", error ").log(ex.getMessage())
-                    .end();
+            logger.error("update checked time for entry {}, error: {}", ex, entry, ex.getMessage());
         }
     }
 
@@ -131,60 +109,56 @@ public class FeedSourcesTable {
         long max1time = CronTimeUtils.getMaxHistory(FeedAppConfig.USER_1_VAL);
         long max2time = CronTimeUtils.getMaxHistory(FeedAppConfig.USER_2_VAL);
 
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("select %s(%d, %d, %d, %d) as %s", Database.Functions.UPDATE_SOURCE_COUNT,
                     xmlId, max0time, max1time, max2time, DBFields.COUNT);
 
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 return rs.getString(DBFields.COUNT);
             }
 
             return "nothing 0 0 0";
         } catch (SQLException ex) {
-            Logger.error(clz).log("updateCount ").log(xmlId).log(", error ").log(ex.getMessage()).end();
-
+            logger.error("update count {}, error: {}", ex, xmlId, ex.getMessage());
             return ex.getMessage();
         }
     }
 
     public static boolean setValid(long id) {
-        try {
-            stmt.execute(String.format("UPDATE %s SET %s=%d WHERE %s = %d", TABLE, DBFields.TIME_VALIDATED_AT,
-                    CurrentTime.inGMT(), DBFields.LONG_XML_ID, id));
-
+        try (Connection conn = Database.getConnection()) {
+            conn.createStatement()
+                    .execute(String.format("UPDATE %s SET %s=%d WHERE %s = %d", TABLE, DBFields.TIME_VALIDATED_AT,
+                            CurrentTime.inGMT(), DBFields.LONG_XML_ID, id));
             return true;
         } catch (SQLException ex) {
-            Logger.error(clz).log("setValid ").log(id).log(" ").log(ex.getMessage()).end();
+            logger.error("set valid: {}, error: {}", ex, id, ex.getMessage());
         }
 
         return false;
     }
 
     public static void clearErrors(long id) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("UPDATE %s SET %s = 0, %s = 0, %s = '' WHERE %s = %d", TABLE,
                     DBFields.SHORT_ERROR_CODE, DBFields.SHORT_ERROR_COUNT, DBFields.STR_LAST_ERROR,
                     DBFields.LONG_XML_ID, id);
-            Logger.debugSQL(clz).log("clear errors ").log(query).end();
-            stmt.execute(query);
+            conn.createStatement().execute(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("clear errors ").log(id).log(", error ").log(ex.getMessage()).end();
+            logger.error("clear errors id {}, error: {}", ex, id, ex.getMessage());
         }
     }
 
     public static long getInvalidCount() {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT count(%s) FROM %s where %s=%d", DBFields.LONG_XML_ID, TABLE,
                     DBFields.TIME_VALIDATED_AT, 0);
-            Logger.debugSQL(clz).log("getInvalidCount ").log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
-
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 return rs.getLong(1);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("getInvalidCount error ").log(ex.getMessage()).end();
+            logger.error("get invalid count error: {}", ex, ex.getMessage());
         }
 
         return -1;
@@ -208,13 +182,12 @@ public class FeedSourcesTable {
      * @return
      */
     public static FeedSourceEntry getNextFetch(int blockForMs) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT * FROM  %s WHERE %s > %d AND %s = %b ORDER BY %s, %s ASC LIMIT 1",
                     TABLE, DBFields.TIME_VALIDATED_AT, 0, DBFields.BOOL_GAVE_UP, false, DBFields.TIME_CHECKED_AT,
                     DBFields.TIME_ADDED_AT);
 
-            Logger.debugSQL(clz).log("getNext block ").log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (!rs.next()) {
                 return emptyEntry;
@@ -226,12 +199,10 @@ public class FeedSourcesTable {
 
             query = String.format("UPDATE %s SET %s=%d WHERE %s='%s'", TABLE, DBFields.TIME_CHECKED_AT,
                     CurrentTime.inGMT(), DBFields.LONG_XML_ID, id);
-            stmt.execute(query);
-            Logger.debugSQL(clz).log("getNext block update ").log(query).end();
-
+            conn.createStatement().execute(query);
             return entry;
         } catch (SQLException ex) {
-            Logger.error(clz).log("getNext error ").log(ex.getMessage()).end();
+            logger.error("get next error: {}", ex, ex.getMessage());
         }
 
         return emptyEntry;
@@ -248,9 +219,8 @@ public class FeedSourcesTable {
     }
 
     public static FeedSourceEntry runQuery(String query) {
-        try {
-            Logger.debugSQL(clz).log("runQuery ").log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (!rs.next()) {
                 return emptyEntry;
@@ -258,18 +228,18 @@ public class FeedSourcesTable {
 
             return getNewEntry(rs);
         } catch (SQLException ex) {
-            Logger.error(clz).log("getByStrKey error ").log(ex.getMessage()).end();
+            logger.error("get by key str error: {}", ex, ex.getMessage());
         }
 
         return emptyEntry;
     }
 
     public static ResultSet getEntries() {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT * FROM %s", TABLE);
-            return stmt.executeQuery(query);
+            return conn.createStatement().executeQuery(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("getEntries error ").log(ex.getMessage()).end();
+            logger.error("get entries error: {}", ex, ex.getMessage());
         }
 
         return null;
@@ -283,12 +253,11 @@ public class FeedSourcesTable {
      * @return {@link FeedSourceEntry}
      */
     public static FeedSourceEntry getNextInvalid(int blockForMs) {
-        try {
+        try (Connection conn = Database.getConnection()){
             String query = String.format("SELECT * FROM %s WHERE %s=%d AND %s=%b ORDER BY %s ASC, %s ASC LIMIT 1",
                     TABLE, DBFields.TIME_VALIDATED_AT, 0, DBFields.BOOL_GAVE_UP, false, DBFields.TIME_CHECKED_AT,
                     DBFields.TIME_ADDED_AT);
-            Logger.debugSQL(clz).log("getNextInvalid block ").log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next()) {
                 long id = rs.getLong(DBFields.LONG_XML_ID);
@@ -297,13 +266,11 @@ public class FeedSourcesTable {
 
                 query = String.format("UPDATE %s SET %s=%d WHERE %s=%d", TABLE, DBFields.TIME_CHECKED_AT,
                         CurrentTime.inGMT(), DBFields.LONG_XML_ID, id);
-                stmt.execute(query);
-                Logger.debugSQL(clz).log("getNextInvalid block ").log(query).end();
-
+                conn.createStatement().execute(query);
                 return entry;
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("getNextInvalid error ").log(ex.getMessage()).end();
+            logger.error("get next invalid error: {}", ex, ex.getMessage());
         }
 
         return emptyEntry;
@@ -346,22 +313,22 @@ public class FeedSourcesTable {
     }
 
     public static EntriesCount getTotalEntriesCount(String xmlIds, long timestamp) {
-        try {
+        try (Connection conn = Database.getConnection()){
             String query = "select f1 from feedreader.gettotalentriescountsince('" + xmlIds + "', " + timestamp + ");";
-            ResultSet rs = Database.getStatement().executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             long totalSince = -1;
             if (rs.next())
                 totalSince = rs.getLong(1);
 
             query = "select * from feedreader.gettotalentriescount('" + xmlIds + "')";
-            rs = Database.getStatement().executeQuery(query);
+            rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 if (totalSince == -1)
                     rs.getLong(1);
                 return new EntriesCount(rs.getLong(1), rs.getLong(2), rs.getLong(3), rs.getLong(4), totalSince);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("getTotalEntriesCount ").log(xmlIds).log(", error ").log(ex.getMessage()).end();
+            logger.error("get total entries count: {}, error {}", ex, xmlIds, ex.getMessage());
         }
 
         return emptyEntriesCount;
