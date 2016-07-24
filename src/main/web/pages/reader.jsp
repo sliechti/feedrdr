@@ -30,9 +30,11 @@
 
 <%@include file="header.jsp" %>
 
-<div id="leftbar" style="max-width: 200px; position: fixed; top: 70px;" class="hidden-xs col-sm-3 col-md-2">
+<div id="leftbar" style="display: none;">
     <div class="right">
-        <a title="close menu" href="" onclick="closeMenu(); return false;"><span class="glyphicon glyphicon-remove-circle"></span></a>
+        <a title="close menu" href="" onclick="closeMenu(); return false;">
+        	<span class="em15 glyphicon glyphicon-remove-circle"></span>
+       	</a>
     </div>
     <div>
         <a href="#/v/a" id="mAll" style="display: block">All</a>
@@ -70,11 +72,10 @@
         </div>
     </div>
 
-    <div id='menusubs' onmouseover="$('#menusubs').css('overflow-y', 'auto');"
-         onmouseout="$('#menusubs').css('overflow-y', 'hidden');"></div>
+    <div id='menusubs'></div>
 </div>
 
-<div id="stream_content" class="col-xs-12 col-sm-offset-3 col-md-offset-2 col-sm-9 col-md-10">
+<div id="stream_content">
 
     <div id="simple_view_header" class="row" onmouseover="$('#edit_tools').show()"
      onmouseout="$('#edit_tools').hide()"></div>
@@ -166,7 +167,6 @@
         });
 
         var route = router.getRoute();
-        console.log("route " + route.length);
         if(route && route.length == 1) {
             getStreamGroups(function(streamGroups, filteredStreamGroups) {
                 if (filteredStreamGroups.length > 0) {

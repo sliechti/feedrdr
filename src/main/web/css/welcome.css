@@ -13,6 +13,18 @@ body {
 	width: 60%;
 }
 
+.max500 {
+	max-width: 500px;
+}
+
+.min250 {
+	min-width: 250px;
+}
+
+.padding20 {
+	padding: 20px;
+}
+
 #center-piece {
 	display: table;
 	margin: auto;
@@ -61,6 +73,14 @@ body {
 	margin: 0px;
 }
 
+.margin20 {
+	margin: 20px;
+}
+
+.bottom5 {
+	margin-bottom: 5px;
+}
+
 .bottom10 {
 	margin-bottom: 10px;
 }
@@ -78,7 +98,7 @@ body {
 	background-color: white;
 	border-bottom: 0.8px solid #D6D6D6;
 	margin-bottom: 60px;
-	padding: 10px;
+	padding: 10px 0px;
 	height: 40px;
 }
 
@@ -110,7 +130,15 @@ button {
 }
 
 .button0 {
-	  border: 0;
+	border: 0;
+}
+
+.plain-btn {
+	text-decoration: none;
+	text-align: center;
+	border: 0px;
+	border-radius: 2px;
+	padding: 5px 0px;
 }
 
 .btn {
@@ -130,7 +158,7 @@ button {
 input {
 	border: 0.8px solid #D6D6D6;
 	font-size: 1.1em;
-	padding: 2px;
+	padding: 5px;
 }
 
 #center-piece p {
@@ -235,7 +263,6 @@ p.intro {
 	height: 30px;
 }
 
-
 .info-msg {
 	background-color: #30779B;
 	color: white;
@@ -244,4 +271,19 @@ p.intro {
 .warn-msg {
 	background-color: #DBDB41;
 	color: #183C4F;
+	margin: 5px 0px;
+	padding: 5px;
+}
+
+.success {
+	background-color: #4FA866;
+	color: white;
+}
+
+.hide {
+	display: none;
+}
+
+.left20 {
+	padding-left: 20px;
 }

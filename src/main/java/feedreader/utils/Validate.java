@@ -32,11 +32,11 @@ public class Validate {
     }
 
     public static String getPasswordRules() {
-        return "Needs to be at least 4 letters long.";
+        return "Passwords need to be at least 8 letters long.";
     }
 
     public static boolean isValidPassword(String pwd) {
-        if (!pwd.isEmpty() && pwd.length() > 3) {
+        if (!pwd.isEmpty() && pwd.length() > 7) {
             return true;
         }
 

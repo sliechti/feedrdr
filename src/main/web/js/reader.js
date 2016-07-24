@@ -73,7 +73,6 @@ var moreAvailable = true;
 var currentView = 1;
 
 var streamGroupsTmpl;
-var streamGroupsSmallTmpl;
 var streamGroupHeaderTmpl;
 var sourceHeaderTmpl;
 var recentlyReadHeaderTmpl;
@@ -158,11 +157,11 @@ function setupEvents() {
 
 function setupTemplates() {
 
-	Handlebars.registerPartial("header_right_tools", $("#header_right_tools").html());
+	Handlebars.registerPartial("header_right_tools", $("#header_right_tools")
+			.html());
 
 	// TODO Compile only when used for the first time.
 	streamGroupsTmpl = Handlebars.compile($('#stream_groups_tmpl').html());
-	streamGroupsSmallTmpl = Handlebars.compile($('#stream_groups_small_tmpl').html());
 
 	viewLineTmpl = Handlebars.compile($("#news_line_tmpl").html());
 	viewMagTmpl = Handlebars.compile($("#news_mag_tmpl").html());
@@ -170,12 +169,14 @@ function setupTemplates() {
 	entriesTmpl = viewLineTmpl;
 
 	sourceHeaderTmpl = Handlebars.compile($("#source_header_tmpl").html());
-	recentlyReadHeaderTmpl = Handlebars.compile($("#recently_read_header_tmpl").html());
-	simpleViewHeaderTmpl = Handlebars.compile($("#simple_view_header_tmpl").html());
+	recentlyReadHeaderTmpl = Handlebars.compile($("#recently_read_header_tmpl")
+			.html());
+	simpleViewHeaderTmpl = Handlebars.compile($("#simple_view_header_tmpl")
+			.html());
 
 	contentAllRead = Handlebars.compile($("#content_all_read").html());
 	contentEmptySource = Handlebars.compile($("#content_empty_source").html());
-	
+
 	pageUnknownTmpl = Handlebars.compile($("#content_unknown").html());
 }
 
@@ -218,17 +219,19 @@ function setEntriesPerPage(len) {
 }
 
 /**
- * Register callback to be called when #triggerOnEntriesLoadedListeners is called.
- * 
+ * Register callback to be called when #triggerOnEntriesLoadedListeners is
+ * called.
+ *
  * @param callback
  */
 function registerOnEntriesLoadedListeners(callback) {
 	onEntriesLoadedListeners.push(callback);
 }
 
-/** 
- * Called by the different load* methods after the API call requesting entries finishes.
- * 
+/**
+ * Called by the different load* methods after the API call requesting entries
+ * finishes.
+ *
  * @see #loadAll
  * @see #loadEntries
  */
@@ -254,10 +257,10 @@ function triggerChangeViewListeners(view) {
 	}
 }
 
-
 function displayStreamHeader() {
 	if (!streamGroupHeaderTmpl) {
-		streamGroupHeaderTmpl = Handlebars.compile($("#stream_group_header_tmpl").html());
+		streamGroupHeaderTmpl = Handlebars.compile($(
+				"#stream_group_header_tmpl").html());
 	}
 
 	$("#stream_group_header").html(streamGroupHeaderTmpl(selectedStream));
@@ -300,7 +303,9 @@ function runQuery() {
 	}
 
 	if (queryGroups.sortByAlphabet != 0) {
-		j.sort(((queryGroups.sortByAlphabet == 1) ? "-" : "") + "s_stream_name");
+		j
+				.sort(((queryGroups.sortByAlphabet == 1) ? "-" : "")
+						+ "s_stream_name");
 	}
 
 	if (queryGroups.sortByUnread != 0) {
@@ -312,18 +317,19 @@ function runQuery() {
 }
 
 function renderStreamGroups(data) {
-	if ($("#menusubs").is(":hidden")) {
-		$("#small_menusubs").html(streamGroupsSmallTmpl({"groups" : data}));
-	} else {
-		$("#menusubs").html(streamGroupsTmpl({"groups" : data}));
-	}
+	$("#menusubs").html(streamGroupsTmpl({
+		"groups" : data
+	}));
 	selectDom("e_" + selectedStream.l_stream_id);
 }
 
-/** 
- * @param streamGroupList list of stream groups to get the unread count.
- * @param nocache 1 = calculate again, 0 = get from from cache.
- * @param callback callback to call when query finishes.
+/**
+ * @param streamGroupList
+ *            list of stream groups to get the unread count.
+ * @param nocache
+ *            1 = calculate again, 0 = get from from cache.
+ * @param callback
+ *            callback to call when query finishes.
  */
 function getUnreadCount(streamGroupList, nocache, callback) {
 	var ids = '';
@@ -342,12 +348,13 @@ function getUnreadCount(streamGroupList, nocache, callback) {
 	if (nocache == undefined) {
 		nocache = 0;
 	}
-	
+
 	var queryData = {};
 	queryData.sid = ids.slice(0, -1);
 	queryData.nc = nocache;
 
-	$.getJSON(baseUrl + apuUrlStreamsUnreadCount, queryData, function(data, status) {
+	$.getJSON(baseUrl + apuUrlStreamsUnreadCount, queryData, function(data,
+			status) {
 		for (var x = 0; x < streamGroups.length; x++) {
 			for (var i = 0; i < data.entries.length; i++) {
 				if (streamGroups[x].l_stream_id == data.entries[i].id) {
@@ -357,7 +364,7 @@ function getUnreadCount(streamGroupList, nocache, callback) {
 			}
 		}
 		runQuery();
-		
+
 		if (callback != undefined) {
 			callback();
 		}
@@ -371,7 +378,7 @@ function refreshUnread() {
 function getStreamGroups(callback) {
 	var queryData = {};
 	queryData.views = true;
-	
+
 	$.getJSON(baseUrl + apiUrlStreamsList, queryData, function(data) {
 		streamGroups = data;
 		getUnreadCount(streamGroups, 0, function() {
@@ -387,7 +394,8 @@ function closeAllHeaderTools() {
 	return false;
 }
 
-// Stream rename and subscriptions rename work same. Candidates to create a little rename tool.
+// Stream rename and subscriptions rename work same. Candidates to create a
+// little rename tool.
 function showRename(partialSelector) {
 	$("#span_" + partialSelector).hide();
 	$("#div_" + partialSelector).show();
@@ -408,9 +416,9 @@ function toggleHeaderTool(name) {
 }
 
 function showImport() {
-	showModal("Add new feed to '" + selectedStream.s_stream_name + "'", "#div_add_subscription", 
-			function closeImportModal() { /* noop */ }
-	);
+	showModal("Add new feed to '" + selectedStream.s_stream_name + "'",
+			"#div_add_subscription", function closeImportModal() { /* noop */
+			});
 }
 
 function importSingleFeed() {
@@ -471,7 +479,9 @@ function updateStreamGroupsList(sid, name) {
 		}
 	}
 
-	$("#menusubs").html(streamGroupsTmpl({"groups" : streamGroups}));
+	$("#menusubs").html(streamGroupsTmpl({
+		"groups" : streamGroups
+	}));
 }
 
 function sendActionEntry(entryId, action, callback) {
@@ -573,8 +583,10 @@ function fetchFavIcos() {
 }
 
 /**
- * @param {type} images if image is null, only content is queried.
- * @param {type} content if content is null, only images are queried.
+ * @param {type}
+ *            images if image is null, only content is queried.
+ * @param {type}
+ *            content if content is null, only images are queried.
  * @returns {undefined}
  */
 function fetchNewsData(images, content) {
@@ -602,14 +614,17 @@ function fetchNewsData(images, content) {
 						img.src = data.entries[i].s_thumb_url;
 						$("#img_" + data.entries[i].l_entry_id).html(img);
 					} else if (currentView == VIEW_MAGAZINE) {
-						$("#img_" + data.entries[i].l_entry_id).css('background',
-								'url(' + data.entries[i].s_thumb_url + ") no-repeat center").css('background-size',
-								'220px');
+						$("#img_" + data.entries[i].l_entry_id).css(
+								'background',
+								'url(' + data.entries[i].s_thumb_url
+										+ ") no-repeat center").css(
+								'background-size', '220px');
 					}
 				}
 
 				if (content && data.entries[i].content) {
-					$("#cnt_" + data.entries[i].l_entry_id).html(data.entries[i].content);
+					$("#cnt_" + data.entries[i].l_entry_id).html(
+							data.entries[i].content);
 				}
 			}
 		}
@@ -633,7 +648,8 @@ function apiStreamRead(streamId, callback) {
 	queryData.sid = streamId;
 	queryData.t = renderTime;
 
-	$.getJSON(baseUrl + apiUrlStreamsMarkAllRead, queryData, function httpRet(data, status) {
+	$.getJSON(baseUrl + apiUrlStreamsMarkAllRead, queryData, function httpRet(
+			data, status) {
 		if (callback) {
 			callback(data);
 		}
@@ -697,25 +713,29 @@ function updateNewsListView() {
 		queryData.v = currentView;
 		queryData.c = selectedStream.l_gr_unread;
 
-		$.getJSON(baseUrl + apiUrlStreamUpdate, queryData, function(data, success) { /**/ }, "json");
+		$.getJSON(baseUrl + apiUrlStreamUpdate, queryData, function(data,
+				success) { /**/
+		}, "json");
 	} else {
 		var queryData = {};
 		queryData.tmpl = tmplOptions.id;
 		queryData.v = currentView;
 
 		switch (tmplOptions.id) {
-			case TEMPLATE_ID_SAVED:
-				selectedProfile.saved_settings.view = currentView;
-				break;
-			case TEMPLATE_ID_ALL:
-				selectedProfile.all_settings.view = currentView;
-				break;
-			case TEMPLATE_ID_RECENTLY_READ:
-				selectedProfile.rr_settings.view = currentView;
-				break;
+		case TEMPLATE_ID_SAVED:
+			selectedProfile.saved_settings.view = currentView;
+			break;
+		case TEMPLATE_ID_ALL:
+			selectedProfile.all_settings.view = currentView;
+			break;
+		case TEMPLATE_ID_RECENTLY_READ:
+			selectedProfile.rr_settings.view = currentView;
+			break;
 		}
-		
-		$.getJSON(baseUrl + apiUrlSaveModulesSettings, queryData, function(data, success) { /**/ }, "json");
+
+		$.getJSON(baseUrl + apiUrlSaveModulesSettings, queryData, function(
+				data, success) { /**/
+		}, "json");
 	}
 
 	if (topUnread == undefined) {
@@ -733,11 +753,11 @@ function updateNewsListView() {
 
 function updateHeaderRightTools() {
 	$(".mark_all_read").hide();
-	
+
 	if (tmplOptions.id == TEMPLATE_ID_SOURCE) {
 		$("#right_tools").remove();
 	}
-	
+
 	if (selectedStream.h_filter_by == FILTER_SHOW_ALL) {
 		$("#show_unread").css("text-decoration", "none");
 		$("#show_all").css("text-decoration", "underline");
@@ -758,73 +778,75 @@ function updateHeaderRightTools() {
 	}
 }
 
-function setViewOptions(){
+function setViewOptions() {
 	$("#icon_view_line").removeClass("icon-view-bgcolor");
 	$("#icon_view_mag").removeClass("icon-view-bgcolor");
 	$("#icon_view_stream").removeClass("icon-view-bgcolor");
 
 	switch (currentView) {
-		case VIEW_LIST:
-			tmplOptions.sourceLen = 11;
-			$("#icon_view_line").addClass("icon-view-bgcolor");
-			entriesTmpl = viewLineTmpl;
-			break;
-			
-		case VIEW_MAGAZINE:
-			$("#icon_view_mag").addClass("icon-view-bgcolor");
-			tmplOptions.sourceLen = 50;
-			entriesTmpl = viewMagTmpl;
-			break;
-	
-		default:
-		case VIEW_STREAM:
-			$("#icon_view_stream").addClass("icon-view-bgcolor");
-			tmplOptions.sourceLen = 50;
-			entriesTmpl = viewNewsTmpl;
-			currentView = VIEW_STREAM;
-			break;
+	case VIEW_LIST:
+		tmplOptions.sourceLen = 11;
+		$("#icon_view_line").addClass("icon-view-bgcolor");
+		entriesTmpl = viewLineTmpl;
+		break;
+
+	case VIEW_MAGAZINE:
+		$("#icon_view_mag").addClass("icon-view-bgcolor");
+		tmplOptions.sourceLen = 50;
+		entriesTmpl = viewMagTmpl;
+		break;
+
+	default:
+	case VIEW_STREAM:
+		$("#icon_view_stream").addClass("icon-view-bgcolor");
+		tmplOptions.sourceLen = 50;
+		entriesTmpl = viewNewsTmpl;
+		currentView = VIEW_STREAM;
+		break;
 	}
-	
+
 	if (screen.width < 1200) {
 		tmplOptions.sourceLen = 10;
 	}
-	
+
 	if (screen.width < 1000) {
 		tmplOptions.sourceLen = 8;
 		tmplOptions.showSource = false;
 	}
-	
+
 	if (currentView == VIEW_LIST && screen.width < 450) {
 		tmplOptions.showIco = false;
 		tmplOptions.titleLen = 35;
 	}
-	
+
 	tmplOptions.leftSize = 2;
 	tmplOptions.midSize = 9;
-	
+
 	if (!tmplOptions.showSource) {
 		tmplOptions.leftSize--;
 		tmplOptions.midSize++;
 	}
-	
+
 	if (!tmplOptions.showIco) {
 		tmplOptions.leftSize--;
 		tmplOptions.midSize++;
 	}
-	
+
 	selectedStream.h_view_mode = currentView;
 }
 
 function updateNewsContentPane(entriesLen) {
-	
+
 	if (entriesLen == 0 || entriesLen == undefined) {
 		if (tmplOptions.id == TEMPLATE_ID_SOURCE) {
 			if (streamPage == 0) {
-				$("#stream_entries").html(contentEmptySource({"id" : selectedStream.l_stream_id}));
+				$("#stream_entries").html(contentEmptySource({
+					"id" : selectedStream.l_stream_id
+				}));
 			}
 			return;
 		}
-		
+
 		if (tmplOptions.id == TEMPLATE_ID_ALL) {
 			renderContentStart();
 		} else if (tmplOptions.id == TEMPLATE_ID_SAVED) {
@@ -832,7 +854,9 @@ function updateNewsContentPane(entriesLen) {
 		} else if (tmplOptions.id == TEMPLATE_ID_RECENTLY_READ) {
 			$("#stream_entries").html($("#content_start_recently_read").html());
 		} else if (streamPage == 0 && streamSubscriptions.length != 0) {
-			$("#stream_entries").html(contentAllRead({"name" : selectedStream.s_stream_name}));
+			$("#stream_entries").html(contentAllRead({
+				"name" : selectedStream.s_stream_name
+			}));
 		} else { // empty profile but user has subscriptions
 			$("#stream_entries").html($("#content_start_source").html());
 		}
@@ -865,26 +889,25 @@ function resetTemplate(type, showIco, showSource, showHeader) {
 	moveTop();
 }
 
-
 /**
- * Used when changing between profiles.
- * If you are changing views, use clearView().
- * If you are changing stream groups user clearViewAndData()
+ * Used when changing between profiles. If you are changing views, use
+ * clearView(). If you are changing stream groups user clearViewAndData()
  */
 function clearContent() {
 	selectedStream = {};
 	streamGroups = {};
 	filteredStreamGroups = {};
 	position = 0;
-	
-	$("#right_tools").remove(); // needs to be removed since it uses a partial template.
+
+	$("#right_tools").remove(); // needs to be removed since it uses a partial
+								// template.
 	$("#menusubs").html("");
 	$("#stream_header").html("");
 	$("#stream_config").hide();
 	clearViewAndData();
 }
 
-/** 
+/**
  * @see #clearContent()
  */
 function clearView() {
@@ -895,14 +918,14 @@ function clearView() {
 	$(".mark_all_read").hide();
 }
 
-/** 
+/**
  * @see #clearContent()
  */
 function clearViewAndData() {
 	clearView();
 	streamPage = 0;
 	streamEntries = {};
-	updateNewsListView();	
+	updateNewsListView();
 }
 
 function loadStream(streamId) {
@@ -916,7 +939,7 @@ function loadStream(streamId) {
 			selectedStream = streamGroups[i];
 		}
 	}
-	
+
 	currentView = selectedStream.h_view_mode;
 	fetchAllStreamSubscriptions(streamId);
 	displayStreamHeader();
@@ -929,13 +952,15 @@ function loadAll() {
 
 	resetTemplate(TEMPLATE_ID_ALL, true, true, 'simple_view_header');
 	selectDom("mAll");
-	
+
 	$.getJSON(baseUrl + apiCurrentStreamsFeed, {}, function(data) {
 		streamEntries = data.entries;
 		triggerOnEntriesLoadedListeners(streamEntries);
 	});
 
-	$("#simple_view_header").html(simpleViewHeaderTmpl({"title" : "All"}));
+	$("#simple_view_header").html(simpleViewHeaderTmpl({
+		"title" : "All"
+	}));
 }
 
 function selectDom(domId) {
@@ -949,7 +974,7 @@ function loadRecentlyRead() {
 
 	resetTemplate(TEMPLATE_ID_RECENTLY_READ, true, true, 'simple_view_header');
 	selectDom("mRr");
-	
+
 	$.getJSON(baseUrl + apiCurrentStreamsFeed, {}, function(data) {
 		streamEntries = data.entries;
 		triggerOnEntriesLoadedListeners(streamEntries);
@@ -966,13 +991,15 @@ function loadSaved() {
 
 	resetTemplate(TEMPLATE_ID_SAVED, true, true, 'simple_view_header');
 	selectDom("mSaved");
-	
+
 	$.getJSON(baseUrl + apiCurrentStreamsFeed, {}, function(data) {
 		streamEntries = data.entries;
 		triggerOnEntriesLoadedListeners(streamEntries);
 	});
 
-	$("#simple_view_header").html(simpleViewHeaderTmpl({"title" : "Saved"}));
+	$("#simple_view_header").html(simpleViewHeaderTmpl({
+		"title" : "Saved"
+	}));
 }
 
 function loadSource(sourceId) {
@@ -989,36 +1016,46 @@ function loadSource(sourceId) {
 	var queryData = {};
 	queryData.sid = sourceId;
 
-	$.getJSON(baseUrl + apiUrlSubscriptionsGet, queryData, function(data) {
-		// TODO: Can all this be done better?
-		if (data && data.l_subs_id) {
-			$("#user_subscription").show();
+	$
+			.getJSON(
+					baseUrl + apiUrlSubscriptionsGet,
+					queryData,
+					function(data) {
+						// TODO: Can all this be done better?
+						if (data && data.l_subs_id) {
+							$("#user_subscription").show();
 
-			var inputSize = (data.s_subs_name.length * 2 > MAX_INPUT_SIZE) ? MAX_INPUT_SIZE
-					: data.s_subs_name.length * 2;
-			$("#txt_subscription_rename").attr("size", inputSize);
-			$("#txt_subscription_rename").attr("data-value", data.l_subs_id);
-			$("#txt_subscription_rename").val(data.s_subs_name);
+							var inputSize = (data.s_subs_name.length * 2 > MAX_INPUT_SIZE) ? MAX_INPUT_SIZE
+									: data.s_subs_name.length * 2;
+							$("#txt_subscription_rename").attr("size",
+									inputSize);
+							$("#txt_subscription_rename").attr("data-value",
+									data.l_subs_id);
+							$("#txt_subscription_rename").val(data.s_subs_name);
 
-			$("#span_subscription_rename").html(data.s_subs_name);
-			$("#span_subscription_rename").attr("href", baseUrl + "/pages/subscriptions.jsp#/v/" + data.l_subs_id);
+							$("#span_subscription_rename").html(
+									data.s_subs_name);
+							$("#span_subscription_rename").attr(
+									"href",
+									baseUrl + "/pages/subscriptions.jsp#/v/"
+											+ data.l_subs_id);
 
-			$("#txt_subscription_rename").keyup(function(e) {
-				if ((e.keyCode || e.which) == 13)
-					renameSubscription(); // enter
-				if ((e.keyCode || e.which) == 27) {
-					$("#div_subscription_rename").hide();
-					$("#span_subscription_rename").show();
-				}
-			});
-		}
-	});
+							$("#txt_subscription_rename").keyup(function(e) {
+								if ((e.keyCode || e.which) == 13)
+									renameSubscription(); // enter
+								if ((e.keyCode || e.which) == 27) {
+									$("#div_subscription_rename").hide();
+									$("#span_subscription_rename").show();
+								}
+							});
+						}
+					});
 
 	var queryData = {};
 	queryData.id = sourceId;
 
 	selectedStream.l_stream_id = sourceId; // so loadMore keeps working
-	
+
 	$.getJSON(baseUrl + apiUrlSourceId, queryData, function(data) {
 		streamEntries = data.entries;
 		updateNewsListView();
@@ -1033,7 +1070,7 @@ function loadMore() {
 	loadEntries(++streamPage);
 }
 
-function updateUnread() {	
+function updateUnread() {
 	var c = selectedStream.l_gr_unread;
 	if (c < 0) {
 		selectedStream.l_gr_unread = 0;
@@ -1066,7 +1103,8 @@ function loadEntries(page) {
 		queryData.offset = len;
 	}
 
-	$.getJSON(baseUrl + apiCurrentStreamsFeed, queryData, function(data, success) {
+	$.getJSON(baseUrl + apiCurrentStreamsFeed, queryData, function(data,
+			success) {
 		streamEntries = data.entries;
 		if (data.unread != undefined) {
 			selectedStream.l_gr_unread = data.unread;
@@ -1104,7 +1142,7 @@ function saveStreamGroup() {
 			getStreamGroups(function() {
 				loadStream(data.id);
 			});
-		}else{
+		} else {
 			alert(data.error);
 		}
 	});
@@ -1118,7 +1156,9 @@ function newStreamGroup() {
 	var input = $("#menusubs input:first-child");
 
 	if (input.length == 0) {
-		$("#menusubs").prepend("<div id='newGroup'><input size='8' type='text' value=''>\
+		$("#menusubs")
+				.prepend(
+						"<div id='newGroup'><input size='8' type='text' value=''>\
                 <button onclick='saveStreamGroup()'>S</button><button onclick='cancelStreamGroup()'>C</button></div>");
 		input = $("#menusubs input:first-child");
 	}
@@ -1137,7 +1177,7 @@ function newStreamGroup() {
 
 function showAll() {
 	selectedStream.h_filter_by = FILTER_SHOW_ALL;
-	clearView();	
+	clearView();
 	loadEntries(0);
 }
 
@@ -1154,7 +1194,9 @@ function streamSort(sortDir) {
 }
 
 function saveReaderSettings() {
-	$.get(baseUrl + apiUrlSaveReaderSettings, queryGroups, function(data, status) { /* noop */ });
+	$.get(baseUrl + apiUrlSaveReaderSettings, queryGroups, function(data,
+			status) { /* noop */
+	});
 }
 
 function closeMenu() {

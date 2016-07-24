@@ -3,7 +3,7 @@
 <head>
 <title>feedrdr.co - open source rss news reader</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="open source rss news reader to keep track of all the content you care about" />
 <meta name="keywords" content="rss,atom,news reader,feed reader" />
 <meta name="google-site-verification" content="w2qoFGms5i-1odj9Jj2G3CTCtMokK79Oi93mwglzNkk" />
@@ -112,6 +112,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 <script>
 	$(document).ready(function() {
 		$('#email').focus();
+		fbq('track', 'ViewContent');
 	});
 </script>
 <script>
