@@ -55,7 +55,7 @@ public class StreamsAPI {
         try (Connection conn = Database.getConnection()) {
             StringBuilder sb = new StringBuilder();
             sb.append("[");
-            APIUtils.wrapObject(sb, UserStreamGroupsTable.get(conn, userId, profileId, views));
+            APIUtils.wrapObject(sb, UserStreamGroupsTable.get(conn, profileId, views));
             return sb.append("]").toString();
         } catch (SQLException ex) {
             logger.error("failed: {}", ex, ex.getMessage());
@@ -162,7 +162,7 @@ public class StreamsAPI {
             return JSONUtils.error(0, "invalid view.");
         }
 
-        int c = UserStreamGroupsTable.saveView(userId, streamId, viewId, filter, sort, count);
+        int c = UserStreamGroupsTable.saveView(streamId, viewId, filter, sort, count);
         if (c == -1) {
             return JSONUtils.error(c, "error saving view.");
         }

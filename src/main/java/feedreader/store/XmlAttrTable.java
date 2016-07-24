@@ -38,7 +38,7 @@ public class XmlAttrTable {
         logger.info("close");
     }
 
-    public static int getNodeId(String owner, String nodeName) {
+    public static int getNodeId(String nodeName) {
         try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s WHERE %s = '%s'", NODE_ID, TABLE_NODE, NODE_NAME,
                     SQLUtils.asSafeString(nodeName));
@@ -111,7 +111,7 @@ public class XmlAttrTable {
         for (XmlQnode.AttrInfo attr : value) {
             try (Connection conn = Database.getConnection()) {
                 String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = '%s'", NODE_ID, TABLE_ATTRS,
-                        NODE_ID, nodeId, ATTR_NAME, SQLUtils.asSafeString(attr.name));
+                        NODE_ID, nodeId, ATTR_NAME, SQLUtils.asSafeString(attr.attrname));
                 ResultSet rs = conn.createStatement().executeQuery(query);
 
                 if (rs.next()) {
@@ -123,7 +123,7 @@ public class XmlAttrTable {
 
             try (Connection conn = Database.getConnection()) {
                 String query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%d, '%s', '%s', '%s')",
-                        TABLE_ATTRS, NODE_ID, ATTR_NAME, ATTR_TYPE, ATTR_VALUE, nodeId, attr.name, attr.type, attr.val);
+                        TABLE_ATTRS, NODE_ID, ATTR_NAME, ATTR_TYPE, ATTR_VALUE, nodeId, attr.attrname, attr.type, attr.attrval);
                 conn.createStatement().executeQuery(query);
             } catch (SQLException ex) {
                 logger.error("failed: {}", ex, ex.getMessage());

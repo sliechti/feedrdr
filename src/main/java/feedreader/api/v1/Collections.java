@@ -71,7 +71,6 @@ public class Collections {
             return JSONUtils.error(0, "couldn't create stream group " + name);
         }
 
-        int subsErrors = 0;
         int subsOk = 0;
         int profilesOk = 0;
 
@@ -87,7 +86,6 @@ public class Collections {
                 long subsId = UserFeedSubscriptionsTable.save(userId, xmlId, entry);
 
                 if (subsId == -1) {
-                    subsErrors++;
                     logger.error("error addin subscription {}, entry {}", xmlId, entry);
                     continue;
                 }
@@ -123,7 +121,7 @@ public class Collections {
     @GET
     @Path("/entries")
     @Produces(MediaType.APPLICATION_JSON)
-    public String entries(@Context HttpServletRequest request, @QueryParam("ids") String idList) {
+    public String entries(@QueryParam("ids") String idList) {
 
         StringBuilder sb = new StringBuilder();
         String[] arIds = idList.split(",");
@@ -154,7 +152,7 @@ public class Collections {
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
-    public String list(@Context HttpServletRequest req, @QueryParam("page") long page) {
+    public String list() {
         StringBuilder sb = new StringBuilder();
         String query = CollectionsTable.getQueryList();
         try (Connection conn = Database.getConnection()) {

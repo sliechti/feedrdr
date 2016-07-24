@@ -64,6 +64,9 @@ public class UserKeyValuesTable {
         return -1;
     }
 
+    /**
+     * @param retDefault
+     */
     public static JsonObject get(long userId, long profileId, int key, boolean retDefault) {
         JsonObject o = get(userId, profileId, key);
 

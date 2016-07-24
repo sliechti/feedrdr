@@ -66,11 +66,14 @@ public class XmlFeedEntry {
     }
 
     public void end() {
-
+        // noop
     }
 
+    /**
+     * @param qName
+     */
     void startElement(String qName) {
-
+        // noop
     }
 
     void endElement(String qName) {
@@ -229,8 +232,7 @@ public class XmlFeedEntry {
 
         Elements media = doc.select("a[href]");
         for (Element e : media) {
-            XmlLinkDef link = new XmlLinkDef(e.attr("abs:href"), e.text());
-            ret.add(link);
+            ret.add(new XmlLinkDef(e.attr("abs:href"), e.text()));
         }
 
         return ret;

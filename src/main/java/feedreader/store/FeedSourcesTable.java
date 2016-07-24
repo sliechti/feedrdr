@@ -276,6 +276,9 @@ public class FeedSourcesTable {
         return emptyEntry;
     }
 
+    /**
+     * @param xmlUrl
+     */
     public static boolean isKnown(String xmlUrl) {
         // try
         // {

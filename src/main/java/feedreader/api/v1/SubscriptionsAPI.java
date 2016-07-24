@@ -54,10 +54,6 @@ public class SubscriptionsAPI {
                     DBFields.LONG_XML_ID, DBFields.LONG_XML_ID, DBFields.LONG_USER_ID,
                     DBFields.STR_SUBSCRIPTION_NAME, FeedAppConfig.DEFAULT_API_SORT_USER_SUBSCRIPTIONS_LIST);
 
-    public SubscriptionsAPI() {
-        logger.info("init");
-    }
-
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)

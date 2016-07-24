@@ -42,16 +42,6 @@ public class FeedsAPI {
             + " WHERE t0.l_profile_id = ? " + " AND t3.t_pub_date > ?" + " GROUP BY t3.l_entry_id "
             + "ORDER BY t3.t_pub_date DESC LIMIT ? OFFSET ?";
 
-    private static final String subscriptionsQeury = "select t0.s_group_time_filter, t1.l_subs_id, t2.l_xml_id from feedreader.userstreamgroups as t0 "
-            + " inner join feedreader.userstreamgroupfeedsubscription as t1 "
-            + "     on t0.l_stream_id = t1.l_stream_id "
-            + " inner join feedreader.userfeedsubscriptions as t2 "
-            + "     on t2.l_subs_id = t1.l_subs_id " + " where t0.l_stream_id = ?";
-
-    public FeedsAPI() {
-        logger.info("init");
-    }
-
     @GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
@@ -94,24 +84,6 @@ public class FeedsAPI {
 
         sb.append("]}");
         return sb.toString();
-    }
-
-    @GET
-    @Path("/listunread")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String listunread(@Context HttpServletRequest req, @QueryParam("sid") String streamId) {
-        // long userId = Session.asLong(req.getSession(), Constants.SESSION_USERID_FIELD, 0);
-        //
-        // String query = "select t2.l_xml_id, t2.i_unread, t2.s_time_filter from feedreader.userstreamgroups as t0 "
-        // + "inner join feedreader.userstreamgroupfeedsubscription as t1 "
-        // + " on t0.l_stream_id = t1.l_stream_id "
-        // + " inner join feedreader.userfeedsubscriptions as t2 "
-        // + " on t1.l_subs_id = t2.l_subs_id "
-        // + " where t0.l_stream_id = " + streamId;
-        //
-        // ResultSet rs = Database.rawQuery(query);
-
-        return "";
     }
 
     @GET

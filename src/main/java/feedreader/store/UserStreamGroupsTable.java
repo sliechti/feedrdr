@@ -61,7 +61,7 @@ public class UserStreamGroupsTable {
         }
     }
 
-    public static ResultSet get(Connection conn, long userId, long profileId, boolean view) throws SQLException {
+    public static ResultSet get(Connection conn, long profileId, boolean view) throws SQLException {
         String query = String.format("SELECT * from %s AS t1 INNER JOIN %s AS t2 ON " + " t1.%s = t2.%s ", TABLE,
                 UserProfilesTable.TABLE_STREAM_GROUPS, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID);
 
@@ -172,7 +172,7 @@ public class UserStreamGroupsTable {
         return 0;
     }
 
-    public static int saveView(long userId, long streamId, int viewId, int filterBy, int sort, long count) {
+    public static int saveView(long streamId, int viewId, int filterBy, int sort, long count) {
         try (Connection conn = Database.getConnection()) {
             String query;
 
@@ -213,6 +213,11 @@ public class UserStreamGroupsTable {
         return -1;
     }
 
+    /**
+     * @param userId
+     * @param streamId
+     * @param time
+     */
     public static int setMaxTime(long userId, long streamId, long time) {
         // time = time - FeedAppConfig.MAX_TIME_GO_BACK; // 4h hours back.
         //

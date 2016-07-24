@@ -85,6 +85,9 @@ public class FeedEntriesTable {
         return null;
     }
 
+    /**
+     * @param entryId
+     */
     public static int clicked(long entryId) {
         // try
         // {

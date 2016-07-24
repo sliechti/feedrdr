@@ -20,7 +20,7 @@ public class HtmlStackTrace {
         return sb.toString();
     }
 
-    public static void printRed(JspWriter out, StackTraceElement[] st, int max, String eol) throws IOException {
+    public static void printRed(JspWriter out, StackTraceElement[] st) throws IOException {
         out.write("<font color=\"red\">" + HtmlStackTrace.get(st, 10, "<br>") + "</font>");
     }
 

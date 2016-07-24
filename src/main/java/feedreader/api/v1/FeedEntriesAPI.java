@@ -153,7 +153,7 @@ public class FeedEntriesAPI {
     @GET
     @Path("/update")
     @Produces(MediaType.APPLICATION_JSON)
-    public String update(@Context HttpServletRequest req, @QueryParam("e") long eventId, @QueryParam("id") long entryId) {
+    public String update(@Context HttpServletRequest req, @QueryParam("id") long entryId) {
         if (entryId == 0) {
             return JSONUtils.error(0, "need an entry id.");
         }

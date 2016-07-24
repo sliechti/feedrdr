@@ -4,45 +4,40 @@ import feedreader.entities.FeedSourceEntry;
 import feedreader.parser.XmlFeedEntry;
 import feedreader.parser.XmlFeedParser;
 
-public class FeedValidationHandler implements Fetch.FetchCallback
-{
+public class FeedValidationHandler implements Fetch.FetchCallback {
     XmlFeedParser parser;
     int entries = 0;
 
-    public XmlFeedParser getParser()
-    {
+    public XmlFeedParser getParser() {
         return parser;
     }
 
-    public int getEntries()
-    {
+    public int getEntries() {
         return entries;
     }
 
     @Override
-    public void onFetchParserCreated(XmlFeedParser parser)
-    {
-        this.parser = parser;
+    public void onFetchParserCreated(XmlFeedParser p) {
+        this.parser = p;
     }
 
     @Override
-    public void onXmlEntryFound(XmlFeedEntry news)
-    {
+    public void onXmlEntryFound(XmlFeedEntry news) {
         entries++;
     }
 
     @Override
-    public void onFetchSourceEntryFound(FeedSourceEntry entry)
-    {
+    public void onFetchSourceEntryFound(FeedSourceEntry entry) {
+        // noop
     }
 
     @Override
-    public void onFetchEntryWait(long nextCheck)
-    {
+    public void onFetchEntryWait(long nextCheck) {
+        // noop
     }
 
     @Override
-    public void onEndDocument()
-    {
+    public void onEndDocument() {
+        // noop
     }
 }

@@ -163,6 +163,7 @@ public class UserOPMLImportHandler implements OPMLParser.Callback {
 
     @Override
     public void onBodyStart() {
+        // noop
     }
 
     @Override
