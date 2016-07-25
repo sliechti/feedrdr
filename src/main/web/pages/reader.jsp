@@ -84,11 +84,9 @@
 
 <div id="stream_content">
 
-    <div id="simple_view_header" class="row" onmouseover="$('#edit_tools').show()"
-     onmouseout="$('#edit_tools').hide()"></div>
+    <div id="simple_view_header" class="row"></div>
 
-    <div id="stream_group_view_header" class="row" onmouseover="$('#edit_tools').show()"
-         onmouseout="$('#edit_tools').hide()">
+    <div id="stream_group_view_header" class="row">
 
         <div id="stream_group_header" class="row"></div>
 

@@ -268,10 +268,6 @@ function displayStreamHeader() {
 		if ((e.keyCode || e.which) == 13) {
 			renameStreamGroup(); // enter
 		}
-		if ((e.keyCode || e.which) == 27) {
-			$("#div_stream_rename").hide();
-			$("#span_stream_rename").show();
-		}
 	});
 }
 
@@ -900,7 +896,7 @@ function clearContent() {
 	position = 0;
 
 	$("#right_tools").remove(); // needs to be removed since it uses a partial
-								// template.
+	// template.
 	$("#menusubs").html("");
 	$("#stream_header").html("");
 	$("#stream_config").hide();
@@ -1224,4 +1220,31 @@ function renderContentStart() {
 
 function closeLeftBar() {
 	$('#leftbar').hide();
+	$(document).unbind("keyup.leftbar");
+	$(document).unbind("mousedown.leftbar");
+}
+
+function openLeftBar() {
+	$('#leftbar').show();
+	$(document).on("keyup.leftbar", function(e) {
+		if (e.keyCode == 27) {
+			closeLeftBar();
+		}
+	});
+	$(document).on("mousedown.leftbar", function(e) {
+		console.debug("mousedown", e);
+		var container = $("#leftbar");
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
+			closeLeftBar();
+		}
+	});
+}
+
+function toggleEditTools(caller) {
+	$('#edit_tools').toggle();
+	if ($('#edit_tools').is(':visible')) {
+		$(caller).html('&laquo;');
+	} else {
+		$(caller).html('&raquo;');
+	}
 }
