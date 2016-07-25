@@ -48,7 +48,7 @@ var apiUrlEntriesUpdate = '/api/v1/entries/update';
 var apiUrlSubscriptionsGet = '/api/v1/user/subscriptions/get';
 var apiUrlSourceId = '/api/v1/user/feeds/sourceid';
 var apiUrlStreamsAdd = '/api/v1/user/streams/add';
-var baseFavicoDomain = 'http://www.google.com/s2/favicons?domain=';
+var baseFavicoDomain = 'https://www.google.com/s2/favicons?domain=';
 
 var streamId = 0;
 var streamDir = 0;
