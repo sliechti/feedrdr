@@ -28,7 +28,7 @@
     request.setAttribute("baseUrl", FeedAppConfig.BASE_APP_URL);
 
     if (request.getRequestURI().contains("reader.jsp")) {
-        request.setAttribute("logoAction", "$('#leftbar').show(); return false;");
+        request.setAttribute("logoAction", "openLeftBar(); return false;");
         request.setAttribute("logoUrl", "");
     } else {
         request.setAttribute("logoAction", "");
