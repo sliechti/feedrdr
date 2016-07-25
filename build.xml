@@ -48,6 +48,7 @@
 				<exclude name="WEB-INF/web.xml" />
 				<include name="**/*.xml" />
 				<include name="**/*.properties" />
+				<include name="**/templates/**" />
 			</fileset>
 		</copy>
 	</target>
