@@ -40,6 +40,7 @@
 			<pattern>%date %-5level %logger{35} - %message%n</pattern>
 		</layout>
 	</appender>
+	<logger name="feedreader.feed.utils.Fetch" level="INFO" />
 	<root level="INFO">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
