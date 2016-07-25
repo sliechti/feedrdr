@@ -242,6 +242,7 @@ public class UsersTable {
 	}
 
 	public static int setNewPassword(UserData data, String pwd) {
+		if(data.isGenerated()){
 		try {
 			String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d", TABLE,
 					DBFields.STR_PASSWORD, pwd, DBFields.STR_FORGOT_CODE, "", // clear
@@ -257,7 +258,7 @@ public class UsersTable {
 		} catch (SQLException ex) {
 			log.error("set new password error: {}", ex, ex.getMessage());
 		}
-
+	}
 		return -1;
 	}
 

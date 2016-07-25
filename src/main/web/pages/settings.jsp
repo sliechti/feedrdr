@@ -80,7 +80,7 @@
 			err += "New password and password confirmation don't match. <br>";
 		}
 		if (data.isOauthUser() && data.isGenerated()) {
-			if (UsersTable.updateOAuthUserDetail(data, false) > 0) {
+			if (UsersTable.setNewPassword(data,newPwd) > 0) {
 				info += "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
 			}
 		} else {
