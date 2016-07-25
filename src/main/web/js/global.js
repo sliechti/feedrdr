@@ -65,6 +65,12 @@ function showModal(title, contentSelector, closeCallback, postInitCallback) {
 	  if (e.keyCode == 27) {
 		  hideModal();
 	  }
+	  // on enter key press, check if modal is visible and contain btn-primary. If yes then call click() method.
+	  if($(MODALBOX_SELECTOR).is(':visible') && e.keyCode == 13) {
+		  if($(".modal-footer .btn-primary").is(':visible')){
+			  $(".modal-footer .btn-primary").click();
+		  }
+	    }
 	});	
 	
 	if (postInitCallback) {
