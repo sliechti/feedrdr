@@ -22,6 +22,8 @@
 
     String minify = request.getParameter("minify");
     boolean isLocal = ApplicationConfig.instance().isLocal();
+    request.setAttribute("isLocal", isLocal);
+
     String minjs = (!isLocal && minify == "1" ? ".min.js" : ".js");
     String mincss = (!isLocal ? ".min.css" : ".css");
 

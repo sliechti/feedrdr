@@ -28,6 +28,7 @@ ProfileData profile = (ProfileData)request.getAttribute("profile");
   </div>
 </div>
 
+<c:if test="${isLocal}">
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -43,6 +44,7 @@ ProfileData profile = (ProfileData)request.getAttribute("profile");
 </script>
 <noscript><p><img src="//feedrdr.piwikpro.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+</c:if>
 
 <script type="text/javascript">
     initProfiles();
