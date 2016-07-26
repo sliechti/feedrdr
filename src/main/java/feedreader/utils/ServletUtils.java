@@ -23,6 +23,7 @@ public class ServletUtils {
             throws ServletException, IOException {
         String contextPath = req.getContextPath();
 
+        req.setAttribute("isLocal", ApplicationConfig.instance().isLocal());
         req.setAttribute(TMPL_HOME, PageUtils.getHome());
         req.setAttribute(TMPL_BASE_URL, contextPath);
         req.setAttribute(TMPL_BASE_URL_LINK, (contextPath.isEmpty()) ? "/" : contextPath + "/");

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="open source rss news reader to keep track of all the content you care about" />
 <meta name="keywords" content="rss,atom,news reader,feed reader" />
-<script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
+<script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
 <link rel="stylesheet" href="${baseUrl}/css/login.css" />
 </head>

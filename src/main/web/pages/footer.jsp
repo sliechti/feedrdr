@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page import="feedreader.entities.ProfileData"%>
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.oauth.OAuthType"%>
@@ -28,7 +30,7 @@ ProfileData profile = (ProfileData)request.getAttribute("profile");
   </div>
 </div>
 
-<c:if test="${isLocal}">
+<c:if test="${not isLocal}">
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];

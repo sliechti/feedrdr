@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>feedrdr.co - open source rss news reader</title>
+<title>feedrdr.co - An open source RSS news reader</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="open source rss news reader to keep track of all the content you care about" />
@@ -22,9 +22,10 @@
 <link rel="icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
-<script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
-<script src="${baseUrl}/js/hello${minifiedStr}.js" type="text/javascript"></script>
-<script src="${baseUrl}/js/hello.init${minifiedStr}.js" type="text/javascript"></script>
+<script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
+<script src="${baseUrl}/js/vendor/hello.min.js" type="text/javascript"></script>
+<script src="${baseUrl}/js/vendor/hello.init.min.js" type="text/javascript"></script>
+<c:if test="${not isLocal}">
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,6 +40,7 @@ fbq('track', "PageView");</script>
 src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+</c:if>
 </head>
 <body class="margin0">
 	<div class="header">
@@ -137,6 +139,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 	});
 </script>
 
+<c:if test="${not isLocal}">
 <script type="text/javascript">
 	var _paq = _paq || [];
 	_paq.push([ 'trackPageView' ]);
@@ -159,3 +162,5 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 		<img src="//feedrdr.piwikpro.com/piwik.php?idsite=1" style="border: 0;" alt="" />
 	</p>
 </noscript>
+</c:if>
+

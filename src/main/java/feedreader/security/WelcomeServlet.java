@@ -11,6 +11,7 @@ import feedreader.config.FeedAppConfig;
 import feedreader.config.OAuthConfig;
 import feedreader.utils.ApplicationConfig;
 import feedreader.utils.PageUtils;
+import feedreader.utils.ServletUtils;
 
 public class WelcomeServlet extends HttpServlet {
 
@@ -30,7 +31,7 @@ public class WelcomeServlet extends HttpServlet {
         if (ApplicationConfig.instance().isLocal()) {
             req.setAttribute("oauthDebug", "&debug=true");
         }
-        getServletContext().getRequestDispatcher("/welcome.jsp").forward(req, resp);
+        ServletUtils.redirect(req, resp, "/welcome.jsp");
     }
 
     @Override

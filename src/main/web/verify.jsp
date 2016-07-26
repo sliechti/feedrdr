@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
-<script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
+<script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
 </head>
 
 <body class="margin0">

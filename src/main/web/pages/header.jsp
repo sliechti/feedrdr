@@ -24,9 +24,6 @@
     boolean isLocal = ApplicationConfig.instance().isLocal();
     request.setAttribute("isLocal", isLocal);
 
-    String minjs = (!isLocal && minify == "1" ? ".min.js" : ".js");
-    String mincss = (!isLocal ? ".min.css" : ".css");
-
     request.setAttribute("baseUrl", FeedAppConfig.BASE_APP_URL);
 
     if (request.getRequestURI().contains("reader.jsp")) {
@@ -44,48 +41,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="appVersion" content="<%= FeedAppConfig.APP_VERSION %>">
         <title><%= FeedAppConfig.APP_NAME %></title>
-
         <link href="<%= PageUtils.getPath("/css/bootstrap.min.css") %>" rel="stylesheet" type="text/css"/>
         <link href="<%= PageUtils.getPath("/css/default.css") %>" rel="stylesheet" type="text/css"/>
-
-        <script src="<%= PageUtils.getPath("/js/jquery.min.js") %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/jquery.visible.min.js") %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/handlebars.min.js") %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/bootstrap.min.js") %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/director.min.js") %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/global" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/profiles" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/vendor/jquery.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/vendor/jquery.visible.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/vendor/handlebars.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/vendor/bootstrap.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/vendor/director.min.js") %>" type="text/javascript"></script>
     <% if (request.getAttribute("j") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/jlinq.min.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/vendor/jlinq.min.js") %>" type="text/javascript"></script>
     <% } %>
+        <script src="<%= PageUtils.getPath("/js/jscolor/jscolor.min.js") %>" type="text/javascript"></script>
+
+
+        <script src="<%= PageUtils.getPath("/js/app/global.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/profiles.js") %>" type="text/javascript"></script>
     <% if (request.getAttribute("s") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/subscriptions" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/subscriptions.js") %>" type="text/javascript"></script>
     <% } %>
     <% if (request.getAttribute("r") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/reader.handlebars" + minjs) %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/reader" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/reader.handlebars.js") %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/reader.js") %>" type="text/javascript"></script>
         <% if (user.isAdmin()) { %>
-        	<script src="<%= PageUtils.getPath("/js/reader.admin" + minjs) %>" type="text/javascript"></script>
+        	<script src="<%= PageUtils.getPath("/js/app/reader.admin.js") %>" type="text/javascript"></script>
         <% }%>
     <% } %>
     <% if (request.getAttribute("rs") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/reader.subscriptions" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/reader.subscriptions.js") %>" type="text/javascript"></script>
     <% } %>
     <% if (request.getAttribute("e") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/settings" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/settings.js") %>" type="text/javascript"></script>
     <% } %>
     <% if (request.getAttribute("c") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/collections" + minjs) %>" type="text/javascript"></script>
+        <script src="<%= PageUtils.getPath("/js/app/collections.js") %>" type="text/javascript"></script>
     <% } %>
-        <script src="<%= PageUtils.getPath("/js/jscolor/jscolor.min.js") %>" type="text/javascript"></script>
-    <% if (user.getAuthType() != OAuthType.NONE)  { %>
-        <script src="<%= PageUtils.getPath("/js/hello.min.js") %>" type="text/javascript"></script>
-        <script src="<%= PageUtils.getPath("/js/hello.init.min.js") %>" type="text/javascript"></script>
+    <% if (request.getAttribute("c") != null) { %>
+        <script src="<%= PageUtils.getPath("/js/app/collections.js") %>" type="text/javascript"></script>
     <% } %>
 
         <script type="text/javascript">
             setBaseUrl("<%= request.getContextPath() %>");
-
     <% if (user.getAuthType() != OAuthType.NONE)  { %>
             initHello('<%= OAuthConfig.FB_KEY %>',
                       '<%= OAuthConfig.GOOGLE_KEY %>',

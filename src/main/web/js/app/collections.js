@@ -24,7 +24,7 @@ function initCollections() {
 	collectionTmpl = Handlebars.compile($('#collections_tmpl').html());
 	feedEntriesTmpl = Handlebars.compile($('#feeds_tmpl').html());
 	createdTmpl = Handlebars.compile($("#collection_created_tmpl").html());
-	
+
 	var queryData = {};
 	collectionsIds = [];
 	$.get(baseUrl + apiCollectionsList, queryData, function(data, status) {
@@ -46,19 +46,16 @@ function initCollections() {
 			console.error("no entries found " + data);
 		}
 	});
-	
+
 }
 
 function toggleFeedsCollection(caller, collectionId) {
 	var domFeeds = $("#feeds_" + collectionId);
 	if (domFeeds.is(":visible")) {
-		caller.text = "... show";
 		domFeeds.hide();
 	} else {
 		var queryData = {};
 		queryData.ids = collectionId;
-		caller.text = "... hide";
-		
 		$.get(baseUrl + apiCollectionsEntries, queryData, function(data, status) {
 			domFeeds.html(feedEntriesTmpl({"entries" : data.entries}));
 			domFeeds.show();
@@ -69,7 +66,7 @@ function toggleFeedsCollection(caller, collectionId) {
 function showAddModal(caller, collectionId) {
 	$("#collectionCreated").hide();
 	var selected = collectionsById[collectionId];
-	showModal("Add '" + selected.s_name + "' collection", "#" + MODAL_COLLECTION_ADD, 
+	showModal("Add '" + selected.s_name + "' collection", "#" + MODAL_COLLECTION_ADD,
 			function onClose() {},
 			function onInit() {
 				$("#collectionName").val(selected.s_name);
@@ -78,7 +75,7 @@ function showAddModal(caller, collectionId) {
 }
 
 function importCollection() {
-	
+
 	var formId = $("#collectionId").val();
 	var formName = $("#collectionName").val();
 	var formProfiles = $("#selectedProfiles").val() || [];
@@ -87,8 +84,8 @@ function importCollection() {
 	queryData.id =formId;
 	queryData.name = formName;
 	queryData.profiles = formProfiles.toString();
-	
-	$.get(baseUrl + apiCollectionAdd, queryData, function(data, status) {		
+
+	$.get(baseUrl + apiCollectionAdd, queryData, function(data, status) {
 		if (data.error) {
 			modalError(data.error);
 		} else if (data.success) {
@@ -98,8 +95,8 @@ function importCollection() {
 		} else {
 			console.error(data);
 			console.error(status);
-		}		
+		}
 	});
-	
+
 }
 
