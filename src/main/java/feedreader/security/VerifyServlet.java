@@ -24,8 +24,7 @@ public class VerifyServlet extends HttpServlet {
             UserData data = UsersTable.getFromRegCode(code);
             if (data.getUserId() != 0) {
                 UsersTable.verify(data);
-                String verifiedTmpl = ResourceUtils.loadResource("templates/accountverified.tmpl");
-                msg = verifiedTmpl.replace("{NAME}", data.getScreenName());
+                msg = ResourceUtils.loadResource("templates/accountverified.tmpl");
                 req.setAttribute("redirectIn", 7);
                 req.setAttribute("verified", true);
             }

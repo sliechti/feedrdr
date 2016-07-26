@@ -31,7 +31,7 @@ public class CronNewUsersEmail implements Runnable {
 
     @Override
     public void run() {
-        try (Connection conn = Database.getConnection()){
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s, %s, %s, %s FROM %s WHERE %s = %b",
                     DBFields.LONG_USER_ID, DBFields.STR_EMAIL, DBFields.STR_SCREEN_NAME, DBFields.STR_REG_CODE,
                     UsersTable.TABLE,
@@ -41,18 +41,16 @@ public class CronNewUsersEmail implements Runnable {
             while (rs.next()) {
                 long userId = rs.getLong(DBFields.LONG_USER_ID);
                 String email = rs.getString(DBFields.STR_EMAIL);
-                String screenName = rs.getString(DBFields.STR_SCREEN_NAME);
                 String regCode = rs.getString(DBFields.STR_REG_CODE);
 
-                logger.info("new registration {}, sending email to {}", screenName, email);
+                logger.info("new registration, sending email to {}", email);
                 String error = "";
                 try {
                     String emailTxt = new String().concat(emailTmpl);
                     emailTxt = emailTxt.replace("{CODE}", regCode);
                     String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/verify?code=" + regCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
-                    mail.send(MAIL_FROM, MAIL_FROM_NAME, email, screenName,
-                            "Welcome to feedrdr, " + screenName, emailTxt);
+                    mail.send(MAIL_FROM, MAIL_FROM_NAME, email, email, "Welcome to feedrdr", emailTxt);
                     query = String.format("UPDATE %s SET %s = true WHERE %s = %d",
                             UsersTable.TABLE, DBFields.BOOL_REG_SENT, DBFields.LONG_USER_ID, userId);
                     conn.createStatement().execute(query);
