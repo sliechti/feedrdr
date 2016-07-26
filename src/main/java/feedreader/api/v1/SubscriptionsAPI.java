@@ -197,7 +197,7 @@ public class SubscriptionsAPI {
         if (entry.getId() == 0) {
             String code = Fetch.validFeed(subsUrl);
 
-            if (!code.isEmpty()) {
+            if (code == null || !code.isEmpty()) {
                 return JSONUtils.error(0, "Feed error: " + code);
             }
 
