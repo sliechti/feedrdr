@@ -196,8 +196,7 @@ public class UsersTable {
         try (Connection conn = Database.getConnection()) {
             String code = RandomStringUtils.random(12, true, true);
             String query = String.format("UPDATE %s SET %s = %b, %s = '%s' WHERE %s = %d", TABLE,
-                    DBFields.BOOL_FORGOT_PWD, true,
-                    DBFields.STR_FORGOT_CODE, SQLUtils.asSafeString(code),
+                    DBFields.BOOL_FORGOT_PWD, true, DBFields.STR_FORGOT_CODE, SQLUtils.asSafeString(code),
                     DBFields.LONG_USER_ID, userId);
             return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
@@ -219,16 +218,16 @@ public class UsersTable {
 
     public static int setNewPassword(UserData data, String pwd) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d", TABLE,
-                    DBFields.STR_PASSWORD, pwd,
-                    DBFields.STR_FORGOT_CODE, "", // clear code so it can't be reused.
-                    DBFields.LONG_USER_ID, data.getUserId());
-            log.info("password changed for: {}, email {}", data.getUserId(), data.getEmail());
-            return conn.createStatement().executeUpdate(query);
+            if (data.isGenerated()) {
+                String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d", TABLE,
+                        DBFields.STR_PASSWORD, pwd, DBFields.STR_FORGOT_CODE, "",
+                        DBFields.LONG_USER_ID, data.getUserId());
+                log.info("password changed for: {}, email {}", data.getUserId(), data.getEmail());
+                return conn.createStatement().executeUpdate(query);
+            }
         } catch (SQLException ex) {
             log.error("set new password error: {}", ex, ex.getMessage());
         }
-
         return -1;
     }
 
@@ -308,5 +307,4 @@ public class UsersTable {
 
         return UserData.NULL;
     }
-
 }
