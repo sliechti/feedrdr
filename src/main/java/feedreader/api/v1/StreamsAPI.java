@@ -58,7 +58,7 @@ public class StreamsAPI {
             APIUtils.wrapObject(sb, UserStreamGroupsTable.get(conn, profileId, views));
             return sb.append("]").toString();
         } catch (SQLException ex) {
-            logger.error("failed: {}", ex, ex.getMessage());
+            logger.error("/list failed: {}", ex, ex.getMessage());
             return JSONUtils.error(0, JSONErrorMsgs.ERROR_REQUESTING_DATA_FROM_DB, ex);
         }
     }
@@ -80,6 +80,10 @@ public class StreamsAPI {
         ArrayList<String> arr = new ArrayList<>(Arrays.asList(streamIds.split(",")));
         StringBuilder sb = new StringBuilder();
         sb.append("{ \"entries\" : [");
+
+        if (streamIds == null || streamIds.isEmpty()) {
+            return sb.append("]}").toString();
+        }
 
         int userType = Session.asInt(req.getSession(), Constants.SESSION_USER_TYPE, 0);
 
@@ -109,7 +113,7 @@ public class StreamsAPI {
                     return JSONErrorMsgs.getErrorParams();
                 }
             } catch (SQLException ex) {
-                logger.error("failed: {}", ex, ex.getMessage());
+                logger.error("/unreadcount failed: {}", ex, ex.getMessage());
                 return JSONUtils.error(0, "couldn't get unread count.");
             }
         }
@@ -146,8 +150,8 @@ public class StreamsAPI {
     @GET
     @Path("/update")
     @Produces(MediaType.APPLICATION_JSON)
-    public String update(@Context HttpServletRequest req, @QueryParam("sid") long streamId,
-            @QueryParam("v") int viewId, @QueryParam("filter") int filter, @QueryParam("sort") int sort,
+    public String update(@Context HttpServletRequest req, @QueryParam("sid") long streamId, @QueryParam("v") int viewId,
+            @QueryParam("filter") int filter, @QueryParam("sort") int sort,
             @DefaultValue("-1") @QueryParam("c") long count) {
         long userId = Session.asLong(req.getSession(), Constants.SESSION_USERID_FIELD, 0);
         if (userId == 0) {
@@ -205,7 +209,7 @@ public class StreamsAPI {
                 int r = UserFeedSubscriptionsTable.updateReadMarker(userId, Long.parseLong(xmlId), marker);
                 out.append("\"updated\" : ").append(r).append("}");
             } catch (SQLException ex) {
-                logger.error("failed: {}", ex, ex.getMessage());
+                logger.error("/allread failed: {}", ex, ex.getMessage());
                 out.append("{").append("\"id\" : ").append(xmlId).append(",").append("\"error\" : \'")
                         .append("database").append("\",").append("}");
             }
@@ -221,7 +225,8 @@ public class StreamsAPI {
 
         out.append(", \"readCount\" : ").append(r).append("}");
         //
-        // return JSONUtils.count(UserStreamGroupsTable.setMaxTime(userId, streamId, time));
+        // return JSONUtils.count(UserStreamGroupsTable.setMaxTime(userId,
+        // streamId, time));
 
         return out.toString();
     }
@@ -282,12 +287,11 @@ public class StreamsAPI {
 
         if (profileId == 0) {
             UserProfilesTable.addStreamToAllProfiles(userId, streamId);
-            return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to all profiles.", "\"id\":"
-                    + streamId + "");
+            return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to all profiles.",
+                    "\"id\":" + streamId + "");
         }
         UserProfilesTable.addStreamToProfile(streamId, profileId);
-        return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to profile.", "\"id\":" + streamId
-                + "");
+        return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to profile.", "\"id\":" + streamId + "");
     }
 
     @GET
@@ -319,21 +323,22 @@ public class StreamsAPI {
         String sortDir = ((sort == 0) ? "desc" : "asc");
 
         if (filter == FILTER_ALL) {
-            // TODO: Don't query ALL fields. This query can be optimized. See anaylze describe.
+            // TODO: Don't query ALL fields. This query can be optimized. See
+            // anaylze describe.
             StringBuilder sb = new StringBuilder();
 
-            String rawQuery = String.format("SELECT %s FROM %s WHERE %s in (" + "SELECT %s FROM %s AS t1 INNER JOIN "
-                    + "    %s AS t2 ON t1.%s = t2.%s " + " WHERE t1.%s = %s " + "    AND t2.%s = %s"
-                    + ") AND %s > %d ORDER BY %s %s LIMIT %d OFFSET %d", ConfigAPI.defaulEntryColumns(""),
-                    FeedEntriesTable.TABLE, DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
-                    UserFeedSubscriptionsTable.TABLE, UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS,
-                    DBFields.LONG_SUBS_ID, DBFields.LONG_SUBS_ID, DBFields.LONG_USER_ID, userId,
-                    DBFields.LONG_STREAM_ID, streamId,
+            String rawQuery = String.format(
+                    "SELECT %s FROM %s WHERE %s in (" + "SELECT %s FROM %s AS t1 INNER JOIN "
+                            + "    %s AS t2 ON t1.%s = t2.%s " + " WHERE t1.%s = %s " + "    AND t2.%s = %s"
+                            + ") AND %s > %d ORDER BY %s %s LIMIT %d OFFSET %d",
+                    ConfigAPI.defaulEntryColumns(""), FeedEntriesTable.TABLE, DBFields.LONG_XML_ID,
+                    DBFields.LONG_XML_ID, UserFeedSubscriptionsTable.TABLE,
+                    UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS, DBFields.LONG_SUBS_ID, DBFields.LONG_SUBS_ID,
+                    DBFields.LONG_USER_ID, userId, DBFields.LONG_STREAM_ID, streamId,
                     // 2 part of where
                     DBFields.TIME_PUBLICATION_DATE, userMaxHistTime,
                     // sort, limit
-                    DBFields.TIME_PUBLICATION_DATE, sortDir,
-                    FeedAppConfig.DEFAULT_API_FETCH_ARTICLES,
+                    DBFields.TIME_PUBLICATION_DATE, sortDir, FeedAppConfig.DEFAULT_API_FETCH_ARTICLES,
                     paging * FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
             sb.append("{\"entries\" : [");
             try (Connection conn = Database.getConnection()) {
@@ -351,7 +356,7 @@ public class StreamsAPI {
                     sb.deleteCharAt(sb.length() - 1);
                 }
             } catch (SQLException ex) {
-                logger.error("failed: {}", ex, ex.getMessage());
+                logger.error("/feed failed: {}", ex, ex.getMessage());
             }
 
             sb.append("]}");
