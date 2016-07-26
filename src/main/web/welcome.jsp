@@ -41,8 +41,6 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 <!-- End Facebook Pixel Code -->
 </head>
 <body class="margin0">
-
-
 	<div class="header">
 		<div class="table center w80p block">
 			<div class="cell left h100">

@@ -8,7 +8,7 @@
 
 <script id="header_right_tools" type="text/x-handlebars-template">
 		<div id="view-options" class="right">
-			<a onclick="$('#right_tools').toggle()">Options</a>
+			<a class="pointer" onclick="$('#right_tools').toggle()">Options</a>
 		</div>
 		<div id="right_tools" style="display: none">
 

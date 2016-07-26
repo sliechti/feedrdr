@@ -48,7 +48,6 @@ public class CronNewUsersEmail implements Runnable {
                 String error = "";
                 try {
                     String emailTxt = new String().concat(emailTmpl);
-                    emailTxt = emailTxt.replace("{NAME}", screenName);
                     emailTxt = emailTxt.replace("{CODE}", regCode);
                     String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/verify?code=" + regCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
