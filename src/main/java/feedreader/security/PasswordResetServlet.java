@@ -23,8 +23,8 @@ public class PasswordResetServlet extends HttpServlet {
     public static final String ATTR_INFO = "info";
     private static final String ATTR_PWD_CHANGED = "pwdChanged";
     private static final String ATTR_VALID_CODE = "validCode";
-    private static final String LANG_EMAIL_WITH_RESET_INSTRUCTIONS_SENT = "E-mail with instructions sent.";
-    private static final String LANG_PASSWORDS_CHANGED = "Passwords changed";
+    private static final String LANG_EMAIL_WITH_RESET_INSTRUCTIONS_SENT = "E-mail with instructions sent";
+    private static final String LANG_PASSWORDS_CHANGED = "Password changed";
     private static final String LANG_PASSWORDS_DON_T_MATCH = "Passwords don't match";
     private static final Logger logger = LoggerFactory.getLogger(PasswordResetServlet.class);
     private static final String PARAM_CODE = "code";
