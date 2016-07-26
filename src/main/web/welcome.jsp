@@ -49,7 +49,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 				<span class="h100 vertical-helper vertical-middle"></span>
 				<img src="img/logo.svg" id="logo" class="vertical-middle" height="30" />
 			</div>
-			<div class="cell vertical-middle right header-btn">
+			<div onclick="location.href='login'" class="pointer cell vertical-middle right header-btn">
 				<a href="login">Sign in</a>
 			</div>
 		</div>

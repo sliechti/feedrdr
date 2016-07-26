@@ -99,15 +99,15 @@
                     network = data.network;
                 },
                 function(data) { // on logout.
-                    location.href = baseUrl + '/logout.jsp';
+                    location.href = baseUrl + '/logout';
                 });
             function logout() {
                 hello.logout(network);
-                $.get(baseUrl + '/logout.jsp', function(){});
+                $.get(baseUrl + '/logout', function(){});
             }
     <%  } else { %>
         function logout() {
-            location.href = baseUrl + '/logout.jsp';
+            location.href = baseUrl + '/logout';
         }
     <% } %>
         </script>

@@ -18,7 +18,7 @@ public class Constants {
     public static String INDEX_PAGE = "/index.jsp";
     public static String INPUT_EMAIL_NAME = "email";
     public static String INPUT_PWD_NAME = "pwd";
-    public static final String INPUT_REMEMBER_ME = "stay_loggedin";
+    public static final String INPUT_REMEMBER_ME = "remember_me";
     public static String INPUT_SCREEN_NAME = "display_name";
     public static long LONG_PROFILE_ID_DEFAULT = 0;
     public static final String SESSION_ADMIN_FIELD = "ad";
