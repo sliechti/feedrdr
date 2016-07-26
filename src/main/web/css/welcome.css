@@ -9,6 +9,10 @@ body {
 	height: 100%;
 }
 
+a {
+	color: #183C4F;
+}
+
 .w80p {
 	width: 60%;
 }
