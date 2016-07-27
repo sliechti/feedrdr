@@ -20,6 +20,7 @@ import feedreader.config.OAuthConfig;
 import feedreader.cron.CronFetchNews;
 import feedreader.cron.CronForgotPasswordEmail;
 import feedreader.cron.CronNewUsersEmail;
+import feedreader.cron.CronResendRegEmail;
 import feedreader.cron.CronTimeUtils;
 import feedreader.store.Database;
 import feedreader.utils.ApplicationConfig;
@@ -180,6 +181,18 @@ public class AppContextInit implements ServletContextListener {
         if (cronStartValidateNews) {
             sc.scheduleAtFixedRate(CronFetchNews.fetchInstance(true), 0,
                     FeedAppConfig.DELAY_FETCH_IN_S, TimeUnit.SECONDS);
+        }
+        
+        boolean startResendRegEmailCron = appConfig.getBoolean("cron_start_email_resend_reg", false);
+        logger.info("start cron: {}={}", CronResendRegEmail.class.getSimpleName(), startResendRegEmailCron);
+        if (startResendRegEmailCron) {
+            try {
+            	sc.scheduleAtFixedRate(new CronResendRegEmail(), 0,
+                    FeedAppConfig.DELAY_CHECK_REG_EMAIL, TimeUnit.SECONDS);
+            }
+            catch (Exception e) {
+                logger.error("failed to start resend registration email cron: {}", e, e.getMessage());
+            }
         }
     }
 

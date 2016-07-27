@@ -5,6 +5,10 @@ package feedreader.store;
 public class DBFields {
 
     public static final String ARRAY_STR_AUTHORS = "sa_authors";
+    public static final String BOOL_24_REG_SENT = "b_24_reg_sent";
+    public static final String BOOL_36_REG_SENT = "b_36_reg_sent";
+    public static final String BOOL_42_REG_SENT = "b_42_reg_sent";
+    public static final String BOOL_ACCT_DISABLED ="b_acct_disabled";
     public static final String BOOL_DEFAULT = "b_default";
     public static final String BOOL_FORGOT_PWD = "b_forgot_pwd";
     public static final String BOOL_GAVE_UP = "b_gaveup";
@@ -90,4 +94,5 @@ public class DBFields {
     public static final String TIME_SAVED_AT = "t_saved_at";
     public static final String TIME_SUBSCRIBED_AT = "t_subscribed_at";
     public static final String TIME_VALIDATED_AT = "t_validated_at";
+    public static final String TIME_REG_SENT_AT = "t_reg_sent";
 }

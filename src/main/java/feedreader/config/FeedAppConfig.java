@@ -39,6 +39,7 @@ public class FeedAppConfig {
     // Move to context config. AUtoConfig for PROD and DEV.
     public static int DELAY_CHECK_FORGOT_PASSWORD = 15;
     public static int DELAY_CHECK_NEW_USERS_EMAIL = 15;
+    public static int DELAY_CHECK_REG_EMAIL = 15;
 
     public static int DEFAULT_LOG_LEVEL = 2;
     public static String DEFAULT_LOCALE = Locale.US.toString();

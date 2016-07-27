@@ -12,7 +12,7 @@ SET client_min_messages = warning;
 -- Name: feedreader; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
-CREATE USER feedrdr PASSWORD 'feedrdr';
+-- CREATE USER feedrdr PASSWORD 'feedrdr';
 
 CREATE SCHEMA feedreader;
 
@@ -699,7 +699,11 @@ CREATE TABLE users (
     s_cookie text DEFAULT ''::text NOT NULL,
     b_is_admin boolean DEFAULT false NOT NULL,
     b_receive_newsletter BOOLEAN DEFAULT TRUE,
-    b_receive_product_updates BOOLEAN DEFAULT TRUE
+    b_receive_product_updates BOOLEAN DEFAULT TRUE,
+	b_24_reg_sent BOOLEAN DEFAULT false NOT NULL,
+	b_36_reg_sent BOOLEAN DEFAULT false NOT NULL,
+	b_42_reg_sent BOOLEAN DEFAULT false NOT NULL,
+	b_acct_disabled BOOLEAN DEFAULT false NOT NULL
 );
 
 
