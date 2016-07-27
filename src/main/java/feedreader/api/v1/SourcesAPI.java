@@ -1,6 +1,7 @@
 package feedreader.api.v1;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -13,9 +14,11 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
-import feedreader.log.Logger;
 import feedreader.security.Session;
 import feedreader.store.DBFields;
 import feedreader.store.Database;
@@ -27,14 +30,46 @@ import feedreader.utils.JSONUtils;
 @Path("/v1/sources")
 public class SourcesAPI {
 
+    private static final Logger logger = LoggerFactory.getLogger(SourcesAPI.class);
+
     static final HashMap<String, String> maps0 = new HashMap<>();
     static final HashMap<String, String> maps1 = new HashMap<>();
     static final HashMap<String, String> maps2 = new HashMap<>();
+
+    private static final String selectSourceByTitle = "SELECT "
+            + "fs.l_xml_id, fs.s_title, fs.s_link, fs.b_hasico, fi.s_img_url "
+            + "FROM feedreader.feedsourcechanneldata AS fs "
+            + "LEFT JOIN feedreader.feedsourcechannelimage fi "
+            + "ON fs.l_xml_id = fi.l_xml_id WHERE fs.s_title ILIKE ? "
+            + "LIMIT ? OFFSET ?";
 
     static {
         maps0.put("i_count_0", "count");
         maps1.put("i_count_1", "count");
         maps2.put("i_count_2", "count");
+    }
+
+    @GET
+    @Path("/find")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String find(@Context HttpServletRequest req, @QueryParam("title") String title) {
+        logger.info("/find {}", title);
+        StringBuilder sb = new StringBuilder(1000);
+        sb.append("{ \"entries\" : [");
+        try (Connection conn = Database.getConnection()) {
+            PreparedStatement selSourceByTitle = conn.prepareStatement(selectSourceByTitle);
+            selSourceByTitle.setString(1, "%" + title + "%");
+            selSourceByTitle.setInt(2, 10);
+            selSourceByTitle.setInt(3, 0);
+            ResultSet rs = selSourceByTitle.executeQuery();
+            while (rs.next()) {
+                APIUtils.wrapObject(sb, rs);
+            }
+        } catch (Exception e) {
+            logger.error("/find failed: {}", e, e.getMessage());
+        }
+        sb.append("]}");
+        return sb.toString();
     }
 
     @GET
@@ -88,8 +123,6 @@ public class SourcesAPI {
         }
 
         // TODO: Don't query ALL fields. This query can be optimized. See anaylze describe.
-        Logger.debugSQL(FeedsAPI.class).log(rawQuery).end();
-
         try (Connection conn = Database.getConnection()) {
             int userType = Session.asInt(req.getSession(), Constants.SESSION_USER_TYPE, 0);
             HashMap<String, String> maps;
@@ -108,7 +141,7 @@ public class SourcesAPI {
             ResultSet rs = Database.rawQuery(conn, rawQuery);
             APIUtils.wrapObject(sb, rs, false, maps);
         } catch (SQLException ex) {
-            Logger.error(SourcesAPI.class).log("sourceId error ").log(ex.getMessage()).end();
+            logger.error("source id error: {}", ex, ex.getMessage());
         }
 
         if (ids != null) {
