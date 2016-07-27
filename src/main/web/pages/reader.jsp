@@ -133,20 +133,6 @@
 
 </div>
 
-<div class="reader-footer-fixed">
-    <div id="loader" class="profileColor"></div>
-    <div class="container-fluid">
-        <div class="row" id="reader-footer" >
-            <div>
-                <label id="footer_unread"></label>
-                <a href="" class="reload_stream" onclick="reloadStream(); return false;">Reload</a>
-                <a href="" class="mark_all_read" onclick="markAllRead(); return false;">Mark all read</a>
-                <a href="" onclick="window.scrollTo(0,0);return false;">Top</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <jsp:include page="tmpl/reader.tmpl.jsp"></jsp:include>
 
 <script type="text/javascript">

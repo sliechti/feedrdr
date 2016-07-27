@@ -36,6 +36,10 @@ body {
 	font-size: 1.1em;
 }
 
+#content {
+	margin-top: 60px;
+}
+
 #leftbar {
 	position: fixed;
 	z-index: 999;

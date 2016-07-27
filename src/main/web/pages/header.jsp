@@ -112,12 +112,15 @@
     <% } %>
         </script>
 			<style>
-
+			.navbar {
+				background-color: white;
+				z-index: 200;
+			}
 			</style>
 </head>
 
     <body>
-	<nav class="navbar">
+	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#reader-nav">
