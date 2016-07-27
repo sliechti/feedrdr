@@ -94,5 +94,4 @@ public class DBFields {
     public static final String TIME_SAVED_AT = "t_saved_at";
     public static final String TIME_SUBSCRIBED_AT = "t_subscribed_at";
     public static final String TIME_VALIDATED_AT = "t_validated_at";
-    public static final String TIME_REG_SENT_AT = "t_reg_sent";
 }
