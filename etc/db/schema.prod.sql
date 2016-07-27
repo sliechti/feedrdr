@@ -12,7 +12,7 @@ SET client_min_messages = warning;
 -- Name: feedreader; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
--- CREATE USER feedrdr PASSWORD 'feedrdr';
+CREATE USER feedrdr PASSWORD 'feedrdr';
 
 CREATE SCHEMA feedreader;
 
