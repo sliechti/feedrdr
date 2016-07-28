@@ -91,14 +91,13 @@ function closeLeftBar() {
 function openLeftBar() {
 	$('#leftbar').toggle();
 
-	if ($("leftbar").is(":visible")) {
+	if ($("#leftbar").is(":visible")) {
 		$(document).on("keyup.leftbar", function(e) {
 			if (e.keyCode == 27) {
 				closeLeftBar();
 			}
 		});
-		$(document).on(
-				"mousedown.leftbar",
+		$(document).on("mousedown.leftbar",
 				function(e) {
 					var container = $("#leftbar");
 					if (!container.is(e.target)
