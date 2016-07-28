@@ -121,7 +121,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="${logoUrl}" onclick="${logoAction}">
-					<img src="${baseUrl}/img/logo.svg" height="20px" />
+					<img id="logo" src="${baseUrl}/img/logo.svg" height="20px" />
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="reader-nav">

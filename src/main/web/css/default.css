@@ -562,3 +562,8 @@ a:hover {
   border-bottom: 1px solid #CACACA;
 	padding: 5px 0px 5px 0px;
 }
+
+.important-a a {
+	text-decoration: underline;
+	font-weight: bold;
+}

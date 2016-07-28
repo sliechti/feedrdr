@@ -84,8 +84,8 @@ function toogleSmallMenu() {
 
 function closeLeftBar() {
 	$('#leftbar').hide();
-	$(document).unbind("keyup.leftbar");
-	$(document).unbind("mousedown.leftbar");
+	$(document).off("keyup.leftbar");
+	$(document).off("mousedown.leftbar");
 }
 
 function openLeftBar() {
@@ -97,13 +97,13 @@ function openLeftBar() {
 				closeLeftBar();
 			}
 		});
-		$(document).on("mousedown.leftbar",
-				function(e) {
-					var container = $("#leftbar");
-					if (!container.is(e.target)
-							&& container.has(e.target).length === 0) {
-						closeLeftBar();
-					}
-				});
+		$(document).on("mousedown.leftbar", function(e) {
+			var container = $("#leftbar");
+			if (!container.is(e.target)
+					&& e.target.id != 'logo'
+					&& container.has(e.target).length === 0) {
+				closeLeftBar();
+			}
+		});
 	}
 }

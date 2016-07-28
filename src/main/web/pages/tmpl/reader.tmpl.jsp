@@ -237,12 +237,22 @@
 </script>
 
 <script id="content_start_all" type="text/x-handlebars-template">
-		<center><h3>Let's start adding some content</h3>
-				<p>You may start by <a href="import.jsp">importing your feeds</a> or<br>
-	by adding one of the <a href="collections.jsp">collections</a> created by us or <br>
-	by creating a new <a href="" onclick="newStreamGroup(); return false;">stream group</a>
-	and adding single subscriptions.</center></p>
-<br><br></center></p>
+	<div class="center w60p">
+		<p class="lead">
+			Let's start adding some content
+		</p>
+		<p class="important-a">
+			The easiest way to subscribe to feeds is adding one of the many <a href="collections.jsp">collections</a>
+we created for you.<br>
+			<br>
+			You can <a href="import.jsp">import</a> your own feeds with an OPML file.
+			<br>
+			<br>
+			You can also create a new stream group, by opening the <a href="#" onclick="openLeftBar();"> left bar</a>
+			and adding new sources with the RSS/Atom URL.
+		</p>
+
+		</div>
 </script>
 
 <script id="content_start_recently_read" type="text/x-handlebars-template">
