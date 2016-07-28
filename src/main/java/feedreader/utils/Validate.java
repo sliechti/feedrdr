@@ -1,7 +1,6 @@
 package feedreader.utils;
 
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
+import org.apache.commons.validator.routines.EmailValidator;
 
 public class Validate {
 
@@ -10,21 +9,12 @@ public class Validate {
     }
 
     public static boolean isValidEmailAddress(String email) {
-        boolean result = true;
-
-        try {
-            InternetAddress emailAddr = new InternetAddress(email);
-            emailAddr.validate();
-        } catch (AddressException ex) {
-            result = false;
-        }
-
-        return result;
+        return EmailValidator.getInstance(false, true).isValid(email);
     }
 
     public static String getScreenNameRules() {
         return " Needs to be at least 3 letters long, don't contain white spaces or special characters "
-                        + "rather than '-' and '_' are allowed.";
+                + "rather than '-' and '_' are allowed.";
     }
 
     public static boolean isValidScreenName(String name) {
@@ -32,14 +22,10 @@ public class Validate {
     }
 
     public static String getPasswordRules() {
-        return "Passwords need to be at least 8 letters long.";
+        return "Passwords need to be at least 4 letters long.";
     }
 
     public static boolean isValidPassword(String pwd) {
-        if (!pwd.isEmpty() && pwd.length() > 7) {
-            return true;
-        }
-
-        return false;
+        return (!pwd.isEmpty() && pwd.length() > 3) ? true : false;
     }
 }

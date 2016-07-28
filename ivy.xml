@@ -31,6 +31,7 @@
 		<dependency org="org.apache.commons" name="commons-configuration2" rev="2.0"/>
 		<dependency org="commons-beanutils" name="commons-beanutils" rev="1.9.2"/>
 		<dependency org="commons-beanutils" name="commons-beanutils-core" rev="1.8.3"/>
+		<dependency org="commons-validator" name="commons-validator" rev="1.5.1"/>
 		<dependency org="com.zaxxer" name="HikariCP" rev="2.4.7"/>
 		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.8.1"/>
 		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.8.1"/>
