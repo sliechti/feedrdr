@@ -1218,27 +1218,6 @@ function renderContentStart() {
 	$("#stream_entries").html($("#content_start_all").html());
 }
 
-function closeLeftBar() {
-	$('#leftbar').hide();
-	$(document).unbind("keyup.leftbar");
-	$(document).unbind("mousedown.leftbar");
-}
-
-function openLeftBar() {
-	$('#leftbar').show();
-	$(document).on("keyup.leftbar", function(e) {
-		if (e.keyCode == 27) {
-			closeLeftBar();
-		}
-	});
-	$(document).on("mousedown.leftbar", function(e) {
-		console.debug("mousedown", e);
-		var container = $("#leftbar");
-		if (!container.is(e.target) && container.has(e.target).length === 0) {
-			closeLeftBar();
-		}
-	});
-}
 
 function toggleEditTools(caller) {
 	$('#edit_tools').toggle();

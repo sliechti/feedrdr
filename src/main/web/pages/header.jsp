@@ -1,3 +1,5 @@
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@page import="feedreader.utils.ApplicationConfig"%>
 <%@page import="feedreader.config.OAuthConfig"%>
@@ -26,13 +28,9 @@
 
     request.setAttribute("baseUrl", FeedAppConfig.BASE_APP_URL);
 
-    if (request.getRequestURI().contains("reader.jsp")) {
-        request.setAttribute("logoAction", "openLeftBar(); return false;");
-        request.setAttribute("logoUrl", "");
-    } else {
-        request.setAttribute("logoAction", "");
-        request.setAttribute("logoUrl", PageUtils.getHome());
-    }
+	request.setAttribute("logoAction", "openLeftBar(); return false;");
+	request.setAttribute("logoUrl", "");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -71,9 +69,6 @@
     <% } %>
     <% if (request.getAttribute("e") != null) { %>
         <script src="<%= PageUtils.getPath("/js/app/settings.js") %>" type="text/javascript"></script>
-    <% } %>
-    <% if (request.getAttribute("c") != null) { %>
-        <script src="<%= PageUtils.getPath("/js/app/collections.js") %>" type="text/javascript"></script>
     <% } %>
     <% if (request.getAttribute("c") != null) { %>
         <script src="<%= PageUtils.getPath("/js/app/collections.js") %>" type="text/javascript"></script>
@@ -120,7 +115,7 @@
 	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#reader-nav">
+				<button type="button" class="navbar-toggle" onclick="closeLeftBar();" data-toggle="collapse" data-target="#reader-nav">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -134,11 +129,12 @@
 					<% if (user.isGenerated()) { %>
 					<li><a href="wizard">Wizard</a></li>
 					<% } %>
-					<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-						<span id="profile" data-id="<%=profile.getProfileId()%>"><%=profile.getName()%></span>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							<span id="profile" data-id="<%=profile.getProfileId()%>"><%=profile.getName()%></span>
+						</a>
 						<ul id="profiles" class="dropdown-menu" role="menu">
 							<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
 						</ul>
@@ -195,4 +191,66 @@
         <div id="content" class="container-fluid">
         <div class="row">
 
+<div id="leftbar" class="noshow">
+	<c:if test="${!pageContext.request.requestURI.endsWith('/reader.jsp')}">
+		<div class="back">
+			<a href="${pageContext.request.contextPath}/pages/reader.jsp">back to reader</a>
+		</div>
+	</c:if>
+    <div id="special-entries">
+    <ul class="leftmenu-ul">
+    	<li>
+	        <a href="reader.jsp#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
+    	</li>
+    	<li>
+	        <a href="reader.jsp#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>
+		</li>
+		<li>
+			<a href="reader.jsp#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
+		</li>
 
+    </ul>
+    </div>
+    <div id="add-content">
+    	<ul class="leftmenu-ul">
+    		<li>
+		    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/import.jsp") %>" style="display: block">Import</a>
+    		</li>
+    		<li>
+		    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>" style="display: block">Subscriptions</a>
+    		</li>
+			<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
+    	</ul>
+    </div>
+
+	<c:if test="${pageContext.request.requestURI.endsWith('/reader.jsp')}">
+    <div class="left-icons-container">
+        <a title="show all" href="" onclick="showOnlyWithUnread(false); return false;">
+        <span class="glyphicon glyphicon-eye-open"></span></a>
+        <a title="show only unread" href="" onclick="showOnlyWithUnread(true); return false;">
+        <span class="glyphicon glyphicon-eye-close"></span></a>
+        <a title="sort A-Z" href="" onclick="sortByAlphabet(2);return false;">
+        <span class="glyphicon glyphicon-sort-by-alphabet"></span></a>
+        <a title="sort Z-A" href="" onclick="sortByAlphabet(1);return false;">
+        <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span></a>
+        <a title="sort by unread 9-0" href="" onclick="sortByUnread(1);return false;">
+        <span class=" glyphicon glyphicon-sort-by-attributes-alt"></span></a>
+        <a title="sort by unread 0-9" href="" onclick="sortByUnread(2);return false;">
+        <span class="glyphicon glyphicon-sort-by-attributes"></span></a>
+        <a title="refresh" href="" onclick="refreshUnread(2);return false;">
+        <span class="glyphicon glyphicon-refresh"></span></a>
+    </div>
+
+    <div>
+        <div class="left">
+            <span class="profileColor">&nbsp;</span>
+            STREAMS
+        </div>
+        <div class="right">
+            <a href="" onclick="newStreamGroup(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+    </div>
+    <div id='menusubs'></div>
+
+	</c:if>
+</div>

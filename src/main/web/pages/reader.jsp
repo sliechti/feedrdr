@@ -30,58 +30,6 @@
 
 <%@include file="header.jsp" %>
 
-<div id="leftbar" style="display: none;">
-    <div class="right">
-        <a title="close menu" href="" onclick="closeMenu(); return false;">
-        	<span class="em15 glyphicon glyphicon-remove-circle"></span>
-       	</a>
-    </div>
-    <div>
-        <a href="#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
-        <a href="#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>
-        <a href="#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
-        <% if (user.isAdmin()) { %>
-        	<a class="admin" href="<%= FeedAppConfig.BASE_APP_URL %>/beta/api.jsp" style="display: block">API</a>
-        	<a class="admin" href="<%= FeedAppConfig.BASE_APP_URL %>/jobs/run_fetch.jsp" style="display: block">Fetch</a>
-        	<a class="admin" href="<%= FeedAppConfig.BASE_ADMIN_URL %>" style="display: block">Admin</a>
-        <% } %>
-    </div>
-    <br>
-    <div>
-    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/import.jsp") %>" style="display: block">Import</a>
-    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>" style="display: block">Subscriptions</a>
-    </div>
-    <br>
-    <div class="left-icons-container">
-        <a title="show all" href="" onclick="showOnlyWithUnread(false); return false;">
-        <span class="glyphicon glyphicon-eye-open"></span></a>
-        <a title="show only unread" href="" onclick="showOnlyWithUnread(true); return false;">
-        <span class="glyphicon glyphicon-eye-close"></span></a>
-        <a title="sort A-Z" href="" onclick="sortByAlphabet(2);return false;">
-        <span class="glyphicon glyphicon-sort-by-alphabet"></span></a>
-        <a title="sort Z-A" href="" onclick="sortByAlphabet(1);return false;">
-        <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span></a>
-        <a title="sort by unread 9-0" href="" onclick="sortByUnread(1);return false;">
-        <span class=" glyphicon glyphicon-sort-by-attributes-alt"></span></a>
-        <a title="sort by unread 0-9" href="" onclick="sortByUnread(2);return false;">
-        <span class="glyphicon glyphicon-sort-by-attributes"></span></a>
-        <a title="refresh" href="" onclick="refreshUnread(2);return false;">
-        <span class="glyphicon glyphicon-refresh"></span></a>
-    </div>
-
-    <div>
-        <div class="left">
-            <span class="profileColor">&nbsp;</span>
-            STREAMS
-        </div>
-        <div class="right">
-            <a href="" onclick="newStreamGroup(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
-        </div>
-    </div>
-
-    <div id='menusubs'></div>
-</div>
-
 <div id="stream_content">
 
     <div id="simple_view_header" class="row"></div>
