@@ -13,7 +13,7 @@
 			<span class="right glyphicon glyphicon-plus"></span>
 		</a>
 		<a href="" onClick="toggleFeedsCollection(this, {{c.l_collection_id}}); return false;">
-			<span class=" right glyphicon glyphicon-list-alt"></span>
+			<span class="right glyphicon glyphicon-list-alt"></span>
 		</a>
 	</p>
 	<p class="description">{{c.s_description}}</p>

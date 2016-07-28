@@ -34,11 +34,11 @@ import feedreader.utils.JSONUtils;
 import feedreader.utils.SQLUtils;
 
 @Path("/v1/collections")
-public class Collections {
+public class CollectionsAPI {
 
     static final String REMOVE_ACTION = "r";
     static final String SAVE_ACTION = "s";
-    private static final Logger logger = LoggerFactory.getLogger(Collections.class);
+    private static final Logger logger = LoggerFactory.getLogger(CollectionsAPI.class);
 
     @GET
     @Path("/add")
