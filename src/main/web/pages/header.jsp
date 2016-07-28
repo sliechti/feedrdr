@@ -50,7 +50,9 @@
         <script src="<%= PageUtils.getPath("/js/vendor/jlinq.min.js") %>" type="text/javascript"></script>
     <% } %>
         <script src="<%= PageUtils.getPath("/js/jscolor/jscolor.min.js") %>" type="text/javascript"></script>
-
+		<script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
+		<script src="${baseUrl}/js/vendor/hello.min.js" type="text/javascript"></script>
+		<script src="${baseUrl}/js/vendor/hello.init.min.js" type="text/javascript"></script>
 
         <script src="<%= PageUtils.getPath("/js/app/global.js") %>" type="text/javascript"></script>
         <script src="<%= PageUtils.getPath("/js/app/profiles.js") %>" type="text/javascript"></script>
