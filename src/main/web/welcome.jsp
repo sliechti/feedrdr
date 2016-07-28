@@ -63,8 +63,16 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 				</p>
 			</div>
 			<div class="cell text-center w50p vertical-middle bottom40">
-				<c:if test="${not empty signup_error}">
-					<div class="warning">${signup_error}</div>
+				<c:if test="${not empty invalidEmail}">
+					<div class="warning">
+					The email '${email}' appears to be invalid, please try another one.
+					</div>
+				</c:if>
+				<c:if test="${not empty emailKnown}">
+					<div class="warning">
+					The email is already registered, please <a href="login">sign in</a>
+					or <a href="password_reset">reset you password</a>
+					</div>
 				</c:if>
 				<form id="start-reading" method="post" action="signup">
 					<input type="text" class="block w100p" id="email" name="email" placeholder="your@email">
