@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import com.restfb.json.JsonObject;
 
+import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.ProfileData;
 import feedreader.security.Session;
@@ -45,7 +46,7 @@ public class ProfilesAPI {
         sb.append("{\"entries\" : [");
 
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT * FROM %s WHERE %s = %d", UserProfilesTable.TABLE,
+            String query = String.format("SELECT * FROM %s WHERE %s = %d", Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
 
             ResultSet rs = Database.rawQuery(conn, query);

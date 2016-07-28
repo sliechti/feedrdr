@@ -17,9 +17,6 @@ import feedreader.utils.SQLUtils;
 
 public class UserProfilesTable {
 
-    public static final String TABLE = Constants.USER_PROFILES_TABLE;
-    public static final String TABLE_STREAM_GROUPS = Constants.USER_PROFILES_STREAM_GROUP;
-
     private static final Logger logger = LoggerFactory.getLogger(UserProfilesTable.class);
 
     public static boolean init() {
@@ -34,7 +31,8 @@ public class UserProfilesTable {
     public static List<ProfileData> getProfiles(long userId) {
         ArrayList<ProfileData> ret = new ArrayList<>();
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT %s FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID, TABLE,
+            String query = String.format("SELECT %s FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
             ResultSet rs = conn.createStatement().executeQuery(query);
             while (rs.next()) {
@@ -47,13 +45,15 @@ public class UserProfilesTable {
     }
 
     public static ProfileData getProfile(long userId, long id) {
-        String query = String.format("SELECT * FROM %s WHERE %s = %d AND %s = %d", TABLE, DBFields.LONG_USER_ID,
+        String query = String.format("SELECT * FROM %s WHERE %s = %d AND %s = %d", Constants.USER_PROFILES_TABLE,
+                DBFields.LONG_USER_ID,
                 userId, DBFields.LONG_PROFILE_ID, id);
         return getProfile(query);
     }
 
     public static ProfileData getFirstProfile(long userId) {
-        String query = String.format("SELECT * FROM %s WHERE %s = %d LIMIT 1", TABLE, DBFields.LONG_USER_ID, userId);
+        String query = String.format("SELECT * FROM %s WHERE %s = %d LIMIT 1", Constants.USER_PROFILES_TABLE,
+                DBFields.LONG_USER_ID, userId);
         return getProfile(query);
     }
 
@@ -72,7 +72,8 @@ public class UserProfilesTable {
 
     public static int removeStreamGroupFromProfile(long streamId, long profileId) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", TABLE_STREAM_GROUPS,
+            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d",
+                    Constants.USER_PROFILES_STREAM_GROUP,
                     DBFields.LONG_PROFILE_ID, profileId, DBFields.LONG_STREAM_ID, streamId);
             return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
@@ -84,7 +85,8 @@ public class UserProfilesTable {
 
     public static int removeAllStreamGroupFromProfile(long profileId) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("DELETE FROM %s WHERE %s = %d", TABLE_STREAM_GROUPS, DBFields.LONG_PROFILE_ID,
+            String query = String.format("DELETE FROM %s WHERE %s = %d", Constants.USER_PROFILES_STREAM_GROUP,
+                    DBFields.LONG_PROFILE_ID,
                     profileId);
             return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
@@ -97,13 +99,15 @@ public class UserProfilesTable {
     public static boolean addStreamToProfile(long streamId, long profileId) {
         try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = %d", DBFields.LONG_PROFILE_ID,
-                    TABLE_STREAM_GROUPS, DBFields.LONG_PROFILE_ID, profileId, DBFields.LONG_STREAM_ID, streamId);
+                    Constants.USER_PROFILES_STREAM_GROUP, DBFields.LONG_PROFILE_ID, profileId, DBFields.LONG_STREAM_ID,
+                    streamId);
             ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next())
                 return true;
 
-            query = String.format("INSERT INTO %s (%s, %s) VALUES (%d, %d) RETURNING %s", TABLE_STREAM_GROUPS,
+            query = String.format("INSERT INTO %s (%s, %s) VALUES (%d, %d) RETURNING %s",
+                    Constants.USER_PROFILES_STREAM_GROUP,
                     DBFields.LONG_PROFILE_ID, DBFields.LONG_STREAM_ID, profileId, streamId, DBFields.LONG_PROFILE_ID);
             rs = conn.createStatement().executeQuery(query);
 
@@ -118,7 +122,8 @@ public class UserProfilesTable {
 
     public static void addStreamToAllProfiles(long userId, long streamId) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT %s FROM %S WHERE %s = %d", DBFields.LONG_PROFILE_ID, TABLE,
+            String query = String.format("SELECT %s FROM %S WHERE %s = %d", DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
 
             ResultSet rs = conn.createStatement().executeQuery(query);
@@ -140,7 +145,7 @@ public class UserProfilesTable {
 
     public static boolean streamGroupKnown(long streamId) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT * FROM %s WHERE %s = %d", TABLE_STREAM_GROUPS,
+            String query = String.format("SELECT * FROM %s WHERE %s = %d", Constants.USER_PROFILES_STREAM_GROUP,
                     DBFields.LONG_STREAM_ID, streamId);
             return conn.createStatement().executeQuery(query).next();
         } catch (SQLException ex) {
@@ -153,7 +158,8 @@ public class UserProfilesTable {
     public static long addProfile(long userId, String profileName, String profileColor) {
         try (Connection conn = Database.getConnection()) {
             String query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %d, '%s', '%s') RETURNING %s",
-                    TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_USER_ID, DBFields.STR_PROFILE_NAME,
+                    Constants.USER_PROFILES_TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_USER_ID,
+                    DBFields.STR_PROFILE_NAME,
                     DBFields.STR_COLOR, Database.DEFAULT_KEYWORD, userId, SQLUtils.asSafeString(profileName),
                     SQLUtils.asSafeString(profileColor), DBFields.LONG_PROFILE_ID);
             ResultSet rs = conn.createStatement().executeQuery(query);
@@ -171,7 +177,8 @@ public class UserProfilesTable {
 
     public static int getProfileCount(long userId) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT COUNT(%s) FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID, TABLE,
+            String query = String.format("SELECT COUNT(%s) FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
             ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
@@ -193,7 +200,8 @@ public class UserProfilesTable {
             }
 
             String query = String.format("INSERT INTO %s (%s, %s, %s, %s, %s) "
-                    + "VALUES (%s, %d, '%s', '%s', %b) RETURNING %s", TABLE, DBFields.LONG_PROFILE_ID,
+                    + "VALUES (%s, %d, '%s', '%s', %b) RETURNING %s", Constants.USER_PROFILES_TABLE,
+                    DBFields.LONG_PROFILE_ID,
                     DBFields.LONG_USER_ID, DBFields.STR_PROFILE_NAME, DBFields.STR_PROFILE_COLOR,
                     DBFields.BOOL_DEFAULT, Database.DEFAULT_KEYWORD, userId, FeedAppConfig.DEFAULT_PROFILE_NAME,
                     FeedAppConfig.DEFAULT_PROFILE_COLOR, true, DBFields.LONG_PROFILE_ID);
@@ -214,7 +222,8 @@ public class UserProfilesTable {
     public static int save(long userId, ProfileData data) {
         try (Connection conn = Database.getConnection()) {
 
-            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d AND %s = %d", TABLE,
+            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d AND %s = %d",
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.STR_PROFILE_NAME, SQLUtils.asSafeString(data.getName()), DBFields.STR_PROFILE_COLOR,
                     SQLUtils.asSafeString(data.getColor()), DBFields.LONG_PROFILE_ID, data.getProfileId(),
                     DBFields.LONG_USER_ID, userId);
@@ -229,7 +238,8 @@ public class UserProfilesTable {
     public static int delete(long userId, long profileId) {
         try (Connection conn = Database.getConnection()) {
 
-            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", TABLE, DBFields.LONG_PROFILE_ID,
+            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", Constants.USER_PROFILES_TABLE,
+                    DBFields.LONG_PROFILE_ID,
                     profileId, DBFields.LONG_USER_ID, userId);
             return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
@@ -251,7 +261,7 @@ public class UserProfilesTable {
             String query = String.format("SELECT %s FROM %s "
                     + "WHERE %s = %d AND %s IN (" + sb.toString() + ")",
                     DBFields.LONG_PROFILE_ID,
-                    TABLE,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId,
                     DBFields.LONG_PROFILE_ID);
             ResultSet rs = conn.createStatement().executeQuery(query);

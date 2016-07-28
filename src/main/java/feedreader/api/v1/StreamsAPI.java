@@ -263,7 +263,7 @@ public class StreamsAPI {
     @GET
     @Path("/add")
     @Produces(MediaType.APPLICATION_JSON)
-    public String addStream(@Context HttpServletRequest req, @QueryParam("sn") String streamName) {
+    public String addStream(@Context HttpServletRequest req, @QueryParam("sn") String name) {
         long userId = Session.getUserId(req.getSession());
         long profileId = Session.getProfileId(req.getSession());
 
@@ -271,27 +271,25 @@ public class StreamsAPI {
             return JSONErrorMsgs.getAccessDenied();
         }
 
-        if (streamName == null || streamName.isEmpty()) {
+        if (name == null || name.isEmpty()) {
             return JSONUtils.error(0, "Need a name. query.sn.");
         }
-
-        // check if stream name exist in DB
-        if (UserStreamGroupsTable.isStreamExist(userId, streamName)) {
+        if (UserStreamGroupsTable.hasStream(userId, profileId, name)) {
             return JSONUtils.error(0, "Stream with same name already exist.");
         }
 
-        long streamId = UserStreamGroupsTable.save(userId, streamName);
+        long streamId = UserStreamGroupsTable.save(userId, name);
         if (streamId == -1) {
             return JSONUtils.error(0, "Error adding new stream group.");
         }
 
         if (profileId == 0) {
             UserProfilesTable.addStreamToAllProfiles(userId, streamId);
-            return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to all profiles.",
-                    "\"id\":" + streamId + "");
+            return JSONUtils.success(JSONUtils.escapeQuotes(name) +
+                    " added to all profiles.", "\"id\":" + streamId + "");
         }
         UserProfilesTable.addStreamToProfile(streamId, profileId);
-        return JSONUtils.success(JSONUtils.escapeQuotes(streamName) + " added to profile.", "\"id\":" + streamId + "");
+        return JSONUtils.success(JSONUtils.escapeQuotes(name) + " added to profile.", "\"id\":" + streamId + "");
     }
 
     @GET
