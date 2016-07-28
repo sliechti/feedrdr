@@ -47,12 +47,13 @@
 				<button class="btn btn-primary btn-xs" onClick="renameStreamGroup()">save</button>&nbsp;
 		</div>
 		<div id="header-stream-group">
-			<span class="title">{{s_stream_name}}</span>
-			<a class="pointer" onclick="toggleEditTools(this)">&raquo;</a>
+			<span class="title"></span>
+			<a class="pointer" onclick="toggleEditTools(this, '{{s_stream_name}}')">{{s_stream_name}}&nbsp;&raquo;&raquo;</a>
 			<span id="edit_tools" style="display: none">
 			<% if (user.isAdmin()) { %>
 				<a title="share collection" href="" onclick="showShareCollection({{l_stream_id}});return false;"><span class="glyphicon glyphicon-share"></span></a>
 			<% } %>
+			<a title="mark all entries as read" href="" onclick="markAllRead(); return false;"><span class="glyphicon glyphicon-ok-sign"></span></a>
 			<a title="rename stream" href="" onclick="showRename('stream_rename');return false;"><span class="glyphicon glyphicon-edit"></span></a>
 			<a title="add single feed" href="" onclick="showImport(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
 			<a title="show subscriptions" href="" onClick="toggleHeaderTool('subscriptions');return false;"><span class="glyphicon glyphicon-list-alt"></span></a>

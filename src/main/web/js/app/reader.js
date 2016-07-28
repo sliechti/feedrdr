@@ -1219,11 +1219,11 @@ function renderContentStart() {
 }
 
 
-function toggleEditTools(caller) {
+function toggleEditTools(caller, title) {
 	$('#edit_tools').toggle();
 	if ($('#edit_tools').is(':visible')) {
-		$(caller).html('&laquo;');
+		$(caller).html('&laquo;&laquo;');
 	} else {
-		$(caller).html('&raquo;');
+		$(caller).html(title + '&nbsp;&raquo;&raquo;');
 	}
 }
