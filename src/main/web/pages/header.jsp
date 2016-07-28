@@ -213,13 +213,13 @@
     </div>
     <div id="add-content">
     	<ul class="leftmenu-ul">
+			<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Add new collections</a></li>
     		<li>
-		    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/import.jsp") %>" style="display: block">Import</a>
+		    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/import.jsp") %>" style="display: block">Import feeds</a>
     		</li>
     		<li>
-		    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>" style="display: block">Subscriptions</a>
+		    	<a onclick="closeLeftBar();" href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>" style="display: block">Manage subscriptions</a>
     		</li>
-			<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
     	</ul>
     </div>
 
