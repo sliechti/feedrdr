@@ -26,8 +26,9 @@
 				</div>
 				<input type="password" class="w100p" placeholder="password" name="pwd">
 				<div class="block secondary left">
-					<input type="checkbox" name="remember_me" value="1">
-					Remember me
+					<label>
+						<input type="checkbox" name="remember_me" value="1">Remember me
+					</label>
 				</div>
 				<button class="w100p">Sign in</button>
 			</form>
