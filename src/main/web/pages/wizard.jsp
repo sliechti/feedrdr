@@ -8,8 +8,8 @@ would be cool if /blog could be added as a news source.
 <title>Welcome</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
-<script src="${baseUrl}/js/jquery.js"></script>
-<script src="${baseUrl}/js/wizard.js"></script>
+<script src="${baseUrl}/js/vendor/jquery.js"></script>
+<script src="${baseUrl}/js/app/wizard.js"></script>
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -27,6 +27,9 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 <style>
 	.-hide {
 		display: block;
+	}
+	.header {
+		margin-bottom: 0px;
 	}
 </style>
 </head>
@@ -47,7 +50,6 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 			<p>Let's get you started.</p>
 			<ul class="left20">
 				<li class="password-setup">Set-up a password</li>
-				<li class="content-info">How to add content</li>
 			</ul>
 		</div>
 
@@ -60,28 +62,25 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 			</form>
 		</div>
 
-		<div class="content-setup hide">
-			<h3>How to subscribe to news feeds</h3>
-			<ul>
-				<li>You can add feeds with the URL</li>
-				<li>You can import your OPML files</li>
-				<li>You can add curated collections</li>
-			</ul>
-			<p>
-				<button class="w100p block btn" onclick="goNext(); return false;">Got it</button>
-			</p>
-		</div>
-
 		<div class="thanks hide">
 			<h3>You are all set</h3>
 			<p>
-				We really hope you enjoy feedrdr as much as we loved creating it.
+				We really hope you enjoy feedrdr as much as we loved creating it.<br>
 				We are adding something new every week so make sure you follow us in
 				<a href="https://www.facebook.com/feedrdr">Facebook</a> and
-				<a href="https://twitter.com/feedrdrco">Twitter</a>
+				<a href="https://twitter.com/feedrdrco">Twitter</a>.
+			</p>
+			<p>
+				<b>Adding content:</b><br>
+				The fastest way to subscribe to new feeds are <a href="${baseUrl}/pages/collections.jsp">collections</a>
+				and <a href="${baseUrl}/pages/import.jsp">importing your own OPML file</a>,
+				you also can add the RSS or Atom feed with the URL too.
 			</p>
 			<p>Let us know what you like or dislike, or what you would like us to add. <p>
-			<p>You can always contact me at <a href="mailto:steven@feedrdr.co?subject=just saying hi!&body=just signed up and only wanted to say hi! :)">Steven Liechti</a></p>
+			<p>You can always contact me at steven@feedrdr.co, or feel free to
+				<a href="mailto:steven@feedrdr.co?subject=just saying hi!&body=just signed up and only wanted to say hi! :)">
+				send me an email if you just want to say hi :)</a>
+			</p>
 			<a href="${home}" onclick="fbq('track', 'CompleteRegistration');" class="block plain-btn w100p success">Start reading</a>
 		</div>
 

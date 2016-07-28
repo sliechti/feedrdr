@@ -1,5 +1,5 @@
 var welcome = 'welcome';
-var steps = [ 'password-setup', 'content-setup', 'thanks' ];
+var steps = [ 'password-setup', 'thanks' ];
 function changePassword(elem, formElem) {
 	$('#password-msg').hide();
 	var pwd1 = $(formElem).find('input[name=pwd1]').val();
