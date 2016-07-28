@@ -16,7 +16,7 @@
 				<img src="${baseUrl}/img/logo.svg" id="logo" class="vertical-middle" height="30" />
 			</div>
 			<div onclick="location.href='login'" class="pointer cell vertical-middle right header-btn">
-				<a href="login">Sign in</a>
+				<a href="${baseUrl}/login">Sign in</a>
 			</div>
 		</div>
 	</div>
