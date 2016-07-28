@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import feedreader.config.FeedAppConfig;
 import feedreader.security.PasswordResetServlet;
 
 public class ServletUtils {
@@ -21,7 +22,7 @@ public class ServletUtils {
 
     public static void redirect(HttpServletRequest req, HttpServletResponse resp, String location)
             throws ServletException, IOException {
-        String contextPath = req.getContextPath();
+        String contextPath = FeedAppConfig.BASE_APP_URL;
 
         req.setAttribute("isLocal", ApplicationConfig.instance().isLocal());
         req.setAttribute(TMPL_HOME, PageUtils.getHome());
