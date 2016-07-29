@@ -12,14 +12,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import feedreader.utils.ApplicationConfig;
+import feedreader.utils.EmailParamsBuilder;
 import feedreader.utils.HtmlStackTrace;
 import feedreader.utils.ServletUtils;
-import feedreader.utils.SimpleMail;
+import feedreader.utils.SimpleEmail;
+import feedreader.utils.SimpleEmail.SendCallback;
 
 @WebServlet(name = "500", urlPatterns = { "/e/500" })
 public class PageErrorServlet extends HttpServlet {
 
-    private static final SimpleMail mail = new SimpleMail();
     private static final Logger logger = LoggerFactory.getLogger(PageErrorServlet.class);
 
     @Override
@@ -36,10 +37,11 @@ public class PageErrorServlet extends HttpServlet {
         req.setAttribute("isLocal", isLocal);
         if (!isLocal) {
             try {
-                mail.send("stacktrace@feedrdr.co", "StackTrace",
-                        "steven@feedrdr.co", "Steven Liechti",
-                        "StackTrace " + local, errorMessage + "" +
-                                HtmlStackTrace.get(throwable, Integer.MAX_VALUE, "\n"));
+                EmailParamsBuilder builder = new EmailParamsBuilder();
+                builder.setFrom("stacktrace@feedrdr.co").setSubject("StackTrace " + local)
+                    .setTo("devs@feedrdr.co").setToName("feedrdr-devs")
+                    .setBodyText(errorMessage + "" + HtmlStackTrace.get(throwable, Integer.MAX_VALUE, "\n"));
+                SimpleEmail.getInstance().sendAsync(builder);
             } catch (Exception e) {
                 logger.error("failed to send stacktrace: {}", e, e.getMessage());
             }

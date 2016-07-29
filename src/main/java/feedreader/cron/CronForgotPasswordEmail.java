@@ -14,7 +14,7 @@ import feedreader.store.DBFields;
 import feedreader.store.Database;
 import feedreader.store.UsersTable;
 import feedreader.utils.ClassUtils;
-import feedreader.utils.SimpleMail;
+import feedreader.utils.SimpleEmail;
 
 public class CronForgotPasswordEmail implements Runnable {
 
@@ -22,7 +22,6 @@ public class CronForgotPasswordEmail implements Runnable {
     static final String MAIL_FROM = FeedAppConfig.MAIL_REG_FROM;
     static final String MAIL_FROM_NAME = "Registration " + FeedAppConfig.APP_NAME;
     private static final Logger logger = LoggerFactory.getLogger(CronForgotPasswordEmail.class);
-    private static final SimpleMail mail = new SimpleMail();
     private final String emailTmpl;
 
     public CronForgotPasswordEmail() throws Exception {
@@ -52,7 +51,7 @@ public class CronForgotPasswordEmail implements Runnable {
                     String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/password_reset?code=" + forgotCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
 
-                    mail.send(MAIL_FROM, MAIL_FROM_NAME, email, email, "Password reset", emailTxt);
+                    SimpleEmail.getInstance().send(MAIL_FROM, MAIL_FROM_NAME, email, email, "Password reset", emailTxt);
 
                     query = String.format("UPDATE %s SET %s = false WHERE %s = %d",
                             UsersTable.TABLE, DBFields.BOOL_FORGOT_PWD, DBFields.LONG_USER_ID, userId);

@@ -15,6 +15,7 @@ import feedreader.oauth.OAuthType;
 import feedreader.time.CurrentTime;
 import feedreader.utils.PwdUtils;
 import feedreader.utils.SQLUtils;
+import feedreader.utils.SimpleEmail;
 
 public class UsersTable {
 
@@ -307,6 +308,20 @@ public class UsersTable {
         }
 
         return UserData.NULL;
+    }
+
+    public static void disableAccount(long userId, String reason) {
+        log.info("disabling account {}, reason: {}", userId, reason);
+        String query = String.format("UPDATE feedreader.users "
+                + "SET b_acct_disabled = true "
+                + "WHERE l_user_id = %d", userId);
+        try (Connection conn = Database.getConnection()) {
+            conn.createStatement().execute(query);
+            UserData user = get(userId);
+            SimpleEmail.getInstance().sendAccountDisabled(user.getEmail(), reason);
+        } catch (Exception e) {
+            log.error("disable account failed: {}", e, e.getMessage());
+        }
     }
 
 }

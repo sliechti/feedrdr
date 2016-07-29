@@ -13,7 +13,7 @@ import feedreader.store.Database;
 import feedreader.store.UsersTable;
 import feedreader.utils.ResourceUtils;
 import feedreader.utils.SQLUtils;
-import feedreader.utils.SimpleMail;
+import feedreader.utils.SimpleEmail;
 
 public class CronNewUsersEmail implements Runnable {
 
@@ -22,7 +22,6 @@ public class CronNewUsersEmail implements Runnable {
     static final String MAIL_FROM_NAME = "Registration " + FeedAppConfig.APP_NAME;
     private static final Logger logger = LoggerFactory.getLogger(CronNewUsersEmail.class);
     private final String emailTmpl;
-    private final SimpleMail mail = new SimpleMail();
 
     public CronNewUsersEmail() throws Exception {
         logger.info("starting, running every: {} seconds", FeedAppConfig.DELAY_CHECK_NEW_USERS_EMAIL);
@@ -50,7 +49,7 @@ public class CronNewUsersEmail implements Runnable {
                     emailTxt = emailTxt.replace("{CODE}", regCode);
                     String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/verify?code=" + regCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
-                    mail.send(MAIL_FROM, MAIL_FROM_NAME, email, email, "Welcome to feedrdr", emailTxt);
+                    SimpleEmail.getInstance().send(MAIL_FROM, MAIL_FROM_NAME, email, email, "Welcome to feedrdr", emailTxt);
                     query = String.format("UPDATE %s SET %s = true WHERE %s = %d",
                             UsersTable.TABLE, DBFields.BOOL_REG_SENT, DBFields.LONG_USER_ID, userId);
                     conn.createStatement().execute(query);

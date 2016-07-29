@@ -20,7 +20,7 @@ import feedreader.store.FeedSourceChannelImageTable;
 import feedreader.store.FeedSourcesTable;
 import feedreader.store.XmlAttrTable;
 import feedreader.time.CurrentTime;
-import feedreader.utils.SimpleMail;
+import feedreader.utils.SimpleEmail;
 
 /**
  * Class responsible for fetching news. Instantiated on {@link AppContextInit}.
@@ -43,7 +43,6 @@ public class CronFetchNews implements Runnable {
     private FetchHandler handler = new FetchHandler();
     private long lastStatusSent = 0;
 
-    private SimpleMail mail = new SimpleMail();
     private final Stats stats = new Stats();
     private Status status = Status.STARTING;
     private boolean validationRun = false;
@@ -138,9 +137,10 @@ public class CronFetchNews implements Runnable {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
-    private boolean sendMail(String subject, String text) {
+    public boolean sendMail(String subject, String text) {
         try {
-            mail.send(fetcherEmail, fetcherEmail, fetcherToEmail, fetcherToEmail, subject, text);
+            SimpleEmail.getInstance()
+                .send(fetcherEmail, fetcherEmail, fetcherToEmail, fetcherToEmail, subject, text);
             return true;
         } catch (Exception e) {
             logger.error("sending email due to fetch error: {}", e, e.getMessage());
