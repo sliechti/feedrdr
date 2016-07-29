@@ -40,11 +40,13 @@ public class CollectionsTable {
                 + "WHERE t1.l_collection_id IN (" + SQLUtils.asSafeString(ids) + ") AND t3.s_link != ''";
     }
 
-    public static String getQueryList() {
+    public static String getQueryList(long id) {
         return "SELECT t0.*, count(t1.l_xml_id) as i_feeds FROM feedreader.sourcecollections as t0 " +
                 "LEFT JOIN feedreader.sourcecollectionslist AS t1 " +
-                "ON t0.l_collection_id = t1.l_collection_id " +
-                "GROUP BY t0.l_collection_id;";
+                "ON t0.l_collection_id = t1.l_collection_id AND "
+                + "t1.l_xml_id NOT IN( select distinct(l_xml_id) from "
+                            + "feedreader.userfeedsubscriptions where l_user_id="+id +")" +
+                "GROUP BY t0.l_collection_id HAVING count(t1.l_xml_id)>0;";
     }
 
 }

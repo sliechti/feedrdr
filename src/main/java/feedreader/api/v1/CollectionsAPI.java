@@ -152,9 +152,10 @@ public class CollectionsAPI {
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
-    public String list() {
+    public String list(@Context HttpServletRequest req) {
         StringBuilder sb = new StringBuilder();
-        String query = CollectionsTable.getQueryList();
+        long userId = Session.getUserId(req.getSession());
+        String query = CollectionsTable.getQueryList(userId);
         try (Connection conn = Database.getConnection()) {
             sb.append("{\"entries\" : [");
             ResultSet rs = Database.rawQuery(conn, query);
