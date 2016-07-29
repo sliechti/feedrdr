@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.FeedSourceEntry;
 import feedreader.entities.OPMLEntry;
@@ -26,7 +27,6 @@ import feedreader.store.DBFields;
 import feedreader.store.Database;
 import feedreader.store.FeedSourcesTable;
 import feedreader.store.UserFeedSubscriptionsTable;
-import feedreader.store.UserProfilesTable;
 import feedreader.store.UserStreamGroupsTable;
 import feedreader.utils.JSONUtils;
 import feedreader.utils.SQLUtils;
@@ -291,9 +291,9 @@ public class SubscriptionsAPI {
         rawQuery = String.format("SELECT * FROM %s AS t0\n" + "    INNER JOIN %s AS t1 ON t0.%s = t1.%s\n"
                 + "    INNER JOIN %s AS t2 ON t1.%s = t2.%s\n" + "    INNER JOIN %s AS t3 ON t3.%s = t2.%s\n"
                 + "    WHERE t0.%s = %d", UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS,
-                UserStreamGroupsTable.TABLE, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
-                UserProfilesTable.TABLE_STREAM_GROUPS, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
-                UserProfilesTable.TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_PROFILE_ID, DBFields.LONG_SUBS_ID,
+                Constants.USER_STREAM_GROUPS_TABLE, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
+                Constants.USER_PROFILES_STREAM_GROUP, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
+                Constants.USER_PROFILES_TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_PROFILE_ID, DBFields.LONG_SUBS_ID,
                 subscriptionId);
 
         sb.append("[");

@@ -14,11 +14,11 @@ import feedreader.config.FeedAppConfig;
 import feedreader.entities.StreamGroup;
 import feedreader.security.UserSession;
 import feedreader.time.CurrentTime;
+import feedreader.utils.JSONUtils;
 import feedreader.utils.SQLUtils;
 
 public class UserStreamGroupsTable {
 
-    public static final String TABLE = Constants.USER_STREAM_GROUPS_TABLE;
     public static final String TABLE_VIEWS = Constants.USER_STREAM_GROUP_VIEW_OPTIONS_TABLE;
     public static final String TABLE_STREAM_SUBSCRIPTIONS = Constants.USER_STREAM_GROUP_FEEDS_SUBS_TABLE;
 
@@ -33,37 +33,34 @@ public class UserStreamGroupsTable {
         logger.info("close");
     }
 
-    public static long save(long userId, String streamName) {
+    /**
+     * @return Returns 0 if stream name is already in profile. -1 on error, >1, the newly record id on success.
+     */
+    public static long save(long userId, String name) {
         if (!UserSession.isValid(userId)) {
             return RetCodes.INVALID_USER_ID;
         }
 
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s='%s'", DBFields.LONG_STREAM_ID, TABLE,
-                    DBFields.LONG_USER_ID, userId, DBFields.STR_STREAM_NAME, SQLUtils.asSafeString(streamName));
-            ResultSet rs = conn.createStatement().executeQuery(query);
-
-            if (rs.next()) {
-                // update
-                return rs.getLong(DBFields.LONG_STREAM_ID);
-            }
-            // insert
-            query = String.format("INSERT INTO %s (%s, %s, %s) VALUES (%s, '%s', %d) RETURNING %s", TABLE,
+            String query = String.format("INSERT INTO %s (%s, %s, %s) VALUES (%s, '%s', %d) RETURNING %s",
+                    Constants.USER_STREAM_GROUPS_TABLE,
                     DBFields.LONG_STREAM_ID, DBFields.STR_STREAM_NAME, DBFields.LONG_USER_ID,
-                    Database.DEFAULT_KEYWORD, SQLUtils.asSafeString(streamName), userId, DBFields.LONG_STREAM_ID);
-            rs = conn.createStatement().executeQuery(query);
-            if (!rs.next())
+                    Database.DEFAULT_KEYWORD, SQLUtils.asSafeString(name), userId, DBFields.LONG_STREAM_ID);
+            ResultSet rs = conn.createStatement().executeQuery(query);
+            if (!rs.next()) {
                 return -1;
+            }
             return rs.getLong(DBFields.LONG_STREAM_ID);
         } catch (SQLException ex) {
             logger.error("failed: {}", ex, ex.getMessage());
-            return RetCodes.SQL_ERROR;
         }
+        return -1;
     }
 
     public static ResultSet get(Connection conn, long profileId, boolean view) throws SQLException {
-        String query = String.format("SELECT * from %s AS t1 INNER JOIN %s AS t2 ON " + " t1.%s = t2.%s ", TABLE,
-                UserProfilesTable.TABLE_STREAM_GROUPS, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID);
+        String query = String.format("SELECT * from %s AS t1 INNER JOIN %s AS t2 ON " + " t1.%s = t2.%s ",
+                Constants.USER_STREAM_GROUPS_TABLE,
+                Constants.USER_PROFILES_STREAM_GROUP, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID);
 
         if (view) {
             query += String.format(" LEFT JOIN %s AS t3 " + "ON t1.%s = t3.%s ", TABLE_VIEWS, DBFields.LONG_STREAM_ID,
@@ -77,7 +74,8 @@ public class UserStreamGroupsTable {
     }
 
     public static List<StreamGroup> get(long userId) {
-        String query = String.format("SELECT * FROM %s WHERE %s = %d", TABLE, DBFields.LONG_USER_ID, userId);
+        String query = String.format("SELECT * FROM %s WHERE %s = %d", Constants.USER_STREAM_GROUPS_TABLE,
+                DBFields.LONG_USER_ID, userId);
         return get(userId, query);
     }
 
@@ -111,7 +109,8 @@ public class UserStreamGroupsTable {
             return 0;
 
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d AND %s = %d", TABLE,
+            String query = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d AND %s = %d",
+                    Constants.USER_STREAM_GROUPS_TABLE,
                     DBFields.STR_STREAM_NAME, SQLUtils.asSafeString(streamName), DBFields.LONG_USER_ID, userId,
                     DBFields.LONG_STREAM_ID, streamId);
             return conn.createStatement().executeUpdate(query);
@@ -146,7 +145,8 @@ public class UserStreamGroupsTable {
 
     public static int removeStreamGroup(long streamId) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("DELETE FROM %s WHERE %s = %d", TABLE, DBFields.LONG_STREAM_ID, streamId);
+            String query = String.format("DELETE FROM %s WHERE %s = %d", Constants.USER_STREAM_GROUPS_TABLE,
+                    DBFields.LONG_STREAM_ID, streamId);
             int c = conn.createStatement().executeUpdate(query);
             if (c > 0) {
                 removeStreamSubscriptions(streamId);
@@ -177,7 +177,8 @@ public class UserStreamGroupsTable {
             String query;
 
             if (count >= 0) {
-                query = String.format("UPDATE %s SET %s = %d, %s = %d WHERE %s = %d", TABLE, DBFields.LONG_GR_UNREAD,
+                query = String.format("UPDATE %s SET %s = %d, %s = %d WHERE %s = %d",
+                        Constants.USER_STREAM_GROUPS_TABLE, DBFields.LONG_GR_UNREAD,
                         count, DBFields.TIME_GR_UNREAD, CurrentTime.inGMT(), DBFields.LONG_STREAM_ID, streamId);
                 conn.createStatement().execute(query);
             }
@@ -237,7 +238,8 @@ public class UserStreamGroupsTable {
     }
 
     public static long getMaxTime(long streamId) {
-        String query = "SELECT " + DBFields.TIME_GR_MAX_TIME + " FROM " + TABLE + " WHERE " + DBFields.LONG_STREAM_ID
+        String query = "SELECT " + DBFields.TIME_GR_MAX_TIME + " FROM " + Constants.USER_STREAM_GROUPS_TABLE + " WHERE "
+                + DBFields.LONG_STREAM_ID
                 + " = " + streamId;
         try (Connection conn = Database.getConnection()) {
             ResultSet rs = conn.createStatement().executeQuery(query);
@@ -251,31 +253,31 @@ public class UserStreamGroupsTable {
     }
 
     /**
-     * This method is created to getStream Id if stream with streamName exists.
+     * Checks if the user already has a stream with the same name in the profile.
      *
      * @param userId
-     * @param streamName
+     * @param profileId
+     * @param name Name of the stream to search for, search is case insensitive.
      * @return
+     *
+     * @see #save(long, String)
      */
-    public static boolean isStreamExist(long userId, String streamName) {
-        if (!UserSession.isValid(userId)) {
-            return false;
-        }
-
+    /* INFO: A better thing to do would be to check on save. Let the insert fail if stream exists. */
+    public static boolean hasStream(long userId, long profileId, String name) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s ILIKE '%s'", DBFields.LONG_STREAM_ID,
-                    TABLE,
-                    DBFields.LONG_USER_ID, userId, DBFields.STR_STREAM_NAME, SQLUtils.asSafeString(streamName));
+            String query = String.format("SELECT * "
+                    + "FROM feedreader.userstreamgroups s "
+                    + "  LEFT JOIN feedreader.userprofilestreamgroup u "
+                    + "    ON s.l_stream_id = u.l_stream_id "
+                    + "  WHERE s.l_user_id = %s "
+                    + "    AND u.l_profile_id = %s "
+                    + "    AND s.s_stream_name ILIKE '%s';",
+                    userId, profileId, name);
             ResultSet rs = conn.createStatement().executeQuery(query);
-
-            if (rs.next()) {
-                return true;
-            }
-            return false;
+            return rs.next();
         } catch (SQLException ex) {
-            logger.error("failed: {}", ex, ex.getMessage());
-            return false;
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
+        return true; // default to yes, so the table doesn't fill in case of an issue.
     }
-
 }
