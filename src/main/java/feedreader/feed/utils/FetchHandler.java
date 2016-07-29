@@ -83,16 +83,16 @@ public class FetchHandler implements Fetch.FetchCallback {
         this.sourceEntry = entry;
     }
 
-    @Override public void onFetchEntryWait(long nextCheck) {
-        this.nextCheck = nextCheck;
+    @Override public void onFetchEntryWait(long nc) {
+        this.nextCheck = nc;
     }
 
     public long getNextCheck() {
         return nextCheck;
     }
 
-    @Override public void onFetchParserCreated(XmlFeedParser parser) {
-        this.parser = parser;
+    @Override public void onFetchParserCreated(XmlFeedParser p) {
+        this.parser = p;
     }
 
     /*

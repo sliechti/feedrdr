@@ -10,11 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import feedreader.config.FeedAppConfig;
 import feedreader.config.OAuthConfig;
 import feedreader.utils.ApplicationConfig;
+import feedreader.utils.PageUtils;
+import feedreader.utils.ServletUtils;
 
 public class WelcomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        long userId = UserSession.getUserId(req);
+        if (userId != 0) {
+            PageUtils.gotoHome(resp);
+            return;
+        }
         req.setAttribute("baseUrl", req.getContextPath());
         req.setAttribute("minifiedStr", "");
         req.setAttribute("oauthFacebooKey", OAuthConfig.FB_KEY);
@@ -24,7 +31,7 @@ public class WelcomeServlet extends HttpServlet {
         if (ApplicationConfig.instance().isLocal()) {
             req.setAttribute("oauthDebug", "&debug=true");
         }
-        getServletContext().getRequestDispatcher("/welcome.jsp").forward(req, resp);
+        ServletUtils.redirect(req, resp, "/welcome.jsp");
     }
 
     @Override

@@ -50,6 +50,7 @@ public class UserSession {
             String cookieKey = CookieUtils.generate(userData);
             Cookie cookie = new Cookie(Constants.USER_COOKIE, cookieKey);
             cookie.setMaxAge(Constants.DEFAUT_COOKIE_AGE);
+            cookie.setSecure(true);
             response.addCookie(cookie);
             UsersTable.saveCookie(userData, cookieKey);
         }
@@ -119,7 +120,7 @@ public class UserSession {
     }
 
     public static String getLogoutLink(String oAuth, String username) {
-        return "<a href=\"/user/logout.jsp\">" + username + " (" + oAuth + ")</a>";
+        return "<a href=\"/logout\">" + username + " (" + oAuth + ")</a>";
     }
 
     /**
@@ -173,8 +174,8 @@ public class UserSession {
         return true;
     }
 
-    public static boolean isValid(long userId, Class<?> clz) {
-        return (userId > 0 && UsersTable.isValidUser(userId, clz));
+    public static boolean isValid(long userId) {
+        return (userId > 0 && UsersTable.isValidUser(userId));
     }
 
     private static String authCookie(HttpServletRequest request) {

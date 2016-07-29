@@ -7,7 +7,6 @@ public class HtmlStackTrace {
 
     public static String get(StackTraceElement[] st, int max, String eol) {
         StringBuilder sb = new StringBuilder();
-
         int to = ((st.length > max) ? max : st.length);
         for (int x = 0; x < to; x++) {
             if (x == 0) {
@@ -16,11 +15,14 @@ public class HtmlStackTrace {
                 sb.append(st[x].toString()).append(eol);
             }
         }
-
         return sb.toString();
     }
 
-    public static void printRed(JspWriter out, StackTraceElement[] st, int max, String eol) throws IOException {
+    public static String get(Throwable throwable, int maxValue, String eol) {
+        return (throwable != null) ? get(throwable.getStackTrace(), maxValue, eol) : "null throwable";
+    }
+
+    public static void printRed(JspWriter out, StackTraceElement[] st) throws IOException {
         out.write("<font color=\"red\">" + HtmlStackTrace.get(st, 10, "<br>") + "</font>");
     }
 

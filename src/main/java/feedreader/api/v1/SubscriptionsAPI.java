@@ -1,5 +1,6 @@
 package feedreader.api.v1;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,18 +13,20 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.FeedSourceEntry;
 import feedreader.entities.OPMLEntry;
 import feedreader.feed.utils.Fetch;
-import feedreader.log.Logger;
 import feedreader.security.Session;
 import feedreader.security.UserSession;
 import feedreader.store.DBFields;
 import feedreader.store.Database;
 import feedreader.store.FeedSourcesTable;
 import feedreader.store.UserFeedSubscriptionsTable;
-import feedreader.store.UserProfilesTable;
 import feedreader.store.UserStreamGroupsTable;
 import feedreader.utils.JSONUtils;
 import feedreader.utils.SQLUtils;
@@ -31,35 +34,25 @@ import feedreader.utils.SQLUtils;
 @Path("/v1/user/subscriptions")
 public class SubscriptionsAPI {
 
-    static final Class<?> clz = SubscriptionsAPI.class;
-
-    PreparedStatement listStreamId, listAll;
-
-    public SubscriptionsAPI() {
-        try {
-            listStreamId = Database.getConnection().prepareCall(
-                    String.format("SELECT t1.%s, t1.%s, t1.%s, t2.%s, t2.%s, t2.%s FROM %s AS t0 "
-                            + " RIGHT JOIN %s as t1 ON t0.%s = t1.%s " + " INNER JOIN %s as t2 ON t1.%s = t2.%s "
-                            + " WHERE t0.%s = ? ORDER BY t1.%s %s", DBFields.LONG_SUBS_ID, DBFields.LONG_XML_ID,
-                            DBFields.STR_SUBSCRIPTION_NAME, DBFields.BOOL_GAVE_UP, DBFields.STR_LAST_ERROR,
-                            DBFields.INT_TOTAL_ENTRIES, UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS,
-                            UserFeedSubscriptionsTable.TABLE, DBFields.LONG_SUBS_ID, DBFields.LONG_SUBS_ID,
-                            FeedSourcesTable.TABLE, DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
-                            DBFields.LONG_STREAM_ID, DBFields.STR_SUBSCRIPTION_NAME,
-                            FeedAppConfig.DEFAULT_API_SORT_USER_SUBSCRIPTIONS_LIST));
-
-            listAll = Database.getConnection().prepareCall(
-                    String.format("SELECT t0.%s, t0.%s, t0.%s, t1.%s, t1.%s, t1.%s FROM %s as t0\n"
-                            + "    INNER JOIN %s as t1 \n" + "        ON t0.%s = t1.%s\n"
-                            + "    WHERE %s = ? ORDER BY t0.%s %s", DBFields.LONG_SUBS_ID, DBFields.LONG_XML_ID,
-                            DBFields.STR_SUBSCRIPTION_NAME, DBFields.BOOL_GAVE_UP, DBFields.STR_LAST_ERROR,
-                            DBFields.INT_TOTAL_ENTRIES, UserFeedSubscriptionsTable.TABLE, FeedSourcesTable.TABLE,
-                            DBFields.LONG_XML_ID, DBFields.LONG_XML_ID, DBFields.LONG_USER_ID,
-                            DBFields.STR_SUBSCRIPTION_NAME, FeedAppConfig.DEFAULT_API_SORT_USER_SUBSCRIPTIONS_LIST));
-        } catch (SQLException ex) {
-            Logger.error(clz).log("constructor ").log(ex.getMessage()).end();
-        }
-    }
+    private static final Logger logger = LoggerFactory.getLogger(SubscriptionsAPI.class);
+    private static final String streamIdQuery = String
+            .format("SELECT t1.%s, t1.%s, t1.%s, t2.%s, t2.%s, t2.%s FROM %s AS t0 "
+                    + " RIGHT JOIN %s as t1 ON t0.%s = t1.%s " + " INNER JOIN %s as t2 ON t1.%s = t2.%s "
+                    + " WHERE t0.%s = ? ORDER BY t1.%s %s", DBFields.LONG_SUBS_ID, DBFields.LONG_XML_ID,
+                    DBFields.STR_SUBSCRIPTION_NAME, DBFields.BOOL_GAVE_UP, DBFields.STR_LAST_ERROR,
+                    DBFields.INT_TOTAL_ENTRIES, UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS,
+                    UserFeedSubscriptionsTable.TABLE, DBFields.LONG_SUBS_ID, DBFields.LONG_SUBS_ID,
+                    FeedSourcesTable.TABLE, DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
+                    DBFields.LONG_STREAM_ID, DBFields.STR_SUBSCRIPTION_NAME,
+                    FeedAppConfig.DEFAULT_API_SORT_USER_SUBSCRIPTIONS_LIST);
+    private static final String listAllQuery = String
+            .format("SELECT t0.%s, t0.%s, t0.%s, t1.%s, t1.%s, t1.%s FROM %s as t0\n"
+                    + "    INNER JOIN %s as t1 \n" + "        ON t0.%s = t1.%s\n"
+                    + "    WHERE %s = ? ORDER BY t0.%s %s", DBFields.LONG_SUBS_ID, DBFields.LONG_XML_ID,
+                    DBFields.STR_SUBSCRIPTION_NAME, DBFields.BOOL_GAVE_UP, DBFields.STR_LAST_ERROR,
+                    DBFields.INT_TOTAL_ENTRIES, UserFeedSubscriptionsTable.TABLE, FeedSourcesTable.TABLE,
+                    DBFields.LONG_XML_ID, DBFields.LONG_XML_ID, DBFields.LONG_USER_ID,
+                    DBFields.STR_SUBSCRIPTION_NAME, FeedAppConfig.DEFAULT_API_SORT_USER_SUBSCRIPTIONS_LIST);
 
     @GET
     @Path("/list")
@@ -73,20 +66,17 @@ public class SubscriptionsAPI {
         StringBuilder sb = new StringBuilder();
 
         ResultSet rs;
-        try {
+        try (Connection conn = Database.getConnection()) {
             if (streamId == 0) {
-                listAll.setLong(1, userId);
-                rs = listAll.executeQuery();
+                PreparedStatement stmt = conn.prepareStatement(listAllQuery);
+                stmt.setLong(1, userId);
+                rs = stmt.executeQuery();
             } else {
-                listStreamId.setLong(1, streamId);
-                rs = listStreamId.executeQuery();
+                PreparedStatement stmt = conn.prepareStatement(streamIdQuery);
+                stmt.setLong(1, streamId);
+                rs = stmt.executeQuery();
             }
-        } catch (SQLException ex) {
-            return JSONUtils.error(0, JSONErrorMsgs.ERROR_REQUESTING_DATA_FROM_DB, ex);
-        }
-
-        sb.append("{\"entries\" : [");
-        try {
+            sb.append("{\"entries\" : [");
             int count = 0;
             while (rs.next()) {
                 sb.append("{").append(JSONUtils.getNumber(rs, DBFields.LONG_SUBS_ID)).append(",")
@@ -100,9 +90,9 @@ public class SubscriptionsAPI {
             if (count > 0) {
                 sb.setLength(sb.length() - 1);
             }
-        } catch (SQLException ex) {
-            Logger.error(SubscriptionsAPI.class).log("error ").log(ex.getMessage()).end();
-            return JSONErrorMsgs.getRequestingDataError(ex);
+        } catch (SQLException e) {
+            logger.error("/list error: {}", e, e.getMessage());
+            return JSONErrorMsgs.getRequestingDataError(e);
         }
 
         sb.append("]}");
@@ -126,26 +116,23 @@ public class SubscriptionsAPI {
 
         if (subscriptionId == 0 && sourceId == 0) {
             return JSONErrorMsgs.getErrorParams();
-        } else {
-            rawQuery = String.format("SELECT * FROM %s AS t0" + " INNER JOIN %s AS t1"
-                    + " ON t0.%s = t1.%s WHERE %s = %s", UserFeedSubscriptionsTable.TABLE, FeedSourcesTable.TABLE,
-                    DBFields.LONG_XML_ID, DBFields.LONG_XML_ID, DBFields.LONG_USER_ID, userId);
+        }
+        rawQuery = String.format("SELECT * FROM %s AS t0" + " INNER JOIN %s AS t1"
+                + " ON t0.%s = t1.%s WHERE %s = %s", UserFeedSubscriptionsTable.TABLE, FeedSourcesTable.TABLE,
+                DBFields.LONG_XML_ID, DBFields.LONG_XML_ID, DBFields.LONG_USER_ID, userId);
 
-            if (subscriptionId > 0) {
-                rawQuery += " AND t0." + DBFields.LONG_SUBS_ID + " = " + subscriptionId;
-            } else if (sourceId > 0) {
-                rawQuery += " AND t1." + DBFields.LONG_XML_ID + " = " + sourceId;
-            }
+        if (subscriptionId > 0) {
+            rawQuery += " AND t0." + DBFields.LONG_SUBS_ID + " = " + subscriptionId;
+        } else if (sourceId > 0) {
+            rawQuery += " AND t1." + DBFields.LONG_XML_ID + " = " + sourceId;
         }
 
-        Logger.debugSQL(SubscriptionsAPI.class).log(rawQuery).end();
-
-        try {
-            ResultSet rs = Database.rawQuery(rawQuery);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = Database.rawQuery(conn, rawQuery);
             APIUtils.wrapObject(sb, rs);
-        } catch (SQLException ex) {
-            Logger.error(SubscriptionsAPI.class).log("error ").log(ex.getMessage()).end();
-            return JSONErrorMsgs.getRequestingDataError(ex);
+        } catch (SQLException e) {
+            logger.error("/get error: {}", e, e.getMessage());
+            return JSONErrorMsgs.getRequestingDataError(e);
         }
 
         return sb.toString();
@@ -165,19 +152,16 @@ public class SubscriptionsAPI {
 
         if (streamId == 0 || subscriptionId == 0) {
             return JSONErrorMsgs.getErrorParams();
-        } else {
-            rawQuery = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d",
-                    UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS, DBFields.LONG_STREAM_ID, streamId,
-                    DBFields.LONG_SUBS_ID, subscriptionId);
         }
+        rawQuery = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d",
+                UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS, DBFields.LONG_STREAM_ID, streamId,
+                DBFields.LONG_SUBS_ID, subscriptionId);
 
-        Logger.debugSQL(SubscriptionsAPI.class).log(rawQuery).end();
-
-        try {
-            return JSONUtils.count(Database.getStatement().executeUpdate(rawQuery));
-        } catch (SQLException ex) {
-            Logger.error(SubscriptionsAPI.class).log("error ").log(ex.getMessage()).end();
-            return JSONErrorMsgs.getRequestingDataError(ex);
+        try (Connection conn = Database.getConnection()) {
+            return JSONUtils.count(conn.createStatement().executeUpdate(rawQuery));
+        } catch (SQLException e) {
+            logger.error("removefromstream failed: {}", e, e.getMessage());
+            return JSONErrorMsgs.getRequestingDataError(e);
         }
     }
 
@@ -213,7 +197,7 @@ public class SubscriptionsAPI {
         if (entry.getId() == 0) {
             String code = Fetch.validFeed(subsUrl);
 
-            if (!code.isEmpty()) {
+            if (code == null || !code.isEmpty()) {
                 return JSONUtils.error(0, "Feed error: " + code);
             }
 
@@ -267,18 +251,15 @@ public class SubscriptionsAPI {
 
         if (subscriptionId == 0) {
             return JSONErrorMsgs.getErrorParams();
-        } else {
-            rawQuery = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d", UserFeedSubscriptionsTable.TABLE,
-                    DBFields.STR_SUBSCRIPTION_NAME, SQLUtils.asSafeString(name), DBFields.LONG_SUBS_ID, subscriptionId);
         }
+        rawQuery = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d", UserFeedSubscriptionsTable.TABLE,
+                DBFields.STR_SUBSCRIPTION_NAME, SQLUtils.asSafeString(name), DBFields.LONG_SUBS_ID, subscriptionId);
 
-        Logger.debug(SubscriptionsAPI.class).log(rawQuery).end();
-
-        try {
-            return JSONUtils.count(Database.getStatement().executeUpdate(rawQuery));
-        } catch (SQLException ex) {
-            Logger.error(SubscriptionsAPI.class).log("error ").log(ex.getMessage()).end();
-            return JSONErrorMsgs.getRequestingDataError(ex);
+        try (Connection conn = Database.getConnection()) {
+            return JSONUtils.count(conn.createStatement().executeUpdate(rawQuery));
+        } catch (SQLException e) {
+            logger.error("/set failed: {}", e, e.getMessage());
+            return JSONErrorMsgs.getRequestingDataError(e);
         }
     }
 
@@ -306,21 +287,18 @@ public class SubscriptionsAPI {
 
         if (subscriptionId == 0) {
             return JSONErrorMsgs.getErrorParams();
-        } else {
-            rawQuery = String.format("SELECT * FROM %s AS t0\n" + "    INNER JOIN %s AS t1 ON t0.%s = t1.%s\n"
-                    + "    INNER JOIN %s AS t2 ON t1.%s = t2.%s\n" + "    INNER JOIN %s AS t3 ON t3.%s = t2.%s\n"
-                    + "    WHERE t0.%s = %d", UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS,
-                    UserStreamGroupsTable.TABLE, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
-                    UserProfilesTable.TABLE_STREAM_GROUPS, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
-                    UserProfilesTable.TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_PROFILE_ID, DBFields.LONG_SUBS_ID,
-                    subscriptionId);
         }
-
-        Logger.debugSQL(SubscriptionsAPI.class).log(rawQuery).end();
+        rawQuery = String.format("SELECT * FROM %s AS t0\n" + "    INNER JOIN %s AS t1 ON t0.%s = t1.%s\n"
+                + "    INNER JOIN %s AS t2 ON t1.%s = t2.%s\n" + "    INNER JOIN %s AS t3 ON t3.%s = t2.%s\n"
+                + "    WHERE t0.%s = %d", UserStreamGroupsTable.TABLE_STREAM_SUBSCRIPTIONS,
+                Constants.USER_STREAM_GROUPS_TABLE, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
+                Constants.USER_PROFILES_STREAM_GROUP, DBFields.LONG_STREAM_ID, DBFields.LONG_STREAM_ID,
+                Constants.USER_PROFILES_TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_PROFILE_ID, DBFields.LONG_SUBS_ID,
+                subscriptionId);
 
         sb.append("[");
-        try {
-            ResultSet rs = Database.rawQuery(rawQuery);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = Database.rawQuery(conn, rawQuery);
             int count = 0;
             while (rs.next()) {
                 sb.append("{").append(JSONUtils.getNumber(rs, DBFields.LONG_SUBS_ID)).append(",")
@@ -334,7 +312,7 @@ public class SubscriptionsAPI {
                 sb.deleteCharAt(sb.length() - 1);
             }
         } catch (SQLException ex) {
-            Logger.error(SubscriptionsAPI.class).log("error ").log(ex.getMessage()).end();
+            logger.error("/withprofile failed: {}", ex, ex.getMessage());
             return JSONErrorMsgs.getRequestingDataError(ex);
         }
 

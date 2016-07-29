@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.restfb.WebRequestor.Response;
-
 import feedreader.entities.UserData;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
@@ -27,14 +25,15 @@ public class SignupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         if (email == null || !Validate.isValidEmailAddress(email)) {
-            req.setAttribute("signup_error", "Invalid email");
+            req.setAttribute("invalidEmail", true);
+            req.setAttribute("email", email);
             ServletUtils.redirect(req, resp, "/welcome.jsp");
             return;
         }
 
         UserData user = UserSession.createNew(email, req.getLocale());
         if (user.getUserId() == 0) {
-            req.setAttribute("signup_error", "Email already known, sign in instead");
+            req.setAttribute("emailKnown", true);
             ServletUtils.redirect(req, resp, "/welcome.jsp");
             return;
         }

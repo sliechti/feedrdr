@@ -5,7 +5,7 @@
 <title>Password reset</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
+<script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
 <link rel="stylesheet" href="${baseUrl}/css/login.css" />
 </head>
@@ -23,18 +23,19 @@
 				<div class="info-msg">${info}</div>
 			</c:if>
 			<c:if test="${not empty pwdChanged}">
-				<div>
-					Go to <a href="login">login</a>
-				</div>
+				<div> Go to <a href="login">login</a> </div>
 			</c:if>
 			<c:choose>
 				<c:when test="${validCode}">
 					<form method="post" action="password_reset">
 						<input type="hidden" name="code" value="${param.code}">
+						<input type="hidden" name="submit" value="1">
 						<input type="password" class="w100p" name="pwd1" value="" placeholder="password">
 						<input type="password" class="w100p" name="pwd2" value="" placeholder="confirm password">
-						<input type="submit" name="submit" class="button0 btn w100p" value="Reset password">
+						<button class="w100p">Reset password</button>
 					</form>
+				</c:when>
+				<c:when test="${not empty pwdChanged}">
 				</c:when>
 				<c:otherwise>
 					<form method="post" action="password_reset">

@@ -29,7 +29,7 @@ public class FetchFavicoTest {
     static long XMLID = 117;
 
     static {
-        Database.start(new Properties());
+        Database.start();
     }
 
     @Test public void fetchFavico() throws MalformedURLException, IOException {

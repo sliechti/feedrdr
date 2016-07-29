@@ -1,24 +1,22 @@
 package feedreader.store;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.restfb.json.JsonObject;
 
 import feedreader.api.v1.JSONFields;
 import feedreader.config.Constants;
-import feedreader.log.Logger;
 import feedreader.utils.SQLUtils;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class UserKeyValuesTable {
 
     public static final String TABLE = Constants.USER_KEY_VALUE_TABLE;
-
-    static Class<?> clz = UserKeyValuesTable.class; // Easier for logging.
-    static Connection conn;
-    static Statement stmt;
+    private static final Logger logger = LoggerFactory.getLogger(UserKeyValuesTable.class);
 
     public static final int READER_SETTINGS_KEY = 0;
     public static final int VIEW_ALL_SETTINGS = 1;
@@ -38,43 +36,37 @@ public class UserKeyValuesTable {
     }
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
     public static int save(long userId, long profileId, int key, JsonObject obj) {
-        try {
+        try (Connection conn = Database.getConnection()){
             String query = String.format("UPDATE %s SET %s = '%s' WHERE %s = %d AND %s = %d AND %s = %d", TABLE,
                     DBFields.STR_KEY_VALUE, SQLUtils.asSafeString(obj.toString()), DBFields.LONG_PROFILE_ID, profileId,
                     DBFields.LONG_USER_ID, userId, DBFields.INT_KEY_NAME, key);
-            if (stmt.executeUpdate(query) == 0) {
+            if (conn.createStatement().executeUpdate(query) == 0) {
                 query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%d, %d, %d, '%s')", TABLE,
                         DBFields.LONG_USER_ID, DBFields.LONG_PROFILE_ID, DBFields.INT_KEY_NAME, DBFields.STR_KEY_VALUE,
                         userId, profileId, key, SQLUtils.asSafeString(obj.toString()));
-                stmt.execute(query);
+                conn.createStatement().execute(query);
             }
 
             return 1;
         } catch (SQLException ex) {
-            Logger.error(clz).log(obj.toString()).log("/").log(userId).log("/").log(profileId).log(", error ")
-                    .log(ex.getMessage()).end();
+            logger.error("save {}/{}/{} failed {}", ex, userId, profileId, key, ex.getMessage());
         }
 
         return -1;
     }
 
+    /**
+     * @param retDefault
+     */
     public static JsonObject get(long userId, long profileId, int key, boolean retDefault) {
         JsonObject o = get(userId, profileId, key);
 
@@ -97,27 +89,27 @@ public class UserKeyValuesTable {
         String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = %d AND %s = %d", DBFields.STR_KEY_VALUE,
                 TABLE, DBFields.LONG_USER_ID, userId, DBFields.LONG_PROFILE_ID, profileId, DBFields.INT_KEY_NAME, key);
 
-        try {
-            ResultSet rs = stmt.executeQuery(query);
+        try (Connection conn = Database.getConnection()){
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 return new JsonObject(rs.getString(1));
             }
         } catch (SQLException e) {
-            Logger.error(clz).log(query).log(", error ").log(e.getMessage()).end();
+            logger.error("get failed: {}, error: {}", e, query, e.getMessage());
         }
 
         return emptyJson;
     }
 
     public static int delete(long userId, long profileId) {
-        String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", 
-                TABLE, 
-                DBFields.LONG_USER_ID, userId, 
+        String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d",
+                TABLE,
+                DBFields.LONG_USER_ID, userId,
                 DBFields.LONG_PROFILE_ID, profileId);
-        try {
-            return stmt.executeUpdate(query);
+        try (Connection conn = Database.getConnection()){
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException e) {
-            Logger.error(clz).log(query).log(", error ").log(e.getMessage()).end();
+            logger.error("delete failed {}, error {}", e, query, e.getMessage());
         }
 
         return -1;

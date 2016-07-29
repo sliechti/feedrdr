@@ -3,12 +3,15 @@
 	<info organisation="co.feedrdr" module="feedrdr"/>
 
 	<configurations defaultconfmapping="compile->default;sources;javadoc">
-		<conf name="compile" description="Required to compile application"/>
+		<conf name="compile" />
+		<conf name="runtime"  extends="compile"/>
+		<conf name="test"    extends="compile"/>
 		<conf name="sources" description="Source code"/>
 		<conf name="javadoc" description="Javadocs"/>
 	</configurations>
 
 	<dependencies>
+
 		<dependency org="commons-codec" name="commons-codec" rev="1.10"/>
 		<dependency org="com.restfb" name="restfb" rev="1.11.0"/>
 		<dependency org="com.sun.mail" name="javax.mail" rev="1.5.4"/>
@@ -28,6 +31,15 @@
 		<dependency org="org.apache.commons" name="commons-configuration2" rev="2.0"/>
 		<dependency org="commons-beanutils" name="commons-beanutils" rev="1.9.2"/>
 		<dependency org="commons-beanutils" name="commons-beanutils-core" rev="1.8.3"/>
-	</dependencies>
+		<dependency org="commons-validator" name="commons-validator" rev="1.5.1"/>
+		<dependency org="com.zaxxer" name="HikariCP" rev="2.4.7"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.8.1"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.8.1"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.8.1"/>
 
+		<dependency conf="runtime;javadoc;sources" org="org.apache.tomcat" name="tomcat-catalina" rev="8.0.36"/>
+		<dependency conf="runtime;javadoc;sources" org="org.apache.tomcat" name="tomcat-coyote" rev="8.0.36"/>
+		<dependency conf="runtime;javadoc;sources" org="javax.servlet.jsp" name="jsp-api" rev="2.2"/>
+
+	</dependencies>
 </ivy-module>

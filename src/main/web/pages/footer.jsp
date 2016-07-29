@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page import="feedreader.entities.ProfileData"%>
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.oauth.OAuthType"%>
@@ -28,6 +30,7 @@ ProfileData profile = (ProfileData)request.getAttribute("profile");
   </div>
 </div>
 
+<c:if test="${not isLocal}">
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -43,6 +46,7 @@ ProfileData profile = (ProfileData)request.getAttribute("profile");
 </script>
 <noscript><p><img src="//feedrdr.piwikpro.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+</c:if>
 
 <script type="text/javascript">
     initProfiles();

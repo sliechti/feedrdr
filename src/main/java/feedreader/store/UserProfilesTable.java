@@ -3,151 +3,136 @@ package feedreader.store;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.ProfileData;
-import feedreader.log.Logger;
 import feedreader.utils.SQLUtils;
 
 public class UserProfilesTable {
 
-    public static final String TABLE = Constants.USER_PROFILES_TABLE;
-    public static final String TABLE_STREAM_GROUPS = Constants.USER_PROFILES_STREAM_GROUP;
-
-    static Statement stmt;
-
-    static Class<?> clz = UserProfilesTable.class; // Easier for logging.
-    static Connection conn;
+    private static final Logger logger = LoggerFactory.getLogger(UserProfilesTable.class);
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
     public static List<ProfileData> getProfiles(long userId) {
         ArrayList<ProfileData> ret = new ArrayList<>();
-        try {
-            String query = String.format("SELECT %s FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID, TABLE,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("SELECT %s FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
-            Logger.debug(clz).log("getProfiles ").log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             while (rs.next()) {
                 ret.add(getProfile(userId, rs.getLong(DBFields.LONG_PROFILE_ID)));
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("getProfiles error, ").log(ex.getMessage()).end();
+            logger.error("get profiles failed: {}", ex, ex.getMessage());
         }
         return ret;
     }
 
     public static ProfileData getProfile(long userId, long id) {
-        String query = String.format("SELECT * FROM %s WHERE %s = %d AND %s = %d", TABLE, DBFields.LONG_USER_ID,
+        String query = String.format("SELECT * FROM %s WHERE %s = %d AND %s = %d", Constants.USER_PROFILES_TABLE,
+                DBFields.LONG_USER_ID,
                 userId, DBFields.LONG_PROFILE_ID, id);
         return getProfile(query);
     }
 
     public static ProfileData getFirstProfile(long userId) {
-        String query = String.format("SELECT * FROM %s WHERE %s = %d LIMIT 1", TABLE, DBFields.LONG_USER_ID, userId);
+        String query = String.format("SELECT * FROM %s WHERE %s = %d LIMIT 1", Constants.USER_PROFILES_TABLE,
+                DBFields.LONG_USER_ID, userId);
         return getProfile(query);
     }
 
     static ProfileData getProfile(String query) {
-        try {
-            Logger.debug(clz).log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (!rs.next()) {
                 return ProfileData.NULL;
             }
             return ProfileData.fromRs(rs);
         } catch (SQLException ex) {
-            Logger.error(clz).log("getProfile query ").log(ex.getMessage()).end();
+            logger.error("failed {}, error {}", ex, query, ex.getMessage());
             return ProfileData.NULL;
         }
     }
 
     public static int removeStreamGroupFromProfile(long streamId, long profileId) {
-        try {
-            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", TABLE_STREAM_GROUPS,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d",
+                    Constants.USER_PROFILES_STREAM_GROUP,
                     DBFields.LONG_PROFILE_ID, profileId, DBFields.LONG_STREAM_ID, streamId);
-            Logger.debugSQL(clz).log(query).end();
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("deleteStream error, ").log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return -1;
     }
 
     public static int removeAllStreamGroupFromProfile(long profileId) {
-        try {
-            String query = String.format("DELETE FROM %s WHERE %s = %d", TABLE_STREAM_GROUPS, DBFields.LONG_PROFILE_ID,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("DELETE FROM %s WHERE %s = %d", Constants.USER_PROFILES_STREAM_GROUP,
+                    DBFields.LONG_PROFILE_ID,
                     profileId);
-            Logger.debugSQL(clz).log(query).end();
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("deleteStream error, ").log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return -1;
     }
 
     public static boolean addStreamToProfile(long streamId, long profileId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = %d", DBFields.LONG_PROFILE_ID,
-                    TABLE_STREAM_GROUPS, DBFields.LONG_PROFILE_ID, profileId, DBFields.LONG_STREAM_ID, streamId);
-            Logger.debug(clz).log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+                    Constants.USER_PROFILES_STREAM_GROUP, DBFields.LONG_PROFILE_ID, profileId, DBFields.LONG_STREAM_ID,
+                    streamId);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next())
                 return true;
 
-            query = String.format("INSERT INTO %s (%s, %s) VALUES (%d, %d) RETURNING %s", TABLE_STREAM_GROUPS,
+            query = String.format("INSERT INTO %s (%s, %s) VALUES (%d, %d) RETURNING %s",
+                    Constants.USER_PROFILES_STREAM_GROUP,
                     DBFields.LONG_PROFILE_ID, DBFields.LONG_STREAM_ID, profileId, streamId, DBFields.LONG_PROFILE_ID);
-            Logger.debug(clz).log(query).end();
-            rs = stmt.executeQuery(query);
+            rs = conn.createStatement().executeQuery(query);
 
             if (rs.next())
                 return true;
         } catch (SQLException ex) {
-            Logger.error(clz).log("addStreamToProfile ").log(streamId).log(" / ").log(profileId).log(" error ")
-                    .log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return false;
     }
 
     public static void addStreamToAllProfiles(long userId, long streamId) {
-        try {
-            String query = String.format("SELECT %s FROM %S WHERE %s = %d", DBFields.LONG_PROFILE_ID, TABLE,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("SELECT %s FROM %S WHERE %s = %d", DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
-            Logger.debug(clz).log(query).end();
 
-            Statement tempStmt = conn.createStatement();
-            ResultSet rs = tempStmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             while (rs.next()) {
                 addStreamToProfile(streamId, rs.getLong(DBFields.LONG_PROFILE_ID));
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("addStreamToAllProfiles ").log(userId).log("/").log(streamId).log(" error ")
-                    .log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
     }
 
@@ -159,27 +144,25 @@ public class UserProfilesTable {
     }
 
     public static boolean streamGroupKnown(long streamId) {
-        try {
-            String query = String.format("SELECT * FROM %s WHERE %s = %d", TABLE_STREAM_GROUPS,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("SELECT * FROM %s WHERE %s = %d", Constants.USER_PROFILES_STREAM_GROUP,
                     DBFields.LONG_STREAM_ID, streamId);
-            Logger.debugSQL(clz).log(query).end();
-
-            return stmt.executeQuery(query).next();
+            return conn.createStatement().executeQuery(query).next();
         } catch (SQLException ex) {
-            Logger.error(clz).log("streamGroupKnown ").log(streamId).log(", error ").log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return false;
     }
 
     public static long addProfile(long userId, String profileName, String profileColor) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %d, '%s', '%s') RETURNING %s",
-                    TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_USER_ID, DBFields.STR_PROFILE_NAME,
+                    Constants.USER_PROFILES_TABLE, DBFields.LONG_PROFILE_ID, DBFields.LONG_USER_ID,
+                    DBFields.STR_PROFILE_NAME,
                     DBFields.STR_COLOR, Database.DEFAULT_KEYWORD, userId, SQLUtils.asSafeString(profileName),
                     SQLUtils.asSafeString(profileColor), DBFields.LONG_PROFILE_ID);
-            Logger.debugSQL(clz).log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next()) {
                 return rs.getLong(DBFields.LONG_PROFILE_ID);
@@ -187,82 +170,80 @@ public class UserProfilesTable {
 
             return -1;
         } catch (SQLException ex) {
-            Logger.error(clz).log("addProfile ").log(userId).log("/").log(profileName).log("/").log(profileColor)
-                    .log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
             return -1;
         }
     }
 
     public static int getProfileCount(long userId) {
-        try {
-            String query = String.format("SELECT COUNT(%s) FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID, TABLE,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("SELECT COUNT(%s) FROM %s WHERE %s = %d", DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
-            Logger.debugSQL(clz).log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (rs.next()) {
                 return rs.getInt(Database.COUNT_KEYWORD);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("getProfileCount ").log(userId).log(" ").log(ex.getMessage());
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return -1;
     }
 
     public static long createDefaultProfile(long userId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
             int c = getProfileCount(userId);
             if (c != 0) {
-                Logger.warning(clz).log("Asked to create default profile for user ").log(userId)
-                        .log(" with profile count ").log(c).end();
+                logger.warn("Asked to create default profile for user {} with profile count {}", userId, c);
                 return 0;
             }
 
             String query = String.format("INSERT INTO %s (%s, %s, %s, %s, %s) "
-                    + "VALUES (%s, %d, '%s', '%s', %b) RETURNING %s", TABLE, DBFields.LONG_PROFILE_ID,
+                    + "VALUES (%s, %d, '%s', '%s', %b) RETURNING %s", Constants.USER_PROFILES_TABLE,
+                    DBFields.LONG_PROFILE_ID,
                     DBFields.LONG_USER_ID, DBFields.STR_PROFILE_NAME, DBFields.STR_PROFILE_COLOR,
                     DBFields.BOOL_DEFAULT, Database.DEFAULT_KEYWORD, userId, FeedAppConfig.DEFAULT_PROFILE_NAME,
                     FeedAppConfig.DEFAULT_PROFILE_COLOR, true, DBFields.LONG_PROFILE_ID);
 
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             if (!rs.next()) {
                 return 0;
             }
 
             return rs.getLong(DBFields.LONG_PROFILE_ID);
         } catch (SQLException ex) {
-            Logger.error(clz).log("createDefaultProfile ").log(userId).log(", error ").log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return 0;
     }
 
     public static int save(long userId, ProfileData data) {
-        try {
+        try (Connection conn = Database.getConnection()) {
 
-            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d AND %s = %d", TABLE,
+            String query = String.format("UPDATE %s SET %s = '%s', %s = '%s' WHERE %s = %d AND %s = %d",
+                    Constants.USER_PROFILES_TABLE,
                     DBFields.STR_PROFILE_NAME, SQLUtils.asSafeString(data.getName()), DBFields.STR_PROFILE_COLOR,
                     SQLUtils.asSafeString(data.getColor()), DBFields.LONG_PROFILE_ID, data.getProfileId(),
                     DBFields.LONG_USER_ID, userId);
-            Logger.debugSQL(clz).log("save ").log(query).end();
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("save ").log(userId).log(" ").log(data).log(", error ").log(ex.getMessage()).end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return 0;
     }
 
     public static int delete(long userId, long profileId) {
-        try {
+        try (Connection conn = Database.getConnection()) {
 
-            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", TABLE, DBFields.LONG_PROFILE_ID,
+            String query = String.format("DELETE FROM %s WHERE %s = %d AND %s = %d", Constants.USER_PROFILES_TABLE,
+                    DBFields.LONG_PROFILE_ID,
                     profileId, DBFields.LONG_USER_ID, userId);
-            Logger.debugSQL(clz).log(query).end();
-            return stmt.executeUpdate(query);
+            return conn.createStatement().executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.error(clz).log("delete uid ").log(userId).log(", profile id ").log(profileId).log(", errror ").log(ex.getMessage())
-                    .end();
+            logger.error("query failed: {}", ex, ex.getMessage());
         }
 
         return -1;
@@ -274,35 +255,36 @@ public class UserProfilesTable {
             sb.append(l).append(",");
         }
         if (sb.length() > 0) {
-            sb.setLength(sb.length()-1);
+            sb.setLength(sb.length() - 1);
         }
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s "
-                + "WHERE %s = %d AND %s IN (" + sb.toString() + ")",
-                DBFields.LONG_PROFILE_ID,
-                TABLE,
-                DBFields.LONG_USER_ID, userId,
-                DBFields.LONG_PROFILE_ID);
-            ResultSet rs = stmt.executeQuery(query);
+                    + "WHERE %s = %d AND %s IN (" + sb.toString() + ")",
+                    DBFields.LONG_PROFILE_ID,
+                    Constants.USER_PROFILES_TABLE,
+                    DBFields.LONG_USER_ID, userId,
+                    DBFields.LONG_PROFILE_ID);
+            ResultSet rs = conn.createStatement().executeQuery(query);
             List<Long> ret = new ArrayList<>();
             while (rs.next()) {
                 ret.add(rs.getLong(1));
             }
             return ret;
         } catch (SQLException e) {
-            Logger.error(clz).log("validate userid ").log(userId).log(", ids ").log(sb.toString()).log(", ex ").log(e.getMessage()).end();
+            logger.error("query failed: {}", e, e.getMessage());
             return Collections.emptyList();
         }
     }
 
     /**
      * @param profiles comma separated list of profiles, useful when working with api queryparam.
+     * @throws SQLException
      */
-    public static List<Long> validate(long userId, String profiles) {
+    public static List<Long> validate(long userId, String profiles) throws SQLException {
         String[] ids = profiles.split(",");
         List<Long> idList = new ArrayList<Long>();
         for (String idStr : ids) {
-            try {
+            try (Connection conn = Database.getConnection()) {
                 idList.add(Long.parseLong(idStr));
             } catch (NumberFormatException e) {
                 /* noop */

@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>feedrdr.co - open source rss news reader</title>
+<title>feedrdr.co - An open source RSS news reader</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="open source rss news reader to keep track of all the content you care about" />
@@ -22,9 +22,10 @@
 <link rel="icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
 <link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
-<script src="${baseUrl}/js/jquery${minifiedStr}.js" type="text/javascript" /></script>
-<script src="${baseUrl}/js/hello${minifiedStr}.js" type="text/javascript"></script>
-<script src="${baseUrl}/js/hello.init${minifiedStr}.js" type="text/javascript"></script>
+<script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
+<script src="${baseUrl}/js/vendor/hello.min.js" type="text/javascript"></script>
+<script src="${baseUrl}/js/vendor/hello.init.min.js" type="text/javascript"></script>
+<c:if test="${not isLocal}">
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,17 +40,16 @@ fbq('track', "PageView");</script>
 src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+</c:if>
 </head>
 <body class="margin0">
-
-
 	<div class="header">
 		<div class="table center w80p block">
 			<div class="cell left h100">
 				<span class="h100 vertical-helper vertical-middle"></span>
 				<img src="img/logo.svg" id="logo" class="vertical-middle" height="30" />
 			</div>
-			<div class="cell vertical-middle right header-btn">
+			<div onclick="location.href='login'" class="pointer cell vertical-middle right header-btn">
 				<a href="login">Sign in</a>
 			</div>
 		</div>
@@ -63,8 +63,16 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 				</p>
 			</div>
 			<div class="cell text-center w50p vertical-middle bottom40">
-				<c:if test="${not empty signup_error}">
-					<div class="warning">${signup_error}</div>
+				<c:if test="${not empty invalidEmail}">
+					<div class="warning">
+					The email '${email}' appears to be invalid, please try another one.
+					</div>
+				</c:if>
+				<c:if test="${not empty emailKnown}">
+					<div class="warning">
+					The email is already registered, please <a href="login">sign in</a>
+					or <a href="password_reset">reset you password</a>
+					</div>
 				</c:if>
 				<form id="start-reading" method="post" action="signup">
 					<input type="text" class="block w100p" id="email" name="email" placeholder="your@email">
@@ -139,6 +147,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 	});
 </script>
 
+<c:if test="${not isLocal}">
 <script type="text/javascript">
 	var _paq = _paq || [];
 	_paq.push([ 'trackPageView' ]);
@@ -161,3 +170,5 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 		<img src="//feedrdr.piwikpro.com/piwik.php?idsite=1" style="border: 0;" alt="" />
 	</p>
 </noscript>
+</c:if>
+

@@ -1,6 +1,7 @@
 package feedreader.cron;
 
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -32,34 +33,31 @@ public class CronForgotPasswordEmail implements Runnable {
 
     @Override
     public void run() {
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s, %s, %s, %s FROM %s WHERE %s = %b",
                     DBFields.LONG_USER_ID, DBFields.STR_EMAIL, DBFields.STR_SCREEN_NAME, DBFields.STR_FORGOT_CODE,
                     UsersTable.TABLE, DBFields.BOOL_FORGOT_PWD, true);
-            ResultSet rs = Database.rawQuery(query);
+            ResultSet rs = Database.rawQuery(conn, query);
             int count = 0;
             while (rs.next()) {
                 long userId = rs.getLong(DBFields.LONG_USER_ID);
                 String email = rs.getString(DBFields.STR_EMAIL);
-                String screenName = rs.getString(DBFields.STR_SCREEN_NAME);
                 String forgotCode = rs.getString(DBFields.STR_FORGOT_CODE);
 
-                logger.info("forgot password {}: sent to {}", screenName, email);
+                logger.info("forgot sent to {}", email);
 
                 try {
                     String emailTxt = new String().concat(emailTmpl);
-                    emailTxt = emailTxt.replace("{NAME}", screenName);
                     emailTxt = emailTxt.replace("{CODE}", forgotCode);
                     String link = FeedAppConfig.BASE_APP_URL_EMAIL + "/password_reset?code=" + forgotCode;
                     emailTxt = emailTxt.replace("{LINK}", link);
 
-                    mail.send(MAIL_FROM, MAIL_FROM_NAME, email, screenName,
-                            "Password reset", emailTxt);
+                    mail.send(MAIL_FROM, MAIL_FROM_NAME, email, email, "Password reset", emailTxt);
 
                     query = String.format("UPDATE %s SET %s = false WHERE %s = %d",
                             UsersTable.TABLE, DBFields.BOOL_FORGOT_PWD, DBFields.LONG_USER_ID, userId);
 
-                    Database.getStatement().execute(query);
+                    conn.createStatement().execute(query);
                 } catch (Exception ex) {
                     logger.error("error sending message: {}", ex, ex.getMessage());
                 }

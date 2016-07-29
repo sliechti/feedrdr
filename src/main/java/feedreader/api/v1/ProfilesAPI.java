@@ -1,10 +1,25 @@
 package feedreader.api.v1;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.restfb.json.JsonObject;
 
+import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.ProfileData;
-import feedreader.log.Logger;
 import feedreader.security.Session;
 import feedreader.store.DBFields;
 import feedreader.store.Database;
@@ -13,25 +28,15 @@ import feedreader.store.UserKeyValuesTable;
 import feedreader.store.UserProfilesTable;
 import feedreader.utils.JSONUtils;
 
-import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+@Path("/v1/user/profiles")
+public class ProfilesAPI {
 
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
+    private static final Logger logger = LoggerFactory.getLogger(ProfilesAPI.class);
 
-@Path("/v1/user/profiles") public class ProfilesAPI {
-
-    static final Class<?> clz = StreamsAPI.class;
-
-    @GET @Path("/list") @Produces(MediaType.APPLICATION_JSON) public String list(@Context HttpServletRequest req,
-            @DefaultValue("true") @QueryParam("rs") boolean readerSettings) throws IOException {
+    @GET
+    @Path("/list")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String list(@Context HttpServletRequest req) {
         long userId = Session.getUserId(req.getSession());
         if (userId == 0) {
             return JSONErrorMsgs.getAccessDenied();
@@ -40,11 +45,11 @@ import javax.ws.rs.core.MediaType;
         StringBuilder sb = new StringBuilder();
         sb.append("{\"entries\" : [");
 
-        try {
-            String query = String.format("SELECT * FROM %s WHERE %s = %d", UserProfilesTable.TABLE,
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("SELECT * FROM %s WHERE %s = %d", Constants.USER_PROFILES_TABLE,
                     DBFields.LONG_USER_ID, userId);
 
-            ResultSet rs = Database.rawQuery(query);
+            ResultSet rs = Database.rawQuery(conn, query);
 
             while (rs.next()) {
                 long profileId = rs.getLong(DBFields.LONG_PROFILE_ID);
@@ -68,7 +73,7 @@ import javax.ws.rs.core.MediaType;
                 sb.deleteCharAt(sb.length() - 1);
             }
         } catch (SQLException ex) {
-            Logger.error(StreamsAPI.class).log("error ").log(ex.getMessage()).end();
+            logger.error("/list failed: {}", ex, ex.getMessage());
         }
 
         sb.append("]}");
@@ -76,7 +81,10 @@ import javax.ws.rs.core.MediaType;
         return sb.toString();
     }
 
-    @GET @Path("/new") @Produces(MediaType.APPLICATION_JSON) public String add(@Context HttpServletRequest req,
+    @GET
+    @Path("/new")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String add(@Context HttpServletRequest req,
             @QueryParam("n") String profileName, @QueryParam("c") String profileColor) {
         long userId = Session.getUserId(req.getSession());
 
@@ -110,9 +118,11 @@ import javax.ws.rs.core.MediaType;
         return JSONUtils.success("profile created.", "\"profileid\" : " + profileId);
     }
 
-    @GET @Path("/save") @Produces(MediaType.APPLICATION_JSON) public String
-            save(@Context HttpServletRequest req, @QueryParam("pid") long profileId,
-                    @QueryParam("n") String profileName, @QueryParam("c") String profileColor) {
+    @GET
+    @Path("/save")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String save(@Context HttpServletRequest req, @QueryParam("pid") long profileId,
+            @QueryParam("n") String profileName, @QueryParam("c") String profileColor) {
         long userId = Session.getUserId(req.getSession());
 
         if (userId == 0 || profileId == 0) {
@@ -135,7 +145,10 @@ import javax.ws.rs.core.MediaType;
         return JSONUtils.count(UserProfilesTable.save(userId, data));
     }
 
-    @GET @Path("/delete") @Produces(MediaType.APPLICATION_JSON) public String delete(@Context HttpServletRequest req,
+    @GET
+    @Path("/delete")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String delete(@Context HttpServletRequest req,
             @QueryParam("pid") long pid) {
         long userId = Session.getUserId(req.getSession());
         if (userId == Session.INVALID_USER_ID) {

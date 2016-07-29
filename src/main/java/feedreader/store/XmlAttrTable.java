@@ -3,13 +3,14 @@ package feedreader.store;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import feedreader.entities.FeedSourceEntry;
-import feedreader.log.Logger;
 import feedreader.parser.XmlQnode;
 import feedreader.utils.SQLUtils;
 
@@ -26,34 +27,22 @@ public class XmlAttrTable {
     public static final String NODE_NAME = "node_name";
     public static final String NODE_VAL = "node_val";
     public static final String NODE_OWNER = "node_owner";
-
-    static Class<?> clz = XmlAttrTable.class;
-
-    static Connection conn;
-    static Statement stmt;
+    private static final Logger logger = LoggerFactory.getLogger(XmlAttrTable.class);
 
     public static boolean init() {
-        conn = Database.getConnection();
-        stmt = Database.getStatement();
-        Logger.info(clz).log("initialized.").end();
+        logger.info("init");
         return true;
     }
 
     public static void close() {
-        Logger.info(clz).log("close()").end();
-
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("closing sql objects ").log(ex.getMessage()).end();
-        }
+        logger.info("close");
     }
 
-    public static int getNodeId(String owner, String nodeName) {
-        try {
+    public static int getNodeId(String nodeName) {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s WHERE %s = '%s'", NODE_ID, TABLE_NODE, NODE_NAME,
                     SQLUtils.asSafeString(nodeName));
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next()) {
                 return rs.getInt(NODE_ID);
@@ -61,13 +50,13 @@ public class XmlAttrTable {
 
             query = String.format("INSERT INTO %s (%s, %s) VALUES (DEFAULT, '%s') RETURNING %s", TABLE_NODE, NODE_ID,
                     NODE_NAME, SQLUtils.asSafeString(nodeName), NODE_ID);
-            rs = stmt.executeQuery(query);
+            rs = conn.createStatement().executeQuery(query);
 
             if (rs.next()) {
                 return rs.getInt(NODE_ID);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("err ").log(ex.getMessage()).end();
+            logger.error("failed: {}", ex, ex.getMessage());
         }
 
         return -1;
@@ -83,17 +72,16 @@ public class XmlAttrTable {
         FeedSourceEntry entry = FeedSourcesTable.getByField(DBFields.STR_XML_URL, SQLUtils.asSafeString(sourceOwner));
 
         if (entry.getId() == 0) {
-            Logger.error(clz).log("no feed source id found for ").log(sourceOwner).end();
+            logger.error("no feed source id found for: {}", sourceOwner);
             return;
         }
 
         long nodeId = 0;
 
-        try {
+        try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = '%s'", NODE_ID, TABLE_NODE,
                     DBFields.LONG_XML_ID, entry.getId(), NODE_NAME, node.getName());
-            ResultSet rs = stmt.executeQuery(query);
-            Logger.debug(clz).log(query).end();
+            ResultSet rs = conn.createStatement().executeQuery(query);
             nodeId = 0;
 
             if (rs.next()) {
@@ -102,18 +90,17 @@ public class XmlAttrTable {
                 query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%d, DEFAULT, '%s', '%s') RETURNING %s",
                         TABLE_NODE, DBFields.LONG_XML_ID, NODE_ID, NODE_NAME, NODE_VAL, entry.getId(),
                         SQLUtils.asSafeString(node.getName()), SQLUtils.asSafeString(node.getVal()), NODE_ID);
-                Logger.debug(clz).log(query).end();
-                rs = stmt.executeQuery(query);
+                rs = conn.createStatement().executeQuery(query);
 
                 if (!rs.next()) {
-                    Logger.error(clz).log("no id returned. ").log(query).end();
+                    logger.error("no id returned: {}", query);
                     return;
                 }
 
                 nodeId = rs.getLong(NODE_ID);
             }
         } catch (SQLException ex) {
-            Logger.error(clz).log("save error, ").log(ex.getMessage()).end();
+            logger.error("failed: {}", ex, ex.getMessage());
             return;
         }
 
@@ -122,26 +109,24 @@ public class XmlAttrTable {
 
     public static void saveAttr(long nodeId, ArrayList<XmlQnode.AttrInfo> value) {
         for (XmlQnode.AttrInfo attr : value) {
-            try {
+            try (Connection conn = Database.getConnection()) {
                 String query = String.format("SELECT %s FROM %s WHERE %s = %d AND %s = '%s'", NODE_ID, TABLE_ATTRS,
-                        NODE_ID, nodeId, ATTR_NAME, SQLUtils.asSafeString(attr.name));
-                Logger.debug(clz).log(query).end();
-                ResultSet rs = stmt.executeQuery(query);
+                        NODE_ID, nodeId, ATTR_NAME, SQLUtils.asSafeString(attr.attrname));
+                ResultSet rs = conn.createStatement().executeQuery(query);
 
                 if (rs.next()) {
                     return;
                 }
             } catch (SQLException ex) {
-                Logger.error(clz).log("saveAttr ").log(ex.getMessage()).end();
+                logger.error("failed: {}", ex, ex.getMessage());
             }
 
-            try {
+            try (Connection conn = Database.getConnection()) {
                 String query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%d, '%s', '%s', '%s')",
-                        TABLE_ATTRS, NODE_ID, ATTR_NAME, ATTR_TYPE, ATTR_VALUE, nodeId, attr.name, attr.type, attr.val);
-                Logger.debug(clz).log(query).end();
-                stmt.executeQuery(query);
+                        TABLE_ATTRS, NODE_ID, ATTR_NAME, ATTR_TYPE, ATTR_VALUE, nodeId, attr.attrname, attr.type, attr.attrval);
+                conn.createStatement().executeQuery(query);
             } catch (SQLException ex) {
-                Logger.error(clz).log("saveAttr #2").log(ex.getMessage()).end();
+                logger.error("failed: {}", ex, ex.getMessage());
             }
         }
     }

@@ -48,7 +48,7 @@ var apiUrlEntriesUpdate = '/api/v1/entries/update';
 var apiUrlSubscriptionsGet = '/api/v1/user/subscriptions/get';
 var apiUrlSourceId = '/api/v1/user/feeds/sourceid';
 var apiUrlStreamsAdd = '/api/v1/user/streams/add';
-var baseFavicoDomain = 'http://www.google.com/s2/favicons?domain=';
+var baseFavicoDomain = 'https://www.google.com/s2/favicons?domain=';
 
 var streamId = 0;
 var streamDir = 0;
@@ -267,10 +267,6 @@ function displayStreamHeader() {
 	$("#txt_stream_rename").keyup(function(e) {
 		if ((e.keyCode || e.which) == 13) {
 			renameStreamGroup(); // enter
-		}
-		if ((e.keyCode || e.which) == 27) {
-			$("#div_stream_rename").hide();
-			$("#span_stream_rename").show();
 		}
 	});
 }
@@ -900,7 +896,7 @@ function clearContent() {
 	position = 0;
 
 	$("#right_tools").remove(); // needs to be removed since it uses a partial
-								// template.
+	// template.
 	$("#menusubs").html("");
 	$("#stream_header").html("");
 	$("#stream_config").hide();
@@ -1220,4 +1216,14 @@ function reloadSelected() {
 
 function renderContentStart() {
 	$("#stream_entries").html($("#content_start_all").html());
+}
+
+
+function toggleEditTools(caller, title) {
+	$('#edit_tools').toggle();
+	if ($('#edit_tools').is(':visible')) {
+		$(caller).html('&laquo;&laquo;');
+	} else {
+		$(caller).html(title + '&nbsp;&raquo;&raquo;');
+	}
 }

@@ -67,11 +67,11 @@
             out.write("already known " + handler.getSourceKnown() + ", ");
             out.write("failed " + handler.getSourceError() + "</p><hr></div></div></div>");
         } catch (ParserConfigurationException e) {
-            HtmlStackTrace.printRed(out, e.getStackTrace(), 10, "<br>");
+            HtmlStackTrace.printRed(out, e.getStackTrace());
         }
         // TODO: Report error.
         catch (SAXException e) {
-            HtmlStackTrace.printRed(out, e.getStackTrace(), 10, "<br>");
+            HtmlStackTrace.printRed(out, e.getStackTrace());
             out.write("<h1>Error parsing XML: </h1>");
             out.write(helper.asStream(OPML_FILE).toString().replace("<", "&lt;"));
         }

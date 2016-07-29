@@ -38,6 +38,7 @@ public class LogRoot {
             out.append("LogLevel set ").append(level.name()).append(" logging with ")
                     .append(out.getClass().getSimpleName()).append(ConfigSystem.getEol());
         } catch (IOException e) {
+            // noop
         }
         this.logLevel = level;
         this.out = out;
@@ -181,6 +182,7 @@ public class LogRoot {
 
     public ILog start(Logger.LogLevels lvl) {
         if (debugSql && lvl == Logger.LogLevels.DEBUG_SQL) {
+            // noop
         } else if (lvl.getVal() < logLevel.getVal()) {
             return emptyNode;
         }

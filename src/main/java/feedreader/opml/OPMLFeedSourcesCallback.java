@@ -4,20 +4,17 @@ import feedreader.entities.OPMLEntry;
 import feedreader.log.Logger;
 import feedreader.store.FeedSourcesTable;
 
-public class OPMLFeedSourcesCallback implements OPMLParser.Callback 
-{
+public class OPMLFeedSourcesCallback implements OPMLParser.Callback {
     int entriedFound = 0;
     int sourceQueued = 0;
-    int sourceError= 0;
+    int sourceError = 0;
     int sourceKnown = 0;
-    
+
     @Override
-    public void onEntry(OPMLEntry entry)
-    {
+    public void onEntry(OPMLEntry entry) {
         entriedFound++;
         FeedSourcesTable.RetCodes retCode = FeedSourcesTable.addNewSource(entry.getXmlUrl());
-        switch(retCode)
-        {
+        switch (retCode) {
             case QUEUED:
                 sourceQueued++;
                 break;
@@ -32,38 +29,37 @@ public class OPMLFeedSourcesCallback implements OPMLParser.Callback
 
             default:
                 Logger.error(this.getClass()).log("Unhandled ret code: ").log(retCode.name()).end();
-        }        
+        }
     }
 
     @Override
-    public void onDirectoryStart(String name)
-    {
+    public void onDirectoryStart(String name) {
+        // noop
     }
 
     @Override
-    public void onDirectoryEnd()
-    {
-    }    
-    
+    public void onDirectoryEnd() {
+        // noop
+    }
+
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("entries found ").append(entriedFound).append(" - ")
-            .append("queued ").append(sourceQueued).append(" - ")
-            .append("error ").append(sourceError).append(" - ")
-            .append("source known ").append(sourceKnown).append(" - ");
+                .append("queued ").append(sourceQueued).append(" - ")
+                .append("error ").append(sourceError).append(" - ")
+                .append("source known ").append(sourceKnown).append(" - ");
         return sb.toString();
     }
 
     @Override
-    public void onBodyStart()
-    {
+    public void onBodyStart() {
+        // noop
     }
 
     @Override
-    public void onBodyEnd()
-    {
+    public void onBodyEnd() {
+        // noop
     }
-    
+
 }

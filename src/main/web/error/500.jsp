@@ -1,53 +1,46 @@
-<%@page import="feedreader.utils.ApplicationConfig"%>
-<%@page import="feedreader.utils.PageUtils"%>
-<%@page import="java.io.ByteArrayOutputStream"%>
-<%@page import="java.io.OutputStream"%>
-<%@page import="feedreader.config.FeedAppConfig"%>
-<%@page import="java.io.PrintStream"%>
-<%@page import="java.io.PrintWriter"%>
-<%@page import="feedreader.utils.HtmlStackTrace"%>
-<%@page import="java.util.Arrays"%>
-<%@page import="feedreader.utils.SimpleMail"%>
-<%@page isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html>
+<head>
+<title>404 Error</title>
+<meta charset="utf-8">
+<link rel="icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body class="margin0">
+	<div class="header">
+		<div class="table center w80p block">
+			<div class="cell left h100">
+				<span class="h100 vertical-helper vertical-middle"></span>
+				<img src="${baseUrl}/img/logo.svg" id="logo" class="vertical-middle" height="30" />
+			</div>
+			<div onclick="location.href='login'" class="pointer cell vertical-middle right header-btn">
+				<a href="login">Sign in</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="center w80p">
+			<c:choose>
+				<c:when test="${isLocal}">
+					<c:forEach var="trace" items="${pageContext.exception.stackTrace}">
+						${trace}<br>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					<p>There was an error in the page you requested.
+					<br>
+					<br>
+					We are informed in multiple ways when this happens,
+					so rest assured we will try to fix it as soon as possible.</p>
 
-<%
-	String message =  exception.getMessage().replace("\n", "");
-	ByteArrayOutputStream os = new ByteArrayOutputStream();
-	PrintStream ps = new PrintStream(os);
-	exception.printStackTrace(ps);
-	String stackTrace = os.toString().replace("\n", "\n<br>");
-	boolean isLocal = ApplicationConfig.instance().isLocal();
-	String local = (isLocal) ?  "Local" : "";
-%>
-<% if (isLocal) { %>
+					<p>In the meanwhile, try <a href="#" onclick="window.history.back();">going back</a>
+					or </a><a href="${baseUrl}/login">signing in</a> again</p>
 
-<link href="<%= PageUtils.getPath("/css/bootstrap.css") %>" rel="stylesheet" type="text/css"/>
-
-<center><p style="padding: 30px; background: #DCE9E0; text-align: left; width: 1200px; font-family: monospace; font-size: 14px;">
-<%
-    out.append("<b>" + message + "</b><br>");
-
-	out.append(stackTrace);
-
-%>
-</p></center>
-
-</div>
-
-<% } else { %>
-
-<%
-    SimpleMail mail = new SimpleMail();
-    mail.send("stacktrace@feedrdr.co", "StackTrace",
-            	"steven@feedrdr.co", "Steven Liechti",
-            	"StackTrace " + local , message + "" + stackTrace);
-%>
-
-<center>
-<div style="font-family: sans-serif; border: 1px #2E6DA4 solid; font-size: 130%; width: 700px; margin: auto; padding: 10px;">
-	<h3 style="background-color: #337AB7; color: white">Web server error</h3>
-	<p>There was an error with the page you requested. We will receive a message and try to fix this issue as soon as
-	possible.</p>
-</div></center>
-
-<% } %>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
+</body>
+</html>

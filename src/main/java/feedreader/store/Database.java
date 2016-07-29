@@ -1,152 +1,141 @@
 package feedreader.store;
 
 import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 
 import feedreader.config.Constants;
-import feedreader.log.Logger;
 import feedreader.utils.ApplicationConfig;
 import feedreader.utils.SQLUtils;
 
 public class Database {
 
-    public static final String COUNT_KEYWORD = "count";
-    public static final String DEFAULT_KEYWORD = "DEFAULT";
-    public static final String IS_NULL_KEYWORD = "is null";
-    public static final String JDBC_DRIVER_PROP_KEY = "jdbc_driver";
+    private static final Logger logger = LoggerFactory.getLogger(Database.class);
 
+    public static final String JDBC_DRIVER_PROP_KEY = "jdbc_driver";
     public static final String PASSWORD_PROP_KEY = "password";
     public static final String URL_PROP_KEY = "jdbc_url";
     public static final String USERNAME_PROP_KEY = "username";
-    static Class<?> clz = Database.class;
-    static Connection conn;
-    static Statement stmt;
-    private static String loadedJdbcDriver = null;
+    public static final String DEFAULT_KEYWORD = "DEFAULT";
+    public static final String COUNT_KEYWORD = "count";
+    public static final String IS_NULL_KEYWORD = "is null";
+    private static HikariDataSource ds;
 
-    public static ResultSet checkEntry(String table, String name, String val) throws SQLException {
+    public static ResultSet checkEntry(Connection conn, String table, String name, String val) throws SQLException {
         String query = String
                 .format("SELECT %s FROM %s WHERE %s = '%s'", name, table, name, SQLUtils.asSafeString(val));
-        Logger.debugSQL(clz).log("checkEntry ").log(query).end();
-        return stmt.executeQuery(query);
+        return conn.createStatement().executeQuery(query);
     }
 
-    public static void deleteEntry(String TABLE, String field, long val) throws SQLException {
+    public static void deleteEntry(Connection conn, String TABLE, String field, long val) throws SQLException {
         String query = String.format("DELETE FROM %s WHERE %s = %d", TABLE, field, val);
-        Logger.debugSQL(clz).log("deleteEntry ").log(query).end();
-        stmt.execute(query);
+        conn.createStatement().execute(query);
     }
 
-    public static void execute(String query) throws SQLException {
-        stmt.executeUpdate(query);
+    public static void execute(Connection conn, String query) throws SQLException {
+        conn.createStatement().executeUpdate(query);
     }
 
-    public static int executeUpdate(String query) throws SQLException {
-        return stmt.executeUpdate(query);
+    public static int executeUpdate(Connection conn, String query) throws SQLException {
+        return conn.createStatement().executeUpdate(query);
     }
 
-    public static Connection getConnection() {
-        return conn;
+    public static Connection getConnection() throws SQLException {
+        return ds.getConnection();
     }
 
-    public static ResultSet getEntry(String TABLE, String field, long val) throws SQLException {
+    public static ResultSet getEntry(Connection conn, String TABLE, String field, long val) throws SQLException {
         String query = String.format("SELECT * FROM %s WHERE %s = %d", TABLE, field, val);
-        Logger.debugSQL(clz).log("getEntry ").log(query).end();
-        return stmt.executeQuery(query);
+        return conn.createStatement().executeQuery(query);
     }
 
-    public static ResultSet getEntry(String TABLE, String field, String val) throws SQLException {
+    public static ResultSet getEntry(Connection conn, String TABLE, String field, String val) throws SQLException {
         String query = String.format("SELECT * FROM %s WHERE %s = '%s'", TABLE, field, SQLUtils.asSafeString(val));
-        Logger.debugSQL(clz).log("getEntry ").log(query).end();
-        return stmt.executeQuery(query);
-    }
-
-    public static Statement getStatement() {
-        try {
-            return conn.createStatement();
-        } catch (SQLException ex) {
-            Logger.error(clz).log("getStatement error, ").log(ex.getMessage()).end();
-            return null;
-        }
+        return conn.createStatement().executeQuery(query);
     }
 
     public static long hasRecord(String table, String fieldName, long fieldValue) {
+        long ret = 0;
         try {
             String query = String.format("SELECT %s FROM %s WHERE %s = %d RETURNING %s", fieldName, table, fieldName,
                     fieldValue, fieldName);
-            Logger.debugSQL(clz).log("hasRecord ").log(query).end();
-            ResultSet rs = stmt.executeQuery(query);
+            Connection conn = getConnection();
+            ResultSet rs = conn.createStatement().executeQuery(query);
 
             if (rs.next()) {
-                return rs.getLong(fieldName);
+                ret = rs.getLong(fieldName);
             }
-        } catch (SQLException ex) {
-            Logger.error(clz).log("hasRecord error ").log(ex.getMessage()).end();
+            conn.close();
+        } catch (SQLException e) {
+            logger.error("has record failed: {}", e, e.getMessage());
         }
 
-        return 0;
+        return ret;
     }
 
-    public static ResultSet rawQuery(String sql) throws SQLException {
-        return stmt.executeQuery(sql);
+    public static ResultSet rawQuery(Connection conn, String sql) throws SQLException {
+        return conn.createStatement().executeQuery(sql);
     }
 
     public static void start() {
         ApplicationConfig appConfig = ApplicationConfig.instance();
 
+        String jdbcDriver = appConfig.getString(JDBC_DRIVER_PROP_KEY);
         try {
-            loadedJdbcDriver = appConfig.getString(JDBC_DRIVER_PROP_KEY);
-            Class.forName(loadedJdbcDriver);
-            conn = DriverManager.getConnection(appConfig.getString(URL_PROP_KEY),
-                    appConfig.getString(USERNAME_PROP_KEY), appConfig.getString(PASSWORD_PROP_KEY));
-
-            stmt = conn.createStatement();
-            Logger.info(clz).log("using driver ").log(loadedJdbcDriver).end();
-            initTables();
-        } catch (ClassNotFoundException ex) {
-            Logger.error(clz).log("error loading database driver. ").log(appConfig.getString(JDBC_DRIVER_PROP_KEY))
-                    .log(", error ").log(ex.getMessage()).end();
-            throw new RuntimeException(ex.getMessage());
-        } catch (SQLException ex) {
-            Logger.error(clz).log("sql error ").log(ex.getMessage()).end();
+            Class.forName(jdbcDriver);
+        } catch (ClassNotFoundException e) {
+            logger.error("failed to load jdbc driver: {}", e, jdbcDriver, e.getMessage());
         }
+
+        // loadedJdbcDriver = appConfig.getString(JDBC_DRIVER_PROP_KEY);
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl(appConfig.getString(URL_PROP_KEY));
+        config.setUsername(appConfig.getString(USERNAME_PROP_KEY));
+        config.setPassword(appConfig.getString(PASSWORD_PROP_KEY));
+        config.setMaximumPoolSize(20);
+        config.addDataSourceProperty("cachePrepStmts", "true");
+        config.addDataSourceProperty("prepStmtCacheSize", "250");
+        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+
+        ds = new HikariDataSource(config);
+
+        logger.info("loaded hikari cp: {}", config);
+        initTables();
     }
 
     public static void stop() {
-        try {
-            if (loadedJdbcDriver != null) {
-                UsersTable.close();
-                UserProfilesTable.close();
-                UserKeyValuesTable.close();
-                FeedSourcesTable.close();
-                FeedSourceChannelDataTable.close();
-                FeedSourceChannelImageTable.close();
-                FeedEntriesTable.close();
-                UserStreamGroupsTable.close();
-                UserFeedSubscriptionsTable.close();
-                UserFeedEntries.close();
-                XmlAttrTable.close();
-                JoinedTable.close();
-                CollectionsTable.close();
-
-                Driver driver = DriverManager.getDriver(loadedJdbcDriver);
-                Logger.info(clz).log("closing driver ").log(driver.toString()).end();
-                DriverManager.deregisterDriver(driver);
-            }
-        } catch (SQLException ex) {
-            Logger.error(clz).log("deregistering driver ").log(ex.getMessage()).end();
+        if (!ds.isClosed()) {
+            UsersTable.close();
+            UserProfilesTable.close();
+            UserKeyValuesTable.close();
+            FeedSourcesTable.close();
+            FeedSourceChannelDataTable.close();
+            FeedSourceChannelImageTable.close();
+            FeedEntriesTable.close();
+            UserStreamGroupsTable.close();
+            UserFeedSubscriptionsTable.close();
+            UserFeedEntries.close();
+            XmlAttrTable.close();
+            JoinedTable.close();
+            CollectionsTable.close();
+            ds.close();
         }
     }
 
-    static void
-            setBoolean(String table, String boolSetName, boolean boolSetVal, String longWhereName, long longWhereVal)
-                    throws SQLException {
+    static void setBoolean(String table, String boolSetName, boolean boolSetVal, String longWhereName,
+            long longWhereVal)
+            throws SQLException {
         String query = String.format("UPDATE %s SET %s = %b WHERE %s = %d", table, boolSetName, boolSetVal,
                 longWhereName, longWhereVal);
-        Database.execute(query);
+        Connection conn = ds.getConnection();
+        Database.execute(conn, query);
+        conn.close();
     }
 
     private static void initTables() {

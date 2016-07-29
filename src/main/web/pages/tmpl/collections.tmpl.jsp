@@ -1,31 +1,40 @@
 <%@page import="feedreader.entities.ProfileData"%>
 <%@page import="feedreader.entities.UserData"%>
 
-<% 
+<%
     UserData user = (UserData)request.getAttribute("user");
 %>
 
 <script type="x-handlebars" id="collections_tmpl">
-<div style="padding: 5px; margin: 5px; min-width: 220px;">
-	<h3 style="background-color: #CACACA;">{{c.s_name}}
+<div id="card-collection">
+	<p class="title">
+		{{c.s_name}}
 		<a href="" onClick="showAddModal(this, {{c.l_collection_id}}); return false;">
-		<span class="right glyphicon glyphicon-plus"></span></a></h3>
-	<p>{{c.s_description}}</p>
-	<p>feeds ({{c.i_feeds}}) <a href="" onClick="toggleFeedsCollection(this, {{c.l_collection_id}}); return false;"> ... show </a></p>
-	<div class="noshow border" id="feeds_{{c.l_collection_id}}"></div>
+			<span class="right glyphicon glyphicon-plus"></span>
+		</a>
+		<a href="" onClick="toggleFeedsCollection(this, {{c.l_collection_id}}); return false;">
+			<span class="right glyphicon glyphicon-list-alt"></span>
+		</a>
+	</p>
+	<p class="description">{{c.s_description}}</p>
+	<div class="noshow feeds-container" id="feeds_{{c.l_collection_id}}">
+	</div>
 </div>
 </script>
 
 <script type="x-handlebars" id="feeds_tmpl">
-<ul style="padding: 5px; display: block;">
+<ul>
 	{{#each entries}}
-	<li class="clearli hoverli"><img src="{{favico}}{{s_link}}">&nbsp;<a href="{{s_link}}" target="_blank">{{cut s_feed_name 30}}</a></li>
+	<li>
+		<img src="{{favico}}{{s_link}}">&nbsp;
+		<a href="{{s_link}}" target="_blank">{{cut s_feed_name 30}}</a>
+	</li>
 	{{/each}}
 </ul>
 </script>
 
 <script type="x-handlebars" id="collection_created_tmpl">
-The collection was added to you list of streams, <a href="reader.jsp?#/f/{{streamId}}">see in reader</a> or 
+The collection was added to you list of streams, <a href="reader.jsp?#/f/{{streamId}}">see in reader</a> or
 <a href="" onClick="hideModal();return false;">keep adding collections</a>
 </script>
 

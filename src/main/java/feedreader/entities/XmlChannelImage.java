@@ -1,7 +1,6 @@
 package feedreader.entities;
 
-public class XmlChannelImage
-{
+public class XmlChannelImage {
     StringBuilder title = new StringBuilder();
     StringBuilder url = new StringBuilder();
     StringBuilder link = new StringBuilder();
@@ -10,77 +9,64 @@ public class XmlChannelImage
     int height = 0;
     int width = 0;
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title.toString().trim();
     }
 
-    public String getUrl()
-    {
+    public String getUrl() {
         return url.toString().trim();
     }
 
-    public String getLink()
-    {
+    public String getLink() {
         return link.toString().trim();
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description.toString().trim();
     }
 
-    public int getHeight()
-    {
+    public int getHeight() {
         return height;
     }
 
-    public int getWidth()
-    {
+    public int getWidth() {
         return width;
     }
 
-    public static boolean isTitleNode(String name)
-    {
+    public static boolean isTitleNode(String name) {
         return name.equalsIgnoreCase("title");
     }
 
-    public static boolean isUrlNode(String name)
-    {
+    public static boolean isUrlNode(String name) {
         return name.equalsIgnoreCase("url");
     }
 
-    public static boolean isLinkNode(String name)
-    {
+    public static boolean isLinkNode(String name) {
         return name.equalsIgnoreCase("link");
     }
 
-    public static boolean isWidthNode(String name)
-    {
+    public static boolean isWidthNode(String name) {
         return name.equalsIgnoreCase("width");
     }
 
-    public static boolean isHeightNode(String name)
-    {
+    public static boolean isHeightNode(String name) {
         return name.equalsIgnoreCase("height");
     }
 
-    public static boolean isDescriptionNode(String name)
-    {
+    public static boolean isDescriptionNode(String name) {
         return name.equalsIgnoreCase("description");
     }
 
-    public static int asInt(String value, int def)
-    {
+    public static int asInt(String value, int def) {
         try {
             return Integer.valueOf(value);
-        } catch (NumberFormatException e) {}
-
+        } catch (NumberFormatException e) {
+            // noop
+        }
         return def;
     }
 
-    public void process(String node, String value)
-    {
+    public void process(String node, String value) {
         if (isTitleNode(node)) {
             title.append(value);
             return;
@@ -113,8 +99,7 @@ public class XmlChannelImage
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return new StringBuilder()
                 .append(this.getClass().getSimpleName())
                 .append(" : url=[").append(getUrl()).append("], size=")

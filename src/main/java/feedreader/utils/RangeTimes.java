@@ -73,9 +73,7 @@ public class RangeTimes {
 
         public Range(String str) {
             // s:1419860380000,e:1419859720000
-            String[] ranges = str.split(",");
-
-            for (String r : ranges) {
+            for (String r : str.split(",")) {
                 // s:1419860380000 or
                 // e:1419859720000
                 String[] range = r.split(":");

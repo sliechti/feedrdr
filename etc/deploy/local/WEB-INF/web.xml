@@ -7,16 +7,13 @@
 		<listener-class>feedreader.main.AppContextInit</listener-class>
 	</listener>
 	<servlet>
-		<servlet-name>welcome</servlet-name>
+		<servlet-name>WelcomeServlet</servlet-name>
 		<servlet-class>feedreader.security.WelcomeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>welcome</servlet-name>
+		<servlet-name>WelcomeServlet</servlet-name>
 		<url-pattern>/welcome</url-pattern>
 	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>welcome</welcome-file>
-	</welcome-file-list>
 	<servlet>
 		<servlet-name>restapp</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
@@ -31,34 +28,18 @@
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
 	<session-config>
-		<session-timeout>30</session-timeout>
+		<session-timeout>30
+		</session-timeout>
 	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/error/500.jsp</location>
+		<location>/e/500</location>
 	</error-page>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/error/404.jsp</location>
+		<location>/e/404</location>
 	</error-page>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>HTTPSOnly</web-resource-name>
-			<url-pattern>/*</url-pattern>
-		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>HTTPSOrHTTP</web-resource-name>
-			<url-pattern>*.ico</url-pattern>
-			<url-pattern>/img/*</url-pattern>
-			<url-pattern>/css/*</url-pattern>
-		</web-resource-collection>
-		<user-data-constraint>
-			<transport-guarantee>NONE</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
 </web-app>
