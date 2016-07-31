@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 <title>feedrdr.co - An open source RSS news reader</title>
@@ -50,7 +51,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 				<img src="img/logo.svg" id="logo" class="vertical-middle" height="30" />
 			</div>
 			<div onclick="location.href='login'" class="pointer cell vertical-middle right header-btn">
-				<a href="login">Sign in</a>
+				<a href="login"><fmt:message key="welcome.signin"/></a>
 			</div>
 		</div>
 	</div>
@@ -58,8 +59,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 		<div id="center-piece">
 			<div class="cell w50p">
 				<p class="intro">
-					An Open Source RSS news reader to help you manage and keep track of all the content
-					you care about, getting better every week and made with &#9825; in NYC.
+				<fmt:message key="welcome.intro"/>
 				</p>
 			</div>
 			<div class="cell text-center w50p vertical-middle bottom40">
