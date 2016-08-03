@@ -7,10 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import feedreader.config.FeedAppConfig;
+import feedreader.security.Parameter;
 import feedreader.security.PasswordResetServlet;
 
 public class ServletUtils {
 
+    private static final String DEFAULT_LANG = "en";
     private static final String CONTENT_TYPE_JSON = "application/json; charset=utf-8";
     private static final String TMPL_BASE_URL = "baseUrl";
     private static final String TMPL_BASE_URL_LINK = "baseUrlLink";
@@ -24,6 +26,11 @@ public class ServletUtils {
             throws ServletException, IOException {
         String contextPath = FeedAppConfig.BASE_APP_URL;
 
+        String lang = Parameter.asString(req, "lang", DEFAULT_LANG);
+        if (!FeedAppConfig.SUPPORTED_LANGS.contains(lang)) {
+            lang = DEFAULT_LANG;
+        }
+        req.setAttribute("language", lang);
         req.setAttribute("isLocal", ApplicationConfig.instance().isLocal());
         req.setAttribute(TMPL_HOME, PageUtils.getHome());
         req.setAttribute(TMPL_BASE_URL, contextPath);
