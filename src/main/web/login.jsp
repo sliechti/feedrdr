@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html language="${language}">
 <head>
 <title>Sign in</title>
 <meta charset="utf-8">

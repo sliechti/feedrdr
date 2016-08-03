@@ -10,7 +10,7 @@
 	<property name="projectName" value="feedrdr" />
 	<property name="src.dir" location="src" />
 	<property name="resources.dir" location="etc/deploy/${build.env}" />
-	<property name="i18n.dir" location="etc/deploy/common" />
+	<property name="common.dir" location="etc/deploy/common" />
 	<property name="web.dir" value="src/main/web" />
 	<property name="web.classes.dir" location="target/classes" />
 	<property name="target.dir" location="target" />
@@ -51,7 +51,7 @@
 				<include name="**/*.properties" />
 				<include name="**/templates/**" />
 			</fileset>
-			<fileset dir="${i18n.dir}">
+			<fileset dir="${common.dir}">
 				<include name="**/*.properties" />
 			</fileset>
 		</copy>
