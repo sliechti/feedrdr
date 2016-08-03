@@ -1,6 +1,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html>
+<fmt:setLocale value="${language}" scope="session" />
+<fmt:setBundle basename="i18n.message" />
+
+<!DOCTYPE html>
+<html lang="${language}">
 <head>
 <title>feedrdr.co - An open source RSS news reader</title>
 <meta charset="utf-8">
