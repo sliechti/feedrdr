@@ -100,7 +100,7 @@ public class SimpleEmail {
                     email, screenName,
                     "Welcome to feedrdr, " + screenName, emailTxt);
         } catch (Exception e) {
-            CronResendRegEmail.logger.error("failed to send email to: {}, error: {}", e, email, e.getMessage());
+            CronResendRegEmail.logger.error("failed to send email to: {}, error: {}", email, e.getMessage());
             error = e.getMessage();
         }
         return error;

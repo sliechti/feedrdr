@@ -701,7 +701,7 @@ CREATE TABLE users (
     b_receive_newsletter BOOLEAN DEFAULT TRUE,
     b_receive_product_updates BOOLEAN DEFAULT TRUE,
 	b_acct_disabled BOOLEAN DEFAULT false NOT NULL,
-	verify_attempt smallint DEFAULT false NOT NULL
+	e_verify_attempt smallint DEFAULT 0 NOT NULL
 );
 
 

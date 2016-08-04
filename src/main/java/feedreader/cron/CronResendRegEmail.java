@@ -19,7 +19,7 @@ import feedreader.utils.SimpleEmail;
 public class CronResendRegEmail implements Runnable {
 
     public static final Logger logger = LoggerFactory.getLogger(CronResendRegEmail.class);
-    private static final List<Integer> attemps = Arrays.asList(24, 36, 42, 48);
+    private static final List<Integer> attempts = Arrays.asList(24, 36, 42, 48);
 
     public CronResendRegEmail() throws Exception {
         logger.info("starting, running every: {} seconds", FeedAppConfig.DELAY_CHECK_REG_EMAIL);
@@ -27,17 +27,17 @@ public class CronResendRegEmail implements Runnable {
 
     @Override
     public void run() {
-        for (int x = 0; x < attemps.size(); x++) {
-            checkVerification(attemps.get(x), x);
+        for (int x = 0; x < attempts.size(); x++) {
+            checkVerification(attempts.get(x), x);
         }
     }
 
     private void checkVerification(long hoursElapsed, int attempt) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT user_id, s_email, t_subscribed_at "
+            String query = String.format("SELECT l_user_id, s_email, t_subscribed_at "
                     + " FROM feedreader.users u "
                     + "   WHERE     u.b_verified = FALSE "
-                    + " AND verify_attempt > %s"
+                    + " AND e_verify_attempt > %s"
                     + " AND TO_TIMESTAMP (t_subscribed_at / 1000) > (current_timestamp - INTERVAL '%s hours')",
                     attempt,
                     hoursElapsed);
@@ -51,14 +51,14 @@ public class CronResendRegEmail implements Runnable {
                 logger.info("resending registration to {} after {} hours", email, hoursElapsed);
                 String error = SimpleEmail.getInstance().sendVerificationEmail(email, regCode, email);
                 query = String.format("UPDATE feedreader.users "
-                        + "SET verify_attempt = %d, s_reg_error = '%s' WHERE l_user_id = %d",
+                        + "SET e_verify_attempt = %d, s_reg_error = '%s' WHERE l_user_id = %d",
                         attempt,
                         SQLUtils.asSafeString(error),
                         userId);
 
                 conn.createStatement().execute(query);
 
-                if (attempt == attemps.size()) {
+                if (attempt == attempts.size()) {
                     UsersTable.disableAccount(userId, "No verification after " + hoursElapsed + " hours");
                 }
                 if (++count >= FeedAppConfig.MAX_REG_EMAILS_PER_RUN) {

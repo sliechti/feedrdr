@@ -54,7 +54,7 @@ public class CronNewUsersEmail implements Runnable {
                             UsersTable.TABLE, DBFields.BOOL_REG_SENT, DBFields.LONG_USER_ID, userId);
                     conn.createStatement().execute(query);
                 } catch (Exception e) {
-                    logger.error("failed to send email to: {}, error: {}", e, email, e.getMessage());
+                    logger.error("failed to send email to: {}, error: {}", email, e.getMessage());
                     error = e.getMessage();
                 }
 
