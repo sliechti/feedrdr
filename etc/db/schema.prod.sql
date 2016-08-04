@@ -700,10 +700,8 @@ CREATE TABLE users (
     b_is_admin boolean DEFAULT false NOT NULL,
     b_receive_newsletter BOOLEAN DEFAULT TRUE,
     b_receive_product_updates BOOLEAN DEFAULT TRUE,
-	b_24_reg_sent BOOLEAN DEFAULT false NOT NULL,
-	b_36_reg_sent BOOLEAN DEFAULT false NOT NULL,
-	b_42_reg_sent BOOLEAN DEFAULT false NOT NULL,
-	b_acct_disabled BOOLEAN DEFAULT false NOT NULL
+	b_acct_disabled BOOLEAN DEFAULT false NOT NULL,
+	verify_attempt smallint DEFAULT false NOT NULL
 );
 
 
