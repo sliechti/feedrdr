@@ -108,7 +108,7 @@
                         		err+="Unable to parse Date.";
                         	}
                         	if(currentDate.compareTo(previousDate)>0){
-                        		info += "Email changed. <br>"+currentDate +previousDate;
+                        		info += "Email changed. <br>";
                                 emailChanged = newEmail;
                                 data.setEmail(emailChanged);
                                 data.setVerifyEmailDate(CurrentTime.inGMT());
