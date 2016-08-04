@@ -55,7 +55,14 @@ body {
 }
 
 .profileColor {
-	background-color: #<%=profile.getColor()%>;
+}
+
+.profile-line {
+	height: 1px;
+}
+
+#selected-profile .glyphicon {
+	padding-left: 10px;
 }
 
 .read {

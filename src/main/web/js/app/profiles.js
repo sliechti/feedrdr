@@ -27,6 +27,7 @@ function initProfiles() {
 
 		if (data.entries) {
 			profiles = data.entries;
+//			console.debug("profiles", profiles);
 			triggerOnProfilesAvailable();
 		} else {
 			console.error("error fetching profiles ");
@@ -85,7 +86,7 @@ function selectProfile(profileId, resetRoute) {
 	if (resetRoute) {
 		window.location.hash = '';
 	}
-	
+
 	if (profileId == 0) {
 		return;
 	}
@@ -103,7 +104,7 @@ function selectProfile(profileId, resetRoute) {
 	$(".profileColor").css("background-color", "#" + selectedProfile.s_color);
 
 	$("#profile").text(selectedProfile.s_profile_name);
-
+	$("#profiles").hide();
 	// needed to set the session value in the background.
 	setSessionProfile(profileId, function() {
 		triggerOnProfileSelected(selectedProfile);

@@ -48,7 +48,7 @@
 		</div>
 		<div id="header-stream-group">
 			<span class="title"></span>
-			<a class="pointer" onclick="toggleEditTools(this, '{{s_stream_name}}')">{{s_stream_name}}&nbsp;&raquo;&raquo;</a>
+			<a class="pointer" onclick="toggleEditTools(this, '{{s_stream_name}}')">{{s_stream_name}}&nbsp;&raquo;</a>
 			<span id="edit_tools" style="display: none">
 			<% if (user.isAdmin()) { %>
 				<a title="share collection" href="" onclick="showShareCollection({{l_stream_id}});return false;"><span class="glyphicon glyphicon-share"></span></a>
