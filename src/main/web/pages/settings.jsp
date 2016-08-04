@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="feedreader.time.CurrentTime"%>
 <%@page import="org.slf4j.LoggerFactory"%>
 <%@page import="org.slf4j.Logger"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -96,9 +98,23 @@
                     if (Validate.isValidEmailAddress(newEmail)) {
                         UserData testData = UsersTable.get(newEmail);
                         if (testData.getUserId() == 0) {
-                            info += "Email changed. <br>";
-                            emailChanged = newEmail;
-                            data.setEmail(emailChanged);
+                        	SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy");
+                        	Date previousDate=null;
+                        	Date currentDate=null;
+                        	try{
+                        	   previousDate = df2.parse(df2.format(data.getVerifyEmailDate()));
+                        	   currentDate = df2.parse(df2.format(CurrentTime.inGMT()));
+                        	}catch(Exception e){
+                        		err+="Unable to parse Date.";
+                        	}
+                        	if(currentDate.compareTo(previousDate)>0){
+                        		info += "Email changed. <br>"+currentDate +previousDate;
+                                emailChanged = newEmail;
+                                data.setEmail(emailChanged);
+                                data.setVerifyEmailDate(CurrentTime.inGMT());
+                        	}else{
+                        		info += "Email can be changed only onces in a day. <br>";
+                        	}
                         } else {
                             err += "Can't use that email. <br>";
                         }
@@ -183,6 +199,7 @@
 			<h4>Account settings</h4>
 
 			<form method="POST" action="">
+			<input type="hidden" name="section" value="settings" />
 				<label for="<%= Constants.INPUT_SCREEN_NAME%>">Display name</label>
 				<input type="text" tabindex="1" class="form-control"
 					name="<%= Constants.INPUT_SCREEN_NAME%>"
@@ -221,7 +238,7 @@
 					class="form-control" name="<%= Constants.INPUT_PWD_NAME%>">
 				<% } %>
 				<br>
-				<input type="submit" tabindex="7" name="submit" value="Save settings" class="btn btn-primary btn">
+				<input type="submit" tabindex="7" name="submit" value="Save settings" class="btn btn-primary btn" >
 			</form>
 
 		</div>

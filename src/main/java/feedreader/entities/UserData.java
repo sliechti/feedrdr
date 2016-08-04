@@ -35,11 +35,46 @@ public class UserData {
     private long userId = 0;
     private UserType userType;
     private boolean verified;
+    private long verifyEmailCount = 0;
+    private long verifyEmailDate;
 
     private UserData() {
     }
 
-    public OAuthType getAuthType() {
+    
+    /**
+	 * @return the verifyEmailCount
+	 */
+	public long getVerifyEmailCount() {
+		return verifyEmailCount;
+	}
+
+
+	/**
+	 * @param verifyEmailCount the verifyEmailCount to set
+	 */
+	public void setVerifyEmailCount(long verifyEmailCount) {
+		this.verifyEmailCount = verifyEmailCount;
+	}
+
+
+	/**
+	 * @return the verifyEmailDate
+	 */
+	public long getVerifyEmailDate() {
+		return verifyEmailDate;
+	}
+
+
+	/**
+	 * @param verifyEmailDate the verifyEmailDate to set
+	 */
+	public void setVerifyEmailDate(long verifyEmailDate) {
+		this.verifyEmailDate = verifyEmailDate;
+	}
+
+
+	public OAuthType getAuthType() {
         return authType;
     }
 
@@ -165,6 +200,8 @@ public class UserData {
         data.generated = rs.getBoolean(DBFields.BOOL_GENERATED);
         data.isSubscribedToUpdates = rs.getBoolean(DBFields.BOOL_RECEIVE_NEWSLETTER);
         data.isSubscribedForNewsletter = rs.getBoolean(DBFields.BOOL_RECEIVE_PRODUCT_UPDATES);
+        data.verifyEmailCount=rs.getLong(DBFields.LONG_VERIFY_EMAIL_COUNT);
+        data.verifyEmailDate=rs.getLong(DBFields.LONG_VERIFY_EMAIL_DATE);
 
         try {
             data.profileData.add(ProfileData.fromRs(rs));

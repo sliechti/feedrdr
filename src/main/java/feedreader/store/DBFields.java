@@ -90,4 +90,7 @@ public class DBFields {
     public static final String TIME_SAVED_AT = "t_saved_at";
     public static final String TIME_SUBSCRIBED_AT = "t_subscribed_at";
     public static final String TIME_VALIDATED_AT = "t_validated_at";
+    public static final String LONG_VERIFY_EMAIL_COUNT = "l_verify_email_count";
+    public static final String LONG_VERIFY_EMAIL_DATE = "l_verify_email_date";
+    
 }

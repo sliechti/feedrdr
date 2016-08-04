@@ -58,13 +58,14 @@ public class UsersTable {
 
             String code = getRegistrationCode();
             String query = String.format(
-                    "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s) "
-                            + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s', %s)",
+                    "INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) "
+                            + " VALUES ('%s', '%s', '%s', %d, '%s', %d, '%s', %s, %d, %d)",
                     TABLE, DBFields.STR_EMAIL, DBFields.STR_PASSWORD, DBFields.STR_LOCALE, DBFields.ENUM_MAIN_OAUTH,
                     DBFields.STR_SCREEN_NAME, DBFields.TIME_SUBSCRIBED_AT, DBFields.STR_REG_CODE,
-                    DBFields.BOOL_GENERATED, SQLUtils.asSafeString(email), password, SQLUtils.asSafeString(locale),
+                    DBFields.BOOL_GENERATED, DBFields.LONG_VERIFY_EMAIL_COUNT,DBFields.LONG_VERIFY_EMAIL_DATE, 
+                    SQLUtils.asSafeString(email), password, SQLUtils.asSafeString(locale),
                     oauth.getVal(), SQLUtils.asSafeString(screenName), CurrentTime.inGMT(), SQLUtils.asSafeString(code),
-                    generated);
+                    generated,0,CurrentTime.inGMT());
             log.debug("createNewUser SQL: {}", query);
             if (conn.createStatement().executeUpdate(query) > 0) {
                 return get(email);
@@ -247,7 +248,7 @@ public class UsersTable {
     public static int update(UserData data) {
         try (Connection conn = Database.getConnection()) {
             String query = String.format(
-                    "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b', %s = '%b' WHERE %s = %d",
+                    "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b', %s = '%b' , %s=%d WHERE %s = %d",
                     TABLE,
                     DBFields.STR_SCREEN_NAME, SQLUtils.asSafeString(data.getScreenName()), DBFields.STR_PASSWORD,
                     SQLUtils.asSafeString(data.getPwd()), DBFields.STR_EMAIL,
@@ -258,6 +259,7 @@ public class UsersTable {
                     data.isSubscribedToUpdates(),
                     DBFields.BOOL_GENERATED,
                     data.isGenerated(),
+                    DBFields.LONG_VERIFY_EMAIL_DATE, data.getVerifyEmailDate(),
                     DBFields.LONG_USER_ID,
                     data.getUserId());
             log.info("update user: {}", data);
