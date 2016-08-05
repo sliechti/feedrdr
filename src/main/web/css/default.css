@@ -61,6 +61,10 @@ body {
 	height: 1px;
 }
 
+.w1px {
+	width: 1px;
+}
+
 #selected-profile .glyphicon {
 	padding-left: 10px;
 }

@@ -129,14 +129,6 @@
 			<div class="collapse navbar-collapse" id="reader-nav">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
-							<% if (user.isGenerated()) { %>
-							<li><a href="wizard">Wizard</a></li>
-							<% } %>
-						</ul>
-					</li>
-					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="underline"><%= user.getScreenName() %>
                             	<% if (user.isAdmin()) {%>[admin]<% } %>
@@ -151,11 +143,6 @@
                             <li><div class="navbar-div block">
                                 <a href="<%= PageUtils.getPath("/pages/settings.jsp") %>">User settings
                                     <span class="glyphicon glyphicon-cog text-right"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="navbar-div block">
-                                    <a href="<%= baseUrl %>/pages/settings.jsp#/v/pro">Profile settings <span class="glyphicon glyphicon-cog text-right"></span></a>
                                 </div>
                             </li>
                         </ul>
