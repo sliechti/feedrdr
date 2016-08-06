@@ -421,6 +421,8 @@ function importSingleFeed() {
 	var queryData = {};
 	queryData.n = $("input[name=sName]:visible").val();
 	queryData.u = $("input[name=sUrl]:visible").val();
+	queryData.sid = selectedStream.l_stream_id;
+	alert(queryData.sid);
 
 	$.getJSON(baseUrl + apiUrlSubscriptionsAdd, queryData, function(data) {
 		if (data.success) {
