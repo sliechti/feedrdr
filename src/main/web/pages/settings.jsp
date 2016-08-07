@@ -159,7 +159,7 @@
         String info = "";
         data.setVerifyEmailDate(CurrentTime.inGMT());
         UsersTable.unverify(data);
-            info+="verification mail sent succussfully to your mail Id.";
+            info+="verification mail sent successfully to your mail Id.";
             info += "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
             request.setAttribute("info", info);
     }
