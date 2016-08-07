@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html language="${language}">
 <head>
 <title>Password reset</title>
 <meta charset="utf-8">

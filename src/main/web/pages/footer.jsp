@@ -63,10 +63,6 @@ ProfileData profile = (ProfileData)request.getAttribute("profile");
         });
     });
 
-    if ($("#smallMenu").visible()) {
-    	$("#homeIcon").html("&nbsp;&nbsp;&nbsp;");
-    	$("#homeIcon").removeClass();
-    }
 </script>
 </body>
 </html>

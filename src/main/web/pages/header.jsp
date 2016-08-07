@@ -127,20 +127,7 @@
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="reader-nav">
-				<ul class="nav navbar-nav">
-					<% if (user.isGenerated()) { %>
-					<li><a href="wizard">Wizard</a></li>
-					<% } %>
-				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-							<span id="profile" data-id="<%=profile.getProfileId()%>"><%=profile.getName()%></span>
-						</a>
-						<ul id="profiles" class="dropdown-menu" role="menu">
-							<li><a href="<%=PageUtils.getPath("/pages/collections.jsp")%>">Collections</a></li>
-						</ul>
-					</li>
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <span class="underline"><%= user.getScreenName() %>
@@ -158,17 +145,12 @@
                                     <span class="glyphicon glyphicon-cog text-right"></span></a>
                                 </div>
                             </li>
-                            <li>
-                                <div class="navbar-div block">
-                                    <a href="<%= baseUrl %>/pages/settings.jsp#/v/pro">Profile settings <span class="glyphicon glyphicon-cog text-right"></span></a>
-                                </div>
-                            </li>
                         </ul>
                     </li>
                 </ul>
 			</div>
 		</div>
-            <div id="loader" class="profileColor" style="height: 1px; "></div>
+            <div id="loader" class="profileColor profile-line"></div>
 	</nav>
 
 
@@ -199,6 +181,21 @@
 			<a href="${pageContext.request.contextPath}/pages/reader.jsp">back to reader</a>
 		</div>
 	</c:if>
+	<div id="selected-profile">
+		<a href="" onclick="$('#profiles').toggle(); return false;">
+			<span id="profile"> SELECTED PROFILE </span> &raquo;
+		</a>
+		<a href="${baseUrl}/pages/settings.jsp#/v/pro">
+			<span class="right glyphicon glyphicon-cog text-right"></span>
+		</a>
+		<a href="" onclick="showCreateNewProfile(); return false;">
+			<span class="right glyphicon glyphicon-plus text-right"></span>
+		</a>
+	</div>
+	<div class="profileColor profile-line"></div>
+	<div id="profiles" class="noshow">
+
+	</div>
     <div id="special-entries">
     <ul class="leftmenu-ul">
     	<li>

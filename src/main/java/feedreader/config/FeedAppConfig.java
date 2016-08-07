@@ -2,6 +2,7 @@ package feedreader.config;
 
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -35,7 +36,7 @@ public class FeedAppConfig {
     public static String BASE_API_URL = BASE_APP_URL + "/api";
     public static String BASE_ADMIN_URL = "/venus";
     public static String DOWNLOAD_XML_PATH = "";
-
+    public static List<String> SUPPORTED_LANGS = Arrays.asList("en");
     // Move to context config. AUtoConfig for PROD and DEV.
     public static int DELAY_CHECK_FORGOT_PASSWORD = 15;
     public static int DELAY_CHECK_NEW_USERS_EMAIL = 15;
