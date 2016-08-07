@@ -236,9 +236,10 @@ public class UsersTable {
     public static void unverify(UserData data) {
         try (Connection conn = Database.getConnection()) {
             String code = getRegistrationCode();
-            String query = String.format("UPDATE %s SET %s = %b,  %s = %b, %s = '%s' WHERE %s = %d", TABLE,
+            String query = String.format("UPDATE %s SET %s = %b,  %s = %b, %s = '%s' , %s=%d WHERE %s = %d", TABLE,
                     DBFields.BOOL_VERIFIED, false, DBFields.BOOL_REG_SENT, false, DBFields.STR_REG_CODE,
-                    SQLUtils.asSafeString(code), DBFields.LONG_USER_ID, data.getUserId());
+                    SQLUtils.asSafeString(code),DBFields.LONG_VERIFY_EMAIL_DATE, data.getVerifyEmailDate(),
+                     DBFields.LONG_USER_ID, data.getUserId());
             conn.createStatement().execute(query);
         } catch (SQLException ex) {
             log.error("unverify error: {}", ex, ex.getMessage());
@@ -248,7 +249,7 @@ public class UsersTable {
     public static int update(UserData data) {
         try (Connection conn = Database.getConnection()) {
             String query = String.format(
-                    "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b', %s = '%b' , %s=%d WHERE %s = %d",
+                    "UPDATE %s SET %s = '%s', %s = '%s', %s = '%s', %s = %b, %s = '%b', %s = '%b'  WHERE %s = %d",
                     TABLE,
                     DBFields.STR_SCREEN_NAME, SQLUtils.asSafeString(data.getScreenName()), DBFields.STR_PASSWORD,
                     SQLUtils.asSafeString(data.getPwd()), DBFields.STR_EMAIL,
@@ -259,7 +260,6 @@ public class UsersTable {
                     data.isSubscribedToUpdates(),
                     DBFields.BOOL_GENERATED,
                     data.isGenerated(),
-                    DBFields.LONG_VERIFY_EMAIL_DATE, data.getVerifyEmailDate(),
                     DBFields.LONG_USER_ID,
                     data.getUserId());
             log.info("update user: {}", data);

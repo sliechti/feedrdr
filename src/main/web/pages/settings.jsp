@@ -10,6 +10,7 @@
 <%@page import="feedreader.store.UsersTable"%>
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.config.Constants"%>
+<%@page import="static java.util.concurrent.TimeUnit.*" %>
 
 <% request.setAttribute("e", true);%>
 
@@ -150,12 +151,27 @@
         request.setAttribute("info", info);
         request.setAttribute("error", err);
         request.setAttribute("emailChanged", emailChanged);
-    }%>
+    }
+    
+    public void processVerificationMail(HttpServletRequest request) {
+        UserData data = (UserData) request.getAttribute("user");
+        String err = "";
+        String info = "";
+        data.setVerifyEmailDate(CurrentTime.inGMT());
+        UsersTable.unverify(data);
+            info+="verification mail sent succussfully to your mail Id.";
+            info += "<hr><a class='block' href='' onClick='location.assing();return false;'><b>reload page</b></a>";
+            request.setAttribute("info", info);
+    }
+    %>
 <%
 	UserData data = (UserData)request.getAttribute("user");
     if (request.getMethod() == "POST") {
         String section = Parameter.asString(request, "section", "");
-        if ("notifications".equals(section)) {
+        if(Parameter.asString(request, "verifybtn", "")!=null){
+        	processVerificationMail(request);
+        }
+        else if ("notifications".equals(section)) {
                 processNotificationsUpdate(request);
         } else if ("settings".equals(section)) {
                 processSettingsUpdate(request);
@@ -181,7 +197,7 @@
 		<div id="error"
 			class="<c:if test="${empty err}">noshow</c:if> alert alert-danger">
 			<button type="button" class="close" onclick="$('#error').hide();">
-				<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+				<span aria-hidden="true">x</span><span class="sr-only">Close</span>
 			</button>
 			<p id="error_text">${err}</p>
 		</div>
@@ -189,7 +205,7 @@
 		<div id="info"
 			class="<c:if test="${empty info}">noshow</c:if> alert alert-info alert-dismissible">
 			<button type="button" class="close" onclick="$('#info').hide();">
-				<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+				<span aria-hidden="true">x</span><span class="sr-only">Close</span>
 			</button>
 			<p id="info_text">${info}</p>
 		</div>
@@ -200,6 +216,14 @@
 
 			<form method="POST" action="">
 			<input type="hidden" name="section" value="settings" />
+
+			<% long MAX_DURATION = MILLISECONDS.convert(3, HOURS);
+						long duration = CurrentTime.inGMT()-data.getVerifyEmailDate();
+						if (duration >= MAX_DURATION) {
+						%>
+						<span class="text-info"> To verify your Email:&nbsp;&nbsp;
+						<input type="submit" id="verifybtn" value="click here" class="btn btn-success btn"/></span><br>
+						<%} %>
 				<label for="<%= Constants.INPUT_SCREEN_NAME%>">Display name</label>
 				<input type="text" tabindex="1" class="form-control"
 					name="<%= Constants.INPUT_SCREEN_NAME%>"
