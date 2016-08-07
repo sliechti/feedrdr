@@ -34,13 +34,14 @@ public class CronResendRegEmail implements Runnable {
 
     private void checkVerification(long hoursElapsed, int attempt) {
         try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT l_user_id, s_email, t_subscribed_at "
-                    + " FROM feedreader.users u "
-                    + "   WHERE     u.b_verified = FALSE "
-                    + " AND e_verify_attempt > %s"
-                    + " AND TO_TIMESTAMP (t_subscribed_at / 1000) > (current_timestamp - INTERVAL '%s hours')",
-                    attempt,
-                    hoursElapsed);
+            String query = String.format(
+                    "SELECT l_user_id, s_email, s_reg_code" +
+                            " FROM feedreader.users u" +
+                            " WHERE u.b_verified = FALSE" +
+                            " AND b_acct_disabled = FALSE" +
+                            " AND e_verify_attempt = %s"
+                            + " AND TO_TIMESTAMP(t_subscribed_at / 1000) < (current_timestamp - INTERVAL '%s minutes')",
+                    attempt, hoursElapsed);
             ResultSet rs = Database.rawQuery(conn, query);
             int count = 0;
             while (rs.next()) {
@@ -48,25 +49,30 @@ public class CronResendRegEmail implements Runnable {
                 String email = rs.getString(DBFields.STR_EMAIL);
                 String regCode = rs.getString(DBFields.STR_REG_CODE);
 
-                logger.info("resending registration to {} after {} hours", email, hoursElapsed);
-                String error = SimpleEmail.getInstance().sendVerificationEmail(email, regCode, email);
-                query = String.format("UPDATE feedreader.users "
-                        + "SET e_verify_attempt = %d, s_reg_error = '%s' WHERE l_user_id = %d",
-                        attempt,
-                        SQLUtils.asSafeString(error),
-                        userId);
+                // check for production test.
+                // Remove after testing in prod env
+                if (email.contains("feedrdr.co")) {
+                    if (attempt == attempts.size() - 1) {
+                        UsersTable.disableAccount(userId, "No verification after " + hoursElapsed + " hours");
+                    } 
+                    else {
+                        logger.info("resending registration to {} after {} hours", email, hoursElapsed);
+                        String error = SimpleEmail.getInstance().sendVerificationEmail(email, regCode, email);
+                        query = String.format(
+                                "UPDATE feedreader.users "
+                                        + "SET e_verify_attempt = %d, s_reg_error = '%s' WHERE l_user_id = %d",
+                                attempt + 1, SQLUtils.asSafeString(error), userId);
 
-                conn.createStatement().execute(query);
+                        conn.createStatement().execute(query);
+                    }
 
-                if (attempt == attempts.size()) {
-                    UsersTable.disableAccount(userId, "No verification after " + hoursElapsed + " hours");
-                }
-                if (++count >= FeedAppConfig.MAX_REG_EMAILS_PER_RUN) {
-                    break;
+                    if (++count >= FeedAppConfig.MAX_REG_EMAILS_PER_RUN) {
+                        break;
+                    }
                 }
             }
         } catch (SQLException e) {
-            logger.error("checkVerification {}, {} error: {}", e, hoursElapsed, attempt, e.getMessage());
+            logger.error("checkVerification {}, {} error: {}", hoursElapsed, attempt, e.getMessage());
         }
     }
 
