@@ -39,8 +39,8 @@ public class CronResendRegEmail implements Runnable {
                             " FROM feedreader.users u" +
                             " WHERE u.b_verified = FALSE" +
                             " AND b_acct_disabled = FALSE" +
-                            " AND e_verify_attempt = %s"
-                            + " AND TO_TIMESTAMP(t_subscribed_at / 1000) < (current_timestamp - INTERVAL '%s minutes')",
+                            " AND e_verify_attempt = %s" +
+                            "AND TO_TIMESTAMP(t_subscribed_at / 1000) < (current_timestamp - INTERVAL '%s hours')",
                     attempt, hoursElapsed);
             ResultSet rs = Database.rawQuery(conn, query);
             int count = 0;
