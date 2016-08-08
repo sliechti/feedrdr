@@ -12,7 +12,9 @@
 <body>
 	<div class="login">
 		<div class="login-header">
-			<img src="img/app-logo.svg" height="100"/>
+			<a href="${baseUrlLink}">
+				<img src="img/app-logo.svg" height="100"/>
+			</a>
 			<p>Reset your password</p>
 		</div>
 		<div class="login-box login-form bottom10">
@@ -51,7 +53,7 @@
 			</c:choose>
 		</div>
 		<div class="secondary">
-			<p>New to feedrdr.co?<br> <a href="${baseUrlLink}">create an account</a><br>
+			<p>New to feedrdr.co?<br> <a href="${baseUrlLink}">Create an account</a><br>
 				or<br>
 			<a href="login">Sign in</a></p>
 		</div>

@@ -13,7 +13,9 @@
 <body>
 	<div class="login">
 		<div class="login-header">
-			<img src="img/app-logo.svg" height="100"/>
+			<a href="${baseUrlLink}">
+				<img src="img/app-logo.svg" height="100"/>
+			</a>
 			<p>Sign in</p>
 		</div>
 		<div class="login-box login-form bottom10">
@@ -34,7 +36,7 @@
 			</form>
 		</div>
 		<div class="secondary">
-			New to feedrdr.co?<br> <a href="${baseUrlLink}">create an account</a>
+			New to feedrdr.co?<br> <a href="${baseUrlLink}">Create an account</a>
 			<p>
 			</p>
 		</div>
