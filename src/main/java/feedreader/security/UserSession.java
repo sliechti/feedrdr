@@ -37,6 +37,10 @@ public class UserSession {
         boolean rememberMe = Parameter.asBoolean(req, Constants.INPUT_REMEMBER_ME, false);
 
         UserData userData = UsersTable.get(email, pwd);
+        
+        if (userData.isAcctDisabled() == true) {
+            return -2;
+        }
 
         if (userData.getUserId() == 0) {
             return -1;

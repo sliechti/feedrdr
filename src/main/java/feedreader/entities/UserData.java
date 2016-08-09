@@ -36,6 +36,8 @@ public class UserData {
     private UserType userType;
     private boolean verified;
 
+    private boolean isAcctDisabled;
+
     private UserData() {
     }
 
@@ -115,6 +117,10 @@ public class UserData {
     public boolean isVerified() {
         return verified;
     }
+    
+    public boolean isAcctDisabled() {
+        return isAcctDisabled;
+    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -165,6 +171,7 @@ public class UserData {
         data.generated = rs.getBoolean(DBFields.BOOL_GENERATED);
         data.isSubscribedToUpdates = rs.getBoolean(DBFields.BOOL_RECEIVE_NEWSLETTER);
         data.isSubscribedForNewsletter = rs.getBoolean(DBFields.BOOL_RECEIVE_PRODUCT_UPDATES);
+        data.isAcctDisabled = rs.getBoolean("b_acct_disabled");
 
         try {
             data.profileData.add(ProfileData.fromRs(rs));

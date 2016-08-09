@@ -47,6 +47,9 @@ public class LoginServlet extends HttpServlet {
                 case -1:
                     setPageError(request, "Wrong username/email or password combination.");
                     break;
+                case -2:
+                    setPageError(request, "Your account has been disabled.");
+                    break;
             }
         }
 
