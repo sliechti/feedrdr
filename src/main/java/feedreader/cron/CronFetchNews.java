@@ -32,7 +32,7 @@ public class CronFetchNews implements Runnable {
     private static boolean forceDelete = false;
 
     private static CronFetchNews instance = null;
-    private static final Logger logger = LoggerFactory.getLogger(CronFetchNews.class);
+    private static final Logger logger = LoggerFactory.getLogger("cronlogs");
 
     private static CronFetchNews validationInstance = null;
 

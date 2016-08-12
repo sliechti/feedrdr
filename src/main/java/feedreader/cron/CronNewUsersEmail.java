@@ -20,7 +20,7 @@ public class CronNewUsersEmail implements Runnable {
     static final String encKey = "REGISTRATION";
     static final String MAIL_FROM = FeedAppConfig.MAIL_REG_FROM;
     static final String MAIL_FROM_NAME = "Registration " + FeedAppConfig.APP_NAME;
-    private static final Logger logger = LoggerFactory.getLogger(CronNewUsersEmail.class);
+    private static final Logger logger = LoggerFactory.getLogger("cronlogs");
     private final String emailTmpl;
     private final SimpleMail mail = new SimpleMail();
 

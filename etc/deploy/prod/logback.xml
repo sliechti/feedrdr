@@ -24,6 +24,27 @@
 			</pattern>
 		</encoder>
 	</appender>
+	<!--  file appender for cron logs usage :LoggerFactory.getLogger("cronlogs") -->
+	<appender name="CRON_LOGS_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${user.home}/logs/co.feeder.cron.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- keep 30 days' worth of history capped at 3GB total size -->
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>3GB</totalSizeCap>
+			<maxFileSize>100MB</maxFileSize>
+		</rollingPolicy>
+		<withJansi>true</withJansi>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n%ex
+			</pattern>
+		</encoder>
+	</appender>
+    <!-- additivity=false ensures analytics data only goes to the analytics log -->
+    <logger name="cronlogs" level="DEBUG" additivity="false">
+        <appender-ref ref="CRON_LOGS_FILE"/>
+    </logger>
 	<!-- SMTP Appender -->
 	<appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
 		<evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
