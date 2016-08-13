@@ -1,11 +1,15 @@
 package feedreader.api.v1;
 
-import feedreader.log.Logger;
-import feedreader.utils.JSONUtils;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.HashMap;
+
+import feedreader.log.Logger;
+import feedreader.utils.JSONUtils;
 
 public class APIUtils {
 
@@ -80,6 +84,31 @@ public class APIUtils {
         }
 
         return rows;
+    }
+    
+    public static StringBuilder updateInvalidSLinks(StringBuilder data){
+		String path = data.substring(data.lastIndexOf("\":") + 3,
+				data.lastIndexOf("}") - 1);
+		StringBuffer url = new StringBuffer(path);
+		if (path.charAt(path.length() - 1) == '/')
+			url.append("favicon.ico");
+		else
+			url.append("/favicon.ico");
+		try {
+			HttpURLConnection connection = (HttpURLConnection) new URL(
+					url.toString()).openConnection();
+			connection.setRequestMethod("GET");
+			connection.connect();
+			if (connection.getResponseCode() != 200) {
+				data.replace(data.lastIndexOf("\":") + 3, data.lastIndexOf("}") - 1,
+						"https://feedrdr.co");
+			}
+
+		} catch (IOException ex) {
+			Logger.notice(APIUtils.class).log("updateInvalidSLinks error, ").log(ex.getMessage()).end();
+			ex.printStackTrace();
+		}
+		return data;
     }
 
 }

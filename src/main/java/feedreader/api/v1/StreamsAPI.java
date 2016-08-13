@@ -377,7 +377,7 @@ public class StreamsAPI {
                     unreadEntries.append("0");
                 }
 
-                String query = "select l_xml_id, l_entry_id, s_link, s_title, t_pub_date from feedreader.feedentries "
+                String query = "select l_xml_id, l_entry_id, s_title, t_pub_date, s_link from feedreader.feedentries "
                         + "where l_entry_id in ( " + unreadEntries.toString() + ") " + " and t_pub_date > "
                         + userMaxHistTime + " order by t_pub_date " + sortDir + "" + " limit "
                         + FeedAppConfig.DEFAULT_API_FETCH_ARTICLES + " offset " + offset;
@@ -388,7 +388,7 @@ public class StreamsAPI {
                 rs.setFetchSize(FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
                 sb.append("{\"entries\" : [");
                 int r = APIUtils.wrapObject(sb, rs);
-
+                sb=APIUtils.updateInvalidSLinks(sb);
                 if (r < FeedAppConfig.DEFAULT_API_FETCH_ARTICLES) {
                     UserStreamGroupsTable.updateUnreadCount(userId, streamId, unreadEntriesCount);
                 }
