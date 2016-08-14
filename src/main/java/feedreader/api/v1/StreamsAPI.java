@@ -345,10 +345,11 @@ public class StreamsAPI {
                 while (rs.next()) {
                     sb.append("{").append(JSONUtils.getNumber(rs, DBFields.LONG_ENTRY_ID)).append(",")
                             .append(JSONUtils.getNumber(rs, DBFields.LONG_XML_ID)).append(",")
-                            .append(JSONUtils.getString(rs, DBFields.STR_LINK)).append(",")
                             .append(JSONUtils.getString(rs, DBFields.STR_TITLE)).append(",")
-                            .append(JSONUtils.getNumber(rs, DBFields.TIME_PUBLICATION_DATE)).append("},");
+                            .append(JSONUtils.getNumber(rs, DBFields.TIME_PUBLICATION_DATE)).append(",")
+                            .append(JSONUtils.getString(rs, DBFields.STR_LINK)).append("},");
                     count++;
+                    sb=APIUtils.updateInvalidSLinks(sb);
                 }
                 if (count > 0 && sb.length() > 0) {
                     sb.deleteCharAt(sb.length() - 1);
