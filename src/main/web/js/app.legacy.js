@@ -1,3 +1,544 @@
+var COLUMNS = 3;
+var MODAL_COLLECTION_ADD = "modal_collection_add";
+
+var currentColumn = 0;
+
+var apiCollectionsList = "/api/v1/collections/list";
+var apiCollectionsEntries = "/api/v1/collections/entries";
+var apiCollectionAdd = "/api/v1/collections/add";
+var baseFavicoDomain = 'http://www.google.com/s2/favicons?domain=';
+
+var collections = {};
+var collectionsIds = [];
+var collectionsById = {};
+var collectionTmpl = {};
+var feedEntriesTmpl = {};
+
+
+Handlebars.registerHelper('favico', function(data) {
+    return baseFavicoDomain;
+  });
+
+function initCollections() {
+
+	collectionTmpl = Handlebars.compile($('#collections_tmpl').html());
+	feedEntriesTmpl = Handlebars.compile($('#feeds_tmpl').html());
+	createdTmpl = Handlebars.compile($("#collection_created_tmpl").html());
+
+	var queryData = {};
+	collectionsIds = [];
+	$.get(baseUrl + apiCollectionsList, queryData, function(data, status) {
+		collections = data.entries;
+		if (data.entries) {
+			for (var x = 0; x < data.entries.length; x++) {
+				var c = data.entries[x];
+				collectionsIds[collectionsIds.length] = c.l_collection_id;
+				collectionsById[c.l_collection_id] = c;
+				console.log(c);
+				console.log("currentColumn " + currentColumn);
+				c.column = currentColumn;
+				$("#col" + currentColumn++).append(collectionTmpl({"c" : c}));
+				if (currentColumn >= COLUMNS) {
+					currentColumn = 0;
+				}
+			}
+		} else {
+			console.error("no entries found " + data);
+		}
+	});
+
+}
+
+function toggleFeedsCollection(caller, collectionId) {
+	var domFeeds = $("#feeds_" + collectionId);
+	if (domFeeds.is(":visible")) {
+		domFeeds.hide();
+	} else {
+		var queryData = {};
+		queryData.ids = collectionId;
+		$.get(baseUrl + apiCollectionsEntries, queryData, function(data, status) {
+			domFeeds.html(feedEntriesTmpl({"entries" : data.entries}));
+			domFeeds.show();
+		});
+	}
+}
+
+function showAddModal(caller, collectionId) {
+	$("#collectionCreated").hide();
+	var selected = collectionsById[collectionId];
+	showModal("Add '" + selected.s_name + "' collection", "#" + MODAL_COLLECTION_ADD,
+			function onClose() {},
+			function onInit() {
+				$("#collectionName").val(selected.s_name);
+				$("#collectionId").val(collectionId);
+			});
+}
+
+function importCollection() {
+
+	var formId = $("#collectionId").val();
+	var formName = $("#collectionName").val();
+	var formProfiles = $("#selectedProfiles").val() || [];
+
+	var queryData = {};
+	queryData.id =formId;
+	queryData.name = formName;
+	queryData.profiles = formProfiles.toString();
+
+	$.get(baseUrl + apiCollectionAdd, queryData, function(data, status) {
+		if (data.error) {
+			modalError(data.error);
+		} else if (data.success) {
+			console.log(data);
+			$("#collectionCreated").html(createdTmpl(data));
+			$("#collectionCreated").show();
+		} else {
+			console.error(data);
+			console.error(status);
+		}
+	});
+
+}
+
+
+
+var baseUrl = "/";
+var closeModalCallback = {};
+var MODALBOX_SELECTOR = "#modalBox";
+
+function setBaseUrl(url) {
+	baseUrl = url;
+}
+
+Handlebars.registerHelper('formatUnixTs', function(str) {
+	return new Date(str).toLocaleString();
+});
+
+Handlebars.registerHelper('toLowerCase', function(str) {
+	return str.toLowerCase();
+});
+
+Handlebars.registerHelper('toUpperCase', function(str) {
+	return str.toUpperCase();
+});
+
+function cut(str, len) {
+	if (str && str.length > len) {
+		return str.substring(0, len) + "...";
+	}
+	return str;
+}
+
+Handlebars.registerHelper('cut', function(str, len) {
+	return cut(str, len);
+});
+
+function toggleCheckbox(name) {
+	$(name).prop('checked', !$(name).prop('checked'));
+}
+
+function hideModal() {
+	$(MODALBOX_SELECTOR).keydown(null);
+	$(MODALBOX_SELECTOR).hide();
+	if (closeModalCallback) {
+		closeModalCallback();
+	}
+}
+
+function modalError(error) {
+	$("#modalTitle").css("background-color", "red");
+	$("#modalTitle").text(error);
+}
+
+function showModal(title, contentSelector, closeCallback, postInitCallback) {
+	$("#modalTitle").css("background-color", "");
+	$(MODALBOX_SELECTOR).show();
+	$("#modalTitle").text(title);
+	var content = $(contentSelector);
+	content.remove(); // so we don't have duplicates.
+	$("#modalContent").html(content.html());
+	var $exampleModal = $(MODALBOX_SELECTOR), $exampleModalClose = $(".modal-header button");
+
+	// added this line to set focus on the modal to close on ESC key
+	$(".modal-header button").focus();
+	this.closeModalCallback = closeCallback;
+
+	$(MODALBOX_SELECTOR).keydown(function(e) {
+		if (e.keyCode == 27) {
+			hideModal();
+		}
+		// on enter key press, check if modal is visible and contain
+		// btn-primary. If yes then call click() method.
+		if ($(MODALBOX_SELECTOR).is(':visible') && e.keyCode == 13) {
+			if ($(".modal-footer .btn-primary").is(':visible')) {
+				$(".modal-footer .btn-primary").click();
+			}
+		}
+	});
+
+	if (postInitCallback) {
+		postInitCallback($(MODALBOX_SELECTOR));
+	}
+}
+
+function toogleSmallMenu() {
+	$("#nav").toggle();
+	$("#content").css("margin-top", "50px");
+}
+
+function closeLeftBar() {
+	$('#leftbar').hide();
+	$(document).off("keyup.leftbar");
+	$(document).off("mousedown.leftbar");
+}
+
+function openLeftBar() {
+	$('#leftbar').toggle();
+
+	if ($("#leftbar").is(":visible")) {
+		$(document).on("keyup.leftbar", function(e) {
+			if (e.keyCode == 27) {
+				closeLeftBar();
+			}
+		});
+		$(document).on("mousedown.leftbar", function(e) {
+			var container = $("#leftbar");
+			if (!container.is(e.target)
+					&& e.target.id != 'logo'
+					&& container.has(e.target).length === 0) {
+				closeLeftBar();
+			}
+		});
+	}
+}
+var profilesTmpl;
+var apiUrlProfileList = '/api/v1/user/profiles/list';
+
+var selectedProfile = {
+	'l_profile_id' : 0,
+	's_profile_name' : '',
+	's_color' : ''
+};
+
+var profiles = [ selectedProfile ];
+
+var onProfileSelectedListeners = [];
+var onProfilesAvailableListeners = [];
+var onProfileDataChangedListeners = [];
+
+function initProfiles() {
+	registerOnProfileSelected(function() {
+		renderProfiles();
+	});
+
+	registerOnProfileDataChange(function() {
+		renderProfiles();
+	});
+
+	$.getJSON(baseUrl + apiUrlProfileList, '', function(data) {
+		profiles = {};
+
+		if (data.entries) {
+			profiles = data.entries;
+//			console.debug("profiles", profiles);
+			triggerOnProfilesAvailable();
+		} else {
+			console.error("error fetching profiles ");
+			console.error(data);
+		}
+	});
+}
+
+function renderProfiles() {
+	if (!profilesTmpl) {
+		profilesTmpl = Handlebars.compile($("#nav_profiles_tmpl").html());
+	}
+
+	$("#profiles").html(profilesTmpl({
+		"profiles" : profiles
+	}));
+}
+
+function registerOnProfileSelected(listener) {
+	onProfileSelectedListeners.push(listener);
+}
+
+function registerOnProfilesAvailable(listener) {
+	onProfilesAvailableListeners.push(listener);
+}
+
+function registerOnProfileDataChange(listener) {
+	onProfileDataChangedListeners.push(listener);
+}
+
+function triggerOnProfilesAvailable() {
+	for (var i = 0; i < onProfilesAvailableListeners.length; i++) {
+		onProfilesAvailableListeners[i](profiles);
+	}
+}
+
+function triggerOnProfileSelected(data) {
+	for (var i = 0; i < onProfileSelectedListeners.length; i++)
+		onProfileSelectedListeners[i](data);
+}
+
+function triggerOnProfileDataChanged() {
+	for (var i = 0; i < onProfileDataChangedListeners.length; i++)
+		onProfileDataChangedListeners[i](profiles);
+}
+
+function setSessionProfile(profileId, callback) {
+	$.get(baseUrl + "/pages/set_profile.jsp?id=" + profileId, function(data) {
+		if (callback) {
+			callback(data);
+		}
+	});
+}
+
+function selectProfile(profileId, resetRoute) {
+	if (resetRoute) {
+		window.location.hash = '';
+	}
+
+	if (profileId == 0) {
+		return;
+	}
+
+	for (var i = 0; i < profiles.length; i++) {
+		if (profiles[i].l_profile_id == profileId) {
+			selectedProfile = profiles[i];
+		}
+	}
+
+	if (selectedProfile.l_profile_id == 0) {
+		console.error("unknown profile id " + profileId);
+	}
+
+	$(".profileColor").css("background-color", "#" + selectedProfile.s_color);
+
+	$("#profile").text(selectedProfile.s_profile_name);
+	$("#profiles").hide();
+	// needed to set the session value in the background.
+	setSessionProfile(profileId, function() {
+		triggerOnProfileSelected(selectedProfile);
+	});
+}
+
+function renameProfile(id, name, color) {
+	if (id == $("#profile").attr("data-id")) {
+		$("#profile").attr("data-id", id);
+		$("#profile").text(name);
+	}
+
+	for (var i = 0; i < profiles.length; i++) {
+		if (profiles[i].l_profile_id == id) {
+			profiles[i].s_profile_name = name;
+			if (color)
+				profiles[i].s_color = color;
+			triggerOnProfileDataChanged();
+			return;
+		}
+	}
+}
+
+function showCreateNewProfile() {
+	showModal("Create new Profile", "#div_new_profile", function() {
+		$("#loader").css("background-color", "#" + selectedProfile.s_color);
+	});
+
+	$("input[name=profile_name]").focus();
+
+	var pObj = $("input[name=picker]");
+	pObj.change(changeProfileColor);
+	var picker = new jscolor.color(pObj.get(0), {
+		slider : false,
+		pickerFaceColor : 'transparent',
+		pickerFace : 3,
+		pickerBorder : 0,
+		pickerInsetColor : 'black'
+	});
+	picker.fromString('99FF33');
+}
+
+function changeProfileColor(color) {
+	$("#loader").css("background-color", "#" + color.target.value);
+}
+
+function closeNewProfile() {
+	hideModal();
+}
+
+function createNewProfile(inputName, inputPicker) {
+	var name = $("input[name=" + inputName + "]");
+	var color = $("input[name=" + inputPicker + "]");
+
+	var queryData = {};
+	queryData.n = name.val();
+	queryData.c = color.val();
+
+	$.getJSON(baseUrl + "/api/v1/user/profiles/new", queryData, function(data) {
+		if (data.success) {
+			setSessionProfile(data.profileid, function() {
+				location.reload();
+			});
+			hideModal();
+		} else {
+			$("#modal_error_text").text("Couldn't add profile. " + data.error);
+			$("#modal_error").show();
+			return;
+		}
+	});
+}
+
+
+var apiShareCollection = "api/v1/collections/share"; 
+
+function showShareCollection() {
+	console.log(selectedStream);
+	showModal("Share " + selectedStream.s_stream_name, "#div_share_collection", 
+		function closeModal() {
+		},
+		function postInit(modal) {
+			$("#collectionName").val(selectedStream.s_stream_name);
+		}
+	);
+}
+
+function shareCollection() {
+	var queryData = {};
+	queryData.id = selectedStream.l_stream_id;
+	queryData.name = $("#collectionName").val();
+	queryData.description = $("#collectionDesc").val();
+	
+	$.post(baseUrl + "/" + apiShareCollection, queryData, function http(data, status) {
+		if (data.error) {
+			modalError(data.error);
+		} else if (data.success) {
+			hideModal();
+		} else {
+			console.error(data);
+			console.error(status);
+		}
+	});
+}
+
+Handlebars.registerHelper("favico", function favico(url) {
+	return baseFavicoDomain + url;
+});
+
+Handlebars.registerHelper("timediff", function timediff(time) {
+	var s = (renderTime - time) / 1000;
+	var m = Math.round(s / 60);
+	if (m < 60)
+		return m + "m";
+	var h = Math.round(m / 60);
+	if (h < 24)
+		return h + "h";
+	var d = Math.round(h / 24);
+	return d + "d";
+});
+
+Handlebars.registerHelper("tools", function tools(tmpl, entryid, options) {
+	if (tmpl == TEMPLATE_ID_SAVED) {
+		return '<a href="" onclick="removeEntry(' + entryid + ');return false;">R</a>';
+	} else {
+		return '<a href="" onclick="saveEntry(' + entryid
+				+ ');return false;"><span class="glyphicon glyphicon-floppy-disk"></span></a>'
+	}
+});
+
+Handlebars.registerHelper("position", function position() {
+	return ++position;
+});
+
+Handlebars.registerHelper("showGroupCount", function showGroupCount(a, show) {
+	if (queryGroups.showUnreadOnly || show)
+		return a.l_gr_unread;
+	return "";
+});
+
+Handlebars.registerHelper("showNextOptions", function showNextOptions(obj) {
+	var hasUnread = false;
+	var afterCurrent = false;
+	var sgLeft = undefined;
+	var sgCurrent = undefined;
+	var sgRight = undefined;
+
+	for (var x = 0; x < filteredStreamGroups.length; x++) {
+		sg = filteredStreamGroups[x];
+		if (sg.l_stream_id == selectedStream.l_stream_id) {
+			sgCurrent = sg;
+			sgCurrent.x = x;
+			afterCurrent = true;
+			continue;
+		}
+
+		if (sg.l_gr_unread == 0) {
+			continue;
+		}
+
+		hasUnread = true;
+
+		if (!afterCurrent) {
+			sgLeft = sg;
+			continue;
+		}
+
+		if (afterCurrent && sgRight == undefined) {
+			sgRight = sg;
+		}
+	}
+
+	var ret = "";
+
+	if (!hasUnread) {
+		return "... and there are no more streams with unread stories.";
+	}
+
+	if (sgLeft != undefined) {
+		ret += " Move up to <a href='#/f/" + sgLeft.l_stream_id + "'>" + sgLeft.s_stream_name + "</a>";
+	}
+
+	if (sgRight != undefined) {
+		if (sgLeft != undefined) {
+			ret += " <br>or<br> ";
+		}
+		ret += " Move down to <a href='#/f/" + sgRight.l_stream_id + "'>" + sgRight.s_stream_name + "</a>";
+	}
+
+	return ret;
+});
+
+Handlebars.registerHelper("showSourceData", function showSourceData(id, tmplOptions, showDiv, options) {
+	if (tmplOptions.showIco || tmplOptions.showSource) {
+		var ret = '';
+		if (showDiv) {
+			ret += '<div class="col-xs-' + tmplOptions.leftSize + ' text-left">';
+		}
+
+		if (tmplOptions.showIco) {
+			ret += '<img name="favico_' + id + '" class="favico" src="' + baseUrl + '/img/16x16t.png">';
+		}
+
+		if (tmplOptions.showSource) {
+			idx = subscriptionsIdx.indexOf(id);
+			if (idx != -1) {
+				ret += '&nbsp;<a name="source_' + id + '" href="#/s/' + id + '">'
+						+ cut(subscriptions[idx].s_subs_name, tmplOptions.sourceLen) + '</a>';
+			} else {
+				ret += '&nbsp;<a name="source_' + id + '" href="#/s/' + id + '">source</a>';
+			}
+		}
+
+		if (showDiv) {
+			ret += "</div>";
+		}
+
+		return ret;
+	}
+	return "";
+});
+
 var MAX_INPUT_SIZE = 50;
 var CONTENT_MAX_LEN = 500;
 var NOCACHE = 0;
@@ -107,6 +648,7 @@ var router = {};
 
 function initReader() {
 	readerHome = baseUrl + "/pages/reader.jsp";
+	console.debug('init');
 	setupTemplates();
 	setupRoutes();
 	tmplOptions.id = TEMPLATE_ID_STREAM;
@@ -375,6 +917,7 @@ function getStreamGroups(callback) {
 	var queryData = {};
 	queryData.views = true;
 
+	console.debug('get stream group');
 	$.getJSON(baseUrl + apiUrlStreamsList, queryData, function(data) {
 		streamGroups = data;
 		getUnreadCount(streamGroups, 0, function() {
@@ -422,7 +965,7 @@ function importSingleFeed() {
 	queryData.n = $("input[name=sName]:visible").val();
 	queryData.u = $("input[name=sUrl]:visible").val();
 	queryData.sid = selectedStream.l_stream_id;
-	
+
 
 	$.getJSON(baseUrl + apiUrlSubscriptionsAdd, queryData, function(data) {
 		if (data.success) {
@@ -947,6 +1490,7 @@ function loadStream(streamId) {
 }
 
 function loadAll() {
+	console.debug('load all');
 	currentView = selectedProfile.all_settings.view;
 	apiCurrentStreamsFeed = apiUrlStreamsFeedAll;
 
@@ -1231,3 +1775,636 @@ function toggleEditTools(caller, title) {
 		$(caller).html(title + '&nbsp;&raquo;&raquo;');
 	}
 }
+var streamSubscriptions = [];
+// keyed by subscription id
+var namedStreamSubscriptions = {};
+
+var apiSubscriptionAddToStream = "/api/v1/user/subscriptions/addtostream";
+var apiSubscriptionRemoveFromStream = "/api/v1/user/subscriptions/removefromstream";
+
+var queryAll = {
+	"sortBy" : "s_subs_name",
+	"keyword" : ""
+};
+
+var querySubs = {
+	"sortBy" : "s_subs_name",
+	"keyword" : ""
+};
+
+var idSearchAll = "searchQueryAll";
+var idSearchSubs = "searchQuerySubs";
+
+var allSubsTmpl;
+var subsTmpl;
+
+function initReaderSubscriptions() {
+	allSubsTmpl = Handlebars.compile($("#all_subscriptions_tmpl").html());
+	subsTmpl = Handlebars.compile($("#subscribed_tmpl").html());
+
+	$("#" + idSearchAll).on('keyup', function(e) {
+		if ((e.keyCode || e.which) == 27) { // ESC
+			// cancelStreamGroup();
+		}
+		filterByKeywordAll(e.target.value);
+		runQuery()
+	})
+
+	$("#" + idSearchSubs).on('keyup', function(e) {
+		if ((e.keyCode || e.which) == 27) { // ESC
+			// cancelStreamGroup();
+		}
+		filterByKeywordSubs(e.target.value);
+		runQuery()
+	});
+
+	fetchAllSubscriptions();
+}
+
+function renderAllReaderSubscriptions(data) {
+	$("#all_count").text(data.length);
+	$("#all_subscriptions").html(allSubsTmpl({
+		"subscriptions" : data
+	}));
+}
+
+function clearStreamSubscriptions() {
+	while (streamSubscriptions.length > 0) {
+		streamSubscriptions.pop();
+	}
+	while (namedStreamSubscriptions.length > 0) {
+		namedStreamSubscriptions.pop();
+	}
+}
+
+function fetchAllStreamSubscriptions(streamId, callback) {
+
+	getAllStreamSubscriptions(streamId, function(data) {
+		clearStreamSubscriptions();
+		$("#stream_count").text(data.entries.length);
+
+		if (data && data.entries) {
+			streamSubscriptions = data.entries;
+
+			data.entries.forEach(function(e, i, a) {
+				namedStreamSubscriptions['s' + e.l_subs_id] = {};
+				namedStreamSubscriptions['s' + e.l_subs_id].name = e.s_subs_name;
+				namedStreamSubscriptions['s' + e.l_subs_id].xml_id = e.l_xml_id;
+			});
+		}
+
+		if (callback)
+			callback(data);
+	});
+}
+
+function renderReaderSubscriptions(data) {
+	$("#stream_count").text(data.length);
+	$("#subscribed").html("");
+	$("#subscribed").html(subsTmpl({
+		"subscriptions" : data
+	}));
+}
+
+function fetchAllSubscriptions(callback) {
+	apiGetAllSubscriptions(function(data) {
+		$("#all_count").text(subscriptions.length);
+		// data = subscriptions, also loaded in the subscriptions.js file.
+		for (var i = subscriptions.length - 1; i >= 0; i--) {
+			if (namedStreamSubscriptions['s' + subscriptions[i].l_subs_id]) {
+				subscriptions.splice(i, 1);
+			}
+		}
+
+		if (callback)
+			callback(data);
+	});
+}
+
+function renderSubscriptions() {
+	filterByKeywordAll();
+	filterByKeywordSubs();
+}
+
+function removeSubscription(id) {
+	var queryData = {};
+	queryData.sid = selectedStream.l_stream_id;
+	queryData.sui = id;
+
+	$.getJSON(baseUrl + apiSubscriptionRemoveFromStream, queryData, function(data) {
+		if (data.count > 0) {
+			$("#subscription_r_" + id).remove();
+			$("#subscription_r_" + id).empty();
+			$("#reload").show();
+		} else {
+			console.error(data);
+		}
+	});
+}
+
+function addSubscription(id) {
+	var queryData = {};
+	queryData.sid = selectedStream.l_stream_id;
+	queryData.sui = id;
+
+	$.getJSON(baseUrl + apiSubscriptionAddToStream, queryData, function(data) {
+		if (data.count > 0) {
+			$("#subscription_l_" + id).remove();
+			$("#subscription_l_" + id).empty();
+			$("#reload").show();
+		} else {
+			console.error(data);
+		}
+	});
+}
+
+function filterByKeywordAll(key) {
+	queryAll.keyword = (key) ? key : $("#" + idSearchAll).val();
+	runReaderQuery(subscriptions, queryAll, true);
+}
+
+function filterByKeywordSubs(key) {
+	querySubs.keyword = (key) ? key : $("#" + idSearchSubs).val();
+	runReaderQuery(streamSubscriptions, querySubs, false);
+}
+
+function runReaderQuery(data, query, allTmpl) {
+	var jlinqQuery = jlinq.from(data).sort(query.sortBy);
+
+	if (query.keyword && query.keyword.length > 0) {
+		jlinqQuery.contains("s_subs_name", query.keyword);
+	}
+
+	if (allTmpl) {
+		renderAllReaderSubscriptions(jlinqQuery.select());
+	} else {
+		renderReaderSubscriptions(jlinqQuery.select());
+	}
+}
+
+var r = {};
+
+var profilesSettingsTmpl = {};
+
+function initSettings() {
+	profilesSettingsTmpl = Handlebars.compile($("#all_profiles_settings_tmpl").html());
+
+	var router = new Router().init();
+
+	router.on('/v/:panel', loadSettingsView);
+	router.on('/v/:panel/:val', loadSettingsView);
+
+	r = router.getRoute();
+}
+
+function setupProfileView(data) {
+	$("#profile_settings_list").html(profilesSettingsTmpl({
+		"profiles" : data
+	}));
+	loadColorPickers();
+}
+
+function loadSettingsView(str, val) {
+	console.log("show panel " + str + ", val " + val);
+	$("#content_panel").children().each(function(i, o) {
+		if (o.id == "error" || o.id == "info")
+			return;
+		$(o).hide();
+	});
+	$("#" + str).show();
+}
+
+function showMessage(selector, msg) {
+	if (!msg || msg == '') {
+		$("#" + selector).hide();
+		return;
+	}
+
+	$("#" + selector + "_text").text(msg);
+	$("#" + selector).show();
+}
+
+function showError(msg) {
+	showMessage('error', msg);
+}
+
+function showInfo(msg) {
+	showMessage('info', msg);
+}
+
+function loadColorPickers() {
+	$("#profile_settings_list").children("div").each(function(i, o) {
+		var pObj = $("#picker_" + o.id);
+		pObj.change(changeProfileColor);
+		var picker = new jscolor.color(pObj.get(0), {
+			slider : true,
+			pickerFaceColor : 'transparent',
+			pickerMode : "HSV",
+			pickerFace : 1,
+			pickerBorder : 0,
+			pickerInsetColor : 'black'
+		});
+		picker.fromString(pObj.attr("data-color"));
+	});
+}
+
+function saveProfile(id) {
+	var name = $("#name_profile_" + id).val();
+	var color = $("#picker_profile_" + id).val();
+
+	var queryData = {};
+	queryData.pid = id;
+	queryData.n = name;
+	queryData.c = color;
+
+	$.getJSON(baseUrl + '/api/v1/user/profiles/save', queryData, function(data) {
+		if (data.count > 0) {
+			$("#profile_" + id).addClass("saved");
+			setTimeout(function() {
+				$("#profile_" + id).removeClass("saved");
+			}, 1500);
+
+			renameProfile(id, name, color);
+		} else {
+			console.error("error saving profile");
+			console.error(data);
+		}
+	});
+}
+
+function deleteProfile(id) {
+	if (confirm("Are you sure? Deleting a profile means:\n"
+			+ "* All recently read and saved information for this profile is deleted. \n"
+			+ "* Any stream groups not used by other profiles are deleted.")) {
+		showError('');// clears
+
+		var queryData = {};
+		queryData.pid = id;
+
+		console.log("deleting profile  " + id);
+
+		$.getJSON(baseUrl + '/api/v1/user/profiles/delete', queryData, function(data) {
+			if (data.count > 0) {
+				location.reload();
+			} else if (data.error) {
+				console.log(data.error);
+				showError(data.error);
+			} else {
+				console.log(data);
+			}
+
+		})
+	}
+}
+var subscriptionsHome = '';
+
+var subscriptions = [];
+var subscriptionsIdx = [];
+
+var filteredSubscriptions = [ {
+	"l_subs_id" : 0,
+	"s_subs_name" : 0
+} ];
+var selectedSubscriptionId = 0;
+
+var allSubscriptionsTmpl = {};
+var subscriptionDetailsTmpl = {};
+var profileStreamGrpTmpl = {};
+
+var jlinqQuery = {};
+
+var query = {
+	"sortBy" : "s_subs_name",
+	"showOnlyInactive" : false,
+	"showZeroSources" : false,
+	"keyword" : ""
+};
+
+var onAllSubscriptionsAvailableListeners = [];
+
+var sr = {};
+
+function initSubscriptions() {
+	setupTemplates();
+
+	var router = new Router().init();
+	router.on('/view/:id', showSubscriptionDetails);
+	sr = router.getRoute();
+}
+
+function setupSubsTemplates(){
+	susbcriptionsHome = baseUrl + "/pages/susbcriptions.jsp";
+	allSubscriptionsTmpl = Handlebars.compile($("#all_subscriptions_tmpl").html());
+	subscriptionDetailsTmpl = Handlebars.compile($("#subscription_details_tmpl").html());
+	profileStreamGrpTmpl = Handlebars.compile($("#profile_stream_groups_tmpl").html());
+}
+
+function initialRenderAll() {
+	query.keyword = $("#searchQuery").val();
+	query.showOnlyInactive = $("input[name=onlyinactive]").prop('checked');
+	runQuery(true);
+}
+
+function registerOnAllSubscriptionsAvailable(listener) {
+	onAllSubscriptionsAvailableListeners.push(listener);
+}
+
+function triggerOnAllSubscriptionsAvailable() {
+	for (var i = 0; i < onAllSubscriptionsAvailableListeners.length; i++) {
+		onAllSubscriptionsAvailableListeners[i](subscriptions);
+	}
+}
+
+function checkFilter() {
+	query.showOnlyInactive = $("input[name=onlyinactive]").prop('checked');
+	query.showZeroSources = $("input[name=withoutentries]").prop('checked');
+	runQuery(true);
+}
+
+function sortBy(column, direction) {
+	if (direction == "desc")
+		column = "-" + column;
+	query.sortBy = column;
+	runQuery(true);
+}
+
+function filterByKeyword() {
+	var i = $("#searchQuery");
+	query.keyword = i.val();
+	runQuery(true);
+}
+
+function runQuery(renderTmpl) {
+	jlinqQuery = jlinq.from(subscriptions).sort(query.sortBy);
+	if (query.showOnlyInactive) {
+		jlinqQuery.equals("b_gaveup", true);
+	}
+	if (query.showZeroSources) {
+		jlinqQuery.equals("i_total_entries", 0);
+	}
+
+	if (query.keyword.length > 0) {
+		jlinqQuery.contains("s_subs_name", query.keyword);
+	}
+
+	var filtered = jlinqQuery.select();
+
+	if (renderTmpl)
+		renderAllSubscriptions(filtered);
+
+	if (filtered.length > 0) {
+		showSubscriptionDetails(filtered[0].l_subs_id);
+	} else {
+		showSubscriptionDetails(0);
+	}
+
+}
+
+function renameSubscription(id, name) {
+	for (var i = 0; i < subscriptions.length; i++) {
+		if (subscriptions[i].l_subs_id == id) {
+			subscriptions[i].s_subs_name = name;
+			break;
+		}
+	}
+	runQuery(true);
+}
+
+function saveSubscription(id, name, callback) {
+	var queryData = {};
+	queryData.id = id;
+	queryData.n = name;
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/set', queryData, function(data) {
+		if (callback) {
+			return callback(data);
+		}
+
+		if (data && data.count > 0) {
+			//location.reload();
+			renameSubscription(id, name);
+		} else {
+			console.log("error ");
+			console.log(data);
+		}
+	});
+}
+
+function loadDefaultView() {
+	if (subscriptions && subscriptions.length > 0) {
+		showSubscriptionDetails(subscriptions[0].l_subs_id);
+	}
+}
+
+function loadSelectedView() {
+	showSubscriptionDetails(selectedSubscriptionId);
+}
+
+function renderAllSubscriptions(data) {
+	$("#all_subscriptions_list").html(allSubscriptionsTmpl({
+		"subscriptions" : data
+	}));
+	$("#count").text(data.length);
+}
+
+function showSubscriptionDetails(subsId) {
+	$("#profile_stream_groups").html('');
+
+	queryData = {};
+	queryData.id = subsId;
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/get', queryData, function(data) {
+		$("#subscription_details").html(subscriptionDetailsTmpl(data));
+	});
+
+	getSubscriptionStreamProfiles(subsId);
+}
+
+function apiGetAllSubscriptions(callback) {
+	if (callback) {
+		registerOnAllSubscriptionsAvailable(callback);
+	}
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/list', {}, function(data) {
+		subscriptions = data.entries;
+		for (var i = 0; i < subscriptions.length; i++) {
+			subscriptionsIdx.push(subscriptions[i].l_xml_id);
+		}
+		triggerOnAllSubscriptionsAvailable();
+	});
+}
+
+function getSubscriptionStreamProfiles(subsId) {
+	if (!subsId) {
+		return;
+	}
+
+	var queryData = {};
+	queryData.id = subsId;
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/withprofile', queryData, function(data) {
+		$("#profile_stream_groups").html("");
+
+		var streamWithProfiles = {};
+
+		data.forEach(function(e, i, a) {
+			if (!streamWithProfiles[e.s_stream_name]) {
+				streamWithProfiles[e.s_stream_name] = {};
+				streamWithProfiles[e.s_stream_name].l_stream_id = e.l_stream_id;
+				streamWithProfiles[e.s_stream_name].profiles = new Array();
+			}
+
+			streamWithProfiles[e.s_stream_name].profiles.push({
+				"l_profile_id" : e.l_profile_id,
+				"s_profile_name" : e.s_profile_name
+			});
+		});
+
+		for (k in streamWithProfiles) {
+			$("#profile_stream_groups").append(profileStreamGrpTmpl({
+				"name" : k,
+				"streamid" : streamWithProfiles[k].l_stream_id,
+				"subid" : subsId,
+				"profiles" : streamWithProfiles[k].profiles
+			}));
+		}
+	});
+}
+
+function getAllStreamSubscriptions(streamId, callback) {
+	var queryData = {};
+	queryData.sid = streamId;
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/list', queryData, function(data) {
+		callback(data);
+	});
+}
+
+function addSubscriptionToNewStream(profileId) {
+}
+
+function removeFromStreamGroup(subsId, streamId) {
+
+	var queryData = {};
+	queryData.sui = subsId;
+	queryData.sid = streamId;
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/removefromstream', queryData, function(data) {
+		if (data.count > 0) {
+			showSubscriptionDetails(subsId);
+		} else {
+			console.error("error ");
+			console.error(data);
+		}
+	});
+
+}
+
+function removeStreamFromProfile(profileId, streamId) {
+	var queryData = {};
+	queryData.pid = profileId;
+	queryData.sid = streamId;
+
+	//    $.getJSON(baseUrl + '/api/v1/user/streams/delete', queryData, function(data) {
+	//        console.log(data);
+	//
+	//        if (data.count > 0) {
+	//            $("#span_" + profileId + "_" + streamId).remove();
+	//        } else {
+	//            console.error("error ");
+	//            console.error(data);
+	//        }
+	//    });
+}
+
+function removeFromSubscriptionsArray(name, val) {
+	for (var i = 0; i < subscriptions.length; i++) {
+		if (subscriptions[i][name] == val) {
+			console.log("removed from subscriptions " + name + "=" + val + "@idx " + i);
+			subscriptions.splice(i, 1);
+			return;
+		}
+	}
+}
+
+function removeSubscription(subsId) {
+	console.log("remove subscription " + selectedSubscriptionId);
+
+	var queryData = {};
+	queryData.sid = subsId;
+
+	$.getJSON(baseUrl + '/api/v1/user/subscriptions/remove', queryData, function(data) {
+		if (data.count >= 0) {
+			removeFromSubscriptionsArray("l_subs_id", subsId);
+			runQuery(true, true);
+		} else {
+			console.error("error removing subscription id " + subsId);
+			console.error(data);
+		}
+	});
+}
+
+var welcome = 'welcome';
+var steps = [ 'password-setup', 'thanks' ];
+function changePassword(elem, formElem) {
+	$('#password-msg').hide();
+	var pwd1 = $(formElem).find('input[name=pwd1]').val();
+	var pwd2 = $(formElem).find('input[name=pwd2]').val();
+	if (pwd1 != pwd2) {
+		showWarning('Passwords don\'t match');
+	} else if (pwd1 == '') {
+		showWarning('Empty password');
+	} else {
+		$.post('wizard', {
+			'pwd1' : pwd1,
+			'pwd2' : pwd2,
+			'wizard-step' : 1
+		}, function(data) {
+			if (data.success) {
+				$(elem).addClass('success');
+				goNext(true);
+			} else if (data.code == 100) {
+				showWarning(data.error);
+				$("#btn-pwd-change").addClass('success').html('Skip step');
+				$("#btn-pwd-change").removeAttr("onclick");
+				$("#btn-pwd-change").on("click", goNext);
+			} else if (data.error) {
+				showWarning(data.error);
+			} else {
+				showWarning(data);
+			}
+		}).fail(function(data, test) {
+			console.debug(data, test);
+			showWarning(data.statusText);
+		})
+	}
+}
+function showWarning(msg) {
+	$('#password-msg').show()
+	$('#password-msg').addClass('warn-msg').html(msg);
+}
+function currentStep() {
+	return steps[0];
+}
+var running = false;
+function goNext(hideWelcome) {
+	if (running) {
+		return;
+	}
+	running = true;
+	var step = steps[0];
+	steps.splice(0, 1);
+	console.debug('step', step);
+	console.debug('steps', steps);
+	setTimeout(function() {
+		if (hideWelcome) {
+			$('#' + welcome).fadeOut(1000);
+		}
+		$('.' + step).fadeOut(1000, function() {
+			$('.' + currentStep()).show();
+			running = false;
+		});
+	}, 200);
+}
+
+//# sourceMappingURL=app.legacy.js.map

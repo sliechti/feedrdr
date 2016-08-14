@@ -1,0 +1,50 @@
+.el-menu {
+	position: absolute;
+	display: none;
+	z-index: 999;
+	overflow: visible;
+	white-space: nowrap;
+	background-color: $bg-header;
+	border: 1px solid $fade-color;
+	border-radius: 2px;
+	min-width: 100px;
+	font-size: $font-small;
+
+	a {
+		text-decoration: none;
+	}
+
+	.fa {
+		vertical-align: middle;
+		padding-left: 10px;
+
+		&:hover {
+			color: $primary-contrast-color;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		text-align: right;
+
+		li {
+			padding: 0px 5px 0px 5px;
+			border-bottom: 1px solid $fade-color;
+
+			&:hover {
+				background-color: $primary-color;
+			}
+
+			&:hover * {
+				color: $primary-contrast-color;
+			}
+		}
+	}
+}
+
+.el-menu-header {
+	top: 40px;
+	right: 0px;
+}

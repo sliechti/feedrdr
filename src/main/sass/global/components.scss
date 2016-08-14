@@ -1,0 +1,23 @@
+.box {
+	text-align: center;
+	padding: 5px;
+	border: 1px solid $fade-color;
+	cursor: pointer;
+	text-transform: uppercase;
+	color: $primary-color;
+
+	&.disabled {
+		background-color: $disabled-color;
+		color: $disabled-font-color;
+
+		&:hover {
+			background-color: $disabled-color;
+			pointer: auto;
+		}
+	}
+
+	&:hover {
+		background-color: $bg-color-2;
+	}
+}
+

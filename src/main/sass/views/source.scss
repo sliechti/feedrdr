@@ -1,0 +1,32 @@
+#source-header {
+	overflow: hidden;
+
+	.source-logo {
+		img {
+			max-width: 50%;
+			max-height: 150px;
+			float: left;
+		}
+	}
+	.channel-info {
+		font-size: $font-med;
+		line-height: 30px;
+		float: right;
+		text-align: right;
+
+		a {
+			text-decoration: none;
+			color: $primary-color;
+		}
+	}
+
+	.channel-desc {
+		padding: 10px 0px 10px 0px;
+		border-bottom: 1px solid $fade-color;
+		margin-bottom: 10px;
+	}
+
+	.channel-entries {
+		font-size: $font-small;
+	}
+}

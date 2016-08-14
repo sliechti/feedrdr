@@ -1,0 +1,14 @@
+
+.form {
+
+	font-size: $font-med;
+
+	input {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 500px;
+		padding: 5px 3px 3px 3px;
+		border: 1px solid $fade-color;
+	}
+
+}

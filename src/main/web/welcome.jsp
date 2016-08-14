@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<fmt:setLocale value="${language}" scope="session" />
+  <fmt:setLocale value="${language}" scope="session" />
 <fmt:setBundle basename="i18n.message" />
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 </head>
 <body class="margin0">
 	<div class="header">
-		<div class="table center w80p block">
+		<div class="table center content-width block">
 			<div class="cell left h100">
 				<span class="h100 vertical-helper vertical-middle"></span>
 				<img src="img/logo.svg" id="logo" class="vertical-middle" height="30" />
@@ -59,7 +59,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 			</div>
 		</div>
 	</div>
-	<div class="content">
+	<div class="center content-width content">
 		<div id="center-piece">
 			<div class="cell w50p">
 				<p class="intro">

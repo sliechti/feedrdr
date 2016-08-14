@@ -1,0 +1,56 @@
+.settings-header {
+
+	width: 100%;
+
+	a {
+		color: $primary-color;
+		font-size: $font-med;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding: 0px;
+		white-space: nowrap;
+
+		li {
+			display: inline-block;
+			padding-right: 20px;
+		}
+	}
+
+}
+
+#settings-content {
+
+	.section-header {
+		font-size: $font-large;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		font-weight: bold;
+	}
+}
+
+#settings-profile {
+
+	.row {
+		white-space: nowrap;
+		margin-bottom: 10px;
+
+		.fa {
+			font-size: $font-med;
+		}
+	}
+
+	.row > div {
+		display: inline-block;
+	}
+
+	.row > div * {
+		vertical-align: middle;
+	}
+}

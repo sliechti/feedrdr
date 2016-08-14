@@ -1,0 +1,104 @@
+.relative {
+	position: relative;
+}
+
+.profile-color {
+}
+
+.profile-line {
+	height: 1px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.font-large {
+	font-size: $font-large;
+}
+
+.font-med {
+	font-size: $font-med;
+}
+
+.font-small {
+	font-size: $font-small;
+}
+
+.icon-hide {
+	display: none;
+}
+
+.bottom-shadow {
+	border-bottom: 1px bottom #CACACA;
+	box-shadow: 0px 3px 3px #CACACA;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+.primary-bg-color {
+	background-color: $primary-color;
+}
+
+.primary-bg-color {
+	background-color: $primary-color;
+}
+
+.primary-tc-color {
+	color: $primary-contrast-color;
+}
+
+.primary-tc-color a {
+	color: $primary-contrast-color;
+}
+
+.primary-t-color {
+	color: $primary-color;
+}
+
+.primary-t-color a {
+	color: $primary-color;
+}
+
+.decor-none {
+	text-decoration: none;
+}
+
+.border-top-fade {
+	border-top: 1px solid $fade-color;
+}
+
+.border-bottom-fade {
+	border-bottom: 1px solid $fade-color;
+}
+
+.border-tb-fade {
+	border-top: 1px solid $fade-color;
+	border-bottom: 1px solid $fade-color;
+}
+
+.fade-color {
+	color: $fade-color;
+}
+
+.fa {
+	color: $fade-color;
+
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+.v-middle {
+	vertical-align: middle;
+}
+
+.debug {
+	border: 1px solid red;
+}
+
+.no-overflow {
+	overflow: hidden;
+}

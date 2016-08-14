@@ -1,0 +1,43 @@
+.msg {
+	margin: 5px 0px;
+	padding: 5px;
+	position: relative;
+}
+
+.msg-error {
+	@extend .msg;
+	background-color: $failed-color;
+	border: 1px solid $fade-color;
+
+	* {
+		color: white;
+	}
+
+	.actions {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+
+		.fa:hover {
+			color: white;
+		}
+	}
+}
+
+.info-msg {
+	@extend .msg;
+	background-color: $info-color;
+	color: white;
+}
+
+.warn-msg {
+	@extend .msg;
+	background-color: $warning-color;
+	color: #183C4F;
+}
+
+.success-msg {
+	@extend .msg;
+	background-color: $success-color;
+	color: white;
+}

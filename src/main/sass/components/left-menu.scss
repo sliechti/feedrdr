@@ -1,0 +1,99 @@
+$left-menu-bgcolor: white;
+
+#left-menu {
+
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 999;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	border-right: 1px solid $fade-color;
+	background-color: $left-menu-bgcolor;
+	width: 100%;
+	max-width: 250px;
+
+	.menu-header {
+		background-color: $bg-color;
+		a:hover {
+			.fa {
+				color: $primary-color;
+			}
+		}
+	}
+
+	a {
+		color: $primary-color;
+		text-decoration: none;
+	}
+
+	hr {
+		border-top: 0px;
+		border-bottom: 1px solid $fade-color;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.header {
+		margin-bottom: 10px;
+	}
+
+	 ul {
+		list-style: none;
+		padding: 0px 0px 0px 0px;
+		margin: 0px;
+
+		li {
+			padding-top: 3px;
+			padding-bottom: 3px;
+			overflow: hidden;
+		}
+	}
+
+	.back {
+		background-color: #173C4F;
+		text-align: center;
+		margin-bottom: 10px;
+
+		a {
+			color: white;
+		}
+	}
+
+	.menu-icons a {
+		margin-right: 15px;
+		color: $fade-color;
+	}
+}
+
+#left-menu-content {
+	position: relative;
+
+	li {
+		padding-left: 20px;
+	}
+}
+
+
+#streams-header {
+	margin: 10px 0px 10px 0px;
+}
+
+#streams-actions {
+	width: 100%;
+	text-align: right;
+
+	.fa {
+		vertical-align: middle;
+	}
+}
+
+#streams-filter {
+	text-align:right;
+}
+
+#left-add-content {
+	margin: 20px;
+}
+
+

@@ -1,4 +1,12 @@
 
+<%@page import="feedreader.store.UsersTable"%>
+<%@page import="feedreader.store.UserProfilesTable"%>
+<%@page import="feedreader.entities.ProfileData"%>
+<%@page import="feedreader.security.Session"%>
+<%@page import="feedreader.entities.UserData"%>
+<%@page import="feedreader.config.Constants"%>
+<%@page import="feedreader.utils.PageUtils"%>
+<%@page import="feedreader.security.UserSession"%>
 <%
     long userId = UserSession.getUserId(request);
     if (userId == 0) {

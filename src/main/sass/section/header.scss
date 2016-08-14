@@ -1,0 +1,77 @@
+$line-height: 40px;
+
+.header {
+	position: relative;
+	border-bottom: 0.8px solid #D6D6D6;
+	padding: 10px 0px;
+	height: $line-height;
+	box-shadow: 0px 1px 3px #CACACA;
+	background-color: $bg-header;
+
+	.logo {
+		height: 100%;
+	}
+
+	.fa {
+		line-height: $line-height;
+		font-size: 1.3em;
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+
+}
+
+#app-logo {
+	margin-left: -10px;
+}
+
+.header-line {
+	line-height: $line-height;
+}
+
+
+#header-input {
+	line-height: $line-height;
+	position: relative;
+	overflow: hidden;
+}
+
+#header-input input {
+	border-width: 0px 0px 0px 0px;
+	width: 100%;
+	font-size: $font-med;
+}
+
+#header-input input:focus {
+	outline: none;
+}
+
+#header-input a {
+	position: absolute;
+	right: 0px;
+}
+
+.header-left {
+	float: left;
+	width: 30%;
+}
+
+.header-right {
+	float: right;
+	width: 70%;
+	position: relative;
+}
+
+.header-right a {
+	padding-left: 10px;
+}
+
+.header-btn {
+	border: 2px solid #D6D6D6;
+	border-radius: 2px;
+	padding: 5px 20px;
+	margin-top: 5px;
+}
+

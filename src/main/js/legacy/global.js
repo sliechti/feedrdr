@@ -1,3 +1,4 @@
+
 var baseUrl = "/";
 var closeModalCallback = {};
 var MODALBOX_SELECTOR = "#modalBox";

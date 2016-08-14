@@ -1,7 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
+
+<!DOCTYPE html>
+<html language="${language}">
 <head>
-<title>404 Error</title>
+<title>500 Error</title>
 <meta charset="utf-8">
 <link rel="icon" href="${baseUrl}/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
@@ -24,6 +26,7 @@
 		<div class="center w80p">
 			<c:choose>
 				<c:when test="${isLocal}">
+					<h3>${pageContext.exception.message}</h3>
 					<c:forEach var="trace" items="${pageContext.exception.stackTrace}">
 						${trace}<br>
 					</c:forEach>

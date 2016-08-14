@@ -34,7 +34,7 @@ function initSubscriptions() {
 	sr = router.getRoute();
 }
 
-function setupTemplates(){
+function setupSubsTemplates(){
 	susbcriptionsHome = baseUrl + "/pages/susbcriptions.jsp";
 	allSubscriptionsTmpl = Handlebars.compile($("#all_subscriptions_tmpl").html());
 	subscriptionDetailsTmpl = Handlebars.compile($("#subscription_details_tmpl").html());
@@ -249,14 +249,14 @@ function removeStreamFromProfile(profileId, streamId) {
 
 	//    $.getJSON(baseUrl + '/api/v1/user/streams/delete', queryData, function(data) {
 	//        console.log(data);
-	//        
+	//
 	//        if (data.count > 0) {
 	//            $("#span_" + profileId + "_" + streamId).remove();
 	//        } else {
 	//            console.error("error ");
 	//            console.error(data);
 	//        }
-	//    });    
+	//    });
 }
 
 function removeFromSubscriptionsArray(name, val) {

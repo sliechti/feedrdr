@@ -1,11 +1,3 @@
-<%@page import="feedreader.entities.UserData"%>
-<%@page import="feedreader.config.FeedAppConfig"%>
-
-<%! static String baseUrl = FeedAppConfig.BASE_APP_URL; %>
-<%
-	UserData user = (UserData)request.getAttribute("user");
-%>
-
 <script id="header_right_tools" type="text/x-handlebars-template">
 		<div id="view-options" class="right">
 			<a class="pointer" onclick="$('.right_tools').toggle()">Options</a>
@@ -50,9 +42,10 @@
 			<span class="title"></span>
 			<a class="pointer" onclick="toggleEditTools(this, '{{s_stream_name}}')">{{s_stream_name}}&nbsp;&raquo;</a>
 			<span id="edit_tools" style="display: none">
-			<% if (user.isAdmin()) { %>
+
+<c:if test="${user.admin}">
 				<a title="share collection" href="" onclick="showShareCollection({{l_stream_id}});return false;"><span class="glyphicon glyphicon-share"></span></a>
-			<% } %>
+</c:if>
 			<a title="mark all entries as read" href="" onclick="markAllRead(); return false;"><span class="glyphicon glyphicon-ok-sign"></span></a>
 			<a title="rename stream" href="" onclick="showRename('stream_rename');return false;"><span class="glyphicon glyphicon-edit"></span></a>
 			<a title="add single feed" href="" onclick="showImport(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
@@ -76,7 +69,7 @@
 						<img src="{{favico s_xml_url}}">
 						<a href="{{s_link}}" target="_blank">{{toUpperCase s_title}}</a>
 						|| <a href="{{s_xml_url}}" target="_blank">XML FEED</a><br>
-						<b>Total entries : {{i_total_entries}}, visible to your profile (<%= user.getUserType() %>) : {{count}}</b>
+						<b>Total entries : {{i_total_entries}}, visible to your profile (${user.userType}) : {{count}}</b>
 						</span>
 						<br><br>
 						<span id="source_description">{{s_description}}</span><br>
@@ -98,13 +91,13 @@
 
 <script id="simple_view_header_tmpl" type="text/x-handlebars-template">
 <span style="float: left">
-		<img class="icon" src="<%= baseUrl%>/img/icon-stream.png">{{title}}&nbsp;{{page}}</span>
+		<img class="icon" src="${baseUrl}/img/icon-stream.png">{{title}}&nbsp;{{page}}</span>
 {{> header_right_tools}}
 </script>
 
 <script id="recently_read_header_tmpl" type="text/x-handlebars-template">
 <span style="float: left">
-	<img class="icon" src="<%= baseUrl%>/img/icon-stream.png">{{title}}&nbsp;
+	<img class="icon" src="${baseUrl}/img/icon-stream.png">{{title}}&nbsp;
 		<a title="clear all" href="" onClick="confirmClearRecentlyRead();return false;"><span class="glyphicon glyphicon glyphicon-remove-sign"></span></a>
 </span>
 
@@ -132,7 +125,7 @@
 		{{#each entries}}
 				<div id="news_{{l_entry_id}}" class="news row news_card news_mag" data-pos="{{position}}" data-id="{{l_entry_id}}">
 						<div>
-								<img class="left margin10" width="220" height="120" id="img_{{l_entry_id}}" src="<%= baseUrl %>/img/1px.png">
+								<img class="left margin10" width="220" height="120" id="img_{{l_entry_id}}" src="${baseUrl}/img/1px.png">
 								<a class="title" name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">{{s_title}}</a>
 								<br>
 								<p class="content" id="cnt_{{l_entry_id}}">{{content}}</p>
@@ -180,7 +173,7 @@
 				<a onClick="addSubscription({{l_subs_id}});return false;"
 						href="">{{cut s_subs_name 30}}</a>
 				<a class="noshow right" target="_blank" href="#/s/{{l_xml_id}}">source</a>
-				<a class="noshow right" target="_blank" href="<%= baseUrl %>/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
+				<a class="noshow right" target="_blank" href="${baseUrl}/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
 				<a class="noshow right" href="" onClick="addSubscription({{l_subs_id}});return false;" >add</a>
 		</li>
 	 {{/each}}
@@ -196,7 +189,7 @@
 				<a title="remove subscription" onClick="removeSubscription({{l_subs_id}});return false;"
 						href="">{{cut s_subs_name 30}}</a>
 				<a class="noshow right" target="_blank" href="#/s/{{l_xml_id}}">source</a>
-				<a class="noshow right" target="_blank" href="<%= baseUrl %>/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
+				<a class="noshow right" target="_blank" href="${baseUrl}/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
 				<a class="noshow right" href="" onClick="removeSubscription({{l_subs_id}});return false;">remove</a>
 		</li>
 	 {{/each}}
@@ -274,7 +267,7 @@ we created for you.<br>
 
 <script id="content_unknown" type="text/x-handlebars-template">
 		<center><h3>Page not found.</h3>
-		<p class="lead"><a href="<%= baseUrl %>"/reader.jsp>Go to start</a></p></center>
+		<p class="lead"><a href="${baseUrl}/reader.jsp">Go to start</a></p></center>
 </script>
 
 <script id="stream_group_start_tmpl" type="text/x-handlebars-template">
@@ -305,22 +298,17 @@ we created for you.<br>
 	</div>
 </div>
 
-<%
-    if (user.isAdmin()) {
-%>
-<div id="div_share_collection" data-stream_id="0" style="display: none; visibility: hidden">
-	<div class="modal-body">
-		<label for="feed_name"> Name of collection</label> <input class="form-control" type="text" id="collectionName" name="name"><br>
-		<label for="feed_url">Description</label>
-		<textarea class="form-control" id="collectionDesc" name="description"></textarea>
-		<br>
+<c:if test="${user.admin}">
+	<div id="div_share_collection" data-stream_id="0" style="display: none; visibility: hidden">
+		<div class="modal-body">
+			<label for="feed_name"> Name of collection</label> <input class="form-control" type="text" id="collectionName" name="name"><br>
+			<label for="feed_url">Description</label>
+			<textarea class="form-control" id="collectionDesc" name="description"></textarea>
+			<br>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" onclick="hideModal()" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary" onclick="shareCollection()">Share collection</button>
+		</div>
 	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-default" onclick="hideModal()" data-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-primary" onclick="shareCollection()">Share collection</button>
-	</div>
-</div>
-<%
-    }
-%>
-
+</c:if>

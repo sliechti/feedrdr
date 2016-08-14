@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.utils.PageUtils"%>
 <%@page import="feedreader.security.Admin"%>
@@ -23,12 +25,10 @@
 <%@page import="java.util.TreeSet"%>
 <%@page import="feedreader.config.FeedAppConfig"%>
 
-<% request.setAttribute("j", true); %>
-<% request.setAttribute("s", true); %>
-<% request.setAttribute("r", true); %>
-<% request.setAttribute("rs", true); %>
-
-<%@include file="header.jsp" %>
+<jsp:include page="header.jsp">
+	<jsp:param name="title" value="reader" />
+	<jsp:param name="baseUrl" value="${baseUrl}" />
+</jsp:include>
 
 <div id="stream_content">
 
@@ -81,9 +81,10 @@
 
 </div>
 
-<jsp:include page="tmpl/reader.tmpl.jsp"></jsp:include>
+<jsp:include page="tmpl/reader.tmpl.jsp" />
 
 <script type="text/javascript">
+	setBaseUrl('${baseUrl}');
     window.scrollTo(0,0);
     $("#mark_all_read").css("margin-top", screen.height - (screen.height *0.3));
 
@@ -106,6 +107,7 @@
         });
 
         var route = router.getRoute();
+        console.debug(route);
         if(route && route.length == 1) {
             getStreamGroups(function(streamGroups, filteredStreamGroups) {
                 if (filteredStreamGroups.length > 0) {
@@ -157,4 +159,4 @@
 		});
 </script>
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp" />

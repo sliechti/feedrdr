@@ -6,18 +6,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="${baseUrl}/js/vendor/jquery.min.js" type="text/javascript" /></script>
-<link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
 <link rel="stylesheet" href="${baseUrl}/css/login.css" />
 </head>
 <body>
-	<div class="login">
+	<div id="login">
 		<div class="login-header">
 			<a href="${baseUrlLink}">
 				<img src="img/app-logo.svg" height="100"/>
 			</a>
 			<p>Reset your password</p>
 		</div>
-		<div class="login-box login-form bottom10">
+		<div class="login-content">
 			<c:if test="${not empty err}">
 				<div class="warn-msg">${err}</div>
 			</c:if>
@@ -46,13 +45,13 @@
 							your password.
 						</p>
 						<input type="hidden" name="reset" value="1" />
-						<input type="text" class="w100p" placeholder="email" id="email" name="email">
-						<button class="w100p">Send email</button>
+						<input type="text" class="w100p" placeholder="Email" id="email" name="email">
+						<button class="w100p">Send password reset instructions</button>
 					</form>
 				</c:otherwise>
 			</c:choose>
 		</div>
-		<div class="secondary">
+		<div class="footer">
 			<p>New to feedrdr.co?<br> <a href="${baseUrlLink}">Create an account</a><br>
 				or<br>
 			<a href="login">Sign in</a></p>
