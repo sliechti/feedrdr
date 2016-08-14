@@ -25,7 +25,7 @@
 		<div id="profiles" class="hide font-med bottom-shadow bg-white primary-t-color">
 			<jsp:include page="mock/mock-menu-profiles.jsp" />
 			<div class="border-tb-fade">
-				<a href="" onclick="showCreateNewProfile(); return false;">
+				<a href="settings.jsp">
 					New Profile
 				</a>
 			</div>
@@ -40,7 +40,7 @@
 	    <div class="ul-section" id="special-entries">
 	    <ul>
 	    	<li>
-		        <a href="reader.jsp#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
+		        <a href="#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
 	    	</li>
 	    	<li>
 		        <a href="#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>

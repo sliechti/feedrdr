@@ -19,6 +19,41 @@
 		position: relative;
 	}
 
+	.views-box {
+		float: right;
+
+		a {
+			float: left;
+		}
+	}
+
+	#icon_view_line {
+		background-image: url("../img/view-list.png");
+		background-repeat: no-repeat;
+		background-position: 0px 3px;
+		display: block;
+		width: 18px;
+		height: 18px;
+	}
+
+	#icon_view_mag {
+		background-image: url("../img/view-mag.png");
+		background-repeat: no-repeat;
+		background-position: 0px 3px;
+		display: block;
+		width: 18px;
+		height: 18px;
+	}
+
+	#icon_view_stream {
+		background-image: url("../img/view-stream.png");
+		background-repeat: no-repeat;
+		background-position: 0px 3px;
+		display: block;
+		width: 18px;
+		height: 18px;
+	}
+
 }
 
 #stream-actions {

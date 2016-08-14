@@ -1,6 +1,6 @@
 <div id="stream-footer">
 	<div class="center content-width">
-		<div class="load-more box" onclick="alert('load-more')">
+		<div class="load-more box" onclick="loadMore(); ">
 			Load more
 		</div>
 		<div class="actions">

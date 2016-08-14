@@ -2,6 +2,10 @@ Handlebars.registerHelper("favico", function favico(url) {
 	return baseFavicoDomain + url;
 });
 
+Handlebars.registerHelper("log", function(a, b, c) {
+	console.log(a, b, c);
+});
+
 Handlebars.registerHelper("timediff", function timediff(time) {
 	var s = (renderTime - time) / 1000;
 	var m = Math.round(s / 60);
@@ -83,6 +87,16 @@ Handlebars.registerHelper("showNextOptions", function showNextOptions(obj) {
 	}
 
 	return ret;
+});
+
+
+Handlebars.registerHelper('sourceName', function sourceName(id) {
+	idx = subscriptionsIdx.indexOf(id);
+	if (idx != -1) {
+		return subscriptions[idx].s_subs_name;
+	} else {
+		return 'n.a.';
+	}
 });
 
 Handlebars.registerHelper("showSourceData", function showSourceData(id, tmplOptions, showDiv, options) {

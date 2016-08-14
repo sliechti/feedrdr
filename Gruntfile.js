@@ -22,11 +22,10 @@ module.exports = function(grunt) {
 			dev : {
 				options : {
 					stripBanners : true,
-					sourceMap : true,
-					nonull : true
+					sourceMap : true
 				},
 				files : {
-					"src/main/web/js/app.js" : "src/main/js/*.js",
+					"src/main/web/js/app.js" : "src/main/js/app/*.js",
 					"src/main/web/js/app.legacy.js" : "src/main/js/legacy/*.js"
 				}
 			}

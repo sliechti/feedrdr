@@ -10,7 +10,7 @@ var filteredSubscriptions = [ {
 var selectedSubscriptionId = 0;
 
 var allSubscriptionsTmpl = {};
-var subscriptionDetailsTmpl = {};
+//var subscriptionDetailsTmpl = {};
 var profileStreamGrpTmpl = {};
 
 var jlinqQuery = {};
@@ -37,7 +37,7 @@ function initSubscriptions() {
 function setupSubsTemplates(){
 	susbcriptionsHome = baseUrl + "/pages/susbcriptions.jsp";
 	allSubscriptionsTmpl = Handlebars.compile($("#all_subscriptions_tmpl").html());
-	subscriptionDetailsTmpl = Handlebars.compile($("#subscription_details_tmpl").html());
+//	subscriptionDetailsTmpl = Handlebars.compile($("#subscription_details_tmpl").html());
 	profileStreamGrpTmpl = Handlebars.compile($("#profile_stream_groups_tmpl").html());
 }
 
@@ -156,7 +156,7 @@ function showSubscriptionDetails(subsId) {
 	queryData.id = subsId;
 
 	$.getJSON(baseUrl + '/api/v1/user/subscriptions/get', queryData, function(data) {
-		$("#subscription_details").html(subscriptionDetailsTmpl(data));
+//		$("#subscription_details").html(subscriptionDetailsTmpl(data));
 	});
 
 	getSubscriptionStreamProfiles(subsId);
@@ -185,7 +185,8 @@ function getSubscriptionStreamProfiles(subsId) {
 	queryData.id = subsId;
 
 	$.getJSON(baseUrl + '/api/v1/user/subscriptions/withprofile', queryData, function(data) {
-		$("#profile_stream_groups").html("");
+//		$("#profile_stream_groups").html("");
+
 
 		var streamWithProfiles = {};
 
@@ -203,12 +204,12 @@ function getSubscriptionStreamProfiles(subsId) {
 		});
 
 		for (k in streamWithProfiles) {
-			$("#profile_stream_groups").append(profileStreamGrpTmpl({
-				"name" : k,
-				"streamid" : streamWithProfiles[k].l_stream_id,
-				"subid" : subsId,
-				"profiles" : streamWithProfiles[k].profiles
-			}));
+//			$("#profile_stream_groups").append(profileStreamGrpTmpl({
+//				"name" : k,
+//				"streamid" : streamWithProfiles[k].l_stream_id,
+//				"subid" : subsId,
+//				"profiles" : streamWithProfiles[k].profiles
+//			}));
 		}
 	});
 }

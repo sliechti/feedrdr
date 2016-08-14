@@ -25,35 +25,45 @@
 				<a title="mark all entries as read" href="" class="mark_all_read" onclick="markAllRead(); return false;">
 				<span class="glyphicon glyphicon-ok-sign"></span></a>
 		{{/if}}
-		<div id="views-box">
-			<a title="show as list" href="" onclick="setLineView();return false;"><span id="icon_view_line" title="line view"></span></a>
-			<a title="show in magazine view" href="" onclick="setMagazineView();return false;"><span id="icon_view_mag" title="magazine view"></span></a>
-			<a title="show in stream view" href="" onclick="setStreamView();return false;"><span id="icon_view_stream" title="stream view"></span></a>
-		</div>
 		</div>
 </script>
 
-<script id="stream_group_header_tmpl" type="text/x-handlebars-template">
-		<div id="div_stream_rename" style="float: left; display: none;">
-				<input type="text" id="txt_stream_rename" value="{{s_stream_name}}">
-				<button class="btn btn-primary btn-xs" onClick="renameStreamGroup()">save</button>&nbsp;
+<script id="stream-header-tmpl" type="text/x-handlebars-template">
+	{{log 'stream-header-tmpl' this}}
+	<div class="stream-header">
+		<div class="angle" onclick="shToggleActions(this)">
+			<i class="pointer fa fa-angle-right"></i>
 		</div>
-		<div id="header-stream-group">
-			<span class="title"></span>
-			<a class="pointer" onclick="toggleEditTools(this, '{{s_stream_name}}')">{{s_stream_name}}&nbsp;&raquo;</a>
-			<span id="edit_tools" style="display: none">
-
-<c:if test="${user.admin}">
-				<a title="share collection" href="" onclick="showShareCollection({{l_stream_id}});return false;"><span class="glyphicon glyphicon-share"></span></a>
-</c:if>
-			<a title="mark all entries as read" href="" onclick="markAllRead(); return false;"><span class="glyphicon glyphicon-ok-sign"></span></a>
-			<a title="rename stream" href="" onclick="showRename('stream_rename');return false;"><span class="glyphicon glyphicon-edit"></span></a>
-			<a title="add single feed" href="" onclick="showImport(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
-			<a title="show subscriptions" href="" onClick="toggleHeaderTool('subscriptions');return false;"><span class="glyphicon glyphicon-list-alt"></span></a>
-			<a title="delete stream" href="" onClick="showDeleteStream();return false;"><span class="glyphicon glyphicon glyphicon-remove-sign"></span></a>
-			</span>
+		<div class="stream-title title">
+			{{s_stream_name}}
+			<div id="stream-actions" class="hide">
+				<i class="fa fa-check-circle"></i>
+				<i class="fa fa-plus-circle"></i>
+			</div>
+			<div class="right">
+				<i onclick="shToggleSettings()"
+					class="-icon-hide pointer fa fa-cog right fade-color"></i>
+			</div>
 		</div>
-		{{> header_right_tools this}}
+	</div>
+	<div id="stream-options" class="hide">
+		<div class="actions">
+			<i class="fa fa-remove"></i>
+			<i class="fa fa-share"></i>
+		</div>
+		<div class="views-box">
+			<a title="show as list" href="" onclick="setLineView();return false;">
+				<span id="icon_view_line" title="line view"></span>
+			</a>
+			<a title="show in magazine view" href="" onclick="setMagazineView();return false;">
+				<span id="icon_view_mag" title="magazine view"></span>
+			</a>
+			<a title="show in stream view" href="" onclick="setStreamView();return false;">
+				<span id="icon_view_stream" title="stream view"></span>
+			</a>
+		</div>
+	stream options
+	</div>
 </script>
 
 
@@ -105,64 +115,102 @@
 </script>
 
 <script id="news_line_tmpl" type="text/x-handlebars-template">
+<div id="stream-list" class="line-view">
+	<div id="line-view-options-tmpl" class="options hide">
+		<i class="fa fa-bookmark-o"></i>
+		<i class="fa fa-share"></i>
+		<i class="fa fa-tag"></i>
+		<i class="fa fa-info-circle"></i>
+	</div>
 		{{#each entries}}
-				<div id="news_{{l_entry_id}}" class="news row news_line" data-pos="{{position}}" data-id="{{l_entry_id}}">
-						{{#showSourceData l_xml_id ../tmplOptions true}}{{/showSourceData}}
-						<div id="title" class="col-xs-{{../midSize}}">
-						{{timediff t_pub_date}}
-						<a name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-								{{s_title}}</a>
-						</div>
-						<div class="col-xs-1 text-right">
-						{{#tools ../tmpl l_entry_id}}{{/tools}}
-						</div>
-				</div>
+		<div id="article-{{l_entry_id}}" class="article" >
+			<div class="angle" onclick="slLineOptions(this, '{{l_entry_id}}')">
+				<i class="pointer fa fa-angle-right fade-color"></i>
+			</div>
+			<div class="content">
+				<a href="{{s_link}}">{{s_title}}</a>
+			</div>
+		</div>
 		{{/each}}
+</div>
 </script>
 
 
 <script id="news_mag_tmpl" type="text/x-handlebars-template">
+<div id="stream-list" class="line-view">
+	<div id="line-view-options-tmpl" class="options hide">
+		<i class="fa fa-bookmark-o"></i>
+		<i class="fa fa-share"></i>
+		<i class="fa fa-tag"></i>
+		<i class="fa fa-info-circle"></i>
+	</div>
 		{{#each entries}}
-				<div id="news_{{l_entry_id}}" class="news row news_card news_mag" data-pos="{{position}}" data-id="{{l_entry_id}}">
-						<div>
-								<img class="left margin10" width="220" height="120" id="img_{{l_entry_id}}" src="${baseUrl}/img/1px.png">
-								<a class="title" name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">{{s_title}}</a>
-								<br>
-								<p class="content" id="cnt_{{l_entry_id}}">{{content}}</p>
-						</div>
-						<div style="clear: both">
-								<div class="left">
-								{{#showSourceData l_xml_id ../tmplOptions false}}{{/showSourceData}}
-								</div>
-								<div class="right">
-										{{timediff t_pub_date}}
-										{{#tools ../tmpl l_entry_id}}{{/tools}}&nbsp;
-								</div>
-						</div>
+		<div id="news_${l_entry_id}" class="news-mag">
+			<div class="content">
+				<div class="img-wrap">
+					<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
+					class="left margin10" id="img_{{l_entry_id}}" src="/img/1px.png">
 				</div>
+				<a class="title" href="{{s_link}}">
+					{{s_title}}
+				</a>
+				<p class="content" id="cnt_{{l_entry_id}}">
+				{{content}}
+				</p>
+			</div>
+			<div class="news-footer">
+				<div class="actions">
+					<i class="fa fa-bookmark-o"></i>
+					<i class="fa fa-share"></i>
+					<i class="fa fa-tag"></i>
+					<i class="fa fa-info-circle"></i>
+				</div>
+				<div class="right source">
+					<a href="#">
+						mashable
+					</a>
+				</div>
+			</div>
+		</div>
 		{{/each}}
+</div>
 </script>
 
 <script id="news_stream_tmpl" type="text/x-handlebars-template">
+<div id="stream-list" class="line-view">
+	<div id="line-view-options-tmpl" class="options hide">
+		<i class="fa fa-bookmark-o"></i>
+		<i class="fa fa-share"></i>
+		<i class="fa fa-tag"></i>
+		<i class="fa fa-info-circle"></i>
+	</div>
 		{{#each entries}}
-				<div id="news_{{l_entry_id}}" class="news row news_card news_stream" data-pos="{{position}}" data-id="{{l_entry_id}}">
-						<div class="img" id="img_{{l_entry_id}}"></div>
-						<div>
-								<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-								{{s_title}}</a>
-						</div>
-						<div class="content" id="cnt_{{l_entry_id}}">{{content}}</div>
-						<div>
-								<div class="left">
-									 {{#showSourceData l_xml_id ../tmplOptions false}}{{/showSourceData}}
-								</div>
-								<div class="right">
-										<span id="date">{{timediff t_pub_date}}
-										{{#tools ../tmpl l_entry_id}}{{/tools}}&nbsp;</span>
-								</div>
-						</div>
+		<div id="news_{{l_entry_id}}" class="news-card">
+			<div class="img-wrap" id="img_{{l_entry_id}}">
+				<img src="">
+			</div>
+			<div class="content">
+				<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
+					{{s_title}}
+				</a>
+				<p id="cnt_{{l_entry_id}}"></p>
+			</div>
+			<div class="news-footer">
+				<div class="actions">
+					<i class="fa fa-bookmark-o"></i>
+					<i class="fa fa-share"></i>
+					<i class="fa fa-tag"></i>
+					<i class="fa fa-info-circle"></i>
 				</div>
+				<div class="right source">
+					<a href="#">
+						{{#sourceName l_xml_id}}{{/sourceName}}
+					</a>
+				</div>
+			</div>
+		</div>
 		{{/each}}
+</div>
 </script>
 
 <script id="all_subscriptions_tmpl" type="text/x-handlebars-template">

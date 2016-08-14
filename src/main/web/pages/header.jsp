@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
 <link rel="stylesheet" href="${baseUrl}/css/default.css" />
 <script src="${baseUrl}/js/vendor/jquery.min.js"></script>
-<script src="${baseUrl}/js/vendor/jquery.mobile-1.4.5.min.js"></script>
 <script src="${baseUrl}/js/vendor/handlebars.min.js"></script>
 <script src="${baseUrl}/js/vendor/jscolor/jscolor.min.js"></script>
 <script src="${baseUrl}/js/vendor/director.min.js"></script>
@@ -38,12 +37,12 @@
 				<div id="header-el" class="el-menu el-menu-header">
 					<ul>
 						<li>
-							<a href="">
+							<a href="${baseUrl}/logout">
 								Sign out <i class="fa fa-sign-out"></i>
 							</a>
 						</li>
 						<li>
-							<a href="settings.jsp">
+							<a href="${baseUrl}/pages/settings.jsp">
 								Settings <i class="fa fa-cog"></i>
 							</a>
 						</li>
