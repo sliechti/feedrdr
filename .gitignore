@@ -12,3 +12,5 @@ src/test/resources/xml
 /out/
 *.log
 lib
+.sass-cache
+node_modules

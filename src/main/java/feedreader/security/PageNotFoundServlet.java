@@ -21,10 +21,6 @@ public class PageNotFoundServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("page not found: {}", req.getAttribute("javax.servlet.error.request_uri"));
-        // Enumeration<String> attrs = req.getAttributeNames();
-        // while (attrs.hasMoreElements()) {
-        // logger.info("elem: {}", attrs.nextElement());
-        // }
-        ServletUtils.redirect(req, resp, "/error/404.jsp");
+        ServletUtils.redirect(req, resp, "/404.jsp");
     }
 }

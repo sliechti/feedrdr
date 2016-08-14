@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.utils.PageUtils"%>
 <%@page import="feedreader.security.Admin"%>
@@ -23,67 +25,26 @@
 <%@page import="java.util.TreeSet"%>
 <%@page import="feedreader.config.FeedAppConfig"%>
 
-<% request.setAttribute("j", true); %>
-<% request.setAttribute("s", true); %>
-<% request.setAttribute("r", true); %>
-<% request.setAttribute("rs", true); %>
+<jsp:include page="header.jsp">
+	<jsp:param name="title" value="reader" />
+</jsp:include>
 
-<%@include file="header.jsp" %>
-
-<div id="stream_content">
-
-    <div id="simple_view_header" class="row"></div>
-
-    <div id="stream_group_view_header" class="row">
-
-        <div id="stream_group_header" class="row"></div>
-
-        <div id="header_subscriptions" class="noshow row">
-	        <div class="row">
-	        	<div class="col-md-12">
-	        		<a href="" onclick="toggleHeaderTool('subscriptions');return false;">
-	        			<span class="right glyphicon glyphicon-remove-circle"></span>
-	       			</a>
-	        	</div>
-			</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4><label id="all_count"></label> subscriptions: [ <a href="<%= PageUtils.getPath("/pages/import.jsp") %>">import</a> /
-                    <a href="<%= PageUtils.getPath("/pages/subscriptions.jsp") %>">manage</a> ]</h4>
-                    <input class="form-control" type="text" id="searchQueryAll"  tabindex="5" placeholder="search" onchange="filterByKeywordAll()"><br>
-                    <div id="all_subscriptions" tabindex="6" class="subsdata"></div>
-                </div>
-                <div class="col-md-6">
-                    <h4><label id="stream_count"></label> subscriptions in this group: </h4>
-                    <input class="form-control" type="text" id="searchQuerySubs" tabindex="7" placeholder="search" onchange="filterByKeywordSubs()"><br>
-                    <div id="subscribed" tabindex="8" class="subsdata row"></div>
-                </div>
-            </div>
-            <div id="reload" class="noshow theme-bgcolor text-center">
-                <a href="" onclick="reloadSelected();return false;" class="lead block">Save and reload</a>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="stream"  class="row">
-        <div id="stream_entries" class="row"></div>
-        <div id="stream_more" class="noshow row block text-center lead">
-            <a href="" class="footer_links" onclick="loadMore(); return false;">load more</a>
-        </div>
-        <div class="mark_all_read noshow">
-            <a href="" class="footer_links" onclick="markAllRead(); return false;">mark all read</a>
-        	<div id="footer_spacing" style="height: 600px"></div>
-        </div>
-
-    </div>
-
-
+<div id="stream-header" class="sub-header sub-line">
+	<div class="content center content-width">
+	</div>
 </div>
 
-<jsp:include page="tmpl/reader.tmpl.jsp"></jsp:include>
+<div class="center content-width">
+<div id="stream-content">
+	<div id="stream-entries"></div>
+	<jsp:include page="stream-footer.jsp" />
+</div>
+</div>
+
+<jsp:include page="tmpl/reader.tmpl.jsp" />
 
 <script type="text/javascript">
+	setBaseUrl('${baseUrl}');
     window.scrollTo(0,0);
     $("#mark_all_read").css("margin-top", screen.height - (screen.height *0.3));
 
@@ -96,6 +57,7 @@
         setProfile(selectedProfile);
 
         registerChangeViewListener(function() {
+            console.debug('view changed');
         	$("a[name=link]").on("click", function(e) {
         		var queryData = {};
         		queryData.e = 0;
@@ -157,4 +119,4 @@
 		});
 </script>
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp" />

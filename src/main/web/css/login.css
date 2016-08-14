@@ -1,55 +1,478 @@
-* {
-	box-sizing: border-box;
+html {
+  font-family: Roboto, arial, sans-serif;
+  font-size: 100%;
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+.relative {
+  position: relative;
+}
+
+.profile-line {
+  height: 1px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.font-large {
+  font-size: 1.3em;
+}
+
+.font-med {
+  font-size: 1.2em;
+}
+
+.font-small {
+  font-size: 0.8em;
+}
+
+.icon-hide {
+  display: none;
+}
+
+.bottom-shadow {
+  border-bottom: 1px bottom #CACACA;
+  box-shadow: 0px 3px 3px #CACACA;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.primary-bg-color {
+  background-color: #173C4F;
+}
+
+.primary-bg-color {
+  background-color: #173C4F;
+}
+
+.primary-tc-color {
+  color: white;
+}
+
+.primary-tc-color a {
+  color: white;
+}
+
+.primary-t-color {
+  color: #173C4F;
+}
+
+.primary-t-color a {
+  color: #173C4F;
+}
+
+.decor-none {
+  text-decoration: none;
+}
+
+.border-top-fade {
+  border-top: 1px solid #CACACA;
+}
+
+.border-bottom-fade {
+  border-bottom: 1px solid #CACACA;
+}
+
+.border-tb-fade {
+  border-top: 1px solid #CACACA;
+  border-bottom: 1px solid #CACACA;
+}
+
+.fade-color {
+  color: #CACACA;
+}
+
+.fa {
+  color: #CACACA;
+}
+.fa:hover {
+  color: #173C4F;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+.danger {
+  background-color: #CF1F48;
+  color: white;
+}
+
+.important {
+  background-color: #D1D1BC;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.submit-btn, .form input[type=submit] {
+  margin-top: 25px;
+  padding: 5px 30px 3px 30px;
+  border: 1px solid #CACACA;
+  background-color: #173C4F;
+  color: white;
+}
+.submit-btn:hover, .form input[type=submit]:hover {
+  background-color: #235a77;
+}
+.submit-btn.disabled, .form input.disabled[type=submit] {
+  background-color: #CACACA;
+}
+
+.form {
+  font-size: 1.2em;
+}
+.form * {
+  box-sizing: border-box;
+}
+.form input[type=text], .form input[type=password] {
+  padding: 5px 3px 3px 3px;
+  border: 1px solid #CACACA;
+}
+.form input[type=button] {
+  padding: 5px 10px 3px 10px;
+  border: 1px solid #CACACA;
+}
+.form input[type=button] {
+  padding: 5px 10px 3px 10px;
+  border: 1px solid #CACACA;
+}
+.form button {
+  padding: 5px 3px 3px 3px;
+  border: 1px solid #CACACA;
+}
+
+.form-wide input[type=text], .form-wide input[type=password] {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-m-spacing > div {
+  line-height: 35px;
+}
+
+.form-l-spacing > div {
+  line-height: 40px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .form input {
+    font-size: 1.1em;
+  }
+}
+.max500 {
+  max-width: 500px;
+}
+
+.max300 {
+  max-width: 300px;
+}
+
+.min250 {
+  min-width: 250px;
+}
+
+.padding20 {
+  padding: 20px;
+}
+
+.h40 {
+  height: 40px;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.border0 {
+  border: 0;
+}
+
+.wauto {
+  width: auto;
+}
+
+.w100p {
+  width: 100%;
+}
+
+.w80p {
+  width: 80%;
+}
+
+.w70p {
+  width: 70%;
+}
+
+.w60p {
+  width: 60%;
+}
+
+.w20p {
+  width: 20%;
+}
+
+.w50p {
+  width: 50%;
+}
+
+.w50px {
+  width: 50px;
+}
+
+.w20px {
+  width: 20px;
+}
+
+.lined30 input {
+  height: 30px;
+}
+
+.ls-med {
+  line-height: 35px;
+}
+
+.margin0 {
+  margin: 0px;
+}
+
+.margin20 {
+  margin: 20px;
+}
+
+.bottom5 {
+  margin-bottom: 5px;
+}
+
+.bottom10 {
+  margin-bottom: 10px;
+}
+
+.bottom40 {
+  margin-bottom: 40px;
+}
+
+.r10p {
+  margin-right: 10px;
+}
+
+.r20p {
+  margin-right: 20px;
+}
+
+.mt20p {
+  margin-top: 20px;
+}
+
+.bt-margin20 {
+  bottom-margin: 20px;
+  top-margin: 20px;
+}
+
+.wide-padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pad10 {
+  padding: 10px;
+}
+
+.pad5 {
+  padding: 5px;
+}
+
+.pt5p {
+  padding-top: 5px;
+}
+
+.pb5p {
+  padding-bottom: 5px;
+}
+
+.pl5p {
+  padding-left: 5px;
+}
+
+.pl20p {
+  padding-left: 20px;
+}
+
+.pr20p {
+  padding-right: 20px;
+}
+
+.pr10p {
+  padding-right: 10px;
+}
+
+.pr5p {
+  padding-right: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.table {
+  display: table;
+}
+
+.cell {
+  display: table-cell;
+}
+
+.center {
+  margin: auto;
 }
 
 .block {
-	display: block;
+  display: block;
 }
 
-margin50 {
-	margin: 50px;
+.hide {
+  display: none;
 }
 
-.login {
-	margin: auto;
-	width: 300px;
-	text-align: center;
+.vertical-helper {
+  display: inline-block;
 }
 
-.login-box {
-	background-color: white;
-	padding: 20px;
-	border-radius: 5px;
-	border: 1px solid #CACACA;
+.box {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #CACACA;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
-.login-form * {
-	padding: 4px;
-	border-radius: 2px;
-	border-width: 0.8px;
+.primary-box {
+  background-color: #173C4F;
+  color: white;
+}
+.primary-box.disabled {
+  background-color: #DDDDDD;
+  color: #777777;
+}
+.primary-box.disabled:hover {
+  background-color: #DDDDDD;
+  pointer: auto;
+}
+.primary-box:hover {
+  background-color: #235a77;
 }
 
-.login input {
-	margin-bottom: 5px;
-	color: #606060;
+.light-box {
+  color: #173C4F;
+}
+.light-box.disabled {
+  background-color: #DDDDDD;
+  color: #777777;
+}
+.light-box.disabled:hover {
+  background-color: #DDDDDD;
+  pointer: auto;
+}
+.light-box:hover {
+  background-color: #FCFCFC;
 }
 
-.login button {
-	border-radius: 2px;
-	background-color: #5372BA;
-	color: white;
+.hr-separator {
+  border-top: 0px;
+  border-bottom: 1px solid #CACACA;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.secondary {
-	color: #606060;
-	font-size: 0.7em;
+html {
+  background-color: #F9F9F9;
 }
 
-.secondary a {
-	color: #606060;
-	text-decoration: none;
+#login {
+  margin: auto;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+#login form a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #606060;
+}
+#login form * {
+  outline: none;
+  padding: 4px;
+}
+#login form input {
+  font-size: 1.2em;
+  box-sizing: border-box;
+  border: 1px solid #CACACA;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+#login form .fade * {
+  color: #173C4F;
+}
+#login .login-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #CACACA;
+}
+#login button {
+  font-size: 1.2em;
+  border-radius: 2px;
+  border: 0px;
+  background-color: #5372BA;
+  color: white;
+}
+#login .footer {
+  margin-top: 20px;
+  background-color: #F9F9F9;
+  font-size: 0.8em;
+}
+#login .footer a {
+  color: #173C4F;
+  text-decoration: none;
+}
+#login .footer a:hover {
+  text-decoration: underline;
 }
 
-.secondary a:hover {
-	text-decoration: underline;
-}
+/*# sourceMappingURL=login.css.map */

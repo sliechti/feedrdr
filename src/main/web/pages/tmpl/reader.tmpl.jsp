@@ -1,175 +1,250 @@
-<%@page import="feedreader.entities.UserData"%>
-<%@page import="feedreader.config.FeedAppConfig"%>
-
-<%! static String baseUrl = FeedAppConfig.BASE_APP_URL; %>
-<%
-	UserData user = (UserData)request.getAttribute("user");
-%>
-
-<script id="header_right_tools" type="text/x-handlebars-template">
-		<div id="view-options" class="right">
-			<a class="pointer" onclick="$('.right_tools').toggle()">Options</a>
-		</div>
-		<div id="right_tools" class="right_tools" style="display: none">
-
-		{{#if title}}
-		{{else}}
-				<a title="show all" href="" id="show_all" onclick="showAll();return false;">
-				<span class=" glyphicon glyphicon-eye-open"></span></a>
-				<a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">
-				<span class=" glyphicon glyphicon-eye-close"></span>&nbsp;(<span id="unread"></span>)</a>
+<script id="stream-options" type="text/x-handlebars-template">
+	{{log 'stream-options' this}}
+	<div id="stream-options" class="el-menu el-menu-header">
+		<ul>
+		{{#if options.showFilter}}
+			<li>
+			<a href="" id="show_all" onclick="showAll();return false;">
+				All
+				<i class="fa fa-eye"></i>
+			</a>
+			</li>
+			<li>
+			<a href="" id="show_unread" onclick="showUnreadOnly();return false;">
+				Unread
+				&nbsp;(<span id="unread"></span>)
+				<i class="fa fa-eye-slash"></i>
+			</a>
+			</li>
 		{{/if}}
-		{{#if title}}
-		{{else}}
-				<a title="show newest first" href="" id="newset_first" onclick="streamSort(SORT_NEW_FIRST);return false;">
-				<span class="glyphicon glyphicon-sort-by-order"></span></a>
-				<a title="show oldest first" href="" id="oldest_first" onclick="streamSort(SORT_OLD_FIRST);return false;">
-				<span class="glyphicon glyphicon-sort-by-order-alt"></span></a>
+		{{#if options.showRanking}}
+			<li>
+			<a href="" onclick="streamSort(SORT_NEW_FIRST);return false;">
+				New first
+				<i class="fa fa-sort-numeric-asc"></i>
+			</a>
+			</li>
+			<li>
+			<a href="" onclick="streamSort(SORT_OLD_FIRST);return false;">
+				Oldest first
+				<i class="fa fa-sort-numeric-desc"></i>
+			</a>
+			</li>
 		{{/if}}
-				<a title="reload stream" href="" class="reload_stream" onclick="reloadStream(); return false;">
-				<span class="glyphicon glyphicon-refresh"></span></a>
-		{{#if title}}
-		{{else}}
-				<a title="mark all entries as read" href="" class="mark_all_read" onclick="markAllRead(); return false;">
-				<span class="glyphicon glyphicon-ok-sign"></span></a>
-		{{/if}}
-		<div id="views-box">
-			<a title="show as list" href="" onclick="setLineView();return false;"><span id="icon_view_line" title="line view"></span></a>
-			<a title="show in magazine view" href="" onclick="setMagazineView();return false;"><span id="icon_view_mag" title="magazine view"></span></a>
-			<a title="show in stream view" href="" onclick="setStreamView();return false;"><span id="icon_view_stream" title="stream view"></span></a>
-		</div>
-		</div>
+			<li>
+			<a href="" onclick="setLineView();return false;">
+				Line
+				<span class="icon" id="icon_view_line" title="line view"></span>
+			</a>
+			</li>
+			<li>
+			<a href="" onclick="setMagazineView();return false;">
+				Magazine
+				<span class="icon" id="icon_view_mag" title="magazine view"></span>
+			</a>
+			</li>
+			<li>
+			<a href="" onclick="setStreamView();return false;">
+				Stream
+				<span class="icon" id="icon_view_stream" title="stream view"></span>
+			</a>
+			</li>
+		</ul>
+	</div>
 </script>
 
-<script id="stream_group_header_tmpl" type="text/x-handlebars-template">
-		<div id="div_stream_rename" style="float: left; display: none;">
-				<input type="text" id="txt_stream_rename" value="{{s_stream_name}}">
-				<button class="btn btn-primary btn-xs" onClick="renameStreamGroup()">save</button>&nbsp;
+<script id="stream-header-tmpl" type="text/x-handlebars-template">
+	{{log 'stream-header-tmpl' this}}
+	<div class="stream-header">
+		<div class="angle" onclick="shToggleActions(this)">
+			<i class="pointer fa fa-angle-right"></i>
 		</div>
-		<div id="header-stream-group">
-			<span class="title"></span>
-			<a class="pointer" onclick="toggleEditTools(this, '{{s_stream_name}}')">{{s_stream_name}}&nbsp;&raquo;</a>
-			<span id="edit_tools" style="display: none">
-			<% if (user.isAdmin()) { %>
-				<a title="share collection" href="" onclick="showShareCollection({{l_stream_id}});return false;"><span class="glyphicon glyphicon-share"></span></a>
-			<% } %>
-			<a title="mark all entries as read" href="" onclick="markAllRead(); return false;"><span class="glyphicon glyphicon-ok-sign"></span></a>
-			<a title="rename stream" href="" onclick="showRename('stream_rename');return false;"><span class="glyphicon glyphicon-edit"></span></a>
-			<a title="add single feed" href="" onclick="showImport(); return false;"><span class="glyphicon glyphicon-plus"></span></a>
-			<a title="show subscriptions" href="" onClick="toggleHeaderTool('subscriptions');return false;"><span class="glyphicon glyphicon-list-alt"></span></a>
-			<a title="delete stream" href="" onClick="showDeleteStream();return false;"><span class="glyphicon glyphicon glyphicon-remove-sign"></span></a>
-			</span>
-		</div>
-		{{> header_right_tools this}}
-</script>
-
-
-<script id="source_header_tmpl" type="text/x-handlebars-template">
-		<div class="row">
-				{{#if s_img_url}}
-				<div class="margin10 col-xs-2">
-						<img id="source_image" src="{{s_img_url}}">
-				</div>
+		<div class="stream-title title">
+			{{stream.s_stream_name}}
+			<div id="stream-actions" class="hide">
+				{{#if options.showMarkAllRead}}
+				<a href="" onclick="markAllRead(); return false;">
+					<i class="fa fa-check" title="Mark stream read"></i>
+				</a>
 				{{/if}}
-				<div class="margin10">
-						<span id="stream_name">
-						<img src="{{favico s_xml_url}}">
-						<a href="{{s_link}}" target="_blank">{{toUpperCase s_title}}</a>
-						|| <a href="{{s_xml_url}}" target="_blank">XML FEED</a><br>
-						<b>Total entries : {{i_total_entries}}, visible to your profile (<%= user.getUserType() %>) : {{count}}</b>
-						</span>
-						<br><br>
-						<span id="source_description">{{s_description}}</span><br>
-						<div id="user_subscription" class="noshow">
-								<div id="div_subscription_rename" style="float: left; display: none;">
-									 <input type="text" id="txt_subscription_rename" value="">
-									 <button class="btn btn-primary btn-xs" onClick="renameSubscription()">save</button>&nbsp;
-								</div>
-								<a href="" id="span_subscription_rename">subscription_name</a>
-								<span class="glyphicon glyphicon-edit pointer" onclick="showRename('subscription_rename');return false;"></span>
-								<br>
-								Last updated on: {{formatUnixTs t_checked_at}}
-						</div>
-				</div>
-				{{> header_right_tools}}
+				{{#if options.showAdd}}
+				<a href="${baseUrl}/add?to={{stream.l_stream_id}}">
+					<i class="fa fa-plus" title="Add content"></i>
+				</a>
+				{{/if}}
+				{{#if options.showSubscriptions}}
+				<a href="${baseUrl}/add?to={{stream.l_stream_id}}">
+				<a href="" onclick="toggleSubscriptions()">
+					<i class="fa fa-list" title="List subscriptions"></i>
+				</a>
+				{{/if}}
+				{{#if options.showClearRecentlyRead}}
+				<a href="" onclick="confirmClearRecentlyRead(); return false;">
+					<i class="fa fa-remove" title="Clear recently read"></i>
+				</a>
+				{{/if}}
+				{{#if options.showClearSaved}}
+				<a href="" onclick="clearSaved(); return false;">
+					<i class="fa fa-remove" title="Clear saved list"></i>
+				</a>
+				{{/if}}
+				{{#if options.showDeleteStream}}
+				<a href="" onclick="deleteStream({{stream.l_stream_id}}); return false;">
+					<i class="fa fa-remove" title="Delete stream"></i>
+				</a>
+				{{/if}}
+			</div>
 		</div>
+		<div class="right relative">
+			<i onclick="showEl(this, 'stream-options')"
+				class="-icon-hide pointer fa fa-ellipsis-v right fade-color"></i>
+			{{> stream-options}}
+		</div>
+	</div>
+</script>
+
+
+<script id="source-header-tmpl" type="text/x-handlebars-template">
+{{log 'source header tmpl' this}}
+	<div>
+		<a href="" onclick="location.history(-1); return false">Back</a>
+	</div>
+<div class="no-overflow">
+	{{#if s_img_url}}
+	<div class="source-logo">
+		<img src="{{s_img_url}}">
+	</div>
+	{{/if}}
+	<div class="channel-info">
+		<img src="{{favico s_xml_url}}">
+		<a href="{{s_link}}" target="_blank">{{s_title}}</a>
+		<br>
+		<!-- <span class="subscibe">
+			<a href="#" class="source-add">
+				<i class="fa fa-plus-circle"></i>
+				subscribe
+			</a>
+		</span> -->
+	</div>
+</div>
+<div class="source-info">
+	<div class="channel-desc">{{s_description}}</div>
+	<div class="channel-entries w100p text-right">
+		entries {{i_total_entries}} -
+		<a href="{{s_xml_url}}" target="_blank">feed</a>
+		last updated on: {{formatUnixTs t_checked_at}}
+		<div class="right">
+			&nbsp;
+			<i onclick="shToggleSettings()"
+				class="-icon-hide pointer fa fa-ellipsis-v right fade-color"></i>
+		</div>
+	</div>
+</div>
+{{> stream-options}}
 </script>
 
 
 <script id="simple_view_header_tmpl" type="text/x-handlebars-template">
 <span style="float: left">
-		<img class="icon" src="<%= baseUrl%>/img/icon-stream.png">{{title}}&nbsp;{{page}}</span>
-{{> header_right_tools}}
+		<img class="icon" src="${baseUrl}/img/icon-stream.png">{{title}}&nbsp;{{page}}</span>
+{{> stream-options}}
 </script>
 
 <script id="recently_read_header_tmpl" type="text/x-handlebars-template">
 <span style="float: left">
-	<img class="icon" src="<%= baseUrl%>/img/icon-stream.png">{{title}}&nbsp;
+	<img class="icon" src="${baseUrl}/img/icon-stream.png">{{title}}&nbsp;
 		<a title="clear all" href="" onClick="confirmClearRecentlyRead();return false;"><span class="glyphicon glyphicon glyphicon-remove-sign"></span></a>
 </span>
-
-{{> header_right_tools}}
+{{> stream-options}}
 </script>
 
 <script id="news_line_tmpl" type="text/x-handlebars-template">
+<div id="stream-list" class="line-view">
+	<div id="line-view-options-tmpl" class="options hide">
+	<a href="#" onclick="slForwardSaveEntry(this);return false;">
+		<i class="fa fa-bookmark-o"></i>
+	</a>
+	</div>
 		{{#each entries}}
-				<div id="news_{{l_entry_id}}" class="news row news_line" data-pos="{{position}}" data-id="{{l_entry_id}}">
-						{{#showSourceData l_xml_id ../tmplOptions true}}{{/showSourceData}}
-						<div id="title" class="col-xs-{{../midSize}}">
-						{{timediff t_pub_date}}
-						<a name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-								{{s_title}}</a>
-						</div>
-						<div class="col-xs-1 text-right">
-						{{#tools ../tmpl l_entry_id}}{{/tools}}
-						</div>
-				</div>
+		<div id="article-{{l_entry_id}}" class="article" >
+			<div class="angle" onclick="slLineOptions(this, '{{l_entry_id}}')">
+				<i class="pointer fa fa-angle-right fade-color"></i>
+			</div>
+			<div class="content">
+				{{timediff t_pub_date}}
+				<a name="link" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">{{s_title}}</a>
+			</div>
+		</div>
 		{{/each}}
+</div>
 </script>
 
 
 <script id="news_mag_tmpl" type="text/x-handlebars-template">
-		{{#each entries}}
-				<div id="news_{{l_entry_id}}" class="news row news_card news_mag" data-pos="{{position}}" data-id="{{l_entry_id}}">
-						<div>
-								<img class="left margin10" width="220" height="120" id="img_{{l_entry_id}}" src="<%= baseUrl %>/img/1px.png">
-								<a class="title" name="link" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">{{s_title}}</a>
-								<br>
-								<p class="content" id="cnt_{{l_entry_id}}">{{content}}</p>
-						</div>
-						<div style="clear: both">
-								<div class="left">
-								{{#showSourceData l_xml_id ../tmplOptions false}}{{/showSourceData}}
-								</div>
-								<div class="right">
-										{{timediff t_pub_date}}
-										{{#tools ../tmpl l_entry_id}}{{/tools}}&nbsp;
-								</div>
-						</div>
-				</div>
-		{{/each}}
+<div id="stream-list" class="line-view">
+	{{#each entries}}
+	<div id="news_${l_entry_id}" class="news-mag">
+		<div class="content">
+			<img style=""
+			class="left margin10" id="img_{{l_entry_id}}" src="${baseUrl}/img/1px.png">
+			<a name="link" class="title" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">
+				{{timediff t_pub_date}}
+				{{s_title}}
+			</a>
+			<div>
+				<p id="cnt_{{l_entry_id}}">
+				{{content}}
+				</p>
+			</div>
+		</div>
+		<div class="news-footer">
+			<div class="actions">
+				<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
+					<i class="fa fa-bookmark-o"></i>
+				</a>
+			</div>
+			<div class="right source">
+				<a href="#">
+					<a href="#/s/{{l_xml_id}}">
+						{{#sourceName l_xml_id}}{{/sourceName}}
+					</a>
+				</a>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
 </script>
 
 <script id="news_stream_tmpl" type="text/x-handlebars-template">
-		{{#each entries}}
-				<div id="news_{{l_entry_id}}" class="news row news_card news_stream" data-pos="{{position}}" data-id="{{l_entry_id}}">
-						<div class="img" id="img_{{l_entry_id}}"></div>
-						<div>
-								<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-								{{s_title}}</a>
-						</div>
-						<div class="content" id="cnt_{{l_entry_id}}">{{content}}</div>
-						<div>
-								<div class="left">
-									 {{#showSourceData l_xml_id ../tmplOptions false}}{{/showSourceData}}
-								</div>
-								<div class="right">
-										<span id="date">{{timediff t_pub_date}}
-										{{#tools ../tmpl l_entry_id}}{{/tools}}&nbsp;</span>
-								</div>
-						</div>
-				</div>
-		{{/each}}
+<div id="stream-list" class="line-view">
+	{{#each entries}}
+	<div id="news_{{l_entry_id}}" class="news-card">
+		<div class="img-wrap" id="img_{{l_entry_id}}">
+			<img src="">
+		</div>
+		<div class="content">
+			<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
+				{{timediff t_pub_date}}
+				{{s_title}}
+			</a>
+			<p class="content" id="cnt_{{l_entry_id}}"></p>
+		</div>
+		<div class="news-footer">
+			<div class="actions">
+				<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
+					<i class="fa fa-bookmark-o"></i>
+				</a>
+			</div>
+			<div class="right source">
+				<a href="#/s/{{l_xml_id}}">
+					{{#sourceName l_xml_id}}{{/sourceName}}
+				</a>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
 </script>
 
 <script id="all_subscriptions_tmpl" type="text/x-handlebars-template">
@@ -180,7 +255,7 @@
 				<a onClick="addSubscription({{l_subs_id}});return false;"
 						href="">{{cut s_subs_name 30}}</a>
 				<a class="noshow right" target="_blank" href="#/s/{{l_xml_id}}">source</a>
-				<a class="noshow right" target="_blank" href="<%= baseUrl %>/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
+				<a class="noshow right" target="_blank" href="${baseUrl}/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
 				<a class="noshow right" href="" onClick="addSubscription({{l_subs_id}});return false;" >add</a>
 		</li>
 	 {{/each}}
@@ -196,7 +271,7 @@
 				<a title="remove subscription" onClick="removeSubscription({{l_subs_id}});return false;"
 						href="">{{cut s_subs_name 30}}</a>
 				<a class="noshow right" target="_blank" href="#/s/{{l_xml_id}}">source</a>
-				<a class="noshow right" target="_blank" href="<%= baseUrl %>/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
+				<a class="noshow right" target="_blank" href="${baseUrl}/pages/subscriptions.jsp#/v/{{l_subs_id}}">manage</a>
 				<a class="noshow right" href="" onClick="removeSubscription({{l_subs_id}});return false;">remove</a>
 		</li>
 	 {{/each}}
@@ -205,16 +280,20 @@
 
 
 <script id="stream_groups_tmpl" type="text/x-handlebars-template">
-		<ul>
-		{{#each groups}}
-				 <li id="e_{{l_stream_id}}">{{@key}}
+<ul>
+	{{#each groups}}
+	<li id="e_121">
+		<div class="left">
 			<a href="#/f/{{l_stream_id}}" onclick="closeLeftBar()">
-				{{cut s_stream_name 17}}
+				{{s_stream_name}}
 			</a>
-					 <label id="e_c_{{l_stream_id}}">{{showGroupCount this}}</label>
-		</li>
-		{{/each}}
-		</ul>
+		</div>
+		<div id="e_c_121" class="w50px right text-right pr20p">
+			{{showGroupCount this}}
+		</div>
+	</li>
+	{{/each}}
+</ul>
 </script>
 <script id="stream_groups_small_tmpl" type="text/x-handlebars-template">
 		<ul style="overflow-x: scroll; height: 200px;">
@@ -226,38 +305,45 @@
 </script>
 
 <script id="content_empty_source" type="text/x-handlebars-template">
-		<center><h3>No entries found for this source yet. Check the <a href="subscriptions.jsp#/v/{{id}}">status</h3></center>
+		<center>
+			<h3>
+				No entries found for this source yet.
+				Check the <a href="subscriptions.jsp#/v/{{id}}">status
+			</h3>
+		</center>
 </script>
 
 <script id="content_start_source" type="text/x-handlebars-template">
-		<center><h3>Stream group has no subscriptions yet.</h3>
-				<p>Start by <a onClick="showImport();return false;" href="#">adding a new feed </a> OR
-				by selecting one of your <a href="" onclick="toggleHeaderTool('subscriptions');return false;">subscriptions</a>
-		<br><br></center></p>
-</script>
-
-<script id="content_start_all" type="text/x-handlebars-template">
-	<div class="center w60p">
-		<p class="lead">
-			Let's start adding some content
-		</p>
-		<p class="important-a">
-			The easiest way to subscribe to feeds is adding one of the many <a href="collections.jsp">collections</a>
-we created for you.<br>
-			<br>
-			You can <a href="import.jsp">import</a> your own feeds with an OPML file.
-			<br>
-			<br>
-			You can also create a new stream group, by opening the <a href="#" onclick="openLeftBar();"> left bar</a>
-			and adding new sources with the RSS/Atom URL.
-		</p>
-
+		<div class="text-center">
+			<h3>New Stream</h3>
+			<p>
+				Let's add some content
+			</p>
+			<div onclick="addContent()">
+				<div class="box" onclick="addContent()">Add content</div>
+			</div>
 		</div>
 </script>
 
+<script id="content_start_all" type="text/x-handlebars-template">
+			<h3>Let's start adding some content</h3>
+		<p class="important-a">
+			The easiest way to subscribe to feeds is adding one of the many <a href="${baseUrl}/collections">collections</a>
+we created for you.<br>
+			<br>
+			You can <a href="${baseUrl}/add">import</a> your own feeds with an OPML file.
+			<br>
+		</p>
+</script>
+
 <script id="content_start_recently_read" type="text/x-handlebars-template">
-		<center><h3>No content read yet.</h3>
-				<p>Whenever you clik on a news entry it will be added to this view. </center></p>
+		<div class="center text-center">
+			<b>List empty</b>
+			<p>
+			Articles you read are automatically added to this list.<br><br>
+			You can clear the list by clicking on the '>' icon and then 'x'.
+			</p>
+		</div>
 </script>
 
 <script id="content_start_saved" type="text/x-handlebars-template">
@@ -269,12 +355,14 @@ we created for you.<br>
 <script id="content_all_read" type="text/x-handlebars-template">
 		<center><h3>Finished reading stream group {{name}}.</h3>
 		<p class="lead">{{#showNextOptions}}{{/showNextOptions}}</p>
-	<p class="lead">Add new content, search <a href="collections.jsp">collections</p></center>
+		<div class="box" onclick="addContent()">
+		Add content
+		</div>
 </script>
 
 <script id="content_unknown" type="text/x-handlebars-template">
 		<center><h3>Page not found.</h3>
-		<p class="lead"><a href="<%= baseUrl %>"/reader.jsp>Go to start</a></p></center>
+		<p class="lead"><a href="${baseUrl}/reader">Go to start</a></p></center>
 </script>
 
 <script id="stream_group_start_tmpl" type="text/x-handlebars-template">
@@ -305,22 +393,17 @@ we created for you.<br>
 	</div>
 </div>
 
-<%
-    if (user.isAdmin()) {
-%>
-<div id="div_share_collection" data-stream_id="0" style="display: none; visibility: hidden">
-	<div class="modal-body">
-		<label for="feed_name"> Name of collection</label> <input class="form-control" type="text" id="collectionName" name="name"><br>
-		<label for="feed_url">Description</label>
-		<textarea class="form-control" id="collectionDesc" name="description"></textarea>
-		<br>
+<c:if test="${user.admin}">
+	<div id="div_share_collection" data-stream_id="0" style="display: none; visibility: hidden">
+		<div class="modal-body">
+			<label for="feed_name"> Name of collection</label> <input class="form-control" type="text" id="collectionName" name="name"><br>
+			<label for="feed_url">Description</label>
+			<textarea class="form-control" id="collectionDesc" name="description"></textarea>
+			<br>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" onclick="hideModal()" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary" onclick="shareCollection()">Share collection</button>
+		</div>
 	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-default" onclick="hideModal()" data-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-primary" onclick="shareCollection()">Share collection</button>
-	</div>
-</div>
-<%
-    }
-%>
-
+</c:if>

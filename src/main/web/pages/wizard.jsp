@@ -1,15 +1,10 @@
-<!--
-how to add feeds step: show images of locations.
-would be cool if /blog could be added as a news source.
- -->
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="${baseUrl}/css/welcome.css" />
-<script src="${baseUrl}/js/vendor/jquery.js"></script>
-<script src="${baseUrl}/js/app/wizard.js"></script>
+<%
+// how to add feeds step: show images of locations.
+// would be cool if /blog could be added as a news source.
+ %>
+ <jsp:include page="header.jsp">
+	<jsp:param value="title" name="Welcome Wizard"/>
+ </jsp:include>
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,71 +19,66 @@ fbq('track', "PageView");</script>
 src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
-<style>
-	.-hide {
-		display: block;
-	}
-	.header {
-		margin-bottom: 0px;
-	}
-</style>
 </head>
-<body class="margin0">
-	<div class="header">
-		<div class="table center w80p block">
-			<div class="cell left h100">
-				<span class="h100 vertical-helper vertical-middle"></span>
-				<img src="${baseUrl}/img/logo.svg" id="logo" class="vertical-middle" height="20" />
-			</div>
-		</div>
-	</div>
+<div class="center content-width">
+<div id="wizard-content" class="form form-wide">
 
-	<div class="center w80p min250">
-		<div class="max500">
-		<div id="welcome">
+	<div class="password-setup">
+		<div>
 			<h3>Welcome to feedrdr!</h3>
-			<p>Let's get you started.</p>
-			<ul class="left20">
-				<li class="password-setup">Set-up a password</li>
-			</ul>
+			<p>Let's get you started. You only need to set-up a password and
+			add some feeds.</p>
 		</div>
+		<form id="password-form" class="form" method="post" onsubmit="return false;">
+			<div class="hide msg msg-info" id="password-msg"></div>
+			<div>
+				<input tabindex="1" type="password" name="pwd1" placeholder="password">
+			</div>
+			<div>
+				<input tabindex="2" type="password" name="pwd2" placeholder="confirm your password">
+			</div>
+			<div>
+				<button tabindex="3" id="btn-pwd-change" class="submit-btn min250 max300"
+					onclick="changePassword(this, $('#password-form'))">Set-up password</button>
+			</div>
+		</form>
+	</div>
 
-		<div class="password-setup" class="box w100p">
-			<form class="w100p" id="password-form" method="post" onsubmit="return false;">
-				<input class="block w100p bottom5'" type="password" name="pwd1" placeholder="password"> <input class="block w100p bottom5"
-					type="password" name="pwd2" placeholder="confirm your password">
-				<div class="none" id="password-msg"></div>
-				<button id="btn-pwd-change" class="block w100p btn" onclick="changePassword(this, $('#password-form'))">Set-up password</button>
-			</form>
-		</div>
-
-		<div class="thanks hide">
-			<h3>You are all set</h3>
-			<p>
-				We really hope you enjoy feedrdr as much as we loved creating it.<br>
-				We are adding something new every week so make sure you follow us in
-				<a href="https://www.facebook.com/feedrdr">Facebook</a> and
-				<a href="https://twitter.com/feedrdrco">Twitter</a>.
-			</p>
-			<p>
-				<b>Adding content:</b><br>
-				The fastest way to subscribe to new feeds are <a href="${baseUrl}/pages/collections.jsp">collections</a>
-				and <a href="${baseUrl}/pages/import.jsp">importing your own OPML file</a>,
-				you also can add the RSS or Atom feed with the URL too.
-			</p>
-			<p>Let us know what you like or dislike, or what you would like us to add. <p>
-			<p>You can always contact me at steven@feedrdr.co, or feel free to
-				<a href="mailto:steven@feedrdr.co?subject=just saying hi!&body=just signed up and only wanted to say hi! :)">
-				send me an email if you just want to say hi :)</a>
-			</p>
-			<a href="${home}" onclick="fbq('track', 'CompleteRegistration');" class="block plain-btn w100p success">Start reading</a>
-		</div>
-
-		<div><p>&nbsp;</p></div>
+	<div class="thanks hide">
+		<h3>You are all set</h3>
+		<p>
+			We really hope you enjoy feedrdr as much as we loved creating it.
+		</p>
+		<p>
+			We are adding something new every week so make sure to follow us on
+			<a href="https://www.facebook.com/feedrdr">Facebook</a>,
+			<a href="https://twitter.com/feedrdrco">Twitter</a> and our
+			<a href="https://blog.feedrdr.co/">Blog</a>
+		</p>
+		<div>
+			<button tabindex="3" id="btn-pwd-change"
+				class="submit-btn min250 max300"
+				onclick="startReading()">
+				Start reading</button>
 		</div>
 	</div>
+
+	<div>&nbsp;</div>
+
+</div>
+</div>
+
 <script>
+	if (fbq) {
 	fbq('track', 'Lead');
+		}
+	function startReading() {
+		if (fbq) {
+			fbq('track', 'CompleteRegistration');
+		}
+		location.href='${baseUrl}/reader';
+	}
 </script>
+
 </body>
 </html>

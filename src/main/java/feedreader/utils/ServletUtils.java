@@ -30,6 +30,7 @@ public class ServletUtils {
         if (!FeedAppConfig.SUPPORTED_LANGS.contains(lang)) {
             lang = DEFAULT_LANG;
         }
+        req.setAttribute("fwdURI", req.getRequestURI());
         req.setAttribute("language", lang);
         req.setAttribute("isLocal", ApplicationConfig.instance().isLocal());
         req.setAttribute(TMPL_HOME, PageUtils.getHome());

@@ -37,47 +37,6 @@
 %>
 
 <%
-    if (FormUploadHelper.isMultiPartContent(request)) {
-        FormUploadHelper helper = new FormUploadHelper(request);
-
-        String addToProfile = helper.asString(TO_PROFILE, "");
-        UserOPMLImportHandler handler = new UserOPMLImportHandler(user.getUserId());
-
-        if (addToProfile.equals(ONLYSELECTED)) {
-            ArrayList<String> selected = helper.asString(SELECTED_PROFILES);
-            handler.addOnlyToProfile(selected);
-        } else if (addToProfile.equals(CURRENT)) {
-            handler.addOnlyToProfile(profile.getProfileId()); // id is set in header.jsp
-        } else {
-            // Default is save to all profiles.
-        }
-
-        try {
-            OPMLParser parser = new OPMLParser(handler);
-            parser.parse(new ByteArrayInputStream(helper.asStream(OPML_FILE).toByteArray()));
-
-            out.write("<div class='col-xs-8'><div id='import_info' class='row'><div class='col-xs-12'>");
-            out.write("<p class='lead'>Feeds imported " + handler.getSubsOk() + ", ");
-            out.write("failed " + handler.getSubsErrors() + "<br>");
-
-            out.write("Stream groups created: " + handler.getStreamsOk() + ", ");
-            out.write("failed " + handler.getStreamsErrors() + "<br>");
-
-            out.write("Feed source queued         : " + handler.getSourceQueued() + ", ");
-            out.write("already known " + handler.getSourceKnown() + ", ");
-            out.write("failed " + handler.getSourceError() + "</p><hr></div></div></div>");
-        } catch (ParserConfigurationException e) {
-            HtmlStackTrace.printRed(out, e.getStackTrace());
-        }
-        // TODO: Report error.
-        catch (SAXException e) {
-            HtmlStackTrace.printRed(out, e.getStackTrace());
-            out.write("<h1>Error parsing XML: </h1>");
-            out.write(helper.asStream(OPML_FILE).toString().replace("<", "&lt;"));
-        }
-    }
-
-    List<ProfileData> profiles = user.getProfileData();
 %>
 
 <div id="import" class="col-xs-8">

@@ -20,11 +20,13 @@ import feedreader.config.Constants;
 import feedreader.config.FeedAppConfig;
 import feedreader.entities.FeedSourceEntry;
 import feedreader.entities.OPMLEntry;
+import feedreader.entities.XmlChannelData;
 import feedreader.feed.utils.Fetch;
 import feedreader.security.Session;
 import feedreader.security.UserSession;
 import feedreader.store.DBFields;
 import feedreader.store.Database;
+import feedreader.store.FeedSourceChannelDataTable;
 import feedreader.store.FeedSourcesTable;
 import feedreader.store.UserFeedSubscriptionsTable;
 import feedreader.store.UserStreamGroupsTable;
@@ -211,9 +213,11 @@ public class SubscriptionsAPI {
             if (entry.getId() == 0) {
                 return JSONUtils.error(0, "The feed was added but we couldn't fetch its current status.");
             }
-        }
 
-        long subsId = UserFeedSubscriptionsTable.save(userId, entry.getId(), new OPMLEntry(subsName, subsUrl));
+        }
+        XmlChannelData data = FeedSourceChannelDataTable.get(entry.getId());
+        long subsId = UserFeedSubscriptionsTable.save(userId, entry.getId(),
+                new OPMLEntry(data.getTitle(), subsUrl));
         if (subsId == -1) {
             return JSONUtils.error(0, "Error adding subscription.");
         }

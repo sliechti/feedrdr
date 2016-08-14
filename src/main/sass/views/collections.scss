@@ -1,0 +1,57 @@
+#collections-content {
+	.wrapper {
+		text-align: center;
+	}
+}
+
+.feeds-container {
+
+	padding: 2px;
+	height: 150px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	ul {
+		border-top: 1px solid #668A9B;
+		padding: 2px;
+		display: block;
+
+		li {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			list-style: none;
+			overflow: hidden;
+		}
+	}
+}
+
+.collection {
+
+	width: 250px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+
+	.title {
+		background-color: #F0F0F0;
+		border-bottom: 1px solid #668A9B;
+		padding: 2px 5px;
+		font-size: 1.3em;
+		color: #173C4F;
+	}
+
+	.description {
+		padding: 3px;
+	}
+
+	.title * {
+		color: #173C4F;
+		padding: 2px 5px;
+	}
+
+	.glyphicon {
+		font-size: 0.8em;
+		padding-top: 5px;
+	}
+
+}

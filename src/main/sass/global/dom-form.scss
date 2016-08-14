@@ -1,0 +1,74 @@
+.submit-btn {
+	margin-top: 25px;
+	padding: 5px 30px 3px 30px;
+	border: 1px solid $fade-color;
+	background-color: $primary-color;
+	color: $primary-contrast-color;
+
+	&:hover {
+		background-color: $primary-color-light;
+	}
+
+	&.disabled {
+		background-color: $fade-color;
+	}
+}
+
+.form {
+
+	font-size: $font-med;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	input[type=text], input[type=password] {
+		padding: 5px 3px 3px 3px;
+		border: 1px solid $fade-color;
+	}
+
+	input[type=button] {
+		padding: 5px 10px 3px 10px;
+		border: 1px solid $fade-color;
+	}
+
+	input[type=submit] {
+		@extend .submit-btn;
+	}
+
+	input[type=button] {
+		padding: 5px 10px 3px 10px;
+		border: 1px solid $fade-color;
+	}
+	button {
+		padding: 5px 3px 3px 3px;
+		border: 1px solid $fade-color;
+	}
+
+}
+
+.form-wide {
+	input[type=text], input[type=password] {
+		width: 100%;
+		max-width: 500px;
+	}
+}
+
+.form-m-spacing {
+	&>div {
+		line-height: $med-line-height;
+	}
+}
+.form-l-spacing {
+	&>div {
+		line-height: $large-line-height;
+	}
+}
+
+@media only screen and (max-device-width: $sm-layout-border) {
+	.form {
+		input {
+			font-size: $font-plus;
+		}
+	}
+}

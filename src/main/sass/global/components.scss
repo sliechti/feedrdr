@@ -1,0 +1,51 @@
+.box {
+	text-align: center;
+	padding: 5px;
+	border: 1px solid $fade-color;
+	cursor: pointer;
+	text-transform: uppercase;
+
+}
+
+
+.primary-box {
+	background-color: $primary-color;
+	color: $primary-contrast-color;
+	&.disabled {
+		background-color: $disabled-color;
+		color: $disabled-font-color;
+
+		&:hover {
+			background-color: $disabled-color;
+			pointer: auto;
+		}
+	}
+
+	&:hover {
+		background-color: $primary-color-light;
+	}
+}
+
+.light-box {
+	color: $primary-color;
+	&.disabled {
+		background-color: $disabled-color;
+		color: $disabled-font-color;
+
+		&:hover {
+			background-color: $disabled-color;
+			pointer: auto;
+		}
+	}
+
+	&:hover {
+		background-color: $bg-color-2;
+	}
+}
+
+.hr-separator {
+	border-top: 0px;
+	border-bottom: 1px solid $fade-color;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

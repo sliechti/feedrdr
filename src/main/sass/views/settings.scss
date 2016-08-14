@@ -1,0 +1,77 @@
+.settings-header {
+
+	width: 100%;
+
+	a {
+		color: $primary-color;
+		font-size: $font-med;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding: 0px;
+		white-space: nowrap;
+
+		li {
+			display: inline-block;
+			padding-right: 20px;
+		}
+	}
+
+}
+
+#settings-content {
+
+	margin: 20px 0px;
+
+	.section-header {
+		font-size: $font-large;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		font-weight: bold;
+	}
+}
+
+#settings-profile {
+
+	.profile-row {
+		margin-bottom: 20px;
+	}
+
+	.settings > div {
+		display: inline-block;
+	}
+
+	.name input {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-device-width: $sm-layout-border) {
+	#settings-profile {
+		.name input {
+			width: 100%;
+			margin-bottom: 5px;
+		}
+
+		.settings {
+			text-align: right;
+		}
+	}
+}
+@media only screen and (min-device-width: $sm-layout-border) {
+	#settings-profile .profile-row {
+		&>div {
+			display: inline;
+		}
+
+		.settings {
+			float: right;
+		}
+	}
+}

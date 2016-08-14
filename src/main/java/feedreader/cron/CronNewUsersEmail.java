@@ -33,7 +33,8 @@ public class CronNewUsersEmail implements Runnable {
     public void run() {
         try (Connection conn = Database.getConnection()) {
             String query = String.format("SELECT %s, %s, %s, %s FROM %s WHERE %s = %b",
-                    DBFields.LONG_USER_ID, DBFields.STR_EMAIL, DBFields.STR_SCREEN_NAME, DBFields.STR_REG_CODE,
+                    DBFields.LONG_USER_ID, DBFields.STR_EMAIL,
+                    DBFields.STR_SCREEN_NAME, DBFields.STR_REG_CODE,
                     UsersTable.TABLE,
                     DBFields.BOOL_REG_SENT, false);
             ResultSet rs = Database.rawQuery(conn, query);

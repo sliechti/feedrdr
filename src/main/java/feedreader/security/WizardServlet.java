@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import feedreader.entities.UserData;
+import feedreader.pages.PageHeader;
 import feedreader.store.UsersTable;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
 import feedreader.utils.Validate;
 
-@WebServlet(name="newUserWizard", urlPatterns={"/pages/wizard"})
+@WebServlet(name = "newUserWizard", urlPatterns = { "/wizard" })
 public class WizardServlet extends HttpServlet {
 
     private static final String JSON_PARAM_PWD1 = "pwd1";
@@ -33,6 +34,8 @@ public class WizardServlet extends HttpServlet {
         UserData user = UsersTable.get(userId);
 
         req.setAttribute("user", user);
+        PageHeader.hideEllipsis(req);
+        PageHeader.hideLeftMenu(req);
         ServletUtils.redirect(req, resp, PAGES_WIZARD_JSP);
     }
 

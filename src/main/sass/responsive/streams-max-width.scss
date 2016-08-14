@@ -1,0 +1,15 @@
+@media only screen and (max-device-width: $sm-layout-border) {
+	.line-view {
+		.article {
+			line-height: 45px;
+		}
+	}
+}
+
+@media only screen and (max-device-width: $med-layout-border) {
+	.line-view {
+		.article {
+			line-height: 35px;
+		}
+	}
+}

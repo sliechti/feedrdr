@@ -1,0 +1,35 @@
+
+.content-width {
+	width: 60%;
+	min-width: 300px;
+}
+
+@media only screen and (min-device-width: $lg-layout-border) {
+	.content-width {
+		max-width: $lg-layout-border;
+	}
+}
+
+@media only screen and (max-device-width: $lg-layout-border) {
+	.content-width {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-device-width: $med-layout-border) {
+	.content-width {
+		width: 80%;
+	}
+	.hide-md {
+		display: none;
+	}
+}
+
+@media only screen and (max-device-width: $sm-layout-border) {
+	.content-width {
+		width: 90%;
+	}
+	.hide-sm {
+		display: none;
+	}
+}

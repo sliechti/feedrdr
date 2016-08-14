@@ -105,11 +105,11 @@ public class FeedsAPI {
         long userMaxHistTime = CronTimeUtils.getMaxHistory(req.getSession());
 
         // TODO: Don't query ALL fields. This query can be optimized. See analyze describe.
-        String rawQuery = String.format("SELECT * FROM %s WHERE %s = %s AND %s > %d ORDER BY %s %s LIMIT %d OFFSET %d",
+        String rawQuery = String.format("SELECT * FROM %s WHERE %s = %s "
+                + " ORDER BY %s %s LIMIT %d OFFSET %d",
                 FeedEntriesTable.TABLE,
                 // where
                 DBFields.LONG_XML_ID, sourceId,
-                DBFields.TIME_PUBLICATION_DATE, userMaxHistTime,
                 // order
                 DBFields.TIME_PUBLICATION_DATE,
                 FeedAppConfig.DEFAULT_API_SORT_PUBLICATION_DATE,
