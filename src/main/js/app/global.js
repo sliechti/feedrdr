@@ -43,3 +43,7 @@ function showEl(id) {
 		}
 	});
 }
+
+function addContent() {
+	location.href = baseUrl + '/add';
+}

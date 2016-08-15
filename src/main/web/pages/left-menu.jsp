@@ -120,9 +120,7 @@
 	    <hr>
 
 		<div id="left-add-content">
-			<div class="box" onclick="alert('add-more-content')">
-				ADD MORE CONTENT
-			</div>
+			<div class="box" onclick="addContent()">Add content</div>
 		</div>
 	</div>
 </div>

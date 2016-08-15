@@ -251,11 +251,14 @@ function triggerChangeViewListeners(view) {
 	}
 }
 
-function displayStreamHeader() {
+function displayStreamHeader(options) {
 	if (!streamGroupHeaderTmpl) {
 		streamGroupHeaderTmpl = Handlebars.compile($("#stream-header-tmpl").html());
 	}
-	$("#stream-header .content").html(streamGroupHeaderTmpl(selectedStream));
+	$("#stream-header .content").html(streamGroupHeaderTmpl({
+			'options' : options,
+			'stream' : selectedStream
+	}));
 }
 
 function showOnlyWithUnread(yesNo) {
@@ -691,8 +694,7 @@ function updateNewsListView() {
 		queryData.v = currentView;
 		queryData.c = selectedStream.l_gr_unread;
 
-		$.getJSON(baseUrl + apiUrlStreamUpdate, queryData, function(data,
-				success) { /**/
+		$.getJSON(baseUrl + apiUrlStreamUpdate, queryData, function(data, success) { /**/
 		}, "json");
 	} else {
 		var queryData = {};
@@ -726,6 +728,7 @@ function updateNewsListView() {
 		fetchNewsData(true, true);
 	}
 
+	console.log('trigger change view');
 	triggerChangeViewListeners(currentView);
 }
 
@@ -961,7 +964,7 @@ function loadRecentlyRead() {
 	selectedStream.l_stream_id = 0;
 	selectedStream.l_view = TEMPLATE_ID_RECENTLY_READ;
 
-	displayStreamHeader();
+	displayStreamHeader({'showRecentlyRead' : true});
 }
 
 function loadSaved() {

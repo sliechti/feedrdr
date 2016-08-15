@@ -26,6 +26,7 @@
 		</div>
 		<div id="header-content" class="center content-width">
 			<div class="header-left">
+<!-- 				<i class="fa fa-bars"></i> -->
 				<a href="#" class="vertical-middle" onclick="openLeftBar()">
 					<img src="${baseUrl}/img/app-logo.svg" height="40" id="app-logo" class="vertical-middle" />
 				</a>

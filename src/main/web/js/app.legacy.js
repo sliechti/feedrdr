@@ -392,11 +392,11 @@ function createNewProfile(inputName, inputPicker) {
 }
 
 
-var apiShareCollection = "api/v1/collections/share";
+var apiShareCollection = "api/v1/collections/share"; 
 
 function showShareCollection() {
 	console.log(selectedStream);
-	showModal("Share " + selectedStream.s_stream_name, "#div_share_collection",
+	showModal("Share " + selectedStream.s_stream_name, "#div_share_collection", 
 		function closeModal() {
 		},
 		function postInit(modal) {
@@ -410,7 +410,7 @@ function shareCollection() {
 	queryData.id = selectedStream.l_stream_id;
 	queryData.name = $("#collectionName").val();
 	queryData.description = $("#collectionDesc").val();
-
+	
 	$.post(baseUrl + "/" + apiShareCollection, queryData, function http(data, status) {
 		if (data.error) {
 			modalError(data.error);
@@ -807,11 +807,14 @@ function triggerChangeViewListeners(view) {
 	}
 }
 
-function displayStreamHeader() {
+function displayStreamHeader(options) {
 	if (!streamGroupHeaderTmpl) {
 		streamGroupHeaderTmpl = Handlebars.compile($("#stream-header-tmpl").html());
 	}
-	$("#stream-header .content").html(streamGroupHeaderTmpl(selectedStream));
+	$("#stream-header .content").html(streamGroupHeaderTmpl({
+			'options' : options,
+			'stream' : selectedStream
+	}));
 }
 
 function showOnlyWithUnread(yesNo) {
@@ -1247,8 +1250,7 @@ function updateNewsListView() {
 		queryData.v = currentView;
 		queryData.c = selectedStream.l_gr_unread;
 
-		$.getJSON(baseUrl + apiUrlStreamUpdate, queryData, function(data,
-				success) { /**/
+		$.getJSON(baseUrl + apiUrlStreamUpdate, queryData, function(data, success) { /**/
 		}, "json");
 	} else {
 		var queryData = {};
@@ -1282,6 +1284,7 @@ function updateNewsListView() {
 		fetchNewsData(true, true);
 	}
 
+	console.log('trigger change view');
 	triggerChangeViewListeners(currentView);
 }
 
@@ -1293,22 +1296,22 @@ function updateHeaderRightTools() {
 	}
 
 	if (selectedStream.h_filter_by == FILTER_SHOW_ALL) {
-		$("#show_unread").removeClass('active-icon');
-		$("#show_all").addClass('active-icon');
+		$("#show_unread").css("text-decoration", "none");
+		$("#show_all").css("text-decoration", "underline");
 	} else if (selectedStream.h_filter_by == FILTER_BY_UNREAD) {
-		$("#show_unread").addClass('active-icon');
-		$("#show_all").removeClass('active-icon');
+		$("#show_unread").css("text-decoration", "underline");
+		$("#show_all").css("text-decoration", "none");
 		if (streamEntries.length > 0) {
 			$(".mark_all_read").show();
 		}
 	}
 
 	if (selectedStream.h_sort_by == SORT_NEW_FIRST) {
-		$("#oldest_first").removeClass('active-icon');
-		$("#newset_first").addClass('active-icon');
+		$("#oldest_first").css("text-decoration", "none");
+		$("#newset_first").css("text-decoration", "underline");
 	} else if (selectedStream.h_filter_by == SORT_OLD_FIRST) {
-		$("#oldest_first").addClass('active-icon');
-		$("#newset_first").removeClass('active-icon');
+		$("#oldest_first").css("text-decoration", "underline");
+		$("#newset_first").css("text-decoration", "none");
 	}
 }
 
@@ -1517,7 +1520,7 @@ function loadRecentlyRead() {
 	selectedStream.l_stream_id = 0;
 	selectedStream.l_view = TEMPLATE_ID_RECENTLY_READ;
 
-	displayStreamHeader();
+	displayStreamHeader({'showRecentlyRead' : true});
 }
 
 function loadSaved() {

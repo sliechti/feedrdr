@@ -56,6 +56,9 @@ function showEl(id) {
 	});
 }
 
+function addContent() {
+	location.href = baseUrl + '/add';
+}
 function hideSearch() {
 	console.debug('hide search');
 	var hi = $('#header-input');

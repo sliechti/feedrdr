@@ -28,15 +28,22 @@
 			<i class="pointer fa fa-angle-right"></i>
 		</div>
 		<div class="stream-title title">
-			{{s_stream_name}}
+			{{stream.s_stream_name}}
 			<div id="stream-actions" class="hide">
 				<a href="" onclick="markAllRead(); return false;">
 					<i class="fa fa-check" title="Mark stream read"></i>
 				</a>
 				<i class="fa fa-plus" title="Add content"></i>
+				{{#if options.showDeleteStream}}
 				<a href="" onclick="deleteStream(); return false;">
 					<i class="fa fa-remove" title="Delete stream"></i>
 				</a>
+				{{/if}}
+				{{#if options.showClearRecents}}
+				<a href="" onclick="confirmClearRecentlyRead(); return false;">
+					<i class="fa fa-remove" title="Clear list"></i>
+				</a>
+				{{/if}}
 			</div>
 			<div class="right">
 				<i onclick="shToggleSettings()"
@@ -46,8 +53,6 @@
 	</div>
 	<div id="stream-options" class="hide">
 		<div class="filter-box">
-		{{#if title}}
-		{{else}}
 			<a title="show all" href="" id="show_all" onclick="showAll();return false;">
 				<i class="fa fa-eye"></i>
 			</a>
@@ -55,7 +60,6 @@
 				<i class="fa fa-eye-slash"></i>
 				&nbsp;(<span id="unread"></span>)
 			</a>
-		{{/if}}
 		</div>
 		<div class="ranking-box">
 			<a href="" onclick="streamSort(SORT_NEW_FIRST);return false;">
@@ -142,7 +146,7 @@
 			</div>
 			<div class="content">
 				{{timediff t_pub_date}}
-				<a href="{{s_link}}">{{s_title}}</a>
+				<a name="link" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">{{s_title}}</a>
 			</div>
 		</div>
 		{{/each}}
@@ -163,7 +167,7 @@
 			<div class="content">
 				<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
 				class="left margin10" id="img_{{l_entry_id}}" src="/img/1px.png">
-				<a class="title" href="{{s_link}}">
+				<a name="link" class="title" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">
 					{{timediff t_pub_date}}
 					{{s_title}}
 				</a>
@@ -330,7 +334,9 @@ we created for you.<br>
 <script id="content_all_read" type="text/x-handlebars-template">
 		<center><h3>Finished reading stream group {{name}}.</h3>
 		<p class="lead">{{#showNextOptions}}{{/showNextOptions}}</p>
-	<p class="lead">Add new content, search <a href="collections.jsp">collections</p></center>
+		<div class="box" onclick="addContent()">
+		Add content
+		</div>
 </script>
 
 <script id="content_unknown" type="text/x-handlebars-template">
