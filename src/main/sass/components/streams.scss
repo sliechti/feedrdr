@@ -179,16 +179,22 @@
 	margin-bottom: 20px;
 	border-bottom: 1px solid $fade-color;
 
-	.img-wrap {
+	img {
 		float: left;
-		padding-right: 5px;
+		margin: 0px 5px 5px 0px;
+		max-width: 30%;
+		min-width: 150px;
+		max-height: 30%;
+		min-height: 150px;
+	}
 
-		img {
-			max-width: 30%;
-			min-width: 150px;
-			max-height: 30%;
-			min-height: 150px;
-		}
+	p {
+		//text-overflow: ellipsis;
+		//overflow: hidden;
+	}
+
+	.content {
+		overflow: hidden;
 	}
 
 	.source {
@@ -210,10 +216,6 @@
 		}
 	}
 
-	.content {
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
 }
 
 

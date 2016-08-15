@@ -161,17 +161,17 @@
 		{{#each entries}}
 		<div id="news_${l_entry_id}" class="news-mag">
 			<div class="content">
-				<div class="img-wrap">
-					<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
-					class="left margin10" id="img_{{l_entry_id}}" src="/img/1px.png">
-				</div>
+				<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
+				class="left margin10" id="img_{{l_entry_id}}" src="/img/1px.png">
 				<a class="title" href="{{s_link}}">
 					{{timediff t_pub_date}}
 					{{s_title}}
 				</a>
-				<p class="content" id="cnt_{{l_entry_id}}">
-				{{content}}
-				</p>
+				<div>
+					<p id="cnt_{{l_entry_id}}">
+					{{content}}
+					</p>
+				</div>
 			</div>
 			<div class="news-footer">
 				<div class="actions">

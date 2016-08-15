@@ -598,15 +598,16 @@ body {
   margin-bottom: 20px;
   border-bottom: 1px solid #CACACA;
 }
-.news-mag .img-wrap {
+.news-mag img {
   float: left;
-  padding-right: 5px;
-}
-.news-mag .img-wrap img {
+  margin: 0px 5px 5px 0px;
   max-width: 30%;
   min-width: 150px;
   max-height: 30%;
   min-height: 150px;
+}
+.news-mag .content {
+  overflow: hidden;
 }
 .news-mag .source {
   font-size: 0.8em;
@@ -622,10 +623,6 @@ body {
 }
 .news-mag .actions .fa {
   padding: 0px 5px 0px 5px;
-}
-.news-mag .content {
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .news-card {
