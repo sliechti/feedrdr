@@ -6,13 +6,6 @@
 
 		{{#if title}}
 		{{else}}
-				<a title="show all" href="" id="show_all" onclick="showAll();return false;">
-				<span class=" glyphicon glyphicon-eye-open"></span></a>
-				<a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">
-				<span class=" glyphicon glyphicon-eye-close"></span>&nbsp;(<span id="unread"></span>)</a>
-		{{/if}}
-		{{#if title}}
-		{{else}}
 				<a title="show newest first" href="" id="newset_first" onclick="streamSort(SORT_NEW_FIRST);return false;">
 				<span class="glyphicon glyphicon-sort-by-order"></span></a>
 				<a title="show oldest first" href="" id="oldest_first" onclick="streamSort(SORT_OLD_FIRST);return false;">
@@ -37,8 +30,13 @@
 		<div class="stream-title title">
 			{{s_stream_name}}
 			<div id="stream-actions" class="hide">
-				<i class="fa fa-check-circle"></i>
-				<i class="fa fa-plus-circle"></i>
+				<a href="" onclick="markAllRead(); return false;">
+					<i class="fa fa-check" title="Mark stream read"></i>
+				</a>
+				<i class="fa fa-plus" title="Add content"></i>
+				<a href="" onclick="deleteStream(); return false;">
+					<i class="fa fa-remove" title="Delete stream"></i>
+				</a>
 			</div>
 			<div class="right">
 				<i onclick="shToggleSettings()"
@@ -47,22 +45,37 @@
 		</div>
 	</div>
 	<div id="stream-options" class="hide">
-		<div class="actions">
-			<i class="fa fa-remove"></i>
-			<i class="fa fa-share"></i>
+		<div class="filter-box">
+		{{#if title}}
+		{{else}}
+			<a title="show all" href="" id="show_all" onclick="showAll();return false;">
+				<i class="fa fa-eye"></i>
+			</a>
+			<a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">
+				<i class="fa fa-eye-slash"></i>
+				&nbsp;(<span id="unread"></span>)
+			</a>
+		{{/if}}
+		</div>
+		<div class="ranking-box">
+			<a href="" onclick="streamSort(SORT_NEW_FIRST);return false;">
+				<i class="fa fa-sort-numeric-asc"></i>
+			</a>
+			<a href="" onclick="streamSort(SORT_OLD_FIRST);return false;">
+				<i class="fa fa-sort-numeric-desc"></i>
+			</a>
 		</div>
 		<div class="views-box">
 			<a title="show as list" href="" onclick="setLineView();return false;">
-				<span id="icon_view_line" title="line view"></span>
+				<span class="icon" id="icon_view_line" title="line view"></span>
 			</a>
 			<a title="show in magazine view" href="" onclick="setMagazineView();return false;">
-				<span id="icon_view_mag" title="magazine view"></span>
+				<span class="icon" id="icon_view_mag" title="magazine view"></span>
 			</a>
 			<a title="show in stream view" href="" onclick="setStreamView();return false;">
-				<span id="icon_view_stream" title="stream view"></span>
+				<span class="icon" id="icon_view_stream" title="stream view"></span>
 			</a>
 		</div>
-	stream options
 	</div>
 </script>
 
@@ -128,6 +141,7 @@
 				<i class="pointer fa fa-angle-right fade-color"></i>
 			</div>
 			<div class="content">
+				{{timediff t_pub_date}}
 				<a href="{{s_link}}">{{s_title}}</a>
 			</div>
 		</div>
@@ -152,6 +166,7 @@
 					class="left margin10" id="img_{{l_entry_id}}" src="/img/1px.png">
 				</div>
 				<a class="title" href="{{s_link}}">
+					{{timediff t_pub_date}}
 					{{s_title}}
 				</a>
 				<p class="content" id="cnt_{{l_entry_id}}">
@@ -191,9 +206,10 @@
 			</div>
 			<div class="content">
 				<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
+					{{timediff t_pub_date}}
 					{{s_title}}
 				</a>
-				<p id="cnt_{{l_entry_id}}"></p>
+				<p class="content" id="cnt_{{l_entry_id}}"></p>
 			</div>
 			<div class="news-footer">
 				<div class="actions">
@@ -246,16 +262,20 @@
 
 
 <script id="stream_groups_tmpl" type="text/x-handlebars-template">
-		<ul>
-		{{#each groups}}
-				 <li id="e_{{l_stream_id}}">{{@key}}
+<ul>
+	{{#each groups}}
+	<li id="e_121">
+		<div class="left">
 			<a href="#/f/{{l_stream_id}}" onclick="closeLeftBar()">
-				{{cut s_stream_name 17}}
+				{{s_stream_name}}
 			</a>
-					 <label id="e_c_{{l_stream_id}}">{{showGroupCount this}}</label>
-		</li>
-		{{/each}}
-		</ul>
+		</div>
+		<div id="e_c_121" class="w50px right text-right pr20p">
+			{{showGroupCount this}}
+		</div>
+	</li>
+	{{/each}}
+</ul>
 </script>
 <script id="stream_groups_small_tmpl" type="text/x-handlebars-template">
 		<ul style="overflow-x: scroll; height: 200px;">
@@ -315,7 +335,7 @@ we created for you.<br>
 
 <script id="content_unknown" type="text/x-handlebars-template">
 		<center><h3>Page not found.</h3>
-		<p class="lead"><a href="${baseUrl}/reader.jsp">Go to start</a></p></center>
+		<p class="lead"><a href="${baseUrl}/reader">Go to start</a></p></center>
 </script>
 
 <script id="stream_group_start_tmpl" type="text/x-handlebars-template">

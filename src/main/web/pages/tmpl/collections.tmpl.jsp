@@ -34,7 +34,7 @@
 </script>
 
 <script type="x-handlebars" id="collection_created_tmpl">
-The collection was added to you list of streams, <a href="reader.jsp?#/f/{{streamId}}">see in reader</a> or
+The collection was added to you list of streams, <a href="${baseUrl}/reader#/f/{{streamId}}">see in reader</a> or
 <a href="" onClick="hideModal();return false;">keep adding collections</a>
 </script>
 

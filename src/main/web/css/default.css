@@ -472,35 +472,24 @@ body {
   overflow: hidden;
   position: relative;
 }
-#stream-header .views-box {
-  float: right;
+#stream-header .ranking-box, #stream-header .views-box, #stream-header .filter-box {
+  text-align: right;
 }
-#stream-header .views-box a {
-  float: left;
+#stream-header .icon {
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
 }
 #stream-header #icon_view_line {
   background-image: url("../img/view-list.png");
-  background-repeat: no-repeat;
-  background-position: 0px 3px;
-  display: block;
-  width: 18px;
-  height: 18px;
 }
 #stream-header #icon_view_mag {
   background-image: url("../img/view-mag.png");
-  background-repeat: no-repeat;
-  background-position: 0px 3px;
-  display: block;
-  width: 18px;
-  height: 18px;
 }
 #stream-header #icon_view_stream {
   background-image: url("../img/view-stream.png");
-  background-repeat: no-repeat;
-  background-position: 0px 3px;
-  display: block;
-  width: 18px;
-  height: 18px;
 }
 
 #stream-actions {
@@ -513,6 +502,13 @@ body {
 }
 #stream-actions .fa {
   padding: 0px 5px 0px 5px;
+}
+#stream-actions a {
+  text-decoration: none;
+}
+
+#stream-options a {
+  text-decoration: none;
 }
 
 #stream-content {
@@ -627,6 +623,10 @@ body {
 .news-mag .actions .fa {
   padding: 0px 5px 0px 5px;
 }
+.news-mag .content {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 .news-card {
   margin-bottom: 20px;
@@ -657,6 +657,10 @@ body {
 .news-card .source {
   font-size: 0.8em;
   text-align: right;
+}
+.news-card .content {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -773,6 +777,7 @@ body {
 }
 
 #left-menu {
+  overflow-y: auto;
   box-sizing: border-box;
   position: fixed;
   z-index: 999;
@@ -853,12 +858,20 @@ body {
   margin: 20px;
 }
 
+#menusubs {
+  overflow-y: auto;
+  max-height: 250px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
 @media only screen and (max-device-height: 500px) {
   #left-menu {
     overflow-y: auto;
   }
 }
 #profiles {
+  z-index: 900;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: absolute;

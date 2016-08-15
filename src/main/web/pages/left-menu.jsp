@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="readerUrl" value="reader.jsp" />
-<c:set var="inReader" value="${pageContext.request.requestURI.endsWith('/reader.jsp')}" />
+<c:set var="inReader" value="${pageContext.request.requestURI.contains('/reader')}" />
 
 <div id="left-menu" class="hide">
 
@@ -9,7 +8,7 @@
 		<div id="header-content" class="pl20p pr20p ">
 			<div class="left max300">
 				<a href="#" class="decor-none upper" onclick="lmToggleProfiles()">
-					<i id="header-p-angle" class="fa fa-user v-middle"></i>
+					<i id="header-p-angle" class="profile-color fa fa-user v-middle"></i>
 				</a>
 			</div>
 			<div class="right">
@@ -23,7 +22,9 @@
 	<div id="left-menu-content" class="primary-t-color">
 
 		<div id="profiles" class="hide font-med bottom-shadow bg-white primary-t-color">
-			<jsp:include page="mock/mock-menu-profiles.jsp" />
+			<div class="content">
+
+			</div>
 			<div class="border-tb-fade">
 				<a href="settings.jsp">
 					New Profile
@@ -33,7 +34,7 @@
 
 		<c:if test="${not inReader}">
 			<div>
-				<a href="${baseUrl}/pages/${readerUrl}">back to reader</a>
+				<a href="${baseUrl}/${readerUrl}">back to reader</a>
 			</div>
 		</c:if>
 
@@ -112,8 +113,8 @@
 	        </div>
 	    </div>
 
-	    <div id='menusubs'></div>
-	    	<jsp:include page="mock/mock-menu-streamgroups.jsp" />
+		<div id='menusubs'></div>
+
 		</c:if>
 
 	    <hr>
@@ -125,3 +126,6 @@
 		</div>
 	</div>
 </div>
+
+<jsp:include page="tmpl/profiles.tmpl.jsp" />
+

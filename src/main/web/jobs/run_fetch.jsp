@@ -159,7 +159,7 @@ String baseUrl = request.getContextPath();
             out.write("checked at    : " + new Date(entry.getCheckedAt()) + "<br>");
             out.write("<br>");
 
-            out.write("<a target=\"_blank\" href="+ baseUrl +"/pages/reader.jsp#/s/" + entry.getId() + ">view in reader</a><br>");
+            out.write("<a target=\"_blank\" href="+ baseUrl +"/reader#/s/" + entry.getId() + ">view in reader</a><br>");
 
             XmlChannelData channelData = parser.getChannelData();
             XmlChannelImage channelImg = parser.getChannelImage();

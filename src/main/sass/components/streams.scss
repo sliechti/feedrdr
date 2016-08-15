@@ -19,39 +19,28 @@
 		position: relative;
 	}
 
-	.views-box {
-		float: right;
+	.ranking-box, .views-box, .filter-box {
+		text-align: right;
+	}
 
-		a {
-			float: left;
-		}
+	.icon {
+		background-repeat: no-repeat;
+		background-position: 0px 3px;
+		display: inline-block;
+		width: 18px;
+		height: 18px;
 	}
 
 	#icon_view_line {
 		background-image: url("../img/view-list.png");
-		background-repeat: no-repeat;
-		background-position: 0px 3px;
-		display: block;
-		width: 18px;
-		height: 18px;
 	}
 
 	#icon_view_mag {
 		background-image: url("../img/view-mag.png");
-		background-repeat: no-repeat;
-		background-position: 0px 3px;
-		display: block;
-		width: 18px;
-		height: 18px;
 	}
 
 	#icon_view_stream {
 		background-image: url("../img/view-stream.png");
-		background-repeat: no-repeat;
-		background-position: 0px 3px;
-		display: block;
-		width: 18px;
-		height: 18px;
 	}
 
 }
@@ -67,6 +56,15 @@
 	.fa {
 		padding: 0px 5px 0px 5px;
 	}
+	a {
+		text-decoration: none;
+	}
+}
+
+#stream-options {
+	a {
+		text-decoration: none;
+	}
 }
 
 #stream-content {
@@ -74,7 +72,6 @@
 }
 
 #stream-list {
-
 	a {
 		color: $primary-color;
 		text-decoration: none;
@@ -212,6 +209,11 @@
 			padding: 0px 5px 0px 5px;
 		}
 	}
+
+	.content {
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
 }
 
 
@@ -251,5 +253,11 @@
 		font-size: $font-small;
 		text-align: right;
 	}
+
+	.content {
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
 }
 

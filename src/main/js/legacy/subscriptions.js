@@ -76,7 +76,7 @@ function filterByKeyword() {
 	runQuery(true);
 }
 
-function runQuery(renderTmpl) {
+function runSubsQuery(renderTmpl) {
 	jlinqQuery = jlinq.from(subscriptions).sort(query.sortBy);
 	if (query.showOnlyInactive) {
 		jlinqQuery.equals("b_gaveup", true);

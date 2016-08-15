@@ -1,5 +1,5 @@
-<%@include file="/security.jsp" %>
 
+<%@include file="/security.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,13 +37,13 @@
 				<div id="header-el" class="el-menu el-menu-header">
 					<ul>
 						<li>
-							<a href="${baseUrl}/logout">
-								Sign out <i class="fa fa-sign-out"></i>
+							<a href="${baseUrl}/settings">
+								Settings <i class="fa fa-cog"></i>
 							</a>
 						</li>
 						<li>
-							<a href="${baseUrl}/pages/settings.jsp">
-								Settings <i class="fa fa-cog"></i>
+							<a href="${baseUrl}/logout">
+								Sign out <i class="fa fa-sign-out"></i>
 							</a>
 						</li>
 					</ul>

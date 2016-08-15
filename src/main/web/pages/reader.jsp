@@ -25,8 +25,6 @@
 <%@page import="java.util.TreeSet"%>
 <%@page import="feedreader.config.FeedAppConfig"%>
 
-<c:set var="baseUrl" value="/feedreader" scope="application" />
-
 <jsp:include page="header.jsp">
 	<jsp:param name="title" value="reader" />
 </jsp:include>
@@ -71,8 +69,6 @@
         var route = router.getRoute();
         if(route && route.length == 1) {
             getStreamGroups(function(streamGroups, filteredStreamGroups) {
-        console.debug('loaded router', router, route);
-                console.debug('route.lenght == 1');
                 if (filteredStreamGroups.length > 0) {
                     return loadStream(filteredStreamGroups[0].l_stream_id);
                 } else if (streamGroups.length > 0) {
@@ -87,7 +83,6 @@
 		switch (route[0]) {
 			case ROUTE_FEED:
 				getStreamGroups(function() {
-					console.debug('route feed');
 					loadStream(route[1]);
 				});
 				break;

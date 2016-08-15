@@ -6,14 +6,14 @@ html {
 
 	margin: auto;
 	width: 100%;
-	max-width: 400px;
+	max-width: 300px;
 	text-align: center;
 
 	form {
 		a {
 			font-size: $font-small;
 			text-decoration: none;
-			color: $primary-color;
+			color: #606060;
 		}
 
 		* {
@@ -24,8 +24,7 @@ html {
 		input {
 			font-size: $font-med;
 			box-sizing: border-box;
-			border: 0px;
-			border-bottom: 0.8px solid $primary-color;
+			border: 1px solid $fade-color;
 			padding: 5px;
 			margin-bottom: 5px;
 		}

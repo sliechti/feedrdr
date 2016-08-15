@@ -1,17 +1,14 @@
 
-<script type="x-handlebars" id="nav_profiles_tmpl">
-    {{#each profiles}}
-    <div class="text-center">
-		<div class="left w5px" style="background-color: \#{{s_color}}">
-			&nbsp;
-		</div >
-        <a href="#" onClick="selectProfile({{l_profile_id}}, true); return false;">
-		{{s_profile_name}}
+<script type="text/x-handlebars-template" id="left-menu-profiles-tmpl">
+	{{log 'left menu profiles tmpl' profiles}}
+	{{#each profiles}}
+	<div>
+		<a href="#" onclick="selectProfile({{l_profile_id}}, true); return false;">
+			{{s_profile_name}}
 		</a>
-		<div class="right w5px" style="background-color: \#{{s_color}}">
-			&nbsp;
-		</div >
-    </div>
-	<div class="profile-line" style="background-color: \#{{s_color}}"></div>
-    {{/each}}
+		<a class="pr20p right" href="${baseUrl}/pages/settings.jsp#/v/pro">
+			<i class="fa fa-cog fade-color"></i>
+		</a>
+	</div>
+	{{/each}}
 </script>

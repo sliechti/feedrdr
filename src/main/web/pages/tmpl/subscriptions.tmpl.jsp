@@ -11,8 +11,8 @@
 </script>
 
 <script id="subscription_details_tmpl" type="text/x-handlebars-template">
-<h3 style="margin-top: -40px;">{{s_subs_name}}<br><a class="form-title" href="<%= baseUrl %>/pages/reader.jsp#/s/{{l_xml_id}}">view source</a></h3>
-    
+<h3 style="margin-top: -40px;">{{s_subs_name}}<br><a class="form-title" href="<%= baseUrl %>/reader#/s/{{l_xml_id}}">view source</a></h3>
+
 <h4>Subscription status:</h4>
 <pre>
 Feed's URL: <a href="{{s_xml_url}}" target="_new">{{s_xml_url}}</a>

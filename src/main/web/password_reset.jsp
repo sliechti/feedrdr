@@ -46,7 +46,7 @@
 						</p>
 						<input type="hidden" name="reset" value="1" />
 						<input type="text" class="w100p" placeholder="Email" id="email" name="email">
-						<button class="w100p">Send password reset instructions</button>
+						<button class="w100p">Send instructions</button>
 					</form>
 				</c:otherwise>
 			</c:choose>

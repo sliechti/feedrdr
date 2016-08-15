@@ -326,13 +326,13 @@ html {
 #login {
   margin: auto;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   text-align: center;
 }
 #login form a {
   font-size: 0.8em;
   text-decoration: none;
-  color: #173C4F;
+  color: #606060;
 }
 #login form * {
   outline: none;
@@ -341,8 +341,7 @@ html {
 #login form input {
   font-size: 1.2em;
   box-sizing: border-box;
-  border: 0px;
-  border-bottom: 0.8px solid #173C4F;
+  border: 1px solid #CACACA;
   padding: 5px;
   margin-bottom: 5px;
 }

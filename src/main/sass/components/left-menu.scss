@@ -2,6 +2,7 @@ $left-menu-bgcolor: white;
 
 #left-menu {
 
+	overflow-y: auto;
 	box-sizing: border-box;
 	position: fixed;
 	z-index: 999;
@@ -97,3 +98,9 @@ $left-menu-bgcolor: white;
 }
 
 
+#menusubs {
+	overflow-y: auto;
+	max-height: 250px;
+	padding-bottom: 40px;
+	position: relative;
+}

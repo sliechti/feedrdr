@@ -240,7 +240,6 @@ function initProfiles() {
 
 		if (data.entries) {
 			profiles = data.entries;
-//			console.debug("profiles", profiles);
 			triggerOnProfilesAvailable();
 		} else {
 			console.error("error fetching profiles ");
@@ -251,10 +250,10 @@ function initProfiles() {
 
 function renderProfiles() {
 	if (!profilesTmpl) {
-		profilesTmpl = Handlebars.compile($("#nav_profiles_tmpl").html());
+		profilesTmpl = Handlebars.compile($("#left-menu-profiles-tmpl").html());
 	}
 
-	$("#profiles").html(profilesTmpl({
+	$("#profiles .content").html(profilesTmpl({
 		"profiles" : profiles
 	}));
 }
@@ -296,6 +295,7 @@ function setSessionProfile(profileId, callback) {
 }
 
 function selectProfile(profileId, resetRoute) {
+	console.debug('select profile');
 	if (resetRoute) {
 		window.location.hash = '';
 	}
@@ -315,6 +315,7 @@ function selectProfile(profileId, resetRoute) {
 	}
 
 	$(".profileColor").css("background-color", "#" + selectedProfile.s_color);
+	$(".profile-color").css("color", "#" + selectedProfile.s_color);
 
 	$("#profile").text(selectedProfile.s_profile_name);
 	$("#profiles").hide();
@@ -391,11 +392,11 @@ function createNewProfile(inputName, inputPicker) {
 }
 
 
-var apiShareCollection = "api/v1/collections/share"; 
+var apiShareCollection = "api/v1/collections/share";
 
 function showShareCollection() {
 	console.log(selectedStream);
-	showModal("Share " + selectedStream.s_stream_name, "#div_share_collection", 
+	showModal("Share " + selectedStream.s_stream_name, "#div_share_collection",
 		function closeModal() {
 		},
 		function postInit(modal) {
@@ -409,7 +410,7 @@ function shareCollection() {
 	queryData.id = selectedStream.l_stream_id;
 	queryData.name = $("#collectionName").val();
 	queryData.description = $("#collectionDesc").val();
-	
+
 	$.post(baseUrl + "/" + apiShareCollection, queryData, function http(data, status) {
 		if (data.error) {
 			modalError(data.error);
@@ -661,8 +662,7 @@ var onViewChangedListeners = [];
 var router = {};
 
 function initReader() {
-	readerHome = baseUrl + "/pages/reader.jsp";
-	console.debug('init');
+	readerHome = baseUrl + "/reader";
 	setupTemplates();
 	setupRoutes();
 	tmplOptions.id = TEMPLATE_ID_STREAM;
@@ -738,7 +738,6 @@ function setupRoutes() {
 	router.on('/v/r', loadRecentlyRead);
 	router.on('/v/s', loadSaved);
 	router.on('/s/:sourceid', loadSource);
-	console.debug("reader router", router);
 }
 
 function apiMarkRead(entries, callback) {
@@ -812,7 +811,6 @@ function displayStreamHeader() {
 	if (!streamGroupHeaderTmpl) {
 		streamGroupHeaderTmpl = Handlebars.compile($("#stream-header-tmpl").html());
 	}
-	console.debug('display stream header', selectedStream);
 	$("#stream-header .content").html(streamGroupHeaderTmpl(selectedStream));
 }
 
@@ -837,6 +835,7 @@ function sortByUnread(val) {
 }
 
 function runQuery() {
+	console.debug('run query function', streamGroups);
 	var j = jlinq.from(streamGroups);
 
 	if (queryGroups.showUnreadOnly) {
@@ -858,6 +857,7 @@ function runQuery() {
 }
 
 function renderStreamGroups(data) {
+	console.debug('render stream groups', data);
 	$("#menusubs").html(streamGroupsTmpl({
 		"groups" : data
 	}));
@@ -922,6 +922,7 @@ function getStreamGroups(callback) {
 
 	$.getJSON(baseUrl + apiUrlStreamsList, queryData, function(data) {
 		streamGroups = data;
+		console.debug('get stream groups data', data);
 		getUnreadCount(streamGroups, 0, function() {
 			if (callback) {
 				callback(streamGroups, filteredStreamGroups);
@@ -976,8 +977,6 @@ function importSingleFeed() {
 		} else if (data.error) {
 			modalError(data.error);
 		} else {
-			console.error("error importing single feed, data: ");
-			console.error(data);
 		}
 	});
 }
@@ -993,8 +992,6 @@ function confirmClearRecentlyRead() {
 			if (data.count >= 0) {
 				loadRecentlyRead();
 			} else {
-				console.error("error deleting entreis");
-				console.error(data);
 			}
 		});
 	}
@@ -1043,9 +1040,7 @@ function removeEntry(entryId) {
 		if (data.count == 1) {
 			$("#news_" + entryId).remove();
 		} else if (data.count == 0) {
-			console.error("wasnt not saved.")
 		} else {
-			console.error("save error")
 		}
 	});
 }
@@ -1059,7 +1054,6 @@ function saveEntry(entryId) {
 				$("#news_" + entryId).removeClass("saved");
 			}, 1500);
 		} else {
-			console.error("save error")
 		}
 	});
 }
@@ -1074,8 +1068,6 @@ function renameSubscription() {
 			$("#span_subscription_rename").text(val);
 			$("#span_subscription_rename").show();
 		} else {
-			console.error("error renaming subscription, data ");
-			console.error(data);
 		}
 	});
 }
@@ -1301,22 +1293,22 @@ function updateHeaderRightTools() {
 	}
 
 	if (selectedStream.h_filter_by == FILTER_SHOW_ALL) {
-		$("#show_unread").css("text-decoration", "none");
-		$("#show_all").css("text-decoration", "underline");
+		$("#show_unread").removeClass('active-icon');
+		$("#show_all").addClass('active-icon');
 	} else if (selectedStream.h_filter_by == FILTER_BY_UNREAD) {
-		$("#show_unread").css("text-decoration", "underline");
-		$("#show_all").css("text-decoration", "none");
+		$("#show_unread").addClass('active-icon');
+		$("#show_all").removeClass('active-icon');
 		if (streamEntries.length > 0) {
 			$(".mark_all_read").show();
 		}
 	}
 
 	if (selectedStream.h_sort_by == SORT_NEW_FIRST) {
-		$("#oldest_first").css("text-decoration", "none");
-		$("#newset_first").css("text-decoration", "underline");
+		$("#oldest_first").removeClass('active-icon');
+		$("#newset_first").addClass('active-icon');
 	} else if (selectedStream.h_filter_by == SORT_OLD_FIRST) {
-		$("#oldest_first").css("text-decoration", "underline");
-		$("#newset_first").css("text-decoration", "none");
+		$("#oldest_first").addClass('active-icon');
+		$("#newset_first").removeClass('active-icon');
 	}
 }
 
@@ -1418,7 +1410,6 @@ function updateNewsContentPane(entriesLen) {
 }
 
 function resetTemplate(type, showIco, showSource) {
-	console.debug('reset template');
 	renderTime = new Date().getTime();
 	closeAllHeaderTools();
 	tmplOptions.id = type;
@@ -1469,7 +1460,6 @@ function clearViewAndData() {
 }
 
 function loadStream(streamId) {
-	console.debug('load stream', streamId);
 	this.streamId = streamId;
 	apiCurrentStreamsFeed = apiUrlStreamsFeed;
 
@@ -1676,7 +1666,6 @@ function saveStreamGroup() {
 	var input = $("#menusubs input:first-child");
 
 	if (input.length == 0) {
-		console.error("error, can't create new stream group.");
 	}
 
 	var queryData = {};
@@ -2135,7 +2124,7 @@ function filterByKeyword() {
 	runQuery(true);
 }
 
-function runQuery(renderTmpl) {
+function runSubsQuery(renderTmpl) {
 	jlinqQuery = jlinq.from(subscriptions).sort(query.sortBy);
 	if (query.showOnlyInactive) {
 		jlinqQuery.equals("b_gaveup", true);
