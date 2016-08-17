@@ -1,24 +1,39 @@
-<script id="header_right_tools" type="text/x-handlebars-template">
-		<div id="view-options" class="right">
-			<a class="pointer" onclick="$('.right_tools').toggle()">Options</a>
+<script id="stream-options" type="text/x-handlebars-template">
+	{{log 'stream-options' this}}
+	<div id="stream-options" class="hide">
+		{{#if options.showFilter}}
+		<div class="filter-box">
+			<a title="show all" href="" id="show_all" onclick="showAll();return false;">
+				<i class="fa fa-eye"></i>
+			</a>
+			<a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">
+				<i class="fa fa-eye-slash"></i>
+				&nbsp;(<span id="unread"></span>)
+			</a>
 		</div>
-		<div id="right_tools" class="right_tools" style="display: none">
-
-		{{#if title}}
-		{{else}}
-				<a title="show newest first" href="" id="newset_first" onclick="streamSort(SORT_NEW_FIRST);return false;">
-				<span class="glyphicon glyphicon-sort-by-order"></span></a>
-				<a title="show oldest first" href="" id="oldest_first" onclick="streamSort(SORT_OLD_FIRST);return false;">
-				<span class="glyphicon glyphicon-sort-by-order-alt"></span></a>
 		{{/if}}
-				<a title="reload stream" href="" class="reload_stream" onclick="reloadStream(); return false;">
-				<span class="glyphicon glyphicon-refresh"></span></a>
-		{{#if title}}
-		{{else}}
-				<a title="mark all entries as read" href="" class="mark_all_read" onclick="markAllRead(); return false;">
-				<span class="glyphicon glyphicon-ok-sign"></span></a>
-		{{/if}}
+		{{#if options.showRanking}}
+		<div class="ranking-box">
+			<a href="" onclick="streamSort(SORT_NEW_FIRST);return false;">
+				<i class="fa fa-sort-numeric-asc"></i>
+			</a>
+			<a href="" onclick="streamSort(SORT_OLD_FIRST);return false;">
+				<i class="fa fa-sort-numeric-desc"></i>
+			</a>
 		</div>
+		{{/if}}
+		<div class="views-box">
+			<a title="show as list" href="" onclick="setLineView();return false;">
+				<span class="icon" id="icon_view_line" title="line view"></span>
+			</a>
+			<a title="show in magazine view" href="" onclick="setMagazineView();return false;">
+				<span class="icon" id="icon_view_mag" title="magazine view"></span>
+			</a>
+			<a title="show in stream view" href="" onclick="setStreamView();return false;">
+				<span class="icon" id="icon_view_stream" title="stream view"></span>
+			</a>
+		</div>
+	</div>
 </script>
 
 <script id="stream-header-tmpl" type="text/x-handlebars-template">
@@ -33,7 +48,9 @@
 				<a href="" onclick="markAllRead(); return false;">
 					<i class="fa fa-check" title="Mark stream read"></i>
 				</a>
-				<i class="fa fa-plus" title="Add content"></i>
+				<a href="/add?to={{stream.l_stream_id}}">
+					<i class="fa fa-plus" title="Add content"></i>
+				</a>
 				{{#if options.showDeleteStream}}
 				<a href="" onclick="deleteStream(); return false;">
 					<i class="fa fa-remove" title="Delete stream"></i>
@@ -51,75 +68,51 @@
 			</div>
 		</div>
 	</div>
-	<div id="stream-options" class="hide">
-		<div class="filter-box">
-			<a title="show all" href="" id="show_all" onclick="showAll();return false;">
-				<i class="fa fa-eye"></i>
-			</a>
-			<a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">
-				<i class="fa fa-eye-slash"></i>
-				&nbsp;(<span id="unread"></span>)
-			</a>
-		</div>
-		<div class="ranking-box">
-			<a href="" onclick="streamSort(SORT_NEW_FIRST);return false;">
-				<i class="fa fa-sort-numeric-asc"></i>
-			</a>
-			<a href="" onclick="streamSort(SORT_OLD_FIRST);return false;">
-				<i class="fa fa-sort-numeric-desc"></i>
-			</a>
-		</div>
-		<div class="views-box">
-			<a title="show as list" href="" onclick="setLineView();return false;">
-				<span class="icon" id="icon_view_line" title="line view"></span>
-			</a>
-			<a title="show in magazine view" href="" onclick="setMagazineView();return false;">
-				<span class="icon" id="icon_view_mag" title="magazine view"></span>
-			</a>
-			<a title="show in stream view" href="" onclick="setStreamView();return false;">
-				<span class="icon" id="icon_view_stream" title="stream view"></span>
-			</a>
-		</div>
-	</div>
+	{{> stream-options}}
 </script>
 
 
-<script id="source_header_tmpl" type="text/x-handlebars-template">
-		<div class="row">
-				{{#if s_img_url}}
-				<div class="margin10 col-xs-2">
-						<img id="source_image" src="{{s_img_url}}">
-				</div>
-				{{/if}}
-				<div class="margin10">
-						<span id="stream_name">
-						<img src="{{favico s_xml_url}}">
-						<a href="{{s_link}}" target="_blank">{{toUpperCase s_title}}</a>
-						|| <a href="{{s_xml_url}}" target="_blank">XML FEED</a><br>
-						<b>Total entries : {{i_total_entries}}, visible to your profile (${user.userType}) : {{count}}</b>
-						</span>
-						<br><br>
-						<span id="source_description">{{s_description}}</span><br>
-						<div id="user_subscription" class="noshow">
-								<div id="div_subscription_rename" style="float: left; display: none;">
-									 <input type="text" id="txt_subscription_rename" value="">
-									 <button class="btn btn-primary btn-xs" onClick="renameSubscription()">save</button>&nbsp;
-								</div>
-								<a href="" id="span_subscription_rename">subscription_name</a>
-								<span class="glyphicon glyphicon-edit pointer" onclick="showRename('subscription_rename');return false;"></span>
-								<br>
-								Last updated on: {{formatUnixTs t_checked_at}}
-						</div>
-				</div>
-				{{> header_right_tools}}
+<script id="source-header-tmpl" type="text/x-handlebars-template">
+{{log 'source header tmpl' this}}
+<div class="no-overflow">
+	{{#if s_img_url}}
+	<div class="source-logo">
+		<img src="{{s_img_url}}">
+	</div>
+	{{/if}}
+	<div class="channel-info">
+		<img src="{{favico s_xml_url}}">
+		<a href="{{s_link}}" target="_blank">{{s_title}}</a>
+		<br>
+		<span class="subscibe">
+			<a href="#" class="source-add">
+				<i class="fa fa-plus-circle"></i>
+				subscribe
+			</a>
+		</span>
+	</div>
+</div>
+<div class="source-info">
+	<div class="channel-desc">{{s_description}}</div>
+	<div class="channel-entries w100p text-right">
+		entries {{i_total_entries}} -
+		<a href="{{s_xml_url}}" target="_blank">feed</a>
+		last updated on: {{formatUnixTs t_checked_at}}
+		<div class="right">
+			&nbsp;
+			<i onclick="shToggleSettings()"
+				class="-icon-hide pointer fa fa-cog right fade-color"></i>
 		</div>
+	</div>
+</div>
+{{> stream-options}}
 </script>
 
 
 <script id="simple_view_header_tmpl" type="text/x-handlebars-template">
 <span style="float: left">
 		<img class="icon" src="${baseUrl}/img/icon-stream.png">{{title}}&nbsp;{{page}}</span>
-{{> header_right_tools}}
+{{> stream-options}}
 </script>
 
 <script id="recently_read_header_tmpl" type="text/x-handlebars-template">
@@ -127,8 +120,7 @@
 	<img class="icon" src="${baseUrl}/img/icon-stream.png">{{title}}&nbsp;
 		<a title="clear all" href="" onClick="confirmClearRecentlyRead();return false;"><span class="glyphicon glyphicon glyphicon-remove-sign"></span></a>
 </span>
-
-{{> header_right_tools}}
+{{> stream-options}}
 </script>
 
 <script id="news_line_tmpl" type="text/x-handlebars-template">
@@ -186,7 +178,9 @@
 				</div>
 				<div class="right source">
 					<a href="#">
-						mashable
+						<a href="#/s/{{l_xml_id}}">
+							{{#sourceName l_xml_id}}{{/sourceName}}
+						</a>
 					</a>
 				</div>
 			</div>
@@ -223,7 +217,7 @@
 					<i class="fa fa-info-circle"></i>
 				</div>
 				<div class="right source">
-					<a href="#">
+					<a href="#/s/{{l_xml_id}}">
 						{{#sourceName l_xml_id}}{{/sourceName}}
 					</a>
 				</div>

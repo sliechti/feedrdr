@@ -929,30 +929,30 @@ body {
   vertical-align: middle;
 }
 
-#source-header {
+#stream-header {
   overflow: hidden;
 }
-#source-header .source-logo img {
+#stream-header .source-logo img {
   max-width: 50%;
   max-height: 150px;
   float: left;
 }
-#source-header .channel-info {
+#stream-header .channel-info {
   font-size: 1.2em;
   line-height: 30px;
   float: right;
   text-align: right;
 }
-#source-header .channel-info a {
+#stream-header .channel-info a {
   text-decoration: none;
   color: #173C4F;
 }
-#source-header .channel-desc {
+#stream-header .channel-desc {
   padding: 10px 0px 10px 0px;
   border-bottom: 1px solid #CACACA;
   margin-bottom: 10px;
 }
-#source-header .channel-entries {
+#stream-header .channel-entries {
   font-size: 0.8em;
 }
 

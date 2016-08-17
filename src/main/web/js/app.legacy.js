@@ -709,7 +709,7 @@ function setupEvents() {
 
 function setupTemplates() {
 
-	Handlebars.registerPartial("header_right_tools", $("#header_right_tools").html());
+	Handlebars.registerPartial("stream-options", $("#stream-options").html());
 
 	// TODO Compile only when used for the first time.
 	streamGroupsTmpl = Handlebars.compile($('#stream_groups_tmpl').html());
@@ -719,7 +719,7 @@ function setupTemplates() {
 	viewNewsTmpl = Handlebars.compile($("#news_stream_tmpl").html());
 	entriesTmpl = viewLineTmpl;
 
-	sourceHeaderTmpl = Handlebars.compile($("#source_header_tmpl").html());
+	sourceHeaderTmpl = Handlebars.compile($("#source-header-tmpl").html());
 	recentlyReadHeaderTmpl = Handlebars.compile($("#recently_read_header_tmpl")
 			.html());
 	simpleViewHeaderTmpl = Handlebars.compile($("#simple_view_header_tmpl").html());
@@ -1291,10 +1291,6 @@ function updateNewsListView() {
 function updateHeaderRightTools() {
 	$(".mark_all_read").hide();
 
-	if (tmplOptions.id == TEMPLATE_ID_SOURCE) {
-		$("#right_tools").remove();
-	}
-
 	if (selectedStream.h_filter_by == FILTER_SHOW_ALL) {
 		$("#show_unread").css("text-decoration", "none");
 		$("#show_all").css("text-decoration", "underline");
@@ -1433,8 +1429,6 @@ function clearContent() {
 	filteredStreamGroups = {};
 	position = 0;
 
-	$("#right_tools").remove(); // needs to be removed since it uses a partial
-	// template.
 	$("#menusubs").html("");
 	$("#stream_header").html("");
 	$("#stream_config").hide();
@@ -1466,7 +1460,7 @@ function loadStream(streamId) {
 	this.streamId = streamId;
 	apiCurrentStreamsFeed = apiUrlStreamsFeed;
 
-	resetTemplate(TEMPLATE_ID_STREAM, true, true, 'stream_group_header');
+	resetTemplate(TEMPLATE_ID_STREAM, true, true);
 
 	for (var i = 0; i < streamGroups.length; i++) {
 		if (streamGroups[i].l_stream_id == streamId) {
@@ -1476,7 +1470,10 @@ function loadStream(streamId) {
 
 	currentView = selectedStream.h_view_mode;
 	fetchAllStreamSubscriptions(streamId);
-	displayStreamHeader();
+	displayStreamHeader({
+		'showFilter': true,
+		'showRanking': true
+	});
 	loadEntries(0);
 }
 
@@ -1484,7 +1481,7 @@ function loadAll() {
 	currentView = selectedProfile.all_settings.view;
 	apiCurrentStreamsFeed = apiUrlStreamsFeedAll;
 
-	resetTemplate(TEMPLATE_ID_ALL, true, true, 'stream-header-tmpl');
+	resetTemplate(TEMPLATE_ID_ALL, true, true);
 	selectDom("mAll");
 
 	$.getJSON(baseUrl + apiCurrentStreamsFeed, {}, function(data) {
@@ -1508,7 +1505,7 @@ function loadRecentlyRead() {
 	currentView = selectedProfile.rr_settings.view;
 	apiCurrentStreamsFeed = apiUrlStreamsFeedRecent;
 
-	resetTemplate(TEMPLATE_ID_RECENTLY_READ, true, true, 'simple_view_header');
+	resetTemplate(TEMPLATE_ID_RECENTLY_READ, true, true);
 	selectDom("mRr");
 
 	$.getJSON(baseUrl + apiCurrentStreamsFeed, {}, function(data) {
@@ -1527,7 +1524,7 @@ function loadSaved() {
 	currentView = selectedProfile.saved_settings.view;
 	apiCurrentStreamsFeed = apiUrlStreamsFeedSaved;
 
-	resetTemplate(TEMPLATE_ID_SAVED, true, true, 'simple_view_header');
+	resetTemplate(TEMPLATE_ID_SAVED, true, true);
 	selectDom("mSaved");
 
 	$.getJSON(baseUrl + apiCurrentStreamsFeed, {}, function(data) {
@@ -1541,57 +1538,26 @@ function loadSaved() {
 }
 
 function loadSource(sourceId) {
-	resetTemplate(TEMPLATE_ID_SOURCE, false, false, 'simple_view_header');
+	console.debug('load source', sourceId);
+	resetTemplate(TEMPLATE_ID_SOURCE, false, false);
 	apiCurrentStreamsFeed = apiUrlSourceId;
 
 	var queryData = {};
 	queryData.id = sourceId;
 
 	$.getJSON(baseUrl + apiUrlSourcesGet, queryData, function(data) {
-		$("#simple_view_header").html(sourceHeaderTmpl(data));
+		$("#stream-header .content").html(sourceHeaderTmpl(data));
 	}, "json");
 
 	var queryData = {};
 	queryData.sid = sourceId;
 
-	$
-			.getJSON(
-					baseUrl + apiUrlSubscriptionsGet,
-					queryData,
-					function(data) {
-						// TODO: Can all this be done better?
-						if (data && data.l_subs_id) {
-							$("#user_subscription").show();
-
-							var inputSize = (data.s_subs_name.length * 2 > MAX_INPUT_SIZE) ? MAX_INPUT_SIZE
-									: data.s_subs_name.length * 2;
-							$("#txt_subscription_rename").attr("size",
-									inputSize);
-							$("#txt_subscription_rename").attr("data-value",
-									data.l_subs_id);
-							$("#txt_subscription_rename").val(data.s_subs_name);
-
-							$("#span_subscription_rename").html(
-									data.s_subs_name);
-							$("#span_subscription_rename").attr(
-									"href",
-									baseUrl + "/pages/subscriptions.jsp#/v/"
-											+ data.l_subs_id);
-
-							$("#txt_subscription_rename").keyup(function(e) {
-								if ((e.keyCode || e.which) == 13)
-									renameSubscription(); // enter
-								if ((e.keyCode || e.which) == 27) {
-									$("#div_subscription_rename").hide();
-									$("#span_subscription_rename").show();
-								}
-							});
-						}
-					});
+	$.getJSON(baseUrl + apiUrlSubscriptionsGet, queryData, function(data) {
+		console.debug('source user subscription info', data);
+	});
 
 	var queryData = {};
 	queryData.id = sourceId;
-
 	selectedStream.l_stream_id = sourceId; // so loadMore keeps working
 
 	$.getJSON(baseUrl + apiUrlSourceId, queryData, function(data) {
@@ -1601,7 +1567,7 @@ function loadSource(sourceId) {
 }
 
 function loadMore() {
-	$("#stream_more").hide();
+	$("#stram-footer").hide();
 	if (!moreAvailable) {
 		return;
 	}
