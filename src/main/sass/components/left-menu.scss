@@ -54,9 +54,10 @@ $left-menu-bgcolor: white;
 	.back {
 		background-color: #173C4F;
 		text-align: center;
-		margin-bottom: 10px;
+		padding: 10px;
+		font-size: $font-med;
 
-		a {
+		a, .fa {
 			color: white;
 		}
 	}

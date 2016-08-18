@@ -126,10 +126,9 @@
 <script id="news_line_tmpl" type="text/x-handlebars-template">
 <div id="stream-list" class="line-view">
 	<div id="line-view-options-tmpl" class="options hide">
+	<a href="#" onclick="slForwardSaveEntry(this);return false;">
 		<i class="fa fa-bookmark-o"></i>
-		<i class="fa fa-share"></i>
-		<i class="fa fa-tag"></i>
-		<i class="fa fa-info-circle"></i>
+	</a>
 	</div>
 		{{#each entries}}
 		<div id="article-{{l_entry_id}}" class="article" >
@@ -148,44 +147,38 @@
 
 <script id="news_mag_tmpl" type="text/x-handlebars-template">
 <div id="stream-list" class="line-view">
-	<div id="line-view-options-tmpl" class="options hide">
-		<i class="fa fa-bookmark-o"></i>
-		<i class="fa fa-share"></i>
-		<i class="fa fa-tag"></i>
-		<i class="fa fa-info-circle"></i>
-	</div>
-		{{#each entries}}
-		<div id="news_${l_entry_id}" class="news-mag">
-			<div class="content">
-				<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
-				class="left margin10" id="img_{{l_entry_id}}" src="/img/1px.png">
-				<a name="link" class="title" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">
-					{{timediff t_pub_date}}
-					{{s_title}}
-				</a>
-				<div>
-					<p id="cnt_{{l_entry_id}}">
-					{{content}}
-					</p>
-				</div>
-			</div>
-			<div class="news-footer">
-				<div class="actions">
-					<i class="fa fa-bookmark-o"></i>
-					<i class="fa fa-share"></i>
-					<i class="fa fa-tag"></i>
-					<i class="fa fa-info-circle"></i>
-				</div>
-				<div class="right source">
-					<a href="#">
-						<a href="#/s/{{l_xml_id}}">
-							{{#sourceName l_xml_id}}{{/sourceName}}
-						</a>
-					</a>
-				</div>
+	{{#each entries}}
+	<div id="news_${l_entry_id}" class="news-mag">
+		<div class="content">
+			<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
+			class="left margin10" id="img_{{l_entry_id}}" src="${baseUrl}/img/1px.png">
+			<a name="link" class="title" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">
+				{{timediff t_pub_date}}
+				{{s_title}}
+			</a>
+			<div>
+				<p id="cnt_{{l_entry_id}}">
+				{{content}}
+				</p>
 			</div>
 		</div>
-		{{/each}}
+		<div class="news-footer">
+			<div class="actions">
+					<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
+						<i class="fa fa-bookmark-o"></i>
+					</a>
+				<i class="fa fa-bookmark-o"></i>
+			</div>
+			<div class="right source">
+				<a href="#">
+					<a href="#/s/{{l_xml_id}}">
+						{{#sourceName l_xml_id}}{{/sourceName}}
+					</a>
+				</a>
+			</div>
+		</div>
+	</div>
+	{{/each}}
 </div>
 </script>
 
@@ -211,10 +204,9 @@
 			</div>
 			<div class="news-footer">
 				<div class="actions">
-					<i class="fa fa-bookmark-o"></i>
-					<i class="fa fa-share"></i>
-					<i class="fa fa-tag"></i>
-					<i class="fa fa-info-circle"></i>
+					<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
+						<i class="fa fa-bookmark-o"></i>
+					</a>
 				</div>
 				<div class="right source">
 					<a href="#/s/{{l_xml_id}}">

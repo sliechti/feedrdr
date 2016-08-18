@@ -618,6 +618,7 @@ body {
   margin-bottom: 10px;
 }
 .news-mag .actions {
+  float: left;
   font-size: 1.2em;
   text-align: center;
 }
@@ -645,6 +646,7 @@ body {
   margin-bottom: 10px;
 }
 .news-card .actions {
+  float: left;
   font-size: 1.2em;
   text-align: center;
 }
@@ -818,9 +820,10 @@ body {
 #left-menu .back {
   background-color: #173C4F;
   text-align: center;
-  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.2em;
 }
-#left-menu .back a {
+#left-menu .back a, #left-menu .back .fa {
   color: white;
 }
 #left-menu .menu-icons a {

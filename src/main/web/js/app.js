@@ -294,6 +294,11 @@ function shToggleSettings(caller) {
 	checkColor(streamOptionsId, streamHeaderAngleId);
 }
 
+function slForwardSaveEntry(caller) {
+	var id = slGetDataId(caller);
+	saveEntry(caller, id);
+}
+
 function slLineOptions(caller, id) {
 	var content = $('#article-' + id).find('.content');
 	var ielem = $(caller).find('i');
@@ -319,6 +324,11 @@ function slCloseOptions(caller) {
 	var id = elem.attr('data-id');
 	var news = $('#article-' + id);
 	slOutRight('options-' + id, news.width());
+}
+
+function slGetDataId(caller) {
+	var elem = $(caller).closest('div .options');
+	return elem.attr('data-id');
 }
 var welcome = 'welcome';
 var steps = [ 'password-setup', 'content-setup', 'thanks' ];

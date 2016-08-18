@@ -32,34 +32,37 @@
 			</div>
 		</div>
 
-		<c:if test="${not inReader}">
-			<div>
-				<a href="${baseUrl}/${readerUrl}">back to reader</a>
+		<c:choose>
+			<c:when test="${not inReader}">
+				<div class="back">
+					<a href="${baseUrl}/${readerUrl}">
+						<i class="fa  fa-arrow-left">
+							back to reader
+						</i>
+					</a>
+				</div>
+			</c:when>
+			<c:otherwise>
+			<div class="ul-section" id="special-entries">
+			<ul>
+				<li>
+					<a href="#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
+				</li>
+				<li>
+					<a href="#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>
+				</li>
+				<li>
+					<a href="#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
+				</li>
+	<!-- 			<li> -->
+	<%-- 				<a href="${readerUrl}#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Discover</a> --%>
+	<!-- 			</li> -->
+	<!-- 			<li> -->
+	<%-- 				<a href="${readerUrl}#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Trending</a> --%>
+	<!-- 			</li> -->
+			</ul>
 			</div>
-		</c:if>
-
-	    <div class="ul-section" id="special-entries">
-	    <ul>
-	    	<li>
-		        <a href="#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
-	    	</li>
-	    	<li>
-		        <a href="#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>
-			</li>
-			<li>
-				<a href="#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
-			</li>
-<!-- 			<li> -->
-<%-- 				<a href="${readerUrl}#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Discover</a> --%>
-<!-- 			</li> -->
-<!-- 			<li> -->
-<%-- 				<a href="${readerUrl}#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Trending</a> --%>
-<!-- 			</li> -->
-	    </ul>
-	    </div>
-	    <hr>
-
-		<c:if test="${inReader}">
+			<hr>
 
 	    <div id="streams-header" class="font-med">
 			<div id="streams-actions" class="ls-med menu-icons r20p">
@@ -115,13 +118,15 @@
 
 		<div id='menusubs'></div>
 
-		</c:if>
-
 	    <hr>
 
 		<div id="left-add-content">
 			<div class="box" onclick="addContent()">Add content</div>
 		</div>
+
+			</c:otherwise>
+		</c:choose>
+
 	</div>
 </div>
 

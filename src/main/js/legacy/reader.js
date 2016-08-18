@@ -483,26 +483,23 @@ function sendActionEntry(entryId, action, callback) {
 
 function removeEntry(entryId) {
 	sendActionEntry(entryId, 'r', function(data) {
-		// TODO: Implement pop-up.
-		if (data.count == 1) {
-			$("#news_" + entryId).remove();
-		} else if (data.count == 0) {
-		} else {
-		}
+		console.debug('remove entry', data);
 	});
 }
 
-function saveEntry(entryId) {
-	sendActionEntry(entryId, 's', function(data) {
-		// TODO: Implement pop-up.
-		if (data.count >= 0) {
-			$("#news_" + entryId).addClass("saved");
-			setTimeout(function() {
-				$("#news_" + entryId).removeClass("saved");
-			}, 1500);
-		} else {
-		}
-	});
+function saveEntry(caller, entryId) {
+	var i = $(caller).find('i');
+	if (i && i.hasClass('fa-bookmark-o')) {
+		$(i).removeClass('fa-bookmark-o').addClass('fa-bookmark');
+		sendActionEntry(entryId, 's', function(data) {
+			console.debug('save entry result', data);
+		});
+	} else if (i && i.hasClass('fa-bookmark')) {
+		$(i).removeClass('fa-bookmark').addClass('fa-bookmark-o');
+		sendActionEntry(entryId, 'r', function(data) {
+			console.debug('delete entry result', data);
+		});
+	}
 }
 
 function renameSubscription() {
