@@ -47,3 +47,19 @@ function showEl(id) {
 function addContent() {
 	location.href = baseUrl + '/add';
 }
+
+
+/**
+ * @param pObj jquery object
+ */
+function attachColorPicker(pObj) {
+	var picker = new jscolor.color(pObj.get(0), {
+		slider : true,
+		pickerFaceColor : 'transparent',
+		pickerMode : 'HSV',
+		pickerFace : 1,
+		pickerBorder : 0,
+		pickerInsetColor : 'black'
+	});
+	picker.fromString(pObj.attr('data-color'));
+}

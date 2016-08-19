@@ -15,6 +15,9 @@
 <script src="${baseUrl}/js/vendor/jlinq.min.js"></script>
 <script src="${baseUrl}/js/app.legacy.js"></script>
 <script src="${baseUrl}/js/app.js"></script>
+<script>
+	setBaseUrl('${baseUrl}');
+</script>
 </head>
 <body class="margin0">
 	<div class="header bg-white primary-t-color font-large">

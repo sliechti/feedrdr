@@ -738,10 +738,18 @@ body {
   text-align: center;
 }
 
-.msg, .msg-error, .info-msg, .warn-msg, .success-msg {
+.msg, .msg-error, .msg-info, .msg-warn, .success-msg {
   margin: 5px 0px;
   padding: 5px;
   position: relative;
+}
+.msg .actions, .msg-error .actions, .msg-info .actions, .msg-warn .actions, .success-msg .actions {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.msg .actions .fa:hover, .msg-error .actions .fa:hover, .msg-info .actions .fa:hover, .msg-warn .actions .fa:hover, .success-msg .actions .fa:hover {
+  color: white;
 }
 
 .msg-error {
@@ -751,21 +759,13 @@ body {
 .msg-error * {
   color: white;
 }
-.msg-error .actions {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-}
-.msg-error .actions .fa:hover {
-  color: white;
-}
 
-.info-msg {
+.msg-info {
   background-color: #30779B;
   color: white;
 }
 
-.warn-msg {
+.msg-warn {
   background-color: #DBDB41;
   color: #183C4F;
 }

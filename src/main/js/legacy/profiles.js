@@ -14,6 +14,7 @@ var onProfilesAvailableListeners = [];
 var onProfileDataChangedListeners = [];
 
 function initProfiles() {
+	console.debug('init profiles');
 	registerOnProfileSelected(function() {
 		renderProfiles();
 	});
@@ -58,6 +59,7 @@ function registerOnProfileDataChange(listener) {
 }
 
 function triggerOnProfilesAvailable() {
+	console.debug('trigger profiles avail.', profiles);
 	for (var i = 0; i < onProfilesAvailableListeners.length; i++) {
 		onProfilesAvailableListeners[i](profiles);
 	}
@@ -82,7 +84,7 @@ function setSessionProfile(profileId, callback) {
 }
 
 function selectProfile(profileId, resetRoute) {
-	console.debug('select profile');
+	console.debug('select profile', profileId);
 	if (resetRoute) {
 		window.location.hash = '';
 	}

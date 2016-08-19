@@ -2,16 +2,6 @@
 	margin: 5px 0px;
 	padding: 5px;
 	position: relative;
-}
-
-.msg-error {
-	@extend .msg;
-	background-color: $failed-color;
-	border: 1px solid $fade-color;
-
-	* {
-		color: white;
-	}
 
 	.actions {
 		position: absolute;
@@ -24,16 +14,27 @@
 	}
 }
 
-.info-msg {
+.msg-error {
+	@extend .msg;
+	background-color: $failed-color;
+	border: 1px solid $fade-color;
+
+	* {
+		color: white;
+	}
+
+}
+
+.msg-info {
 	@extend .msg;
 	background-color: $info-color;
 	color: white;
 }
 
-.warn-msg {
+.msg-warn {
 	@extend .msg;
 	background-color: $warning-color;
-	color: #183C4F;
+	color: $warn-color;
 }
 
 .success-msg {

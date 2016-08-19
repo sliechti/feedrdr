@@ -1,7 +1,4 @@
-</body>
-</html>
-
-<script type="text/javascript">
+<script>
     initProfiles();
 
     registerOnProfilesAvailable(function() {
@@ -16,3 +13,6 @@
         });
     });
 </script>
+
+</body>
+</html>

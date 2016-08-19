@@ -227,6 +227,7 @@ var onProfilesAvailableListeners = [];
 var onProfileDataChangedListeners = [];
 
 function initProfiles() {
+	console.debug('init profiles');
 	registerOnProfileSelected(function() {
 		renderProfiles();
 	});
@@ -271,6 +272,7 @@ function registerOnProfileDataChange(listener) {
 }
 
 function triggerOnProfilesAvailable() {
+	console.debug('trigger profiles avail.', profiles);
 	for (var i = 0; i < onProfilesAvailableListeners.length; i++) {
 		onProfilesAvailableListeners[i](profiles);
 	}
@@ -295,7 +297,7 @@ function setSessionProfile(profileId, callback) {
 }
 
 function selectProfile(profileId, resetRoute) {
-	console.debug('select profile');
+	console.debug('select profile', profileId);
 	if (resetRoute) {
 		window.location.hash = '';
 	}
@@ -1997,19 +1999,16 @@ function deleteProfile(id) {
 		var queryData = {};
 		queryData.pid = id;
 
-		console.log("deleting profile  " + id);
+		console.log("deleting profile  ", id);
 
 		$.getJSON(baseUrl + '/api/v1/user/profiles/delete', queryData, function(data) {
+			console.log(data);
 			if (data.count > 0) {
 				location.reload();
 			} else if (data.error) {
-				console.log(data.error);
 				showError(data.error);
-			} else {
-				console.log(data);
 			}
-
-		})
+		});
 	}
 }
 var subscriptionsHome = '';

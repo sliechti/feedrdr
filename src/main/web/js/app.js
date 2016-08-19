@@ -59,6 +59,23 @@ function showEl(id) {
 function addContent() {
 	location.href = baseUrl + '/add';
 }
+
+
+/**
+ * @param pObj jquery object
+ */
+function attachColorPicker(pObj) {
+	var picker = new jscolor.color(pObj.get(0), {
+		slider : true,
+		pickerFaceColor : 'transparent',
+		pickerMode : 'HSV',
+		pickerFace : 1,
+		pickerBorder : 0,
+		pickerInsetColor : 'black'
+	});
+	picker.fromString(pObj.attr('data-color'));
+}
+
 function hideSearch() {
 	console.debug('hide search');
 	var hi = $('#header-input');
@@ -181,57 +198,72 @@ function clearMsgElem(elem) {
 }
 
 function showErrorMsg(elemId, msg) {
+	showMsg(elemId, msg, 'msg-info');
+}
+
+function showInfoMsg(elemId, msg) {
+	showMsg(elemId, msg, 'msg-info');
+}
+
+function showMsg(elemId, msg, clzz) {
 	var elem = $(elemId);
 	elem.hide();
 	clearMsgElem(elem);
-	elem.addClass('msg-error');
+	elem.addClass(clzz);
 	elem.find('.text').html(msg);
 	elem.show();
 }
-
 var spTmpl = spTmpl || {};
 
 function settingsError(msg) {
 	showErrorMsg('#settings-msg', msg);
 }
 
+function settingsInfo(msg) {
+	showErrorMsg('#settings-msg', msg);
+}
+
 function loadColorPickers() {
 	$('.profile-row').find('input[data-color]').each(function(idx, o) {
-		var pObj = $(o);
-		var picker = new jscolor.color(pObj.get(0), {
-			slider : true,
-			pickerFaceColor : 'transparent',
-			pickerMode : 'HSV',
-			pickerFace : 1,
-			pickerBorder : 0,
-			pickerInsetColor : 'black'
-		});
-		picker.fromString(pObj.attr('data-color'));
+		attachColorPicker($(o));
 	});
 }
 
-function saveProfileRow(e) {
-	alert('save profile row');
-	console.debug(e.data.root);
-	e.data.root.find('.fa-plus').remove();
-	e.data.root.find('.fa-remove').show();
-}
+function forwardSaveProfile() {
+	var name = $('#name_profile_0');
+	var color = $("#picker_profile_0");
 
+	var queryData = {};
+	queryData.n = name.val();
+	queryData.c = color.val();
+
+	$.getJSON(baseUrl + "/api/v1/user/profiles/new", queryData, function(data) {
+		if (data.success) {
+			setSessionProfile(data.profileid, function() {
+				selectProfile(data.profileid);
+			});
+			hideModal();
+		} else {
+			settingsError(data.error);
+		}
+	});
+}
 function addNewProfile() {
 	console.debug('add new profile');
-	var tmpl = $(Handlebars.partials['tmplprofile']({'profiles' :
-			[{
-				'l_profile_id': -1,
+	var tmpl = $(Handlebars.partials['tmplprofile'](
+			{
+				'l_profile_id': '0',
 				's_profile_name': '',
 				's_color': '#173C4F'
-			}]
-		}));
-	var i = $('<i class="fa fa-plus"></i>').on('click', {root: tmpl}, saveProfileRow);
+			}
+		));
+	var i = $('<i class="fa fa-plus"></i>').on('click', forwardSaveProfile);
 	var actions = $(tmpl).find('.actions');
 	actions.find('.fa-remove').hide()
 	actions.append(i);
 
 	$('#profile-list').append($(tmpl));
+	attachColorPicker($('#picker_profile_0'));
 	disableAddBox();
 }
 
@@ -239,28 +271,22 @@ function disableAddBox() {
 	$('#settings-profile').find('.box').addClass('disabled').off('click');
 }
 
-function deleteProfile() {
-	alert('delete profile');
-}
-
 $(document).ready(function() {
-	var tmplprofile = $('#tmpl-settings-profile').html();
-	if (tmplprofile) {
-		Handlebars.registerPartial('tmplprofile', tmplprofile);
-		spTmpl = Handlebars.compile($('#tmpl-settings-profile-list').html());
-		$.get('api/profiles.json', function(data, success) {
-			if (data.entries) {
+	registerOnProfilesAvailable(function() {
+		var tmplprofile = $('#tmpl-settings-profile').html();
+		if (tmplprofile) {
+			Handlebars.registerPartial('tmplprofile', tmplprofile);
+			spTmpl = Handlebars.compile($('#tmpl-settings-profile-list').html());
+			if (profiles) {
 				$('#profile-list').html(spTmpl({
-					'profiles' : data.entries
+					'profiles' : profiles
 				}));
 				var sp = $('#settings-profile');
 				sp.find('.box').on('click', addNewProfile);
 			}
 			loadColorPickers();
-		}).fail(function (xhr) {
-			settingsError(xhr.statusText);
-		});
-	}
+		}
+	});
 });
 
 function sourceAdd() {

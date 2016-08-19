@@ -7,10 +7,18 @@ function clearMsgElem(elem) {
 }
 
 function showErrorMsg(elemId, msg) {
+	showMsg(elemId, msg, 'msg-info');
+}
+
+function showInfoMsg(elemId, msg) {
+	showMsg(elemId, msg, 'msg-info');
+}
+
+function showMsg(elemId, msg, clzz) {
 	var elem = $(elemId);
 	elem.hide();
 	clearMsgElem(elem);
-	elem.addClass('msg-error');
+	elem.addClass(clzz);
 	elem.find('.text').html(msg);
 	elem.show();
 }
