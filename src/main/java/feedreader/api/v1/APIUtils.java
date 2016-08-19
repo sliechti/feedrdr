@@ -1,15 +1,11 @@
 package feedreader.api.v1;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.HashMap;
 
 import feedreader.log.Logger;
-import feedreader.store.DBFields;
 import feedreader.utils.JSONUtils;
 
 public class APIUtils {
