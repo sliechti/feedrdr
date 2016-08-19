@@ -94,7 +94,8 @@ public class SourcesAPI {
             case 1:
                 rawQuery += "t0." + DBFields.LONG_XML_ID + ", t1." + DBFields.STR_LINK + ", "
                         + "t0." + DBFields.STR_XML_URL + " " + " , t0." + DBFields.INT_TOTAL_ENTRIES + ", "
-                        + "t0." + DBFields.INT_COUNT_0 + ", t0." + DBFields.INT_COUNT_1 + ", t0." + DBFields.INT_COUNT_2
+                        + "t0." + DBFields.INT_COUNT_0 + ", t0." + DBFields.INT_COUNT_1 + ", t0." + DBFields.INT_COUNT_2 +","
+                        + "t0." + DBFields.BOOL_IS_FAVICON_EXIST
                         + " ";
                 break;
 

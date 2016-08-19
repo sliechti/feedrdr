@@ -20,6 +20,7 @@ import feedreader.cron.CronFetchNews;
 import feedreader.cron.CronForgotPasswordEmail;
 import feedreader.cron.CronNewUsersEmail;
 import feedreader.cron.CronTimeUtils;
+import feedreader.cron.CronValidateFavicon;
 import feedreader.store.Database;
 import feedreader.utils.ApplicationConfig;
 
@@ -177,6 +178,17 @@ public class AppContextInit implements ServletContextListener {
         if (cronStartValidateNews) {
             sc.scheduleAtFixedRate(CronFetchNews.fetchInstance(true), 0,
                     FeedAppConfig.DELAY_FETCH_IN_S, TimeUnit.SECONDS);
+        }
+        
+        boolean cronStartValidatefavicon = appConfig.getBoolean("cron_start_validate_favicon", false);
+        logger.info("start cron: {}={}", CronValidateFavicon.class.getSimpleName(), cronStartValidatefavicon);
+        if (cronStartValidatefavicon) {
+        	try {
+        		sc.scheduleAtFixedRate(new CronValidateFavicon(), 0,
+                        FeedAppConfig.DELAY_VALIDATE_FAVICON_IN_MINUTES, TimeUnit.MINUTES);
+        	} catch (Exception e) {
+                logger.error("failed to start validate favicon cron: {}", e, e.getMessage());
+            }
         }
     }
 

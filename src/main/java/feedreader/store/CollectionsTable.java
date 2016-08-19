@@ -30,6 +30,7 @@ public class CollectionsTable {
         return "SELECT t1.l_collection_id, "
                 + "t1.s_feed_name, "
                 + "t2.l_xml_id, "
+                + "t2.b_is_favicon_exist, "
                 + "t2.s_xml_url, "
                 + "t3.s_title, "
                 + "t3.s_link "

@@ -49,6 +49,7 @@ var apiUrlSubscriptionsGet = '/api/v1/user/subscriptions/get';
 var apiUrlSourceId = '/api/v1/user/feeds/sourceid';
 var apiUrlStreamsAdd = '/api/v1/user/streams/add';
 var baseFavicoDomain = 'https://www.google.com/s2/favicons?domain=';
+var emptyFavicon= 'https://feedrdr.co'
 
 var streamId = 0;
 var streamDir = 0;
@@ -568,12 +569,17 @@ function fetchFavIcos() {
 	$.getJSON(baseUrl + apiUrlSourcesGet, queryData, function(data) {
 		if (data && data.entries) {
 			data.entries.forEach(function(e, i, a) {
-				if (e.s_link != '') {
+				if(e.b_is_favicon_exist){
+				    if (e.s_link != '') {
+					    $("img[name=favico_" + e.l_xml_id + "]").attr('src',
+							    baseFavicoDomain + e.s_link);
+				    } else if (e.s_xml_url) {
+					    $("img[name=favico_" + e.l_xml_id + "]").attr('src',
+							    baseFavicoDomain + e.s_xml_url);
+				    }
+				}else{
 					$("img[name=favico_" + e.l_xml_id + "]").attr('src',
-							baseFavicoDomain + e.s_link);
-				} else if (e.s_xml_url) {
-					$("img[name=favico_" + e.l_xml_id + "]").attr('src',
-							baseFavicoDomain + e.s_xml_url);
+						    baseFavicoDomain + emptyFavicon);
 				}
 			});
 		}

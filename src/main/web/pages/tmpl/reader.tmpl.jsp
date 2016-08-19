@@ -73,7 +73,11 @@
 				{{/if}}
 				<div class="margin10">
 						<span id="stream_name">
-						<img src="{{favico s_xml_url}}">
+				        {{#if b_is_favicon_exist}}
+						    <img src="{{favico s_xml_url}}">
+                        {{else}}
+						    <img src="{{favicoDefault}}">
+				        {{/if}}
 						<a href="{{s_link}}" target="_blank">{{toUpperCase s_title}}</a>
 						|| <a href="{{s_xml_url}}" target="_blank">XML FEED</a><br>
 						<b>Total entries : {{i_total_entries}}, visible to your profile (<%= user.getUserType() %>) : {{count}}</b>

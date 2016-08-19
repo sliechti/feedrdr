@@ -145,7 +145,6 @@ public class CollectionsAPI {
                 return JSONUtils.error(0, "collections entries error", e);
             }
         }
-        sb=APIUtils.updateInvalidSLinks(sb);
         sb.append("]}");
         return sb.toString();
     }

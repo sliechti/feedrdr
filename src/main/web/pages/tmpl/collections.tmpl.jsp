@@ -26,7 +26,11 @@
 <ul>
 	{{#each entries}}
 	<li>
-		<img src="{{favico}}{{s_link}}">&nbsp;
+		{{#if b_is_favicon_exist}}
+		    <img src="{{favico}}{{s_link}}">&nbsp;
+        {{else}}
+		    <img src="{{favicoDefault}}">&nbsp;
+        {{/if}}
 		<a href="{{s_link}}" target="_blank">{{cut s_feed_name 30}}</a>
 	</li>
 	{{/each}}

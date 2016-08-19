@@ -2,6 +2,10 @@ Handlebars.registerHelper("favico", function favico(url) {
 	return baseFavicoDomain + url;
 });
 
+Handlebars.registerHelper("favicoDefault", function favico(data) {
+	return baseFavicoDomain + emptyFavicon;
+});
+
 Handlebars.registerHelper("timediff", function timediff(time) {
 	var s = (renderTime - time) / 1000;
 	var m = Math.round(s / 60);

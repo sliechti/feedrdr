@@ -87,40 +87,4 @@ public class APIUtils {
         return rows;
     }
     
-    /**
-     * This method checks if the given string contain the "s_link" string.
-     * If exist then get value of s_link(e.g.:{s_link ="http://abc.com/"}) and check if favicon.ico exist in the site.
-     * If yes then return the string else replace the string "http://abc.com" with "http://feedrdr.com" and return the string. 
-     * @param data
-     * @return
-     */
-    public static StringBuilder updateInvalidSLinks(StringBuilder data) {
-		if (data.indexOf(DBFields.STR_LINK) >= 0) {
-		    String path = data.substring(data.lastIndexOf("\":") + 3,
-				    data.lastIndexOf("}") - 1);
-		    StringBuffer url = new StringBuffer(path);
-		    if (path.charAt(path.length() - 1) == '/')
-			    url.append("favicon.ico");
-		    else
-			    url.append("/favicon.ico");
-		    try {
-			    HttpURLConnection connection = (HttpURLConnection) new URL(
-					    url.toString()).openConnection();
-			    connection.setRequestMethod("GET");
-			    connection.connect();
-			    if (connection.getResponseCode() != 200) {
-				    data.replace(data.lastIndexOf("\":") + 3,
-						    data.lastIndexOf("}") - 1, "https://feedrdr.co");
-			    }
-
-		    } catch (IOException ex) {
-				Logger.notice(APIUtils.class)
-			            .log("updateInvalidSLinks error, ")
-						.log(ex.getMessage()).end();
-			    ex.printStackTrace();
-			}
-		}
-		return data;
-    }
-
 }

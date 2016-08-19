@@ -87,6 +87,7 @@ public class FeedAppConfig {
     public static boolean FETCH_FORCE_DELETE = false;
     public static long DELAY_FETCH_IN_S = 3;
     public static long DELAY_VALIDATE_IN_S = 3;
+    public static long DELAY_VALIDATE_FAVICON_IN_MINUTES = 24*60;
     public static int FETCH_SEND_STATUS_EVERY_MINUTES = 60 * 4; // 4 times a
                                                                 // day.
 

@@ -7,6 +7,7 @@ var apiCollectionsList = "/api/v1/collections/list";
 var apiCollectionsEntries = "/api/v1/collections/entries";
 var apiCollectionAdd = "/api/v1/collections/add";
 var baseFavicoDomain = 'http://www.google.com/s2/favicons?domain=';
+var emptyFavicon= 'https://feedrdr.co'
 
 var collections = {};
 var collectionsIds = [];
@@ -17,6 +18,10 @@ var feedEntriesTmpl = {};
 
 Handlebars.registerHelper('favico', function(data) {
     return baseFavicoDomain;
+  });
+
+Handlebars.registerHelper('favicoDefault', function(data) {
+    return baseFavicoDomain+emptyFavicon;
   });
 
 function initCollections() {

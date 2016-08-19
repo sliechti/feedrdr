@@ -345,11 +345,10 @@ public class StreamsAPI {
                 while (rs.next()) {
                     sb.append("{").append(JSONUtils.getNumber(rs, DBFields.LONG_ENTRY_ID)).append(",")
                             .append(JSONUtils.getNumber(rs, DBFields.LONG_XML_ID)).append(",")
+                            .append(JSONUtils.getString(rs, DBFields.STR_LINK)).append(",")
                             .append(JSONUtils.getString(rs, DBFields.STR_TITLE)).append(",")
-                            .append(JSONUtils.getNumber(rs, DBFields.TIME_PUBLICATION_DATE)).append(",")
-                            .append(JSONUtils.getString(rs, DBFields.STR_LINK)).append("},");
+                            .append(JSONUtils.getNumber(rs, DBFields.TIME_PUBLICATION_DATE)).append("},");
                     count++;
-                    sb=APIUtils.updateInvalidSLinks(sb);
                 }
                 if (count > 0 && sb.length() > 0) {
                     sb.deleteCharAt(sb.length() - 1);
@@ -389,7 +388,6 @@ public class StreamsAPI {
                 rs.setFetchSize(FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
                 sb.append("{\"entries\" : [");
                 int r = APIUtils.wrapObject(sb, rs);
-                sb=APIUtils.updateInvalidSLinks(sb);
                 if (r < FeedAppConfig.DEFAULT_API_FETCH_ARTICLES) {
                     UserStreamGroupsTable.updateUnreadCount(userId, streamId, unreadEntriesCount);
                 }
