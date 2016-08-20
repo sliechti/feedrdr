@@ -9,14 +9,18 @@ function closeAnimate() {
 	var lm = $(leftMenuId);
 	lm.animate({
 		left : lm.width() * -1
-	}, 400);
+	}, 200, 'swing', function() {
+		lm.hide();
+	});
 }
 
 function openAnimate() {
 	var lm = $(leftMenuId);
+	lm.css('left', lm.width() * -1);
+	lm.show();
 	lm.animate({
 		left : 0
-	}, 400);
+	}, 200);
 }
 
 function closeLeftBar() {
@@ -28,7 +32,6 @@ function closeLeftBar() {
 }
 
 function openLeftBar() {
-	$(leftMenuId).show();
 	openAnimate();
 	if ($(leftMenuId).is(':visible')) {
 		$(document).on('keyup.leftbar', function(e) {
@@ -39,24 +42,27 @@ function openLeftBar() {
 		$(leftMenuId).on('swipeleft', function() {
 			closeLeftBar();
 		});
-		$(document).on('mousedown.leftbar', function(e) {
-			var container = $(leftMenuId);
-			if (!container.is(e.target) && container.has(e.target).length === 0) {
-				closeLeftBar();
-			}
-		});
+		$(document).on(
+				'mousedown.leftbar',
+				function(e) {
+					var container = $(leftMenuId);
+					if (!container.is(e.target)
+							&& container.has(e.target).length === 0) {
+						closeLeftBar();
+					}
+				});
 	}
 }
 
 function lmToggleProfiles() {
 	var p = $(profilesId);
 	$(profilesId).toggle();
-//	checkProfileAngle();
+	// checkProfileAngle();
 }
 
 function closeProfiles() {
 	$(profilesId).hide();
-//	checkProfileAngle();
+	// checkProfileAngle();
 }
 
 function checkProfileAngle() {

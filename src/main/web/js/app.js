@@ -1,15 +1,24 @@
-
 $(document).on('keyup', function(e) {
 	if (e.keyCode == 27) {
 		openLeftBar();
 	}
 });
-$(document).on('swiperight', function() {
-	openLeftBar();
+
+$(document).ready(function() {
+	var hm = new Hammer(document);
+	hm.get('swipe').set({
+		direction : Hammer.DIRECTION_ALL,
+		pointer : 1,
+		treshold : 10,
+		velocity : 0.3
+	});
+	hm.on('swipeleft', function(ev) {
+		closeLeftBar();
+	});
+	hm.on('swiperight', function(ev) {
+		openLeftBar();
+	});
 });
-
-
-
 
 function toTop() {
 	window.scrollTo(0, 0);
@@ -106,11 +115,15 @@ function closeAnimate() {
 	var lm = $(leftMenuId);
 	lm.animate({
 		left : lm.width() * -1
-	}, 400);
+	}, 400, 'swing', function() {
+		lm.hide();
+	});
 }
 
 function openAnimate() {
 	var lm = $(leftMenuId);
+	lm.css('left', lm.width() * -1);
+	lm.show();
 	lm.animate({
 		left : 0
 	}, 400);
@@ -125,7 +138,6 @@ function closeLeftBar() {
 }
 
 function openLeftBar() {
-	$(leftMenuId).show();
 	openAnimate();
 	if ($(leftMenuId).is(':visible')) {
 		$(document).on('keyup.leftbar', function(e) {
@@ -136,24 +148,27 @@ function openLeftBar() {
 		$(leftMenuId).on('swipeleft', function() {
 			closeLeftBar();
 		});
-		$(document).on('mousedown.leftbar', function(e) {
-			var container = $(leftMenuId);
-			if (!container.is(e.target) && container.has(e.target).length === 0) {
-				closeLeftBar();
-			}
-		});
+		$(document).on(
+				'mousedown.leftbar',
+				function(e) {
+					var container = $(leftMenuId);
+					if (!container.is(e.target)
+							&& container.has(e.target).length === 0) {
+						closeLeftBar();
+					}
+				});
 	}
 }
 
 function lmToggleProfiles() {
 	var p = $(profilesId);
 	$(profilesId).toggle();
-//	checkProfileAngle();
+	// checkProfileAngle();
 }
 
 function closeProfiles() {
 	$(profilesId).hide();
-//	checkProfileAngle();
+	// checkProfileAngle();
 }
 
 function checkProfileAngle() {

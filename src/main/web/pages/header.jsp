@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
 <link rel="stylesheet" href="${baseUrl}/css/default.css" />
 <script src="${baseUrl}/js/vendor/jquery.min.js"></script>
+<script src="${baseUrl}/js/vendor/hammer.min.js"></script>
 <script src="${baseUrl}/js/vendor/handlebars.min.js"></script>
 <script src="${baseUrl}/js/vendor/jscolor/jscolor.min.js"></script>
 <script src="${baseUrl}/js/vendor/director.min.js"></script>
