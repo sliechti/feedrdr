@@ -6,8 +6,8 @@
 		<a href="#" onclick="toTop()">
 			<i class="fa  fa-angle-double-up"></i>
 		</a>
-		<a href="#" onclick="toTop()">
-			<i class="fa  fa-check-circle"></i>
+		<a href="#" onclick="markAllRead()">
+			<i class="fa  fa-check"></i>
 		</a>
 	</div>
 </div>

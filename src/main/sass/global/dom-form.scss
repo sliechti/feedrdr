@@ -3,12 +3,26 @@
 
 	font-size: $font-med;
 
-	input {
+	* {
 		box-sizing: border-box;
-		width: 100%;
-		max-width: 500px;
+	}
+
+	input {
 		padding: 5px 3px 3px 3px;
 		border: 1px solid $fade-color;
 	}
 
+	button {
+		padding: 5px 3px 3px 3px;
+		border: 1px solid $fade-color;
+	}
+
+}
+
+@media only screen and (max-device-width: $sm-layout-border) {
+	.form {
+		input {
+			font-size: $font-plus;
+		}
+	}
 }

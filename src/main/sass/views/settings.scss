@@ -1,3 +1,8 @@
+
+#profile-list {
+	margin: 20px 0px;
+}
+
 .settings-header {
 
 	width: 100%;
@@ -37,20 +42,39 @@
 
 #settings-profile {
 
-	.row {
-		white-space: nowrap;
-		margin-bottom: 10px;
-
-		.fa {
-			font-size: $font-med;
-		}
+	.profile-row {
+		margin-bottom: 20px;
 	}
 
-	.row > div {
+	.settings > div {
 		display: inline-block;
 	}
 
-	.row > div * {
-		vertical-align: middle;
+	.name input {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-device-width: $sm-layout-border) {
+	#settings-profile {
+		.name input {
+			width: 100%;
+			margin-bottom: 5px;
+		}
+
+		.settings {
+			text-align: right;
+		}
+	}
+}
+@media only screen and (min-device-width: $sm-layout-border) {
+	#settings-profile .profile-row {
+		&>div {
+			display: inline;
+		}
+
+		.settings {
+			float: right;
+		}
 	}
 }

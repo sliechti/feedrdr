@@ -108,6 +108,11 @@ body {
   overflow: hidden;
 }
 
+.danger {
+  background-color: #CF1F48;
+  color: white;
+}
+
 .text-right {
   text-align: right;
 }
@@ -123,14 +128,23 @@ body {
 .form {
   font-size: 1.2em;
 }
-.form input {
+.form * {
   box-sizing: border-box;
-  width: 100%;
-  max-width: 500px;
+}
+.form input {
+  padding: 5px 3px 3px 3px;
+  border: 1px solid #CACACA;
+}
+.form button {
   padding: 5px 3px 3px 3px;
   border: 1px solid #CACACA;
 }
 
+@media only screen and (max-device-width: 480px) {
+  .form input {
+    font-size: 1.1em;
+  }
+}
 .max500 {
   max-width: 500px;
 }

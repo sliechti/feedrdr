@@ -102,3 +102,8 @@
 .no-overflow {
 	overflow: hidden;
 }
+
+.danger {
+	background-color: $danger-color;
+	color: $danger-opp;
+}

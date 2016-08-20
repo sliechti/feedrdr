@@ -64,30 +64,6 @@ function loadColorPickers() {
 	});
 }
 
-function saveProfile(id) {
-	var name = $("#name_profile_" + id).val();
-	var color = $("#picker_profile_" + id).val();
-
-	var queryData = {};
-	queryData.pid = id;
-	queryData.n = name;
-	queryData.c = color;
-
-	$.getJSON(baseUrl + '/api/v1/user/profiles/save', queryData, function(data) {
-		if (data.count > 0) {
-			$("#profile_" + id).addClass("saved");
-			setTimeout(function() {
-				$("#profile_" + id).removeClass("saved");
-			}, 1500);
-
-			renameProfile(id, name, color);
-		} else {
-			console.error("error saving profile");
-			console.error(data);
-		}
-	});
-}
-
 function deleteProfile(id) {
 	if (confirm("Are you sure? Deleting a profile means:\n"
 			+ "* All recently read and saved information for this profile is deleted. \n"

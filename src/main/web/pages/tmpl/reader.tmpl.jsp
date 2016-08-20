@@ -164,10 +164,9 @@
 		</div>
 		<div class="news-footer">
 			<div class="actions">
-					<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
-						<i class="fa fa-bookmark-o"></i>
-					</a>
-				<i class="fa fa-bookmark-o"></i>
+				<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
+					<i class="fa fa-bookmark-o"></i>
+				</a>
 			</div>
 			<div class="right source">
 				<a href="#">
@@ -184,38 +183,32 @@
 
 <script id="news_stream_tmpl" type="text/x-handlebars-template">
 <div id="stream-list" class="line-view">
-	<div id="line-view-options-tmpl" class="options hide">
-		<i class="fa fa-bookmark-o"></i>
-		<i class="fa fa-share"></i>
-		<i class="fa fa-tag"></i>
-		<i class="fa fa-info-circle"></i>
-	</div>
-		{{#each entries}}
-		<div id="news_{{l_entry_id}}" class="news-card">
-			<div class="img-wrap" id="img_{{l_entry_id}}">
-				<img src="">
-			</div>
-			<div class="content">
-				<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
-					{{timediff t_pub_date}}
-					{{s_title}}
+	{{#each entries}}
+	<div id="news_{{l_entry_id}}" class="news-card">
+		<div class="img-wrap" id="img_{{l_entry_id}}">
+			<img src="">
+		</div>
+		<div class="content">
+			<a name="link" class="title" data-id="{{l_entry_id}}" href="{{s_link}}" target="_blank">
+				{{timediff t_pub_date}}
+				{{s_title}}
+			</a>
+			<p class="content" id="cnt_{{l_entry_id}}"></p>
+		</div>
+		<div class="news-footer">
+			<div class="actions">
+				<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
+					<i class="fa fa-bookmark-o"></i>
 				</a>
-				<p class="content" id="cnt_{{l_entry_id}}"></p>
 			</div>
-			<div class="news-footer">
-				<div class="actions">
-					<a href="#" onclick="saveEntry(this, {{l_entry_id}});return false;">
-						<i class="fa fa-bookmark-o"></i>
-					</a>
-				</div>
-				<div class="right source">
-					<a href="#/s/{{l_xml_id}}">
-						{{#sourceName l_xml_id}}{{/sourceName}}
-					</a>
-				</div>
+			<div class="right source">
+				<a href="#/s/{{l_xml_id}}">
+					{{#sourceName l_xml_id}}{{/sourceName}}
+				</a>
 			</div>
 		</div>
-		{{/each}}
+	</div>
+	{{/each}}
 </div>
 </script>
 

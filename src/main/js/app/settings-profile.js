@@ -23,13 +23,15 @@ function forwardSaveProfile() {
 	queryData.c = color.val();
 
 	$.getJSON(baseUrl + "/api/v1/user/profiles/new", queryData, function(data) {
+		console.debug('forward save profile ', data);
 		if (data.success) {
+			settingsInfo('Profile created ' + queryData.n);
 			setSessionProfile(data.profileid, function() {
 				selectProfile(data.profileid);
+				location.reload();
 			});
-			hideModal();
 		} else {
-			settingsError(data.error);
+			settingsError('Erorr creating new profile: ' + data.error);
 		}
 	});
 }
@@ -42,14 +44,14 @@ function addNewProfile() {
 				's_color': '#173C4F'
 			}
 		));
-	var i = $('<i class="fa fa-plus"></i>').on('click', forwardSaveProfile);
+	var i = $('<input type="button" value="Add" onclick="forwardSaveProfile()" />');
 	var actions = $(tmpl).find('.actions');
-	actions.find('.fa-remove').hide()
-	actions.append(i);
+	actions.html(i);
 
 	$('#profile-list').append($(tmpl));
 	attachColorPicker($('#picker_profile_0'));
 	disableAddBox();
+	$('#name_profile_0').focus();
 }
 
 function disableAddBox() {
@@ -73,3 +75,27 @@ $(document).ready(function() {
 		}
 	});
 });
+
+function spActivateBurron(id) {
+	$(id).attr('disabled', false);
+}
+
+function saveProfile(id, caller) {
+	var name = $("#name_profile_" + id).val();
+	var color = $("#picker_profile_" + id).val();
+	$(caller).attr('disabled', true);
+
+	var queryData = {};
+	queryData.pid = id;
+	queryData.n = name;
+	queryData.c = color;
+
+	$.getJSON(baseUrl + '/api/v1/user/profiles/save', queryData, function(data) {
+		if (data.count > 0) {
+			settingsInfo('Profile saved ' + name);
+		} else {
+			$(caller).attr('disabled', false);
+			settingsError('Couldn\'t save profile');
+		}
+	});
+}
