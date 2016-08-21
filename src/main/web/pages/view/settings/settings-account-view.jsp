@@ -1,14 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div id="account" class="view form">
+<div id="account">
 
-	<h4>Account settings</h4>
-
-	<form method="POST" action="">
-
-		<label for="display-name">Display name
-			<input type="text" tabindex="1" name="display-name" value="${user.screenName}">
-		</label>
+	<form method="POST" class="form" ction="">
 
 		<c:choose>
 			<c:when test="${user.oauthUser}">

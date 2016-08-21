@@ -4,8 +4,30 @@
 	border: 1px solid $fade-color;
 	cursor: pointer;
 	text-transform: uppercase;
-	color: $primary-color;
 
+}
+
+
+.primary-box {
+	background-color: $primary-color;
+	color: $primary-contrast-color;
+	&.disabled {
+		background-color: $disabled-color;
+		color: $disabled-font-color;
+
+		&:hover {
+			background-color: $disabled-color;
+			pointer: auto;
+		}
+	}
+
+	&:hover {
+		background-color: $primary-color-light;
+	}
+}
+
+.light-box {
+	color: $primary-color;
 	&.disabled {
 		background-color: $disabled-color;
 		color: $disabled-font-color;
@@ -20,4 +42,3 @@
 		background-color: $bg-color-2;
 	}
 }
-

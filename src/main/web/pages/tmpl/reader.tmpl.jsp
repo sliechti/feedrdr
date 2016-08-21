@@ -64,7 +64,7 @@
 			</div>
 			<div class="right">
 				<i onclick="shToggleSettings()"
-					class="-icon-hide pointer fa fa-cog right fade-color"></i>
+					class="-icon-hide pointer fa fa-ellipsis-v right fade-color"></i>
 			</div>
 		</div>
 	</div>
@@ -101,7 +101,7 @@
 		<div class="right">
 			&nbsp;
 			<i onclick="shToggleSettings()"
-				class="-icon-hide pointer fa fa-cog right fade-color"></i>
+				class="-icon-hide pointer fa fa-ellipsis-v right fade-color"></i>
 		</div>
 	</div>
 </div>

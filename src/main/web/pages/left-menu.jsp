@@ -1,7 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="inReader" value="${pageContext.request.requestURI.contains('/reader')}" />
-
 <div id="left-menu" class="hide">
 
 	<div class="header font-med menu-header">
@@ -21,14 +19,14 @@
 
 	<div id="left-menu-content" class="primary-t-color">
 
-		<div id="profiles" class="hide font-med bottom-shadow bg-white primary-t-color">
+		<div id="profiles" class="hide font-med bottom-shadow bg-white primary-t-color pr20p">
+			<div class="no-overflow">
+				<a class="right" href="${baseUrl}/settings/profiles">
+					<i class="fa fa-cog"></i>
+				</a>
+			</div>
 			<div class="content">
 
-			</div>
-			<div class="border-tb-fade">
-				<a href="settings.jsp">
-					New Profile
-				</a>
 			</div>
 		</div>
 
@@ -66,8 +64,8 @@
 
 	    <div id="streams-header" class="font-med">
 			<div id="streams-actions" class="ls-med menu-icons r20p">
-				<span class="left pl20p">STREAMS</span>
 				<a href="#" onclick="lmShowFilters()">
+					<span class="left pl20p">STREAMS</span>
 					<i class="fa fa-angle-down fade-color" aria-hidden="true"></i>
 				</a>
 <!-- 	            <a href="#" onclick="lmShowFilters()"> -->

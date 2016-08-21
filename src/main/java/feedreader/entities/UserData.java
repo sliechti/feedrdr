@@ -163,8 +163,8 @@ public class UserData {
         data.selectedProfileId = rs.getLong(DBFields.LONG_SELECTED_PROFILE_ID);
         data.subscribedAt = rs.getLong(DBFields.TIME_SUBSCRIBED_AT);
         data.generated = rs.getBoolean(DBFields.BOOL_GENERATED);
-        data.isSubscribedToUpdates = rs.getBoolean(DBFields.BOOL_RECEIVE_NEWSLETTER);
-        data.isSubscribedForNewsletter = rs.getBoolean(DBFields.BOOL_RECEIVE_PRODUCT_UPDATES);
+        data.isSubscribedToUpdates = rs.getBoolean(DBFields.BOOL_RECEIVE_PRODUCT_UPDATES);
+        data.isSubscribedForNewsletter = rs.getBoolean(DBFields.BOOL_RECEIVE_NEWSLETTER);
 
         try {
             data.profileData.add(ProfileData.fromRs(rs));

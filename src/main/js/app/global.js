@@ -30,18 +30,23 @@ function switchAngleLr(elem, from) {
 	elem.removeClass('fa-angle-' + from).addClass('fa-angle-' + to);
 }
 
-function showEl(id) {
+function showEl(caller, id) {
 	var el = $('#' + id);
-	var w = el.width();
-	el.toggle();
-
-	$(document).on('mousedown.el' + id, function(e) {
-		console.debug("mousedown", e);
-		if (!el.is(e.target) && el.has(e.target).length == 0) {
-			el.hide();
-			$(document).off('mousedown.el' + id);
-		}
-	});
+	if (!el.is(':visible')) {
+		var w = el.width();
+		el.show();
+		$(document).on('mousedown.el', function(e) {
+			if ($(caller).is(e.target) || $(caller).has(e.target).length > 0) {
+				return;
+			} else if (!el.is(e.target) && el.has(e.target).length == 0) {
+				el.hide();
+				$(document).off('mousedown.el');
+			}
+		});
+	} else {
+		el.hide();
+		$(document).off('mousedown.el');
+	}
 }
 
 function addContent() {

@@ -36,42 +36,52 @@ $line-height: 40px;
 	line-height: $line-height;
 	position: relative;
 	overflow: hidden;
-}
 
-#header-input input {
-	border-width: 0px 0px 0px 0px;
-	width: 100%;
-	font-size: $font-med;
-}
+	input {
+		border-width: 0px 0px 0px 0px;
+		width: 100%;
+		font-size: $font-med;
 
-#header-input input:focus {
-	outline: none;
-}
+		&:focus {
+			outline: none;
+		}
+	}
 
-#header-input a {
-	position: absolute;
-	right: 0px;
+	a {
+		position: absolute;
+		right: 0px;
+	}
 }
 
 .header-left {
 	float: left;
-	width: 30%;
+	width: 50%;
+
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $fade-color;
+	}
+
+	&:hover * {
+		color: $primary-color;
+	}
 }
 
 .header-right {
 	float: right;
-	width: 70%;
+	width: 50%;
 	position: relative;
-}
 
-.header-right a {
-	padding-left: 10px;
-}
+	a {
+		padding-left: 10px;
+	}
 
-.header-btn {
-	border: 2px solid #D6D6D6;
-	border-radius: 2px;
-	padding: 5px 20px;
-	margin-top: 5px;
-}
+	.header-btn {
+		border: 2px solid #D6D6D6;
+		border-radius: 2px;
+		padding: 5px 20px;
+		margin-top: 5px;
+	}
 
+}

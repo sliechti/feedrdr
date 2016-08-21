@@ -1,3 +1,19 @@
+.submit-btn {
+	margin-top: 25px;
+	font-size: $font-med;
+	padding: 5px 30px 3px 30px;
+	border: 1px solid $fade-color;
+	background-color: $primary-color;
+	color: $primary-contrast-color;
+
+	&:hover {
+		background-color: $primary-color-light;
+	}
+
+	&.disabled {
+		background-color: $fade-color;
+	}
+}
 
 .form {
 
@@ -7,16 +23,32 @@
 		box-sizing: border-box;
 	}
 
-	input {
+	input[type=text] {
 		padding: 5px 3px 3px 3px;
 		border: 1px solid $fade-color;
 	}
 
+	input[type=button] {
+		padding: 5px 10px 3px 10px;
+		border: 1px solid $fade-color;
+	}
+
+	input[type=submit] {
+		@extend .submit-btn;
+	}
+
+	input[type=button] {
+		padding: 5px 10px 3px 10px;
+		border: 1px solid $fade-color;
+	}
 	button {
 		padding: 5px 3px 3px 3px;
 		border: 1px solid $fade-color;
 	}
 
+	.x-spacing {
+		line-height: 40px;
+	}
 }
 
 @media only screen and (max-device-width: $sm-layout-border) {

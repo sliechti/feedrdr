@@ -36,7 +36,6 @@ function forwardSaveProfile() {
 	});
 }
 function addNewProfile() {
-	console.debug('add new profile');
 	var tmpl = $(Handlebars.partials['tmplprofile'](
 			{
 				'l_profile_id': '0',
@@ -50,31 +49,13 @@ function addNewProfile() {
 
 	$('#profile-list').append($(tmpl));
 	attachColorPicker($('#picker_profile_0'));
-	disableAddBox();
+	disableAddNew();
 	$('#name_profile_0').focus();
 }
 
-function disableAddBox() {
-	$('#settings-profile').find('.box').addClass('disabled').off('click');
+function disableAddNew() {
+	$('#addNewProfile').addClass('disabled').off('click');
 }
-
-$(document).ready(function() {
-	registerOnProfilesAvailable(function() {
-		var tmplprofile = $('#tmpl-settings-profile').html();
-		if (tmplprofile) {
-			Handlebars.registerPartial('tmplprofile', tmplprofile);
-			spTmpl = Handlebars.compile($('#tmpl-settings-profile-list').html());
-			if (profiles) {
-				$('#profile-list').html(spTmpl({
-					'profiles' : profiles
-				}));
-				var sp = $('#settings-profile');
-				sp.find('.box').on('click', addNewProfile);
-			}
-			loadColorPickers();
-		}
-	});
-});
 
 function spActivateBurron(id) {
 	$(id).attr('disabled', false);
@@ -99,3 +80,20 @@ function saveProfile(id, caller) {
 		}
 	});
 }
+
+$(document).ready(function() {
+	registerOnProfilesAvailable(function() {
+		var tmplprofile = $('#tmpl-settings-profile').html();
+		if (tmplprofile) {
+			Handlebars.registerPartial('tmplprofile', tmplprofile);
+			spTmpl = Handlebars.compile($('#tmpl-settings-profile-list').html());
+			if (profiles) {
+				$('#profile-list').html(spTmpl({
+					'profiles' : profiles
+				}));
+				$('#addNewProfile').on('click', addNewProfile);
+			}
+			loadColorPickers();
+		}
+	});
+});

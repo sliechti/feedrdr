@@ -3,8 +3,6 @@ package feedreader.config;
 public class Constants {
 
     public static final String ADMIN_USERNAME = "kreon";
-    public static String CHECKBOX_SUBSCRIPTION_NEWSLETTER = "subscription_newsletter";
-    public static String CHECKBOX_SUBSCRIPTION_PRODUCT_UPDATES = "subscription_product_updates";
     public static long DEFAULT_ROOT_FOLDER_ID = 1;
     public static final int DEFAUT_COOKIE_AGE = 60 * 60 * 24;
     public static final String FEED_APP_DB = "postgres";

@@ -51,18 +51,23 @@ function switchAngleLr(elem, from) {
 	elem.removeClass('fa-angle-' + from).addClass('fa-angle-' + to);
 }
 
-function showEl(id) {
+function showEl(caller, id) {
 	var el = $('#' + id);
-	var w = el.width();
-	el.toggle();
-
-	$(document).on('mousedown.el' + id, function(e) {
-		console.debug("mousedown", e);
-		if (!el.is(e.target) && el.has(e.target).length == 0) {
-			el.hide();
-			$(document).off('mousedown.el' + id);
-		}
-	});
+	if (!el.is(':visible')) {
+		var w = el.width();
+		el.show();
+		$(document).on('mousedown.el', function(e) {
+			if ($(caller).is(e.target) || $(caller).has(e.target).length > 0) {
+				return;
+			} else if (!el.is(e.target) && el.has(e.target).length == 0) {
+				el.hide();
+				$(document).off('mousedown.el');
+			}
+		});
+	} else {
+		el.hide();
+		$(document).off('mousedown.el');
+	}
 }
 
 function addContent() {
@@ -115,7 +120,7 @@ function closeAnimate() {
 	var lm = $(leftMenuId);
 	lm.animate({
 		left : lm.width() * -1
-	}, 400, 'swing', function() {
+	}, 200, 'swing', function() {
 		lm.hide();
 	});
 }
@@ -126,7 +131,7 @@ function openAnimate() {
 	lm.show();
 	lm.animate({
 		left : 0
-	}, 400);
+	}, 200);
 }
 
 function closeLeftBar() {
@@ -266,7 +271,6 @@ function forwardSaveProfile() {
 	});
 }
 function addNewProfile() {
-	console.debug('add new profile');
 	var tmpl = $(Handlebars.partials['tmplprofile'](
 			{
 				'l_profile_id': '0',
@@ -280,31 +284,13 @@ function addNewProfile() {
 
 	$('#profile-list').append($(tmpl));
 	attachColorPicker($('#picker_profile_0'));
-	disableAddBox();
+	disableAddNew();
 	$('#name_profile_0').focus();
 }
 
-function disableAddBox() {
-	$('#settings-profile').find('.box').addClass('disabled').off('click');
+function disableAddNew() {
+	$('#addNewProfile').addClass('disabled').off('click');
 }
-
-$(document).ready(function() {
-	registerOnProfilesAvailable(function() {
-		var tmplprofile = $('#tmpl-settings-profile').html();
-		if (tmplprofile) {
-			Handlebars.registerPartial('tmplprofile', tmplprofile);
-			spTmpl = Handlebars.compile($('#tmpl-settings-profile-list').html());
-			if (profiles) {
-				$('#profile-list').html(spTmpl({
-					'profiles' : profiles
-				}));
-				var sp = $('#settings-profile');
-				sp.find('.box').on('click', addNewProfile);
-			}
-			loadColorPickers();
-		}
-	});
-});
 
 function spActivateBurron(id) {
 	$(id).attr('disabled', false);
@@ -329,6 +315,23 @@ function saveProfile(id, caller) {
 		}
 	});
 }
+
+$(document).ready(function() {
+	registerOnProfilesAvailable(function() {
+		var tmplprofile = $('#tmpl-settings-profile').html();
+		if (tmplprofile) {
+			Handlebars.registerPartial('tmplprofile', tmplprofile);
+			spTmpl = Handlebars.compile($('#tmpl-settings-profile-list').html());
+			if (profiles) {
+				$('#profile-list').html(spTmpl({
+					'profiles' : profiles
+				}));
+				$('#addNewProfile').on('click', addNewProfile);
+			}
+			loadColorPickers();
+		}
+	});
+});
 
 function sourceAdd() {
 	alert('add-source');
