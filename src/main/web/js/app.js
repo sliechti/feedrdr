@@ -218,7 +218,7 @@ function clearMsgElem(elem) {
 }
 
 function showErrorMsg(elemId, msg) {
-	showMsg(elemId, msg, 'msg-info');
+	showMsg(elemId, msg, 'msg-error');
 }
 
 function showInfoMsg(elemId, msg) {
@@ -401,25 +401,31 @@ function slGetDataId(caller) {
 	return elem.attr('data-id');
 }
 var welcome = 'welcome';
-var steps = [ 'password-setup', 'content-setup', 'thanks' ];
+var steps = [ 'password-setup', 'thanks' ];
 function changePassword(elem, formElem) {
 	$('#password-msg').hide();
 	var pwd1 = $(formElem).find('input[name=pwd1]').val();
 	var pwd2 = $(formElem).find('input[name=pwd2]').val();
 	if (pwd1 != pwd2) {
-		$('#password-msg').show()
-		$('#password-msg').addClass('warn-msg').html('passwords don\'t match');
+		showWarning('Passwords don\'t match');
 	} else if (pwd1 == '') {
+		showWarning('Empty password');
 	} else {
-		$.get('api/welcome.json', {
+		$.post(baseUrl + '/wizard', {
 			'pwd1' : pwd1,
-			'pwd2' : pwd2
-		}, function(data, success) {
-			data = JSON.parse(data);
-			console.debug(data, success);
-			if (data.result) {
+			'pwd2' : pwd2,
+			'wizard-step' : 1
+		}, function(data) {
+			if (data.success) {
 				$(elem).addClass('success');
 				goNext(true);
+			} else if (data.code == 100) {
+				showWarning(data.error);
+				$("#btn-pwd-change").addClass('success').html('Skip step');
+				$("#btn-pwd-change").removeAttr("onclick");
+				$("#btn-pwd-change").on("click", goNext);
+			} else if (data.error) {
+				showWarning(data.error);
 			} else {
 				showWarning(data);
 			}

@@ -9,7 +9,7 @@ function changePassword(elem, formElem) {
 	} else if (pwd1 == '') {
 		showWarning('Empty password');
 	} else {
-		$.post('wizard', {
+		$.post(baseUrl + '/wizard', {
 			'pwd1' : pwd1,
 			'pwd2' : pwd2,
 			'wizard-step' : 1

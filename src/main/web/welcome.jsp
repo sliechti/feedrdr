@@ -80,7 +80,7 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 				</c:if>
 				<form id="start-reading" method="post" action="signup">
 					<input type="text" class="block w100p" id="email" name="email" placeholder="your@email">
-					<button class="block w100p btn">start reading</button>
+					<button class="block w100p btn">Start reading</button>
 				</form>
 				<p class="lead">Or</p>
 				<p class="lead">

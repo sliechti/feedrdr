@@ -7,7 +7,7 @@ function clearMsgElem(elem) {
 }
 
 function showErrorMsg(elemId, msg) {
-	showMsg(elemId, msg, 'msg-info');
+	showMsg(elemId, msg, 'msg-error');
 }
 
 function showInfoMsg(elemId, msg) {

@@ -22,7 +22,7 @@ public class Validate {
     }
 
     public static String getPasswordRules() {
-        return "Passwords need to be at least 4 letters long.";
+        return "Passwords need to be at least 4 letters long";
     }
 
     public static boolean isValidPassword(String pwd) {

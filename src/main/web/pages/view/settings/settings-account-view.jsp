@@ -2,46 +2,57 @@
 
 <div id="account">
 
-	<form method="POST" class="form" ction="">
+	<form method="POST" class="form form-wide bottom10" action="">
+
+		<div>
+			<p class="important wide-padding">
+				When changing your Email address we send a new verification code.<br>
+				Please remember that your email is required to sign in.
+			</p>
+		</div>
+		<div>
+			<label for="email">Change Email ${user.email} to: <br>
+				<input type="text" tabindex="1" name="email" value="">
+			</label>
+		</div>
+
+		<div>
+			<input type="submit" class="min250 max300" tabindex="2" name="submit" value="Save settings">
+		</div>
+
+	</form>
+
+	<hr class="hr-separator">
+
+	<form method="POST" class="form form-wide" action="">
 
 		<c:choose>
-			<c:when test="${user.oauthUser}">
+			<c:when test="${user.generated}">
+				<c:set var="pwdButton" value="Set password" />
 				<div> E-mail ${user.email}</div>
 			</c:when>
 			<c:otherwise>
-
-		<div class="group">Change password:</div>
-
-		<label for="-1">New password
-			<input type="password" tabindex="2"  name="-1">
-		</label>
-
-		<label for="-confirm">Confirm new password
-			<input type="password" tabindex="3"  name="-confirm">
-		</label>
-
-		<div class="group">Change email:</div>
-
-		<label for="email">Email
-			<span class="text-info">Changing your email triggers a verification email.</span>
-			<input type="text" tabindex="4"  name="email" value="${user.email}">
-		</label>
-
-
-		<label for="verify-email">Verify email:
-			<input type="text" tabindex="5" name="verify-email" value="${emailChanged}">
-		</label>
-
-		<div class="group">Current password:</div>
-
-		<label for="user-name">Confirm changes with current password
-			<input type="password" tabindex="6"  name="user-name">
-		</label>
-
+				<div>
+					<label for="confirm">Current password<br>
+						<input type="password" tabindex="5"  name="current">
+					</label>
+				</div>
+				<c:set var="pwdButton" value="Change password" />
+				<div>
+					<label for="-1">New password<br>
+						<input type="password" tabindex="3"  name="pwd">
+					</label>
+				</div>
+				<div>
+					<label for="confirm">Confirm new password<br>
+						<input type="password" tabindex="4"  name="confirm">
+					</label>
+				</div>
 			</c:otherwise>
 		</c:choose>
-
-		<input type="submit" tabindex="7" name="submit" value="Save settings">
+		<div>
+			<input type="submit" class="min250 max300" tabindex="6" name="submit" value="${pwdButton}">
+		</div>
 
 	</form>
 

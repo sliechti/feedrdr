@@ -113,6 +113,10 @@ body {
   color: white;
 }
 
+.important {
+  background-color: #D1D1BC;
+}
+
 .text-right {
   text-align: right;
 }
@@ -146,7 +150,7 @@ body {
 .form * {
   box-sizing: border-box;
 }
-.form input[type=text] {
+.form input[type=text], .form input[type=password] {
   padding: 5px 3px 3px 3px;
   border: 1px solid #CACACA;
 }
@@ -162,7 +166,17 @@ body {
   padding: 5px 3px 3px 3px;
   border: 1px solid #CACACA;
 }
-.form .x-spacing {
+
+.form-wide input[type=text], .form-wide input[type=password] {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-m-spacing > div {
+  line-height: 35px;
+}
+
+.form-l-spacing > div {
   line-height: 40px;
 }
 
@@ -269,6 +283,11 @@ body {
 
 .mt20p {
   margin-top: 20px;
+}
+
+.bt-margin20 {
+  bottom-margin: 20px;
+  top-margin: 20px;
 }
 
 .wide-padding {
@@ -381,6 +400,13 @@ body {
 }
 .light-box:hover {
   background-color: #FCFCFC;
+}
+
+.hr-separator {
+  border-top: 0px;
+  border-bottom: 1px solid #CACACA;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .content-width {
@@ -1042,6 +1068,10 @@ body {
 }
 #stream-header .channel-entries {
   font-size: 0.8em;
+}
+
+#wizard-content a {
+  color: #173C4F;
 }
 
 /*# sourceMappingURL=default.css.map */

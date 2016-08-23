@@ -39,6 +39,6 @@ public class SignupServlet extends HttpServlet {
         }
 
         UserSession.initUserSession(req, user);
-        PageUtils.redirect(resp, "/pages/wizard");
+        PageUtils.redirect(resp, "/wizard");
     }
 }

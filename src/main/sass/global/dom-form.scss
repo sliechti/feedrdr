@@ -23,7 +23,7 @@
 		box-sizing: border-box;
 	}
 
-	input[type=text] {
+	input[type=text], input[type=password] {
 		padding: 5px 3px 3px 3px;
 		border: 1px solid $fade-color;
 	}
@@ -46,8 +46,23 @@
 		border: 1px solid $fade-color;
 	}
 
-	.x-spacing {
-		line-height: 40px;
+}
+
+.form-wide {
+	input[type=text], input[type=password] {
+		width: 100%;
+		max-width: 500px;
+	}
+}
+
+.form-m-spacing {
+	&>div {
+		line-height: $med-line-height;
+	}
+}
+.form-l-spacing {
+	&>div {
+		line-height: $large-line-height;
 	}
 }
 

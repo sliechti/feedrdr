@@ -42,3 +42,10 @@
 		background-color: $bg-color-2;
 	}
 }
+
+.hr-separator {
+	border-top: 0px;
+	border-bottom: 1px solid $fade-color;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
