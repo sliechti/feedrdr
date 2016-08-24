@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="/security.jsp" %>
+<c:set var="inReader" value="${pageContext.request.requestURI.contains('/reader')}" scope="request" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
 <body class="margin0">
 	<div class="header bg-white primary-t-color font-large">
 		<div id="header-input" class="hide center content-width">
-			<c:if test="${showBack}">
+			<c:if test="${showBackButton}">
 				<input type="text" class="header-line left" placeholder="search">
 			</c:if>
 			<a href="#" onclick="hideSearch();">
@@ -33,7 +34,7 @@
 		<div id="header-content" class="center content-width">
 			<div class="header-left">
 				<c:choose>
-					<c:when test="${showBack}">
+					<c:when test="${showBackButton}">
 						<a href="${baseUrl}/reader">
 							<i class="fa fa-arrow-left"></i> Back
 						</a>

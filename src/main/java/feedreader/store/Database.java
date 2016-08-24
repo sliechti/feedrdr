@@ -16,6 +16,8 @@ import feedreader.utils.SQLUtils;
 
 public class Database {
 
+    private static final String MAX_POOL_SIZE = "max_pool_size";
+
     private static final Logger logger = LoggerFactory.getLogger(Database.class);
 
     public static final String JDBC_DRIVER_PROP_KEY = "jdbc_driver";
@@ -98,7 +100,7 @@ public class Database {
         config.setJdbcUrl(appConfig.getString(URL_PROP_KEY));
         config.setUsername(appConfig.getString(USERNAME_PROP_KEY));
         config.setPassword(appConfig.getString(PASSWORD_PROP_KEY));
-        config.setMaximumPoolSize(20);
+        config.setMaximumPoolSize(appConfig.getInt(MAX_POOL_SIZE, 20));
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");

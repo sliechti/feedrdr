@@ -47,6 +47,10 @@ public class ApplicationConfig {
         return ret;
     }
 
+    public int getInt(String key, int def) {
+        return config.getInt(key, def);
+    }
+
     public String getString(String key) {
         String ret = getString(key, "");
         if (ret.isEmpty()) {

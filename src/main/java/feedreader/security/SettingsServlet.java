@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import feedreader.entities.UserData;
+import feedreader.pages.PageHeader;
 import feedreader.store.UsersTable;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
@@ -55,6 +56,8 @@ public class SettingsServlet extends HttpServlet {
     }
 
     private void gotoSettings(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PageHeader.hideLeftMenu(req);
+        PageHeader.showBackButton(req);
         ServletUtils.redirect(req, resp, "/pages/settings.jsp");
     }
 

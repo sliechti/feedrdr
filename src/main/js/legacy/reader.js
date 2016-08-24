@@ -290,9 +290,7 @@ function runQuery() {
 	}
 
 	if (queryGroups.sortByAlphabet != 0) {
-		j
-				.sort(((queryGroups.sortByAlphabet == 1) ? "-" : "")
-						+ "s_stream_name");
+		j.sort(((queryGroups.sortByAlphabet == 1) ? "-" : "") + "s_stream_name");
 	}
 
 	if (queryGroups.sortByUnread != 0) {
@@ -710,8 +708,7 @@ function updateNewsListView() {
 			break;
 		}
 
-		$.getJSON(baseUrl + apiUrlSaveModulesSettings, queryData, function(
-				data, success) { /**/
+		$.getJSON(baseUrl + apiUrlSaveModulesSettings, queryData, function(data, success) { /**/
 		}, "json");
 	}
 
@@ -725,7 +722,6 @@ function updateNewsListView() {
 		fetchNewsData(true, true);
 	}
 
-	console.log('trigger change view');
 	triggerChangeViewListeners(currentView);
 }
 
@@ -810,7 +806,8 @@ function setViewOptions() {
 }
 
 function updateNewsContentPane(entriesLen) {
-
+	console.log('update news content page', entriesLen);
+	$("#stream-footer .content").hide();
 	if (entriesLen == 0 || entriesLen == undefined) {
 		if (tmplOptions.id == TEMPLATE_ID_SOURCE) {
 			if (streamPage == 0) {
@@ -835,9 +832,8 @@ function updateNewsContentPane(entriesLen) {
 			$("#stream-entries").html($("#content_start_source").html());
 		}
 	} else {
-		$("#stream_more").hide();
 		if (streamEntries.length == entriesPerPage) {
-			$("#stream_more").show();
+			$("#stream-footer .content").show();
 			moreAvailable = true;
 		}
 
@@ -1048,8 +1044,7 @@ function loadEntries(page) {
 		queryData.offset = len;
 	}
 
-	$.getJSON(baseUrl + apiCurrentStreamsFeed, queryData, function(data,
-			success) {
+	$.getJSON(baseUrl + apiCurrentStreamsFeed, queryData, function(data, success) {
 		streamEntries = data.entries;
 		if (data.unread != undefined) {
 			selectedStream.l_gr_unread = data.unread;
@@ -1070,26 +1065,6 @@ function loadUnknown() {
 function reloadStream() {
 	clearView();
 	loadEntries(0);
-}
-
-function saveStreamGroup() {
-	var input = $("#menusubs input:first-child");
-
-	if (input.length == 0) {
-	}
-
-	var queryData = {};
-	queryData.sn = input.val();
-
-	$.getJSON(baseUrl + apiUrlStreamsAdd, queryData, function(data) {
-		if (data.success) {
-			getStreamGroups(function() {
-				loadStream(data.id);
-			});
-		} else {
-			alert(data.error);
-		}
-	});
 }
 
 function cancelStreamGroup() {

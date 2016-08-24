@@ -76,9 +76,18 @@ $left-menu-bgcolor: white;
 	}
 }
 
+#add-content {
+	& * {
+		box-sizing: border-box;
+	}
+}
 
-#streams-header {
+.margin {
 	margin: 10px 0px 10px 0px;
+}
+
+.wide-padding {
+	padding: 0px 20px;
 }
 
 #streams-actions {
@@ -91,7 +100,7 @@ $left-menu-bgcolor: white;
 }
 
 #streams-filter {
-	text-align:right;
+	text-align: center;
 }
 
 #left-add-content {

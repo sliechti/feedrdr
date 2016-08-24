@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import feedreader.pages.PageHeader;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
 
@@ -22,6 +23,7 @@ public class ReaderServlet extends HttpServlet {
             return;
         }
 
+        PageHeader.showSettingsMenuEntry(req);
         ServletUtils.redirect(req, resp, "/pages/reader.jsp");
     }
 

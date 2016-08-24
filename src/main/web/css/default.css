@@ -850,6 +850,7 @@ body {
 .msg-error {
   background-color: #4C1817;
   border: 1px solid #CACACA;
+  color: white;
 }
 .msg-error * {
   color: white;
@@ -933,8 +934,16 @@ body {
   padding-left: 20px;
 }
 
-#streams-header {
+#add-content * {
+  box-sizing: border-box;
+}
+
+.margin {
   margin: 10px 0px 10px 0px;
+}
+
+.wide-padding {
+  padding: 0px 20px;
 }
 
 #streams-actions {
@@ -946,7 +955,7 @@ body {
 }
 
 #streams-filter {
-  text-align: right;
+  text-align: center;
 }
 
 #left-add-content {

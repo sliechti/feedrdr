@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import feedreader.entities.UserData;
-import feedreader.security.WizardServlet.PageHeader;
+import feedreader.pages.PageHeader;
 import feedreader.store.UsersTable;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
@@ -19,10 +19,10 @@ import feedreader.utils.Validate;
 public class WizardServlet extends HttpServlet {
 
     private static final String JSON_PARAM_PWD1 = "pwd1";
-
     private static final String JSON_PARAM_PWD2 = "pwd2";
     private static final String JSON_PARAM_WIZARD_STEP = "wizard-step";
     private static final String PAGES_WIZARD_JSP = "/pages/wizard.jsp";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -75,17 +75,5 @@ public class WizardServlet extends HttpServlet {
         }
 
         ServletUtils.redirect(req, resp, PAGES_WIZARD_JSP);
-    }
-
-    public static class PageHeader {
-
-        private static void hideEllipsis(HttpServletRequest req) {
-            req.setAttribute("hideEllipsis", true);
-        }
-
-        private static void hideLeftMenu(HttpServletRequest req) {
-            req.setAttribute("hideLeftMenu", true);
-        }
-
     }
 }

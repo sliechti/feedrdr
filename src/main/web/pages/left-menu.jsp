@@ -2,7 +2,7 @@
 
 <div id="left-menu" class="hide">
 
-	<div class="header font-med menu-header">
+	<div class="header menu-header">
 		<div id="header-content" class="pl20p pr20p ">
 			<div class="left max300">
 				<a href="#" class="decor-none upper" onclick="lmToggleProfiles()">
@@ -19,7 +19,7 @@
 
 	<div id="left-menu-content" class="primary-t-color">
 
-		<div id="profiles" class="hide font-med bottom-shadow bg-white primary-t-color pr20p">
+		<div id="profiles" class="hide bottom-shadow bg-white primary-t-color pr20p">
 			<div class="no-overflow">
 				<a class="right" href="${baseUrl}/settings/profiles">
 					<i class="fa fa-cog"></i>
@@ -52,44 +52,29 @@
 				<li>
 					<a href="#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
 				</li>
-	<!-- 			<li> -->
-	<%-- 				<a href="${readerUrl}#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Discover</a> --%>
-	<!-- 			</li> -->
-	<!-- 			<li> -->
-	<%-- 				<a href="${readerUrl}#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Trending</a> --%>
-	<!-- 			</li> -->
 			</ul>
 			</div>
 			<hr>
 
-	    <div id="streams-header" class="font-med">
+	    <div id="streams-header" class="margin">
 			<div id="streams-actions" class="ls-med menu-icons r20p">
 				<a href="#" onclick="lmShowFilters()">
 					<span class="left pl20p">STREAMS</span>
 					<i class="fa fa-angle-down fade-color" aria-hidden="true"></i>
 				</a>
-<!-- 	            <a href="#" onclick="lmShowFilters()"> -->
-<!-- 					<i id="filter-icon" class="fa fa-filter"></i> -->
-<!-- 				</a> -->
-<!-- 	            <a href="#" onclick="lmShowAddContent()"> -->
-<!-- 	            	<i id="plus-icon" class="fa fa-plus"></i> -->
-<!-- 	            </a> -->
+	            <a href="#" onclick="lmShowAddContent()">
+	            	<i id="plus-icon" class="fa fa-plus"></i>
+	            </a>
 	        </div>
 	        <div>
-				<div id="add-content" class="border-bottom-fade hide">
-					<ul class="leftmenu-ul">
-						<li>
-							<a href="${baseUrl}/pages/collections.jsp">Add new collections</a></li>
-						<li>
-							<a onclick="closeLeftBar();" href="${baseUrl}/pages/import.jsp" style="display: block">Import feeds</a>
-						</li>
-						<li>
-							<a onclick="closeLeftBar();" href="${baseUrl}/pages/subscriptions.jsp" style="display: block">Manage subscriptions</a>
-						</li>
-						<li>
-							<a href="" onclick="newStreamGroup(); return false;">From URL</a>
-						</li>
-					</ul>
+				<div id="add-content" class="wide-padding border-bottom-fade hide">
+					<div class="no-overflow">
+						<input class="w80p left" type="text" id="stream-name"
+							placeholder="New stream group" />
+						<input class="w20p right" type="button" value="add"
+							onclick="saveStreamGroup('stream-name')" />
+					</div>
+					<div id="stream-name-msg" class="msg hide"></div>
 				</div>
 				<div id="streams-filter" class="ls-med border-bottom-fade menu-icons hide">
 					<a title="show all" href="" onclick="showOnlyWithUnread(false); return false;">

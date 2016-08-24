@@ -233,6 +233,43 @@ function showMsg(elemId, msg, clzz) {
 	elem.find('.text').html(msg);
 	elem.show();
 }
+
+function saveStreamGroup(elemId) {
+
+	var input = $("#" + elemId);
+	raClearMsg(elemId);
+
+	var queryData = {};
+	queryData.sn = input.val();
+	if (input.val().length == 0) {
+		raError(elemId, "Please enter a name");
+		return;
+	}
+	$.get(baseUrl + apiUrlStreamsAdd, queryData, function(data) {
+		if (data.success) {
+			getStreamGroups(function() {
+				loadStream(data.id);
+				closeLeftBar();
+			});
+		} else {
+			alert(data.error);
+		}
+	}, "json");
+}
+
+function raClearMsg(elemId) {
+	var e = $("#" + elemId + "-msg");
+	e.removeClass('msg-error');
+	e.hide();
+	e.html('');
+}
+
+function raError(elemId, msg) {
+	var e = $("#" + elemId + "-msg");
+	e.html(msg);
+	e.addClass('msg-error');
+	e.show();
+}
 var spTmpl = spTmpl || {};
 
 function settingsError(msg) {
@@ -346,7 +383,6 @@ var streamOptionsId = '#stream-options';
 
 function shToggleActions(caller) {
 	var ielem = $(caller).find('i');
-	console.debug(ielem);
 	if (ielem.hasClass('fa-angle-right')) {
 		slideInLeft(streamActionsId, 500, function() {
 			switchAngleLr(ielem, 'right');

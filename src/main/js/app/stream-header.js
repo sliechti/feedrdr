@@ -4,7 +4,6 @@ var streamOptionsId = '#stream-options';
 
 function shToggleActions(caller) {
 	var ielem = $(caller).find('i');
-	console.debug(ielem);
 	if (ielem.hasClass('fa-angle-right')) {
 		slideInLeft(streamActionsId, 500, function() {
 			switchAngleLr(ielem, 'right');
