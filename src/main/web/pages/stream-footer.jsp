@@ -1,13 +1,13 @@
 <div id="stream-footer">
 	<div class="content">
-		<div class="box" onclick="loadMore(); ">
+		<div id="load-more" class="box" onclick="loadMore(); ">
 			Load more
 		</div>
 		<div class="actions">
-			<a href="#" onclick="toTop()">
+			<a id="to-top" href="#" onclick="toTop()">
 				<i class="fa  fa-angle-double-up"></i>
 			</a>
-			<a href="#" onclick="markAllRead()">
+			<a id="mark-all-read" href="#" onclick="markAllRead()">
 				<i class="fa  fa-check"></i>
 			</a>
 		</div>

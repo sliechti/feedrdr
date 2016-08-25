@@ -93,7 +93,7 @@
 						<i class="fa fa-sort-amount-desc"></i>
 					</a>
 					<a title="sort by unread 0-9" href="" onclick="sortByUnread(2);return false;">
-						<i class="fa fa-sort-amount-desc"></i>
+						<i class="fa fa-sort-amount-asc"></i>
 					</a>
 				</div>
 	        </div>

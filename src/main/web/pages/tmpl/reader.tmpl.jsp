@@ -52,7 +52,7 @@
 					<i class="fa fa-plus" title="Add content"></i>
 				</a>
 				{{#if options.showDeleteStream}}
-				<a href="" onclick="deleteStream(); return false;">
+				<a href="" onclick="deleteStream({{stream.l_stream_id}}); return false;">
 					<i class="fa fa-remove" title="Delete stream"></i>
 				</a>
 				{{/if}}

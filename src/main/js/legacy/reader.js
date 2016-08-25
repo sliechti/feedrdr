@@ -442,17 +442,18 @@ function confirmClearRecentlyRead() {
 	}
 }
 
-function deleteStream() {
-	var queryData = {};
-	queryData.sid = $("#modalBox").attr("data-stream_id");
-	queryData.dp = $("input[name=delete_profiles]:visible").is(':checked');
+function deleteStream(streamId) {
+	if (confirm("Delete stream from all profiles?")) {
+		var queryData = {};
+		queryData.sid = streamId;
+		queryData.dp = true;
 
-	$.getJSON(baseUrl + apiUrlStreamDelete, queryData, function(data) {
-		if (data.count > 0) {
-			location.assign(readerHome);
-		}
-	});
-
+		$.getJSON(baseUrl + apiUrlStreamDelete, queryData, function(data) {
+			if (data.count > 0) {
+				location.assign(readerHome);
+			}
+		});
+	}
 	return false;
 }
 
@@ -805,10 +806,21 @@ function setViewOptions() {
 	selectedStream.h_view_mode = currentView;
 }
 
+/**
+ * function that renders the news entries
+ */
 function updateNewsContentPane(entriesLen) {
-	console.log('update news content page', entriesLen);
-	$("#stream-footer .content").hide();
+	console.log('update news content page', entriesLen, selectedStream, tmplOptions);
+	$("#load-more").hide();
+	if (selectedStream.h_filter_by == FILTER_BY_UNREAD) {
+		$('#mark-all-read').show();
+	} else {
+		$('#mark-all-read').hide();
+	}
+
 	if (entriesLen == 0 || entriesLen == undefined) {
+		$('#mark-all-read').hide();
+		$('#to-top').hide();
 		if (tmplOptions.id == TEMPLATE_ID_SOURCE) {
 			if (streamPage == 0) {
 				$("#stream-entries").html(contentEmptySource({
@@ -832,8 +844,9 @@ function updateNewsContentPane(entriesLen) {
 			$("#stream-entries").html($("#content_start_source").html());
 		}
 	} else {
+		$('#to-top').show();
 		if (streamEntries.length == entriesPerPage) {
-			$("#stream-footer .content").show();
+			$("#load-more").show();
 			moreAvailable = true;
 		}
 
@@ -909,7 +922,8 @@ function loadStream(streamId) {
 	fetchAllStreamSubscriptions(streamId);
 	displayStreamHeader({
 		'showFilter': true,
-		'showRanking': true
+		'showRanking': true,
+		'showDeleteStream': true
 	});
 	loadEntries(0);
 }
