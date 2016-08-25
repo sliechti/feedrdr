@@ -22,7 +22,6 @@ public class ReaderServlet extends HttpServlet {
             PageUtils.gotoStart(req, resp);
             return;
         }
-
         PageHeader.showSettingsMenuEntry(req);
         ServletUtils.redirect(req, resp, "/pages/reader.jsp");
     }

@@ -44,7 +44,7 @@ public class PageErrorServlet extends HttpServlet {
                 logger.error("failed to send stacktrace: {}", e, e.getMessage());
             }
         }
-        ServletUtils.redirect(req, resp, "/error/500.jsp");
+        ServletUtils.redirect(req, resp, "/500.jsp");
     }
 
 }
