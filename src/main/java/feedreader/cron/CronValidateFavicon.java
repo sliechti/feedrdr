@@ -1,11 +1,14 @@
 package feedreader.cron;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,9 @@ public class CronValidateFavicon implements Runnable {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(CronValidateFavicon.class);
+    private static final int IMAGEHEIGHT = 16;
+	private static final String FAVICONURL = "https://www.google.com/s2/favicons?domain=";
+	private static final String DEFAULTURL = "http://default";
 
 	public CronValidateFavicon() {
 		logger.info("starting, running every: {} minutes",
@@ -36,27 +42,37 @@ public class CronValidateFavicon implements Runnable {
 			String query = "SELECT l_xml_id,s_xml_url FROM feedreader.feedsources";
 			ResultSet rs = Database.rawQuery(conn, query);
 
+			// get favicon default url to match if google return return valid
+			// icon or default icon.
+			BufferedImage defaultImg = getImage(FAVICONURL + DEFAULTURL);
+
+			if (defaultImg == null) {
+				// TODO Need to add user define exception
+				throw new Exception(" error occur, Not a valid url:"
+						+ FAVICONURL + DEFAULTURL);
+			}
 			while (rs.next()) {
+				boolean validImage = false;
 				String link = rs.getString("s_xml_url");
-				StringBuffer url = new StringBuffer(link);
-				if (link.charAt(link.length() - 1) == '/')
-					url.append("favicon.ico");
-				else
-					url.append("/favicon.ico");
-				try {
-					HttpURLConnection connection = (HttpURLConnection) new URL(
-							url.toString()).openConnection();
-					connection.setRequestMethod("GET");
-					connection.connect();
-					if (connection.getResponseCode() != 200) {
-						inValidEntry.append(rs.getLong("l_xml_id") + ",");
-					} else {
-						validEntry.append(rs.getLong("l_xml_id") + ",");
+				BufferedImage linkImg = getImage(FAVICONURL + link);
+				if (linkImg == null) {
+					// TODO Need to add user define exception
+					throw new Exception(" error occur, Not a valid url:"
+							+ FAVICONURL + link);
+				}
+				for (int x = 0; validImage == false && x < IMAGEHEIGHT; x++) {
+					for (int y = 0; validImage == false && y < IMAGEHEIGHT; y++) {
+						if (linkImg.getRGB(x, y) != defaultImg.getRGB(x, y)) {
+							logger.info("images are not equal for url:" + link);
+							validImage = true;
+						}
 					}
-				} catch (IOException ex) {
-					logger.error("error occur for url: {}", url);
-				}catch (Exception ex) {
-					logger.error("error occur for url: {}", url);
+				}
+				// if image are equal then the url's is not valid
+				if (validImage) {
+					validEntry.append(rs.getLong("l_xml_id") + ",");
+				} else {
+					inValidEntry.append(rs.getLong("l_xml_id") + ",");
 				}
 			}
 			if (validEntry.length() > 0) {
@@ -77,7 +93,21 @@ public class CronValidateFavicon implements Runnable {
 			}
 		} catch (SQLException e) {
 			logger.error("sql error: {}", e, e.getMessage());
+		} catch (Exception e) {
+			logger.error("Exception occur: {}", e, e.getMessage());
 		}
+	}
+
+	private BufferedImage getImage(String url) {
+		try {
+			return ImageIO.read(new URL(url));
+
+		} catch (MalformedURLException e) {
+			logger.error("MalformedURLException: error occur for url: {}", url);
+		} catch (IOException e) {
+			logger.error("IOException: error occur for url: {}", url);
+		}
+		return null;
 	}
 
 }

@@ -3,7 +3,7 @@ Handlebars.registerHelper("favico", function favico(url) {
 });
 
 Handlebars.registerHelper("favicoDefault", function favico(data) {
-	return baseFavicoDomain + emptyFavicon;
+	return baseUrl+emptyFavicon;
 });
 
 Handlebars.registerHelper("timediff", function timediff(time) {
