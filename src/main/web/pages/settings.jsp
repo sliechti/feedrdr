@@ -10,7 +10,8 @@
 <%@page import="feedreader.store.UsersTable"%>
 <%@page import="feedreader.entities.UserData"%>
 <%@page import="feedreader.config.Constants"%>
-<%@page import="static java.util.concurrent.TimeUnit.*" %>
+<%@page import="static java.util.concurrent.TimeUnit.MILLISECONDS" %>
+<%@page import="static java.util.concurrent.TimeUnit.HOURS" %>
 
 <% request.setAttribute("e", true);%>
 
@@ -99,16 +100,9 @@
                     if (Validate.isValidEmailAddress(newEmail)) {
                         UserData testData = UsersTable.get(newEmail);
                         if (testData.getUserId() == 0) {
-                        	SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy");
-                        	Date previousDate=null;
-                        	Date currentDate=null;
-                        	try{
-                        	   previousDate = df2.parse(df2.format(data.getVerifyEmailDate()));
-                        	   currentDate = df2.parse(df2.format(CurrentTime.inGMT()));
-                        	}catch(Exception e){
-                        		err+="Unable to parse Date.";
-                        	}
-                        	if(currentDate.compareTo(previousDate)>0){
+                        	long previousDate = data.getVerifyEmailDate();
+                        	long currentDate = CurrentTime.inGMT();
+                            if(currentDate > previousDate){
                         		info += "Email changed. <br>";
                                 emailChanged = newEmail;
                                 data.setEmail(emailChanged);
@@ -168,10 +162,9 @@
 	UserData data = (UserData)request.getAttribute("user");
     if (request.getMethod() == "POST") {
         String section = Parameter.asString(request, "section", "");
-        if(Parameter.asString(request, "verifybtn", "")!=null){
+        if (Parameter.asString(request, "verifybtn", "")!=null){
         	processVerificationMail(request);
-        }
-        else if ("notifications".equals(section)) {
+        } else if ("notifications".equals(section)) {
                 processNotificationsUpdate(request);
         } else if ("settings".equals(section)) {
                 processSettingsUpdate(request);
@@ -216,10 +209,9 @@
 
 			<form method="POST" action="">
 			<input type="hidden" name="section" value="settings" />
-
-			<% long MAX_DURATION = MILLISECONDS.convert(3, HOURS);
+			<% long maxDuration = MILLISECONDS.convert(3, HOURS);
 						long duration = CurrentTime.inGMT()-data.getVerifyEmailDate();
-						if (duration >= MAX_DURATION) {
+						if (duration >= maxDuration) {
 						%>
 						<span class="text-info"> To verify your Email:&nbsp;&nbsp;
 						<input type="submit" id="verifybtn" value="click here" class="btn btn-success btn"/></span><br>
