@@ -73,6 +73,8 @@ public class CollectionsAPI {
 
         int subsOk = 0;
         int profilesOk = 0;
+        //to add collection Id in collection table
+        int subsCollection=0;
 
         try (Connection conn = Database.getConnection()) {
             String query = CollectionsTable.getQueryCollectionEntriesByCollectionIds("" + collectionId);
@@ -100,12 +102,16 @@ public class CollectionsAPI {
                     }
                 }
             }
+            // adding collection Id to collections table
+            if (subsOk > 0 || profilesOk > 0) {
+            	subsCollection=CollectionsTable.save(userId, collectionId);
+            }
         } catch (SQLException e) {
             logger.error("add failed: {}", e, e.getMessage());
             return JSONUtils.error(0, "collections add error", e);
         }
 
-        if (subsOk > 0 || profilesOk > 0) {
+        if ((subsOk > 0 || profilesOk > 0) && subsCollection > 0) {
             StringBuilder sb = new StringBuilder();
             sb.append("{");
             JSONUtils.append(sb, "streamId", streamId).append(",");

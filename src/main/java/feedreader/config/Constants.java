@@ -36,6 +36,7 @@ public class Constants {
     public static final String SESSION_USERID_FIELD = "ui";
     public static final String SOURCE_COLLECTIONS = FEED_APP_SCHEMA + ".sourcecollections";
     public static final String SOURCE_COLLECTIONS_LIST = FEED_APP_SCHEMA + ".sourcecollectionslist";
+    public static final String COLLECTIONS = FEED_APP_SCHEMA + ".collections";
     public static final String USER_AUTH_TOKENS = FEED_APP_SCHEMA + ".userauthtokens";
     public static final String USER_COOKIE = "rdr";
     public static final String USER_KEY_VALUE_TABLE = FEED_APP_SCHEMA + ".userkeyvalues";

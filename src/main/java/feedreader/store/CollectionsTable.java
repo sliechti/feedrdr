@@ -1,6 +1,7 @@
 package feedreader.store;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ public class CollectionsTable {
 
     public static final String TABLE = Constants.SOURCE_COLLECTIONS;
     public static final String TABLE_LIST = Constants.SOURCE_COLLECTIONS_LIST;
+    public static final String TABLE_SUBS = Constants.COLLECTIONS;
     private static final Logger logger = LoggerFactory.getLogger(CollectionsTable.class);
     static Connection conn;
     static Statement stmt;
@@ -40,13 +42,34 @@ public class CollectionsTable {
                 + "WHERE t1.l_collection_id IN (" + SQLUtils.asSafeString(ids) + ") AND t3.s_link != ''";
     }
 
-    public static String getQueryList(long id) {
+    public static String getQueryList(long userId) {
         return "SELECT t0.*, count(t1.l_xml_id) as i_feeds FROM feedreader.sourcecollections as t0 " +
                 "LEFT JOIN feedreader.sourcecollectionslist AS t1 " +
-                "ON t0.l_collection_id = t1.l_collection_id AND "
-                + "t1.l_xml_id NOT IN( select distinct(l_xml_id) from "
-                            + "feedreader.userfeedsubscriptions where l_user_id="+id +")" +
-                "GROUP BY t0.l_collection_id HAVING count(t1.l_xml_id)>0;";
+                "ON t0.l_collection_id = t1.l_collection_id where t0.l_collection_id NOT IN"+ 
+                "(SELECT DISTINCT(l_collection_id) from feedreader.collections where l_user_id="+userId +") "  +
+                "GROUP BY t0.l_collection_id;";
+    }
+    
+	/**
+	 * query to insert subscribed collection Id and userId into collections
+	 * table.
+	 * 
+	 * @return int
+	 */
+	public static int save(long userId, long collectionId) {
+		try (Connection conn = Database.getConnection()) {
+			String query = String.format(
+					"INSERT INTO feedreader.collections (l_user_id, l_collection_id) VALUES  "
+							+ "(%d, %d)",
+					// values
+					userId, collectionId);
+
+			conn.createStatement().execute(query);
+			return 1;
+		} catch (SQLException e) {
+			logger.error("error occur: {}", e, e.getMessage());
+		}
+		return -1;
     }
 
 }
