@@ -421,6 +421,8 @@ function importSingleFeed() {
 	var queryData = {};
 	queryData.n = $("input[name=sName]:visible").val();
 	queryData.u = $("input[name=sUrl]:visible").val();
+	queryData.sid = selectedStream.l_stream_id;
+	
 
 	$.getJSON(baseUrl + apiUrlSubscriptionsAdd, queryData, function(data) {
 		if (data.success) {
@@ -659,12 +661,14 @@ function markAllRead() {
 	});
 
 	apiStreamRead(selectedStream.l_stream_id, function(data) {
-		selectedStream.l_gr_unread = 0;
-		clearViewAndData();
-		updateUnread();
-		updateNewsListView();
-		runQuery();
 	});
+
+	// assume call works, otherwise it lags.
+	selectedStream.l_gr_unread = 0;
+	clearViewAndData();
+	updateUnread();
+	updateNewsListView();
+	runQuery();
 
 	$(".mark_all_read").hide();
 	moveTop();
