@@ -160,6 +160,7 @@ button {
 }
 
 input {
+	box-sizing: border-box;
 	border: 0.8px solid #D6D6D6;
 	font-size: 1.1em;
 	padding: 5px;
