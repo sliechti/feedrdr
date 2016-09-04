@@ -62,23 +62,35 @@
 		<div class="stream-title title">
 			{{stream.s_stream_name}}
 			<div id="stream-actions" class="hide">
+				{{#if options.showMarkAllRead}}
 				<a href="" onclick="markAllRead(); return false;">
 					<i class="fa fa-check" title="Mark stream read"></i>
 				</a>
+				{{/if}}
+				{{#if options.showAdd}}
 				<a href="${baseUrl}/add?to={{stream.l_stream_id}}">
 					<i class="fa fa-plus" title="Add content"></i>
 				</a>
-				<!--<a href="" onclick="toggleSubscriptions()">
+				{{/if}}
+				{{#if options.showSubscriptions}}
+				<a href="${baseUrl}/add?to={{stream.l_stream_id}}">
+				<a href="" onclick="toggleSubscriptions()">
 					<i class="fa fa-list" title="List subscriptions"></i>
-				</a> -->
+				</a>
+				{{/if}}
+				{{#if options.showClearRecentlyRead}}
+				<a href="" onclick="confirmClearRecentlyRead(); return false;">
+					<i class="fa fa-remove" title="Clear recently read"></i>
+				</a>
+				{{/if}}
+				{{#if options.showClearSaved}}
+				<a href="" onclick="clearSaved(); return false;">
+					<i class="fa fa-remove" title="Clear saved list"></i>
+				</a>
+				{{/if}}
 				{{#if options.showDeleteStream}}
 				<a href="" onclick="deleteStream({{stream.l_stream_id}}); return false;">
 					<i class="fa fa-remove" title="Delete stream"></i>
-				</a>
-				{{/if}}
-				{{#if options.showClearRecents}}
-				<a href="" onclick="confirmClearRecentlyRead(); return false;">
-					<i class="fa fa-remove" title="Clear list"></i>
 				</a>
 				{{/if}}
 			</div>
@@ -319,22 +331,24 @@
 			Let's start adding some content
 		</p>
 		<p class="important-a">
-			The easiest way to subscribe to feeds is adding one of the many <a href="collections.jsp">collections</a>
+			The easiest way to subscribe to feeds is adding one of the many <a href="${baseUrl}/collections">collections</a>
 we created for you.<br>
 			<br>
-			You can <a href="import.jsp">import</a> your own feeds with an OPML file.
+			You can <a href="${baseUrl}/add">import</a> your own feeds with an OPML file.
 			<br>
-			<br>
-			You can also create a new stream group, by opening the <a href="#" onclick="openLeftBar();"> left bar</a>
-			and adding new sources with the RSS/Atom URL.
 		</p>
 
 		</div>
 </script>
 
 <script id="content_start_recently_read" type="text/x-handlebars-template">
-		<center><h3>No content read yet.</h3>
-				<p>Whenever you clik on a news entry it will be added to this view. </center></p>
+		<div class="center text-center">
+			<b>List empty</b>
+			<p>
+			Read articles are automatically added to this list.<br><br>
+			You can clear the list by clicking on the '>' icon and then 'x'.
+			</p>
+		</div>
 </script>
 
 <script id="content_start_saved" type="text/x-handlebars-template">

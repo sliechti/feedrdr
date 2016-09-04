@@ -1,14 +1,16 @@
-<%@page import="feedreader.config.FeedAppConfig"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<% request.setAttribute("c", true); %>
+<jsp:include page="header.jsp">
+	<jsp:param name="title" value="reader" />
+</jsp:include>
 
-<%@include file="header.jsp" %>
 <jsp:include page="tmpl/collections.tmpl.jsp"></jsp:include>
 
-<div class="row">
-	<div class="col-xs-12 col-sm-6 col-md-4" id="col0"></div>
-	<div class="col-xs-12 col-sm-6 col-md-4" id="col1"></div>
-	<div class="col-xs-12 col-sm-6 col-md-4" id="col2"></div>
+<div class="center content-width">
+<div id="collections-content">
+<div class="wrapper">
+</div>
+</div>
 </div>
 
 <script type="text/javascript">

@@ -48,11 +48,11 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 </c:if>
 </head>
 <body class="margin0">
-	<div class="header">
+	<div class="header bg-white primary-t-color font-large">
 		<div class="table center content-width block">
 			<div class="cell left h100">
 				<span class="h100 vertical-helper vertical-middle"></span>
-				<img src="${baseUrl}/img/logo.svg" id="logo" class="vertical-middle" height="30" />
+					<img src="${baseUrl}/img/app-logo.svg" height="40" id="app-logo" class="vertical-middle" />
 			</div>
 			<div onclick="location.href='login'" class="pointer cell vertical-middle right header-btn">
 				<a href="login"><fmt:message key="welcome.signin"/></a>

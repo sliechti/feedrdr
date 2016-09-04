@@ -44,15 +44,23 @@
 			<div class="ul-section" id="special-entries">
 			<ul>
 				<li>
-					<a href="#/v/a" id="mAll" onclick="closeLeftBar();" style="display: block">All</a>
+					<a href="#/v/a" id="mAll" onclick="closeLeftBar();" >All</a>
 				</li>
 				<li>
-					<a href="#/v/s" id="mSaved" onclick="closeLeftBar();" style="display: block">Saved</a>
+					<a href="#/v/s" id="mSaved" onclick="closeLeftBar();" >Saved</a>
 				</li>
 				<li>
-					<a href="#/v/r" id="mRr" onclick="closeLeftBar();" style="display: block">Recently read</a>
+					<a href="#/v/r" id="mRr" onclick="closeLeftBar();" >Recently read</a>
 				</li>
 			</ul>
+			</div>
+			<hr>
+			<div class="ul-section" id="discover-entries">
+				<ul>
+					<li>
+						<a href="${baseUrl}/collections">Collections</a>
+					</li>
+				</ul>
 			</div>
 			<hr>
 

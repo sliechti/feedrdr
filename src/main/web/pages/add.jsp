@@ -37,6 +37,13 @@
 			Feeds will be added to the current profile <b>${profile.name}</b>
 		</div>
 		<hr class="hr-separator">
+		<c:if test="${not empty collection}">
+				<div>
+					Collection ${collection.name} added.
+				</div>
+			</div>
+			<hr class="hr-separator">
+		</c:if>
 		<c:if test="${not empty param.to}">
 			<div id="import-url" class="form form-wide">
 				<div>
@@ -47,8 +54,8 @@
 						type="submit" value="Add feed to '${togroup.name}'">
 				</div>
 			</div>
+			<hr class="hr-separator">
 		</c:if>
-		<hr class="hr-separator">
 		<div id="import-opml" class="form form-wide">
 			<div id="opml" class="col-xs-12 form-group">
 				<form method="POST" action="" enctype="multipart/form-data">

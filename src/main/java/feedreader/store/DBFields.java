@@ -56,6 +56,7 @@ public class DBFields {
     public static final String STR_COOKIE = "s_cookie";
     public static final String STR_DESCRIPTION = "s_description";
     public static final String STR_EMAIL = "s_email";
+    public static final String STR_NAME = "s_name";
     public static final String STR_FEED_NAME = "s_feed_name";
     public static final String STR_FORGOT_CODE = "s_forgot_code";
     public static final String STR_GROUP_TIME_FILTER = "s_group_time_filter";

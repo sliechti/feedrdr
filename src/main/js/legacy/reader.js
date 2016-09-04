@@ -833,6 +833,7 @@ function updateNewsContentPane(entriesLen) {
 		if (tmplOptions.id == TEMPLATE_ID_ALL) {
 			renderContentStart();
 		} else if (tmplOptions.id == TEMPLATE_ID_SAVED) {
+			console.debug('no content saved');
 			$("#stream-entries").html($("#content_start_saved").html());
 		} else if (tmplOptions.id == TEMPLATE_ID_RECENTLY_READ) {
 			$("#stream-entries").html($("#content_start_recently_read").html());
@@ -921,6 +922,9 @@ function loadStream(streamId) {
 	currentView = selectedStream.h_view_mode;
 	fetchAllStreamSubscriptions(streamId);
 	displayStreamHeader({
+		'showMarkAllRead' : true,
+		'showAdd': true,
+		'showSubscriptions': true,
 		'showFilter': true,
 		'showRanking': true,
 		'showDeleteStream': true
@@ -968,7 +972,9 @@ function loadRecentlyRead() {
 	selectedStream.l_stream_id = 0;
 	selectedStream.l_view = TEMPLATE_ID_RECENTLY_READ;
 
-	displayStreamHeader({'showRecentlyRead' : true});
+	displayStreamHeader({
+		'showClearRecentlyRead' : true
+	});
 }
 
 function loadSaved() {
@@ -983,9 +989,13 @@ function loadSaved() {
 		triggerOnEntriesLoadedListeners(streamEntries);
 	});
 
-	$("#simple_view_header").html(simpleViewHeaderTmpl({
-		"title" : "Saved"
-	}));
+	selectedStream.s_stream_name = 'Saved';
+	selectedStream.l_stream_id = 0;
+	selectedStream.l_view = TEMPLATE_ID_SAVED;
+
+	displayStreamHeader({
+		"showClearSaved" : true
+	});
 }
 
 function loadSource(sourceId) {

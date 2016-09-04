@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -23,9 +24,11 @@ import feedreader.entities.UserData;
 import feedreader.opml.OPMLParser;
 import feedreader.opml.UserOPMLImportHandler;
 import feedreader.pages.PageHeader;
+import feedreader.store.CollectionsTable;
 import feedreader.store.Database;
 import feedreader.store.UserStreamGroupsTable;
 import feedreader.store.UsersTable;
+import feedreader.store.CollectionsTable.SourceCollection;
 import feedreader.utils.FormUploadHelper;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
@@ -41,16 +44,36 @@ public class AddServlet extends HttpServlet {
             PageUtils.gotoStart(req, resp);
             return;
         }
+        PageHeader.showSettingsMenuEntry(req);
+        PageHeader.showBackButton(req);
+        PageHeader.showReaderInMenuEntry(req);
+        UserData user = UsersTable.get(userId);
+
         if (Parameter.isSet(req, "to")) {
             int streamId = Parameter.asInt(req, "to", 0);
             StreamGroup toGroup = UserStreamGroupsTable.getStream(userId, streamId);
             req.setAttribute("togroup", toGroup);
         }
 
-        PageHeader.showSettingsMenuEntry(req);
-        PageHeader.showBackButton(req);
-        PageHeader.showReaderInMenuEntry(req);
-        UserData user = UsersTable.get(userId);
+        if (Parameter.isSet(req, "collection")) {
+            int colId = Parameter.asInt(req, "collection", 0);
+            try {
+                SourceCollection collection = CollectionsTable.getCollection(colId);
+                if (!UserStreamGroupsTable.hasStream(userId, user.getSelectedProfileId(), collection.getName())) {
+                    try {
+                        CollectionsTable.addCollection(userId, colId, Arrays.asList(user.getSelectedProfileId()));
+                        req.setAttribute("collection", collection);
+                    } catch (Exception e) {
+                        req.setAttribute("error", "Collection error: " + e.getMessage());
+                    }
+                } else {
+                    req.setAttribute("error", "Collection alreay added");
+                }
+            } catch (SQLException e1) {
+                req.setAttribute("error", "Couldn't get collection: " + e1.getMessage());
+                logger.error("collection e1: {}", e1, e1.getMessage());
+            }
+        }
 
         try (Connection conn = Database.getConnection()) {
             ResultSet rs = UserStreamGroupsTable.get(conn, user.getSelectedProfileId(), false);
