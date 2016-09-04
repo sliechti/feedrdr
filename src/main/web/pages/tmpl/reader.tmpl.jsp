@@ -1,38 +1,55 @@
 <script id="stream-options" type="text/x-handlebars-template">
 	{{log 'stream-options' this}}
-	<div id="stream-options" class="hide">
+	<div id="stream-options" class="el-menu el-menu-header">
+		<ul>
 		{{#if options.showFilter}}
-		<div class="filter-box">
-			<a title="show all" href="" id="show_all" onclick="showAll();return false;">
+			<li>
+			<a href="" id="show_all" onclick="showAll();return false;">
+				All
 				<i class="fa fa-eye"></i>
 			</a>
-			<a title="show only unread" href="" id="show_unread" onclick="showUnreadOnly();return false;">
-				<i class="fa fa-eye-slash"></i>
+			</li>
+			<li>
+			<a href="" id="show_unread" onclick="showUnreadOnly();return false;">
+				Unread
 				&nbsp;(<span id="unread"></span>)
+				<i class="fa fa-eye-slash"></i>
 			</a>
-		</div>
+			</li>
 		{{/if}}
 		{{#if options.showRanking}}
-		<div class="ranking-box">
+			<li>
 			<a href="" onclick="streamSort(SORT_NEW_FIRST);return false;">
+				New first
 				<i class="fa fa-sort-numeric-asc"></i>
 			</a>
+			</li>
+			<li>
 			<a href="" onclick="streamSort(SORT_OLD_FIRST);return false;">
+				Oldest first
 				<i class="fa fa-sort-numeric-desc"></i>
 			</a>
-		</div>
+			</li>
 		{{/if}}
-		<div class="views-box">
-			<a title="show as list" href="" onclick="setLineView();return false;">
+			<li>
+			<a href="" onclick="setLineView();return false;">
+				Line
 				<span class="icon" id="icon_view_line" title="line view"></span>
 			</a>
-			<a title="show in magazine view" href="" onclick="setMagazineView();return false;">
+			</li>
+			<li>
+			<a href="" onclick="setMagazineView();return false;">
+				Magazine
 				<span class="icon" id="icon_view_mag" title="magazine view"></span>
 			</a>
-			<a title="show in stream view" href="" onclick="setStreamView();return false;">
+			</li>
+			<li>
+			<a href="" onclick="setStreamView();return false;">
+				Stream
 				<span class="icon" id="icon_view_stream" title="stream view"></span>
 			</a>
-		</div>
+			</li>
+		</ul>
 	</div>
 </script>
 
@@ -48,9 +65,12 @@
 				<a href="" onclick="markAllRead(); return false;">
 					<i class="fa fa-check" title="Mark stream read"></i>
 				</a>
-				<a href="/add?to={{stream.l_stream_id}}">
+				<a href="${baseUrl}/add?to={{stream.l_stream_id}}">
 					<i class="fa fa-plus" title="Add content"></i>
 				</a>
+				<!--<a href="" onclick="toggleSubscriptions()">
+					<i class="fa fa-list" title="List subscriptions"></i>
+				</a> -->
 				{{#if options.showDeleteStream}}
 				<a href="" onclick="deleteStream({{stream.l_stream_id}}); return false;">
 					<i class="fa fa-remove" title="Delete stream"></i>
@@ -62,18 +82,21 @@
 				</a>
 				{{/if}}
 			</div>
-			<div class="right">
-				<i onclick="shToggleSettings()"
-					class="-icon-hide pointer fa fa-ellipsis-v right fade-color"></i>
-			</div>
+		</div>
+		<div class="right relative">
+			<i onclick="showEl(this, 'stream-options')"
+				class="-icon-hide pointer fa fa-ellipsis-v right fade-color"></i>
+			{{> stream-options}}
 		</div>
 	</div>
-	{{> stream-options}}
 </script>
 
 
 <script id="source-header-tmpl" type="text/x-handlebars-template">
 {{log 'source header tmpl' this}}
+	<div>
+		<a href="" onclick="location.history(-1); return false">Back</a>
+	</div>
 <div class="no-overflow">
 	{{#if s_img_url}}
 	<div class="source-logo">
@@ -84,12 +107,12 @@
 		<img src="{{favico s_xml_url}}">
 		<a href="{{s_link}}" target="_blank">{{s_title}}</a>
 		<br>
-		<span class="subscibe">
+		<!-- <span class="subscibe">
 			<a href="#" class="source-add">
 				<i class="fa fa-plus-circle"></i>
 				subscribe
 			</a>
-		</span>
+		</span> -->
 	</div>
 </div>
 <div class="source-info">
@@ -150,7 +173,7 @@
 	{{#each entries}}
 	<div id="news_${l_entry_id}" class="news-mag">
 		<div class="content">
-			<img style="background: transparent url(&quot;URL;) no-repeat scroll center center"
+			<img style=""
 			class="left margin10" id="img_{{l_entry_id}}" src="${baseUrl}/img/1px.png">
 			<a name="link" class="title" href="{{s_link}}" data-id="{{l_entry_id}}" target="_blank">
 				{{timediff t_pub_date}}
@@ -270,14 +293,24 @@
 </script>
 
 <script id="content_empty_source" type="text/x-handlebars-template">
-		<center><h3>No entries found for this source yet. Check the <a href="subscriptions.jsp#/v/{{id}}">status</h3></center>
+		<center>
+			<h3>
+				No entries found for this source yet.
+				Check the <a href="subscriptions.jsp#/v/{{id}}">status
+			</h3>
+		</center>
 </script>
 
 <script id="content_start_source" type="text/x-handlebars-template">
-		<center><h3>Stream group has no subscriptions yet.</h3>
-				<p>Start by <a onClick="showImport();return false;" href="#">adding a new feed </a> OR
-				by selecting one of your <a href="" onclick="toggleHeaderTool('subscriptions');return false;">subscriptions</a>
-		<br><br></center></p>
+		<div class="text-center">
+			<h3>New Stream</h3>
+			<p>
+				Let's add some content
+			</p>
+			<div onclick="addContent()">
+				<div class="box" onclick="addContent()">Add content</div>
+			</div>
+		</div>
 </script>
 
 <script id="content_start_all" type="text/x-handlebars-template">

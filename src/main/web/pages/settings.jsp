@@ -2,7 +2,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="header.jsp">
-	<jsp:param value="header" name="title" />
+	<jsp:param value="Settings" name="title" />
 </jsp:include>
 
 <div id="settings-header" class="sub-header">

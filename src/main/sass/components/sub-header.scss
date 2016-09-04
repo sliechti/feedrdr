@@ -1,8 +1,10 @@
 .sub-header {
+	a {
+		color: $primary-color;
+	}
 	padding: 10px 0px 10px 0px;
 	border-bottom: 1px solid $fade-color;
 	background-color: $bg-color-2;
-	overflow: hidden;
 
 	&.sub-line{
 		line-height: 30px;

@@ -15,8 +15,10 @@
 	}
 
 	.stream-title {
-		overflow: hidden;
 		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		width: 80%;
 	}
 
 	.ranking-box, .views-box, .filter-box {

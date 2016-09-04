@@ -5,13 +5,13 @@
 	<form method="POST" class="form form-wide bottom10" action="">
 
 		<div>
-			<p class="important wide-padding">
-				When changing your Email address we send a new verification code.<br>
-				Please remember that your email is required to sign in.
+			<p class="important pad5">
+				Please remember that your email is required to sign in.<br><br>
+				We send a new verification code when the email address changes.<br>
 			</p>
 		</div>
 		<div>
-			<label for="email">Change Email ${user.email} to: <br>
+			<label for="email">Change email ${user.email} to: <br>
 				<input type="text" tabindex="1" name="email" value="">
 			</label>
 		</div>

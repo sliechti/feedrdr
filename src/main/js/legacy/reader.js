@@ -593,7 +593,7 @@ function fetchNewsData(images, content) {
 						$("#img_" + data.entries[i].l_entry_id).html(img);
 					} else if (currentView == VIEW_MAGAZINE) {
 						$("#img_" + data.entries[i].l_entry_id).css(
-								'background', 'url(' + data.entries[i].s_thumb_url + ") no-repeat center");
+								'background', 'url(' + data.entries[i].s_thumb_url + ") no-repeat top center");
 					}
 				}
 
@@ -810,7 +810,7 @@ function setViewOptions() {
  * function that renders the news entries
  */
 function updateNewsContentPane(entriesLen) {
-	console.log('update news content page', entriesLen, selectedStream, tmplOptions);
+	console.log('update news content pane', entriesLen, selectedStream, tmplOptions);
 	$("#load-more").hide();
 	if (selectedStream.h_filter_by == FILTER_BY_UNREAD) {
 		$('#mark-all-read').show();

@@ -295,6 +295,14 @@ body {
   padding-right: 10px;
 }
 
+.pad10 {
+  padding: 10px;
+}
+
+.pad5 {
+  padding: 5px;
+}
+
 .pt5p {
   padding-top: 5px;
 }
@@ -562,8 +570,10 @@ body {
   line-height: 30px;
 }
 #stream-header .stream-title {
-  overflow: hidden;
   position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 80%;
 }
 #stream-header .ranking-box, #stream-header .views-box, #stream-header .filter-box {
   text-align: right;
@@ -780,6 +790,7 @@ body {
 }
 .el-menu a {
   text-decoration: none;
+  color: #173C4F;
 }
 .el-menu .fa {
   vertical-align: middle;
@@ -815,7 +826,9 @@ body {
   padding: 10px 0px 10px 0px;
   border-bottom: 1px solid #CACACA;
   background-color: #FCFCFC;
-  overflow: hidden;
+}
+.sub-header a {
+  color: #173C4F;
 }
 .sub-header.sub-line {
   line-height: 30px;
@@ -1052,9 +1065,6 @@ body {
     float: right;
   }
 }
-#stream-header {
-  overflow: hidden;
-}
 #stream-header .source-logo img {
   max-width: 50%;
   max-height: 150px;
@@ -1081,6 +1091,14 @@ body {
 
 #wizard-content a {
   color: #173C4F;
+}
+
+#add-content input {
+  font-size: 1.2em;
+  min-width: 250px;
+}
+#add-content > div {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=default.css.map */

@@ -1,3 +1,4 @@
+// Source: src/main/js/legacy/collections.js
 var COLUMNS = 3;
 var MODAL_COLLECTION_ADD = "modal_collection_add";
 
@@ -101,6 +102,7 @@ function importCollection() {
 }
 
 
+// Source: src/main/js/legacy/global.js
 
 var baseUrl = "/";
 var closeModalCallback = {};
@@ -211,6 +213,7 @@ function openLeftBar() {
 		});
 	}
 }
+// Source: src/main/js/legacy/profiles.js
 var profilesTmpl;
 var apiUrlProfileList = '/api/v1/user/profiles/list';
 
@@ -393,6 +396,7 @@ function createNewProfile(inputName, inputPicker) {
 	});
 }
 
+// Source: src/main/js/legacy/reader.admin.js
 
 var apiShareCollection = "api/v1/collections/share"; 
 
@@ -425,6 +429,7 @@ function shareCollection() {
 	});
 }
 
+// Source: src/main/js/legacy/reader.handlebars.js
 Handlebars.registerHelper("favico", function favico(url) {
 	return baseFavicoDomain + url;
 });
@@ -556,6 +561,7 @@ Handlebars.registerHelper("showSourceData", function showSourceData(id, tmplOpti
 	return "";
 });
 
+// Source: src/main/js/legacy/reader.js
 var MAX_INPUT_SIZE = 50;
 var CONTENT_MAX_LEN = 500;
 var NOCACHE = 0;
@@ -1151,7 +1157,7 @@ function fetchNewsData(images, content) {
 						$("#img_" + data.entries[i].l_entry_id).html(img);
 					} else if (currentView == VIEW_MAGAZINE) {
 						$("#img_" + data.entries[i].l_entry_id).css(
-								'background', 'url(' + data.entries[i].s_thumb_url + ") no-repeat center");
+								'background', 'url(' + data.entries[i].s_thumb_url + ") no-repeat top center");
 					}
 				}
 
@@ -1368,7 +1374,7 @@ function setViewOptions() {
  * function that renders the news entries
  */
 function updateNewsContentPane(entriesLen) {
-	console.log('update news content page', entriesLen, selectedStream, tmplOptions);
+	console.log('update news content pane', entriesLen, selectedStream, tmplOptions);
 	$("#load-more").hide();
 	if (selectedStream.h_filter_by == FILTER_BY_UNREAD) {
 		$('#mark-all-read').show();
@@ -1722,6 +1728,7 @@ function toggleEditTools(caller, title) {
 		$(caller).html(title + '&nbsp;&raquo;&raquo;');
 	}
 }
+// Source: src/main/js/legacy/reader.subscriptions.js
 var streamSubscriptions = [];
 // keyed by subscription id
 var namedStreamSubscriptions = {};
@@ -1889,6 +1896,7 @@ function runReaderQuery(data, query, allTmpl) {
 	}
 }
 
+// Source: src/main/js/legacy/settings.js
 var r = {};
 
 var profilesSettingsTmpl = {};
@@ -1976,6 +1984,7 @@ function deleteProfile(id) {
 		});
 	}
 }
+// Source: src/main/js/legacy/subscriptions.js
 var subscriptionsHome = '';
 
 var subscriptions = [];

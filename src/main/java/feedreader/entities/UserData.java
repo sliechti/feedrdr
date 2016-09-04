@@ -72,6 +72,15 @@ public class UserData {
         return screenName;
     }
 
+    public ProfileData getSelectedProfile() {
+        for (ProfileData profile : profileData) {
+            if (profile.getProfileId() == selectedProfileId) {
+                return profile;
+            }
+        }
+        return ProfileData.NULL;
+    }
+
     public long getSelectedProfileId() {
         return selectedProfileId;
     }

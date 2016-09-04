@@ -50,7 +50,9 @@ function showEl(caller, id) {
 }
 
 function addContent() {
-	location.href = baseUrl + '/add';
+	var to = selectedStream.l_stream_id;
+	var append = (to) ? '?to=' + to : '';
+	location.href = baseUrl + '/add' + append;
 }
 
 

@@ -1,3 +1,42 @@
+// Source: src/main/js/app/add.js
+
+function addSubscribeUrl(elemId, streamId) {
+	var queryData = {};
+	queryData.n = '';
+	queryData.sid = streamId;
+	queryData.u = $('#' + elemId).val();
+	addSubscription(queryData, function(data) {
+		console.debug('add subscribe response', data);
+		if (data.success) {
+			showInfoMsg('#add-msg', data.success);
+			$('#' + elemId).val('');
+		} else if (data.error) {
+			showErrorMsg('#add-msg', data.error);
+		} else {
+			showErrorMsg('#add-msg', 'unknown response: ' + JSON.stringify(data));
+		}
+	});
+}
+
+// Source: src/main/js/app/api.stream.js
+var apiUrlSubscriptionsAdd = '/api/v1/user/subscriptions/add';
+
+
+/**
+ * n = Name of Subscription. (optional)
+ * u = URL of feed
+ * sid = Stream ID where the subscription for the new feed should be added.
+ *
+ * @param queryData
+ * @param callback to pass JSON result
+ * @returns
+ */
+function addSubscription(queryData, callback) {
+	$.getJSON(baseUrl + apiUrlSubscriptionsAdd, queryData, function(data) {
+		callback(data);
+	});
+}
+// Source: src/main/js/app/document-main.js
 $(document).on('keyup', function(e) {
 	if (e.keyCode == 27) {
 		openLeftBar();
@@ -19,6 +58,7 @@ $(document).ready(function() {
 		openLeftBar();
 	});
 });
+// Source: src/main/js/app/global.js
 
 function toTop() {
 	window.scrollTo(0, 0);
@@ -71,7 +111,9 @@ function showEl(caller, id) {
 }
 
 function addContent() {
-	location.href = baseUrl + '/add';
+	var to = selectedStream.l_stream_id;
+	var append = (to) ? '?to=' + to : '';
+	location.href = baseUrl + '/add' + append;
 }
 
 
@@ -90,6 +132,7 @@ function attachColorPicker(pObj) {
 	picker.fromString(pObj.attr('data-color'));
 }
 
+// Source: src/main/js/app/header.js
 function hideSearch() {
 	console.debug('hide search');
 	var hi = $('#header-input');
@@ -109,6 +152,7 @@ function showSearch(caller) {
 	inp.focus();
 }
 
+// Source: src/main/js/app/left-menu.js
 var leftMenuId = '#left-menu';
 var streamsFilterId = '#streams-filter';
 var addContentId = '#add-content';
@@ -209,6 +253,7 @@ function lmShowFilters() {
 	}
 }
 
+// Source: src/main/js/app/msg.js
 function closeMsg(caller) {
 	$(caller).closest('.msg').hide();
 }
@@ -233,6 +278,7 @@ function showMsg(elemId, msg, clzz) {
 	elem.find('.text').html(msg);
 	elem.show();
 }
+// Source: src/main/js/app/reader.actions.js
 
 function saveStreamGroup(elemId) {
 
@@ -270,6 +316,7 @@ function raError(elemId, msg) {
 	e.addClass('msg-error');
 	e.show();
 }
+// Source: src/main/js/app/settings-profile.js
 var spTmpl = spTmpl || {};
 
 function settingsError(msg) {
@@ -370,6 +417,7 @@ $(document).ready(function() {
 	});
 });
 
+// Source: src/main/js/app/source-header-view.js
 function sourceAdd() {
 	alert('add-source');
 }
@@ -377,6 +425,7 @@ function sourceAdd() {
 $(document).ready(function() {
 	$('.source-add').on('click', sourceAdd);
 });
+// Source: src/main/js/app/stream-header.js
 var streamActionsId = '#stream-actions';
 var streamHeaderAngleId = '#stream-header-angle';
 var streamOptionsId = '#stream-options';
@@ -400,6 +449,7 @@ function shToggleSettings(caller) {
 	checkColor(streamOptionsId, streamHeaderAngleId);
 }
 
+// Source: src/main/js/app/stream-line.js
 function slForwardSaveEntry(caller) {
 	var id = slGetDataId(caller);
 	saveEntry(caller, id);
@@ -436,6 +486,7 @@ function slGetDataId(caller) {
 	var elem = $(caller).closest('div .options');
 	return elem.attr('data-id');
 }
+// Source: src/main/js/app/wizard.js
 var welcome = 'welcome';
 var steps = [ 'password-setup', 'thanks' ];
 function changePassword(elem, formElem) {

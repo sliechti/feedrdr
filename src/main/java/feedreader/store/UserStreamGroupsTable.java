@@ -23,6 +23,7 @@ public class UserStreamGroupsTable {
     public static final String TABLE_STREAM_SUBSCRIPTIONS = Constants.USER_STREAM_GROUP_FEEDS_SUBS_TABLE;
 
     private static final Logger logger = LoggerFactory.getLogger(UserStreamGroupsTable.class);
+    private static final StreamGroup NULL_STREAM_GROUP = new StreamGroup(0, 0, "");
 
     public static boolean init() {
         logger.info("init");
@@ -57,6 +58,14 @@ public class UserStreamGroupsTable {
         return -1;
     }
 
+    /**
+     *
+     * @param conn
+     * @param profileId
+     * @param view if true, the resultset will contain the view settings for the stream.
+     * @return
+     * @throws SQLException
+     */
     public static ResultSet get(Connection conn, long profileId, boolean view) throws SQLException {
         String query = String.format("SELECT * from %s AS t1 INNER JOIN %s AS t2 ON " + " t1.%s = t2.%s ",
                 Constants.USER_STREAM_GROUPS_TABLE,
@@ -74,9 +83,19 @@ public class UserStreamGroupsTable {
     }
 
     public static List<StreamGroup> get(long userId) {
-        String query = String.format("SELECT * FROM %s WHERE %s = %d", Constants.USER_STREAM_GROUPS_TABLE,
+        String query = String.format("SELECT * FROM %s WHERE %s = %d",
+                Constants.USER_STREAM_GROUPS_TABLE,
                 DBFields.LONG_USER_ID, userId);
         return get(userId, query);
+    }
+
+    public static StreamGroup getStream(long userId,long streamId) {
+        String query = String.format("SELECT * FROM %s WHERE %s = %d AND %s = %d",
+                Constants.USER_STREAM_GROUPS_TABLE,
+                DBFields.LONG_STREAM_ID, streamId,
+                DBFields.LONG_USER_ID, userId);
+        List<StreamGroup> ret = get(userId, query);
+        return (!ret.isEmpty()) ? ret.get(0) : NULL_STREAM_GROUP;
     }
 
     static List<StreamGroup> get(long userId, String query) {

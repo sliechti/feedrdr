@@ -295,6 +295,14 @@ body {
   padding-right: 10px;
 }
 
+.pad10 {
+  padding: 10px;
+}
+
+.pad5 {
+  padding: 5px;
+}
+
 .pt5p {
   padding-top: 5px;
 }

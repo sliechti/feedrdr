@@ -16,6 +16,10 @@ public class PageHeader {
         req.setAttribute("showBackButton", true);
     }
 
+    public static void showReaderInMenuEntry(HttpServletRequest req) {
+        req.setAttribute("showReaderInMenu", true);
+    }
+
     public static void showSettingsMenuEntry(HttpServletRequest req) {
         req.setAttribute("showSettingsInMenu", true);
     }
