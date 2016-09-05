@@ -1,8 +1,3 @@
-$(document).on('keyup', function(e) {
-	if (e.keyCode == 27) {
-		openLeftBar();
-	}
-});
 
 $(document).ready(function() {
 	var hm = new Hammer(document);

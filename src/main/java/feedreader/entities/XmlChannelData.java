@@ -5,8 +5,7 @@ import feedreader.time.DateUtils;
 
 import java.util.Date;
 
-public class XmlChannelData
-{
+public class XmlChannelData {
     public XmlFeedParser.NewsFlavor flavor = XmlFeedParser.NewsFlavor.UNKNOWN;
 
     StringBuilder title = new StringBuilder();
@@ -19,65 +18,55 @@ public class XmlChannelData
     // TODO: Implement.
     int intervalInMinutes = 0;
 
-    public String getLink()
-    {
+    public String getLink() {
         return link.toString().toLowerCase().trim();
     }
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title.toString().trim();
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description.toString().trim();
     }
 
-    public String getLanguage()
-    {
+    public String getLanguage() {
         return language.toString().trim();
     }
 
-    public String getPubDateString()
-    {
+    public String getPubDateString() {
         return pubDate.toString().trim();
     }
 
-    public long getPublicationDate()
-    {
-        if (pubdateTs > 0) return pubdateTs;
-        if (getPubDateString().isEmpty()) return -1;
+    public long getPublicationDate() {
+        if (pubdateTs > 0)
+            return pubdateTs;
+        if (getPubDateString().isEmpty())
+            return -1;
         return DateUtils.asLongDate(getPubDateString(), flavor, -1);
     }
-    
-    public void setPublicationDateTimestamp(long ts)
-    {
+
+    public void setPublicationDateTimestamp(long ts) {
         pubdateTs = ts;
     }
-    
-    public static boolean isTitleNode(String name)
-    {
+
+    public static boolean isTitleNode(String name) {
         return name.equalsIgnoreCase("title");
     }
 
-    public static boolean isLinkNode(String name)
-    {
+    public static boolean isLinkNode(String name) {
         return name.equalsIgnoreCase("link");
     }
 
-    private static boolean isLanguageNode(String node)
-    {
+    private static boolean isLanguageNode(String node) {
         return (node.equalsIgnoreCase("language"));
     }
 
-    public static boolean isDescriptionNode(String name)
-    {
+    public static boolean isDescriptionNode(String name) {
         return name.equalsIgnoreCase("description");
     }
 
-    public static boolean isPublicationDateNode(String node)
-    {
+    public static boolean isPublicationDateNode(String node) {
         return (node.equalsIgnoreCase("pubdate") ||
                 node.equalsIgnoreCase("published")) ||
                 node.equalsIgnoreCase("dc:date") ||
@@ -86,8 +75,7 @@ public class XmlChannelData
 
     // TODO: Move out of this class into a helper class.
     // This class should expose only get/set and a constructor to set default values.
-    public void process(String node, String value)
-    {
+    public void process(String node, String value) {
         if (isTitleNode(node)) {
             title.append(value);
             return;
@@ -115,8 +103,7 @@ public class XmlChannelData
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
 
         return sb.append(this.getClass().getSimpleName())

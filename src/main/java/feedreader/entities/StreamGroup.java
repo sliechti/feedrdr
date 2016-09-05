@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import feedreader.store.DBFields;
 
 public class StreamGroup {
-    long userId;
-    long folderId;
-    String name;
+    private final long userId;
+    private final long id;
+    private final String name;
 
-    public StreamGroup(long userId, long folderId, String name) {
+    public StreamGroup(long userId, long id, String name) {
         this.userId = userId;
-        this.folderId = folderId;
+        this.id = id;
         this.name = name;
     }
 
@@ -20,8 +20,8 @@ public class StreamGroup {
         return userId;
     }
 
-    public long getFolderId() {
-        return folderId;
+    public long getId() {
+        return id;
     }
 
     public String getName() {
@@ -30,12 +30,12 @@ public class StreamGroup {
 
     @Override
     public String toString() {
-        return "UserFolder{" + "userId=" + userId + ", folderId=" + folderId + ", name=" + name + '}';
+        return "UserFolder{" + "userId=" + userId + ", folderId=" + id + ", name=" + name + '}';
     }
 
     public StringBuilder toJSON(StringBuilder sb) {
         sb.append("{\"n\" : \"").append(name).append("\",")
-                .append("\"i\": ").append(folderId).append("}");
+                .append("\"i\": ").append(id).append("}");
         return sb;
     }
 

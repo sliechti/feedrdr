@@ -1,0 +1,27 @@
+
+#sources-result {
+	.actions {
+		float: right;
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.title {
+		width: 80%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: inline-block;
+	}
+
+	.row {
+		padding: 3px 0px;
+		&:hover {
+			background-color: $fade-color;
+			.fa {
+				color: $primary-color;
+			}
+		}
+	}
+}

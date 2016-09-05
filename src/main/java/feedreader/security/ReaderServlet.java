@@ -23,6 +23,7 @@ public class ReaderServlet extends HttpServlet {
             return;
         }
         PageHeader.showSettingsMenuEntry(req);
+        PageHeader.shoeSearch(req);
         ServletUtils.redirect(req, resp, "/pages/reader.jsp");
     }
 

@@ -18,6 +18,23 @@ function addSubscribeUrl(elemId, streamId) {
 	});
 }
 
+// Source: src/main/js/app/api.search.js
+var apiSourcesFind = '/api/v1/sources/find';
+
+/**
+ * Find sources by title.
+ *
+ * query.title = source title
+ *
+ * @param query
+ * @param callback
+ */
+function apiFindSource(query, callback) {
+	$.getJSON(baseUrl + apiSourcesFind, query, function(data) {
+		callback(data);
+	})
+}
+
 // Source: src/main/js/app/api.stream.js
 var apiUrlSubscriptionsAdd = '/api/v1/user/subscriptions/add';
 
@@ -37,11 +54,6 @@ function addSubscription(queryData, callback) {
 	});
 }
 // Source: src/main/js/app/document-main.js
-$(document).on('keyup', function(e) {
-	if (e.keyCode == 27) {
-		openLeftBar();
-	}
-});
 
 $(document).ready(function() {
 	var hm = new Hammer(document);
@@ -58,6 +70,7 @@ $(document).ready(function() {
 		openLeftBar();
 	});
 });
+
 // Source: src/main/js/app/global.js
 
 function toTop() {
@@ -133,24 +146,6 @@ function attachColorPicker(pObj) {
 }
 
 // Source: src/main/js/app/header.js
-function hideSearch() {
-	console.debug('hide search');
-	var hi = $('#header-input');
-	var hc = $('#header-content');
-	hc.show();
-	hi.addClass('hide');
-}
-function showSearch(caller) {
-	console.debug('show search');
-	var hi = $('#header-input');
-	var hc = $('#header-content');
-	hc.hide();
-	hi.removeClass('hide');
-	console.debug('header-input', hi);
-	hi.show();
-	var inp = hi.find('input');
-	inp.focus();
-}
 
 // Source: src/main/js/app/left-menu.js
 var leftMenuId = '#left-menu';
@@ -316,6 +311,64 @@ function raError(elemId, msg) {
 	e.addClass('msg-error');
 	e.show();
 }
+// Source: src/main/js/app/search.js
+var searchId = '#search';
+var tmplSourceResult = {};
+var lastLocation = '';
+var searched = false;
+
+function hideSearch() {
+	var hi = $('#header-input');
+	var hc = $('#header-content');
+	hc.show();
+	hi.addClass('hide');
+	if (searched) {
+		if (location.href != lastLocation) {
+			window.location.href = lastLocation;
+		} else {
+			location.reload();
+		}
+	}
+}
+
+function showSearch(caller) {
+	lastLocation = location.href;
+	var hi = $('#header-input');
+	var hc = $('#header-content');
+	hc.hide();
+	hi.removeClass('hide');
+	console.debug('header-input', hi);
+	hi.show();
+	var inp = hi.find('input');
+	inp.focus();
+}
+
+function search(ev) {
+	if (ev) {
+		if (ev.keyCode == 13) {
+			var query = {};
+			query.title = $(searchId).val();
+			apiFindSource(query, function(data) {
+				searched = true;
+				$('#stream-header .content').html('');
+				$('#stream-entries').html(tmplSourceResult({
+					entries : data.entries
+				}));
+			});
+		} else if (ev.keyCode == 27) {
+			hideSearch();
+		}
+	}
+}
+
+$(document).ready(function() {
+	var html = $('#search-sources-result').html();
+	if (html) {
+		$(searchId).on('keyup', search);
+		tmplSourceResult = Handlebars.compile(html);
+	}
+});
+
 // Source: src/main/js/app/settings-profile.js
 var spTmpl = spTmpl || {};
 

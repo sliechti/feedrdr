@@ -8,15 +8,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="${baseUrl}/css/font-awesome.min.css" />
-<link rel="stylesheet" href="${baseUrl}/css/default.min.css" />
+<link rel="stylesheet" href="${baseUrl}/css/default.css" />
 <script src="${baseUrl}/js/vendor/jquery.min.js"></script>
 <script src="${baseUrl}/js/vendor/hammer.min.js"></script>
 <script src="${baseUrl}/js/vendor/handlebars.min.js"></script>
 <script src="${baseUrl}/js/vendor/jscolor/jscolor.min.js"></script>
 <script src="${baseUrl}/js/vendor/director.min.js"></script>
 <script src="${baseUrl}/js/vendor/jlinq.min.js"></script>
-<script src="${baseUrl}/js/app.legacy.min.js"></script>
-<script src="${baseUrl}/js/app.min.js"></script>
+<script src="${baseUrl}/js/app.legacy.js"></script>
+<script src="${baseUrl}/js/app.js"></script>
 <script>
 	setBaseUrl('${baseUrl}');
 </script>
@@ -24,8 +24,10 @@
 <body class="margin0">
 	<div class="header bg-white primary-t-color font-large">
 		<div id="header-input" class="hide center content-width">
-			<c:if test="${showBackButton}">
-				<input type="text" class="header-line left" placeholder="search">
+			<c:if test="${showSearch}">
+				<input type="text" id="search" class="header-line left"
+					 placeholder="search"
+					onkeypress="search()">
 			</c:if>
 			<a href="#" onclick="hideSearch();">
 				<i class="fa fa-close fade-color right" aria-hidden="true"></i>

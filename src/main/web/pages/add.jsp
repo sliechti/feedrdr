@@ -33,18 +33,50 @@
 			${error}
 		</div>
 	</c:if>
-		<c:if test="${not empty collection}">
-				<div class="msg msg-info">
-					Collection <b>${collection.name}</b> added to <br>${profile.name}</b>
-					<br><br>
-					Go to <a href="${baseUrl}/reader">Reader</a> or
-					add more <a href="${baseUrl}/collections">Collections</a>
-				</div>
+	<c:if test="${not empty collection}">
+			<div class="msg msg-info">
+				Collection <b>${collection.name}</b> added to <br>${profile.name}</b>
+				<br><br>
+				Go to <a href="${baseUrl}/reader">Reader</a> or
+				add more <a href="${baseUrl}/collections">Collections</a>
 			</div>
-			<hr class="hr-separator">
-		</c:if>
-		<div >
-			Feeds will be added to the current profile <b>${profile.name}</b>
+		</div>
+		<hr class="hr-separator">
+	</c:if>
+	<c:if test="${not empty addedTo}">
+		<div class="msg msg-info">
+			Source <b>${channel.title}</b> added to
+			<c:forEach items="${addedTo}" var="added">
+				'${added.name}'&nbsp;
+			</c:forEach>
+			<br><br>
+			Go to <a href="${baseUrl}/reader">Reader</a>
+		</div>
+	</c:if>
+		<div>
+			<c:choose>
+				<c:when test="${not empty source and empty addedTo}">
+				<p>
+					Add <b>${channel.title}</b> to the following profiles:
+				</p>
+				<form method="post" action="">
+				<div>
+					<input type="hidden" name="sourceId" value="${source.id}">
+					<select name="group" multiple="multiple">
+						<c:forEach items="${groups}" var="group">
+							<option value="${group.id}">${group.name}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div>
+					<input type="submit" name="add" value="add">
+				</div>
+				</form>
+				</c:when>
+				<c:otherwise>
+					Feeds will be added to the current profile <b>${profile.name}</b>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<hr class="hr-separator">
 		<c:if test="${not empty param.to}">

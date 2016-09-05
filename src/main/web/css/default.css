@@ -1108,7 +1108,7 @@ body {
   color: #173C4F;
 }
 
-#add-content input {
+#add-content input, #add-content select {
   min-width: 250px;
 }
 #add-content > div {
@@ -1163,6 +1163,29 @@ body {
 .collection .glyphicon {
   font-size: 0.8em;
   padding-top: 5px;
+}
+
+#sources-result .actions {
+  float: right;
+}
+#sources-result .actions a {
+  text-decoration: none;
+}
+#sources-result .title {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+#sources-result .row {
+  padding: 3px 0px;
+}
+#sources-result .row:hover {
+  background-color: #CACACA;
+}
+#sources-result .row:hover .fa {
+  color: #173C4F;
 }
 
 /*# sourceMappingURL=default.css.map */

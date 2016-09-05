@@ -19,16 +19,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
+import feedreader.entities.FeedSourceEntry;
 import feedreader.entities.StreamGroup;
 import feedreader.entities.UserData;
+import feedreader.entities.XmlChannelData;
 import feedreader.opml.OPMLParser;
 import feedreader.opml.UserOPMLImportHandler;
 import feedreader.pages.PageHeader;
 import feedreader.store.CollectionsTable;
+import feedreader.store.CollectionsTable.SourceCollection;
+import feedreader.store.DBFields;
 import feedreader.store.Database;
+import feedreader.store.FeedSourceChannelDataTable;
+import feedreader.store.FeedSourcesTable;
+import feedreader.store.UserFeedSubscriptionsTable;
 import feedreader.store.UserStreamGroupsTable;
 import feedreader.store.UsersTable;
-import feedreader.store.CollectionsTable.SourceCollection;
 import feedreader.utils.FormUploadHelper;
 import feedreader.utils.PageUtils;
 import feedreader.utils.ServletUtils;
@@ -49,10 +55,30 @@ public class AddServlet extends HttpServlet {
         PageHeader.showReaderInMenuEntry(req);
         UserData user = UsersTable.get(userId);
 
+        try (Connection conn = Database.getConnection()) {
+            ResultSet rs = UserStreamGroupsTable.get(conn, user.getSelectedProfileId(), false);
+            List<StreamGroup> groups = new ArrayList<>();
+            while (rs.next()) {
+                groups.add(StreamGroup.fromRs(0, rs));
+            }
+            req.setAttribute("groups", groups);
+        } catch (SQLException ex) {
+            logger.error("/list failed: {}", ex, ex.getMessage());
+        }
+
         if (Parameter.isSet(req, "to")) {
             int streamId = Parameter.asInt(req, "to", 0);
             StreamGroup toGroup = UserStreamGroupsTable.getStream(userId, streamId);
             req.setAttribute("togroup", toGroup);
+        }
+
+        if (Parameter.isSet(req, "source")) {
+            int sourceId = Parameter.asInt(req, "source", 0);
+            FeedSourceEntry entry = FeedSourcesTable.getByField(
+                    DBFields.LONG_XML_ID, sourceId);
+            XmlChannelData channel = FeedSourceChannelDataTable.get(sourceId);
+            req.setAttribute("source", entry);
+            req.setAttribute("channel", channel);
         }
 
         if (Parameter.isSet(req, "collection")) {
@@ -75,16 +101,6 @@ public class AddServlet extends HttpServlet {
             }
         }
 
-        try (Connection conn = Database.getConnection()) {
-            ResultSet rs = UserStreamGroupsTable.get(conn, user.getSelectedProfileId(), false);
-            List<StreamGroup> groups = new ArrayList<>();
-            while (rs.next()) {
-                groups.add(StreamGroup.fromRs(0, rs));
-            }
-            req.setAttribute("groups", groups);
-        } catch (SQLException ex) {
-            logger.error("/list failed: {}", ex, ex.getMessage());
-        }
         req.setAttribute("profile", user.getSelectedProfile());
         ServletUtils.redirect(req, resp, "/pages/add.jsp");
     }
@@ -96,7 +112,26 @@ public class AddServlet extends HttpServlet {
             PageUtils.gotoStart(req, resp);
             return;
         }
-        if (FormUploadHelper.isMultiPartContent(req)) {
+        if (Parameter.isSet(req, "source")) {
+            long sourceId = Parameter.asLong(req, "source", 0);
+            XmlChannelData data = FeedSourceChannelDataTable.get(sourceId);
+            String[] groups = req.getParameterValues("group");
+            if (groups != null) {
+                List<StreamGroup> addedTo = new ArrayList<>(groups.length);
+                for (String group : groups) {
+                    long streamId = Long.parseLong(group);
+                    StreamGroup stream = UserStreamGroupsTable.getStream(userId, streamId);
+                    if (stream .getId() == 0) {
+                        continue;
+                    }
+                    long subsId = UserFeedSubscriptionsTable.save(userId, sourceId, data.getTitle());
+                    if (UserStreamGroupsTable.addSubscriptionToStream(streamId, subsId)) {
+                        addedTo.add(stream);
+                    }
+                }
+                req.setAttribute("addedTo", addedTo);
+            }
+        } else if (FormUploadHelper.isMultiPartContent(req)) {
             UserData user = UsersTable.get(userId);
             try {
                 FormUploadHelper helper = new FormUploadHelper(req);

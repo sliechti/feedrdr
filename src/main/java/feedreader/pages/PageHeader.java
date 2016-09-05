@@ -12,6 +12,10 @@ public class PageHeader {
         req.setAttribute("hideLeftMenu", true);
     }
 
+    public static void shoeSearch(HttpServletRequest req) {
+        req.setAttribute("showSearch", true);
+    }
+
     public static void showBackButton(HttpServletRequest req) {
         req.setAttribute("showBackButton", true);
     }

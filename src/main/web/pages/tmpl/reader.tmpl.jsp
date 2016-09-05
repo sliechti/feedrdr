@@ -116,12 +116,12 @@
 		<img src="{{favico s_xml_url}}">
 		<a href="{{s_link}}" target="_blank">{{s_title}}</a>
 		<br>
-		<!-- <span class="subscibe">
-			<a href="#" class="source-add">
+		<span class="subscibe">
+			<a href="${baseUrl}/add?source={{l_xml_id}}" class="source-add">
 				<i class="fa fa-plus-circle"></i>
 				subscribe
 			</a>
-		</span> -->
+		</span>
 	</div>
 </div>
 <div class="source-info">

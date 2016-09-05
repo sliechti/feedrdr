@@ -19,75 +19,8 @@ public class UserFeedSubscriptionsTable {
     public static final String TABLE = Constants.USER_SUBSCRIPTIONS_TABLE;
     private static final Logger logger = LoggerFactory.getLogger(UserFeedSubscriptionsTable.class);
 
-    public static boolean init() {
-        logger.info("init");
-        return true;
-    }
-
     public static void close() {
         logger.info("close");
-    }
-
-    public static int updateReadMarker(long userId, long xmlId, long marker) {
-        String query = String.format("UPDATE %s SET %s = %d WHERE %s = %d AND %s = %d", TABLE,
-                DBFields.TIME_READ_MARKER, marker, DBFields.LONG_USER_ID, userId, DBFields.LONG_XML_ID, xmlId);
-
-        try (Connection conn = Database.getConnection()) {
-            return conn.createStatement().executeUpdate(query);
-        } catch (SQLException e) {
-            logger.error("query {} error {}", e, query, e.getMessage());
-        }
-
-        return -1;
-    }
-
-    public enum RetCodes {
-        SUBSCRIPTION_ADDED, SUBSCRIPTION_UPDATED, SQL_ERROR
-    }
-
-    /**
-     * Saves a new subscription. If the folder is unknown, the subscription will be added to the root folder,
-     * {@link FeedConstants#DEFAULT_ROOT_FOLDER_ID}
-     *
-     * @param userId
-     * @param sourceId
-     * @param entry
-     *
-     * @return {@link RetCodes#SUBSCRIPTION_ADDED}<br>
-     * {@link RetCodes#SUBSCRIPTION_UPDATED}<br>
-     * {@link RetCodes#SQL_ERROR}
-     *
-     */
-    public static long save(long userId, long sourceId, OPMLEntry entry) {
-        try (Connection conn = Database.getConnection()) {
-            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s=%d",
-                    DBFields.LONG_SUBS_ID,
-                    TABLE,
-                    DBFields.LONG_USER_ID, userId,
-                    DBFields.LONG_XML_ID, sourceId);
-            ResultSet rs = conn.createStatement().executeQuery(query);
-
-            if (rs.next()) {
-                // TOOD: Implement. // UPDATE
-                return rs.getLong(DBFields.LONG_SUBS_ID);
-            }
-            query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %d, %d, '%s') RETURNING %s",
-                    TABLE,
-                    DBFields.LONG_SUBS_ID, DBFields.LONG_USER_ID,
-                    DBFields.LONG_XML_ID, DBFields.STR_SUBSCRIPTION_NAME,
-                    Database.DEFAULT_KEYWORD, userId,
-                    sourceId, SQLUtils.asSafeString(entry.getTitle()),
-                    DBFields.LONG_SUBS_ID /* returning */);
-            rs = conn.createStatement().executeQuery(query);
-
-            if (!rs.next()) {
-                return -1;
-            }
-            return rs.getLong(DBFields.LONG_SUBS_ID);
-        } catch (SQLException ex) {
-            logger.error("save error: {}", ex, ex.getMessage());
-            return -1;
-        }
     }
 
     public static ArrayList<UserFeedSubscription> get(long userId, long folderId) {
@@ -114,9 +47,9 @@ public class UserFeedSubscriptionsTable {
         }
     }
 
-    private static UserFeedSubscription getNewUserSubscription(long userId, ResultSet rs) throws SQLException {
-        return new UserFeedSubscription(rs.getLong(DBFields.LONG_SUBS_ID), userId, rs.getLong(DBFields.LONG_XML_ID),
-                rs.getLong(DBFields.LONG_STREAM_ID), rs.getString(DBFields.STR_SUBSCRIPTION_NAME));
+    public static boolean init() {
+        logger.info("init");
+        return true;
     }
 
     public static int removeSubscription(long userId, long subsId) {
@@ -133,6 +66,77 @@ public class UserFeedSubscriptionsTable {
         }
 
         return 0;
+    }
+
+    public static long save(long userId, long sourceId, OPMLEntry entry) {
+        return save(userId, sourceId, entry.getTitle());
+    }
+
+    /**
+     * Saves a new subscription. If the folder is unknown, the subscription will be added to the root folder,
+     * {@link FeedConstants#DEFAULT_ROOT_FOLDER_ID}
+     *
+     * @param userId
+     * @param sourceId
+     * @param entry
+     *
+     * @return {@link RetCodes#SUBSCRIPTION_ADDED}<br>
+     * {@link RetCodes#SUBSCRIPTION_UPDATED}<br>
+     * {@link RetCodes#SQL_ERROR}
+     *
+     */
+    public static long save(long userId, long sourceId, String title) {
+        try (Connection conn = Database.getConnection()) {
+            String query = String.format("SELECT %s FROM %s WHERE %s=%d AND %s=%d",
+                    DBFields.LONG_SUBS_ID,
+                    TABLE,
+                    DBFields.LONG_USER_ID, userId,
+                    DBFields.LONG_XML_ID, sourceId);
+            ResultSet rs = conn.createStatement().executeQuery(query);
+
+            if (rs.next()) {
+                // TOOD: Implement. // UPDATE
+                return rs.getLong(DBFields.LONG_SUBS_ID);
+            }
+            query = String.format("INSERT INTO %s (%s, %s, %s, %s) VALUES (%s, %d, %d, '%s') RETURNING %s",
+                    TABLE,
+                    DBFields.LONG_SUBS_ID, DBFields.LONG_USER_ID,
+                    DBFields.LONG_XML_ID, DBFields.STR_SUBSCRIPTION_NAME,
+                    Database.DEFAULT_KEYWORD, userId,
+                    sourceId, SQLUtils.asSafeString(title),
+                    DBFields.LONG_SUBS_ID /* returning */);
+            rs = conn.createStatement().executeQuery(query);
+
+            if (!rs.next()) {
+                return -1;
+            }
+            return rs.getLong(DBFields.LONG_SUBS_ID);
+        } catch (SQLException ex) {
+            logger.error("save error: {}", ex, ex.getMessage());
+            return -1;
+        }
+    }
+
+    public static int updateReadMarker(long userId, long xmlId, long marker) {
+        String query = String.format("UPDATE %s SET %s = %d WHERE %s = %d AND %s = %d", TABLE,
+                DBFields.TIME_READ_MARKER, marker, DBFields.LONG_USER_ID, userId, DBFields.LONG_XML_ID, xmlId);
+
+        try (Connection conn = Database.getConnection()) {
+            return conn.createStatement().executeUpdate(query);
+        } catch (SQLException e) {
+            logger.error("query {} error {}", e, query, e.getMessage());
+        }
+
+        return -1;
+    }
+
+    private static UserFeedSubscription getNewUserSubscription(long userId, ResultSet rs) throws SQLException {
+        return new UserFeedSubscription(rs.getLong(DBFields.LONG_SUBS_ID), userId, rs.getLong(DBFields.LONG_XML_ID),
+                rs.getLong(DBFields.LONG_STREAM_ID), rs.getString(DBFields.STR_SUBSCRIPTION_NAME));
+    }
+
+    public enum RetCodes {
+        SQL_ERROR, SUBSCRIPTION_ADDED, SUBSCRIPTION_UPDATED
     }
 
 }

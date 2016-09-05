@@ -36,12 +36,13 @@ public class SourcesAPI {
     static final HashMap<String, String> maps1 = new HashMap<>();
     static final HashMap<String, String> maps2 = new HashMap<>();
 
-    private static final String selectSourceByTitle = "SELECT "
-            + "fs.l_xml_id, fs.s_title, fs.s_link, fs.b_hasico, fi.s_img_url "
-            + "FROM feedreader.feedsourcechanneldata AS fs "
-            + "LEFT JOIN feedreader.feedsourcechannelimage fi "
-            + "ON fs.l_xml_id = fi.l_xml_id WHERE fs.s_title ILIKE ? "
-            + "LIMIT ? OFFSET ?";
+    private static final String selectSourceByTitle = "SELECT fs.l_xml_id,"
+            + "fs.s_title, coalesce (fs.s_link, f.s_xml_url) as s_link, fs.b_hasico, fi.s_img_url "
+            + " FROM feedreader.feedsourcechanneldata AS fs "
+            + " LEFT JOIN feedreader.feedsourcechannelimage fi "
+            + " ON fs.l_xml_id = fi.l_xml_id "
+            + "LEFT JOIN feedreader.feedsources AS f ON fs.l_xml_id = f.l_xml_id "
+            + " WHERE fs.s_title ILIKE ? LIMIT ? OFFSET ?";
 
     static {
         maps0.put("i_count_0", "count");
@@ -53,6 +54,13 @@ public class SourcesAPI {
     @Path("/find")
     @Produces(MediaType.APPLICATION_JSON)
     public String find(@Context HttpServletRequest req, @QueryParam("title") String title) {
+        long userId = Session.getUserId(req.getSession());
+        if (userId == 0) {
+            return JSONErrorMsgs.getAccessDenied();
+        }
+        if (title == null || title.isEmpty()) {
+            return JSONUtils.error(0, "expecting source title");
+        }
         logger.info("/find {}", title);
         StringBuilder sb = new StringBuilder(1000);
         sb.append("{ \"entries\" : [");
@@ -61,10 +69,7 @@ public class SourcesAPI {
             selSourceByTitle.setString(1, "%" + title + "%");
             selSourceByTitle.setInt(2, 10);
             selSourceByTitle.setInt(3, 0);
-            ResultSet rs = selSourceByTitle.executeQuery();
-            while (rs.next()) {
-                APIUtils.wrapObject(sb, rs);
-            }
+            APIUtils.wrapObject(sb, selSourceByTitle.executeQuery());
         } catch (Exception e) {
             logger.error("/find failed: {}", e, e.getMessage());
         }
@@ -87,31 +92,7 @@ public class SourcesAPI {
 
         StringBuilder sb = new StringBuilder();
 
-        // TODO: We should be using prepared call statements.
-        String rawQuery = "SELECT ";
-
-        switch (queryType) {
-            case 1:
-                rawQuery += "t0." + DBFields.LONG_XML_ID + ", t1." + DBFields.STR_LINK + ", "
-                        + "t0." + DBFields.STR_XML_URL + " " + " , t0." + DBFields.INT_TOTAL_ENTRIES + ", "
-                        + "t0." + DBFields.INT_COUNT_0 + ", t0." + DBFields.INT_COUNT_1 + ", t0." + DBFields.INT_COUNT_2
-                        + " ";
-                break;
-
-            default:
-                rawQuery += " * ";
-        }
-
-        rawQuery += String.format("FROM %s AS t0 "
-                + "LEFT JOIN %s AS t1 ON t0.%s = t1.%s "
-                + "LEFT JOIN %s AS t2 ON t0.%s = t2.%s "
-                + "WHERE t0.%s",
-                FeedSourcesTable.TABLE,
-                FeedSourceChannelImageTable.TABLE,
-                DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
-                FeedSourceChannelDataTable.TABLE,
-                DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
-                DBFields.LONG_XML_ID);
+        String rawQuery = getSelectQuery(queryType);
 
         if (ids != null) {
             sb.append("{ \"entries\" : [");
@@ -149,5 +130,34 @@ public class SourcesAPI {
         }
 
         return sb.toString();
+    }
+
+    public static String getSelectQuery(int queryType) {
+        // TODO: We should be using prepared call statements.
+        String rawQuery = "SELECT ";
+
+        switch (queryType) {
+            case 1:
+                rawQuery += "t0." + DBFields.LONG_XML_ID + ", t1." + DBFields.STR_LINK + ", "
+                        + "t0." + DBFields.STR_XML_URL + " " + " , t0." + DBFields.INT_TOTAL_ENTRIES + ", "
+                        + "t0." + DBFields.INT_COUNT_0 + ", t0." + DBFields.INT_COUNT_1 + ", t0." + DBFields.INT_COUNT_2
+                        + " ";
+                break;
+
+            default:
+                rawQuery += " * ";
+        }
+
+        rawQuery += String.format("FROM %s AS t0 "
+                + "LEFT JOIN %s AS t1 ON t0.%s = t1.%s "
+                + "LEFT JOIN %s AS t2 ON t0.%s = t2.%s "
+                + "WHERE t0.%s",
+                FeedSourcesTable.TABLE,
+                FeedSourceChannelImageTable.TABLE,
+                DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
+                FeedSourceChannelDataTable.TABLE,
+                DBFields.LONG_XML_ID, DBFields.LONG_XML_ID,
+                DBFields.LONG_XML_ID);
+        return rawQuery;
     }
 }
