@@ -30,16 +30,28 @@
 	@extend .msg;
 	background-color: $info-color;
 	color: white;
+
+	* {
+		color: white;
+	}
 }
 
 .msg-warn {
 	@extend .msg;
 	background-color: $warning-color;
 	color: $warn-color;
+
+	* {
+		color: $warn-color;
+	}
 }
 
 .success-msg {
 	@extend .msg;
 	background-color: $success-color;
 	color: white;
+
+	* {
+		color: white;
+	}
 }

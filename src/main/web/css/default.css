@@ -131,7 +131,6 @@ body {
 
 .submit-btn, .form input[type=submit] {
   margin-top: 25px;
-  font-size: 1.2em;
   padding: 5px 30px 3px 30px;
   border: 1px solid #CACACA;
   background-color: #173C4F;
@@ -621,6 +620,9 @@ body {
 #stream-content {
   margin-top: 20px;
 }
+#stream-content a {
+  color: #173C4F;
+}
 
 #stream-list a {
   color: #173C4F;
@@ -877,14 +879,23 @@ body {
   background-color: #30779B;
   color: white;
 }
+.msg-info * {
+  color: white;
+}
 
 .msg-warn {
   background-color: #DBDB41;
   color: #183C4F;
 }
+.msg-warn * {
+  color: #183C4F;
+}
 
 .success-msg {
   background-color: #4FA866;
+  color: white;
+}
+.success-msg * {
   color: white;
 }
 
@@ -1098,7 +1109,6 @@ body {
 }
 
 #add-content input {
-  font-size: 1.2em;
   min-width: 250px;
 }
 #add-content > div {

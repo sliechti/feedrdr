@@ -69,7 +69,7 @@ public class AddServlet extends HttpServlet {
                 } else {
                     req.setAttribute("error", "Collection alreay added");
                 }
-            } catch (SQLException e1) {
+            } catch (Exception e1) {
                 req.setAttribute("error", "Couldn't get collection: " + e1.getMessage());
                 logger.error("collection e1: {}", e1, e1.getMessage());
             }

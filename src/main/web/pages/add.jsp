@@ -33,19 +33,22 @@
 			${error}
 		</div>
 	</c:if>
-		<div class="font-med">
-			Feeds will be added to the current profile <b>${profile.name}</b>
-		</div>
-		<hr class="hr-separator">
 		<c:if test="${not empty collection}">
-				<div>
-					Collection ${collection.name} added.
+				<div class="msg msg-info">
+					Collection <b>${collection.name}</b> added to <br>${profile.name}</b>
+					<br><br>
+					Go to <a href="${baseUrl}"/reader">Reader</a> or
+					add more <a href="${baseUrl}/collections">Collections</a>
 				</div>
 			</div>
 			<hr class="hr-separator">
 		</c:if>
+		<div >
+			Feeds will be added to the current profile <b>${profile.name}</b>
+		</div>
+		<hr class="hr-separator">
 		<c:if test="${not empty param.to}">
-			<div id="import-url" class="form form-wide">
+			<div id="import-url">
 				<div>
 					<input type="text" id="source-url" placeholder="http://domain.com/feed">
 				</div>
@@ -56,7 +59,7 @@
 			</div>
 			<hr class="hr-separator">
 		</c:if>
-		<div id="import-opml" class="form form-wide">
+		<div id="import-opml">
 			<div id="opml" class="col-xs-12 form-group">
 				<form method="POST" action="" enctype="multipart/form-data">
 					<div>
@@ -66,7 +69,7 @@
 						<input type="file" name="opml-file" value="Select OPML file">
 					</div>
 					<div>
-						<input type="submit" class="" name="import_opml" value="Import OPML file">
+						<input type="submit" name="import_opml" value="Import OPML file">
 					</div>
 				</form>
 			</div>

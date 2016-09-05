@@ -26,13 +26,11 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 	<div class="password-setup">
 		<div>
 			<h3>Welcome to feedrdr!</h3>
-			<p>Let's get you started.</p>
-			<ul class="left20">
-				<li class="password-setup">Set-up a password</li>
-			</ul>
+			<p>Let's get you started. You only need to set-up a password and
+			add some feeds.</p>
 		</div>
-		<form id="password-form" method="post" onsubmit="return false;">
-			<div class="none" id="password-msg"></div>
+		<form id="password-form" class="form" method="post" onsubmit="return false;">
+			<div class="hide msg msg-info" id="password-msg"></div>
 			<div>
 				<input tabindex="1" type="password" name="pwd1" placeholder="password">
 			</div>
@@ -46,15 +44,16 @@ src="https://www.facebook.com/tr?id=504829576373713&ev=PageView&noscript=1"
 		</form>
 	</div>
 
-	<div class="thanks -hide">
+	<div class="thanks hide">
 		<h3>You are all set</h3>
 		<p>
 			We really hope you enjoy feedrdr as much as we loved creating it.
 		</p>
 		<p>
-			We are adding something new every week so make sure you follow us on
-			<a href="https://www.facebook.com/feedrdr">Facebook</a> and
-			<a href="https://twitter.com/feedrdrco">Twitter</a>
+			We are adding something new every week so make sure to follow us on
+			<a href="https://www.facebook.com/feedrdr">Facebook</a>,
+			<a href="https://twitter.com/feedrdrco">Twitter</a> and our
+			<a href="https://blog.feedrdr.co/">Blog</a>
 		</p>
 		<div>
 			<button tabindex="3" id="btn-pwd-change"

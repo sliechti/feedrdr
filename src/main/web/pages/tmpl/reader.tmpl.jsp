@@ -326,10 +326,7 @@
 </script>
 
 <script id="content_start_all" type="text/x-handlebars-template">
-	<div class="center w60p">
-		<p class="lead">
-			Let's start adding some content
-		</p>
+			<h3>Let's start adding some content</h3>
 		<p class="important-a">
 			The easiest way to subscribe to feeds is adding one of the many <a href="${baseUrl}/collections">collections</a>
 we created for you.<br>
@@ -337,15 +334,13 @@ we created for you.<br>
 			You can <a href="${baseUrl}/add">import</a> your own feeds with an OPML file.
 			<br>
 		</p>
-
-		</div>
 </script>
 
 <script id="content_start_recently_read" type="text/x-handlebars-template">
 		<div class="center text-center">
 			<b>List empty</b>
 			<p>
-			Read articles are automatically added to this list.<br><br>
+			Articles you read are automatically added to this list.<br><br>
 			You can clear the list by clicking on the '>' icon and then 'x'.
 			</p>
 		</div>

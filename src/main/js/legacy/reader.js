@@ -924,7 +924,7 @@ function loadStream(streamId) {
 	displayStreamHeader({
 		'showMarkAllRead' : true,
 		'showAdd': true,
-		'showSubscriptions': true,
+		'showSubscriptions': false,
 		'showFilter': true,
 		'showRanking': true,
 		'showDeleteStream': true

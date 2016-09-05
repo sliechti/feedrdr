@@ -24,13 +24,17 @@ public class CollectionsTable {
         logger.info("close");
     }
 
-    public static SourceCollection getCollection(long id) throws SQLException {
-        ResultSet rs = Database.getEntry(Database.getConnection(),
-                "feedreader.sourcecollections",
-                DBFields.LONG_COLLECTION_ID,
-                id);
-        if (rs.next()) {
-            return SourceCollection.fromRs(rs);
+    public static SourceCollection getCollection(long id) {
+        try (Connection connection = Database.getConnection()) {
+            ResultSet rs = Database.getEntry(connection,
+                    "feedreader.sourcecollections",
+                    DBFields.LONG_COLLECTION_ID,
+                    id);
+            if (rs.next()) {
+                return SourceCollection.fromRs(rs);
+            }
+        } catch (Exception e) {
+            logger.error("get collection error: {}", e, e.getMessage());
         }
         return SourceCollection.NULL;
     }
