@@ -3,6 +3,7 @@
 			<li><a href="http://github.com/sliechti/feedrdr">GitHub</a></li>
 			<li><a href="https://twitter.com/feedrdrco">Twitter</a></li>
 			<li><a href="https://www.facebook.com/feedrdr">Facebook</a></li>
+			<li><a href="https://blog.feedrdr.co">Blog</a></li>
 		</ul>
 	</div>
 

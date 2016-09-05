@@ -43,7 +43,8 @@ module.exports = function(grunt) {
 					},
 					app : {
 						files : {
-							"app/js/app.min.js" : "app/js/app.js"
+							"src/main/web/js/app.min.js" : "src/main/web/js/app.js",
+							"src/main/web/js/app.legacy.min.js" : "src/main/web/js/app.legacy.js"
 						}
 					}
 				},
@@ -59,7 +60,17 @@ module.exports = function(grunt) {
 							"src/main/web/css/welcome.css" : "src/main/sass/style-welcome.scss",
 							"src/main/web/css/login.css" : "src/main/sass/style-login.scss"
 						}
-					}
+					},
+					dist : {
+						options : {
+							style : "compressed"
+						},
+						files : {
+							"src/main/web/css/default.min.css" : "src/main/sass/style-default.scss",
+							"src/main/web/css/welcome.min.css" : "src/main/sass/style-welcome.scss",
+							"src/main/web/css/login.min.css" : "src/main/sass/style-login.scss"
+						}
+					},
 				},
 				browserSync : {
 					default_options : {
@@ -85,5 +96,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-browser-sync");
 
 	grunt.registerTask("default", [ "browserSync", "watch" ]);
+	grunt.registerTask("dist", [ "sass:dist", "concat:dev", "uglify" ]);
+	grunt.registerTask("dev", [ "sass:dev", "concat:dev", "uglify" ]);
 
 }

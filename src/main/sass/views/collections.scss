@@ -11,6 +11,10 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 
+	a {
+		color: $primary-color;
+	}
+
 	ul {
 		border-top: 1px solid #668A9B;
 		padding: 2px;

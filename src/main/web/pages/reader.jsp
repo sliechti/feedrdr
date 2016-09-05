@@ -57,7 +57,6 @@
         setProfile(selectedProfile);
 
         registerChangeViewListener(function() {
-            console.debug('view changed');
         	$("a[name=link]").on("click", function(e) {
         		var queryData = {};
         		queryData.e = 0;

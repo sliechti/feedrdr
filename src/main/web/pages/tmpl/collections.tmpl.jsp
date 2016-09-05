@@ -19,7 +19,7 @@
 <ul>
 	{{#each entries}}
 	<li>
-		<img src="{{favico}}{{s_link}}" class="left r10p">
+		<img src="{{favico s_link}}" class="left r10p">
 		<a href="{{s_link}}" target="_blank">{{cut s_feed_name 30}}</a>
 	</li>
 	{{/each}}

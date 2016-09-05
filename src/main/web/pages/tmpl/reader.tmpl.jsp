@@ -1,5 +1,4 @@
 <script id="stream-options" type="text/x-handlebars-template">
-	{{log 'stream-options' this}}
 	<div id="stream-options" class="el-menu el-menu-header">
 		<ul>
 		{{#if options.showFilter}}
@@ -54,7 +53,6 @@
 </script>
 
 <script id="stream-header-tmpl" type="text/x-handlebars-template">
-	{{log 'stream-header-tmpl' this}}
 	<div class="stream-header">
 		<div class="angle" onclick="shToggleActions(this)">
 			<i class="pointer fa fa-angle-right"></i>
@@ -105,7 +103,6 @@
 
 
 <script id="source-header-tmpl" type="text/x-handlebars-template">
-{{log 'source header tmpl' this}}
 	<div>
 		<a href="" onclick="location.history(-1); return false">Back</a>
 	</div>

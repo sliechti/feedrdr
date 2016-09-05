@@ -37,7 +37,7 @@
 				<div class="msg msg-info">
 					Collection <b>${collection.name}</b> added to <br>${profile.name}</b>
 					<br><br>
-					Go to <a href="${baseUrl}"/reader">Reader</a> or
+					Go to <a href="${baseUrl}/reader">Reader</a> or
 					add more <a href="${baseUrl}/collections">Collections</a>
 				</div>
 			</div>

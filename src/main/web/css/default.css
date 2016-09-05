@@ -1125,6 +1125,9 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.feeds-container a {
+  color: #173C4F;
+}
 .feeds-container ul {
   border-top: 1px solid #668A9B;
   padding: 2px;
