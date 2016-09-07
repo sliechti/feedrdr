@@ -380,7 +380,8 @@ public class StreamsAPI {
                 String query = "select l_xml_id, l_entry_id, s_link, s_title, t_pub_date from feedreader.feedentries "
                         + "where l_entry_id in ( " + unreadEntries.toString() + ") " + " and t_pub_date > "
                         + userMaxHistTime + " order by t_pub_date " + sortDir + "" + " limit "
-                        + FeedAppConfig.DEFAULT_API_FETCH_ARTICLES + " offset " + offset;
+                        + FeedAppConfig.DEFAULT_API_FETCH_ARTICLES + " offset " +
+                        (paging * FeedAppConfig.DEFAULT_API_FETCH_ARTICLES);
                 callStart = System.currentTimeMillis();
                 ResultSet rs = Database.rawQuery(conn, query);
                 long listExec = System.currentTimeMillis() - callStart;
